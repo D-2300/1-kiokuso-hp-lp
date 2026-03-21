@@ -39,17 +39,19 @@ export default function LPPainPoints() {
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: "32px",
-                  height: "32px",
+                  width: "40px",
+                  height: "40px",
                   borderRadius: "50%",
                   backgroundColor: "#EAF0E8",
-                  fontSize: "14px",
+                  fontSize: "18px",
+                  fontWeight: 500,
+                  color: "#555",
                   flexShrink: 0,
                 }}
               >
                 {p.icon}
               </span>
-              <p style={{ margin: 0, fontSize: "13px", color: "#333", lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: "15px", color: "#333", lineHeight: 1.7 }}>
                 {p.text}
               </p>
             </div>

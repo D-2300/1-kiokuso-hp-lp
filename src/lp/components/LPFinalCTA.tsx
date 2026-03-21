@@ -3,13 +3,36 @@ import { LINE_URL } from "../../shared/design-tokens";
 export default function LPFinalCTA() {
   return (
     <section style={{ backgroundColor: "#fff", padding: "48px 20px", textAlign: "center" }}>
+      <p style={{ margin: "0 0 24px", fontSize: "22px", fontWeight: 700, color: "#333" }}>
+        LINEで無料相談する
+      </p>
+      <div
+        style={{
+          display: "inline-block",
+          border: "1px solid #e5e5e5",
+          borderRadius: "16px",
+          padding: "24px",
+          marginBottom: "24px",
+        }}
+      >
+        <img
+          src="/images/line-add-friend.webp"
+          alt="LINE QRコード"
+          style={{ width: "160px", height: "160px", borderRadius: "8px", objectFit: "contain", display: "block" }}
+        />
+      </div>
+      <p style={{ margin: "0 0 24px", fontSize: "15px", color: "#555", lineHeight: 1.8 }}>
+        QRコードを読み取るか、下のボタンからLINEに追加できます
+      </p>
       <a
         href={LINE_URL}
         target="_blank"
         rel="noopener noreferrer"
         data-gtm="line_cta_click"
         style={{
-          display: "inline-block",
+          display: "block",
+          maxWidth: "320px",
+          margin: "0 auto",
           backgroundColor: "#06C755",
           color: "#fff",
           borderRadius: "10px",
@@ -22,14 +45,9 @@ export default function LPFinalCTA() {
       >
         LINEで無料相談する
       </a>
-      <p style={{ margin: "12px 0 32px", fontSize: "12px", color: "#999", lineHeight: 1.8 }}>
+      <p style={{ margin: "12px 0 0", fontSize: "13px", color: "#999", lineHeight: 1.8 }}>
         強引な営業は一切しません。断りはLINE1本でOKです。
       </p>
-      <img
-        src="/images/line-add-friend.webp"
-        alt="LINE QRコード"
-        style={{ width: "110px", height: "110px", borderRadius: "8px", objectFit: "contain", margin: "0 auto", display: "block" }}
-      />
     </section>
   );
 }

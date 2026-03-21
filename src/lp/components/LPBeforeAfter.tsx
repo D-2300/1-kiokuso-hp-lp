@@ -11,7 +11,7 @@ export default function LPBeforeAfter() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
+          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
           gap: "12px",
         }}
       >
@@ -28,22 +28,25 @@ export default function LPBeforeAfter() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
               {["Before", "After"].map((label) => (
                 <div key={label}>
-                  <div style={{ height: "72px", overflow: "hidden", position: "relative" }}>
+                  <div style={{ height: "clamp(96px, 12vw, 128px)", overflow: "hidden", position: "relative" }}>
                     <img
                       src={label === "Before" ? c.before : c.after}
                       alt={`${c.type} ${label}`}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                     <span style={{
-                      position: "absolute", bottom: "4px", left: "6px",
-                      fontSize: "9px", color: "#fff", textShadow: "0 1px 2px rgba(0,0,0,0.5)"
+                      position: "absolute", bottom: "6px", left: "8px",
+                      fontSize: "11px", fontWeight: 700, color: "#fff",
+                      backgroundColor: "rgba(0,0,0,0.45)",
+                      padding: "2px 8px", borderRadius: "3px",
+                      letterSpacing: "0.04em",
                     }}>{label}</span>
                   </div>
                 </div>
               ))}
             </div>
             <div style={{ padding: "10px 12px" }}>
-              <p style={{ margin: 0, fontSize: "12px", color: "#666" }}>{c.type}</p>
+              <p style={{ margin: 0, fontSize: "14px", color: "#666" }}>{c.type}</p>
               <p style={{ margin: "4px 0 0", fontSize: "18px", fontWeight: 700, color: "#333" }}>
                 {c.cost}
               </p>

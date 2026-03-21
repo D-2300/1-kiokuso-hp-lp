@@ -26,7 +26,7 @@ export default function LPPriceGuide() {
           display: "flex",
           overflowX: "auto",
           scrollSnapType: "x mandatory",
-          gap: "12px",
+          gap: "16px",
           padding: "0 20px",
           scrollbarWidth: "none",
         }}
@@ -36,7 +36,7 @@ export default function LPPriceGuide() {
             key={g.type}
             style={{
               flexShrink: 0,
-              width: "140px",
+              width: "clamp(128px, 28vw, 160px)",
               scrollSnapAlign: "start",
               textAlign: "center",
             }}
@@ -45,20 +45,20 @@ export default function LPPriceGuide() {
               src={g.img}
               alt={g.type}
               style={{
-                width: "88px",
-                height: "88px",
+                width: "clamp(96px, 20vw, 128px)",
+                height: "clamp(96px, 20vw, 128px)",
                 borderRadius: "50%",
                 objectFit: "cover",
-                margin: "0 auto 10px",
+                margin: "0 auto 12px",
                 display: "block",
               }}
             />
-            <p style={{ margin: "0 0 4px", fontSize: "13px", fontWeight: 700, color: "#333" }}>{g.type}</p>
-            <p style={{ margin: 0, fontSize: "12px", color: "#C9A84C", fontWeight: 700 }}>{g.range}</p>
+            <p style={{ margin: "0 0 4px", fontSize: "15px", fontWeight: 500, color: "#333" }}>{g.type}</p>
+            <p style={{ margin: 0, fontSize: "14px", color: "#C9A84C", fontWeight: 700 }}>{g.range}</p>
           </div>
         ))}
       </div>
-      <p style={{ textAlign: "center", fontSize: "10px", color: "#bbb", marginTop: "16px", padding: "0 20px" }}>
+      <p style={{ textAlign: "center", fontSize: "12px", color: "#bbb", marginTop: "16px", padding: "0 20px" }}>
         ※居抜き〜スケルトンを含む目安の総額です。物件状況により変動します。
       </p>
     </section>

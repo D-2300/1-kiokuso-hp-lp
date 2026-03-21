@@ -51,7 +51,7 @@ export default function LPCaseDetail() {
               backgroundColor: "#fff",
             }}
           >
-            <img src={c.main} alt={c.type} style={{ width: "100%", height: "180px", objectFit: "cover" }} />
+            <img src={c.main} alt={c.type} style={{ width: "100%", height: "clamp(160px, 20vw, 224px)", objectFit: "cover" }} />
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "4px", padding: "8px" }}>
               {c.subs.map((src, j) => (
                 <div key={j} style={{ height: "56px", borderRadius: "4px", overflow: "hidden" }}>
@@ -68,14 +68,14 @@ export default function LPCaseDetail() {
                   { label: "工期", value: c.period },
                 ].map((spec) => (
                   <div key={spec.label}>
-                    <p style={{ margin: 0, fontSize: "10px", color: "#999" }}>{spec.label}</p>
-                    <p style={{ margin: "2px 0 0", fontSize: "13px", fontWeight: 700, color: "#333" }}>
+                    <p style={{ margin: 0, fontSize: "11px", color: "#999" }}>{spec.label}</p>
+                    <p style={{ margin: "2px 0 0", fontSize: "14px", fontWeight: 500, color: "#333" }}>
                       {spec.value}
                     </p>
                   </div>
                 ))}
               </div>
-              <p style={{ margin: 0, fontSize: "12px", color: "#666", lineHeight: 1.8 }}>{c.comment}</p>
+              <p style={{ margin: 0, fontSize: "14px", color: "#666", lineHeight: 1.8 }}>{c.comment}</p>
             </div>
           </div>
         ))}

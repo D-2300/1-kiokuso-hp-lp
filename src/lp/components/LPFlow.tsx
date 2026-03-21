@@ -55,15 +55,14 @@ export default function LPFlow() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  borderBottom: i < steps.length - 1 ? "none" : "none",
                 }}
               >
                 <div>
                   <p style={{ margin: 0, fontSize: "10px", color: "#999", letterSpacing: "0.05em" }}>{s.step}</p>
-                  <p style={{ margin: "2px 0 0", fontSize: "14px", fontWeight: 700, color: "#333" }}>{s.name}</p>
+                  <p style={{ margin: "2px 0 0", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 500, color: "#333" }}>{s.name}</p>
                 </div>
                 {s.cost && (
-                  <p style={{ margin: 0, fontSize: "14px", fontWeight: 700, color: s.costColor, flexShrink: 0 }}>
+                  <p style={{ margin: 0, fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: s.costColor, flexShrink: 0 }}>
                     {s.cost}
                   </p>
                 )}

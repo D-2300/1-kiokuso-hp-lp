@@ -47,21 +47,21 @@ export default function LPHero() {
             style={{
               display: "inline-block",
               backgroundColor: "rgba(255,255,255,0.85)",
-              padding: "4px 10px",
+              padding: "6px 16px",
               borderRadius: "4px",
-              fontSize: "11px",
+              fontSize: "14px",
               color: "#333",
               marginBottom: "12px",
             }}
           >
-            仙台・宮城県限定
+            仙台・宮城限定
           </div>
           <h1
             style={{
-              fontSize: "24px",
+              fontSize: "clamp(24px, 5vw, 36px)",
               fontWeight: 700,
               color: "#fff",
-              lineHeight: 1.5,
+              lineHeight: 1.6,
               margin: 0,
             }}
           >
@@ -91,7 +91,7 @@ export default function LPHero() {
                 overflow: "hidden",
               }}
             >
-              <div style={{ height: "80px", overflow: "hidden" }}>
+              <div style={{ height: "clamp(112px, 14vw, 160px)", overflow: "hidden" }}>
                 <img
                   src={item.label === "居抜き" ? "/images/pricing-inuki.webp" : "/images/pricing-skeleton.webp"}
                   alt={item.label}
@@ -99,7 +99,7 @@ export default function LPHero() {
                 />
               </div>
               <div style={{ padding: "10px 12px" }}>
-                <p style={{ margin: 0, fontSize: "11px", color: "#666", letterSpacing: "0.05em" }}>
+                <p style={{ margin: 0, fontSize: "14px", color: "#666", letterSpacing: "0.05em" }}>
                   {item.label}
                 </p>
                 <p style={{ margin: "4px 0 0", fontSize: "16px", fontWeight: 700, color: "#333" }}>
