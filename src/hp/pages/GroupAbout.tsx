@@ -40,7 +40,7 @@ export default function GroupAbout() {
       {/* ブロック1：記憶が宿る場所 */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
-          <div style={{ width: "100%", aspectRatio: "16/9", backgroundColor: "#D8D3CE" }} />
+          <img src="/images/about-exterior.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
           <div
             style={{
               maxWidth: "560px",
@@ -71,7 +71,7 @@ export default function GroupAbout() {
       {/* ブロック2：制約の中の美しさ */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
-          <div style={{ width: "100%", aspectRatio: "16/9", backgroundColor: "#CFC7BD" }} />
+          <img src="/images/crossover-after-01.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
           <div
             style={{
               maxWidth: "560px",
@@ -112,7 +112,7 @@ export default function GroupAbout() {
               記憶荘は「制約を受け入れ、美しく仕上げる」行為を伴走する。
             </p>
           </div>
-          <div style={{ width: "100%", aspectRatio: "16/9", backgroundColor: "#D5CEC6" }} />
+          <img src="/images/about-conversation.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
         </section>
       </ScrollFadeIn>
 
@@ -122,19 +122,7 @@ export default function GroupAbout() {
       <ScrollFadeIn>
         <div style={{ padding: "80px 24px", maxWidth: "500px", margin: "0 auto" }}>
           <div style={{ display: "flex", gap: "24px", alignItems: "flex-start" }}>
-            <div
-              style={{
-                width: "100px",
-                minWidth: "100px",
-                aspectRatio: "1/1",
-                backgroundColor: "#E5E0DB",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <span style={{ fontSize: "9px", color: "#bbb", letterSpacing: "0.05em" }}>PHOTO</span>
-            </div>
+            <img src="/images/about-dai.webp" alt="DAI" style={{ width: "100px", minWidth: "100px", aspectRatio: "1/1", objectFit: "cover" }} />
             <div>
               <p style={{ fontSize: "18px", fontWeight: 500, color: colors.text, marginBottom: "4px" }}>DAI</p>
               <p style={{ fontSize: "12px", color: colors.mute, marginBottom: "12px" }}>

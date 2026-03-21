@@ -23,7 +23,8 @@ export default function StudioTop() {
 
       {/* Hero */}
       <section style={{ position: "relative", height: "calc(100vh - 64px)", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, height: "100%", backgroundColor: "#D8D3CE" }}>
+        <div style={{ position: "absolute", inset: 0, height: "100%" }}>
+          <img src="/images/hero-bg-v2.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div
             style={{
               position: "absolute",
@@ -85,20 +86,7 @@ export default function StudioTop() {
                 marginBottom: "32px",
               }}
             >
-              <div
-                style={{
-                  width: "64px",
-                  height: "64px",
-                  borderRadius: "50%",
-                  backgroundColor: "#E5E0DB",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                }}
-              >
-                <span style={{ fontSize: "9px", color: "#bbb", letterSpacing: "0.05em" }}>PHOTO</span>
-              </div>
+              <img src="/images/about-dai.webp" alt="DAI" style={{ width: "64px", height: "64px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
               <div style={{ textAlign: "left" }}>
                 <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text }}>DAI</p>
                 <p style={{ fontSize: "11px", color: colors.mute, marginTop: "2px" }}>記憶荘 店舗内装スタジオ</p>
@@ -126,7 +114,7 @@ export default function StudioTop() {
       {/* Works Preview */}
       <ScrollFadeIn>
         <div>
-          <PhotoPlaceholder aspect="16/9" label="" />
+          <img src="/images/crossover-after-02.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
           <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 64px" }}>
             <p style={{ fontSize: "14px", color: colors.text, lineHeight: 2.0 }}>
               カウンター越しに見える厨房の動線まで考えて、
@@ -139,13 +127,7 @@ export default function StudioTop() {
 
       <ScrollFadeIn>
         <div>
-          <div
-            style={{
-              width: "100%",
-              aspectRatio: "16/9",
-              backgroundColor: "#CFC7BD",
-            }}
-          />
+          <img src="/images/crossover-after-03.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
           <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 64px" }}>
             <p style={{ fontSize: "14px", color: colors.text, lineHeight: 2.0 }}>
               前のお店が残していった棚を活かして、

@@ -10,20 +10,11 @@ export default function LPProfile() {
           gap: "16px",
         }}
       >
-        <div
-          style={{
-            width: "56px",
-            height: "56px",
-            borderRadius: "50%",
-            backgroundColor: "#ddd8d0",
-            flexShrink: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <span style={{ fontSize: "9px", color: "rgba(0,0,0,0.3)" }}>写真</span>
-        </div>
+        <img
+          src="/images/about-dai.webp"
+          alt="DAI"
+          style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
+        />
         <div>
           <p style={{ margin: "0 0 2px", fontSize: "16px", fontWeight: 700, color: "#333" }}>DAI</p>
           <p style={{ margin: "0 0 12px", fontSize: "12px", color: "#888" }}>記憶荘 CSO</p>

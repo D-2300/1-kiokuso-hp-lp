@@ -10,32 +10,32 @@ const works = [
     type: "カフェ",
     area: "仙台市青葉区",
     story: "前のお店が使っていたカウンターの木目が気に入って、\nそのまま活かすことにした。厨房側の動線を30cm広げて、\nオーナーが一人でも回せるレイアウトに。",
-    mainBg: "#D8D3CE",
-    subBg: "#DDD8D2",
+    main: "/images/crossover-after-01.webp",
+    subs: ["/images/crossover-after-02.webp", "/images/crossover-after-03.webp", "/images/crossover-after-04.webp"],
   },
   {
     title: "光が入る美容室",
     type: "美容室",
     area: "仙台市宮城野区",
     story: "窓際の席を一番いい場所に配置して、\n鏡の角度を変えることで自然光が全席に届くようにした。\n天井は前のお店のまま。",
-    mainBg: "#CFC7BD",
-    subBg: "#D2CBC3",
+    main: "/images/salon-after-01.webp",
+    subs: ["/images/salon-before-01.webp", "/images/bpoint-after-01.webp", "/images/bpoint-before-01.webp"],
   },
   {
     title: "テイクアウト専門の小さな窓",
     type: "テイクアウト",
     area: "仙台市青葉区",
     story: "4坪のスペースに必要な機能を全て収めた。\nカウンターは施主支給のアンティーク天板を使い、\n壁はオーナーが自分で塗った。",
-    mainBg: "#D5CEC6",
-    subBg: "#CEC7BF",
+    main: "/images/owl-after-01.webp",
+    subs: ["/images/owl-before-01.webp", "/images/crossover-before-01.webp", "/images/crossover-before-02.webp"],
   },
   {
     title: "居酒屋の再出発",
     type: "居酒屋",
     area: "仙台市太白区",
     story: "居抜きで入った物件の良い部分はそのまま活かし、\n照明だけを全て入れ替えた。\n同じ空間が、まったく違う表情になった。",
-    mainBg: "#D0C9C1",
-    subBg: "#D5CFC7",
+    main: "/images/crossover-process-01.webp",
+    subs: ["/images/crossover-process-02.webp", "/images/crossover-process-03.webp", "/images/crossover-process-04.webp"],
   },
 ];
 
@@ -77,7 +77,7 @@ export default function StudioWorks() {
         {works.map((work, i) => (
           <ScrollFadeIn key={work.title}>
             <div style={{ paddingBottom: "64px" }}>
-              <div style={{ width: "100%", aspectRatio: "16/9", backgroundColor: work.mainBg }} />
+              <img src={work.main} alt={work.title} style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
               <div style={{ maxWidth: "560px", margin: "0 auto", padding: "32px 24px 0" }}>
                 <p style={{ fontSize: "18px", fontWeight: 500, color: colors.text }}>{work.title}</p>
                 <p style={{ fontSize: "12px", color: colors.mute, marginTop: "6px", marginBottom: "16px" }}>
@@ -94,11 +94,8 @@ export default function StudioWorks() {
                     marginTop: "20px",
                   }}
                 >
-                  {[0, 1, 2].map((j) => (
-                    <div
-                      key={j}
-                      style={{ aspectRatio: "1/1", backgroundColor: work.subBg }}
-                    />
+                  {work.subs.map((src, j) => (
+                    <img key={j} src={src} alt="" style={{ aspectRatio: "1/1", objectFit: "cover", width: "100%" }} />
                   ))}
                 </div>
               </div>

@@ -225,7 +225,7 @@ export default function GroupTop() {
       <ScrollFadeIn>
         <section style={{ padding: "40px 24px 64px", textAlign: "center" }}>
           <div style={{ maxWidth: "500px", margin: "0 auto" }}>
-            <PhotoPlaceholder aspect="3/1" label="ABOUT PHOTO" />
+            <img src="/images/about-exterior.webp" alt="" style={{ width: "100%", aspectRatio: "3/1", objectFit: "cover", borderRadius: "4px" }} />
             <div style={{ marginTop: "24px" }}>
               <Link
                 to="/about"

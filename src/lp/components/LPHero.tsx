@@ -9,6 +9,17 @@ export default function LPHero() {
         backgroundColor: "#e8e4de",
       }}
     >
+      <img
+        src="/images/hero-bg-v2.webp"
+        alt=""
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
       <div
         style={{
           position: "absolute",
@@ -80,18 +91,12 @@ export default function LPHero() {
                 overflow: "hidden",
               }}
             >
-              <div
-                style={{
-                  height: "80px",
-                  backgroundColor: "#d8d3cc",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <span style={{ fontSize: "11px", color: "rgba(0,0,0,0.3)", letterSpacing: "0.05em" }}>
-                  {item.label}施工写真
-                </span>
+              <div style={{ height: "80px", overflow: "hidden" }}>
+                <img
+                  src={item.label === "居抜き" ? "/images/pricing-inuki.webp" : "/images/pricing-skeleton.webp"}
+                  alt={item.label}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
               </div>
               <div style={{ padding: "10px 12px" }}>
                 <p style={{ margin: 0, fontSize: "11px", color: "#666", letterSpacing: "0.05em" }}>

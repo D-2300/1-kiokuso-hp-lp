@@ -1,24 +1,23 @@
 import StudioNav from "../components/StudioNav";
 import StudioCTA from "../components/StudioCTA";
 import StudioFooter from "../components/StudioFooter";
-import PhotoPlaceholder from "../../shared/PhotoPlaceholder";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
 import GoldDivider from "../../shared/GoldDivider";
 import { colors } from "../../shared/design-tokens";
 
 const points = [
   {
-    bg: "#D8D3CE",
+    img: "/images/crossover-process-01.webp",
     heading: "一人一貫対応",
     body: "設計・見積もり・施工・仕上げまで、一人が一貫して担当します。\n間に入る人がいないから、伝言ゲームにならない。",
   },
   {
-    bg: "#CFC7BD",
+    img: "/images/crossover-process-02.webp",
     heading: "居抜きを活かす",
     body: "前のお店の設備や内装を活かすことで、\n大幅にコストを抑えながら、あなたの店に仕上げます。",
   },
   {
-    bg: "#D5CEC6",
+    img: "/images/crossover-process-03.webp",
     heading: "DIY・施主支給OK",
     body: "自分で塗りたい壁がある。ネットで見つけた照明を使いたい。\nそういう思いを、一緒に形にします。",
   },
@@ -85,7 +84,7 @@ export default function StudioAbout() {
       {points.map((pt) => (
         <ScrollFadeIn key={pt.heading}>
           <div>
-            <div style={{ width: "100%", aspectRatio: "16/9", backgroundColor: pt.bg }} />
+            <img src={pt.img} alt={pt.heading} style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
             <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 56px" }}>
               <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "12px" }}>
                 {pt.heading}
@@ -103,9 +102,7 @@ export default function StudioAbout() {
       <ScrollFadeIn>
         <div style={{ padding: "40px 24px 64px", maxWidth: "480px", margin: "0 auto" }}>
           <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-            <div style={{ width: "80px", minWidth: "80px", aspectRatio: "1/1", backgroundColor: "#E5E0DB", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ fontSize: "9px", color: "#bbb", letterSpacing: "0.05em" }}>PHOTO</span>
-            </div>
+            <img src="/images/about-dai.webp" alt="DAI" style={{ width: "80px", minWidth: "80px", aspectRatio: "1/1", objectFit: "cover" }} />
             <div>
               <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "2px" }}>DAI</p>
               <p style={{ fontSize: "11px", color: colors.mute, marginBottom: "10px" }}>記憶荘 CSO</p>

@@ -1,12 +1,10 @@
 const guides = [
-  { type: "飲食店", range: "100〜350万円" },
-  { type: "美容室", range: "80〜180万円" },
-  { type: "テイクアウト", range: "50〜120万円" },
-  { type: "ジム", range: "150〜350万円" },
-  { type: "物販", range: "80〜200万円" },
+  { type: "飲食店", range: "100〜350万円", img: "/images/crossover-after-01.webp" },
+  { type: "美容室", range: "80〜180万円", img: "/images/salon-after-01.webp" },
+  { type: "テイクアウト", range: "50〜120万円", img: "/images/owl-after-01.webp" },
+  { type: "ジム", range: "150〜350万円", img: "/images/bpoint-after-01.webp" },
+  { type: "物販", range: "80〜200万円", img: "/images/diag-retail.webp" },
 ];
-
-const bgColors = ["#ddd8d0", "#d5d0c8", "#cdc8c0", "#c5c0b8", "#bdb8b0"];
 
 export default function LPPriceGuide() {
   return (
@@ -33,7 +31,7 @@ export default function LPPriceGuide() {
           scrollbarWidth: "none",
         }}
       >
-        {guides.map((g, i) => (
+        {guides.map((g) => (
           <div
             key={g.type}
             style={{
@@ -43,20 +41,18 @@ export default function LPPriceGuide() {
               textAlign: "center",
             }}
           >
-            <div
+            <img
+              src={g.img}
+              alt={g.type}
               style={{
                 width: "88px",
                 height: "88px",
                 borderRadius: "50%",
-                backgroundColor: bgColors[i],
+                objectFit: "cover",
                 margin: "0 auto 10px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                display: "block",
               }}
-            >
-              <span style={{ fontSize: "10px", color: "rgba(0,0,0,0.3)" }}>{g.type}</span>
-            </div>
+            />
             <p style={{ margin: "0 0 4px", fontSize: "13px", fontWeight: 700, color: "#333" }}>{g.type}</p>
             <p style={{ margin: 0, fontSize: "12px", color: "#C9A84C", fontWeight: 700 }}>{g.range}</p>
           </div>

@@ -1,8 +1,8 @@
 const cases = [
-  { type: "カフェ", cost: "120万円" },
-  { type: "居酒屋", cost: "180万円" },
-  { type: "美容室", cost: "150万円" },
-  { type: "テイクアウト", cost: "90万円" },
+  { type: "カフェ", cost: "120万円", before: "/images/crossover-before-01.webp", after: "/images/crossover-after-01.webp" },
+  { type: "居酒屋", cost: "180万円", before: "/images/crossover-before-02.webp", after: "/images/crossover-after-02.webp" },
+  { type: "美容室", cost: "150万円", before: "/images/salon-before-01.webp", after: "/images/salon-after-01.webp" },
+  { type: "テイクアウト", cost: "90万円", before: "/images/owl-before-01.webp", after: "/images/owl-after-01.webp" },
 ];
 
 export default function LPBeforeAfter() {
@@ -28,16 +28,16 @@ export default function LPBeforeAfter() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
               {["Before", "After"].map((label) => (
                 <div key={label}>
-                  <div
-                    style={{
-                      height: "72px",
-                      backgroundColor: label === "Before" ? "#ddd8d0" : "#ccc8c0",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <span style={{ fontSize: "10px", color: "rgba(0,0,0,0.3)" }}>{label}</span>
+                  <div style={{ height: "72px", overflow: "hidden", position: "relative" }}>
+                    <img
+                      src={label === "Before" ? c.before : c.after}
+                      alt={`${c.type} ${label}`}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                    <span style={{
+                      position: "absolute", bottom: "4px", left: "6px",
+                      fontSize: "9px", color: "#fff", textShadow: "0 1px 2px rgba(0,0,0,0.5)"
+                    }}>{label}</span>
                   </div>
                 </div>
               ))}
