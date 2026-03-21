@@ -1,0 +1,202 @@
+import { Link } from "react-router-dom";
+import StudioNav from "../components/StudioNav";
+import StudioCTA from "../components/StudioCTA";
+import StudioFooter from "../components/StudioFooter";
+import PhotoPlaceholder from "../../shared/PhotoPlaceholder";
+import ScrollFadeIn from "../../shared/ScrollFadeIn";
+import { colors } from "../../shared/design-tokens";
+
+export default function StudioTop() {
+  return (
+    <div style={{ backgroundColor: colors.beige, minHeight: "100vh", paddingTop: "64px" }}>
+      <style>{`
+        @keyframes scrollBounce {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(4px); }
+        }
+        .studio-scroll-arrow {
+          animation: scrollBounce 2s ease-in-out infinite;
+        }
+      `}</style>
+
+      <StudioNav />
+
+      {/* Hero */}
+      <section style={{ position: "relative", height: "calc(100vh - 64px)", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, height: "100%", backgroundColor: "#D8D3CE" }}>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "rgba(0,0,0,0.25)",
+            }}
+          />
+        </div>
+
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            gap: "12px",
+          }}
+        >
+          <p style={{ color: "#fff", fontSize: "28px", fontWeight: 300, letterSpacing: "0.3em" }}>
+            KIOKUSO STUDIO
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", fontWeight: 400, letterSpacing: "0.1em" }}>
+            記憶荘 店舗内装スタジオ
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "12px", fontWeight: 300, letterSpacing: "0.15em" }}>
+            仙台・宮城
+          </p>
+        </div>
+
+        <div
+          className="studio-scroll-arrow"
+          style={{
+            position: "absolute",
+            bottom: "24px",
+            left: "50%",
+            color: "rgba(255,255,255,0.4)",
+            fontSize: "20px",
+            zIndex: 1,
+          }}
+        >
+          ↓
+        </div>
+      </section>
+
+      {/* Voice */}
+      <ScrollFadeIn>
+        <section style={{ padding: "80px 24px", textAlign: "center", backgroundColor: colors.beige }}>
+          <div style={{ maxWidth: "480px", margin: "0 auto" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "12px",
+                marginBottom: "32px",
+              }}
+            >
+              <div
+                style={{
+                  width: "64px",
+                  height: "64px",
+                  borderRadius: "50%",
+                  backgroundColor: "#E5E0DB",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                <span style={{ fontSize: "9px", color: "#bbb", letterSpacing: "0.05em" }}>PHOTO</span>
+              </div>
+              <div style={{ textAlign: "left" }}>
+                <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text }}>DAI</p>
+                <p style={{ fontSize: "11px", color: colors.mute, marginTop: "2px" }}>記憶荘 店舗内装スタジオ</p>
+              </div>
+            </div>
+
+            <div style={{ fontSize: "15px", lineHeight: 2.4, color: colors.text, textAlign: "center" }}>
+              <p>
+                初めて店を持つ人が、
+                <br />
+                内装のことで不安にならなくていいように。
+              </p>
+              <p style={{ marginTop: "1.6em" }}>
+                居抜きを活かすこと、自分の手を動かすこと、
+                <br />
+                予算の中で最善を一緒に考えること。
+                <br />
+                それが、記憶荘のやり方です。
+              </p>
+            </div>
+          </div>
+        </section>
+      </ScrollFadeIn>
+
+      {/* Works Preview */}
+      <ScrollFadeIn>
+        <div>
+          <PhotoPlaceholder aspect="16/9" label="" />
+          <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 64px" }}>
+            <p style={{ fontSize: "14px", color: colors.text, lineHeight: 2.0 }}>
+              カウンター越しに見える厨房の動線まで考えて、
+              <br />
+              壁の位置を30cm ずらした。
+            </p>
+          </div>
+        </div>
+      </ScrollFadeIn>
+
+      <ScrollFadeIn>
+        <div>
+          <div
+            style={{
+              width: "100%",
+              aspectRatio: "16/9",
+              backgroundColor: "#CFC7BD",
+            }}
+          />
+          <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 64px" }}>
+            <p style={{ fontSize: "14px", color: colors.text, lineHeight: 2.0 }}>
+              前のお店が残していった棚を活かして、
+              <br />
+              新しい本棚に仕上げた。
+            </p>
+          </div>
+        </div>
+      </ScrollFadeIn>
+
+      <div style={{ textAlign: "center", padding: "0 24px 64px" }}>
+        <Link
+          to="/studio/works"
+          style={{
+            fontSize: "13px",
+            color: colors.fukamidori.main,
+            textDecoration: "none",
+            letterSpacing: "0.05em",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+        >
+          すべての施工事例を見る →
+        </Link>
+      </div>
+
+      {/* Links */}
+      <ScrollFadeIn>
+        <section style={{ padding: "40px 24px 64px", backgroundColor: colors.beige }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "48px" }}>
+            <Link to="/studio/about" style={{ textDecoration: "none", textAlign: "center" }}>
+              <p style={{ fontSize: "14px", fontWeight: 300, letterSpacing: "0.15em", color: colors.text }}>
+                About
+              </p>
+              <p style={{ fontSize: "12px", color: colors.mute, marginTop: "4px" }}>スタジオについて</p>
+              <p style={{ fontSize: "13px", color: colors.fukamidori.main, marginTop: "8px" }}>→</p>
+            </Link>
+
+            <Link to="/studio/pricing" style={{ textDecoration: "none", textAlign: "center" }}>
+              <p style={{ fontSize: "14px", fontWeight: 300, letterSpacing: "0.15em", color: colors.text }}>
+                Pricing
+              </p>
+              <p style={{ fontSize: "12px", color: colors.mute, marginTop: "4px" }}>料金の考え方</p>
+              <p style={{ fontSize: "13px", color: colors.fukamidori.main, marginTop: "8px" }}>→</p>
+            </Link>
+          </div>
+        </section>
+      </ScrollFadeIn>
+
+      <StudioCTA />
+      <StudioFooter />
+    </div>
+  );
+}

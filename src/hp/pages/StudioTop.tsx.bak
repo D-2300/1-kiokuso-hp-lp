@@ -1,0 +1,28 @@
+import StudioNav from "../components/StudioNav";
+import StudioFooter from "../components/StudioFooter";
+import StudioCTA from "../components/StudioCTA";
+
+export default function StudioTop() {
+  return (
+    <div style={{ backgroundColor: "#F8F5F0", minHeight: "100vh", paddingTop: "64px" }}>
+      <StudioNav />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "calc(60vh)",
+          flexDirection: "column",
+          gap: "16px",
+        }}
+      >
+        <p style={{ fontSize: "24px", fontWeight: 300, color: "#999", letterSpacing: "0.2em" }}>
+          Studio Top
+        </p>
+        <p style={{ fontSize: "13px", color: "#ccc" }}>STEP 3 で実装</p>
+      </div>
+      <StudioCTA />
+      <StudioFooter />
+    </div>
+  );
+}
