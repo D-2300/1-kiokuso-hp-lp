@@ -37,7 +37,7 @@ export default function EntityNav({
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-        <Logo size="sm" variant="dark" />
+        <Logo type="group" color="dark" layout="mark" size="sm" />
         <span
           style={{
             color: themeBg,

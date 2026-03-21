@@ -1,34 +1,48 @@
-type LogoSize = "sm" | "md" | "lg";
-type LogoVariant = "light" | "dark";
+type LogoType = "group" | "studio";
+type LogoColor = "gold" | "dark";
+type LogoLayout = "mark" | "horizontal";
+type LogoSize = "sm" | "md" | "lg" | "xl";
 
 interface LogoProps {
+  type?: LogoType;
+  color?: LogoColor;
+  layout?: LogoLayout;
   size?: LogoSize;
-  variant?: LogoVariant;
 }
 
-const sizeMap: Record<LogoSize, number> = {
+const heightMap: Record<LogoSize, number> = {
   sm: 28,
   md: 40,
   lg: 56,
+  xl: 80,
 };
 
-export default function Logo({ size = "md", variant = "light" }: LogoProps) {
-  const px = sizeMap[size];
-  const fill = variant === "light" ? "#F8F5F0" : "#1A1A1A";
-  const stroke = variant === "light" ? "#ddd" : "#333";
+function getLogoSrc(type: LogoType, color: LogoColor, layout: LogoLayout): string {
+  if (layout === "horizontal") {
+    return `/images/logo-${type}-h-${color}.webp`;
+  }
+  return `/images/logo-${type}-${color}.webp`;
+}
+
+export default function Logo({
+  type = "studio",
+  color = "dark",
+  layout = "mark",
+  size = "md",
+}: LogoProps) {
+  const h = heightMap[size];
+  const src = getLogoSrc(type, color, layout);
 
   return (
-    <svg
-      width={px}
-      height={px}
-      viewBox="0 0 40 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect x="1" y="1" width="38" height="38" rx="4" fill={fill} stroke={stroke} strokeWidth="1" />
-      <line x1="20" y1="4" x2="20" y2="36" stroke="#C9A84C" strokeWidth="2" />
-      <line x1="4" y1="20" x2="36" y2="20" stroke="#C9A84C" strokeWidth="2" />
-      <circle cx="20" cy="20" r="4" fill="#C9A84C" />
-    </svg>
+    <img
+      src={src}
+      alt={type === "group" ? "記憶荘" : "記憶荘 STUDIO"}
+      style={{
+        height: `${h}px`,
+        width: "auto",
+        display: "block",
+        objectFit: "contain",
+      }}
+    />
   );
 }

@@ -172,7 +172,7 @@ export default function GroupTop() {
                   }}
                 >
                   <div style={{ marginBottom: "12px" }}>
-                    <Logo size="sm" variant="light" />
+                    <Logo type="group" color="dark" layout="mark" size="sm" />
                   </div>
                   <p style={{ fontSize: "13px", fontWeight: 500, color: colors.text, marginBottom: "4px" }}>
                     {b.nameJa}
@@ -199,7 +199,7 @@ export default function GroupTop() {
                   }}
                 >
                   <div style={{ marginBottom: "12px" }}>
-                    <Logo size="sm" variant="light" />
+                    <Logo type="group" color="dark" layout="mark" size="sm" />
                   </div>
                   <p style={{ fontSize: "13px", fontWeight: 500, color: colors.text, marginBottom: "4px" }}>
                     {b.nameJa}

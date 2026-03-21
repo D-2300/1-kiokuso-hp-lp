@@ -34,7 +34,7 @@ export default function EntityFooter({
       }}
     >
       <div style={{ marginBottom: "32px" }}>
-        <Logo size="md" variant="dark" />
+        <Logo type="group" color="dark" layout="mark" size="md" />
       </div>
 
       <p

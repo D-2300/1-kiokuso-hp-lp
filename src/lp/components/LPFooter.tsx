@@ -11,7 +11,7 @@ export default function LPFooter() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", marginBottom: "8px" }}>
-        <Logo size="sm" variant="dark" />
+        <Logo type="studio" color="dark" layout="mark" size="sm" />
         <span style={{ fontSize: "13px", fontWeight: 400, letterSpacing: "0.1em", color: "#333" }}>
           記憶荘 Studio
         </span>

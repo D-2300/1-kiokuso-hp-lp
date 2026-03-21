@@ -27,7 +27,7 @@ export default function StudioNav() {
       }}
     >
       <Link to="/studio" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
-        <Logo size="sm" variant="dark" />
+        <Logo type="studio" color="gold" layout="mark" size="sm" />
         <span
           style={{
             color: "#EAF0E8",
