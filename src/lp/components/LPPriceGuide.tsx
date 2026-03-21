@@ -8,59 +8,77 @@ const guides = [
 
 export default function LPPriceGuide() {
   return (
-    <section style={{ backgroundColor: "#fff", padding: "32px 0 24px" }}>
-      <p
-        style={{
-          textAlign: "center",
-          fontSize: "13px",
-          fontWeight: 700,
-          color: "#333",
-          margin: "0 0 20px",
-          padding: "0 20px",
-        }}
-      >
-        業態別 価格の目安
-      </p>
-      <div
-        style={{
-          display: "flex",
-          overflowX: "auto",
-          scrollSnapType: "x mandatory",
-          gap: "16px",
-          padding: "0 20px",
-          scrollbarWidth: "none",
-        }}
-      >
-        {guides.map((g) => (
-          <div
-            key={g.type}
-            style={{
-              flexShrink: 0,
-              width: "clamp(128px, 28vw, 160px)",
-              scrollSnapAlign: "start",
-              textAlign: "center",
-            }}
-          >
-            <img
-              src={g.img}
-              alt={g.type}
-              style={{
-                width: "clamp(96px, 20vw, 128px)",
-                height: "clamp(96px, 20vw, 128px)",
-                borderRadius: "50%",
-                objectFit: "cover",
-                margin: "0 auto 12px",
-                display: "block",
-              }}
-            />
-            <p style={{ margin: "0 0 4px", fontSize: "15px", fontWeight: 500, color: "#333" }}>{g.type}</p>
-            <p style={{ margin: 0, fontSize: "14px", color: "#C9A84C", fontWeight: 700 }}>{g.range}</p>
-          </div>
-        ))}
+    <section style={{ backgroundColor: "#fff", padding: "48px 20px" }}>
+      <div style={{ maxWidth: "960px", margin: "0 auto" }}>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "clamp(20px, 3.5vw, 28px)",
+            fontWeight: 700,
+            color: "#222",
+            margin: "0 0 32px",
+          }}
+        >
+          業態別 価格の目安
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+            gap: "24px",
+            justifyItems: "center",
+          }}
+        >
+          {guides.map((g) => (
+            <div key={g.type} style={{ textAlign: "center" }}>
+              <img
+                src={g.img}
+                alt={g.type}
+                style={{
+                  width: "clamp(100px, 18vw, 144px)",
+                  height: "clamp(100px, 18vw, 144px)",
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  display: "block",
+                  margin: "0 auto 12px",
+                  outline: "2px solid #e8e8e8",
+                  outlineOffset: "2px",
+                }}
+              />
+              <p
+                style={{
+                  margin: "0 0 4px",
+                  fontSize: "clamp(14px, 2.5vw, 17px)",
+                  fontWeight: 700,
+                  color: "#222",
+                }}
+              >
+                {g.type}
+              </p>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "clamp(13px, 2vw, 15px)",
+                  fontWeight: 500,
+                  color: "#C9A84C",
+                }}
+              >
+                {g.range}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "13px",
+            color: "#bbb",
+            marginTop: "24px",
+          }}
+        >
+          ※居抜き〜スケルトンを含む目安の概算です。物件状況により変動します。
+        </p>
       </div>
-      <p style={{ textAlign: "center", fontSize: "12px", color: "#bbb", marginTop: "16px", padding: "0 20px" }}>
-        ※居抜き〜スケルトンを含む目安の総額です。物件状況により変動します。
-      </p>
     </section>
   );
 }

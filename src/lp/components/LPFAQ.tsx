@@ -27,16 +27,27 @@ export default function LPFAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section style={{ backgroundColor: "#fff", padding: "40px 20px" }}>
+    <section style={{ backgroundColor: "#fff", padding: "48px 20px" }}>
       <div style={{ maxWidth: "960px", margin: "0 auto" }}>
-        <p style={{ margin: "0 0 24px", fontSize: "14px", fontWeight: 700, color: "#333", textAlign: "center" }}>
+        <p
+          style={{
+            margin: "0 0 28px",
+            fontSize: "clamp(20px, 3.5vw, 28px)",
+            fontWeight: 700,
+            color: "#222",
+            textAlign: "center",
+          }}
+        >
           よくあるご質問
         </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {faqs.map((faq, i) => (
             <div
               key={i}
-              style={{ borderTop: "1px solid #eee", ...(i === faqs.length - 1 ? { borderBottom: "1px solid #eee" } : {}) }}
+              style={{
+                borderTop: "1px solid #eee",
+                ...(i === faqs.length - 1 ? { borderBottom: "1px solid #eee" } : {}),
+              }}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
@@ -45,7 +56,7 @@ export default function LPFAQ() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  padding: "16px 0",
+                  padding: "18px 0",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
@@ -53,15 +64,32 @@ export default function LPFAQ() {
                   gap: "12px",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <span style={{ fontSize: "13px", color: "#C9A84C", fontWeight: 700, flexShrink: 0, marginTop: "1px" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+                  <span
+                    style={{
+                      fontSize: "clamp(13px, 2vw, 15px)",
+                      color: "#C9A84C",
+                      fontWeight: 700,
+                      flexShrink: 0,
+                      marginTop: "1px",
+                    }}
+                  >
                     Q
                   </span>
-                  <span style={{ fontSize: "13px", color: "#333", lineHeight: 1.7 }}>{faq.q}</span>
+                  <span
+                    style={{
+                      fontSize: "clamp(14px, 2.5vw, 16px)",
+                      fontWeight: 500,
+                      color: "#222",
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    {faq.q}
+                  </span>
                 </div>
                 <span
                   style={{
-                    fontSize: "18px",
+                    fontSize: "20px",
                     color: "#4A6741",
                     flexShrink: 0,
                     lineHeight: 1,
@@ -74,11 +102,28 @@ export default function LPFAQ() {
                 </span>
               </button>
               {open === i && (
-                <div style={{ padding: "0 0 16px 23px", display: "flex", gap: "10px" }}>
-                  <span style={{ fontSize: "13px", color: "#4A6741", fontWeight: 700, flexShrink: 0, marginTop: "1px" }}>
+                <div style={{ padding: "0 0 18px 28px", display: "flex", gap: "12px" }}>
+                  <span
+                    style={{
+                      fontSize: "clamp(13px, 2vw, 15px)",
+                      color: "#4A6741",
+                      fontWeight: 700,
+                      flexShrink: 0,
+                      marginTop: "1px",
+                    }}
+                  >
                     A
                   </span>
-                  <p style={{ margin: 0, fontSize: "13px", color: "#666", lineHeight: 1.8 }}>{faq.a}</p>
+                  <p
+                    style={{
+                      margin: 0,
+                      fontSize: "clamp(13px, 2vw, 15px)",
+                      color: "#555",
+                      lineHeight: 1.85,
+                    }}
+                  >
+                    {faq.a}
+                  </p>
                 </div>
               )}
             </div>

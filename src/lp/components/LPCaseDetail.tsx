@@ -27,13 +27,13 @@ const cases = [
 
 export default function LPCaseDetail() {
   return (
-    <section style={{ backgroundColor: "#fff", padding: "32px 0" }}>
+    <section style={{ backgroundColor: "#fff", padding: "32px 0 48px" }}>
       <div
         style={{
           display: "flex",
           overflowX: "auto",
           scrollSnapType: "x mandatory",
-          gap: "12px",
+          gap: "16px",
           padding: "0 20px",
           scrollbarWidth: "none",
         }}
@@ -43,24 +43,43 @@ export default function LPCaseDetail() {
             key={c.type}
             style={{
               flexShrink: 0,
-              width: "75%",
+              width: "clamp(280px, 78vw, 500px)",
               scrollSnapAlign: "start",
               border: "1px solid #eee",
-              borderRadius: "8px",
+              borderRadius: "12px",
               overflow: "hidden",
               backgroundColor: "#fff",
+              boxShadow: "0 3px 12px rgba(0,0,0,0.07)",
             }}
           >
-            <img src={c.main} alt={c.type} style={{ width: "100%", height: "clamp(160px, 20vw, 224px)", objectFit: "cover" }} />
+            <img
+              src={c.main}
+              alt={c.type}
+              style={{
+                width: "100%",
+                height: "clamp(196px, 24vw, 256px)",
+                objectFit: "cover",
+                display: "block",
+              }}
+            />
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "4px", padding: "8px" }}>
               {c.subs.map((src, j) => (
-                <div key={j} style={{ height: "56px", borderRadius: "4px", overflow: "hidden" }}>
+                <div key={j} style={{ height: "64px", borderRadius: "5px", overflow: "hidden" }}>
                   <img src={src} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
               ))}
             </div>
-            <div style={{ padding: "12px 16px 16px" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "8px", marginBottom: "12px" }}>
+            <div style={{ padding: "16px 20px 20px" }}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr 1fr 1fr",
+                  gap: "8px",
+                  marginBottom: "16px",
+                  paddingBottom: "16px",
+                  borderBottom: "1px solid #f0f0f0",
+                }}
+              >
                 {[
                   { label: "業態", value: c.type },
                   { label: "坪数", value: c.tsubo },
@@ -68,19 +87,19 @@ export default function LPCaseDetail() {
                   { label: "工期", value: c.period },
                 ].map((spec) => (
                   <div key={spec.label}>
-                    <p style={{ margin: 0, fontSize: "11px", color: "#999" }}>{spec.label}</p>
-                    <p style={{ margin: "2px 0 0", fontSize: "14px", fontWeight: 500, color: "#333" }}>
+                    <p style={{ margin: 0, fontSize: "11px", color: "#aaa", fontWeight: 500 }}>{spec.label}</p>
+                    <p style={{ margin: "3px 0 0", fontSize: "clamp(13px, 2vw, 15px)", fontWeight: 700, color: "#222" }}>
                       {spec.value}
                     </p>
                   </div>
                 ))}
               </div>
-              <p style={{ margin: 0, fontSize: "14px", color: "#666", lineHeight: 1.8 }}>{c.comment}</p>
+              <p style={{ margin: 0, fontSize: "clamp(13px, 2vw, 14px)", color: "#555", lineHeight: 1.85 }}>{c.comment}</p>
             </div>
           </div>
         ))}
       </div>
-      <p style={{ textAlign: "center", fontSize: "11px", color: "#aaa", marginTop: "12px", padding: "0 20px" }}>
+      <p style={{ textAlign: "center", fontSize: "12px", color: "#bbb", marginTop: "14px", padding: "0 20px" }}>
         ← スワイプで他の事例を見る →
       </p>
     </section>
