@@ -122,7 +122,7 @@ export default function GroupTop() {
           }}
         >
           <div style={{ marginBottom: "8px" }}>
-            <Logo entity="group" color="gold" layout="mark" height={72} />
+            <Logo entity="group" color="gold" layout="mark" height={88} />
           </div>
           <p className="hero-anton">
             KIOKUSO

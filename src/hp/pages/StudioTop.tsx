@@ -68,7 +68,7 @@ export default function StudioTop() {
           }}
         >
           <div style={{ marginBottom: "8px" }}>
-            <Logo entity="studio" color="gold" layout="mark" height={64} />
+            <Logo entity="studio" color="gold" layout="mark" height={76} />
           </div>
           <div style={{ textAlign: "center" }}>
             <p className="hero-anton" style={{ lineHeight: 1.1, margin: 0 }}>KIOKUSO</p>

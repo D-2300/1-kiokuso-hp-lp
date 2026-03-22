@@ -128,7 +128,7 @@ export default function ComingSoon({
           }}
         >
           <div style={{ marginBottom: "8px" }}>
-            <Logo entity={logoEntity} color="gold" layout="mark" height={72} />
+            <Logo entity={logoEntity} color="gold" layout="mark" height={logoEntity === "fudousan" ? 60 : logoEntity === "koumuten" || logoEntity === "reform" ? 68 : 72} />
           </div>
           {nameLine2 ? (
             <div style={{ textAlign: "center" }}>
