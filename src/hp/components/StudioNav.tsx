@@ -8,8 +8,6 @@ const navLinks = [
   { to: "/studio/pricing", label: "Pricing" },
 ];
 
-const SOLID_BG = "rgba(248,245,242,0.95)";
-
 const antonStyle: React.CSSProperties = {
   fontFamily: "'Anton', sans-serif",
   fontSize: "14px",
@@ -17,7 +15,7 @@ const antonStyle: React.CSSProperties = {
   letterSpacing: "0.1em",
   textTransform: "uppercase",
   textDecoration: "none",
-  transition: "color 0.2s",
+  transition: "color 0.3s, opacity 0.3s",
 };
 
 export default function StudioNav() {
@@ -40,20 +38,20 @@ export default function StudioNav() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const navBg = scrolled || menuOpen ? SOLID_BG : "transparent";
-  const isScrolledOrMenu = scrolled || menuOpen;
+  const solid = scrolled || menuOpen;
 
+  const navBg = solid ? "rgba(248,245,242,0.95)" : "transparent";
   const linkColor = (active: boolean) =>
-    isScrolledOrMenu
-      ? active ? "#1A1A1A" : "#444444"
+    solid
+      ? active ? "#1A1A1A" : "#555555"
       : active ? "#ffffff" : "rgba(255,255,255,0.75)";
-
-  const groupColor = isScrolledOrMenu ? "#666666" : "rgba(255,255,255,0.7)";
-  const logoSrc = isScrolledOrMenu
+  const hoverColor = solid ? "#000000" : "#ffffff";
+  const groupColor = solid ? "#888888" : "rgba(255,255,255,0.6)";
+  const hamColor = solid ? "#1A1A1A" : "#ffffff";
+  const logoSrc = solid
     ? "/assets/logos/logo-studio-h-dark.webp"
     : "/assets/logos/logo-studio-h-gold.webp";
-
-  const hamColor = isScrolledOrMenu ? "#1A1A1A" : "#ffffff";
+  const borderColor = solid ? "1px solid rgba(0,0,0,0.12)" : "1px solid rgba(255,255,255,0.2)";
 
   return (
     <>
@@ -70,7 +68,6 @@ export default function StudioNav() {
           alignItems: "center",
           padding: "0 24px",
           transition: "background-color 0.3s ease, box-shadow 0.3s ease",
-          borderBottom: "none",
           boxShadow: scrolled ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
           backdropFilter: scrolled ? "blur(8px)" : "none",
         }}
@@ -93,7 +90,7 @@ export default function StudioNav() {
               key={link.to}
               to={link.to}
               style={{ ...antonStyle, color: linkColor(location.pathname === link.to) }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = isScrolledOrMenu ? "#111111" : "#ffffff")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = hoverColor)}
               onMouseLeave={(e) => (e.currentTarget.style.color = linkColor(location.pathname === link.to))}
             >
               {link.label}
@@ -107,7 +104,7 @@ export default function StudioNav() {
               fontSize: "12px",
               marginLeft: "8px",
               paddingLeft: "16px",
-              borderLeft: isScrolledOrMenu ? "1px solid rgba(0,0,0,0.15)" : "1px solid rgba(255,255,255,0.2)",
+              borderLeft: borderColor,
             }}
           >
             ← Group
@@ -190,8 +187,8 @@ export default function StudioNav() {
           to="/"
           style={{
             ...antonStyle,
-            color: "#fff",
-            fontSize: "18px",
+            color: "#888888",
+            fontSize: "14px",
             letterSpacing: "0.15em",
           }}
         >
