@@ -59,6 +59,23 @@ export default function StudioNav() {
             {link.label}
           </Link>
         ))}
+        <Link
+          to="/"
+          style={{
+            fontSize: "11px",
+            color: "rgba(255,255,255,0.5)",
+            textDecoration: "none",
+            letterSpacing: "0.05em",
+            marginLeft: "8px",
+            paddingLeft: "16px",
+            borderLeft: "1px solid rgba(255,255,255,0.2)",
+            transition: "opacity 0.2s",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.5")}
+        >
+          ← Group
+        </Link>
       </div>
     </nav>
   );

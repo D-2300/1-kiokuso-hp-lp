@@ -70,6 +70,22 @@ export default function EntityNav({
             {link.label}
           </Link>
         ))}
+        <Link
+          to="/"
+          style={{
+            fontSize: "11px",
+            color: "rgba(255,255,255,0.6)",
+            textDecoration: "none",
+            letterSpacing: "0.05em",
+            transition: "opacity 0.2s",
+            paddingLeft: links.length > 0 ? "8px" : "0",
+            borderLeft: links.length > 0 ? "1px solid rgba(255,255,255,0.2)" : "none",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.6")}
+        >
+          ← Group Top
+        </Link>
       </div>
     </nav>
   );
