@@ -7,11 +7,11 @@ import { colors } from "../../shared/design-tokens";
 
 export default function GroupAbout() {
   return (
-    <div style={{ backgroundColor: colors.beige, minHeight: "100vh", paddingTop: "64px" }}>
+    <div style={{ backgroundColor: colors.beige, minHeight: "100vh" }}>
       <GroupNav />
 
       {/* SmallHero */}
-      <section style={{ position: "relative", height: "280px", overflow: "hidden" }}>
+      <section style={{ position: "relative", height: "50vh", minHeight: "320px", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, height: "100%", backgroundColor: "#D8D3CE" }}>
           <img
             src="/assets/textures/yakisugi-charred-wood.webp"
