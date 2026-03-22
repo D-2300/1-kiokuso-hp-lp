@@ -83,6 +83,8 @@ export default function GroupAbout() {
         </div>
       </section>
 
+      <TextureBand src="/assets/textures/yakisugi-charred-wood.webp" height={180} />
+
       {/* ブロック1：記憶が宿る場所 */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
@@ -141,18 +143,13 @@ export default function GroupAbout() {
         </section>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/kintsugi-bowl-side.webp" height={240} />
-
-      <GoldDivider />
-
       {/* ブロック2：制約の中の美しさ */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
-          <TextureBand src="/assets/textures/kintsugi-bowl-inside.webp" height={220} />
           <img
             src="/images/hp-wood-dark.webp"
             alt=""
-            style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", marginTop: "48px", filter: "grayscale(100%)" }}
+            style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }}
           />
           <div
             style={{
@@ -174,12 +171,9 @@ export default function GroupAbout() {
         </section>
       </ScrollFadeIn>
 
-      <GoldDivider />
-
       {/* ブロック3：金継ぎとの接続 */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
-          <TextureBand src="/assets/textures/old-new-timber-junction.webp" height={220} />
           <div
             style={{
               maxWidth: "560px",
