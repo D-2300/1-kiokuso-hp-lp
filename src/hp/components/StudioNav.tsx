@@ -49,9 +49,9 @@ export default function StudioNav() {
       : active ? "#ffffff" : "#A8BFA2";
 
   const groupColor = isScrolledOrMenu ? "#999999" : "rgba(255,255,255,0.5)";
-  const logoSrc = isScrolledOrMenu
-    ? "/images/logo-studio-h-dark.webp"
-    : "/images/logo-studio-h-gold.webp";
+  const logoSrc = scrolled
+    ? "/assets/logos/logo-studio-h-dark.webp"
+    : "/assets/logos/logo-studio-h-gold.webp";
 
   const hamColor = isScrolledOrMenu ? "#333333" : "#EAF0E8";
 
@@ -70,6 +70,7 @@ export default function StudioNav() {
           alignItems: "center",
           padding: "0 24px",
           transition: "background-color 0.3s ease",
+          borderBottom: scrolled ? "1px solid rgba(0,0,0,0.1)" : "none",
         }}
       >
         <Link to="/studio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
