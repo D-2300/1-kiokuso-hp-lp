@@ -2,6 +2,7 @@ import StudioNav from "../components/StudioNav";
 import StudioCTA from "../components/StudioCTA";
 import StudioFooter from "../components/StudioFooter";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
+import TextureBand from "../../shared/TextureBand";
 import { colors } from "../../shared/design-tokens";
 
 const works = [
@@ -87,43 +88,41 @@ export default function StudioWorks() {
 
       {/* 事例一覧 */}
       <div style={{ paddingTop: "16px" }}>
-        {works.map((work, i) => (
-          <ScrollFadeIn key={work.title}>
-            <div style={{ paddingBottom: "64px" }}>
-              <img src={work.main} alt={work.title} style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
-              <div style={{ maxWidth: "560px", margin: "0 auto", padding: "32px 24px 0" }}>
-                <p style={{ fontSize: "18px", fontWeight: 500, color: colors.text }}>{work.title}</p>
-                <p style={{ fontSize: "12px", color: colors.mute, marginTop: "6px", marginBottom: "16px" }}>
-                  {work.type} ｜ {work.tsubo} ｜ {work.cost} ｜ {work.period}
-                </p>
-                <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, whiteSpace: "pre-line" }}>
-                  {work.story}
-                </p>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "8px",
-                    marginTop: "20px",
-                  }}
-                >
-                  {work.subs.map((src, j) => (
-                    <img key={j} src={src} alt="" style={{ aspectRatio: "1/1", objectFit: "cover", width: "100%" }} />
-                  ))}
+        {[
+          { work: works[0], textureSrc: "/assets/textures/oak-hardwood-floor.webp" },
+          { work: works[1], textureSrc: "/assets/textures/rusted-steel-plates.webp" },
+          { work: works[2], textureSrc: "/assets/textures/shikkui-plaster-closeup.webp" },
+          { work: works[3], textureSrc: null },
+        ].map(({ work, textureSrc }) => (
+          <div key={work.title}>
+            <ScrollFadeIn>
+              <div style={{ paddingBottom: "64px" }}>
+                <img src={work.main} alt={work.title} style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
+                <div style={{ maxWidth: "560px", margin: "0 auto", padding: "32px 24px 0" }}>
+                  <p style={{ fontSize: "18px", fontWeight: 500, color: colors.text }}>{work.title}</p>
+                  <p style={{ fontSize: "12px", color: colors.mute, marginTop: "6px", marginBottom: "16px" }}>
+                    {work.type} ｜ {work.tsubo} ｜ {work.cost} ｜ {work.period}
+                  </p>
+                  <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, whiteSpace: "pre-line" }}>
+                    {work.story}
+                  </p>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(3, 1fr)",
+                      gap: "8px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    {work.subs.map((src, j) => (
+                      <img key={j} src={src} alt="" style={{ aspectRatio: "1/1", objectFit: "cover", width: "100%" }} />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-            {i < works.length - 1 && (
-              <div
-                style={{
-                  width: "1px",
-                  height: "32px",
-                  backgroundColor: colors.fukamidori.light,
-                  margin: "0 auto",
-                }}
-              />
-            )}
-          </ScrollFadeIn>
+            </ScrollFadeIn>
+            {textureSrc && <TextureBand src={textureSrc} height={180} />}
+          </div>
         ))}
       </div>
 

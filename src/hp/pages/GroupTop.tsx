@@ -5,6 +5,7 @@ import GoldDivider from "../../shared/GoldDivider";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
 import SectionHeading from "../../shared/SectionHeading";
 import Logo from "../../shared/Logo";
+import TextureBand from "../../shared/TextureBand";
 import { colors } from "../../shared/design-tokens";
 
 const businesses = [
@@ -149,6 +150,8 @@ export default function GroupTop() {
         </section>
       </ScrollFadeIn>
 
+      <TextureBand src="/assets/textures/yakisugi-charred-wood.webp" height={220} />
+
       {/* Group */}
       <ScrollFadeIn>
         <section style={{ backgroundColor: colors.beige, padding: "80px 32px" }}>
@@ -228,6 +231,8 @@ export default function GroupTop() {
           </div>
         </section>
       </ScrollFadeIn>
+
+      <TextureBand src="/assets/textures/mortar-wall-cracks.webp" height={180} />
 
       {/* About 導線 */}
       <ScrollFadeIn>

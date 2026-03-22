@@ -3,6 +3,7 @@ import StudioNav from "../components/StudioNav";
 import StudioCTA from "../components/StudioCTA";
 import StudioFooter from "../components/StudioFooter";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
+import TextureBand from "../../shared/TextureBand";
 import { colors } from "../../shared/design-tokens";
 
 export default function StudioTop() {
@@ -114,6 +115,8 @@ export default function StudioTop() {
         </section>
       </ScrollFadeIn>
 
+      <TextureBand src="/assets/textures/shikkui-plaster-closeup.webp" height={200} />
+
       {/* Works Preview */}
       <ScrollFadeIn>
         <div>
@@ -156,6 +159,8 @@ export default function StudioTop() {
           すべての施工事例を見る →
         </Link>
       </div>
+
+      <TextureBand src="/assets/textures/tile-water-droplets-warm.webp" height={180} />
 
       {/* Links */}
       <ScrollFadeIn>

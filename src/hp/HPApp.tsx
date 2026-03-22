@@ -38,6 +38,8 @@ export default function HPApp() {
             heroImg="/assets/textures/koumuten-hero.webp"
             photo1="/assets/textures/koumuten-hands.webp"
             photo2="/images/hp-hallway-light.webp"
+            textureBand1="/assets/textures/rusted-steel-cracked.webp"
+            textureBand2="/assets/textures/peeling-paint-layers.webp"
           />
         }
       />
@@ -62,6 +64,8 @@ export default function HPApp() {
             heroImg="/assets/textures/reform-hero.webp"
             photo1="/assets/textures/reform-keys.webp"
             photo2="/images/hp-wood-warm.webp"
+            textureBand1="/assets/textures/shoji-light-shadow.webp"
+            textureBand2="/assets/textures/tatami-weave-side.webp"
           />
         }
       />
@@ -86,6 +90,8 @@ export default function HPApp() {
             heroImg="/assets/textures/fudousan-hero.webp"
             photo1="/assets/textures/fudousan-keys.webp"
             photo2="/images/hp-hallway-garden.webp"
+            textureBand1="/assets/textures/mortar-wall-cracks.webp"
+            textureBand2="/assets/textures/tile-water-droplets-golden.webp"
           />
         }
       />

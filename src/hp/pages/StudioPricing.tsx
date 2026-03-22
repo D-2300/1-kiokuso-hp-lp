@@ -4,6 +4,7 @@ import StudioFooter from "../components/StudioFooter";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
 import GoldDivider from "../../shared/GoldDivider";
 import SectionHeading from "../../shared/SectionHeading";
+import TextureBand from "../../shared/TextureBand";
 import { colors } from "../../shared/design-tokens";
 
 const priceRows = [
@@ -71,6 +72,8 @@ export default function StudioPricing() {
           <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px" }}>料金の考え方</p>
         </div>
       </section>
+
+      <TextureBand src="/assets/textures/earthen-wall-layers.webp" height={200} />
 
       {/* なぜこの値段なのか */}
       <ScrollFadeIn>

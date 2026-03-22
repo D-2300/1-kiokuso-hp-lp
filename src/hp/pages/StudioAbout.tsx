@@ -3,6 +3,7 @@ import StudioCTA from "../components/StudioCTA";
 import StudioFooter from "../components/StudioFooter";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
 import GoldDivider from "../../shared/GoldDivider";
+import TextureBand from "../../shared/TextureBand";
 import { colors } from "../../shared/design-tokens";
 
 const points = [
@@ -101,21 +102,52 @@ export default function StudioAbout() {
       </ScrollFadeIn>
 
       {/* どうやっているか */}
-      {points.map((pt) => (
-        <ScrollFadeIn key={pt.heading}>
-          <div>
-            <img src={pt.img} alt={pt.heading} style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
-            <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 56px" }}>
-              <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "12px" }}>
-                {pt.heading}
-              </p>
-              <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, whiteSpace: "pre-line" }}>
-                {pt.body}
-              </p>
-            </div>
+      <TextureBand src="/assets/textures/shikkui-plaster-wide.webp" height={220} />
+      <ScrollFadeIn key={points[0].heading}>
+        <div>
+          <img src={points[0].img} alt={points[0].heading} style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
+          <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 56px" }}>
+            <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "12px" }}>
+              {points[0].heading}
+            </p>
+            <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, whiteSpace: "pre-line" }}>
+              {points[0].body}
+            </p>
           </div>
-        </ScrollFadeIn>
-      ))}
+        </div>
+      </ScrollFadeIn>
+
+      <TextureBand src="/assets/textures/ceramic-tile-blue-glaze.webp" height={180} />
+      <ScrollFadeIn key={points[1].heading}>
+        <div>
+          <img src={points[1].img} alt={points[1].heading} style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
+          <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 56px" }}>
+            <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "12px" }}>
+              {points[1].heading}
+            </p>
+            <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, whiteSpace: "pre-line" }}>
+              {points[1].body}
+            </p>
+          </div>
+        </div>
+      </ScrollFadeIn>
+
+      <TextureBand src="/assets/textures/brass-patina.webp" height={180} />
+      <ScrollFadeIn key={points[2].heading}>
+        <div>
+          <img src={points[2].img} alt={points[2].heading} style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
+          <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 56px" }}>
+            <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "12px" }}>
+              {points[2].heading}
+            </p>
+            <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, whiteSpace: "pre-line" }}>
+              {points[2].body}
+            </p>
+          </div>
+        </div>
+      </ScrollFadeIn>
+
+      <TextureBand src="/assets/textures/ceramic-tile-pair.webp" height={180} />
 
       {/* DAI紹介 */}
       <GoldDivider />

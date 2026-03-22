@@ -1,6 +1,7 @@
 import EntityNav from "../components/EntityNav";
 import EntityFooter from "../components/EntityFooter";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
+import TextureBand from "../../shared/TextureBand";
 
 interface ComingSoonProps {
   name: string;
@@ -20,6 +21,8 @@ interface ComingSoonProps {
   heroImg?: string;
   photo1?: string;
   photo2?: string;
+  textureBand1?: string;
+  textureBand2?: string;
 }
 
 export default function ComingSoon({
@@ -40,6 +43,8 @@ export default function ComingSoon({
   heroImg,
   photo1,
   photo2,
+  textureBand1,
+  textureBand2,
 }: ComingSoonProps) {
   const taglineLines = tagline.split("\n");
 
@@ -145,6 +150,8 @@ export default function ComingSoon({
         </div>
       </section>
 
+      {textureBand1 && <TextureBand src={textureBand1} height={180} />}
+
       {/* 一言コピー + 準備中バッジ */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 24px", textAlign: "center" }}>
@@ -239,6 +246,8 @@ export default function ComingSoon({
           </div>
         </section>
       </ScrollFadeIn>
+
+      {textureBand2 && <TextureBand src={textureBand2} height={180} />}
 
       <EntityFooter
         themeColor={themeColor}
