@@ -8,7 +8,7 @@ const navLinks = [
   { to: "/studio/pricing", label: "Pricing" },
 ];
 
-const SOLID_BG = "rgba(74,103,65,0.95)";
+const SOLID_BG = "rgba(248,245,242,0.95)";
 
 const antonStyle: React.CSSProperties = {
   fontFamily: "'Anton', sans-serif",
@@ -45,15 +45,15 @@ export default function StudioNav() {
 
   const linkColor = (active: boolean) =>
     isScrolledOrMenu
-      ? active ? "#111111" : "#333333"
-      : active ? "#ffffff" : "#A8BFA2";
+      ? active ? "#1A1A1A" : "#444444"
+      : active ? "#ffffff" : "rgba(255,255,255,0.75)";
 
-  const groupColor = isScrolledOrMenu ? "#666666" : "rgba(255,255,255,0.5)";
-  const logoSrc = scrolled
+  const groupColor = isScrolledOrMenu ? "#666666" : "rgba(255,255,255,0.7)";
+  const logoSrc = isScrolledOrMenu
     ? "/assets/logos/logo-studio-h-dark.webp"
     : "/assets/logos/logo-studio-h-gold.webp";
 
-  const hamColor = isScrolledOrMenu ? "#333333" : "#EAF0E8";
+  const hamColor = isScrolledOrMenu ? "#1A1A1A" : "#ffffff";
 
   return (
     <>
@@ -69,8 +69,10 @@ export default function StudioNav() {
           display: "flex",
           alignItems: "center",
           padding: "0 24px",
-          transition: "background-color 0.3s ease",
-          borderBottom: scrolled ? "1px solid rgba(0,0,0,0.1)" : "none",
+          transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+          borderBottom: "none",
+          boxShadow: scrolled ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+          backdropFilter: scrolled ? "blur(8px)" : "none",
         }}
       >
         <Link to="/studio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
@@ -140,7 +142,7 @@ export default function StudioNav() {
           position: "fixed",
           inset: 0,
           zIndex: 300,
-          backgroundColor: SOLID_BG,
+          backgroundColor: "rgba(248,245,242,0.98)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -161,7 +163,7 @@ export default function StudioNav() {
             background: "none",
             border: "none",
             cursor: "pointer",
-            color: "#EAF0E8",
+            color: "#1A1A1A",
             fontSize: "28px",
             lineHeight: 1,
             padding: "8px",
@@ -176,7 +178,7 @@ export default function StudioNav() {
             to={link.to}
             style={{
               ...antonStyle,
-              color: "#fff",
+              color: "#1A1A1A",
               fontSize: "18px",
               letterSpacing: "0.15em",
             }}
