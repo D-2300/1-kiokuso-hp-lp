@@ -40,8 +40,27 @@ export default function StudioFooter() {
           flexWrap: "wrap",
         }}
       >
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            fontFamily: "'Anton', sans-serif",
+            fontSize: "14px",
+            fontWeight: 400,
+            letterSpacing: "0.1em",
+            color: "#A8BFA2",
+            textTransform: "uppercase",
+            padding: 0,
+            transition: "color 0.2s",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#EAF0E8")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#A8BFA2")}
+        >
+          TOP
+        </button>
         {[
-          { to: "/studio", label: "Top" },
           { to: "/studio/about", label: "About" },
           { to: "/studio/works", label: "Works" },
           { to: "/studio/pricing", label: "Pricing" },

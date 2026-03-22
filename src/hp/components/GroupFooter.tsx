@@ -40,8 +40,27 @@ export default function GroupFooter() {
           flexWrap: "wrap",
         }}
       >
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            fontFamily: "'Anton', sans-serif",
+            fontSize: "14px",
+            fontWeight: 400,
+            letterSpacing: "0.1em",
+            color: "#D4A0A0",
+            textTransform: "uppercase",
+            padding: 0,
+            transition: "color 0.2s",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#F5EAEA")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#D4A0A0")}
+        >
+          TOP
+        </button>
         {[
-          { to: "/", label: "Top" },
           { to: "/about", label: "About" },
           { to: "/studio", label: "Studio" },
           { to: "/koumuten", label: "Build" },

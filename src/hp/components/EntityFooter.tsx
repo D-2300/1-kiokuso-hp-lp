@@ -18,6 +18,7 @@ interface EntityFooterProps {
   tagline?: string;
   logoEntity?: LogoEntity;
   links?: FooterLink[];
+  showTopButton?: boolean;
 }
 
 export default function EntityFooter({
@@ -28,6 +29,7 @@ export default function EntityFooter({
   tagline,
   logoEntity = "group",
   links = [],
+  showTopButton = false,
 }: EntityFooterProps) {
   return (
     <footer
@@ -71,7 +73,7 @@ export default function EntityFooter({
         </p>
       )}
 
-      {links.length > 0 && (
+      {(showTopButton || links.length > 0) && (
         <nav
           style={{
             display: "flex",
@@ -81,6 +83,26 @@ export default function EntityFooter({
             flexWrap: "wrap",
           }}
         >
+          {showTopButton && (
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontFamily: "'Anton', sans-serif",
+                fontSize: "14px",
+                fontWeight: 400,
+                letterSpacing: "0.1em",
+                color: themeLight,
+                textTransform: "uppercase",
+                padding: 0,
+                transition: "color 0.2s",
+              }}
+            >
+              TOP
+            </button>
+          )}
           {links.map((link) => (
             <Link
               key={link.to}

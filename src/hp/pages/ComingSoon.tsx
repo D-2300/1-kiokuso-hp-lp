@@ -279,6 +279,7 @@ export default function ComingSoon({
         name={nameJa}
         tagline="想いが残る場所を、つくる。"
         logoEntity={logoEntity}
+        showTopButton={true}
         links={[{ to: "/", label: "← Group Top" }]}
       />
     </div>
