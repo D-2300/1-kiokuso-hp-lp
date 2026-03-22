@@ -85,22 +85,60 @@ export default function StudioNav() {
 
       <div style={{
         position: "fixed", inset: 0, zIndex: 300,
-        backgroundColor: "rgba(248,245,242,0.98)",
+        backgroundColor: "rgba(74,103,65,0.97)",
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "40px",
         opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none",
         transition: "opacity 0.3s",
       }} className="snav-ov">
         <button onClick={() => setOpen(false)} style={{
           position:"absolute", top:"20px", right:"24px", background:"none", border:"none",
-          cursor:"pointer", color:"#1A1A1A", fontSize:"28px", padding:"8px",
+          cursor:"pointer", color:"#FFFFFF", fontSize:"28px", padding:"8px",
         }}>✕</button>
-        {navLinks.map((l) => (
-          <Link key={l.to} to={l.to} style={{ ...font, color: "#1A1A1A", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
-            {l.label}
-          </Link>
-        ))}
-        <Link to="/" style={{ ...font, color: "#888", fontSize: "14px", letterSpacing: "0.15em", textDecoration: "none" }}>
-          ← Group
+        {/* スタジオ内ページ */}
+        <p style={{
+          fontSize: "10px",
+          fontWeight: 400,
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "rgba(255,255,255,0.4)",
+          margin: 0,
+          fontFamily: "'Anton', sans-serif",
+        }}>
+          Studio
+        </p>
+        <Link to="/studio" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Top
+        </Link>
+        <Link to="/studio/about" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          About
+        </Link>
+        <Link to="/studio/works" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Works
+        </Link>
+        <Link to="/studio/pricing" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Pricing
+        </Link>
+
+        {/* 区切り線 */}
+        <div style={{
+          width: "40px",
+          height: "1px",
+          backgroundColor: "rgba(255,255,255,0.2)",
+          margin: "4px 0",
+        }} />
+
+        {/* グループへの導線 */}
+        <Link to="/" style={{
+          ...font,
+          color: "rgba(255,255,255,0.5)",
+          fontSize: "13px",
+          letterSpacing: "0.15em",
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          gap: "6px",
+        }}>
+          記憶荘グループ TOP
         </Link>
       </div>
 
