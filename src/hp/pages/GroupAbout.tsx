@@ -22,7 +22,7 @@ export default function GroupAbout() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(180deg, rgba(139,58,58,0.75) 0%, rgba(139,58,58,0.55) 100%)",
+              background: "rgba(0,0,0,0.45)",
             }}
           />
         </div>
