@@ -1,3 +1,4 @@
+import { useState } from "react";
 import StudioNav from "../components/StudioNav";
 import StudioCTA from "../components/StudioCTA";
 import StudioFooter from "../components/StudioFooter";
@@ -15,6 +16,98 @@ const priceRows = [
   { type: "ジム・フィットネス", range: "150万〜350万円" },
   { type: "物販・アパレル", range: "80万〜200万円" },
 ];
+
+const flowSteps = [
+  {
+    num: "0",
+    title: "ご相談（無料）",
+    body: "LINEで気軽にご相談いただけます。物件の写真や間取り図をお送りいただければ、概算をお伝えします。物件が決まる前でも構いません。",
+    fee: "無料",
+  },
+  {
+    num: "1",
+    title: "現地調査・ヒアリング",
+    body: "実際に物件を見て、設備の状態・インフラ・活かせるものを確認します。仙台市内は無料。それ以外は交通費として最大1万円いただく場合があります。",
+    fee: "無料〜1万円",
+  },
+  {
+    num: "2",
+    title: "詳細見積もり",
+    body: "全項目を一行ずつ記載した見積もりを作成します。融資用の書類としてもそのまま使えます。納得いかなければここで終了できます。",
+    fee: "3〜6万円",
+  },
+  {
+    num: "3",
+    title: "施工",
+    body: "工事開始。工程ごとに写真で進捗を共有します。DIY参加の日程もここで調整します。",
+    fee: "見積もり金額",
+  },
+  {
+    num: "4",
+    title: "引渡し",
+    body: "最終確認後にお引渡し。施工後の不具合はLINEでご連絡いただければ対応します。",
+    fee: "",
+  },
+];
+
+const faqItems = [
+  {
+    q: "物件が決まっていませんが相談できますか？",
+    a: "はい。物件探しの段階からご相談いただけます。業態や広さのご希望を伺い、内装の観点からアドバイスすることもできます。",
+  },
+  {
+    q: "相見積もりを取ってもいいですか？",
+    a: "もちろんです。他社との比較はむしろおすすめしています。記憶荘の見積もりは全項目を一行ずつ記載しているので、比較しやすいと思います。",
+  },
+  {
+    q: "見積もりの後に断っても大丈夫ですか？",
+    a: "はい。見積もり後にお断りいただいても一切費用は発生しません（詳細見積もり費用3〜6万円を除く）。強引な営業もしません。",
+  },
+  {
+    q: "DIYの経験がなくても参加できますか？",
+    a: "はい。道具の使い方からお教えします。壁の塗装や簡単な仕上げなど、一緒にやれる工程があります。経験は不要です。",
+  },
+  {
+    q: "融資用の見積書は作れますか？",
+    a: "はい。日本政策金融公庫や銀行向けの見積書を作成できます。融資申請に必要な書式で対応します。",
+  },
+];
+
+function FAQItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      style={{
+        borderBottom: "1px solid #E5E0D8",
+        cursor: "pointer",
+      }}
+      onClick={() => setOpen((v) => !v)}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "20px 0",
+          gap: "16px",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "baseline", gap: "10px", flex: 1 }}>
+          <span style={{ fontSize: "13px", fontWeight: 700, color: "#C9A84C", minWidth: "16px" }}>Q</span>
+          <span style={{ fontSize: "14px", color: "#333", lineHeight: 1.7, fontWeight: 500 }}>{q}</span>
+        </div>
+        <span style={{ fontSize: "18px", color: "#C9A84C", fontWeight: 300, flexShrink: 0 }}>
+          {open ? "−" : "+"}
+        </span>
+      </div>
+      {open && (
+        <div style={{ padding: "0 0 20px 26px" }}>
+          <p style={{ fontSize: "14px", color: "#555", lineHeight: 1.9, margin: 0 }}>{a}</p>
+        </div>
+      )}
+    </div>
+  );
+}
 
 const costExamples = [
   {
@@ -170,6 +263,63 @@ export default function StudioPricing() {
             <br />
             LINEで物件の写真をお送りいただければ、概算をお伝えします。
           </p>
+        </section>
+      </ScrollFadeIn>
+
+      <GoldDivider />
+
+      {/* FLOW */}
+      <ScrollFadeIn>
+        <section style={{ padding: "80px 24px", maxWidth: "800px", margin: "0 auto" }}>
+          <p style={{ fontFamily: "Anton, sans-serif", fontSize: "14px", letterSpacing: "4px", textAlign: "center", color: "#999", marginBottom: "8px" }}>FLOW</p>
+          <h2 style={{ fontSize: "24px", fontWeight: 500, textAlign: "center", marginBottom: "48px", color: "#333", margin: "0 0 48px" }}>ご相談からお引渡しまで</h2>
+          <div>
+            {flowSteps.map((step, i) => (
+              <div
+                key={step.num}
+                style={{
+                  display: "flex",
+                  gap: "24px",
+                  alignItems: "flex-start",
+                  padding: "28px 0",
+                  borderBottom: i < flowSteps.length - 1 ? "1px solid #E5E0D8" : "none",
+                }}
+              >
+                <div style={{ minWidth: "32px", textAlign: "center" }}>
+                  <span style={{ fontFamily: "Anton, sans-serif", fontSize: "11px", letterSpacing: "2px", color: "#C9A84C" }}>
+                    STEP
+                  </span>
+                  <p style={{ fontFamily: "Anton, sans-serif", fontSize: "28px", color: "#C9A84C", margin: "0", lineHeight: 1 }}>
+                    {step.num}
+                  </p>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "8px", gap: "12px" }}>
+                    <p style={{ fontSize: "15px", fontWeight: 500, color: "#333", margin: 0 }}>{step.title}</p>
+                    {step.fee && (
+                      <span style={{ fontSize: "12px", color: "#999", whiteSpace: "nowrap", flexShrink: 0 }}>{step.fee}</span>
+                    )}
+                  </div>
+                  <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.9, margin: 0 }}>{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </ScrollFadeIn>
+
+      <GoldDivider />
+
+      {/* FAQ */}
+      <ScrollFadeIn>
+        <section style={{ padding: "80px 24px", maxWidth: "800px", margin: "0 auto" }}>
+          <p style={{ fontFamily: "Anton, sans-serif", fontSize: "14px", letterSpacing: "4px", textAlign: "center", color: "#999", marginBottom: "8px" }}>FAQ</p>
+          <h2 style={{ fontSize: "24px", fontWeight: 500, textAlign: "center", margin: "0 0 48px", color: "#333" }}>よくあるご質問</h2>
+          <div style={{ borderTop: "1px solid #E5E0D8" }}>
+            {faqItems.map((item) => (
+              <FAQItem key={item.q} q={item.q} a={item.a} />
+            ))}
+          </div>
         </section>
       </ScrollFadeIn>
 

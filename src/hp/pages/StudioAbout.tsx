@@ -150,6 +150,79 @@ export default function StudioAbout() {
 
       <TextureBand src="/assets/textures/ceramic-tile-pair.webp" height={180} />
 
+      {/* Filter */}
+      <ScrollFadeIn>
+        <section style={{ padding: "80px 24px", maxWidth: "800px", margin: "0 auto" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1px 1fr",
+              gap: "0",
+              alignItems: "start",
+            }}
+            className="filter-grid"
+          >
+            <div style={{ padding: "0 32px 0 0" }}>
+              <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontFamily: "Anton, sans-serif", marginBottom: "20px" }}>FOR YOU</p>
+              <p style={{ fontSize: "15px", fontWeight: 500, color: "#333", marginBottom: "20px", lineHeight: 1.5 }}>こういう方のために</p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+                {[
+                  "初めて店を持つ方",
+                  "予算に限りがあるけれど、妥協はしたくない方",
+                  "内装のことがわからなくて、何から始めればいいか不安な方",
+                  "自分の手でも何かやってみたい方",
+                  "一人の担当者とじっくり進めたい方",
+                ].map((item) => (
+                  <li key={item} style={{ fontSize: "13px", color: "#333", lineHeight: 1.8, display: "flex", gap: "8px" }}>
+                    <span style={{ color: "#C9A84C", flexShrink: 0 }}>・</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div style={{ backgroundColor: "#C9A84C", width: "1px", alignSelf: "stretch", margin: "0" }} className="filter-divider" />
+
+            <div style={{ padding: "0 0 0 32px" }}>
+              <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#999", fontFamily: "Anton, sans-serif", marginBottom: "20px" }}>NOT FOR YOU</p>
+              <p style={{ fontSize: "15px", fontWeight: 500, color: "#555", marginBottom: "20px", lineHeight: 1.5 }}>こういう方はお断りしています</p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+                {[
+                  "大規模チェーン店の内装をお探しの方",
+                  "デザイナーズ空間を求めている方（専門のデザイン事務所をおすすめします）",
+                  "最短工期を最優先される方（丁寧に進めるため、急ぎの対応は難しい場合があります）",
+                  "施工だけを依頼したい方（設計から一貫で対応しています）",
+                ].map((item) => (
+                  <li key={item} style={{ fontSize: "13px", color: "#666", lineHeight: 1.8, display: "flex", gap: "8px" }}>
+                    <span style={{ color: "#bbb", flexShrink: 0 }}>・</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <style>{`
+            @media (max-width: 640px) {
+              .filter-grid {
+                grid-template-columns: 1fr !important;
+              }
+              .filter-divider {
+                width: 100% !important;
+                height: 1px !important;
+                margin: 32px 0 !important;
+                align-self: auto !important;
+              }
+              .filter-grid > div:first-child {
+                padding: 0 !important;
+              }
+              .filter-grid > div:last-child {
+                padding: 0 !important;
+              }
+            }
+          `}</style>
+        </section>
+      </ScrollFadeIn>
+
       {/* DAI紹介 */}
       <GoldDivider />
       <ScrollFadeIn>
