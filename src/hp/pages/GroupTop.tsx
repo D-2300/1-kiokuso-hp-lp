@@ -228,65 +228,38 @@ export default function GroupTop() {
                 gap: "16px",
               }}
             >
-              {businesses.map((b) =>
-                b.active ? (
-                  <Link
-                    key={b.to}
-                    to={b.to}
-                    className="business-card-active"
-                    style={{
-                      display: "block",
-                      background: b.gradient,
-                      borderRadius: "8px",
-                      padding: "28px 20px",
-                      transition: "box-shadow 0.2s",
-                      textDecoration: "none",
-                      color: "inherit",
-                    }}
-                  >
-                    <div style={{ marginBottom: "12px" }}>
-                      <img src={b.logoSrc} alt="" style={{ height: "32px" }} />
-                    </div>
-                    <p style={{ fontSize: "13px", fontWeight: 500, color: "#fff", marginBottom: "4px" }}>
-                      {b.nameJa}
-                    </p>
-                    <p style={{ fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", color: "rgba(255,255,255,0.7)", marginBottom: "8px" }}>
-                      {b.nameEn}
-                    </p>
-                    <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.8)", marginBottom: "16px" }}>
-                      {b.desc}
-                    </p>
-                    <p style={{ fontSize: "12px", color: "#C9A84C", fontWeight: 500 }}>
-                      詳しく見る →
-                    </p>
-                  </Link>
-                ) : (
-                  <div
-                    key={b.to}
-                    style={{
-                      background: b.gradient,
-                      borderRadius: "8px",
-                      padding: "28px 20px",
-                    }}
-                  >
-                    <div style={{ marginBottom: "12px" }}>
-                      <img src={b.logoSrc} alt="" style={{ height: "32px" }} />
-                    </div>
-                    <p style={{ fontSize: "13px", fontWeight: 500, color: "#fff", marginBottom: "4px" }}>
-                      {b.nameJa}
-                    </p>
-                    <p style={{ fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", color: "rgba(255,255,255,0.7)", marginBottom: "8px" }}>
-                      {b.nameEn}
-                    </p>
-                    <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.8)", marginBottom: "16px" }}>
-                      {b.desc}
-                    </p>
-                    <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)" }}>
-                      準備中
-                    </p>
+              {businesses.map((b) => (
+                <Link
+                  key={b.to}
+                  to={b.to}
+                  className="business-card-active"
+                  style={{
+                    display: "block",
+                    background: b.gradient,
+                    borderRadius: "8px",
+                    padding: "28px 20px",
+                    transition: "box-shadow 0.2s",
+                    textDecoration: "none",
+                    color: "inherit",
+                  }}
+                >
+                  <div style={{ marginBottom: "12px" }}>
+                    <img src={b.logoSrc} alt="" style={{ height: "32px" }} />
                   </div>
-                )
-              )}
+                  <p style={{ fontSize: "13px", fontWeight: 500, color: "#fff", marginBottom: "4px" }}>
+                    {b.nameJa}
+                  </p>
+                  <p style={{ fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", color: "rgba(255,255,255,0.7)", marginBottom: "8px" }}>
+                    {b.nameEn}
+                  </p>
+                  <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.8)", marginBottom: "16px" }}>
+                    {b.desc}
+                  </p>
+                  <p style={{ fontSize: "12px", color: "#C9A84C", fontWeight: 500 }}>
+                    詳しく見る →
+                  </p>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
