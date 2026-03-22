@@ -30,7 +30,7 @@ export default function StudioTop() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "rgba(0,0,0,0.25)",
+              background: "rgba(0,0,0,0.4)",
             }}
           />
         </div>

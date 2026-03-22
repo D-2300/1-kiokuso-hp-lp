@@ -108,7 +108,7 @@ export default function ComingSoon({
             style={{
               position: "absolute",
               inset: 0,
-              background: `linear-gradient(0deg, ${themeColor}cc 0%, ${themeColor}44 40%, transparent 70%)`,
+              background: "rgba(0,0,0,0.4)",
             }}
           />
         </div>

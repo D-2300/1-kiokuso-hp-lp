@@ -77,7 +77,7 @@ export default function GroupTop() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(to bottom, rgba(139,58,58,0.6) 0%, rgba(92,38,38,0.75) 100%)",
+              background: "rgba(0,0,0,0.4)",
             }}
           />
         </div>
