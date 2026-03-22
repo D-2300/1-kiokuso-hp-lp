@@ -25,7 +25,7 @@ export default function StudioTop() {
       {/* Hero */}
       <section style={{ position: "relative", height: "calc(100vh - 64px)", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, height: "100%" }}>
-          <img src="/images/hero-bg-v2.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img src="/images/hero-bg-v2.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
           <div
             style={{
               position: "absolute",

@@ -71,7 +71,7 @@ export default function GroupTop() {
           <img
             src="/images/about-exterior.webp"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
           />
           <div
             style={{
