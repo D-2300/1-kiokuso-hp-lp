@@ -13,7 +13,7 @@ export default function LPProfile() {
       >
         <img
           src="/images/about-dai.webp"
-          alt="DAI"
+          alt="KEN"
           style={{
             width: "clamp(160px, 25vw, 200px)",
             height: "clamp(200px, 31vw, 248px)",
@@ -31,7 +31,7 @@ export default function LPProfile() {
               color: "#222",
             }}
           >
-            DAI
+            KEN
           </p>
           <p style={{ margin: "0 0 20px", fontSize: "13px", color: "#999" }}>記憶荘 CSO</p>
           <p

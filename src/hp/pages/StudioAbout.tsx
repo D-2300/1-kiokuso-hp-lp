@@ -107,7 +107,7 @@ export default function StudioAbout() {
             <div style={{ padding: "0 0 0 24px", display: "flex", flexDirection: "column", gap: "8px" }}>
               <p style={{ fontSize: "11px", color: "#C9A84C", letterSpacing: "0.12em", marginBottom: "12px" }}>記憶荘</p>
               <div style={{ border: "1px solid #C9A84C", padding: "24px 14px", fontSize: "13px", color: "#333", textAlign: "center", lineHeight: 1.8 }}>
-                DAI
+                KEN
                 <br />
                 <span style={{ fontSize: "11px", color: "#666" }}>一人が一貫で</span>
               </div>
@@ -119,7 +119,7 @@ export default function StudioAbout() {
           </div>
 
           <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px" }}>
-            記憶荘では、設計・見積もり・施工・現場管理のすべてをDAI一人が担当します。
+            記憶荘では、設計・見積もり・施工・現場管理のすべてをKEN一人が担当します。
             <br />
             打ち合わせで話したことが、そのまま現場に反映される。
             <br />
@@ -303,9 +303,9 @@ export default function StudioAbout() {
       <ScrollFadeIn>
         <div style={{ padding: "40px 24px 64px", maxWidth: "480px", margin: "0 auto" }}>
           <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-            <img src="/images/about-dai.webp" alt="DAI" style={{ width: "80px", minWidth: "80px", aspectRatio: "1/1", objectFit: "cover" }} />
+            <img src="/images/about-dai.webp" alt="KEN" style={{ width: "80px", minWidth: "80px", aspectRatio: "1/1", objectFit: "cover" }} />
             <div>
-              <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "2px" }}>DAI</p>
+              <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "2px" }}>KEN</p>
               <p style={{ fontSize: "11px", color: colors.mute, marginBottom: "10px" }}>記憶荘 CSO</p>
               <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.8 }}>
                 仙台を拠点に、店舗の設計から施工までを一貫して担当しています。

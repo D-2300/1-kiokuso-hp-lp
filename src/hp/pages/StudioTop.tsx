@@ -109,9 +109,9 @@ export default function StudioTop() {
                 marginBottom: "32px",
               }}
             >
-              <img src="/images/about-dai.webp" alt="DAI" style={{ width: "64px", height: "64px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+              <img src="/images/about-dai.webp" alt="KEN" style={{ width: "64px", height: "64px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
               <div style={{ textAlign: "left" }}>
-                <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text }}>DAI</p>
+                <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text }}>KEN</p>
                 <p style={{ fontSize: "11px", color: colors.mute, marginTop: "2px" }}>記憶荘 店舗内装スタジオ</p>
               </div>
             </div>
