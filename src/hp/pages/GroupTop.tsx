@@ -215,6 +215,12 @@ export default function GroupTop() {
               <span style={{ fontSize: "11px", color: "#999", letterSpacing: "0.1em" }}>記憶荘グループ</span>
             </div>
 
+            <p style={{ fontSize: "15px", fontWeight: 400, color: "#666", lineHeight: 1.9, textAlign: "center", marginBottom: "32px", fontFamily: "'Noto Sans JP', sans-serif" }}>
+              仙台を拠点に、場所の記憶を引き継ぐ仕事をしています。
+              <br />
+              店舗内装を中心に、建物の再生、住まいの改修、不動産の仲介まで。
+            </p>
+
             <div
               style={{
                 display: "grid",
