@@ -3,7 +3,7 @@ export default function LPSolutionPoints() {
     <section style={{ backgroundColor: "#fff", padding: "48px 20px" }}>
       <div style={{ maxWidth: "960px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
 
-        {/* Point 1 */}
+        {/* Point 1 — 横スクロールカルーセル */}
         <div>
           <p style={{ margin: "0 0 6px", fontSize: "12px", color: "#C9A84C", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>
             Point 1
@@ -12,27 +12,74 @@ export default function LPSolutionPoints() {
             設計から施工まで、一気通貫で対応
           </p>
           <p style={{ margin: "0 0 20px", fontSize: "clamp(14px, 2.5vw, 16px)", color: "#555", lineHeight: 1.85 }}>
-            最初にお話を聞いた担当が、そのまま設計し、現場に立ちます。伝言ゲームが起きないので、「言った・言わない」のトラブルがありません。工事中の変更や相談も、一本の連絡で済みます。
+            最初にお話を聞いた担当が、そのまま設計し、現場に立ちます。伝言ゲームが起きないので、「言った・言わない」のトラブルがありません。
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-            <div style={{ border: "1px solid #e0e0e0", borderRadius: "8px", padding: "18px" }}>
-              <p style={{ margin: "0 0 10px", fontSize: "12px", fontWeight: 500, color: "#999" }}>一般的</p>
-              <p style={{ margin: 0, fontSize: "14px", color: "#666", lineHeight: 1.85 }}>
-                営業→デザイナー→現場監督→各職人<br />
-                会社によって3〜5人が関わる
-              </p>
-            </div>
-            <div style={{ border: "2px solid #C9A84C", borderRadius: "8px", padding: "18px", backgroundColor: "#fffdf5" }}>
-              <p style={{ margin: "0 0 10px", fontSize: "12px", fontWeight: 700, color: "#C9A84C" }}>記憶荘</p>
-              <p style={{ margin: 0, fontSize: "14px", color: "#333", lineHeight: 1.85 }}>
-                相談→設計→施工→引渡し<br />
-                最初から最後まで、担当が変わりません
-              </p>
-            </div>
+
+          <div style={{
+            display: "flex",
+            gap: "16px",
+            overflowX: "auto",
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch",
+            paddingBottom: "12px",
+            margin: "0 -20px",
+            padding: "0 20px 12px",
+          }}>
+            {[
+              {
+                title: "相談",
+                img: "/images/why-line-chat.webp",
+                desc: "LINEで気軽にご相談いただけます。物件が決まる前でもOKです。",
+                tag: "Step 0",
+              },
+              {
+                title: "設計・提案",
+                img: "/images/solution-ai-pers.webp",
+                desc: "AIパースで完成イメージを事前に共有。図面だけではわからない空間を可視化します。",
+                tag: "Step 1",
+              },
+              {
+                title: "施工",
+                img: "/images/crossover-process-01.webp",
+                desc: "設計した本人が現場に立ちます。途中の変更や相談も、一本の連絡で済みます。",
+                tag: "Step 2-3",
+              },
+              {
+                title: "引渡し",
+                img: "/images/crossover-after-01.webp",
+                desc: "完成後のアフターフォローも同じ担当が対応。開業後の追加工事にも対応します。",
+                tag: "Step 4",
+              },
+            ].map((card) => (
+              <div key={card.title} style={{
+                flex: "0 0 75%",
+                maxWidth: "320px",
+                minWidth: "260px",
+                scrollSnapAlign: "start",
+                border: "1px solid #e8e4de",
+                borderRadius: "12px",
+                overflow: "hidden",
+                backgroundColor: "#fff",
+              }}>
+                <div style={{ position: "relative", width: "100%", height: "180px", overflow: "hidden" }}>
+                  <img src={card.img} alt={card.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <span style={{
+                    position: "absolute", bottom: "10px", left: "10px",
+                    backgroundColor: "rgba(74,103,65,0.9)", color: "#fff",
+                    fontSize: "11px", fontWeight: 600, padding: "4px 10px", borderRadius: "4px",
+                  }}>{card.tag}</span>
+                </div>
+                <div style={{ padding: "18px 16px" }}>
+                  <p style={{ margin: "0 0 8px", fontSize: "clamp(16px, 2.5vw, 18px)", fontWeight: 700, color: "#4A6741" }}>{card.title}</p>
+                  <p style={{ margin: 0, fontSize: "clamp(12px, 2vw, 14px)", color: "#666", lineHeight: 1.8 }}>{card.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
+          <p style={{ margin: "8px 0 0", fontSize: "11px", color: "#aaa", textAlign: "center" }}>← スワイプで見る →</p>
         </div>
 
-        {/* Point 2 */}
+        {/* Point 2 — 横スクロールカルーセル */}
         <div>
           <p style={{ margin: "0 0 6px", fontSize: "12px", color: "#C9A84C", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>
             Point 2
@@ -41,26 +88,65 @@ export default function LPSolutionPoints() {
             見積もりは全項目を公開
           </p>
           <p style={{ margin: "0 0 20px", fontSize: "clamp(14px, 2.5vw, 16px)", color: "#555", lineHeight: 1.85 }}>
-            何にいくらかかるか、一行ずつすべて開示します。「一式」でまとめる項目はありません。相見積もりの際も比較しやすい形式でお出しします。
+            何にいくらかかるか、一行ずつすべて開示します。「一式」でまとめる項目はありません。
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-            <div style={{ border: "1px solid #e0e0e0", borderRadius: "8px", padding: "18px", backgroundColor: "#fafafa" }}>
-              <p style={{ margin: "0 0 10px", fontSize: "12px", fontWeight: 500, color: "#999" }}>よくある見積もり</p>
-              <p style={{ margin: 0, fontSize: "14px", color: "#666", lineHeight: 2, fontFamily: "monospace" }}>
-                内装工事一式 … ¥1,500,000<br />
-                諸経費 ………… ¥200,000
-              </p>
-            </div>
-            <div style={{ border: "2px solid #C9A84C", borderRadius: "8px", padding: "18px", backgroundColor: "#fffdf5" }}>
-              <p style={{ margin: "0 0 10px", fontSize: "12px", fontWeight: 700, color: "#C9A84C" }}>記憶荘の見積もり</p>
-              <p style={{ margin: 0, fontSize: "14px", color: "#333", lineHeight: 2, fontFamily: "monospace" }}>
-                床材（施主支給）… ¥0<br />
-                壁塗装（DIY込）… ¥45,000<br />
-                電気工事 ………… ¥120,000<br />
-                <span style={{ color: "#888", fontSize: "12px" }}>全項目を一行ずつ公開</span>
-              </p>
-            </div>
+
+          <div style={{
+            display: "flex",
+            gap: "16px",
+            overflowX: "auto",
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch",
+            paddingBottom: "12px",
+            margin: "0 -20px",
+            padding: "0 20px 12px",
+          }}>
+            {[
+              {
+                title: "全項目を明細で公開",
+                img: "/images/why-estimate-detail.webp",
+                desc: "材料費・工賃・諸経費まで一行ずつ記載。「一式」表記は使いません。",
+                tag: "透明性",
+              },
+              {
+                title: "融資用の見積書を作成",
+                img: "/images/why-business-plan.webp",
+                desc: "日本政策金融公庫や銀行向けの見積書を、物件確定前から作成できます。",
+                tag: "融資対応",
+              },
+              {
+                title: "相見積もりに対応",
+                img: "/images/solution-material-open.webp",
+                desc: "他社と比較しやすい形式でお出しします。断っていただいても構いません。",
+                tag: "比較OK",
+              },
+            ].map((card) => (
+              <div key={card.title} style={{
+                flex: "0 0 75%",
+                maxWidth: "320px",
+                minWidth: "260px",
+                scrollSnapAlign: "start",
+                border: "1px solid #e8e4de",
+                borderRadius: "12px",
+                overflow: "hidden",
+                backgroundColor: "#fff",
+              }}>
+                <div style={{ position: "relative", width: "100%", height: "180px", overflow: "hidden" }}>
+                  <img src={card.img} alt={card.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <span style={{
+                    position: "absolute", bottom: "10px", left: "10px",
+                    backgroundColor: "rgba(74,103,65,0.9)", color: "#fff",
+                    fontSize: "11px", fontWeight: 600, padding: "4px 10px", borderRadius: "4px",
+                  }}>{card.tag}</span>
+                </div>
+                <div style={{ padding: "18px 16px" }}>
+                  <p style={{ margin: "0 0 8px", fontSize: "clamp(16px, 2.5vw, 18px)", fontWeight: 700, color: "#4A6741" }}>{card.title}</p>
+                  <p style={{ margin: 0, fontSize: "clamp(12px, 2vw, 14px)", color: "#666", lineHeight: 1.8 }}>{card.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
+          <p style={{ margin: "8px 0 0", fontSize: "11px", color: "#aaa", textAlign: "center" }}>← スワイプで見る →</p>
         </div>
 
         {/* Point 3 — 横スクロールカルーセル */}
