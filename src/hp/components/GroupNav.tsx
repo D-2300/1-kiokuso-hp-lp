@@ -81,11 +81,57 @@ export default function GroupNav() {
           position:"absolute", top:"20px", right:"24px", background:"none", border:"none",
           cursor:"pointer", color:"#fff", fontSize:"28px", padding:"8px",
         }}>✕</button>
-        {navLinks.map((l) => (
-          <Link key={l.to} to={l.to} style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
-            {l.label}
-          </Link>
-        ))}
+        {/* グループ本体 */}
+        <p style={{
+          fontSize: "10px",
+          fontWeight: 400,
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "rgba(255,255,255,0.4)",
+          margin: 0,
+          fontFamily: "'Anton', sans-serif",
+        }}>
+          Group
+        </p>
+        <Link to="/" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Top
+        </Link>
+        <Link to="/about" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          About
+        </Link>
+
+        {/* 区切り線 */}
+        <div style={{
+          width: "40px",
+          height: "1px",
+          backgroundColor: "rgba(255,255,255,0.2)",
+          margin: "4px 0",
+        }} />
+
+        {/* 事業体 */}
+        <p style={{
+          fontSize: "10px",
+          fontWeight: 400,
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "rgba(255,255,255,0.4)",
+          margin: 0,
+          fontFamily: "'Anton', sans-serif",
+        }}>
+          Services
+        </p>
+        <Link to="/studio" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Studio
+        </Link>
+        <Link to="/koumuten" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Build
+        </Link>
+        <Link to="/reform" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Reform
+        </Link>
+        <Link to="/fudousan" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Estate
+        </Link>
       </div>
 
       <style>{`
