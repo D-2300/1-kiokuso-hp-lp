@@ -133,7 +133,7 @@ const costExamples = [
 
 export default function StudioPricing() {
   return (
-    <div style={{ backgroundColor: colors.beige, minHeight: "100vh", paddingTop: 0 }}>
+    <div style={{ minHeight: "100vh", paddingTop: 0 }}>
       <StudioNav />
 
       {/* SmallHero */}

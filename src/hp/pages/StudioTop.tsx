@@ -8,7 +8,7 @@ import { colors } from "../../shared/design-tokens";
 
 export default function StudioTop() {
   return (
-    <div style={{ backgroundColor: colors.beige, minHeight: "100vh" }}>
+    <div style={{ minHeight: "100vh" }}>
       <style>{`
         @keyframes scrollBounce {
           0%, 100% { transform: translateX(-50%) translateY(0); }
