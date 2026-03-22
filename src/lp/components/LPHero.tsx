@@ -13,13 +13,13 @@ export default function LPHero() {
       <img
         src="/images/lp-hero.webp"
         alt=""
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
       />
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0.55) 100%)",
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 100%)",
         }}
       />
       <div
@@ -85,6 +85,8 @@ export default function LPHero() {
               gridTemplateColumns: "1fr 1fr",
               gap: "10px",
               marginBottom: "0",
+              maxWidth: "400px",
+              margin: "0 auto",
             }}
           >
             {[
@@ -99,7 +101,7 @@ export default function LPHero() {
                   overflow: "hidden",
                 }}
               >
-                <div style={{ height: "clamp(140px, 18vw, 176px)", overflow: "hidden" }}>
+                <div style={{ height: "120px", overflow: "hidden" }}>
                   <img
                     src={item.img}
                     alt={item.label}
@@ -107,13 +109,13 @@ export default function LPHero() {
                   />
                 </div>
                 <div style={{ padding: "12px 14px" }}>
-                  <p style={{ margin: 0, fontSize: "clamp(13px, 2vw, 15px)", fontWeight: 500, color: "#666" }}>
+                  <p style={{ margin: 0, fontSize: "clamp(11px, 1.8vw, 13px)", fontWeight: 500, color: "#666" }}>
                     {item.label}
                   </p>
                   <p
                     style={{
                       margin: "4px 0 0",
-                      fontSize: "clamp(18px, 3.5vw, 24px)",
+                      fontSize: "clamp(14px, 2.8vw, 18px)",
                       fontWeight: 700,
                       color: "#222",
                     }}
