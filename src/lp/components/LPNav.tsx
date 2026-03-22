@@ -1,4 +1,3 @@
-import Logo from "../../shared/Logo";
 import { LINE_URL } from "../../shared/design-tokens";
 
 export default function LPNav() {
@@ -22,13 +21,8 @@ export default function LPNav() {
           justifyContent: "space-between",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <div style={{ flexShrink: 0 }}>
-            <Logo type="studio" color="dark" layout="mark" size="sm" />
-          </div>
-          <span style={{ fontSize: "13px", fontWeight: 400, letterSpacing: "0.1em", color: "#333" }}>
-            記憶荘 STUDIO
-          </span>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src="/assets/logos/logo-studio-h-gold.webp" alt="記憶荘 STUDIO" style={{ height: "32px", width: "auto" }} />
         </div>
         <a
           href={LINE_URL}
