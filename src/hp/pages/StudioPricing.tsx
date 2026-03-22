@@ -174,6 +174,33 @@ export default function StudioPricing() {
       </ScrollFadeIn>
 
       <StudioCTA />
+
+      {/* 対応エリア */}
+      <section style={{ padding: "60px 20px", backgroundColor: "#F8F5F0" }}>
+        <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center" }}>
+          <img
+            src="/images/area-map.webp"
+            alt="対応エリア：仙台市・宮城県を中心に東北全域で対応"
+            style={{
+              width: "100%",
+              maxWidth: "600px",
+              height: "auto",
+              display: "block",
+              margin: "0 auto",
+              borderRadius: "8px",
+            }}
+          />
+          <p style={{
+            margin: "16px 0 0",
+            fontSize: "13px",
+            color: "#999",
+            lineHeight: 1.7,
+          }}>
+            ご希望があれば関東・東京エリアなど東北以外も対応可能な場合がありますので、気軽にご相談ください。
+          </p>
+        </div>
+      </section>
+
       <StudioFooter />
     </div>
   );
