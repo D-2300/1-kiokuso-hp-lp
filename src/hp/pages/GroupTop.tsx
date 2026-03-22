@@ -11,7 +11,7 @@ const businesses = [
   {
     nameJa: "記憶荘 工務店",
     nameEn: "KIOKUSO KOUMUTEN",
-    desc: "廃墟や古い建物に新しい命を吹き込む、大規模リノベーション",
+    desc: "古い建物に新しい役割を与える、大規模リノベーション",
     color: colors.urushicha.main,
     active: false,
     to: "/koumuten",
@@ -20,7 +20,7 @@ const businesses = [
   {
     nameJa: "記憶荘 店舗内装スタジオ",
     nameEn: "KIOKUSO STUDIO",
-    desc: "初めての店づくりを、設計から施工まで一人が一貫対応",
+    desc: "初めての店づくりを、設計から施工まで一貫対応",
     color: colors.fukamidori.main,
     active: true,
     to: "/studio",
@@ -38,7 +38,7 @@ const businesses = [
   {
     nameJa: "記憶荘 不動産",
     nameEn: "KIOKUSO FUDOUSAN",
-    desc: "想いを受け継ぐ場所を探し、つなぐ",
+    desc: "場所と人をつなぐ、不動産の仲介",
     color: colors.tetsukon.main,
     active: false,
     to: "/fudousan",

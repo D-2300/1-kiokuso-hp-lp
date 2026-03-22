@@ -8,8 +8,8 @@ import { colors } from "../../shared/design-tokens";
 const points = [
   {
     img: "/images/crossover-process-01.webp",
-    heading: "一人一貫対応",
-    body: "設計・見積もり・施工・仕上げまで、一人が一貫して担当します。\n間に入る人がいないから、伝言ゲームにならない。\n「言った・言わない」のトラブルが起きない仕組みです。\n打ち合わせで話したことが、そのまま現場に反映されます。",
+    heading: "一貫対応",
+    body: "設計・見積もり・施工・仕上げまで、最初から最後まで同じ担当者が対応します。\n間に入る人がいないから、伝言ゲームにならない。\n「言った・言わない」のトラブルが起きない仕組みです。\n打ち合わせで話したことが、そのまま現場に反映されます。",
   },
   {
     img: "/images/crossover-process-02.webp",
@@ -127,7 +127,17 @@ export default function StudioAbout() {
               <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "2px" }}>DAI</p>
               <p style={{ fontSize: "11px", color: colors.mute, marginBottom: "10px" }}>記憶荘 CSO</p>
               <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.8 }}>
-                仙台を拠点に、店舗の設計から施工まで一人で担当しています。前職では年間30件以上の店舗内装を手がけてきました。初めての店づくりで不安なことがあれば、LINEで気軽にご相談ください。
+                仙台を拠点に、店舗の設計から施工までを一貫して担当しています。
+                前職では内装施工会社で年間30件以上の店舗内装を手がけ、
+                飲食店・美容室・物販・ジムなど幅広い業態を経験してきました。
+              </p>
+              <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.8, marginTop: "0.8em" }}>
+                設計から現場管理、仕上げまで一人で完結できるのは、
+                その現場の数だけ向き合ってきた経験があるからです。
+              </p>
+              <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.8, marginTop: "0.8em" }}>
+                初めての店づくりは、わからないことばかりで当然です。
+                物件が決まっていなくても構いません。LINEで気軽にご相談ください。
               </p>
             </div>
           </div>

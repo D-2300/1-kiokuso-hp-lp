@@ -9,8 +9,10 @@ import { colors } from "../../shared/design-tokens";
 const priceRows = [
   { type: "飲食店（居抜き）", range: "100万〜200万円" },
   { type: "飲食店（スケルトン）", range: "200万〜350万円" },
-  { type: "美容室（居抜き）", range: "80万〜180万円" },
+  { type: "美容室", range: "80万〜180万円" },
   { type: "テイクアウト店", range: "50万〜120万円" },
+  { type: "ジム・フィットネス", range: "150万〜350万円" },
+  { type: "物販・アパレル", range: "80万〜200万円" },
 ];
 
 const costExamples = [
@@ -74,7 +76,7 @@ export default function StudioPricing() {
       <ScrollFadeIn>
         <section style={{ padding: "64px 24px", maxWidth: "540px", margin: "0 auto", textAlign: "center" }}>
           <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text }}>
-            記憶荘の内装が手ごろな理由は、シンプルです。
+            記憶荘の価格には、理由があります。
           </p>
           <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text, marginTop: "1.6em" }}>
             一人が、設計から施工まで一貫して行うこと。

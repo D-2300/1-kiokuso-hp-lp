@@ -61,11 +61,11 @@ export default function GroupAbout() {
               犬がつけていた首輪も捨てられない。
             </p>
             <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text, marginTop: "1.6em" }}>
-              どれも、物としての価値はゼロだ。
+              売れるものでもないし、飾るものでもない。
               <br />
-              だが捨てられない。
+              でも捨てられない。
               <br />
-              そこに「誰かを思った時間」が宿っているから。
+              そこに「誰かを思った時間」が残っているから。
             </p>
           </div>
         </section>
@@ -91,11 +91,11 @@ export default function GroupAbout() {
             }}
           >
             <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text }}>
-              お金をかけることだけが正義ではない。
+              たくさんお金をかけなくても、いい空間は作れる。
               <br />
-              制約の中で、誰かのために心を砕く作業そのものに、
+              制約の中で、誰かのために考え抜く時間そのものに、
               <br />
-              特別な価値がある。
+              大きな意味がある。
             </p>
           </div>
         </section>
@@ -141,7 +141,7 @@ export default function GroupAbout() {
                 仙台を拠点に、店舗の設計から施工までを一人で担当しています。
               </p>
               <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 1.8, marginTop: "0.8em" }}>
-                前職では大手内装会社で年間30件以上の店舗を手がけ、飲食店・美容室・物販・ジムなど幅広い業態を経験しました。
+                前職では内装施工会社で年間30件以上の店舗を手がけ、飲食店・美容室・物販・ジムなど幅広い業態を経験しました。
               </p>
               <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 1.8, marginTop: "0.8em" }}>
                 「誰かの想いに手を動かすこと」が自分にとって最も自然な仕事の形だと気づき、記憶荘を始めました。

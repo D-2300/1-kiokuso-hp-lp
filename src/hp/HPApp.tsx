@@ -25,7 +25,7 @@ export default function HPApp() {
             nameJa="記憶荘 工務店"
             subtitle="大規模リノベーション・再生"
             tagline={"場所の記憶を引き継ぎ、\n新しい物語として再生する。"}
-            taglineSub="カチタス的な廃墟再生・大規模リノベーション事業を準備中です。"
+            taglineSub="使われなくなった建物を、もう一度人が集まる場所に。準備中です。"
             themeColor={colors.urushicha.main}
             themeLight={colors.urushicha.light}
             themeMid={colors.urushicha.mid}
@@ -49,7 +49,7 @@ export default function HPApp() {
             nameJa="記憶荘 住宅リフォームLABO"
             subtitle="住宅の部分リフォーム"
             tagline={"暮らしの中の「ここだけ変えたい」に、\nちょうどいい手を入れる。"}
-            taglineSub="キッチン・洗面・壁紙など、住宅の部分リフォーム事業を準備中です。"
+            taglineSub="住まいの「ここだけ変えたい」に応える、小さなリフォーム。準備中です。"
             themeColor={colors.seiji.main}
             themeLight={colors.seiji.light}
             themeMid={colors.seiji.mid}
@@ -73,7 +73,7 @@ export default function HPApp() {
             nameJa="記憶荘 不動産"
             subtitle="不動産仲介"
             tagline={"想いを受け継ぐ場所を、\nつなぐ。"}
-            taglineSub="記憶荘グループの不動産仲介事業を準備中です。"
+            taglineSub="場所と人をつなぐ、不動産仲介。準備中です。"
             themeColor={colors.tetsukon.main}
             themeLight={colors.tetsukon.light}
             themeMid={colors.tetsukon.mid}

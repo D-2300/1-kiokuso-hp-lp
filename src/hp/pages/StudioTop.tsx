@@ -108,7 +108,7 @@ export default function StudioTop() {
             </div>
             <p style={{ marginTop: "1.6em", fontSize: "13px", color: colors.mute, lineHeight: 2.0 }}>
               仙台・宮城県で、飲食店・美容室・テイクアウト店など、<br />
-              これまで多くの店舗の内装をお手伝いしてきました。
+              さまざまな業態の店舗内装を手がけてきました。
             </p>
           </div>
         </section>
@@ -120,9 +120,9 @@ export default function StudioTop() {
           <img src="/images/crossover-after-02.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
           <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 64px" }}>
             <p style={{ fontSize: "14px", color: colors.text, lineHeight: 2.0 }}>
-              カウンター越しに見える厨房の動線まで考えて、
+              既存のカウンターを活かしながら、
               <br />
-              壁の位置を30cm ずらした。
+              厨房の動線を見直した。
             </p>
           </div>
         </div>
@@ -133,9 +133,9 @@ export default function StudioTop() {
           <img src="/images/crossover-after-03.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }} />
           <div style={{ maxWidth: "520px", margin: "0 auto", padding: "32px 24px 64px" }}>
             <p style={{ fontSize: "14px", color: colors.text, lineHeight: 2.0 }}>
-              前のお店が残していった棚を活かして、
+              前のお店が残していった造作を、
               <br />
-              新しい本棚に仕上げた。
+              新しい用途に仕立て直した。
             </p>
           </div>
         </div>

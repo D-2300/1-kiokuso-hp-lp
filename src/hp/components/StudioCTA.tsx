@@ -7,8 +7,8 @@ interface StudioCTAProps {
 }
 
 export default function StudioCTA({
-  heading = "店舗の内装、一緒に考えませんか",
-  subtext = "まずはLINEでお気軽にご相談ください。",
+  heading = "まだ何も決まっていなくても、大丈夫です。",
+  subtext = "物件未定でもOK。断りはLINE1本で完了です。",
 }: StudioCTAProps) {
   return (
     <section
