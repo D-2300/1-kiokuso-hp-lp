@@ -62,7 +62,7 @@ export default function EntityNav({
   const isScrolledOrMenu = scrolled || menuOpen;
 
   const linkColor = isScrolledOrMenu ? "#333333" : themeLight;
-  const groupColor = isScrolledOrMenu ? "#999999" : "rgba(255,255,255,0.6)";
+  const groupColor = isScrolledOrMenu ? "#666666" : "rgba(255,255,255,0.6)";
   const hamColor = isScrolledOrMenu ? "#333333" : "#fff";
 
   const logoSrc = isScrolledOrMenu

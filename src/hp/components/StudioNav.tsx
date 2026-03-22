@@ -48,7 +48,7 @@ export default function StudioNav() {
       ? active ? "#111111" : "#333333"
       : active ? "#ffffff" : "#A8BFA2";
 
-  const groupColor = isScrolledOrMenu ? "#999999" : "rgba(255,255,255,0.5)";
+  const groupColor = isScrolledOrMenu ? "#666666" : "rgba(255,255,255,0.5)";
   const logoSrc = scrolled
     ? "/assets/logos/logo-studio-h-dark.webp"
     : "/assets/logos/logo-studio-h-gold.webp";
