@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Logo from "../../shared/Logo";
 
 const navLinks = [
   { to: "/studio", label: "Top" },
@@ -11,13 +10,23 @@ const navLinks = [
 
 const SOLID_BG = "rgba(74,103,65,0.95)";
 
+const antonStyle: React.CSSProperties = {
+  fontFamily: "'Anton', sans-serif",
+  fontSize: "14px",
+  fontWeight: 400,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  textDecoration: "none",
+  transition: "color 0.2s",
+};
+
 export default function StudioNav() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -32,6 +41,19 @@ export default function StudioNav() {
   }, [menuOpen]);
 
   const navBg = scrolled || menuOpen ? SOLID_BG : "transparent";
+  const isScrolledOrMenu = scrolled || menuOpen;
+
+  const linkColor = (active: boolean) =>
+    isScrolledOrMenu
+      ? active ? "#111111" : "#333333"
+      : active ? "#ffffff" : "#A8BFA2";
+
+  const groupColor = isScrolledOrMenu ? "#999999" : "rgba(255,255,255,0.5)";
+  const logoSrc = isScrolledOrMenu
+    ? "/images/logo-studio-h-dark.webp"
+    : "/images/logo-studio-h-gold.webp";
+
+  const hamColor = isScrolledOrMenu ? "#333333" : "#EAF0E8";
 
   return (
     <>
@@ -51,36 +73,25 @@ export default function StudioNav() {
         }}
       >
         <Link to="/studio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <Logo entity="studio" color="gold" layout="horizontal" height={36} centered={false} />
+          <img
+            src={logoSrc}
+            alt="記憶荘 STUDIO"
+            style={{ height: "36px", width: "auto", transition: "opacity 0.3s ease" }}
+          />
         </Link>
 
         {/* PC nav */}
         <div
-          style={{
-            marginLeft: "auto",
-            display: "flex",
-            gap: "32px",
-            alignItems: "center",
-          }}
+          style={{ marginLeft: "auto", display: "flex", gap: "32px", alignItems: "center" }}
           className="studio-nav-pc"
         >
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              style={{
-                color: location.pathname === link.to ? "#EAF0E8" : "#A8BFA2",
-                fontSize: "12px",
-                fontWeight: 400,
-                letterSpacing: "0.1em",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#EAF0E8")}
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color =
-                  location.pathname === link.to ? "#EAF0E8" : "#A8BFA2")
-              }
+              style={{ ...antonStyle, color: linkColor(location.pathname === link.to) }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = isScrolledOrMenu ? "#111111" : "#ffffff")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = linkColor(location.pathname === link.to))}
             >
               {link.label}
             </Link>
@@ -88,17 +99,13 @@ export default function StudioNav() {
           <Link
             to="/"
             style={{
-              fontSize: "11px",
-              color: "rgba(255,255,255,0.5)",
-              textDecoration: "none",
-              letterSpacing: "0.05em",
+              ...antonStyle,
+              color: groupColor,
+              fontSize: "12px",
               marginLeft: "8px",
               paddingLeft: "16px",
-              borderLeft: "1px solid rgba(255,255,255,0.2)",
-              transition: "opacity 0.2s",
+              borderLeft: isScrolledOrMenu ? "1px solid rgba(0,0,0,0.15)" : "1px solid rgba(255,255,255,0.2)",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.5")}
           >
             ← Group
           </Link>
@@ -120,9 +127,9 @@ export default function StudioNav() {
           }}
           aria-label="メニューを開く"
         >
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#EAF0E8", borderRadius: "1px" }} />
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#EAF0E8", borderRadius: "1px" }} />
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#EAF0E8", borderRadius: "1px" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
         </button>
       </nav>
 
@@ -167,11 +174,10 @@ export default function StudioNav() {
             key={link.to}
             to={link.to}
             style={{
+              ...antonStyle,
               color: "#fff",
               fontSize: "18px",
-              fontWeight: 400,
               letterSpacing: "0.15em",
-              textDecoration: "none",
             }}
           >
             {link.label}
@@ -180,11 +186,10 @@ export default function StudioNav() {
         <Link
           to="/"
           style={{
+            ...antonStyle,
             color: "#fff",
             fontSize: "18px",
-            fontWeight: 400,
             letterSpacing: "0.15em",
-            textDecoration: "none",
           }}
         >
           ← Group

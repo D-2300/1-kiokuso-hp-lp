@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Logo from "../../shared/Logo";
 
 type LogoEntity = "group" | "studio" | "koumuten" | "reform" | "fudousan";
 
@@ -26,10 +25,19 @@ function hexToRgba(hex: string, alpha: number): string {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
+const antonStyle: React.CSSProperties = {
+  fontFamily: "'Anton', sans-serif",
+  fontSize: "14px",
+  fontWeight: 400,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  textDecoration: "none",
+  transition: "color 0.2s",
+};
+
 export default function EntityNav({
   themeColor,
   themeLight,
-  themeBg,
   logoEntity = "group",
   links = [],
 }: EntityNavProps) {
@@ -37,7 +45,7 @@ export default function EntityNav({
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -49,6 +57,15 @@ export default function EntityNav({
 
   const solidBg = hexToRgba(themeColor, 0.95);
   const navBg = scrolled || menuOpen ? solidBg : "transparent";
+  const isScrolledOrMenu = scrolled || menuOpen;
+
+  const linkColor = isScrolledOrMenu ? "#333333" : themeLight;
+  const groupColor = isScrolledOrMenu ? "#999999" : "rgba(255,255,255,0.6)";
+  const hamColor = isScrolledOrMenu ? "#333333" : "#fff";
+
+  const logoSrc = isScrolledOrMenu
+    ? `/assets/logos/logo-${logoEntity}-h-dark.webp`
+    : `/assets/logos/logo-${logoEntity}-h-gold.webp`;
 
   const mobileLinks: NavLink[] = [{ to: "/", label: "← Group Top" }];
 
@@ -70,33 +87,25 @@ export default function EntityNav({
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
-          <Logo entity={logoEntity} color="gold" layout="horizontal" height={36} centered={false} />
+          <img
+            src={logoSrc}
+            alt={logoEntity}
+            style={{ height: "36px", width: "auto", transition: "opacity 0.3s ease" }}
+          />
         </div>
 
         {/* PC nav */}
         <div
-          style={{
-            marginLeft: "auto",
-            display: "flex",
-            gap: "32px",
-            alignItems: "center",
-          }}
+          style={{ marginLeft: "auto", display: "flex", gap: "32px", alignItems: "center" }}
           className="entity-nav-pc"
         >
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              style={{
-                color: themeLight,
-                fontSize: "12px",
-                fontWeight: 400,
-                letterSpacing: "0.1em",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = themeBg)}
-              onMouseLeave={(e) => (e.currentTarget.style.color = themeLight)}
+              style={{ ...antonStyle, color: linkColor }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = isScrolledOrMenu ? "#111111" : "#ffffff")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = linkColor)}
             >
               {link.label}
             </Link>
@@ -104,16 +113,14 @@ export default function EntityNav({
           <Link
             to="/"
             style={{
-              fontSize: "11px",
-              color: "rgba(255,255,255,0.6)",
-              textDecoration: "none",
-              letterSpacing: "0.05em",
-              transition: "opacity 0.2s",
+              ...antonStyle,
+              color: groupColor,
+              fontSize: "12px",
               paddingLeft: links.length > 0 ? "8px" : "0",
-              borderLeft: links.length > 0 ? "1px solid rgba(255,255,255,0.2)" : "none",
+              borderLeft: links.length > 0
+                ? isScrolledOrMenu ? "1px solid rgba(0,0,0,0.15)" : "1px solid rgba(255,255,255,0.2)"
+                : "none",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.6")}
           >
             ← Group Top
           </Link>
@@ -135,9 +142,9 @@ export default function EntityNav({
           }}
           aria-label="メニューを開く"
         >
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#fff", borderRadius: "1px" }} />
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#fff", borderRadius: "1px" }} />
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#fff", borderRadius: "1px" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
         </button>
       </nav>
 
@@ -182,11 +189,10 @@ export default function EntityNav({
             key={link.to}
             to={link.to}
             style={{
+              ...antonStyle,
               color: "#fff",
               fontSize: "18px",
-              fontWeight: 400,
               letterSpacing: "0.15em",
-              textDecoration: "none",
             }}
           >
             {link.label}

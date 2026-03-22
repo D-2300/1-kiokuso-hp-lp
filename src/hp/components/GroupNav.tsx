@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Logo from "../../shared/Logo";
 
 const navLinks = [
   { to: "/", label: "Top" },
@@ -13,13 +12,23 @@ const navLinks = [
 
 const SOLID_BG = "rgba(139,58,58,0.95)";
 
+const antonStyle: React.CSSProperties = {
+  fontFamily: "'Anton', sans-serif",
+  fontSize: "14px",
+  fontWeight: 400,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  textDecoration: "none",
+  transition: "color 0.2s",
+};
+
 export default function GroupNav() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -34,6 +43,18 @@ export default function GroupNav() {
   }, [menuOpen]);
 
   const navBg = scrolled || menuOpen ? SOLID_BG : "transparent";
+  const isScrolledOrMenu = scrolled || menuOpen;
+
+  const linkColor = (active: boolean) =>
+    isScrolledOrMenu
+      ? active ? "#111111" : "#333333"
+      : active ? "#F5EAEA" : "#D4A0A0";
+
+  const hamColor = isScrolledOrMenu ? "#333333" : "#F5EAEA";
+
+  const logoSrc = isScrolledOrMenu
+    ? "/assets/logos/logo-group-h-dark.webp"
+    : "/assets/logos/logo-group-h-gold.webp";
 
   return (
     <>
@@ -53,36 +74,25 @@ export default function GroupNav() {
         }}
       >
         <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <Logo entity="group" color="gold" layout="horizontal" height={36} centered={false} />
+          <img
+            src={logoSrc}
+            alt="記憶荘グループ"
+            style={{ height: "36px", width: "auto", transition: "opacity 0.3s ease" }}
+          />
         </Link>
 
         {/* PC nav */}
         <div
-          style={{
-            marginLeft: "auto",
-            display: "flex",
-            gap: "32px",
-            alignItems: "center",
-          }}
+          style={{ marginLeft: "auto", display: "flex", gap: "32px", alignItems: "center" }}
           className="group-nav-pc"
         >
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              style={{
-                color: location.pathname === link.to ? "#F5EAEA" : "#D4A0A0",
-                fontSize: "12px",
-                fontWeight: 400,
-                letterSpacing: "0.1em",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#F5EAEA")}
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color =
-                  location.pathname === link.to ? "#F5EAEA" : "#D4A0A0")
-              }
+              style={{ ...antonStyle, color: linkColor(location.pathname === link.to) }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = isScrolledOrMenu ? "#111111" : "#F5EAEA")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = linkColor(location.pathname === link.to))}
             >
               {link.label}
             </Link>
@@ -105,9 +115,9 @@ export default function GroupNav() {
           }}
           aria-label="メニューを開く"
         >
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#F5EAEA", borderRadius: "1px" }} />
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#F5EAEA", borderRadius: "1px" }} />
-          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: "#F5EAEA", borderRadius: "1px" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
+          <span style={{ display: "block", width: "22px", height: "2px", backgroundColor: hamColor, borderRadius: "1px", transition: "background-color 0.3s" }} />
         </button>
       </nav>
 
@@ -152,11 +162,10 @@ export default function GroupNav() {
             key={link.to}
             to={link.to}
             style={{
+              ...antonStyle,
               color: "#fff",
               fontSize: "18px",
-              fontWeight: 400,
               letterSpacing: "0.15em",
-              textDecoration: "none",
             }}
           >
             {link.label}
