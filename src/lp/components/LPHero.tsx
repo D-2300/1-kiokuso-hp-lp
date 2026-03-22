@@ -60,6 +60,7 @@ export default function LPHero() {
               color: "#fff",
               lineHeight: 1.6,
               margin: "0 0 16px",
+              textShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3)",
             }}
           >
             今あるものを、活かす。
@@ -72,6 +73,7 @@ export default function LPHero() {
               fontSize: "clamp(13px, 2.5vw, 17px)",
               color: "rgba(255,255,255,0.82)",
               lineHeight: 1.7,
+              textShadow: "0 2px 8px rgba(0,0,0,0.4)",
             }}
           >
             写真1枚で概算をお伝えします。物件が決まっていなくてもOK。
