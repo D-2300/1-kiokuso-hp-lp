@@ -65,7 +65,7 @@ export default function StudioWorks() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(180deg, rgba(74,103,65,0.78) 0%, rgba(74,103,65,0.55) 100%)",
+              background: "rgba(0,0,0,0.45)",
             }}
           />
         </div>

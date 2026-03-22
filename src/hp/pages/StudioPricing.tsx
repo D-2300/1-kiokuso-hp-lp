@@ -52,7 +52,7 @@ export default function StudioPricing() {
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(180deg, rgba(74,103,65,0.75) 0%, rgba(74,103,65,0.5) 100%)",
+              background: "rgba(0,0,0,0.45)",
             }}
           />
         </div>
