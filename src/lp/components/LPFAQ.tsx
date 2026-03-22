@@ -28,7 +28,7 @@ export default function LPFAQ() {
 
   return (
     <section style={{ backgroundColor: "#fff", padding: "48px 20px" }}>
-      <div style={{ maxWidth: "960px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
         <p
           style={{
             margin: "0 0 28px",
