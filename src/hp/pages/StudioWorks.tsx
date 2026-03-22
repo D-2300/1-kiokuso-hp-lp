@@ -50,11 +50,11 @@ const works = [
 
 export default function StudioWorks() {
   return (
-    <div style={{ backgroundColor: colors.beige, minHeight: "100vh", paddingTop: "64px" }}>
+    <div style={{ backgroundColor: colors.beige, minHeight: "100vh", paddingTop: 0 }}>
       <StudioNav />
 
       {/* SmallHero */}
-      <section style={{ position: "relative", height: "45vh", minHeight: "320px", overflow: "hidden" }}>
+      <section style={{ position: "relative", height: "50vh", minHeight: "320px", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, height: "100%", backgroundColor: "#CFC7BD" }}>
           <img
             src="/assets/textures/oak-hardwood-floor.webp"
