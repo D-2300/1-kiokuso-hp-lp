@@ -166,8 +166,6 @@ export default function StudioPricing() {
         </div>
       </section>
 
-      <TextureBand src="/assets/textures/earthen-wall-layers.webp" height={200} />
-
       {/* なぜこの値段なのか */}
       <ScrollFadeIn>
         <section style={{ padding: "64px 24px", maxWidth: "540px", margin: "0 auto", textAlign: "center" }}>
