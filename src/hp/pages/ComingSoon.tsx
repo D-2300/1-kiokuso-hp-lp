@@ -158,6 +158,23 @@ export default function ComingSoon({
             {subtitle}
           </p>
         </div>
+        <p
+          style={{
+            position: "absolute",
+            bottom: "80px",
+            left: 0,
+            right: 0,
+            textAlign: "center",
+            fontFamily: "'Anton', sans-serif",
+            fontSize: "24px",
+            letterSpacing: "6px",
+            color: "rgba(255,255,255,0.5)",
+            zIndex: 2,
+            margin: 0,
+          }}
+        >
+          準備中
+        </p>
       </section>
 
       {textureBand1 && <TextureBand src={textureBand1} height={180} />}

@@ -258,6 +258,11 @@ export default function GroupTop() {
                   <p style={{ fontSize: "12px", color: "#C9A84C", fontWeight: 500 }}>
                     詳しく見る →
                   </p>
+                  {!b.active && (
+                    <p style={{ fontSize: "12px", color: "#BBB", fontWeight: 400, marginTop: "4px" }}>
+                      準備中
+                    </p>
+                  )}
                 </Link>
               ))}
             </div>
