@@ -11,7 +11,7 @@ export default function LPHero() {
       }}
     >
       <img
-        src="/images/hp-hallway-light.webp"
+        src="/images/lp-hero.webp"
         alt=""
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
       />
@@ -31,6 +31,7 @@ export default function LPHero() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "28px 20px 0",
+          paddingTop: "80px",
           maxWidth: "960px",
           margin: "0 auto",
           boxSizing: "border-box",
