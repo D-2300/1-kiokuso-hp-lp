@@ -47,6 +47,24 @@ export default function ComingSoon({
 
   return (
     <div style={{ backgroundColor: "#F8F5F0", minHeight: "100vh" }}>
+      <style>{`
+        .hero-anton {
+          font-family: 'Anton', sans-serif;
+          font-weight: 400;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          font-size: 72px;
+          color: #fff;
+          width: 100%;
+          text-align: center;
+          padding: 0 16px;
+          word-break: break-word;
+          box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+          .hero-anton { font-size: 48px; }
+        }
+      `}</style>
       <EntityNav
         themeColor={themeColor}
         themeLight={themeLight}
@@ -107,7 +125,7 @@ export default function ComingSoon({
           <div style={{ marginBottom: "8px" }}>
             <Logo entity={logoEntity} color="gold" layout="mark" height={72} />
           </div>
-          <p style={{ color: "#fff", fontSize: "72px", fontWeight: 400, letterSpacing: "0.05em", fontFamily: "'Anton', sans-serif", textTransform: "uppercase" as const }}>
+          <p className="hero-anton">
             {name}
           </p>
           <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "16px" }}>{nameJa}</p>

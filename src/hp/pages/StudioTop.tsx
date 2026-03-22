@@ -22,6 +22,25 @@ export default function StudioTop() {
 
       <StudioNav />
 
+      <style>{`
+        .hero-anton {
+          font-family: 'Anton', sans-serif;
+          font-weight: 400;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          font-size: 72px;
+          color: #fff;
+          width: 100%;
+          text-align: center;
+          padding: 0 16px;
+          word-break: break-word;
+          box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+          .hero-anton { font-size: 48px; }
+        }
+      `}</style>
+
       {/* Hero */}
       <section style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, height: "100%" }}>
@@ -51,7 +70,7 @@ export default function StudioTop() {
           <div style={{ marginBottom: "8px" }}>
             <Logo entity="studio" color="gold" layout="mark" height={64} />
           </div>
-          <p style={{ color: "#fff", fontSize: "72px", fontWeight: 400, letterSpacing: "0.05em", fontFamily: "'Anton', sans-serif", textTransform: "uppercase" }}>
+          <p className="hero-anton">
             KIOKUSO STUDIO
           </p>
           <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", fontWeight: 400, letterSpacing: "0.1em" }}>
