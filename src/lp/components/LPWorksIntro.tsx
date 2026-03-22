@@ -12,8 +12,8 @@ export default function LPWorksIntro() {
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "14px" }}>
             <div style={{ width: "3px", height: "28px", backgroundColor: "#C9A84C" }} />
             <div>
-              <p style={{ margin: 0, fontSize: "11px", letterSpacing: "0.2em", color: "#C9A84C" }}>Works</p>
-              <p style={{ margin: "2px 0 0", fontSize: "14px", color: "#fff", letterSpacing: "0.05em" }}>施工事例</p>
+              <p style={{ margin: 0, fontSize: "12px", color: "#C9A84C", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>Works</p>
+              <p style={{ margin: "2px 0 0", fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#fff", letterSpacing: "0.05em" }}>施工事例</p>
             </div>
           </div>
         </div>
