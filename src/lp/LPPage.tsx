@@ -20,6 +20,7 @@ import LPFinalCTA from "./components/LPFinalCTA";
 import LPFAQ from "./components/LPFAQ";
 import LPProfile from "./components/LPProfile";
 import LPFooter from "./components/LPFooter";
+import LPFloatingLine from "./components/LPFloatingLine";
 
 export default function LPPage() {
   return (
@@ -46,6 +47,7 @@ export default function LPPage() {
       <LPFAQ />
       <LPProfile />
       <LPFooter />
+      <LPFloatingLine />
     </div>
   );
 }

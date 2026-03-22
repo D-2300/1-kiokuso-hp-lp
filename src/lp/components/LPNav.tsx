@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { LINE_URL } from "../../shared/design-tokens";
 
 export default function LPNav() {
   const [s, setS] = useState(false);
@@ -32,30 +31,10 @@ export default function LPNav() {
           padding: "12px 20px",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "flex-start",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <img src="/assets/logos/logo-studio-h-gold.webp" alt="記憶荘 STUDIO" style={{ height: "32px", width: "auto" }} />
-        </div>
-        <a
-          href={LINE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-gtm="line_cta_click"
-          style={{
-            display: "inline-block",
-            backgroundColor: "#06C755",
-            color: "#fff",
-            borderRadius: "6px",
-            padding: "8px 16px",
-            fontSize: "12px",
-            fontWeight: 500,
-            textDecoration: "none",
-          }}
-        >
-          LINEで相談
-        </a>
+        <img src="/assets/logos/logo-studio-h-gold.webp" alt="記憶荘 STUDIO" style={{ height: "32px", width: "auto" }} />
       </div>
     </nav>
   );

@@ -1,0 +1,14 @@
+# LP をデフォルトに（広告着地先）
+/  /lp  302
+
+# HP各ページは直接アクセス可
+/about    /about    200
+/studio   /studio   200
+/studio/* /studio/* 200
+/koumuten /koumuten 200
+/reform   /reform   200
+/fudousan /fudousan 200
+/lp       /lp       200
+
+# SPA フォールバック
+/*  /index.html  200
