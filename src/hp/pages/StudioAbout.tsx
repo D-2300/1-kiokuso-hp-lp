@@ -4,6 +4,7 @@ import StudioFooter from "../components/StudioFooter";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
 import GoldDivider from "../../shared/GoldDivider";
 import TextureBand from "../../shared/TextureBand";
+import TohokuMap from "../components/TohokuMap";
 import { colors } from "../../shared/design-tokens";
 
 const points = [
@@ -174,6 +175,38 @@ export default function StudioAbout() {
             </div>
           </div>
         </div>
+      </ScrollFadeIn>
+
+      {/* 対応エリア */}
+      <GoldDivider />
+      <ScrollFadeIn>
+        <section style={{ padding: "80px 24px", maxWidth: "1000px", margin: "0 auto" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "48px",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <p style={{ fontSize: "20px", fontWeight: 600, color: "#1A1A1A", fontFamily: "'Noto Sans JP', sans-serif" }}>
+                対応エリア
+              </p>
+              <p style={{ fontSize: "15px", fontWeight: 500, color: "#1A1A1A", fontFamily: "'Noto Sans JP', sans-serif", marginTop: "32px" }}>
+                仙台市・宮城県を中心に、東北全域で対応
+              </p>
+              <p style={{ fontSize: "14px", fontWeight: 300, color: "#666666", fontFamily: "'Noto Sans JP', sans-serif", lineHeight: 1.9, marginTop: "12px" }}>
+                仙台市・宮城県を中心に、福島・岩手・山形・秋田・青森など東北地方に広く対応しています。
+                <br />
+                ご希望があれば関東・東京エリアなど東北以外も対応可能な場合がありますので、気軽にご相談ください。
+              </p>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <TohokuMap />
+            </div>
+          </div>
+        </section>
       </ScrollFadeIn>
 
       <StudioCTA />
