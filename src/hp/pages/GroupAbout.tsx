@@ -3,7 +3,6 @@ import GroupNav from "../components/GroupNav";
 import GroupFooter from "../components/GroupFooter";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
 import GoldDivider from "../../shared/GoldDivider";
-import TextureBand from "../../shared/TextureBand";
 import { colors } from "../../shared/design-tokens";
 
 const ourWork = [
@@ -87,7 +86,9 @@ export default function GroupAbout() {
         </div>
       </section>
 
-      <TextureBand src="/assets/textures/yakisugi-charred-wood.webp" height={180} />
+      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
+        <img src="/assets/textures/yakisugi-charred-wood.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+      </div>
 
       {/* ブロック1：記憶が宿る場所 */}
       <ScrollFadeIn>
@@ -147,6 +148,10 @@ export default function GroupAbout() {
         </section>
       </ScrollFadeIn>
 
+      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
+        <img src="/assets/textures/old-new-timber-junction.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+      </div>
+
       {/* ブロック2：制約の中の美しさ */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
@@ -198,6 +203,10 @@ export default function GroupAbout() {
         </section>
       </ScrollFadeIn>
 
+      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
+        <img src="/assets/textures/kintsugi-bowl-inside.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+      </div>
+
       <GoldDivider />
 
       {/* STEP I：OUR WORK 事業体紹介 */}
@@ -239,6 +248,11 @@ export default function GroupAbout() {
       </ScrollFadeIn>
 
       <GoldDivider />
+
+      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
+        <img src="/assets/textures/mortar-wall-cracks.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+      </div>
+
       {/* STEP J：DAIプロフィール（グループ視点） */}
       <ScrollFadeIn>
         <div style={{ padding: "40px 24px 64px", maxWidth: "500px", margin: "0 auto" }}>
@@ -266,7 +280,9 @@ export default function GroupAbout() {
         </div>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/reclaimed-wood-section.webp" height={180} />
+      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
+        <img src="/assets/textures/reclaimed-wood-section.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+      </div>
 
       <GroupFooter />
     </div>
