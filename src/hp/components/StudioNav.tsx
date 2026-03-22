@@ -40,14 +40,14 @@ export default function StudioNav() {
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 200,
         height: "64px", display: "flex", alignItems: "center", padding: "0 24px",
-        backgroundColor: show ? "rgba(248,245,242,0.95)" : "rgba(0,0,0,0)",
+        backgroundColor: show ? "rgba(74,103,65,0.95)" : "rgba(0,0,0,0)",
         backdropFilter: show ? "blur(8px)" : "none",
         boxShadow: show ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
         transition: "background-color 0.3s, backdrop-filter 0.3s, box-shadow 0.3s",
       }}>
         <Link to="/studio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <img
-            src={show ? "/assets/logos/logo-studio-h-dark.webp" : "/assets/logos/logo-studio-h-gold.webp"}
+            src="/assets/logos/logo-studio-h-gold.webp"
             alt="記憶荘 STUDIO"
             style={{ height: "36px", width: "auto" }}
           />
@@ -58,7 +58,7 @@ export default function StudioNav() {
             <Link key={l.to} to={l.to} style={{
               ...font,
               color: show
-                ? (location.pathname === l.to ? "#1A1A1A" : "#555")
+                ? (location.pathname === l.to ? "#fff" : "rgba(255,255,255,0.7)")
                 : (location.pathname === l.to ? "#fff" : "rgba(255,255,255,0.75)"),
               textDecoration: "none",
             }}>
@@ -67,8 +67,8 @@ export default function StudioNav() {
           ))}
           <Link to="/" style={{
             ...font, fontSize: "12px", marginLeft: "8px", paddingLeft: "16px",
-            borderLeft: show ? "1px solid rgba(0,0,0,0.12)" : "1px solid rgba(255,255,255,0.2)",
-            color: show ? "#888" : "rgba(255,255,255,0.6)",
+            borderLeft: "1px solid rgba(255,255,255,0.2)",
+            color: "rgba(255,255,255,0.5)",
             textDecoration: "none",
           }}>
             ← Group
@@ -79,7 +79,7 @@ export default function StudioNav() {
           marginLeft: "auto", background: "none", border: "none", cursor: "pointer",
           padding: "8px", display: "flex", flexDirection: "column" as const, gap: "5px",
         }}>
-          {[0,1,2].map(i => <span key={i} style={{ display:"block", width:"22px", height:"2px", backgroundColor: show ? "#1A1A1A" : "#fff", borderRadius:"1px" }} />)}
+          {[0,1,2].map(i => <span key={i} style={{ display:"block", width:"22px", height:"2px", backgroundColor: "#fff", borderRadius:"1px" }} />)}
         </button>
       </nav>
 
