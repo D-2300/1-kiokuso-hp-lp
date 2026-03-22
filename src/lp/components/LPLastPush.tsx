@@ -1,5 +1,3 @@
-import { LINE_URL } from "../../shared/design-tokens";
-
 export default function LPLastPush() {
   return (
     <section style={{ backgroundColor: "#EAF0E8", padding: "48px 20px" }}>
@@ -16,7 +14,7 @@ export default function LPLastPush() {
           まだ先の話だから、と思っていませんか。
         </p>
         <p style={{
-          margin: "0 0 28px",
+          margin: "0 0 32px",
           fontSize: "clamp(13px, 2vw, 14px)",
           color: "#777",
           textAlign: "center",
@@ -29,11 +27,12 @@ export default function LPLastPush() {
         {/* 特典エリア */}
         <div style={{
           backgroundColor: "#4A6741",
-          borderRadius: "12px",
+          borderRadius: "16px",
           padding: "28px 20px",
+          overflow: "hidden",
         }}>
           <p style={{
-            margin: "0 0 20px",
+            margin: "0 0 24px",
             fontSize: "clamp(14px, 2.5vw, 16px)",
             fontWeight: 700,
             color: "#fff",
@@ -45,66 +44,82 @@ export default function LPLastPush() {
             をお渡ししています。
           </p>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            {/* 特典1 */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+
+            {/* 特典1: 虎の巻 */}
             <div style={{
-              backgroundColor: "rgba(255,255,255,0.1)",
-              borderRadius: "10px",
+              backgroundColor: "#1A1A1A",
+              borderRadius: "12px",
               overflow: "hidden",
-              display: "flex",
-              alignItems: "stretch",
             }}>
               <div style={{
-                flex: "0 0 100px",
-                minHeight: "100px",
-                overflow: "hidden",
+                display: "flex",
+                justifyContent: "center",
+                padding: "20px 16px",
               }}>
                 <img
-                  src="/images/why-estimate-detail.webp"
-                  alt="見積もりの虎の巻"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  src="/images/toranomaki-cover.webp"
+                  alt="内装見積もりの虎の巻"
+                  style={{
+                    width: "100%",
+                    maxWidth: "320px",
+                    height: "auto",
+                    display: "block",
+                    borderRadius: "4px",
+                  }}
                 />
               </div>
-              <div style={{ padding: "14px 16px", flex: 1 }}>
-                <p style={{ margin: "0 0 4px", fontSize: "11px", color: "#C9A84C", fontWeight: 700 }}>特典1</p>
-                <p style={{ margin: "0 0 6px", fontSize: "clamp(13px, 2vw, 15px)", fontWeight: 700, color: "#fff" }}>
+              <div style={{
+                backgroundColor: "rgba(255,255,255,0.06)",
+                padding: "16px 20px",
+              }}>
+                <p style={{ margin: "0 0 4px", fontSize: "11px", color: "#C9A84C", fontWeight: 700 }}>特典 1</p>
+                <p style={{ margin: "0 0 6px", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#fff" }}>
                   内装見積もりの虎の巻（PDF）
                 </p>
-                <p style={{ margin: 0, fontSize: "12px", color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>
-                  相場感と見積もりの読み方をまとめたPDF
+                <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+                  相場感・見積もりの読み方・業者選びのポイントをまとめた資料です。
                 </p>
               </div>
             </div>
 
-            {/* 特典2 */}
+            {/* 特典2: AIパース */}
             <div style={{
-              backgroundColor: "rgba(255,255,255,0.1)",
-              borderRadius: "10px",
+              backgroundColor: "#1A1A1A",
+              borderRadius: "12px",
               overflow: "hidden",
-              display: "flex",
-              alignItems: "stretch",
             }}>
               <div style={{
-                flex: "0 0 100px",
-                minHeight: "100px",
-                overflow: "hidden",
+                display: "flex",
+                justifyContent: "center",
+                padding: "20px 16px",
               }}>
                 <img
                   src="/images/solution-ai-pers.webp"
                   alt="AIパース"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  style={{
+                    width: "100%",
+                    maxWidth: "320px",
+                    height: "auto",
+                    display: "block",
+                    borderRadius: "4px",
+                  }}
                 />
               </div>
-              <div style={{ padding: "14px 16px", flex: 1 }}>
-                <p style={{ margin: "0 0 4px", fontSize: "11px", color: "#C9A84C", fontWeight: 700 }}>特典2</p>
-                <p style={{ margin: "0 0 6px", fontSize: "clamp(13px, 2vw, 15px)", fontWeight: 700, color: "#fff" }}>
+              <div style={{
+                backgroundColor: "rgba(255,255,255,0.06)",
+                padding: "16px 20px",
+              }}>
+                <p style={{ margin: "0 0 4px", fontSize: "11px", color: "#C9A84C", fontWeight: 700 }}>特典 2</p>
+                <p style={{ margin: "0 0 6px", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#fff" }}>
                   AIパースを無料で作成
                 </p>
-                <p style={{ margin: 0, fontSize: "12px", color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>
-                  LINEで間取りを送ると完成イメージをお届け
+                <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+                  LINEで物件の写真や間取りを送るだけ。完成イメージをお届けします。
                 </p>
               </div>
             </div>
+
           </div>
         </div>
 
