@@ -95,7 +95,7 @@ export default function LPLastPush() {
                 padding: "20px 16px",
               }}>
                 <img
-                  src="/images/solution-ai-pers.webp"
+                  src="/images/ai-pers-tablet.webp"
                   alt="AIパース"
                   style={{
                     width: "100%",
