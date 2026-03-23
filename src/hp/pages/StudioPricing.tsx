@@ -308,6 +308,30 @@ export default function StudioPricing() {
 
       <GoldDivider />
 
+      {/* Not For */}
+      <ScrollFadeIn>
+        <section style={{ padding: "48px 24px", maxWidth: "540px", margin: "0 auto" }}>
+          <p style={{ fontSize: "14px", color: "#888", margin: "0 0 16px", fontWeight: 500 }}>
+            お受けしていない案件
+          </p>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
+            {[
+              "大規模チェーン店・フランチャイズ店舗の内装",
+              "デザイナーズ空間・ハイエンド内装（専門のデザイン事務所をおすすめします）",
+              "最短工期・突貫工事（丁寧に進めるため、急ぎの対応は難しい場合があります）",
+              "施工のみの依頼（設計から一貫で対応しています）",
+            ].map((item) => (
+              <li key={item} style={{ fontSize: "13px", color: "#999", lineHeight: 1.8, display: "flex", gap: "8px" }}>
+                <span style={{ color: "#ccc", flexShrink: 0 }}>・</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </ScrollFadeIn>
+
+      <GoldDivider />
+
       {/* FAQ */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 24px", maxWidth: "800px", margin: "0 auto" }}>

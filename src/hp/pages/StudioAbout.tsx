@@ -1,7 +1,6 @@
 import StudioNav from "../components/StudioNav";
 import StudioFooter from "../components/StudioFooter";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
-import GoldDivider from "../../shared/GoldDivider";
 import TextureBand from "../../shared/TextureBand";
 import { colors } from "../../shared/design-tokens";
 
@@ -38,337 +37,120 @@ export default function StudioAbout() {
         </div>
       </section>
 
-      {/* 何をやっているか */}
+      {/* OUR APPROACH — Essay */}
       <ScrollFadeIn>
-        <section style={{ padding: "64px 24px", textAlign: "center" }}>
-          <p style={{ fontSize: "18px", fontWeight: 500, color: colors.text, marginBottom: "16px" }}>
-            店舗内装の設計・施工
+        <section style={{ padding: "80px 24px 0", maxWidth: "640px", margin: "0 auto" }}>
+          <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 40px", textTransform: "uppercase" }}>
+            Our Approach
           </p>
-          <p style={{ maxWidth: "480px", margin: "0 auto", fontSize: "14px", color: colors.sub, lineHeight: 2.0 }}>
-            仙台・宮城県を中心に、
-            <br />
-            飲食店・美容室・テイクアウト店などの
-            <br />
-            店舗内装を設計から施工まで一貫して行っています。
+
+          <h3 style={{ fontSize: "20px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 24px", lineHeight: 1.6 }}>
+            ── なぜ、一社でやるのか。
+          </h3>
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
+            内装工事の業界では、営業と施工が別の会社であることが珍しくありません。
+            間に入る会社が増えるたびに、費用は上がり、伝言ゲームで意図がズレていきます。
           </p>
-          <p style={{ maxWidth: "480px", margin: "20px auto 0", fontSize: "14px", color: colors.sub, lineHeight: 2.0 }}>
-            居抜き物件の活用、施主支給、DIYの併用で、
-            <br />
-            品質を落とさずにコストを抑えるのが記憶荘のやり方です。
-            <br />
-            物件が決まっていない段階からご相談いただけます。
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: 0 }}>
+            記憶荘では、最初の相談から設計・施工・届出まで、すべて一社で対応しています。
+            間に誰も入らないから、話が早い。費用も透明。仕上がりもブレない。
           </p>
         </section>
       </ScrollFadeIn>
 
-      {/* ① 一貫対応 */}
+      <TextureBand src="/assets/textures/oak-hardwood-floor.webp" height={160} />
+
       <ScrollFadeIn>
-        <section style={{ padding: "80px 24px", maxWidth: "800px", margin: "0 auto" }}>
-          <p style={{ fontSize: "14px", color: "#999", letterSpacing: "0.08em", marginBottom: "32px" }}>
-            業界の普通
+        <section style={{ padding: "0 24px", maxWidth: "640px", margin: "0 auto" }}>
+          <h3 style={{ fontSize: "20px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 24px", lineHeight: 1.6 }}>
+            ── なぜ、見積もりを全部見せるのか。
+          </h3>
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
+            「一式○○万円」という見積もりは、何にいくらかかっているのかわかりません。
+            わからないまま契約すると、あとから追加費用が発生するリスクがあります。
           </p>
-          <p style={{ fontSize: "15px", color: "#555", lineHeight: 2.0, maxWidth: "560px" }}>
-            店舗の内装工事には、いくつもの専門業者が関わります。
-            <br />
-            設計はデザイン事務所、施工は施工会社、現場管理はまた別の担当者。
-            <br />
-            それぞれの間に、調整のための時間とコストが生まれます。
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: 0 }}>
+            記憶荘の見積もりは、材料費・人件費・諸経費のすべてを項目ごとに公開しています。
+            オーナーが自分の目で確認し、納得した上で進められる。それが当然だと考えています。
           </p>
-          <p style={{ fontSize: "15px", color: "#555", lineHeight: 2.0, maxWidth: "560px", marginTop: "20px" }}>
-            打ち合わせで伝えたイメージが、図面になり、
-            <br />
-            図面が現場に届くまでに、少しずつ形が変わっていく。
-            <br />
-            「言った・言わない」が起きるのは、関わる人が多いからです。
-          </p>
+        </section>
+      </ScrollFadeIn>
 
-          {/* 図解 */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1px 1fr",
-              gap: "0",
-              margin: "48px 0",
-              backgroundColor: "#fff",
-              border: "1px solid #E5E0D8",
-              padding: "32px 24px",
-            }}
-          >
-            <div style={{ padding: "0 24px 0 0", display: "flex", flexDirection: "column", gap: "8px" }}>
-              <p style={{ fontSize: "11px", color: "#999", letterSpacing: "0.12em", marginBottom: "12px" }}>よくある体制</p>
-              <div style={{ fontSize: "13px", color: "#555", lineHeight: 2.0 }}>
-                オーナー<br />
-                <span style={{ color: "#bbb", fontSize: "12px" }}>↓</span><br />
-                営業<br />
-                <span style={{ color: "#bbb", fontSize: "12px" }}>↓</span><br />
-                設計者<br />
-                <span style={{ color: "#bbb", fontSize: "12px" }}>↓</span><br />
-                現場監督<br />
-                <span style={{ color: "#bbb", fontSize: "12px" }}>↓</span><br />
-                各職人
-              </div>
-              <div style={{ fontSize: "11px", color: "#999", lineHeight: 1.6, marginTop: "8px" }}>
-                伝える人が増えるほど、ズレが生まれる
-              </div>
+      <TextureBand src="/assets/textures/rusted-steel-plates.webp" height={160} />
+
+      <ScrollFadeIn>
+        <section style={{ padding: "0 24px 80px", maxWidth: "640px", margin: "0 auto" }}>
+          <h3 style={{ fontSize: "20px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 24px", lineHeight: 1.6 }}>
+            ── なぜ、安くできるのか。
+          </h3>
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
+            「安い＝手を抜いている」ではありません。
+          </p>
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
+            居抜き物件の既存設備を活かすこと。<br />
+            メルカリやヤフオクで中古の厨房機器や建材を調達すること。<br />
+            塗装や簡単な組み立てはオーナー自身がDIYで参加すること。
+          </p>
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: 0 }}>
+            こうした工夫を一つひとつ積み重ねることで、品質を落とさずにコストを抑えています。
+          </p>
+        </section>
+      </ScrollFadeIn>
+
+      {/* ABOUT KEN */}
+      <ScrollFadeIn>
+        <section style={{ padding: "80px 24px", backgroundColor: "rgba(46,66,41,0.03)" }}>
+          <div style={{ maxWidth: "560px", margin: "0 auto" }}>
+            <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 40px", textTransform: "uppercase" }}>
+              About Ken
+            </p>
+            <div style={{ textAlign: "center", marginBottom: "36px" }}>
+              <img
+                src="/images/about-dai.webp"
+                alt="KEN"
+                style={{ maxWidth: "320px", width: "100%", borderRadius: "8px", objectFit: "cover", display: "inline-block" }}
+              />
             </div>
-
-            <div style={{ backgroundColor: "#E5E0D8", width: "1px", alignSelf: "stretch" }} />
-
-            <div style={{ padding: "0 0 0 24px", display: "flex", flexDirection: "column", gap: "8px" }}>
-              <p style={{ fontSize: "11px", color: "#C9A84C", letterSpacing: "0.12em", marginBottom: "12px" }}>記憶荘</p>
-              <div style={{ fontSize: "13px", color: "#333", lineHeight: 2.0 }}>
-                オーナー<br />
-                <span style={{ color: "#C9A84C", fontSize: "12px" }}>↓</span><br />
-                記憶荘<br />
-                <span style={{ color: "#C9A84C", fontSize: "12px" }}>↓</span><br />
-                各職人
-              </div>
-              <div style={{ fontSize: "11px", color: "#555", lineHeight: 1.6, marginTop: "8px" }}>
-                相談から引渡しまで、一社で完結
-              </div>
-            </div>
-          </div>
-
-          <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px" }}>
-            記憶荘では、設計・見積もり・現場管理のすべてを一社で担当しています。
-          </p>
-          <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
-            間に入る会社がないので、伝言が発生しない。
-            <br />
-            打ち合わせで話したことが、翌日の現場にそのまま届く。
-            <br />
-            「ここ、やっぱりこうしたい」にも、その場で対応できる。
-          </p>
-          <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
-            外注の連鎖がないぶん、
-            <br />
-            事務所の維持費も、中間マージンもかからない。
-            <br />
-            そのぶんが、見積もりに反映されています。
-          </p>
-
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "40px" }}>
-            効率がいいからこの形を選んだわけではありません。
-          </p>
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
-            施工中に現場で手を動かしていると、
-            <br />
-            図面では見えなかったことに気づく瞬間があります。
-            <br />
-            「この壁、もう少し手前にした方が動線がいい」
-            <br />
-            「この照明、角度を変えるだけで印象が変わる」
-          </p>
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
-            その気づきを、誰かに報告して、判断を仰いで、戻ってくるのを待つのではなく、
-            <br />
-            自分たちの手で、その場で直したい。
-          </p>
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
-            だから一社で完結するやり方を選んでいます。
-          </p>
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
-            同時に何件も抱えると、一つひとつが薄くなる。
-            <br />
-            今は目の前のこの一件に集中する。
-            <br />
-            それが、記憶荘のやり方です。
-          </p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "16px",
-              marginTop: "48px",
-            }}
-          >
-            <div>
-              <img src="/images/why-estimate-detail.webp" alt="" style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }} />
-              <p style={{ fontSize: "12px", color: "#999", marginTop: "8px", lineHeight: 1.6 }}>見積もりは全項目を一行ずつ記載</p>
-            </div>
-            <div>
-              <img src="/images/why-line-chat.webp" alt="" style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }} />
-              <p style={{ fontSize: "12px", color: "#999", marginTop: "8px", lineHeight: 1.6 }}>やりとりはLINEで完結</p>
-            </div>
+            <p style={{ fontSize: "22px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 4px" }}>
+              KEN
+            </p>
+            <p style={{ fontSize: "13px", color: "#888", margin: "0 0 28px" }}>記憶荘 CSO</p>
+            <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
+              前職では店舗内装の現場監督として、飲食店・美容室・ジム・物販店など
+              さまざまな業態の内装を手がけてきました。
+            </p>
+            <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
+              独立のきっかけは、業界の不透明さに対する違和感でした。
+              見積もりの中身がわからない。追加費用が次々と発生する。
+              オーナーが納得しないまま工事が進む。
+            </p>
+            <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
+              「これを変えたい」と思って始めたのが、記憶荘です。
+            </p>
+            <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: 0 }}>
+              仙台・宮城県で、飲食店・美容室・テイクアウト店・ジムなど
+              さまざまな業態の店舗内装を手がけています。
+            </p>
           </div>
         </section>
       </ScrollFadeIn>
 
-      {/* ② 居抜きを活かす */}
+      {/* SERVICE AREA */}
       <ScrollFadeIn>
-        <section style={{ padding: "80px 24px", maxWidth: "800px", margin: "0 auto" }}>
-          <p style={{ fontSize: "14px", color: "#999", letterSpacing: "0.08em", marginBottom: "32px" }}>
-            業界の普通
+        <section style={{ padding: "80px 24px", maxWidth: "560px", margin: "0 auto" }}>
+          <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 32px", textTransform: "uppercase" }}>
+            Service Area
           </p>
-          <p style={{ fontSize: "15px", color: "#555", lineHeight: 2.0, maxWidth: "560px" }}>
-            内装工事はまず「解体」から始まることが多い。
-            <br />
-            前のお店の設備をすべて撤去して、ゼロから作り直す。
-            <br />
-            解体費だけで数十万円かかることもある。
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
+            仙台市・宮城県を中心に対応しています。<br />
+            ご希望があれば東北全域も対応可能です。
           </p>
-
-          <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px", marginTop: "48px" }}>
-            記憶荘では、使えるものは使います。
-            <br />
-            カウンター、棚、厨房設備、照明のレール、壁の下地。
-            <br />
-            前のお店が残していったものの中に、活かせるものがあるかどうかを最初に見極めます。
+          <p style={{ fontSize: "14px", lineHeight: 2.0, color: "#777", margin: 0 }}>
+            <span style={{ fontSize: "12px", color: "#aaa", marginRight: "8px" }}>対応業態</span>
+            飲食店・カフェ・テイクアウト・居酒屋/バー・美容室・ネイルサロン・パーソナルジム・物販店 など
           </p>
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "24px" }}>
-            壊さなくて済むなら、その分の予算を本当にこだわりたい場所に使える。
-            <br />
-            「全部新しくする」ことが正解とは限らない。
-            <br />
-            使い込まれた素材が、新しいお店に奥行きを与えることもあります。
-          </p>
-
-          <div style={{ marginTop: "40px" }}>
-            <img src="/images/crossover-before-01.webp" alt="" style={{ width: "100%", maxWidth: "640px", aspectRatio: "16/9", objectFit: "cover", display: "block" }} />
-            <p style={{ fontSize: "12px", color: "#999", marginTop: "8px", lineHeight: 1.6 }}>既存のカウンターと厨房設備を活かした例</p>
-          </div>
         </section>
       </ScrollFadeIn>
-
-      {/* ③ 施主支給・DIY */}
-      <ScrollFadeIn>
-        <section style={{ padding: "80px 24px", maxWidth: "800px", margin: "0 auto" }}>
-          <p style={{ fontSize: "14px", color: "#999", letterSpacing: "0.08em", marginBottom: "32px" }}>
-            業界の普通
-          </p>
-          <p style={{ fontSize: "15px", color: "#555", lineHeight: 2.0, maxWidth: "560px" }}>
-            材料や家具は施工会社経由で仕入れるのが一般的。
-            <br />
-            仕入れマージンが15〜30%ほど上乗せされる。
-            <br />
-            オーナーが持ち込んだ材料は「保証できない」と断られることも。
-          </p>
-
-          <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px", marginTop: "48px" }}>
-            オーナーが自分で見つけた照明、ネットで買ったタイル、思い入れのある椅子。
-            <br />
-            記憶荘では全部歓迎します。
-            <br />
-            壁の塗装や簡単な仕上げは、一緒にやることもできます。
-          </p>
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "24px" }}>
-            「自分で選んだ」「自分の手で塗った」という体験が、お店への愛着になる。
-            <br />
-            内装工事はゴールではなく、お店の物語の始まり。
-            <br />
-            その最初のページに、オーナー自身の手が入っていることに意味がある。
-          </p>
-
-          <div style={{ marginTop: "40px" }}>
-            <img src="/images/crossover-process-03.webp" alt="" style={{ width: "100%", maxWidth: "640px", aspectRatio: "16/9", objectFit: "cover", display: "block" }} />
-            <p style={{ fontSize: "12px", color: "#999", marginTop: "8px", lineHeight: 1.6 }}>施主支給の照明と壁面DIYを組み合わせた仕上げ</p>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      <TextureBand src="/assets/textures/ceramic-tile-pair.webp" height={180} />
-
-      {/* Filter */}
-      <ScrollFadeIn>
-        <section style={{ padding: "80px 24px", maxWidth: "800px", margin: "0 auto" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1px 1fr",
-              gap: "0",
-              alignItems: "start",
-            }}
-            className="filter-grid"
-          >
-            <div style={{ padding: "0 32px 0 0" }}>
-              <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontFamily: "Anton, sans-serif", marginBottom: "20px" }}>FOR YOU</p>
-              <p style={{ fontSize: "15px", fontWeight: 500, color: "#333", marginBottom: "20px", lineHeight: 1.5 }}>こういう方のために</p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
-                {[
-                  "初めて店を持つ方",
-                  "予算に限りがあるけれど、妥協はしたくない方",
-                  "内装のことがわからなくて、何から始めればいいか不安な方",
-                  "自分の手でも何かやってみたい方",
-                  "一人の担当者とじっくり進めたい方",
-                ].map((item) => (
-                  <li key={item} style={{ fontSize: "13px", color: "#333", lineHeight: 1.8, display: "flex", gap: "8px" }}>
-                    <span style={{ color: "#C9A84C", flexShrink: 0 }}>・</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div style={{ backgroundColor: "#C9A84C", width: "1px", alignSelf: "stretch", margin: "0" }} className="filter-divider" />
-
-            <div style={{ padding: "0 0 0 32px" }}>
-              <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#999", fontFamily: "Anton, sans-serif", marginBottom: "20px" }}>NOT FOR YOU</p>
-              <p style={{ fontSize: "15px", fontWeight: 500, color: "#555", marginBottom: "20px", lineHeight: 1.5 }}>こういう方はお断りしています</p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
-                {[
-                  "大規模チェーン店の内装をお探しの方",
-                  "デザイナーズ空間を求めている方（専門のデザイン事務所をおすすめします）",
-                  "最短工期を最優先される方（丁寧に進めるため、急ぎの対応は難しい場合があります）",
-                  "施工だけを依頼したい方（設計から一貫で対応しています）",
-                ].map((item) => (
-                  <li key={item} style={{ fontSize: "13px", color: "#666", lineHeight: 1.8, display: "flex", gap: "8px" }}>
-                    <span style={{ color: "#bbb", flexShrink: 0 }}>・</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <style>{`
-            @media (max-width: 640px) {
-              .filter-grid {
-                grid-template-columns: 1fr !important;
-              }
-              .filter-divider {
-                width: 100% !important;
-                height: 1px !important;
-                margin: 32px 0 !important;
-                align-self: auto !important;
-              }
-              .filter-grid > div:first-child {
-                padding: 0 !important;
-              }
-              .filter-grid > div:last-child {
-                padding: 0 !important;
-              }
-            }
-          `}</style>
-        </section>
-      </ScrollFadeIn>
-
-      {/* DAI紹介 */}
-      <GoldDivider />
-      <ScrollFadeIn>
-        <div style={{ padding: "40px 24px 64px", maxWidth: "480px", margin: "0 auto" }}>
-          <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-            <img src="/images/about-dai.webp" alt="KEN" style={{ width: "80px", minWidth: "80px", aspectRatio: "1/1", objectFit: "cover" }} />
-            <div>
-              <p style={{ fontSize: "16px", fontWeight: 500, color: colors.text, marginBottom: "2px" }}>KEN</p>
-              <p style={{ fontSize: "11px", color: colors.mute, marginBottom: "10px" }}>記憶荘 CSO</p>
-              <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.8 }}>
-                仙台を拠点に、店舗の設計から施工までを一貫して担当しています。
-                前職では内装施工会社で年間30件以上の店舗内装を手がけ、
-                飲食店・美容室・物販・ジムなど幅広い業態を経験してきました。
-              </p>
-              <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.8, marginTop: "0.8em" }}>
-                設計から現場管理、仕上げまで一人で完結できるのは、
-                その現場の数だけ向き合ってきた経験があるからです。
-              </p>
-              <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.8, marginTop: "0.8em" }}>
-                初めての店づくりは、わからないことばかりで当然です。
-                物件が決まっていなくても構いません。LINEで気軽にご相談ください。
-              </p>
-            </div>
-          </div>
-        </div>
-      </ScrollFadeIn>
-
 
     </div>
     <StudioFooter />
