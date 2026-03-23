@@ -20,15 +20,27 @@ export default function LPSolutionPoints() {
               <div style={{ padding: "12px 10px", background: "#4A6741", color: "#fff", textAlign: "center" }}>記憶荘</div>
             </div>
             {[
-              ["カフェ 12坪", "300〜500万", "120万円"],
-              ["居酒屋 18坪", "500〜800万", "180万円"],
-              ["美容室 15坪", "400〜600万", "150万円"],
-              ["テイクアウト 8坪", "150〜250万", "68万円"],
-            ].map(([type, other, kio], i) => (
-              <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", borderTop: "1px solid #eee", fontSize: "13px" }}>
-                <div style={{ padding: "14px 10px", color: "#555", fontWeight: 500 }}>{type}</div>
-                <div style={{ padding: "14px 10px", color: "#bbb", textAlign: "center", textDecoration: "line-through" }}>{other}</div>
-                <div style={{ padding: "14px 10px", color: "#4A6741", textAlign: "center", fontWeight: 700, fontSize: "14px" }}>{kio}</div>
+              ["カフェ 10坪（軽微な内装）", "200〜350万", "80万円", false],
+              ["カフェ 15坪（しっかりリフォーム）", "400〜600万", "150万円", true],
+              ["居酒屋 12坪（軽微な内装）", "300〜500万", "180万円", false],
+              ["居酒屋 20坪（通常）", "600〜900万", "320万円", true],
+              ["美容室 10坪（軽微な内装）", "300〜450万", "150万円", false],
+              ["美容室 18坪（通常）", "500〜700万", "250万円", true],
+              ["焼肉店 25坪（軽微な内装）", "800〜1,200万", "250万円", false],
+              ["テイクアウト 8坪", "150〜250万", "68万円", true],
+            ].map(([type, other, kio, groupBorder], i) => (
+              <div
+                key={i}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr 1fr",
+                  borderTop: groupBorder ? "1px solid #E0E0E0" : "1px solid #eee",
+                  fontSize: "12px",
+                }}
+              >
+                <div style={{ padding: "12px 10px", color: "#555", fontWeight: 500, lineHeight: 1.4 }}>{type}</div>
+                <div style={{ padding: "12px 10px", color: "#bbb", textAlign: "center", textDecoration: "line-through", alignSelf: "center" }}>{other}</div>
+                <div style={{ padding: "12px 10px", color: "#4A6741", textAlign: "center", fontWeight: 700, fontSize: "13px", alignSelf: "center" }}>{kio}</div>
               </div>
             ))}
           </div>
