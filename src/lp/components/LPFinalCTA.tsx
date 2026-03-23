@@ -36,11 +36,11 @@ export default function LPFinalCTA() {
         }}
       >
         <img
-          src="/images/line-add-friend.webp"
+          src="/images/line-qr.png"
           alt="LINE QRコード"
           style={{
-            width: "176px",
-            height: "176px",
+            width: "160px",
+            height: "160px",
             borderRadius: "10px",
             objectFit: "contain",
             display: "block",
