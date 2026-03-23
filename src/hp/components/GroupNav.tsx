@@ -58,7 +58,7 @@ export default function GroupNav() {
         >
           {/* グループ本体 */}
           <Link to="/" style={{ ...font, color: location.pathname === "/" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-            <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/" ? 1 : 0.7 }} />
+            <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "14px", width: "auto", opacity: location.pathname === "/" ? 1 : 0.7 }} />
             Top
           </Link>
           <Link to="/about" style={{ ...font, color: location.pathname === "/about" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none" }}>
@@ -69,7 +69,7 @@ export default function GroupNav() {
           <div style={{
             width: "1px",
             height: "16px",
-            backgroundColor: "rgba(255,255,255,0.25)",
+            backgroundColor: "#C9A84C",
           }} />
 
           {/* 事業体 */}
