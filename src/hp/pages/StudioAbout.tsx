@@ -68,11 +68,18 @@ export default function StudioAbout() {
             業界の普通
           </p>
           <p style={{ fontSize: "15px", color: "#555", lineHeight: 2.0, maxWidth: "560px" }}>
-            一般的な内装工事では、設計と施工が別の会社になることが多い。
+            店舗の内装工事には、いくつもの専門業者が関わります。
             <br />
-            デザイナーに伝えたイメージが施工会社に正確に届かない。
+            設計はデザイン事務所、施工は施工会社、現場管理はまた別の担当者。
             <br />
-            追加費用が「後から」出てくることも珍しくない。
+            それぞれの間に、調整のための時間とコストが生まれます。
+          </p>
+          <p style={{ fontSize: "15px", color: "#555", lineHeight: 2.0, maxWidth: "560px", marginTop: "20px" }}>
+            打ち合わせで伝えたイメージが、図面になり、
+            <br />
+            図面が現場に届くまでに、少しずつ形が変わっていく。
+            <br />
+            「言った・言わない」が起きるのは、関わる人が多いからです。
           </p>
 
           {/* 図解 */}
@@ -88,17 +95,20 @@ export default function StudioAbout() {
             }}
           >
             <div style={{ padding: "0 24px 0 0", display: "flex", flexDirection: "column", gap: "8px" }}>
-              <p style={{ fontSize: "11px", color: "#999", letterSpacing: "0.12em", marginBottom: "12px" }}>一般的な流れ</p>
-              <div style={{ border: "1px solid #E5E0D8", padding: "10px 14px", fontSize: "13px", color: "#555", textAlign: "center" }}>
-                デザイナー
+              <p style={{ fontSize: "11px", color: "#999", letterSpacing: "0.12em", marginBottom: "12px" }}>よくある体制</p>
+              <div style={{ fontSize: "13px", color: "#555", lineHeight: 2.0 }}>
+                オーナー<br />
+                <span style={{ color: "#bbb", fontSize: "12px" }}>↓</span><br />
+                営業<br />
+                <span style={{ color: "#bbb", fontSize: "12px" }}>↓</span><br />
+                設計者<br />
+                <span style={{ color: "#bbb", fontSize: "12px" }}>↓</span><br />
+                現場監督<br />
+                <span style={{ color: "#bbb", fontSize: "12px" }}>↓</span><br />
+                各職人
               </div>
-              <div style={{ textAlign: "center", fontSize: "12px", color: "#bbb", padding: "2px 0" }}>↓ 伝言</div>
-              <div style={{ border: "1px solid #E5E0D8", padding: "10px 14px", fontSize: "13px", color: "#555", textAlign: "center" }}>
-                施工会社
-              </div>
-              <div style={{ textAlign: "center", fontSize: "12px", color: "#bbb", padding: "2px 0" }}>↓</div>
-              <div style={{ fontSize: "12px", color: "#999", textAlign: "center", lineHeight: 1.6 }}>
-                「聞いてない」が起きる
+              <div style={{ fontSize: "11px", color: "#999", lineHeight: 1.6, marginTop: "8px" }}>
+                伝える人が増えるほど、ズレが生まれる
               </div>
             </div>
 
@@ -106,29 +116,63 @@ export default function StudioAbout() {
 
             <div style={{ padding: "0 0 0 24px", display: "flex", flexDirection: "column", gap: "8px" }}>
               <p style={{ fontSize: "11px", color: "#C9A84C", letterSpacing: "0.12em", marginBottom: "12px" }}>記憶荘</p>
-              <div style={{ border: "1px solid #C9A84C", padding: "24px 14px", fontSize: "13px", color: "#333", textAlign: "center", lineHeight: 1.8 }}>
-                KEN
-                <br />
-                <span style={{ fontSize: "11px", color: "#666" }}>一人が一貫で</span>
+              <div style={{ fontSize: "13px", color: "#333", lineHeight: 2.0 }}>
+                オーナー<br />
+                <span style={{ color: "#C9A84C", fontSize: "12px" }}>↓</span><br />
+                KEN<br />
+                <span style={{ color: "#C9A84C", fontSize: "12px" }}>↓</span><br />
+                各職人
               </div>
-              <div style={{ textAlign: "center", fontSize: "12px", color: "#C9A84C", padding: "2px 0" }}>↓</div>
-              <div style={{ fontSize: "12px", color: "#555", textAlign: "center", lineHeight: 1.6 }}>
-                打ち合わせ通りに仕上がる
+              <div style={{ fontSize: "11px", color: "#555", lineHeight: 1.6, marginTop: "8px" }}>
+                相談から引渡しまで、ずっと同じ人
               </div>
             </div>
           </div>
 
           <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px" }}>
-            記憶荘では、設計・見積もり・施工・現場管理のすべてをKEN一人が担当します。
-            <br />
-            打ち合わせで話したことが、そのまま現場に反映される。
-            <br />
-            間に入る会社がないから、中間マージンもない。
+            記憶荘は、KEN一人が設計・見積もり・現場管理のすべてを担当しています。
           </p>
-          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "24px" }}>
-            伝言ゲームにしたくないから。
+          <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
+            間に入る会社がないので、伝言が発生しない。
             <br />
-            「言った・言わない」をなくすことが、お互いにとって一番安心できる形だと考えています。
+            打ち合わせで話したことが、翌日の現場にそのまま届く。
+            <br />
+            「ここ、やっぱりこうしたい」にも、その場で対応できる。
+          </p>
+          <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
+            組織ではなく一人で動いているぶん、
+            <br />
+            事務所の維持費も、管理部門の人件費もかからない。
+            <br />
+            そのぶんが、見積もりに反映されています。
+          </p>
+
+          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "40px" }}>
+            効率がいいからこの形を選んだわけではありません。
+          </p>
+          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
+            施工中に現場で手を動かしていると、
+            <br />
+            図面では見えなかったことに気づく瞬間があります。
+            <br />
+            「この壁、もう少し手前にした方が動線がいい」
+            <br />
+            「この照明、角度を変えるだけで印象が変わる」
+          </p>
+          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
+            その気づきを、誰かに報告して、判断を仰いで、戻ってくるのを待つのではなく、
+            <br />
+            自分の手で、その場で直したい。
+          </p>
+          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
+            だから一人でやっています。
+          </p>
+          <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
+            同時に何件も抱えると、一つひとつが薄くなる。
+            <br />
+            今は目の前のこの一件に集中する。
+            <br />
+            それが、記憶荘のやり方です。
           </p>
 
           <div
@@ -136,7 +180,7 @@ export default function StudioAbout() {
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
               gap: "16px",
-              marginTop: "40px",
+              marginTop: "48px",
             }}
           >
             <div>
