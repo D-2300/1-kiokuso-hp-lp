@@ -68,17 +68,6 @@ export default function LPHero() {
           >
             仙台・宮城限定
           </div>
-          <p
-            style={{
-              margin: "0 0 12px",
-              fontSize: "13px",
-              fontWeight: 300,
-              color: "rgba(255,255,255,0.6)",
-              letterSpacing: "0.15em",
-            }}
-          >
-            店舗の内装工事
-          </p>
           <h1
             style={{
               fontSize: "clamp(26px, 5.5vw, 48px)",
@@ -89,9 +78,9 @@ export default function LPHero() {
               textShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3)",
             }}
           >
-            今あるものを、活かす。
+            設計から施工まで、一社で完結。
             <br />
-            あなたの店を、一緒につくる。
+            居抜き活用で、費用を抑える。
           </h1>
           <p
             style={{
@@ -102,7 +91,7 @@ export default function LPHero() {
               textShadow: "0 2px 8px rgba(0,0,0,0.4)",
             }}
           >
-            写真1枚で概算をお伝えします。物件が決まっていなくてもOK。
+            見積もり内訳100%公開。物件未定でも相談できます。
           </p>
           <p
             style={{
