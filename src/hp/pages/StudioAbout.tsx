@@ -119,18 +119,18 @@ export default function StudioAbout() {
               <div style={{ fontSize: "13px", color: "#333", lineHeight: 2.0 }}>
                 オーナー<br />
                 <span style={{ color: "#C9A84C", fontSize: "12px" }}>↓</span><br />
-                KEN<br />
+                記憶荘<br />
                 <span style={{ color: "#C9A84C", fontSize: "12px" }}>↓</span><br />
                 各職人
               </div>
               <div style={{ fontSize: "11px", color: "#555", lineHeight: 1.6, marginTop: "8px" }}>
-                相談から引渡しまで、ずっと同じ人
+                相談から引渡しまで、一社で完結
               </div>
             </div>
           </div>
 
           <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px" }}>
-            記憶荘は、KEN一人が設計・見積もり・現場管理のすべてを担当しています。
+            記憶荘では、設計・見積もり・現場管理のすべてを一社で担当しています。
           </p>
           <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
             間に入る会社がないので、伝言が発生しない。
@@ -140,9 +140,9 @@ export default function StudioAbout() {
             「ここ、やっぱりこうしたい」にも、その場で対応できる。
           </p>
           <p style={{ fontSize: "16px", color: "#333", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
-            組織ではなく一人で動いているぶん、
+            外注の連鎖がないぶん、
             <br />
-            事務所の維持費も、管理部門の人件費もかからない。
+            事務所の維持費も、中間マージンもかからない。
             <br />
             そのぶんが、見積もりに反映されています。
           </p>
@@ -162,10 +162,10 @@ export default function StudioAbout() {
           <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
             その気づきを、誰かに報告して、判断を仰いで、戻ってくるのを待つのではなく、
             <br />
-            自分の手で、その場で直したい。
+            自分たちの手で、その場で直したい。
           </p>
           <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
-            だから一人でやっています。
+            だから一社で完結するやり方を選んでいます。
           </p>
           <p style={{ fontSize: "15px", color: "#666", lineHeight: 2.0, maxWidth: "560px", marginTop: "16px" }}>
             同時に何件も抱えると、一つひとつが薄くなる。
