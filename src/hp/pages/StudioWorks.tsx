@@ -134,17 +134,8 @@ const works: Work[] = [
   },
 ];
 
-const genres = [
-  { label: "BAR & IZAKAYA", labelJa: "バー・居酒屋", keys: ["バスケットボール Cafe&Bar CROSSOVER", "ANVIL", "藍"] },
-  { label: "RESTAURANT", labelJa: "飲食店", keys: ["焼肉店", "ラーメン店"] },
-  { label: "CAFE & TAKEOUT", labelJa: "カフェ・テイクアウト", keys: ["テイクアウトカフェ OWL"] },
-  { label: "BEAUTY & FITNESS", labelJa: "美容・ジム", keys: ["ネイル・アイラッシュサロン", "パーソナルジム B-POINT"] },
-];
-
-const worksByName = Object.fromEntries(works.map((w) => [w.name, w]));
-
 const CARD_GAP = 16;
-const CARD_WIDTH_PC = 380;
+const CARD_WIDTH_PC = 420;
 
 function WorkCard({ work, cardWidth }: { work: Work; cardWidth: number }) {
   return (
@@ -158,6 +149,7 @@ function WorkCard({ work, cardWidth }: { work: Work; cardWidth: number }) {
         boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
         display: "flex",
         flexDirection: "column",
+        alignSelf: "stretch",
       }}
     >
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", flexShrink: 0 }}>
@@ -236,21 +228,23 @@ function WorkCard({ work, cardWidth }: { work: Work; cardWidth: number }) {
   );
 }
 
-function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; labelJa: string; works: Work[] }) {
+function AllWorksCarousel({ works: allWorks }: { works: Work[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const [cardWidth, setCardWidth] = useState(CARD_WIDTH_PC);
-  const [currentIndex, setCurrentIndex] = useState(genreWorks.length);
-  const isTransitioning = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [cardWidth, setCardWidth] = useState(CARD_WIDTH_PC);
+  const [currentIndex, setCurrentIndex] = useState(allWorks.length);
+  const isTransitioning = useRef(false);
 
-  const count = genreWorks.length;
-  const cloned = [...genreWorks, ...genreWorks, ...genreWorks];
+  const count = allWorks.length;
+  const cloned = [...allWorks, ...allWorks, ...allWorks];
 
-  const getOffset = useCallback((index: number) => {
-    const peekPx = typeof window !== "undefined" ? Math.min(window.innerWidth * 0.22, 80) : 80;
-    const startPad = 24;
-    return startPad + index * (cardWidth + CARD_GAP) - peekPx * 0;
-  }, [cardWidth]);
+  const getOffset = useCallback(
+    (index: number) => {
+      const startPad = 24;
+      return startPad + index * (cardWidth + CARD_GAP);
+    },
+    [cardWidth]
+  );
 
   useEffect(() => {
     const updateCardWidth = () => {
@@ -273,13 +267,16 @@ function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; l
     el.style.transform = `translateX(-${offset}px)`;
   }, [cardWidth, getOffset, currentIndex]);
 
-  const moveTo = useCallback((index: number, animated: boolean) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const offset = getOffset(index);
-    el.style.transition = animated ? "transform 0.42s cubic-bezier(0.25,0.46,0.45,0.94)" : "none";
-    el.style.transform = `translateX(-${offset}px)`;
-  }, [getOffset]);
+  const moveTo = useCallback(
+    (index: number, animated: boolean) => {
+      const el = trackRef.current;
+      if (!el) return;
+      const offset = getOffset(index);
+      el.style.transition = animated ? "transform 0.42s cubic-bezier(0.25,0.46,0.45,0.94)" : "none";
+      el.style.transform = `translateX(-${offset}px)`;
+    },
+    [getOffset]
+  );
 
   const handleTransitionEnd = useCallback(() => {
     isTransitioning.current = false;
@@ -315,11 +312,9 @@ function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; l
   };
 
   const touchStartX = useRef(0);
-  const touchStartIndex = useRef(0);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
-    touchStartIndex.current = currentIndex;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
@@ -332,76 +327,55 @@ function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; l
     }
   };
 
-  if (count === 0) return null;
-
-  const showArrows = count > 1;
+  const activeNorm = ((currentIndex % count) + count) % count;
 
   return (
     <div style={{ marginTop: "48px" }}>
-      <div style={{ padding: "0 24px 16px", borderBottom: "1px solid #E0E0E0", marginBottom: "20px" }}>
-        <span
+      <div ref={containerRef} style={{ position: "relative", overflow: "hidden" }}>
+        <button
+          onClick={goPrev}
           style={{
-            fontFamily: "'Anton', sans-serif",
-            fontSize: "16px",
-            color: "#888",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
+            position: "absolute",
+            left: "8px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 2,
+            background: "rgba(255,255,255,0.92)",
+            border: "1px solid #E0E0E0",
+            borderRadius: "50%",
+            width: "36px",
+            height: "36px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
           }}
         >
-          {label}
-        </span>
-        <span style={{ marginLeft: "12px", fontSize: "12px", color: "#AAA" }}>{labelJa}</span>
-      </div>
-
-      <div ref={containerRef} style={{ position: "relative", overflow: "hidden" }}>
-        {showArrows && (
-          <>
-            <button
-              onClick={goPrev}
-              style={{
-                position: "absolute",
-                left: "8px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                zIndex: 2,
-                background: "rgba(255,255,255,0.92)",
-                border: "1px solid #E0E0E0",
-                borderRadius: "50%",
-                width: "36px",
-                height: "36px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
-              }}
-            >
-              <ChevronLeft size={18} color="#555" />
-            </button>
-            <button
-              onClick={goNext}
-              style={{
-                position: "absolute",
-                right: "8px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                zIndex: 2,
-                background: "rgba(255,255,255,0.92)",
-                border: "1px solid #E0E0E0",
-                borderRadius: "50%",
-                width: "36px",
-                height: "36px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
-              }}
-            >
-              <ChevronRight size={18} color="#555" />
-            </button>
-          </>
-        )}
+          <ChevronLeft size={18} color="#555" />
+        </button>
+        <button
+          onClick={goNext}
+          style={{
+            position: "absolute",
+            right: "8px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 2,
+            background: "rgba(255,255,255,0.92)",
+            border: "1px solid #E0E0E0",
+            borderRadius: "50%",
+            width: "36px",
+            height: "36px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+          }}
+        >
+          <ChevronRight size={18} color="#555" />
+        </button>
 
         <div
           ref={trackRef}
@@ -413,6 +387,7 @@ function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; l
             gap: `${CARD_GAP}px`,
             padding: "4px 0 16px 24px",
             willChange: "transform",
+            alignItems: "stretch",
           }}
         >
           {cloned.map((work, i) => (
@@ -422,25 +397,23 @@ function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; l
         </div>
       </div>
 
-      {count > 1 && (
-        <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "8px" }}>
-          {genreWorks.map((_, i) => {
-            const active = ((currentIndex % count) + count) % count === i;
-            return (
-              <div
-                key={i}
-                style={{
-                  width: active ? "20px" : "6px",
-                  height: "6px",
-                  borderRadius: "3px",
-                  background: active ? colors.gold ?? "#C9A84C" : "#D0D0D0",
-                  transition: "all 0.3s ease",
-                }}
-              />
-            );
-          })}
-        </div>
-      )}
+      <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "8px" }}>
+        {allWorks.map((_, i) => {
+          const active = activeNorm === i;
+          return (
+            <div
+              key={i}
+              style={{
+                width: active ? "20px" : "6px",
+                height: "6px",
+                borderRadius: "3px",
+                background: active ? colors.gold ?? "#C9A84C" : "#D0D0D0",
+                transition: "all 0.3s ease",
+              }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -479,17 +452,7 @@ export default function StudioWorks() {
 
         <div style={{ paddingBottom: "80px" }}>
           <ScrollFadeIn>
-            {genres.map((genre) => {
-              const genreWorks = genre.keys.map((k) => worksByName[k]).filter(Boolean);
-              return (
-                <GenreCarousel
-                  key={genre.label}
-                  label={genre.label}
-                  labelJa={genre.labelJa}
-                  works={genreWorks}
-                />
-              );
-            })}
+            <AllWorksCarousel works={works} />
           </ScrollFadeIn>
         </div>
       </div>
