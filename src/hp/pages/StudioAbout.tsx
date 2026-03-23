@@ -8,7 +8,7 @@ import { colors } from "../../shared/design-tokens";
 
 export default function StudioAbout() {
   return (
-    <>
+    <div style={{ backgroundColor: '#2E4229' }}>
     <div style={{ paddingTop: 0, backgroundColor: colors.beige }}>
       <StudioNav />
 
@@ -360,6 +360,6 @@ export default function StudioAbout() {
 
     </div>
     <StudioFooter />
-    </>
+    </div>
   );
 }

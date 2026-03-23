@@ -8,7 +8,7 @@ import { colors } from "../../shared/design-tokens";
 
 export default function StudioTop() {
   return (
-    <>
+    <div style={{ backgroundColor: '#2E4229' }}>
     <div style={{ backgroundColor: colors.beige }}>
       <style>{`
         @keyframes scrollBounce {
@@ -211,6 +211,6 @@ export default function StudioTop() {
 
     </div>
     <StudioFooter />
-    </>
+    </div>
   );
 }

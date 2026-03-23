@@ -133,7 +133,7 @@ const costExamples = [
 
 export default function StudioPricing() {
   return (
-    <>
+    <div style={{ backgroundColor: '#2E4229' }}>
     <div style={{ paddingTop: 0, backgroundColor: colors.beige }}>
       <StudioNav />
 
@@ -323,6 +323,6 @@ export default function StudioPricing() {
 
     </div>
     <StudioFooter showServiceArea />
-    </>
+    </div>
   );
 }
