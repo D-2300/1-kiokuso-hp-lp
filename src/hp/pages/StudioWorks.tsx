@@ -49,7 +49,7 @@ const works = [
 
 export default function StudioWorks() {
   return (
-    <div style={{ minHeight: "100vh", paddingTop: 0 }}>
+    <div style={{ minHeight: "100vh", paddingTop: 0, backgroundColor: colors.beige }}>
       <StudioNav />
 
       {/* SmallHero */}

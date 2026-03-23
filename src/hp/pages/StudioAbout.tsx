@@ -8,7 +8,7 @@ import { colors } from "../../shared/design-tokens";
 
 export default function StudioAbout() {
   return (
-    <div style={{ minHeight: "100vh", paddingTop: 0 }}>
+    <div style={{ minHeight: "100vh", paddingTop: 0, backgroundColor: colors.beige }}>
       <StudioNav />
 
       {/* SmallHero */}

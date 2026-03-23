@@ -8,7 +8,7 @@ import { colors } from "../../shared/design-tokens";
 
 export default function StudioTop() {
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: colors.beige }}>
       <style>{`
         @keyframes scrollBounce {
           0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -187,7 +187,7 @@ export default function StudioTop() {
 
       {/* Links */}
       <ScrollFadeIn>
-        <section style={{ padding: "40px 24px 64px", backgroundColor: colors.beige }}>
+        <section style={{ padding: "40px 24px 64px" }}>
           <div style={{ display: "flex", justifyContent: "center", gap: "48px" }}>
             <Link to="/studio/about" style={{ textDecoration: "none", textAlign: "center" }}>
               <p style={{ fontSize: "14px", fontWeight: 300, letterSpacing: "0.15em", color: colors.text }}>
