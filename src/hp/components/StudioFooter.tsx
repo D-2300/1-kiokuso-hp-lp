@@ -114,7 +114,7 @@ export default function StudioFooter() {
           onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.9)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
         >
-          <img src="/assets/logos/logo-studio-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.5 }} />
+          <img src="/assets/logos/logo-studio-gold.webp" alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: 0.5 }} />
           TOP
         </button>
         {[
@@ -143,7 +143,7 @@ export default function StudioFooter() {
             onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
           >
             {link.logo && (
-              <img src={link.logo} alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.5 }} />
+              <img src={link.logo} alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: 0.5 }} />
             )}
             {link.label}
           </Link>

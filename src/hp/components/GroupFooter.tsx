@@ -56,7 +56,7 @@ export default function GroupFooter() {
           onMouseEnter={(e) => (e.currentTarget.style.color = "#F5EAEA")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "#D4A0A0")}
         >
-          <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
+          <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
           TOP
         </button>
         {[
@@ -86,7 +86,7 @@ export default function GroupFooter() {
             onMouseLeave={(e) => (e.currentTarget.style.color = "#D4A0A0")}
           >
             {link.logo && (
-              <img src={link.logo} alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
+              <img src={link.logo} alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
             )}
             {link.label}
           </Link>
