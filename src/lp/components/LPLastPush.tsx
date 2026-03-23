@@ -1,3 +1,5 @@
+import { LINE_URL } from "../../shared/design-tokens";
+
 export default function LPLastPush() {
   return (
     <section style={{ backgroundColor: "#EAF0E8", padding: "48px 20px" }}>
@@ -26,101 +28,107 @@ export default function LPLastPush() {
 
         {/* 特典エリア */}
         <div style={{
-          backgroundColor: "#4A6741",
+          backgroundColor: "#1A1A1A",
           borderRadius: "16px",
           padding: "28px 20px",
           overflow: "hidden",
         }}>
           <p style={{
-            margin: "0 0 24px",
-            fontSize: "clamp(14px, 2.5vw, 16px)",
+            margin: "0 0 20px",
+            fontSize: "clamp(16px, 3vw, 22px)",
             fontWeight: 700,
-            color: "#fff",
+            color: "#C9A84C",
             textAlign: "center",
-            lineHeight: 1.8,
           }}>
-            LINE登録で、2つの
-            <span style={{ color: "#C9A84C" }}>無料特典</span>
-            をお渡ししています。
+            LINE登録で無料プレゼント
           </p>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
 
             {/* 特典1: 虎の巻 */}
             <div style={{
-              backgroundColor: "#1A1A1A",
-              borderRadius: "12px",
-              overflow: "hidden",
+              display: "flex",
+              backgroundColor: "rgba(255,255,255,0.08)",
+              borderRadius: "10px",
+              padding: "16px",
+              gap: "14px",
+              alignItems: "flex-start",
             }}>
-              <div style={{
-                display: "flex",
-                justifyContent: "center",
-                padding: "20px 16px",
-              }}>
-                <img
-                  src="/images/toranomaki-cover.webp"
-                  alt="内装見積もりの虎の巻"
-                  style={{
-                    width: "100%",
-                    maxWidth: "320px",
-                    height: "auto",
-                    display: "block",
-                    borderRadius: "4px",
-                  }}
-                />
-              </div>
-              <div style={{
-                backgroundColor: "rgba(255,255,255,0.06)",
-                padding: "16px 20px",
-              }}>
+              <img
+                src="/images/why-estimate-detail.webp"
+                alt="内装見積もりの虎の巻"
+                style={{
+                  width: "80px",
+                  height: "100px",
+                  objectFit: "cover",
+                  borderRadius: "6px",
+                  flexShrink: 0,
+                }}
+              />
+              <div>
                 <p style={{ margin: "0 0 4px", fontSize: "11px", color: "#C9A84C", fontWeight: 700 }}>特典 1</p>
-                <p style={{ margin: "0 0 6px", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#fff" }}>
-                  内装見積もりの虎の巻（PDF）
+                <p style={{ margin: "0 0 6px", fontSize: "16px", fontWeight: 700, color: "#fff", lineHeight: 1.4 }}>
+                  内装見積もりの虎の巻
                 </p>
-                <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                  相場感・見積もりの読み方・業者選びのポイントをまとめた資料です。
+                <p style={{ margin: 0, fontSize: "12px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>
+                  知っているだけで数十万円変わる、見積もりチェックのポイント集。悪徳業者に騙されないための必読書。
                 </p>
               </div>
             </div>
 
             {/* 特典2: AIパース */}
             <div style={{
-              backgroundColor: "#1A1A1A",
-              borderRadius: "12px",
-              overflow: "hidden",
+              display: "flex",
+              backgroundColor: "rgba(255,255,255,0.08)",
+              borderRadius: "10px",
+              padding: "16px",
+              gap: "14px",
+              alignItems: "flex-start",
             }}>
-              <div style={{
-                display: "flex",
-                justifyContent: "center",
-                padding: "20px 16px",
-              }}>
-                <img
-                  src="/images/ai-pers-tablet.webp"
-                  alt="AIパース"
-                  style={{
-                    width: "100%",
-                    maxWidth: "320px",
-                    height: "auto",
-                    display: "block",
-                    borderRadius: "4px",
-                  }}
-                />
-              </div>
-              <div style={{
-                backgroundColor: "rgba(255,255,255,0.06)",
-                padding: "16px 20px",
-              }}>
+              <img
+                src="/images/about-conversation.webp"
+                alt="AIパース"
+                style={{
+                  width: "80px",
+                  height: "100px",
+                  objectFit: "cover",
+                  borderRadius: "6px",
+                  flexShrink: 0,
+                }}
+              />
+              <div>
                 <p style={{ margin: "0 0 4px", fontSize: "11px", color: "#C9A84C", fontWeight: 700 }}>特典 2</p>
-                <p style={{ margin: "0 0 6px", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#fff" }}>
-                  AIパースを無料で作成
+                <p style={{ margin: "0 0 6px", fontSize: "16px", fontWeight: 700, color: "#fff", lineHeight: 1.4 }}>
+                  +AIパースで完成イメージも作成
                 </p>
-                <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                  LINEで物件の写真や間取りを送るだけ。完成イメージをお届けします。
+                <p style={{ margin: 0, fontSize: "12px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>
+                  物件写真を送るだけ。最短即日。
                 </p>
               </div>
             </div>
 
           </div>
+
+          <a
+            href={LINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "block",
+              backgroundColor: "#06C755",
+              color: "#fff",
+              fontSize: "16px",
+              fontWeight: 700,
+              textAlign: "center",
+              textDecoration: "none",
+              padding: "14px 0",
+              borderRadius: "28px",
+              marginTop: "20px",
+              letterSpacing: "0.03em",
+            }}
+          >
+            LINEで特典を受け取る
+          </a>
         </div>
 
       </div>

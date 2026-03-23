@@ -1,27 +1,27 @@
 const cases = [
   {
-    type: "カフェ", tsubo: "12坪", cost: "120万円", period: "6週間",
-    comment: "居抜き物件を最大限活用。既存のカウンターを活かしながら、壁塗装と照明の入れ替えで印象を一新しました。",
+    type: "スポーツバー", tsubo: "15坪", cost: "165万円", period: "5週間", kind: "スケルトン",
+    comment: "NBAテーマのスポーツバー。スケルトンから内装全てを施工。DIY塗装でオーナーも参加。",
     main: "/images/crossover-after-01.webp",
     subs: ["/images/crossover-after-02.webp", "/images/crossover-after-03.webp", "/images/crossover-after-04.webp"],
   },
   {
-    type: "居酒屋", tsubo: "18坪", cost: "180万円", period: "8週間",
-    comment: "スケルトンからの施工。厨房レイアウトを最初から設計し、客席20席を効率よく配置しました。",
-    main: "/images/crossover-process-01.webp",
-    subs: ["/images/crossover-process-02.webp", "/images/crossover-process-03.webp", "/images/crossover-process-04.webp"],
-  },
-  {
-    type: "美容室", tsubo: "15坪", cost: "150万円", period: "7週間",
-    comment: "セット面4席。施主支給の鏡とチェアでコストを削減。シンプルで清潔感のある空間に仕上げました。",
-    main: "/images/salon-after-01.webp",
-    subs: ["/images/salon-before-01.webp", "/images/bpoint-after-01.webp", "/images/bpoint-before-01.webp"],
-  },
-  {
-    type: "テイクアウト", tsubo: "8坪", cost: "90万円", period: "4週間",
-    comment: "小規模ながら動線を徹底的に設計。厨房と受け渡し口の位置を工夫し、一人でも回せるレイアウトに。",
+    type: "テイクアウトカフェ", tsubo: "10坪", cost: "80万円", period: "22日", kind: "居抜き",
+    comment: "居抜き物件のインフラをそのまま活用。壁の塗装はオーナー自身がDIY施工。厨房機器はメルカリ・ヤフオクで調達し設置のみ記憶荘が担当。",
     main: "/images/owl-after-01.webp",
-    subs: ["/images/owl-before-01.webp", "/images/crossover-before-01.webp", "/images/crossover-before-02.webp"],
+    subs: ["/images/owl-before-01.webp", "/images/owl-after-01.webp", "/images/owl-after-01.webp"],
+  },
+  {
+    type: "パーソナルジム", tsubo: "20坪", cost: "140万円", period: "30日", kind: "スケルトン",
+    comment: "スケルトンから防音・ミラー工事まで。トレーニング機器は施主が調達し記憶荘が設置。公庫融資の見積書作成から保健所対応まで一気通貫で対応。",
+    main: "/images/bpoint-after-01.webp",
+    subs: ["/images/bpoint-before-01.webp", "/images/bpoint-after-01.webp", "/images/bpoint-after-01.webp"],
+  },
+  {
+    type: "ネイル・アイラッシュサロン", tsubo: "15坪", cost: "90万円", period: "18日", kind: "居抜き",
+    comment: "居抜き物件をフル活用。床・壁・棚の仕上げをすべてDIYで施工。インフラ工事のみ記憶荘が担当。",
+    main: "/images/salon-after-01.webp",
+    subs: ["/images/salon-before-01.webp", "/images/salon-after-01.webp", "/images/salon-after-01.webp"],
   },
 ];
 
@@ -82,7 +82,7 @@ export default function LPCaseDetail() {
               >
                 {[
                   { label: "業態", value: c.type },
-                  { label: "坪数", value: c.tsubo },
+                  { label: "種別", value: c.kind },
                   { label: "費用", value: c.cost },
                   { label: "工期", value: c.period },
                 ].map((spec) => (
