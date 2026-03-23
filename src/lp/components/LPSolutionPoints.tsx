@@ -235,7 +235,7 @@ export default function LPSolutionPoints() {
             {[
               {
                 title: "居抜き活用",
-                img: "/images/crossover-before-01.webp",
+                img: "/images/anvil-before.webp",
                 desc: "前のお店の設備・造作で使えるものは活かします。解体しないだけでも数十万円の差が出ます。",
                 tag: "解体費を削減",
               },
