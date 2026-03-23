@@ -72,16 +72,20 @@ export default function GroupNav() {
           }} />
 
           {/* 事業体 */}
-          <Link to="/studio" style={{ ...font, color: location.pathname === "/studio" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+          <Link to="/studio" style={{ ...font, color: location.pathname === "/studio" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <img src="/assets/logos/logo-studio-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/studio" ? 1 : 0.7 }} />
             Studio
           </Link>
-          <Link to="/koumuten" style={{ ...font, color: location.pathname === "/koumuten" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+          <Link to="/koumuten" style={{ ...font, color: location.pathname === "/koumuten" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <img src="/assets/logos/logo-koumuten-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/koumuten" ? 1 : 0.7 }} />
             Build
           </Link>
-          <Link to="/reform" style={{ ...font, color: location.pathname === "/reform" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+          <Link to="/reform" style={{ ...font, color: location.pathname === "/reform" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <img src="/assets/logos/logo-reform-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/reform" ? 1 : 0.7 }} />
             Reform
           </Link>
-          <Link to="/fudousan" style={{ ...font, color: location.pathname === "/fudousan" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+          <Link to="/fudousan" style={{ ...font, color: location.pathname === "/fudousan" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <img src="/assets/logos/logo-fudousan-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/fudousan" ? 1 : 0.7 }} />
             Estate
           </Link>
         </div>

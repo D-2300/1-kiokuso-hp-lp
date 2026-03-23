@@ -56,11 +56,11 @@ export default function GroupFooter() {
           TOP
         </button>
         {[
-          { to: "/about", label: "About" },
-          { to: "/studio", label: "Studio" },
-          { to: "/koumuten", label: "Build" },
-          { to: "/reform", label: "Reform" },
-          { to: "/fudousan", label: "Estate" },
+          { to: "/about", label: "About", logo: null },
+          { to: "/studio", label: "Studio", logo: "/assets/logos/logo-studio-gold.webp" },
+          { to: "/koumuten", label: "Build", logo: "/assets/logos/logo-koumuten-gold.webp" },
+          { to: "/reform", label: "Reform", logo: "/assets/logos/logo-reform-gold.webp" },
+          { to: "/fudousan", label: "Estate", logo: "/assets/logos/logo-fudousan-gold.webp" },
         ].map((link) => (
           <Link
             key={link.to}
@@ -74,10 +74,16 @@ export default function GroupFooter() {
               textTransform: "uppercase",
               textDecoration: "none",
               transition: "color 0.2s",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "#F5EAEA")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "#D4A0A0")}
           >
+            {link.logo && (
+              <img src={link.logo} alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
+            )}
             {link.label}
           </Link>
         ))}
