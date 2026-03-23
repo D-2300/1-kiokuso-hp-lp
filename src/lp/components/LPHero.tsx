@@ -115,50 +115,49 @@ export default function LPHero() {
         </div>
 
         <div style={{ marginTop: "auto" }}>
-          <div style={{ display: "flex", gap: "8px", marginBottom: "14px" }}>
-            <div
-              style={{
-                flex: 1,
-                backgroundColor: "rgba(255,255,255,0.93)",
-                borderRadius: "8px",
-                overflow: "hidden",
-              }}
-            >
-              <img
-                src="/images/crossover-after-01.webp"
-                alt="居抜き施工例"
-                className="ba-card-img"
-                style={{ width: "100%", objectFit: "cover", display: "block" }}
-              />
-              <div style={{ padding: "8px 12px" }}>
-                <p style={{ margin: 0, fontSize: "11px", color: "#888" }}>居抜き</p>
-                <p style={{ margin: "2px 0 0", fontSize: "20px", fontWeight: 700, color: "#333", lineHeight: 1.2 }}>
-                  50<span style={{ fontSize: "12px", fontWeight: 400 }}>万円〜</span>
-                </p>
+          <div style={{ maxWidth: "560px", margin: "0 auto", display: "flex", gap: "8px", marginBottom: "14px" }}>
+            {[
+              { src: "/images/crossover-after-01.webp", alt: "居抜き施工例", label: "居抜き", price: "50" },
+              { src: "/images/crossover-after-03.webp", alt: "スケルトン施工例", label: "スケルトン", price: "150" },
+            ].map((card) => (
+              <div
+                key={card.label}
+                style={{
+                  flex: 1,
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  position: "relative",
+                }}
+              >
+                <img
+                  src={card.src}
+                  alt={card.alt}
+                  className="ba-card-img"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "rgba(0,0,0,0.3)",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "10px",
+                    left: "12px",
+                  }}
+                >
+                  <p style={{ margin: 0, fontSize: "11px", color: "#fff", fontWeight: 400, lineHeight: 1.3 }}>
+                    {card.label}
+                  </p>
+                  <p style={{ margin: 0, fontSize: "20px", fontWeight: 700, color: "#fff", lineHeight: 1.2 }}>
+                    {card.price}<span style={{ fontSize: "12px", fontWeight: 400 }}>万円〜</span>
+                  </p>
+                </div>
               </div>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                backgroundColor: "rgba(255,255,255,0.93)",
-                borderRadius: "8px",
-                overflow: "hidden",
-              }}
-            >
-              <img
-                src="/images/crossover-after-03.webp"
-                alt="スケルトン施工例"
-                className="ba-card-img"
-                style={{ width: "100%", objectFit: "cover", display: "block" }}
-              />
-              <div style={{ padding: "8px 12px" }}>
-                <p style={{ margin: 0, fontSize: "11px", color: "#888" }}>スケルトン</p>
-                <p style={{ margin: "2px 0 0", fontSize: "20px", fontWeight: 700, color: "#333", lineHeight: 1.2 }}>
-                  150<span style={{ fontSize: "12px", fontWeight: 400 }}>万円〜</span>
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div style={{ padding: "0 0 14px", textAlign: "center" }}>
