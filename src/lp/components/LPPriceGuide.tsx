@@ -83,6 +83,13 @@ export default function LPPriceGuide() {
       }}>
         ※居抜き〜スケルトンを含む目安の概算です。物件状況により変動します。
       </p>
+
+      <div style={{ marginTop: "24px", textAlign: "center" }}>
+        <p style={{ margin: 0, fontSize: "13px", color: "#999", lineHeight: 1.8 }}>
+          坪単価の目安はお見せしました。<br />
+          あなたの店の場合の概算は、LINEで聞いてください。
+        </p>
+      </div>
     </section>
   );
 }

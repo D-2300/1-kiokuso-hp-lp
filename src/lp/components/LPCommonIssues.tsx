@@ -37,7 +37,7 @@ export default function LPCommonIssues() {
               marginBottom: "24px",
             }}
           >
-            それ、結構「あるある」です。
+            業界の「当たり前」が、おかしいんです。
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", maxWidth: "720px", margin: "0 auto" }}>
             {issues.map((item) => (
@@ -73,6 +73,16 @@ export default function LPCommonIssues() {
               </div>
             ))}
           </div>
+          <p style={{
+            margin: "24px 0 8px",
+            fontSize: "15px",
+            fontWeight: 600,
+            color: "#fff",
+            textAlign: "center",
+            lineHeight: 1.7,
+          }}>
+            記憶荘は、この4つを全部なくしました。
+          </p>
         </div>
       </section>
 

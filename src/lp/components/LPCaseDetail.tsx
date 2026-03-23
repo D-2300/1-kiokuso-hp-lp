@@ -246,6 +246,24 @@ export default function LPCaseDetail() {
           </button>
         </div>
       )}
+
+      <div style={{ padding: "20px 20px 0" }}>
+        <div style={{ background: "#fff", borderRadius: "12px", padding: "16px 20px", border: "1px solid #E8E6E0" }}>
+          <p style={{ margin: "0 0 6px", fontSize: "13px", color: "#444", lineHeight: 1.7 }}>
+            「3社比較した中で、見積もりの内訳が一番細かかったです。融資の書類にもそのまま使えて助かりました。」
+          </p>
+          <p style={{ margin: 0, fontSize: "11px", color: "#aaa" }}>カフェオーナー・仙台市青葉区・12坪</p>
+        </div>
+      </div>
+
+      <div style={{ padding: "20px 20px 0", textAlign: "center" }}>
+        <p style={{ margin: "0 0 4px", fontSize: "13px", color: "#4A6741", fontWeight: 600 }}>
+          ほかの事例は無料相談時にすべてお見せします
+        </p>
+        <p style={{ margin: 0, fontSize: "11px", color: "#bbb" }}>
+          業態・坪数・費用の詳細を、あなたのケースに合わせてご説明します
+        </p>
+      </div>
     </section>
   );
 }

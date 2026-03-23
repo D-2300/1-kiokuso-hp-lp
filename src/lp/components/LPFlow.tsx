@@ -38,8 +38,10 @@ const steps = [
 
 export default function LPFlow() {
   return (
-    <section style={{ backgroundColor: "#fff", padding: "32px 20px 48px" }}>
+    <section style={{ backgroundColor: "#fff", padding: "32px 20px 48px", borderTop: "3px solid #C9A84C" }}>
       <div style={{ maxWidth: "960px", margin: "0 auto" }}>
+        <p style={{ margin: "0 0 4px", fontSize: "12px", color: "#C9A84C", fontWeight: 700, letterSpacing: "0.12em" }}>FLOW</p>
+        <p style={{ margin: "0 0 28px", fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#222" }}>ご相談からお引渡しまで</p>
         <div style={{ display: "flex", flexDirection: "column" }}>
           {steps.map((s, i) => (
             <div key={s.step} style={{ display: "flex", alignItems: "stretch" }}>

@@ -94,32 +94,42 @@ export default function LPHero() {
               className="hero-catch-line1"
               style={{
                 display: "block",
-                fontFamily: "'Noto Serif JP', serif",
-                fontWeight: 700,
+                fontWeight: 800,
                 color: "#fff",
-                lineHeight: 1.4,
+                lineHeight: 1.35,
+                letterSpacing: "-0.01em",
                 textShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3)",
-                whiteSpace: "nowrap",
               }}
             >
-              はじめてのお店、一緒につくる。
+              予算100万円以下でも、
             </span>
             <span
-              className="hero-catch-line2"
+              className="hero-catch-line1"
               style={{
                 display: "block",
-                fontFamily: "'Noto Serif JP', serif",
-                fontWeight: 500,
-                color: "rgba(255,255,255,0.85)",
-                lineHeight: 1.4,
+                fontWeight: 800,
+                color: "#fff",
+                lineHeight: 1.35,
+                letterSpacing: "-0.01em",
                 textShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3)",
-                whiteSpace: "nowrap",
-                marginBottom: "12px",
               }}
             >
-              設計も施工も、ぜんぶ一社で。
+              あなたの店はつくれます。
             </span>
           </h1>
+
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "16px 0" }}>
+            {["見積もり内訳100%公開", "物件未定でもOK", "断りはLINE1本"].map((t) => (
+              <span key={t} style={{
+                fontSize: "11px",
+                color: "rgba(255,255,255,0.85)",
+                background: "rgba(255,255,255,0.1)",
+                borderRadius: "4px",
+                padding: "4px 10px",
+                border: "1px solid rgba(255,255,255,0.15)",
+              }}>{t}</span>
+            ))}
+          </div>
 
           <p
             style={{
@@ -130,7 +140,7 @@ export default function LPHero() {
               textShadow: "0 2px 8px rgba(0,0,0,0.4)",
             }}
           >
-            見積もり内訳 100%公開。物件未定でも相談OK。
+            居抜き活用 × 設計施工一社完結。内容と面積で変わります。
           </p>
         </div>
 

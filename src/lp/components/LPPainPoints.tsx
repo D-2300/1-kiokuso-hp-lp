@@ -34,7 +34,7 @@ export default function LPPainPoints() {
             marginBottom: "28px",
           }}
         >
-          内装工事を考えているけど、わからないことが多すぎる
+          でも、こう思っていませんか。
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: "14px", maxWidth: "720px", margin: "0 auto" }}>
           {pains.map((p) => (
@@ -91,6 +91,15 @@ export default function LPPainPoints() {
             </div>
           ))}
         </div>
+        <p style={{
+          margin: "24px 0 0",
+          fontSize: "14px",
+          color: "#999",
+          textAlign: "center",
+          lineHeight: 1.8,
+        }}>
+          これ、あなたのせいじゃありません。
+        </p>
       </div>
     </section>
   );

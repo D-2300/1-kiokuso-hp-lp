@@ -9,6 +9,38 @@ export default function LPSolutionPoints() {
     <section style={{ backgroundColor: "#fff", padding: "48px 20px" }}>
       <div style={{ maxWidth: "960px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
 
+        <div>
+          <p style={{ margin: "0 0 6px", fontSize: "12px", color: "#C9A84C", fontWeight: 700, letterSpacing: "0.12em" }}>SOLUTION</p>
+          <p style={{ margin: "0 0 28px", fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#222" }}>だから、この価格でつくれます。</p>
+
+          <div style={{ borderRadius: "12px", overflow: "hidden", border: "1px solid #e0e0e0", marginBottom: "32px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", fontSize: "11px", fontWeight: 600 }}>
+              <div style={{ padding: "12px 10px", background: "#f5f5f5", color: "#999" }}></div>
+              <div style={{ padding: "12px 10px", background: "#f5f5f5", color: "#999", textAlign: "center" }}>一般的な相場</div>
+              <div style={{ padding: "12px 10px", background: "#4A6741", color: "#fff", textAlign: "center" }}>記憶荘</div>
+            </div>
+            {[
+              ["カフェ 12坪", "300〜500万", "120万円"],
+              ["居酒屋 18坪", "500〜800万", "180万円"],
+              ["美容室 15坪", "400〜600万", "150万円"],
+              ["テイクアウト 8坪", "150〜250万", "68万円"],
+            ].map(([type, other, kio], i) => (
+              <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", borderTop: "1px solid #eee", fontSize: "13px" }}>
+                <div style={{ padding: "14px 10px", color: "#555", fontWeight: 500 }}>{type}</div>
+                <div style={{ padding: "14px 10px", color: "#bbb", textAlign: "center", textDecoration: "line-through" }}>{other}</div>
+                <div style={{ padding: "14px 10px", color: "#4A6741", textAlign: "center", fontWeight: 700, fontSize: "14px" }}>{kio}</div>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ margin: "0 0 12px", fontSize: "15px", fontWeight: 700, color: "#333" }}>なぜこの価格で可能か</p>
+          {["居抜き活用 — 使えるものは壊さない", "施主支給OK — 自分で選んだものを持ち込める", "一社完結 — 設計・施工の中間マージンゼロ"].map((t, i) => (
+            <p key={i} style={{ margin: "0 0 6px", fontSize: "13px", color: "#666", lineHeight: 1.7 }}>
+              <span style={{ color: "#4A6741", marginRight: "6px" }}>✓</span>{t}
+            </p>
+          ))}
+        </div>
+
         {/* Point 1 — 横スクロールカルーセル */}
         <div>
           <p style={{ margin: "0 0 6px", fontSize: "12px", color: "#C9A84C", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>
@@ -279,6 +311,12 @@ export default function LPSolutionPoints() {
               <button onClick={() => setHint3(false)} aria-label="案内を閉じる" style={{ fontSize: "10px", color: "rgba(0,0,0,0.25)", background: "none", border: "none", cursor: "pointer", padding: "0 0 0 8px", lineHeight: 1 }}>×</button>
             </div>
           )}
+        </div>
+
+        <div style={{ marginTop: "28px", padding: "16px 20px", background: "#F8F7F4", borderRadius: "10px", textAlign: "center" }}>
+          <p style={{ margin: 0, fontSize: "14px", color: "#555", lineHeight: 1.7 }}>
+            実際に、こうなりました。
+          </p>
         </div>
 
       </div>
