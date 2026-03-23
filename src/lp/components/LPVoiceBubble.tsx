@@ -26,9 +26,9 @@ const LPVoiceBubble: React.FC<LPVoiceBubbleProps> = ({
       margin: '0 auto',
     }}>
       <div style={{
-        width: 84,
-        height: 84,
-        minWidth: 84,
+        width: 60,
+        height: 60,
+        minWidth: 60,
         borderRadius: '50%',
         background: isGreen ? 'rgba(255,255,255,0.3)' : '#EAF0E8',
         border: `2px solid ${isGreen ? 'rgba(255,255,255,0.5)' : '#A8BFA2'}`,
