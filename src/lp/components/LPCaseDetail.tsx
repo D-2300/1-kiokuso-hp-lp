@@ -113,11 +113,8 @@ export default function LPCaseDetail() {
             )}
 
             <div style={{ padding: "18px 20px 22px" }}>
-              <p style={{ margin: "0 0 2px", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#1a1a1a" }}>
+              <p style={{ margin: "0 0 14px", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#1a1a1a" }}>
                 {c.name}
-              </p>
-              <p style={{ margin: "0 0 14px", fontSize: "12px", color: "#aaa" }}>
-                {c.location} — 全施工記録
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px", paddingBottom: "16px", borderBottom: "1px solid #f0f0f0" }}>

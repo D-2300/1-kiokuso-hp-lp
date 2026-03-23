@@ -136,11 +136,8 @@ export default function StudioWorks() {
                 )}
 
                 <div style={{ maxWidth: "560px", margin: "0 auto", padding: "28px 24px 0" }}>
-                  <p style={{ fontSize: "18px", fontWeight: 700, color: colors.text, margin: "0 0 2px" }}>
+                  <p style={{ fontSize: "18px", fontWeight: 700, color: colors.text, margin: "0 0 18px" }}>
                     {work.name}
-                  </p>
-                  <p style={{ fontSize: "12px", color: colors.mute, margin: "0 0 18px" }}>
-                    {work.location} — 全施工記録
                   </p>
 
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "20px", paddingBottom: "20px", borderBottom: `1px solid rgba(0,0,0,0.08)` }}>
