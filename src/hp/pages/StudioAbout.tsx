@@ -8,7 +8,8 @@ import { colors } from "../../shared/design-tokens";
 
 export default function StudioAbout() {
   return (
-    <div style={{ minHeight: "100vh", paddingTop: 0, backgroundColor: colors.beige }}>
+    <>
+    <div style={{ paddingTop: 0, backgroundColor: colors.beige }}>
       <StudioNav />
 
       {/* SmallHero */}
@@ -357,7 +358,8 @@ export default function StudioAbout() {
         </section>
       </ScrollFadeIn>
 
-      <StudioFooter />
     </div>
+    <StudioFooter />
+    </>
   );
 }

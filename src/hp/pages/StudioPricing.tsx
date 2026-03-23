@@ -133,7 +133,8 @@ const costExamples = [
 
 export default function StudioPricing() {
   return (
-    <div style={{ minHeight: "100vh", paddingTop: 0, backgroundColor: colors.beige }}>
+    <>
+    <div style={{ paddingTop: 0, backgroundColor: colors.beige }}>
       <StudioNav />
 
       {/* SmallHero */}
@@ -320,7 +321,8 @@ export default function StudioPricing() {
         </section>
       </ScrollFadeIn>
 
-      <StudioFooter showServiceArea />
     </div>
+    <StudioFooter showServiceArea />
+    </>
   );
 }
