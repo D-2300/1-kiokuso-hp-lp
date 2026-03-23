@@ -49,10 +49,14 @@ export default function GroupFooter() {
             textTransform: "uppercase",
             padding: 0,
             transition: "color 0.2s",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = "#F5EAEA")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "#D4A0A0")}
         >
+          <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
           TOP
         </button>
         {[

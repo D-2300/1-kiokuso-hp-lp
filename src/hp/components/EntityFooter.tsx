@@ -4,6 +4,7 @@ import Logo from "../../shared/Logo";
 interface FooterLink {
   to: string;
   label: string;
+  logo?: string;
 }
 
 type LogoEntity = "group" | "studio" | "koumuten" | "reform" | "fudousan";
@@ -93,8 +94,12 @@ export default function EntityFooter({
                 textTransform: "uppercase",
                 padding: 0,
                 transition: "color 0.2s",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
               }}
             >
+              <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
               TOP
             </button>
           )}
@@ -111,8 +116,14 @@ export default function EntityFooter({
                 textTransform: "uppercase",
                 textDecoration: "none",
                 transition: "color 0.2s",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
               }}
             >
+              {link.logo && (
+                <img src={link.logo} alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
+              )}
               {link.label}
             </Link>
           ))}

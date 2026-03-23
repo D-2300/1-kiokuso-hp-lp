@@ -371,7 +371,7 @@ export default function ComingSoon({
         tagline="想いが残る場所を、つくる。"
         logoEntity={logoEntity}
         showTopButton={true}
-        links={[{ to: "/", label: "← Group Top" }]}
+        links={[{ to: "/", label: "← Group Top", logo: "/assets/logos/logo-group-gold.webp" }]}
       />
     </div>
   );

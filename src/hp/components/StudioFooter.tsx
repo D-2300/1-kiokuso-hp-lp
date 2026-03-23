@@ -113,17 +113,21 @@ export default function StudioFooter({ showServiceArea = false }: StudioFooterPr
             textTransform: "uppercase",
             padding: 0,
             transition: "color 0.2s",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.9)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
         >
+          <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.5 }} />
           TOP
         </button>
         {[
-          { to: "/studio/about", label: "About" },
-          { to: "/studio/works", label: "Works" },
-          { to: "/studio/pricing", label: "Pricing" },
-          { to: "/", label: "← Group" },
+          { to: "/studio/about", label: "About", logo: null },
+          { to: "/studio/works", label: "Works", logo: null },
+          { to: "/studio/pricing", label: "Pricing", logo: null },
+          { to: "/", label: "← Group", logo: "/assets/logos/logo-group-gold.webp" },
         ].map((link) => (
           <Link
             key={link.to}
@@ -137,10 +141,16 @@ export default function StudioFooter({ showServiceArea = false }: StudioFooterPr
               textTransform: "uppercase",
               textDecoration: "none",
               transition: "color 0.2s",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.9)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
           >
+            {link.logo && (
+              <img src={link.logo} alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.5 }} />
+            )}
             {link.label}
           </Link>
         ))}

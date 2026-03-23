@@ -45,7 +45,12 @@ export default function StudioNav() {
         boxShadow: show ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
         transition: "background-color 0.3s, backdrop-filter 0.3s, box-shadow 0.3s",
       }}>
-        <Link to="/studio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+        <Link to="/studio" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
+          <img
+            src="/assets/logos/logo-studio-gold.webp"
+            alt=""
+            style={{ height: "28px", width: "auto" }}
+          />
           <img
             src="/assets/logos/logo-studio-h-gold.webp"
             alt="記憶荘 STUDIO"
