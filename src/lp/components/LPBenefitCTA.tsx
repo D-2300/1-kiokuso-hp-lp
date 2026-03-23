@@ -6,7 +6,7 @@ interface LPBenefitCTAProps {
 }
 
 export default function LPBenefitCTA({ showPushText = false }: LPBenefitCTAProps) {
-  const [isPC, setIsPC] = useState(window.innerWidth >= 769);
+  const [isPC, setIsPC] = useState(() => typeof window !== "undefined" && window.innerWidth >= 769);
 
   useEffect(() => {
     const handler = () => setIsPC(window.innerWidth >= 769);
