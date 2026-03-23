@@ -152,25 +152,25 @@ export default function LPCaseDetail() {
               boxShadow: "0 3px 12px rgba(0,0,0,0.07)",
             }}
           >
-            <img
-              src={c.main}
-              alt={c.name}
-              style={{
-                width: "100%",
-                height: "clamp(200px, 26vw, 272px)",
-                objectFit: "cover",
-                display: "block",
-              }}
-            />
-            {c.subs.length > 0 && (
-              <div style={{ display: "grid", gridTemplateColumns: `repeat(${c.subs.length}, 1fr)`, gap: "4px", padding: "6px 6px 0" }}>
-                {c.subs.map((src, j) => (
-                  <div key={j} style={{ height: "64px", borderRadius: "5px", overflow: "hidden" }}>
-                    <img src={src} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px", padding: "12px 12px 0" }}>
+              {[
+                { src: c.before, label: "BEFORE" },
+                { src: c.main, label: "AFTER" },
+              ].map(({ src, label }) => (
+                <div key={label}>
+                  <p style={{ margin: "0 0 4px", fontSize: "11px", color: "#888", fontWeight: 500, letterSpacing: "0.05em" }}>
+                    {label}
+                  </p>
+                  <div style={{ borderRadius: "8px", overflow: "hidden", height: "clamp(180px, 22vw, 280px)" }}>
+                    <img
+                      src={src}
+                      alt={`${c.name} ${label}`}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    />
                   </div>
-                ))}
-              </div>
-            )}
+                </div>
+              ))}
+            </div>
 
             <div style={{ padding: "18px 20px 22px" }}>
               <p style={{ margin: "0 0 14px", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#1a1a1a" }}>
