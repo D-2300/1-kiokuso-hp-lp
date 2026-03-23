@@ -25,6 +25,10 @@ export default function LPPriceGuide() {
 
       <style>{`
         .price-carousel::-webkit-scrollbar { display: none; }
+        .price-carousel { justify-content: flex-start; }
+        @media (min-width: 1100px) {
+          .price-carousel { justify-content: center; overflow-x: visible; }
+        }
       `}</style>
 
       <div
@@ -32,14 +36,15 @@ export default function LPPriceGuide() {
         style={{
           display: "flex",
           overflowX: "auto",
-          gap: "16px",
+          gap: "24px",
           paddingBottom: "8px",
-          paddingLeft: "20px",
-          paddingRight: "20px",
+          paddingLeft: "24px",
+          paddingRight: "24px",
           scrollSnapType: "x mandatory",
           WebkitOverflowScrolling: "touch",
           msOverflowStyle: "none",
           scrollbarWidth: "none",
+          flexWrap: "nowrap",
         }}
       >
         {items.map(item => (
