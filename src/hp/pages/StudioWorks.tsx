@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import StudioNav from "../components/StudioNav";
 import StudioFooter from "../components/StudioFooter";
@@ -144,52 +144,54 @@ const genres = [
 const worksByName = Object.fromEntries(works.map((w) => [w.name, w]));
 
 function WorkCard({ work }: { work: Work }) {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <div
       style={{
-        flex: "0 0 280px",
-        width: "280px",
+        flex: "0 0 300px",
+        width: "300px",
         background: "#fff",
         borderRadius: "12px",
         overflow: "hidden",
         boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-        cursor: "pointer",
-        transition: "box-shadow 0.2s",
       }}
-      onClick={() => setExpanded((v) => !v)}
     >
-      <div style={{ position: "relative" }}>
-        <img
-          src={work.after}
-          alt={`${work.name} after`}
-          style={{ width: "100%", height: "220px", objectFit: "cover", display: "block" }}
-        />
-        <span
-          style={{
-            position: "absolute",
-            top: "10px",
-            left: "10px",
-            background: "rgba(0,0,0,0.55)",
-            color: "#fff",
-            fontSize: "10px",
-            fontFamily: "'Anton', sans-serif",
-            letterSpacing: "0.08em",
-            padding: "3px 8px",
-            borderRadius: "4px",
-          }}
-        >
-          AFTER
-        </span>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+        {[
+          { src: work.before, label: "BEFORE" },
+          { src: work.after, label: "AFTER" },
+        ].map(({ src, label }) => (
+          <div key={label} style={{ position: "relative" }}>
+            <img
+              src={src}
+              alt={`${work.name} ${label}`}
+              style={{ width: "100%", height: "160px", objectFit: "cover", display: "block" }}
+            />
+            <span
+              style={{
+                position: "absolute",
+                top: "8px",
+                left: "8px",
+                background: "rgba(0,0,0,0.5)",
+                color: "#fff",
+                fontSize: "11px",
+                fontFamily: "'Anton', sans-serif",
+                letterSpacing: "0.08em",
+                padding: "2px 7px",
+                borderRadius: "3px",
+              }}
+            >
+              {label}
+            </span>
+          </div>
+        ))}
       </div>
 
       <div style={{ padding: "16px" }}>
-        <p style={{ margin: "0 0 10px", fontSize: "14px", fontWeight: 700, color: colors.text, lineHeight: 1.4 }}>
+        <p style={{ margin: "0 0 12px", fontSize: "14px", fontWeight: 700, color: colors.text, lineHeight: 1.4 }}>
           {work.name}
         </p>
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "4px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "14px" }}>
           {[
             { label: "費用", value: work.cost },
             { label: "工期", value: work.period },
@@ -213,56 +215,18 @@ function WorkCard({ work }: { work: Work }) {
           ))}
         </div>
 
-        <div
-          style={{
-            fontSize: "11px",
-            color: "#C9A84C",
-            fontWeight: 600,
-            marginTop: "10px",
-            letterSpacing: "0.04em",
-          }}
-        >
-          {expanded ? "▲ 閉じる" : "▼ 詳細を見る"}
+        <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 2.0, margin: "0 0 12px", whiteSpace: "pre-line" }}>
+          {work.story}
+        </p>
+
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+          {work.tags.map((tag) => (
+            <span key={tag} style={{ fontSize: "11px", color: "#888" }}>
+              #{tag}
+            </span>
+          ))}
         </div>
       </div>
-
-      {expanded && (
-        <div
-          style={{ padding: "0 16px 16px", borderTop: "1px solid rgba(0,0,0,0.06)" }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", margin: "14px 0" }}>
-            <div>
-              <p style={{ margin: "0 0 4px", fontSize: "10px", color: "#888", fontWeight: 500, letterSpacing: "0.08em" }}>BEFORE</p>
-              <img
-                src={work.before}
-                alt={`${work.name} before`}
-                style={{ width: "100%", height: "110px", objectFit: "cover", borderRadius: "6px", display: "block" }}
-              />
-            </div>
-            <div>
-              <p style={{ margin: "0 0 4px", fontSize: "10px", color: "#888", fontWeight: 500, letterSpacing: "0.08em" }}>AFTER</p>
-              <img
-                src={work.after}
-                alt={`${work.name} after`}
-                style={{ width: "100%", height: "110px", objectFit: "cover", borderRadius: "6px", display: "block" }}
-              />
-            </div>
-          </div>
-
-          <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 2.0, margin: "0 0 12px", whiteSpace: "pre-line" }}>
-            {work.story}
-          </p>
-
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-            {work.tags.map((tag) => (
-              <span key={tag} style={{ fontSize: "11px", color: "#888" }}>
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -272,7 +236,7 @@ function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; l
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({ left: dir === "right" ? 300 : -300, behavior: "smooth" });
+    scrollRef.current.scrollBy({ left: dir === "right" ? 316 : -316, behavior: "smooth" });
   };
 
   return (
@@ -293,54 +257,50 @@ function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; l
       </div>
 
       <div style={{ position: "relative" }}>
-        {genreWorks.length > 1 && (
-          <>
-            <button
-              onClick={() => scroll("left")}
-              style={{
-                position: "absolute",
-                left: "4px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                zIndex: 2,
-                background: "rgba(255,255,255,0.92)",
-                border: "1px solid #E0E0E0",
-                borderRadius: "50%",
-                width: "36px",
-                height: "36px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
-              }}
-            >
-              <ChevronLeft size={18} color="#555" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              style={{
-                position: "absolute",
-                right: "4px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                zIndex: 2,
-                background: "rgba(255,255,255,0.92)",
-                border: "1px solid #E0E0E0",
-                borderRadius: "50%",
-                width: "36px",
-                height: "36px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
-              }}
-            >
-              <ChevronRight size={18} color="#555" />
-            </button>
-          </>
-        )}
+        <button
+          onClick={() => scroll("left")}
+          style={{
+            position: "absolute",
+            left: "4px",
+            top: "80px",
+            transform: "translateY(-50%)",
+            zIndex: 2,
+            background: "rgba(255,255,255,0.92)",
+            border: "1px solid #E0E0E0",
+            borderRadius: "50%",
+            width: "36px",
+            height: "36px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+          }}
+        >
+          <ChevronLeft size={18} color="#555" />
+        </button>
+        <button
+          onClick={() => scroll("right")}
+          style={{
+            position: "absolute",
+            right: "4px",
+            top: "80px",
+            transform: "translateY(-50%)",
+            zIndex: 2,
+            background: "rgba(255,255,255,0.92)",
+            border: "1px solid #E0E0E0",
+            borderRadius: "50%",
+            width: "36px",
+            height: "36px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+          }}
+        >
+          <ChevronRight size={18} color="#555" />
+        </button>
 
         <div
           ref={scrollRef}
@@ -351,11 +311,15 @@ function GenreCarousel({ label, labelJa, works: genreWorks }: { label: string; l
             padding: "4px 24px 16px",
             scrollbarWidth: "none",
             msOverflowStyle: "none",
+            scrollSnapType: "x mandatory",
           }}
         >
           {genreWorks.map((work) => (
-            <WorkCard key={work.name} work={work} />
+            <div key={work.name} style={{ scrollSnapAlign: "start", flex: "0 0 auto" }}>
+              <WorkCard work={work} />
+            </div>
           ))}
+          <div style={{ flex: "0 0 1px", minWidth: "1px" }} />
         </div>
       </div>
     </div>
