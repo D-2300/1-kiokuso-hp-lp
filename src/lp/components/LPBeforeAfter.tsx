@@ -45,6 +45,22 @@ const cases = [
     before: "/images/salon-before-01.webp",
     after: "/images/salon-after-01.webp",
   },
+  {
+    type: "バー",
+    cost: "90万円",
+    tsubo: "15坪",
+    period: "14日",
+    before: "/images/anvil-before.webp",
+    after: "/images/anvil-after.webp",
+  },
+  {
+    type: "バー/割烹",
+    cost: "120万円",
+    tsubo: "10坪",
+    period: "14日",
+    before: "/images/case6-before.webp",
+    after: "/images/case6-after.webp",
+  },
 ];
 
 const extended = [cases[cases.length - 1], ...cases, cases[0]];

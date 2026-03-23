@@ -61,12 +61,42 @@ const works = [
     main: "/images/salon-after-01.webp",
     subs: ["/images/salon-before-01.webp"],
   },
+  {
+    name: "ANVIL",
+    location: "仙台市",
+    type: "バー",
+    kind: "居抜き",
+    cost: "¥900,000",
+    period: "約14日",
+    tsubo: "15坪",
+    story:
+      "前のお店が残していったピンクの椅子と、大理石模様のカウンター。同じ空間を、まったく違う場所に変えたかった。\n\nカウンターの正面にトタン板を張った。棚をスチールに替え、裸電球を吊るした。テーブルは古材と鉄脚で、一つひとつ作った。\n\n前の店の骨格を活かしながら、新しいオーナーの世界を載せる。それが居抜きの醍醐味だと思っている。",
+    tags: ["居抜き活用", "トタン壁", "スチール什器", "古材テーブル", "オリジナル家具"],
+    main: "/images/anvil-after.webp",
+    subs: ["/images/anvil-before.webp"],
+  },
+  {
+    name: "藍",
+    location: "仙台市",
+    type: "バー/割烹",
+    kind: "居抜き",
+    cost: "¥1,200,000",
+    period: "約14日",
+    tsubo: "10坪",
+    story:
+      "無垢材のカウンターと木の棚。前の店が長く使い込んだものだった。状態が良かったから、壊さずに使うことにした。\n\n変えたのは壁と床だけ。藍色の壁紙を全面に張った。それだけで、空間はまったく別の場所になった。\n\n残すものと変えるものを見極める。居抜きの本質は、そこにあると思う。",
+    tags: ["居抜き活用", "壁紙全面施工", "既存カウンター活用", "和モダン", "フローリング張替"],
+    main: "/images/case6-after.webp",
+    subs: ["/images/case6-before.webp"],
+  },
 ];
 
 const textureSrcs = [
   "/assets/textures/oak-hardwood-floor.webp",
   "/assets/textures/rusted-steel-plates.webp",
   "/assets/textures/shikkui-plaster-closeup.webp",
+  null,
+  "/assets/textures/earthen-wall-layers.webp",
   null,
 ];
 
@@ -164,7 +194,7 @@ export default function StudioWorks() {
                     ))}
                   </div>
 
-                  <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, margin: "0 0 16px" }}>
+                  <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, margin: "0 0 16px", whiteSpace: "pre-line" }}>
                     {work.story}
                   </p>
 
