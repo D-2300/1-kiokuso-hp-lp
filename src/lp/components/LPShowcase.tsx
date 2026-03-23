@@ -15,7 +15,7 @@ export default function LPShowcase() {
   ];
 
   return (
-    <section style={{ backgroundColor: "#fff", padding: "48px 0 40px" }}>
+    <section style={{ backgroundColor: "#fff", padding: "16px 0 40px" }}>
       <div style={{ maxWidth: "960px", margin: "0 auto", padding: "0 20px" }}>
         <p style={{
           fontSize: "clamp(18px, 3.5vw, 24px)",

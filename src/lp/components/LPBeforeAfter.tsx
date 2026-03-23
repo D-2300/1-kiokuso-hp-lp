@@ -89,7 +89,7 @@ export default function LPBeforeAfter() {
   };
 
   return (
-    <section style={{ padding: "48px 0", backgroundColor: "#fff", overflow: "hidden" }}>
+    <section style={{ padding: "48px 0 0", backgroundColor: "#fff", overflow: "hidden" }}>
       <style>{`
         @media (max-width: 767px) {
           .ba-card { min-width: 85vw !important; }
@@ -180,6 +180,7 @@ export default function LPBeforeAfter() {
           justifyContent: "center",
           gap: "16px",
           marginTop: "20px",
+          marginBottom: "8px",
         }}
       >
         <button
@@ -226,7 +227,7 @@ export default function LPBeforeAfter() {
         </button>
       </div>
 
-      <p style={{ textAlign: "center", fontSize: "14px", color: "#999", marginTop: "12px" }}>
+      <p style={{ textAlign: "center", fontSize: "14px", color: "#999", marginTop: "0", marginBottom: "8px" }}>
         ← スワイプで見る →
       </p>
     </section>
