@@ -99,7 +99,7 @@ export default function EntityFooter({
                 gap: "6px",
               }}
             >
-              <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
+              <img src={`/assets/logos/logo-${logoEntity}-gold.webp`} alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.6 }} />
               TOP
             </button>
           )}

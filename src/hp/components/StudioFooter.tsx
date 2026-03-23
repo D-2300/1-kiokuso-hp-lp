@@ -120,7 +120,7 @@ export default function StudioFooter({ showServiceArea = false }: StudioFooterPr
           onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.9)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
         >
-          <img src="/assets/logos/logo-group-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.5 }} />
+          <img src="/assets/logos/logo-studio-gold.webp" alt="" style={{ height: "14px", width: "auto", filter: "brightness(10)", opacity: 0.5 }} />
           TOP
         </button>
         {[
