@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import StudioNav from "../components/StudioNav";
 import StudioFooter from "../components/StudioFooter";
@@ -134,22 +134,17 @@ const works: Work[] = [
   },
 ];
 
-const CARD_GAP = 16;
-const CARD_WIDTH_PC = 420;
-
-function WorkCard({ work, cardWidth }: { work: Work; cardWidth: number }) {
+function WorkCard({ work }: { work: Work }) {
   return (
     <div
       style={{
-        width: `${cardWidth}px`,
-        flexShrink: 0,
         background: "#fff",
         borderRadius: "12px",
         overflow: "hidden",
         boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
         display: "flex",
         flexDirection: "column",
-        alignSelf: "stretch",
+        height: "100%",
       }}
     >
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", flexShrink: 0 }}>
@@ -229,117 +224,51 @@ function WorkCard({ work, cardWidth }: { work: Work; cardWidth: number }) {
 }
 
 function AllWorksCarousel({ works: allWorks }: { works: Work[] }) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [cardWidth, setCardWidth] = useState(CARD_WIDTH_PC);
-  const [currentIndex, setCurrentIndex] = useState(allWorks.length);
-  const isTransitioning = useRef(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
-  const count = allWorks.length;
-  const cloned = [...allWorks, ...allWorks, ...allWorks];
-
-  const getOffset = useCallback(
-    (index: number) => {
-      const startPad = 24;
-      return startPad + index * (cardWidth + CARD_GAP);
-    },
-    [cardWidth]
-  );
+  const totalCards = allWorks.length;
 
   useEffect(() => {
-    const updateCardWidth = () => {
-      if (containerRef.current) {
-        const containerW = containerRef.current.offsetWidth;
-        const isMobile = containerW < 640;
-        setCardWidth(isMobile ? containerW * 0.85 : CARD_WIDTH_PC);
-      }
-    };
-    updateCardWidth();
-    window.addEventListener("resize", updateCardWidth);
-    return () => window.removeEventListener("resize", updateCardWidth);
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
 
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const offset = getOffset(currentIndex);
-    el.style.transition = "none";
-    el.style.transform = `translateX(-${offset}px)`;
-  }, [cardWidth, getOffset, currentIndex]);
+  const cardWidthPercent = isMobile ? 100 : 33.333;
+  const maxIndex = isMobile ? totalCards - 1 : Math.max(0, totalCards - 3);
 
-  const moveTo = useCallback(
-    (index: number, animated: boolean) => {
-      const el = trackRef.current;
-      if (!el) return;
-      const offset = getOffset(index);
-      el.style.transition = animated ? "transform 0.42s cubic-bezier(0.25,0.46,0.45,0.94)" : "none";
-      el.style.transform = `translateX(-${offset}px)`;
-    },
-    [getOffset]
-  );
+  const goLeft = () => setCurrentIndex((prev) => Math.max(0, prev - 1));
+  const goRight = () => setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
 
-  const handleTransitionEnd = useCallback(() => {
-    isTransitioning.current = false;
-    const el = trackRef.current;
-    if (!el) return;
-    let next = currentIndex;
-    if (currentIndex < count) {
-      next = currentIndex + count;
-    } else if (currentIndex >= count * 2) {
-      next = currentIndex - count;
-    }
-    if (next !== currentIndex) {
-      el.style.transition = "none";
-      el.style.transform = `translateX(-${getOffset(next)}px)`;
-      setCurrentIndex(next);
-    }
-  }, [currentIndex, count, getOffset]);
-
-  const goNext = () => {
-    if (isTransitioning.current) return;
-    isTransitioning.current = true;
-    const next = currentIndex + 1;
-    setCurrentIndex(next);
-    moveTo(next, true);
-  };
-
-  const goPrev = () => {
-    if (isTransitioning.current) return;
-    isTransitioning.current = true;
-    const next = currentIndex - 1;
-    setCurrentIndex(next);
-    moveTo(next, true);
-  };
-
-  const touchStartX = useRef(0);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const dx = e.changedTouches[0].clientX - touchStartX.current;
-    if (Math.abs(dx) < 30) return;
-    if (dx < 0) {
-      goNext();
-    } else {
-      goPrev();
-    }
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 50) goRight();
+    if (diff < -50) goLeft();
   };
 
-  const activeNorm = ((currentIndex % count) + count) % count;
+  const dotCount = isMobile ? totalCards : maxIndex + 1;
 
   return (
-    <div style={{ marginTop: "48px" }}>
-      <div ref={containerRef} style={{ position: "relative", overflow: "hidden" }}>
+    <div style={{ marginTop: "48px", paddingBottom: "8px" }}>
+      <div style={{ position: "relative" }}>
         <button
-          onClick={goPrev}
+          onClick={goLeft}
           style={{
             position: "absolute",
             left: "8px",
             top: "50%",
             transform: "translateY(-50%)",
-            zIndex: 2,
+            zIndex: 10,
             background: "rgba(255,255,255,0.92)",
             border: "1px solid #E0E0E0",
             borderRadius: "50%",
@@ -350,18 +279,21 @@ function AllWorksCarousel({ works: allWorks }: { works: Work[] }) {
             justifyContent: "center",
             cursor: "pointer",
             boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+            opacity: currentIndex === 0 ? 0.3 : 1,
+            pointerEvents: currentIndex === 0 ? "none" : "auto",
           }}
+          aria-label="前へ"
         >
           <ChevronLeft size={18} color="#555" />
         </button>
         <button
-          onClick={goNext}
+          onClick={goRight}
           style={{
             position: "absolute",
             right: "8px",
             top: "50%",
             transform: "translateY(-50%)",
-            zIndex: 2,
+            zIndex: 10,
             background: "rgba(255,255,255,0.92)",
             border: "1px solid #E0E0E0",
             borderRadius: "50%",
@@ -372,47 +304,52 @@ function AllWorksCarousel({ works: allWorks }: { works: Work[] }) {
             justifyContent: "center",
             cursor: "pointer",
             boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+            opacity: currentIndex === maxIndex ? 0.3 : 1,
+            pointerEvents: currentIndex === maxIndex ? "none" : "auto",
           }}
+          aria-label="次へ"
         >
           <ChevronRight size={18} color="#555" />
         </button>
 
-        <div
-          ref={trackRef}
-          onTransitionEnd={handleTransitionEnd}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-          style={{
-            display: "flex",
-            gap: `${CARD_GAP}px`,
-            padding: "4px 0 16px 24px",
-            willChange: "transform",
-            alignItems: "stretch",
-          }}
-        >
-          {cloned.map((work, i) => (
-            <WorkCard key={`${work.name}-${i}`} work={work} cardWidth={cardWidth} />
-          ))}
-          <div style={{ flexShrink: 0, width: "24px" }} />
+        <div style={{ overflow: "hidden", margin: "0 44px" }}>
+          <div
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            style={{
+              display: "flex",
+              transition: "transform 0.4s ease",
+              transform: `translateX(-${currentIndex * cardWidthPercent}%)`,
+            }}
+          >
+            {allWorks.map((work, i) => (
+              <div key={i} style={{ flex: `0 0 ${cardWidthPercent}%`, padding: "4px 8px 16px" }}>
+                <WorkCard work={work} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "8px" }}>
-        {allWorks.map((_, i) => {
-          const active = activeNorm === i;
-          return (
-            <div
-              key={i}
-              style={{
-                width: active ? "20px" : "6px",
-                height: "6px",
-                borderRadius: "3px",
-                background: active ? colors.gold ?? "#C9A84C" : "#D0D0D0",
-                transition: "all 0.3s ease",
-              }}
-            />
-          );
-        })}
+      <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "12px" }}>
+        {Array.from({ length: dotCount }).map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            style={{
+              width: currentIndex === i ? "20px" : "6px",
+              height: "6px",
+              borderRadius: "3px",
+              backgroundColor: currentIndex === i ? (colors.gold ?? "#C9A84C") : "#D0D0D0",
+              border: "none",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              padding: 0,
+            }}
+            aria-label={`スライド ${i + 1}`}
+          />
+        ))}
       </div>
     </div>
   );
