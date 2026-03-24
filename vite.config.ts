@@ -7,15 +7,16 @@ function skipBrokenFiles(): import('vite').Plugin {
   return {
     name: 'skip-broken-public-files',
     buildStart() {
-      const imagesDir = path.resolve(__dirname, 'public/images');
-      if (!fs.existsSync(imagesDir)) return;
-      const entries = fs.readdirSync(imagesDir);
-      for (const entry of entries) {
-        if (entry.includes(' copy')) {
-          const fullPath = path.join(imagesDir, entry);
-          try {
-            fs.accessSync(fullPath, fs.constants.R_OK);
-          } catch {
+      const dirs = [
+        path.resolve(__dirname, 'public'),
+        path.resolve(__dirname, 'public/images'),
+      ];
+      for (const dir of dirs) {
+        if (!fs.existsSync(dir)) continue;
+        const entries = fs.readdirSync(dir);
+        for (const entry of entries) {
+          if (entry.includes(' copy')) {
+            const fullPath = path.join(dir, entry);
             try { fs.unlinkSync(fullPath); } catch {}
           }
         }
