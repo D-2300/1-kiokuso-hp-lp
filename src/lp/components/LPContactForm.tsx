@@ -27,7 +27,7 @@ export default function LPContactForm() {
       id="contact-form"
       style={{
         backgroundColor: "#FAFAF8",
-        padding: "48px 20px 64px",
+        padding: "48px 20px",
       }}
     >
       <style>{`

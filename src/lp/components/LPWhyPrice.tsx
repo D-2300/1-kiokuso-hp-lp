@@ -18,7 +18,7 @@ const reasons = [
 
 export default function LPWhyPrice() {
   return (
-    <section style={{ backgroundColor: "#FAFAF8", border: "3px solid blue" }}>
+    <section style={{ backgroundColor: "#FAFAF8" }}>
       <style>{`
         @media (max-width: 640px) {
           .wyp-card-title { font-size: 0.9375rem !important; }
@@ -28,7 +28,7 @@ export default function LPWhyPrice() {
 
       <div
         className="wyp-section"
-        style={{ maxWidth: 640, margin: "0 auto", padding: "64px 24px" }}
+        style={{ maxWidth: 640, margin: "0 auto", padding: "48px 24px" }}
       >
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <p

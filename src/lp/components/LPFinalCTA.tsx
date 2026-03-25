@@ -2,7 +2,7 @@ import { LINE_URL } from "../../shared/design-tokens";
 
 export default function LPFinalCTA() {
   return (
-    <section data-section="final-cta" style={{ backgroundColor: "#fff", padding: "64px 20px 64px", textAlign: "center" }}>
+    <section data-section="final-cta" style={{ backgroundColor: "#fff", padding: "48px 20px", textAlign: "center" }}>
       <p
         style={{
           margin: "0 0 8px",

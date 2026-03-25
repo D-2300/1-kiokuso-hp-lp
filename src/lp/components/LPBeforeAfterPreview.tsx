@@ -120,7 +120,6 @@ export default function LPBeforeAfterPreview() {
     <section
       style={{
         backgroundColor: "#FFFFFF",
-        border: "3px solid red",
       }}
     >
       <style>{`
@@ -134,7 +133,7 @@ export default function LPBeforeAfterPreview() {
         style={{
           maxWidth: 800,
           margin: "0 auto",
-          padding: "64px 24px",
+          padding: "48px 24px",
         }}
       >
         <div style={{ textAlign: "center", marginBottom: 40 }}>

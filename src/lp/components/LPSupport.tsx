@@ -246,7 +246,7 @@ function StepRow({ step, isLast }: { step: Step; isLast: boolean }) {
 
 export default function LPSupport() {
   return (
-    <section style={{ backgroundColor: "#FAFAF8", paddingTop: 64, paddingBottom: 64 }}>
+    <section style={{ backgroundColor: "#FAFAF8", paddingTop: 48, paddingBottom: 48 }}>
       <style>{`
         @media (max-width: 640px) {
           .lp-support-section { padding-top: 48px !important; padding-bottom: 48px !important; }
