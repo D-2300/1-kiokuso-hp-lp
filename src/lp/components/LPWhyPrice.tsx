@@ -131,6 +131,17 @@ export default function LPWhyPrice() {
         >
           「安い」のではなく、余計なコストがないだけです。
         </p>
+
+        <p
+          style={{
+            marginTop: 40,
+            textAlign: "center",
+            fontSize: "15px",
+            color: "#999",
+          }}
+        >
+          でも、不安はありますよね。
+        </p>
       </div>
     </section>
   );
