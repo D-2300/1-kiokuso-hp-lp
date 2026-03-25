@@ -18,7 +18,7 @@ const reasons = [
 
 export default function LPWhyPrice() {
   return (
-    <section style={{ backgroundColor: "#FAFAF8" }}>
+    <section style={{ backgroundColor: "#FAFAF8", border: "3px solid blue" }}>
       <style>{`
         @media (max-width: 640px) {
           .wyp-card-title { font-size: 0.9375rem !important; }

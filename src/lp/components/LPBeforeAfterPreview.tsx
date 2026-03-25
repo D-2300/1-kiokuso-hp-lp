@@ -120,6 +120,7 @@ export default function LPBeforeAfterPreview() {
     <section
       style={{
         backgroundColor: "#FFFFFF",
+        border: "3px solid red",
       }}
     >
       <style>{`
