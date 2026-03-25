@@ -322,6 +322,18 @@ export default function LPSupport() {
             ぜんぶ相談できる。それが記憶荘です。
           </p>
         </div>
+
+        <p style={{
+          marginTop: 32,
+          textAlign: "center",
+          fontSize: "0.875rem",
+          color: "#999",
+          backgroundColor: "#f5f5f0",
+          padding: "14px 24px",
+          borderRadius: 8,
+        }}>
+          実際に、こうなりました。
+        </p>
       </div>
     </section>
   );

@@ -319,12 +319,6 @@ export default function LPSolutionPoints() {
           )}
         </div>
 
-        <div style={{ marginTop: "28px", padding: "16px 20px", background: "#F8F7F4", borderRadius: "10px", textAlign: "center" }}>
-          <p style={{ margin: 0, fontSize: "14px", color: "#555", lineHeight: 1.7 }}>
-            実際に、こうなりました。
-          </p>
-        </div>
-
       </div>
     </section>
   );
