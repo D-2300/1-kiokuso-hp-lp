@@ -45,12 +45,6 @@ export default function LPSolutionPoints() {
             ))}
           </div>
 
-          <p style={{ margin: "0 0 12px", fontSize: "15px", fontWeight: 700, color: "#333" }}>なぜこの価格で可能か</p>
-          {["居抜き活用 — 使えるものは壊さない", "施主支給OK — 自分で選んだものを持ち込める", "一社完結 — 設計・施工の中間マージンゼロ"].map((t, i) => (
-            <p key={i} style={{ margin: "0 0 6px", fontSize: "13px", color: "#666", lineHeight: 1.7 }}>
-              <span style={{ color: "#4A6741", marginRight: "6px" }}>✓</span>{t}
-            </p>
-          ))}
         </div>
 
         {/* Point 1 — 横スクロールカルーセル */}
