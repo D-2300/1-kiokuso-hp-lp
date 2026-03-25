@@ -75,6 +75,30 @@ export default function LPFinalCTA() {
       <p style={{ margin: "12px 0 0", fontSize: "13px", color: "#aaa", lineHeight: 1.8 }}>
         強引な営業は一切しません。断りはLINE1本でOKです。
       </p>
+      <div style={{ marginTop: 12, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+        <a
+          href="tel:08069003314"
+          style={{
+            fontSize: 14,
+            color: "#1A1A1A",
+            textDecoration: "underline",
+            textUnderlineOffset: 3,
+          }}
+        >
+          📞 電話で相談する 080-6900-3314
+        </a>
+        <a
+          href="#contact-form"
+          style={{
+            fontSize: 14,
+            color: "#888",
+            textDecoration: "underline",
+            textUnderlineOffset: 3,
+          }}
+        >
+          ✉ メールで相談する
+        </a>
+      </div>
     </section>
   );
 }

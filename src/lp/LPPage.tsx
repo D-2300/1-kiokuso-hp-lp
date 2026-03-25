@@ -11,6 +11,7 @@ import LPPriceGuide from "./components/LPPriceGuide";
 import LPFlow from "./components/LPFlow";
 import LPLastPush from "./components/LPLastPush";
 import LPFinalCTA from "./components/LPFinalCTA";
+import LPContactForm from "./components/LPContactForm";
 import LPFAQ from "./components/LPFAQ";
 import LPProfile from "./components/LPProfile";
 import LPFooter from "./components/LPFooter";
@@ -32,6 +33,7 @@ export default function LPPage() {
       <LPFlow />
       <LPLastPush />
       <LPFinalCTA />
+      <LPContactForm />
       <LPFAQ />
       <LPProfile />
       <LPFooter />
