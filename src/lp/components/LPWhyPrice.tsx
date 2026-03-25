@@ -128,7 +128,7 @@ export default function LPWhyPrice() {
             lineHeight: 1.6,
           }}
         >
-          「安い」のではなく、余計なコストがないだけです。
+          値段を下げたのではなく、余計なコストをカットしただけです。
         </p>
 
         <p
