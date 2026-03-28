@@ -20,7 +20,7 @@ export default function LPPriceGuide() {
         margin: "0 0 32px",
         padding: "0 20px",
       }}>
-        業態別 価格の目安
+        業態別 店舗内装費用の相場
       </p>
 
       <style>{`

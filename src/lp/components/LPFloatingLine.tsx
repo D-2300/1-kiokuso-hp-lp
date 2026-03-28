@@ -114,7 +114,7 @@ export default function LPFloatingLine() {
             }}
             className="floating-line-text"
           >
-            LINEで無料相談する
+            LINEで無料見積もり
           </span>
         </div>
 

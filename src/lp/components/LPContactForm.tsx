@@ -78,7 +78,7 @@ export default function LPContactForm() {
               lineHeight: 1.4,
             }}
           >
-            メールで相談する
+            無料見積もり・お問い合わせ
           </h2>
           <p style={{ margin: 0, fontSize: 14, color: "#888" }}>
             翌営業日までにご返信いたします。

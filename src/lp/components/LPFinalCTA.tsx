@@ -17,7 +17,7 @@ export default function LPFinalCTA() {
           color: "#222",
         }}
       >
-        LINEで無料相談する
+        LINEで無料見積もり
       </p>
       <p
         style={{
@@ -76,7 +76,7 @@ export default function LPFinalCTA() {
           letterSpacing: "0.03em",
         }}
       >
-        LINEで無料相談する
+        LINEで無料見積もり
       </a>
       <p style={{ margin: "12px 0 0", fontSize: "13px", color: "#aaa", lineHeight: 1.8 }}>
         強引な営業は一切しません。断りはLINE1本でOKです。

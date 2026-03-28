@@ -128,6 +128,16 @@ export default function LPCaseDetail() {
 
   return (
     <section style={{ backgroundColor: "#fff", padding: "32px 0 48px" }}>
+      <p style={{
+        textAlign: "center",
+        fontSize: "clamp(20px, 3.5vw, 28px)",
+        fontWeight: 700,
+        color: "#222",
+        margin: "0 0 24px",
+        padding: "0 20px",
+      }}>
+        店舗内装の施工事例
+      </p>
       <div
         style={{
           display: "flex",
@@ -164,7 +174,7 @@ export default function LPCaseDetail() {
                   <div style={{ borderRadius: "8px", overflow: "hidden", height: "clamp(180px, 22vw, 280px)" }}>
                     <img
                       src={src}
-                      alt={`${c.name} ${label}`}
+                      alt={`${c.type} 内装${label === "BEFORE" ? "施工前" : "施工後"}`}
                       style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                     />
                   </div>
@@ -173,6 +183,9 @@ export default function LPCaseDetail() {
             </div>
 
             <div style={{ padding: "18px 20px 22px" }}>
+              <p style={{ margin: "0 0 4px", fontSize: "11px", fontWeight: 500, color: "#C9A84C", letterSpacing: "0.04em" }}>
+                {c.type}
+              </p>
               <p style={{ margin: "0 0 14px", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#1a1a1a" }}>
                 {c.name}
               </p>
