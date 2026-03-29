@@ -14,7 +14,7 @@ const altMap: Record<LogoEntity, string> = {
   group: "記憶荘",
   studio: "記憶荘 STUDIO",
   koumuten: "記憶荘 工務店",
-  reform: "記憶荘 住宅リフォームLABO",
+  reform: "記憶荘 住宅リフォーム工房",
   fudousan: "記憶荘 不動産",
 };
 
