@@ -32,6 +32,7 @@ export default function LPHero() {
         width="1200"
         height="800"
         loading="eager"
+        sizes="100vw"
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
       />
       <div
