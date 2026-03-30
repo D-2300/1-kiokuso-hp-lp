@@ -13,6 +13,7 @@ import MLastPush from "./components/MLastPush";
 import MCTA from "./components/MCTA";
 import MProfile from "./components/MProfile";
 import MFooter from "./components/MFooter";
+import MContactForm from "./components/MContactForm";
 import MFloatingCTA from "./components/MFloatingCTA";
 
 export default function ManshitsuPage() {
@@ -45,6 +46,7 @@ export default function ManshitsuPage() {
       <MFAQ />
       <MLastPush />
       <MCTA />
+      <MContactForm />
       <MProfile />
       <MFooter />
       <MFloatingCTA />

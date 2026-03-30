@@ -13,124 +13,57 @@ function pushEvent(event: string) {
 
 export default function MHero() {
   return (
-    <section
-      style={{
-        position: "relative",
-        minHeight: "100vh",
-        overflow: "hidden",
-        backgroundColor: M.dark,
-      }}
-      className="m-hero"
-    >
+    <section className="m-hero">
       <style>{`
         @media (max-width: 767px) {
-          .m-hero { min-height: 90vh !important; }
-          .m-hero-inner { min-height: 90vh !important; }
-          .m-hero-h1 { font-size: 28px !important; }
-          .m-hero-sub { font-size: 15px !important; }
+          .m-hero-h1 { font-size: 26px !important; }
+          .m-hero-sub { font-size: 14px !important; }
+          .m-hero-img-wrap { height: 280px !important; }
         }
         @media (min-width: 768px) {
           .m-hero-h1 { font-size: 36px !important; }
-          .m-hero-sub { font-size: 17px !important; }
+          .m-hero-sub { font-size: 16px !important; }
+          .m-hero-img-wrap { height: 360px !important; }
         }
       `}</style>
 
-      {/* Background image - grayscale */}
-      <img
-        src="/images/m-hero-gray.webp"
-        srcSet="/images/m-hero-gray-sm.webp 480w, /images/m-hero-gray.webp 720w"
-        alt=""
-        width="720"
-        height="403"
-        loading="eager"
-        fetchPriority="high"
-        sizes="100vw"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          filter: "brightness(0.7)",
-        }}
-      />
-
-      {/* Dark overlay with purple tint */}
+      {/* ===== IMAGE SECTION (top) ===== */}
       <div
         style={{
-          position: "absolute",
-          inset: 0,
-          background: `linear-gradient(to bottom, rgba(68,41,64,0.75) 0%, rgba(68,41,64,0.4) 40%, rgba(68,41,64,0.7) 100%)`,
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%)",
-        }}
-      />
-
-      {/* Content */}
-      <div
-        className="m-hero-inner"
-        style={{
-          position: "relative",
-          zIndex: 1,
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "28px 20px 0",
-          paddingTop: "72px",
-          maxWidth: "720px",
-          margin: "0 auto",
-          boxSizing: "border-box",
+          backgroundColor: M.dark,
+          padding: "40px 20px 0",
         }}
       >
-        <div>
-          {/* Logo */}
-          <div style={{ marginBottom: "20px" }}>
+        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+          {/* Logo mark - large */}
+          <div style={{ marginBottom: "20px", textAlign: "center" }}>
             <img
-              src="/images/logo-manshitsu-h-gold.png"
-              alt="記憶荘 満室デザインLABO"
-              style={{ height: "36px", objectFit: "contain" }}
+              src="/images/logo-manshitsu-mark-gold.webp"
+              alt="満室デザインLABO"
+              style={{ height: "56px", objectFit: "contain" }}
             />
           </div>
 
           {/* Badge */}
-          <div style={{ marginBottom: "20px" }}>
+          <div style={{ textAlign: "center", marginBottom: "20px" }}>
             <span
               style={{
                 display: "inline-block",
-                backgroundColor: "rgba(255,255,255,0.92)",
-                backdropFilter: "blur(4px)",
-                padding: "6px 16px",
-                borderRadius: "4px",
-                fontSize: "clamp(13px, 2vw, 15px)",
+                border: `1px solid ${C.gold}`,
+                color: C.gold,
+                fontSize: "clamp(12px, 2vw, 14px)",
                 fontWeight: 500,
-                color: "#333",
+                letterSpacing: "0.08em",
+                padding: "6px 16px",
+                borderRadius: "2px",
               }}
             >
               仙台・宮城の賃貸オーナー様へ
             </span>
           </div>
 
-          {/* Eyebrow */}
-          <p
-            style={{
-              margin: "0 0 8px",
-              fontSize: "13px",
-              fontWeight: 400,
-              letterSpacing: "3px",
-              color: "rgba(255,255,255,0.7)",
-            }}
-          >
-            賃貸リノベーション
-          </p>
-
           {/* H1 */}
-          <h1 style={{ margin: 0, padding: 0 }}>
+          <h1 style={{ margin: "0 0 16px", padding: 0, textAlign: "center" }}>
             <span
               className="m-hero-h1"
               style={{
@@ -138,9 +71,8 @@ export default function MHero() {
                 fontFamily: "'Noto Serif JP', serif",
                 fontWeight: 700,
                 color: "#fff",
-                lineHeight: 1.45,
-                letterSpacing: "-0.01em",
-                textShadow: "0 2px 20px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5)",
+                lineHeight: 1.5,
+                letterSpacing: "0.01em",
               }}
             >
               退去から<span style={{ color: C.gold }}>2週間</span>で、
@@ -152,60 +84,103 @@ export default function MHero() {
                 fontFamily: "'Noto Serif JP', serif",
                 fontWeight: 700,
                 color: "#fff",
-                lineHeight: 1.45,
-                letterSpacing: "-0.01em",
-                textShadow: "0 2px 20px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5)",
+                lineHeight: 1.5,
+                letterSpacing: "0.01em",
               }}
             >
               内見が入る部屋にします。
             </span>
           </h1>
 
-          {/* Subtext */}
-          <div style={{ marginTop: "16px", marginBottom: "20px" }}>
-            <div style={{ width: "40px", height: "1px", backgroundColor: C.gold, margin: "0 0 12px" }} />
+          {/* Sub text */}
+          <div style={{ textAlign: "center", marginBottom: "24px" }}>
+            <div style={{ width: "40px", height: "1px", backgroundColor: C.gold, opacity: 0.5, margin: "0 auto 12px" }} />
             <p
               className="m-hero-sub"
               style={{
                 margin: 0,
-                fontWeight: 500,
-                color: C.gold,
-                textShadow: "0 1px 6px rgba(0,0,0,0.4)",
-                lineHeight: 1.8,
+                color: "rgba(255,255,255,0.78)",
+                lineHeight: 1.85,
+                letterSpacing: "0.02em",
               }}
             >
               店舗内装のプロが、中間マージンなしで直接施工。<br />
-              ただ元に戻すだけじゃない。<br />
-              次の入居者が決まる部屋をつくります。
+              ただ元に戻すだけじゃない。次の入居者が決まる部屋をつくります。
             </p>
           </div>
 
+          {/* Hero image - contained rectangle */}
+          <div
+            className="m-hero-img-wrap"
+            style={{
+              borderRadius: "6px 6px 0 0",
+              overflow: "hidden",
+              position: "relative",
+              height: "320px",
+            }}
+          >
+            <img
+              src="/images/m-hero-gray.webp"
+              srcSet="/images/m-hero-gray-sm.webp 480w, /images/m-hero-gray.webp 720w"
+              alt="施工後の明るいLDK"
+              width="720"
+              height="403"
+              loading="eager"
+              fetchPriority="high"
+              sizes="(max-width: 720px) 100vw, 720px"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block",
+                filter: "brightness(0.95) contrast(1.05)",
+              }}
+            />
+            {/* Subtle bottom fade to purple */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: "80px",
+                background: `linear-gradient(to top, ${M.main} 0%, transparent 100%)`,
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ===== PURPLE SECTION (bottom) - price + CTA ===== */}
+      <div
+        style={{
+          background: `linear-gradient(160deg, ${M.main} 0%, ${M.dark} 100%)`,
+          padding: "32px 20px 48px",
+        }}
+      >
+        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
           {/* Feature badges */}
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 16px" }}>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: "24px" }}>
             {["中間マージンなし", "自社施工・一括対応", "退去当日の見積もり可", "断りはLINE1本"].map((t) => (
               <span key={t} style={{
                 fontSize: "12px",
                 color: "rgba(255,255,255,0.85)",
                 background: "rgba(255,255,255,0.1)",
                 borderRadius: "4px",
-                padding: "4px 10px",
+                padding: "5px 12px",
                 border: "1px solid rgba(255,255,255,0.15)",
               }}>{t}</span>
             ))}
           </div>
-        </div>
 
-        {/* Price + CTA at bottom */}
-        <div style={{ marginTop: "auto" }}>
           {/* Price box */}
           <div
             style={{
               border: `1px solid ${C.gold}`,
               borderRadius: "4px",
-              padding: "14px 20px",
-              marginBottom: "20px",
-              backgroundColor: "rgba(201,168,76,0.08)",
-              backdropFilter: "blur(4px)",
+              padding: "16px 20px",
+              marginBottom: "24px",
+              backgroundColor: "rgba(201,168,76,0.06)",
               textAlign: "center",
             }}
           >
@@ -213,7 +188,7 @@ export default function MHero() {
               クロス張替え
             </p>
             <p style={{ margin: 0, fontFamily: "'Noto Serif JP', serif" }}>
-              <span style={{ fontSize: "clamp(24px, 6vw, 32px)", color: C.gold, fontWeight: 600 }}>900</span>
+              <span style={{ fontSize: "clamp(26px, 6vw, 34px)", color: C.gold, fontWeight: 600 }}>900</span>
               <span style={{ fontSize: "14px", color: C.goldLight }}> 円/㎡〜（税別）</span>
             </p>
             <p style={{ margin: "4px 0 0", fontSize: "11px", color: "rgba(255,255,255,0.45)" }}>
@@ -222,7 +197,7 @@ export default function MHero() {
           </div>
 
           {/* CTA buttons */}
-          <div style={{ padding: "0 0 40px", display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
             <a
               href={LINE_URL}
               target="_blank"
@@ -235,8 +210,8 @@ export default function MHero() {
                 backgroundColor: C.lineGreen,
                 color: C.white,
                 borderRadius: "999px",
-                padding: "14px 24px",
-                fontSize: "clamp(14px, 2vw, 16px)",
+                padding: "15px 24px",
+                fontSize: "clamp(15px, 2.5vw, 17px)",
                 fontWeight: 700,
                 textDecoration: "none",
                 letterSpacing: "0.04em",
@@ -259,7 +234,7 @@ export default function MHero() {
                 color: C.white,
                 border: "1px solid rgba(255,255,255,0.35)",
                 borderRadius: "999px",
-                padding: "12px 24px",
+                padding: "13px 24px",
                 fontSize: "15px",
                 fontWeight: 500,
                 textDecoration: "none",
@@ -271,7 +246,7 @@ export default function MHero() {
             >
               📞 {TEL_DISPLAY}
             </a>
-            <p style={{ margin: "6px 0 0", fontSize: "12px", color: "rgba(255,255,255,0.5)" }}>
+            <p style={{ margin: "6px 0 0", fontSize: "12px", color: "rgba(255,255,255,0.45)" }}>
               受付 9:00〜18:00（土日対応可）/ LINEは24時間受付
             </p>
           </div>
