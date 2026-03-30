@@ -1,12 +1,12 @@
 const items = [
-  { name: "飲食店", price: "100〜350万円", image: "/images/crossover-after-01.webp" },
-  { name: "バー", price: "90〜200万円", image: "/images/anvil-after.webp" },
-  { name: "美容室", price: "80〜180万円", image: "/images/salon-after-01.webp" },
-  { name: "テイクアウト", price: "50〜120万円", image: "/images/owl-after-01.webp" },
-  { name: "ジム", price: "150〜350万円", image: "/images/bpoint-after-01.webp" },
-  { name: "焼肉", price: "200〜500万円", image: "/images/yakiniku-after.webp" },
-  { name: "ラーメン", price: "150〜400万円", image: "/images/ramen-after.webp" },
-  { name: "物販", price: "80〜200万円", image: "/images/diag-retail.webp" },
+  { name: "飲食店", price: "100〜350万円", image: "/images/crossover-after-01-sm.webp" },
+  { name: "バー", price: "90〜200万円", image: "/images/anvil-after-sm.webp" },
+  { name: "美容室", price: "80〜180万円", image: "/images/salon-after-01-sm.webp" },
+  { name: "テイクアウト", price: "50〜120万円", image: "/images/owl-after-01-sm.webp" },
+  { name: "ジム", price: "150〜350万円", image: "/images/bpoint-after-01-sm.webp" },
+  { name: "焼肉", price: "200〜500万円", image: "/images/yakiniku-after-sm.webp" },
+  { name: "ラーメン", price: "150〜400万円", image: "/images/ramen-after-sm.webp" },
+  { name: "物販", price: "80〜200万円", image: "/images/diag-retail-sm.webp" },
 ];
 
 export default function LPPriceGuide() {
@@ -55,12 +55,10 @@ export default function LPPriceGuide() {
           }}>
             <img
               src={item.image}
-                  srcSet={`${item.image.replace('.webp', '-sm.webp')} 480w, ${item.image} 1200w`}
               alt={item.name}
               width="100"
               height="100"
               loading="lazy"
-              sizes="(max-width: 768px) 100vw, 50vw"
               style={{
                 width: "100px",
                 height: "100px",

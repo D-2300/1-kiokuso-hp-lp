@@ -31,8 +31,8 @@ const works: Work[] = [
     story:
       "バスケットボール好きにはたまらない空間を、極限までコストを削りながら実現しました。壁面にモルタルを施工して無骨な質感を出し、ブルーLEDが光るバーカウンターへ仕上げています。中古設備を最大限に活用しDIYを組み合わせることで、スケルトンから約90万円・10日間という驚異的なコストパフォーマンスを実現した事例です。",
     tags: ["DIY施工", "モルタル壁", "中古設備多用", "スケルトンから10日"],
-    after: "/images/crossover-after-01.webp",
-    before: "/images/crossover-before-01.webp",
+    after: "/images/crossover-after-01-sm.webp",
+    before: "/images/crossover-before-01-sm.webp",
   },
   {
     name: "ANVIL",
@@ -45,8 +45,8 @@ const works: Work[] = [
     story:
       "前のお店が残していったピンクの椅子と、大理石模様のカウンター。同じ空間を、まったく違う場所に変えたかった。\n\nカウンターの正面にトタン板を張った。棚をスチールに替え、裸電球を吊るした。テーブルは古材と鉄脚で、一つひとつ作った。\n\n前の店の骨格を活かしながら、新しいオーナーの世界を載せる。それが居抜きの醍醐味だと思っている。",
     tags: ["居抜き活用", "トタン壁", "スチール什器", "古材テーブル", "オリジナル家具"],
-    after: "/images/anvil-after.webp",
-    before: "/images/anvil-before.webp",
+    after: "/images/anvil-after-sm.webp",
+    before: "/images/anvil-before-sm.webp",
   },
   {
     name: "藍",
@@ -59,8 +59,8 @@ const works: Work[] = [
     story:
       "無垢材のカウンターと木の棚。前の店が長く使い込んだものだった。状態が良かったから、壊さずに使うことにした。\n\n変えたのは壁と床だけ。藍色の壁紙を全面に張った。それだけで、空間はまったく別の場所になった。\n\n残すものと変えるものを見極める。居抜きの本質は、そこにあると思う。",
     tags: ["居抜き活用", "壁紙全面施工", "既存カウンター活用", "和モダン", "フローリング張替"],
-    after: "/images/case6-after.webp",
-    before: "/images/case6-before.webp",
+    after: "/images/case6-after-sm.webp",
+    before: "/images/case6-before-sm.webp",
   },
   {
     name: "焼肉店",
@@ -73,8 +73,8 @@ const works: Work[] = [
     story:
       "ロースター、テーブル、革張りのベンチ、木のルーバー。前の店が残したものは、どれも状態が良かった。\n\n変えたのは壁と天井だけ。石壁を赤に、コンクリートの天井を黒に。\n\n同じ空間が、まったく違う温度を持った。壊さずに変える。40坪でも、やり方は同じだった。",
     tags: ["居抜き活用", "壁紙全面施工", "天井塗装", "既存設備フル活用", "大型物件", "ロースター継続使用"],
-    after: "/images/yakiniku-after.webp",
-    before: "/images/yakiniku-before.webp",
+    after: "/images/yakiniku-after-sm.webp",
+    before: "/images/yakiniku-before-sm.webp",
   },
   {
     name: "ラーメン店",
@@ -87,8 +87,8 @@ const works: Work[] = [
     story:
       "L字型のオープンキッチン。カウンター、ダクト、照明レール。前の店のインフラは、全部使えた。\n\n壁と天井とカウンターを、黒く塗った。カウンターの下にLEDを仕込んだ。\n\nそれだけで、町のラーメン屋が、わざわざ来たくなる場所に変わった。",
     tags: ["居抜き活用", "全面黒塗装", "間接照明", "オープンキッチン", "モルタル床", "既存設備フル活用"],
-    after: "/images/ramen-after.webp",
-    before: "/images/ramen-before.webp",
+    after: "/images/ramen-after-sm.webp",
+    before: "/images/ramen-before-sm.webp",
   },
   {
     name: "テイクアウトカフェ OWL",
@@ -101,8 +101,8 @@ const works: Work[] = [
     story:
       "居抜き物件のインフラをそのまま活かし、最小限の手数で新しいお店に生まれ変わらせた事例です。既存カウンターはそのまま残し、壁の塗装はオーナー自身がDIYで施工。厨房機器はメルカリ・ヤフオクで調達し、設置のみ記憶荘が担当しました。",
     tags: ["居抜き活用", "DIY塗装", "中古厨房機器", "施主支給"],
-    after: "/images/owl-after-01.webp",
-    before: "/images/owl-before-01.webp",
+    after: "/images/owl-after-01-sm.webp",
+    before: "/images/owl-before-01-sm.webp",
   },
   {
     name: "ネイル・アイラッシュサロン",
@@ -115,8 +115,8 @@ const works: Work[] = [
     story:
       "居抜き物件をフル活用し、床・壁・棚の仕上げをオーナー自身がすべてDIYで施工した事例です。記憶荘が担当したのは電気・給排水などのインフラ工事のみ。みやぎ中小企業チャレンジ応援基金も活用し、約90万円で開業を実現しています。",
     tags: ["居抜き活用", "DIY全面施工", "施主支給什器", "補助金活用"],
-    after: "/images/salon-after-01.webp",
-    before: "/images/salon-before-01.webp",
+    after: "/images/salon-after-01-sm.webp",
+    before: "/images/salon-before-01-sm.webp",
   },
   {
     name: "パーソナルジム B-POINT",
@@ -129,8 +129,8 @@ const works: Work[] = [
     story:
       "スケルトン状態から防音工事・ミラー設置・床仕上げまで一気通貫で対応した事例です。トレーニングマシンはオーナーが直接調達し、記憶荘は搬入・設置を担当。公庫融資の見積書作成から保健所対応まで、開業に必要な手続きもすべてサポートしました。",
     tags: ["スケルトン施工", "防音工事", "施主支給マシン", "融資対応"],
-    after: "/images/bpoint-after-01.webp",
-    before: "/images/bpoint-before-01.webp",
+    after: "/images/bpoint-after-01-sm.webp",
+    before: "/images/bpoint-before-01-sm.webp",
   },
 ];
 

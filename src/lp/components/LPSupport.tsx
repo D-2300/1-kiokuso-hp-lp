@@ -29,7 +29,7 @@ const steps: Step[] = [
     detail: {
       text: "日本政策金融公庫向けの見積書・事業計画書を物件確定前から作成",
       arrowLabel: "実際の書類 ›",
-      photo: "/images/solution-finance-advice.webp",
+      photo: "/images/solution-finance-advice-sm.webp",
       photoAlt: "資金計画サポート書類",
     },
   },
@@ -47,7 +47,7 @@ const steps: Step[] = [
     detail: {
       text: "消防検査の立会い対応も記憶荘が行います。届出まで一貫してお任せ",
       arrowLabel: "検査立会い ›",
-      photo: "/images/solution-fire-inspection.webp",
+      photo: "/images/solution-fire-inspection-sm.webp",
       photoAlt: "消防検査立会い",
     },
   },
@@ -68,7 +68,7 @@ const steps: Step[] = [
     detail: {
       text: "レイアウト変更や追加工事の相談もLINEで気軽に",
       arrowLabel: "いつでも ›",
-      photo: "/images/showcase-cafe.webp",
+      photo: "/images/showcase-cafe-sm.webp",
       photoAlt: "出店後サポート",
     },
   },
@@ -228,7 +228,6 @@ function StepRow({ step, isLast }: { step: Step; isLast: boolean }) {
             >
               <img
                 src={step.detail.photo}
-                    srcSet={`${step.detail.photo.replace('.webp', '-sm.webp')} 480w, ${step.detail.photo} 1200w`}
                 alt={step.detail.photoAlt}
                 width="140"
                 height="100"

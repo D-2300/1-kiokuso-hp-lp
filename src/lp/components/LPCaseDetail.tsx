@@ -12,9 +12,9 @@ export const cases = [
     description:
       "バスケットボール好きにはたまらない空間を、極限までコストを削りながら実現しました。壁面にモルタルを施工して無骨な質感を出し、ブルーLEDが光るバーカウンターへ仕上げています。中古設備を最大限に活用しDIYを組み合わせることで、スケルトンから約90万円・10日間という驚異的なコストパフォーマンスを実現した事例です。",
     tags: ["DIY施工", "モルタル壁", "中古設備多用", "スケルトンから10日"],
-    main: "/images/crossover-after-01.webp",
-    subs: ["/images/crossover-after-02.webp", "/images/crossover-after-03.webp", "/images/crossover-after-04.webp"],
-    before: "/images/crossover-before-01.webp",
+    main: "/images/crossover-after-01-sm.webp",
+    subs: ["/images/crossover-after-02-sm.webp", "/images/crossover-after-03-sm.webp", "/images/crossover-after-04-sm.webp"],
+    before: "/images/crossover-before-01-sm.webp",
   },
   {
     name: "テイクアウトカフェ OWL",
@@ -27,9 +27,9 @@ export const cases = [
     description:
       "居抜き物件のインフラをそのまま活かし、最小限の手数で新しいお店に生まれ変わらせた事例です。既存カウンターはそのまま残し、壁の塗装はオーナー自身がDIYで施工。厨房機器はメルカリ・ヤフオクで調達し、設置のみ記憶荘が担当しました。「使えるものは使う」を徹底して、約80万円に収めています。",
     tags: ["居抜き活用", "DIY塗装", "中古厨房機器", "施主支給"],
-    main: "/images/owl-after-01.webp",
+    main: "/images/owl-after-01-sm.webp",
     subs: [],
-    before: "/images/owl-before-01.webp",
+    before: "/images/owl-before-01-sm.webp",
   },
   {
     name: "パーソナルジム B-POINT",
@@ -42,9 +42,9 @@ export const cases = [
     description:
       "スケルトン状態から防音工事・ミラー設置・床仕上げまで一気通貫で対応した事例です。トレーニングマシンはオーナーが直接調達し、記憶荘は搬入・設置を担当。公庫融資の見積書作成から保健所対応まで、開業に必要な手続きもすべてサポートしました。施主支給とDIY仕上げを組み合わせ、スケルトンで約140万円に抑えています。",
     tags: ["スケルトン施工", "防音工事", "施主支給マシン", "融資対応"],
-    main: "/images/bpoint-after-01.webp",
+    main: "/images/bpoint-after-01-sm.webp",
     subs: [],
-    before: "/images/bpoint-before-01.webp",
+    before: "/images/bpoint-before-01-sm.webp",
   },
   {
     name: "ネイル・アイラッシュサロン",
@@ -57,9 +57,9 @@ export const cases = [
     description:
       "居抜き物件をフル活用し、床・壁・棚の仕上げをオーナー自身がすべてDIYで施工した事例です。記憶荘が担当したのは電気・給排水などのインフラ工事のみ。什器もオーナーが自分で選んで購入し、コストを最大限に圧縮しました。みやぎ中小企業チャレンジ応援基金も活用し、約90万円で開業を実現しています。",
     tags: ["居抜き活用", "DIY全面施工", "施主支給什器", "補助金活用"],
-    main: "/images/salon-after-01.webp",
+    main: "/images/salon-after-01-sm.webp",
     subs: [],
-    before: "/images/salon-before-01.webp",
+    before: "/images/salon-before-01-sm.webp",
   },
   {
     name: "ANVIL",
@@ -72,9 +72,9 @@ export const cases = [
     description:
       "閉店したスナックの居抜き物件。ピンクのチューリップチェアと大理石模様のカウンターが残る空間を、インダストリアルテイストのバーへ改装しました。カウンター正面にはトタン板を張り、棚や什器はすべてスチールに統一。テーブルは古材×スチール脚でオリジナル製作。裸電球のペンダントライトで無骨さの中に温かみを持たせています。既存のカウンター骨格と配管をそのまま活かし、居抜きで約90万円・2週間で完成。",
     tags: ["居抜き活用", "トタン壁", "スチール什器", "古材テーブル", "オリジナル家具"],
-    main: "/images/anvil-after.webp",
+    main: "/images/anvil-after-sm.webp",
     subs: [],
-    before: "/images/anvil-before.webp",
+    before: "/images/anvil-before-sm.webp",
   },
   {
     name: "藍",
@@ -87,9 +87,9 @@ export const cases = [
     description:
       "長年営業していたカウンターバーの居抜き物件。無垢材のカウンターと木製棚は状態が良く、そのまま活かす判断をしました。壁面には藍色の幾何学模様の壁紙を全面に施工し、空間の印象を一変。棚には陶器の器やグラスを並べ、裸電球のペンダントライトで落ち着いた雰囲気に仕上げています。床はダーク系のフローリングに張り替え。既存カウンターを活かしたことで、居抜きで約120万円・2週間で完成。",
     tags: ["居抜き活用", "壁紙全面施工", "既存カウンター活用", "和モダン", "フローリング張替"],
-    main: "/images/case6-after.webp",
+    main: "/images/case6-after-sm.webp",
     subs: [],
-    before: "/images/case6-before.webp",
+    before: "/images/case6-before-sm.webp",
   },
   {
     name: "焼肉店",
@@ -102,9 +102,9 @@ export const cases = [
     description:
       "焼肉店の居抜き物件。無垢材のテーブル・革張りベンチ・木製ルーバー天井・ロースター設備はすべてそのまま活用し、壁と天井の仕上げだけで空間の印象を一変させました。石壁をダイナミックな赤の壁紙に、コンクリート打ちっぱなしの天井を黒に塗装。照明の配置はそのままに、色の力だけで「別の店」に仕上げた事例です。40坪の大型物件でも、既存設備を最大限に活かすことで約360万円・3週間で完成。",
     tags: ["居抜き活用", "壁紙全面施工", "天井塗装", "既存設備フル活用", "大型物件", "ロースター継続使用"],
-    main: "/images/yakiniku-after.webp",
+    main: "/images/yakiniku-after-sm.webp",
     subs: [],
-    before: "/images/yakiniku-before.webp",
+    before: "/images/yakiniku-before-sm.webp",
   },
   {
     name: "ラーメン店",
@@ -117,9 +117,9 @@ export const cases = [
     description:
       "オープンキッチンのカウンター店舗の居抜き改装。L字型のカウンターと厨房設備、ダクト、照明レールはすべて既存のまま活用しました。壁・天井・カウンター腰壁を全面黒に塗装し、カウンター下とオープンキッチン周りに間接照明（LED）を新設。床はモルタル仕上げに。同じレイアウト・同じ設備のまま、色と光だけで「高級感のあるラーメン店」に仕上げた事例です。居抜きで約280万円・3週間で完成。",
     tags: ["居抜き活用", "全面黒塗装", "間接照明", "オープンキッチン", "モルタル床", "既存設備フル活用"],
-    main: "/images/ramen-after.webp",
+    main: "/images/ramen-after-sm.webp",
     subs: [],
-    before: "/images/ramen-before.webp",
+    before: "/images/ramen-before-sm.webp",
   },
 ];
 
@@ -174,12 +174,10 @@ export default function LPCaseDetail() {
                   <div style={{ borderRadius: "8px", overflow: "hidden", height: "clamp(180px, 22vw, 280px)" }}>
                     <img
                       src={src}
-                      srcSet={`${src.replace('.webp', '-sm.webp')} 480w, ${src} 1200w`}
                       alt={`${c.type} 内装${label === "BEFORE" ? "施工前" : "施工後"}`}
                       width="400"
                       height="280"
                       loading="lazy"
-                      sizes="(max-width: 768px) 100vw, 50vw"
                       style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                     />
                   </div>

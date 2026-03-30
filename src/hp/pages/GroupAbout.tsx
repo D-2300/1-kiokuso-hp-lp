@@ -156,7 +156,7 @@ export default function GroupAbout() {
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
           <img
-            src="/images/hp-wood-dark.webp"
+            src="/images/hp-wood-dark-sm.webp"
             alt=""
             style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }}
           />
@@ -199,7 +199,7 @@ export default function GroupAbout() {
               記憶荘は「制約を受け入れ、美しく仕上げる」行為を伴走する。
             </p>
           </div>
-          <img src="/images/hp-kintsugi-light.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }} />
+          <img src="/images/hp-kintsugi-light-sm.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }} />
         </section>
       </ScrollFadeIn>
 
@@ -257,7 +257,7 @@ export default function GroupAbout() {
       <ScrollFadeIn>
         <div style={{ padding: "40px 24px 64px", maxWidth: "500px", margin: "0 auto" }}>
           <div style={{ display: "flex", gap: "24px", alignItems: "flex-start" }}>
-            <img src="/images/about-dai.webp" alt="KEN" style={{ width: "100px", minWidth: "100px", aspectRatio: "1/1", objectFit: "cover" }} />
+            <img src="/images/about-dai-sm.webp" alt="KEN" style={{ width: "100px", minWidth: "100px", aspectRatio: "1/1", objectFit: "cover" }} />
             <div>
               <p style={{ fontSize: "18px", fontWeight: 500, color: colors.text, marginBottom: "4px" }}>KEN</p>
               <p style={{ fontSize: "12px", color: colors.mute, marginBottom: "12px" }}>

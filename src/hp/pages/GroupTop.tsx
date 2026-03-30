@@ -276,7 +276,7 @@ export default function GroupTop() {
       <ScrollFadeIn>
         <section style={{ padding: "40px 24px 64px", textAlign: "center" }}>
           <div style={{ maxWidth: "500px", margin: "0 auto" }}>
-            <img src="/images/hp-door-light.webp" alt="" style={{ width: "100%", aspectRatio: "3/1", objectFit: "cover", borderRadius: "4px" }} />
+            <img src="/images/hp-door-light-sm.webp" alt="" style={{ width: "100%", aspectRatio: "3/1", objectFit: "cover", borderRadius: "4px" }} />
             <div style={{ marginTop: "24px" }}>
               <Link
                 to="/about"

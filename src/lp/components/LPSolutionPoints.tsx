@@ -78,19 +78,19 @@ export default function LPSolutionPoints() {
               },
               {
                 title: "設計・提案",
-                img: "/images/solution-ai-pers.webp",
+                img: "/images/solution-ai-pers-sm.webp",
                 desc: "AIパースで完成イメージを事前に共有。図面だけではわからない空間を可視化します。",
                 tag: "Step 1",
               },
               {
                 title: "施工",
-                img: "/images/crossover-process-01.webp",
+                img: "/images/crossover-process-01-sm.webp",
                 desc: "設計した本人が現場に立ちます。途中の変更や相談も、一本の連絡で済みます。",
                 tag: "Step 2-3",
               },
               {
                 title: "引渡し",
-                img: "/images/crossover-after-01.webp",
+                img: "/images/crossover-after-01-sm.webp",
                 desc: "完成後のアフターフォローも同じ担当が対応。開業後の追加工事にも対応します。",
                 tag: "Step 4",
               },
@@ -106,7 +106,7 @@ export default function LPSolutionPoints() {
                 backgroundColor: "#fff",
               }}>
                 <div style={{ position: "relative", width: "100%", height: "180px", overflow: "hidden" }}>
-                  <img src={card.img} srcSet={`${card.img.replace('.webp', '-sm.webp')} 480w, ${card.img} 1200w`} alt={card.title} width="320" height="180" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <img src={card.img} alt={card.title} width="320" height="180" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   <span style={{
                     position: "absolute", bottom: "10px", left: "10px",
                     backgroundColor: "rgba(74,103,65,0.9)", color: "#fff",
@@ -159,13 +159,13 @@ export default function LPSolutionPoints() {
               },
               {
                 title: "融資用の見積書を作成",
-                img: "/images/why-business-plan.webp",
+                img: "/images/why-business-plan-sm.webp",
                 desc: "日本政策金融公庫や銀行向けの見積書を、物件確定前から作成できます。",
                 tag: "融資対応",
               },
               {
                 title: "相見積もりに対応",
-                img: "/images/solution-material-open.webp",
+                img: "/images/solution-material-open-sm.webp",
                 desc: "他社と比較しやすい形式でお出しします。断っていただいても構いません。",
                 tag: "比較OK",
               },
@@ -181,7 +181,7 @@ export default function LPSolutionPoints() {
                 backgroundColor: "#fff",
               }}>
                 <div style={{ position: "relative", width: "100%", height: "180px", overflow: "hidden" }}>
-                  <img src={card.img} srcSet={`${card.img.replace('.webp', '-sm.webp')} 480w, ${card.img} 1200w`} alt={card.title} width="320" height="180" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <img src={card.img} alt={card.title} width="320" height="180" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   <span style={{
                     position: "absolute", bottom: "10px", left: "10px",
                     backgroundColor: "rgba(74,103,65,0.9)", color: "#fff",
@@ -229,19 +229,19 @@ export default function LPSolutionPoints() {
             {[
               {
                 title: "居抜き活用",
-                img: "/images/anvil-before.webp",
+                img: "/images/anvil-before-sm.webp",
                 desc: "前のお店の設備・造作で使えるものは活かします。解体しないだけでも数十万円の差が出ます。",
                 tag: "解体費を削減",
               },
               {
                 title: "施主支給",
-                img: "/images/solution-yahoo-floor-new.webp",
+                img: "/images/solution-yahoo-floor-new-sm.webp",
                 desc: "家具・照明・資材をご自身で購入いただけます。ネットで見つけた照明や、思い入れのある椅子も歓迎します。",
                 tag: "仕入れコスト削減",
               },
               {
                 title: "DIY参加",
-                img: "/images/crossover-process-02.webp",
+                img: "/images/crossover-process-02-sm.webp",
                 desc: "壁の塗装や簡単な仕上げなど、一緒にやれる工程があります。道具の使い方からお教えします。経験は不要です。",
                 tag: "施工費を削減",
               },
@@ -263,12 +263,10 @@ export default function LPSolutionPoints() {
                 <div style={{ position: "relative", width: "100%", height: "180px", overflow: "hidden" }}>
                   <img
                     src={card.img}
-                    srcSet={`${card.img.replace('.webp', '-sm.webp')} 480w, ${card.img} 1200w`}
                     alt={card.title}
                     width="320"
                     height="180"
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 50vw"
                     style={{
                       width: "100%",
                       height: "100%",

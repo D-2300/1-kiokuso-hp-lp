@@ -112,18 +112,18 @@ export default function StudioAbout() {
             gap: "16px",
           }}>
             {[
-              { src: "/images/showcase-cafe.webp", label: "カフェ" },
-              { src: "/images/showcase-izakaya.webp", label: "居酒屋・バー" },
-              { src: "/images/showcase-salon.webp", label: "美容室" },
-              { src: "/images/showcase-gym.webp", label: "ジム" },
-              { src: "/images/showcase-takeout.webp", label: "テイクアウト" },
-              { src: "/images/showcase-shop.webp", label: "物販" },
-              { src: "/images/showcase-nail.webp", label: "ネイルサロン" },
-              { src: "/images/showcase-ramen.webp", label: "ラーメン店" },
-              { src: "/images/showcase-clinic.webp", label: "整体・治療院" },
-              { src: "/images/showcase-office.webp", label: "事務所" },
-              { src: "/images/showcase-bakery.webp", label: "ベーカリー" },
-              { src: "/images/showcase-flower.webp", label: "花屋" },
+              { src: "/images/showcase-cafe-sm.webp", label: "カフェ" },
+              { src: "/images/showcase-izakaya-sm.webp", label: "居酒屋・バー" },
+              { src: "/images/showcase-salon-sm.webp", label: "美容室" },
+              { src: "/images/showcase-gym-sm.webp", label: "ジム" },
+              { src: "/images/showcase-takeout-sm.webp", label: "テイクアウト" },
+              { src: "/images/showcase-shop-sm.webp", label: "物販" },
+              { src: "/images/showcase-nail-sm.webp", label: "ネイルサロン" },
+              { src: "/images/showcase-ramen-sm.webp", label: "ラーメン店" },
+              { src: "/images/showcase-clinic-sm.webp", label: "整体・治療院" },
+              { src: "/images/showcase-office-sm.webp", label: "事務所" },
+              { src: "/images/showcase-bakery-sm.webp", label: "ベーカリー" },
+              { src: "/images/showcase-flower-sm.webp", label: "花屋" },
             ].map((item) => (
               <div key={item.label} style={{ textAlign: "center" }}>
                 <div style={{ borderRadius: "8px", overflow: "hidden", marginBottom: "8px" }}>
@@ -175,7 +175,7 @@ export default function StudioAbout() {
             </p>
             <div style={{ textAlign: "center", marginBottom: "36px" }}>
               <img
-                src="/images/about-dai.webp"
+                src="/images/about-dai-sm.webp"
                 alt="KEN"
                 style={{ maxWidth: "320px", width: "100%", borderRadius: "8px", objectFit: "cover", display: "inline-block" }}
               />

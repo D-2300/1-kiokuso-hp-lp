@@ -18,64 +18,64 @@ const cases = [
     cost: "90万円",
     tsubo: "15坪",
     period: "5週間",
-    before: "/images/crossover-before-01.webp",
-    after: "/images/crossover-after-01.webp",
+    before: "/images/crossover-before-01-sm.webp",
+    after: "/images/crossover-after-01-sm.webp",
   },
   {
     type: "テイクアウトカフェ",
     cost: "80万円",
     tsubo: "10坪",
     period: "22日",
-    before: "/images/owl-before-01.webp",
-    after: "/images/owl-after-01.webp",
+    before: "/images/owl-before-01-sm.webp",
+    after: "/images/owl-after-01-sm.webp",
   },
   {
     type: "パーソナルジム",
     cost: "140万円",
     tsubo: "20坪",
     period: "30日",
-    before: "/images/bpoint-before-01.webp",
-    after: "/images/bpoint-after-01.webp",
+    before: "/images/bpoint-before-01-sm.webp",
+    after: "/images/bpoint-after-01-sm.webp",
   },
   {
     type: "ネイルサロン",
     cost: "90万円",
     tsubo: "15坪",
     period: "18日",
-    before: "/images/salon-before-01.webp",
-    after: "/images/salon-after-01.webp",
+    before: "/images/salon-before-01-sm.webp",
+    after: "/images/salon-after-01-sm.webp",
   },
   {
     type: "バー",
     cost: "90万円",
     tsubo: "15坪",
     period: "14日",
-    before: "/images/anvil-before.webp",
-    after: "/images/anvil-after.webp",
+    before: "/images/anvil-before-sm.webp",
+    after: "/images/anvil-after-sm.webp",
   },
   {
     type: "バー/割烹",
     cost: "120万円",
     tsubo: "10坪",
     period: "14日",
-    before: "/images/case6-before.webp",
-    after: "/images/case6-after.webp",
+    before: "/images/case6-before-sm.webp",
+    after: "/images/case6-after-sm.webp",
   },
   {
     type: "焼肉店",
     cost: "360万円",
     tsubo: "40坪",
     period: "3週間",
-    before: "/images/yakiniku-before.webp",
-    after: "/images/yakiniku-after.webp",
+    before: "/images/yakiniku-before-sm.webp",
+    after: "/images/yakiniku-after-sm.webp",
   },
   {
     type: "ラーメン店",
     cost: "280万円",
     tsubo: "12坪",
     period: "3週間",
-    before: "/images/ramen-before.webp",
-    after: "/images/ramen-after.webp",
+    before: "/images/ramen-before-sm.webp",
+    after: "/images/ramen-after-sm.webp",
   },
 ];
 
@@ -176,12 +176,10 @@ export default function LPBeforeAfter() {
                     <div className="ba-img-wrap" style={{ height: "clamp(144px, 20vw, 240px)", overflow: "hidden" }}>
                       <img
                         src={label === "Before" ? c.before : c.after}
-                    srcSet={`${(label === "Before" ? c.before : c.after).replace('.webp', '-sm.webp')} 480w, ${label === "Before" ? c.before : c.after} 1200w`}
                         alt={`${c.type} ${label}`}
                         width="400"
                         height="240"
                         loading="lazy"
-                        sizes="(max-width: 768px) 100vw, 50vw"
                         style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       />
                     </div>

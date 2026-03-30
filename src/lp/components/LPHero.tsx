@@ -32,7 +32,6 @@ export default function LPHero() {
         width="1200"
         height="800"
         loading="eager"
-        sizes="100vw"
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
       />
       <div
@@ -194,8 +193,8 @@ export default function LPHero() {
         <div style={{ marginTop: "auto" }}>
           <div style={{ maxWidth: "560px", margin: "0 auto", display: "flex", gap: "8px", marginBottom: "14px" }}>
             {[
-              { src: "/images/pricing-inuki.webp", alt: "居抜き施工例", label: "居抜き状態", price: "60万円台" },
-              { src: "/images/pricing-skeleton.webp", alt: "スケルトン施工例", label: "スケルトン仕様", price: "120万円台" },
+              { src: "/images/pricing-inuki-sm.webp", alt: "居抜き施工例", label: "居抜き状態", price: "60万円台" },
+              { src: "/images/pricing-skeleton-sm.webp", alt: "スケルトン施工例", label: "スケルトン仕様", price: "120万円台" },
             ].map((card) => (
               <div
                 key={card.label}
@@ -208,7 +207,6 @@ export default function LPHero() {
               >
                 <img
                   src={card.src}
-                    srcSet={`${card.src.replace('.webp', '-sm.webp')} 480w, ${card.src} 1200w`}
                   alt={card.alt}
                   className="ba-card-img"
                   width="320"

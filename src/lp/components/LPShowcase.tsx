@@ -3,18 +3,18 @@ import { useState } from "react";
 export default function LPShowcase() {
   const [hintVisible, setHintVisible] = useState(true);
   const items = [
-    { src: "/images/showcase-cafe.webp", label: "カフェ" },
-    { src: "/images/showcase-izakaya.webp", label: "居酒屋・バー" },
-    { src: "/images/showcase-salon.webp", label: "美容室" },
-    { src: "/images/showcase-gym.webp", label: "ジム" },
-    { src: "/images/showcase-takeout.webp", label: "テイクアウト" },
-    { src: "/images/showcase-shop.webp", label: "物販" },
-    { src: "/images/showcase-nail.webp", label: "ネイルサロン" },
-    { src: "/images/showcase-ramen.webp", label: "ラーメン店" },
-    { src: "/images/showcase-clinic.webp", label: "整体・治療院" },
-    { src: "/images/showcase-office.webp", label: "事務所" },
-    { src: "/images/showcase-bakery.webp", label: "ベーカリー" },
-    { src: "/images/showcase-flower.webp", label: "花屋" },
+    { src: "/images/showcase-cafe-sm.webp", label: "カフェ" },
+    { src: "/images/showcase-izakaya-sm.webp", label: "居酒屋・バー" },
+    { src: "/images/showcase-salon-sm.webp", label: "美容室" },
+    { src: "/images/showcase-gym-sm.webp", label: "ジム" },
+    { src: "/images/showcase-takeout-sm.webp", label: "テイクアウト" },
+    { src: "/images/showcase-shop-sm.webp", label: "物販" },
+    { src: "/images/showcase-nail-sm.webp", label: "ネイルサロン" },
+    { src: "/images/showcase-ramen-sm.webp", label: "ラーメン店" },
+    { src: "/images/showcase-clinic-sm.webp", label: "整体・治療院" },
+    { src: "/images/showcase-office-sm.webp", label: "事務所" },
+    { src: "/images/showcase-bakery-sm.webp", label: "ベーカリー" },
+    { src: "/images/showcase-flower-sm.webp", label: "花屋" },
   ];
 
   return (
@@ -54,12 +54,10 @@ export default function LPShowcase() {
             }}>
               <img
                 src={item.src}
-                  srcSet={`${item.src.replace('.webp', '-sm.webp')} 480w, ${item.src} 1200w`}
                 alt={item.label}
                 width="220"
                 height="148"
                 loading="lazy"
-                sizes="(max-width: 768px) 100vw, 50vw"
                 style={{
                   width: "100%",
                   height: "100%",

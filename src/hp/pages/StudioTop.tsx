@@ -8,17 +8,17 @@ import { colors } from "../../shared/design-tokens";
 
 const worksPreview = [
   {
-    img: "/images/yakiniku-after.webp",
+    img: "/images/yakiniku-after-sm.webp",
     type: "焼肉店",
     cost: "¥360万",
   },
   {
-    img: "/images/ramen-after.webp",
+    img: "/images/ramen-after-sm.webp",
     type: "ラーメン店",
     cost: "¥280万",
   },
   {
-    img: "/images/case6-after.webp",
+    img: "/images/case6-after-sm.webp",
     type: "バー/割烹",
     cost: "¥120万",
   },
@@ -82,7 +82,7 @@ export default function StudioTop() {
       {/* Hero */}
       <section style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, height: "100%" }}>
-          <img src="/images/hp-cafe-interior.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+          <img src="/images/hp-cafe-interior-sm.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.4)" }} />
         </div>
 
@@ -178,7 +178,7 @@ export default function StudioTop() {
                 marginBottom: "32px",
               }}
             >
-              <img src="/images/about-dai.webp" alt="KEN" style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+              <img src="/images/about-dai-sm.webp" alt="KEN" style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
               <div style={{ textAlign: "left" }}>
                 <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text }}>KEN</p>
                 <p style={{ fontSize: "11px", color: colors.mute, marginTop: "2px" }}>記憶荘 店舗内装スタジオ</p>

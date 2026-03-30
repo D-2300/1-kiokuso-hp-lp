@@ -1,13 +1,13 @@
 const cases = [
   {
-    before: "/images/owl-before-01.webp",
-    after: "/images/owl-after-01.webp",
+    before: "/images/owl-before-01-sm.webp",
+    after: "/images/owl-after-01-sm.webp",
     label: "テイクアウトカフェ｜10坪・居抜き",
     cost: "80万円",
   },
   {
-    before: "/images/crossover-before-01.webp",
-    after: "/images/crossover-after-01.webp",
+    before: "/images/crossover-before-01-sm.webp",
+    after: "/images/crossover-after-01-sm.webp",
     label: "Cafe&Bar｜18坪・スケルトン",
     cost: "90万円",
   },
@@ -50,12 +50,10 @@ function CaseCard({ before, after, label, cost }: (typeof cases)[number]) {
         <div style={{ flex: 1, position: "relative", aspectRatio: "4/3", minWidth: 0 }}>
           <img
             src={before}
-            srcSet={`${before.replace('.webp', '-sm.webp')} 480w, ${before} 1200w`}
             alt="before"
             width="400"
             height="300"
             loading="lazy"
-            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
           />
           <PhotoLabel text="BEFORE" />
@@ -85,12 +83,10 @@ function CaseCard({ before, after, label, cost }: (typeof cases)[number]) {
         <div style={{ flex: 1, position: "relative", aspectRatio: "4/3", minWidth: 0 }}>
           <img
             src={after}
-            srcSet={`${after.replace('.webp', '-sm.webp')} 480w, ${after} 1200w`}
             alt="after"
             width="400"
             height="300"
             loading="lazy"
-            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
           />
           <PhotoLabel text="AFTER" />
