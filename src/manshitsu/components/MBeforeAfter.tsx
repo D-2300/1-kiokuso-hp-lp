@@ -5,8 +5,8 @@ const cases = [
   {
     type: "1K・築18年アパート",
     cost: "施工費 ¥105,000",
-    beforeSrc: "/images/m-before-2-sm.webp",
-    afterSrc: "/images/m-after-accent-sm.webp",
+    beforeSrc: "/images/m-before-3-sm.webp",
+    afterSrc: "/images/m-after-green-sm.webp",
   },
   {
     type: "ワンルーム・築22年マンション",
