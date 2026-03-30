@@ -58,7 +58,7 @@ export default function StudioAbout() {
         </section>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/oak-hardwood-floor.webp" height={160} />
+      <TextureBand src="/assets/textures/oak-hardwood-floor-sm.webp" height={160} />
 
       <ScrollFadeIn>
         <section style={{ padding: "0 24px", maxWidth: "640px", margin: "0 auto" }}>
@@ -76,7 +76,7 @@ export default function StudioAbout() {
         </section>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/rusted-steel-plates.webp" height={160} />
+      <TextureBand src="/assets/textures/rusted-steel-plates-sm.webp" height={160} />
 
       <ScrollFadeIn>
         <section style={{ padding: "0 24px 80px", maxWidth: "640px", margin: "0 auto" }}>

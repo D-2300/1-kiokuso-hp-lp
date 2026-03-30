@@ -200,7 +200,7 @@ export default function StudioTop() {
         </section>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/shikkui-plaster-closeup.webp" height={200} />
+      <TextureBand src="/assets/textures/shikkui-plaster-closeup-sm.webp" height={200} />
 
       {/* Works Preview */}
       <ScrollFadeIn>
@@ -239,7 +239,7 @@ export default function StudioTop() {
         </section>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/tile-water-droplets-warm.webp" height={180} />
+      <TextureBand src="/assets/textures/tile-water-droplets-warm-sm.webp" height={180} />
 
       {/* Links */}
       <ScrollFadeIn>

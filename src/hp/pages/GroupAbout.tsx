@@ -57,7 +57,7 @@ export default function GroupAbout() {
       <section style={{ position: "relative", height: "50vh", minHeight: "320px", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, height: "100%", backgroundColor: "#D8D3CE" }}>
           <img
-            src="/assets/textures/yakisugi-charred-wood.webp"
+            src="/assets/textures/yakisugi-charred-wood-sm.webp"
             alt=""
             style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
           />
@@ -87,13 +87,13 @@ export default function GroupAbout() {
       </section>
 
       <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/yakisugi-charred-wood.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+        <img src="/assets/textures/yakisugi-charred-wood-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
       </div>
 
       {/* ブロック1：記憶が宿る場所 */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
-          <img src="/assets/textures/memory-collar.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }} />
+          <img src="/assets/textures/memory-collar-sm.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }} />
           <div
             style={{
               maxWidth: "560px",
@@ -149,7 +149,7 @@ export default function GroupAbout() {
       </ScrollFadeIn>
 
       <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/old-new-timber-junction.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+        <img src="/assets/textures/old-new-timber-junction-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
       </div>
 
       {/* ブロック2：制約の中の美しさ */}
@@ -204,7 +204,7 @@ export default function GroupAbout() {
       </ScrollFadeIn>
 
       <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/kintsugi-bowl-inside.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+        <img src="/assets/textures/kintsugi-bowl-inside-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
       </div>
 
       <GoldDivider />
@@ -250,7 +250,7 @@ export default function GroupAbout() {
       <GoldDivider />
 
       <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/mortar-wall-cracks.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+        <img src="/assets/textures/mortar-wall-cracks-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
       </div>
 
       {/* STEP J：DAIプロフィール（グループ視点） */}
@@ -281,7 +281,7 @@ export default function GroupAbout() {
       </ScrollFadeIn>
 
       <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/reclaimed-wood-section.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+        <img src="/assets/textures/reclaimed-wood-section-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
       </div>
 
       <GroupFooter />

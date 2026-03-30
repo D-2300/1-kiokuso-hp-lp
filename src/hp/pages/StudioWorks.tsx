@@ -365,7 +365,7 @@ export default function StudioWorks() {
         <section style={{ position: "relative", height: "50vh", minHeight: "320px", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, height: "100%", backgroundColor: "#CFC7BD" }}>
             <img
-              src="/assets/textures/oak-hardwood-floor.webp"
+              src="/assets/textures/oak-hardwood-floor-sm.webp"
               alt=""
               style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
             />
