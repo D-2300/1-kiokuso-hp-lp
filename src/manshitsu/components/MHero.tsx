@@ -164,7 +164,7 @@ export default function MHero() {
           </div>
 
           {/* Feature badges */}
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: "20px" }}>
             {["中間マージンなし", "自社施工", "退去当日の見積もり可"].map((t) => (
               <span key={t} style={{
                 fontSize: "11px",
@@ -176,10 +176,32 @@ export default function MHero() {
               }}>{t}</span>
             ))}
           </div>
+
+          {/* Price box - purple background on image */}
+          <div
+            style={{
+              background: `linear-gradient(135deg, ${M.main} 0%, ${M.dark} 100%)`,
+              border: `1px solid ${C.gold}`,
+              borderRadius: "6px",
+              padding: "16px 20px",
+              textAlign: "center",
+            }}
+          >
+            <p style={{ margin: 0, fontSize: "12px", color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em", marginBottom: "4px" }}>
+              クロス張替え
+            </p>
+            <p style={{ margin: 0, fontFamily: "'Noto Serif JP', serif" }}>
+              <span style={{ fontSize: "clamp(28px, 7vw, 36px)", color: C.gold, fontWeight: 600 }}>900</span>
+              <span style={{ fontSize: "14px", color: C.goldLight }}> 円/㎡〜（税別）</span>
+            </p>
+            <p style={{ margin: "4px 0 0", fontSize: "11px", color: "rgba(255,255,255,0.5)" }}>
+              めくり・下地処理・廃材処分込み
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* ===== PURPLE SECTION (price + CTA) ===== */}
+      {/* ===== PURPLE SECTION (CTA only) ===== */}
       <div
         style={{
           background: `linear-gradient(160deg, ${M.main} 0%, ${M.dark} 100%)`,
@@ -190,29 +212,6 @@ export default function MHero() {
         }}
       >
         <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-          {/* Price box */}
-          <div
-            style={{
-              border: `1px solid ${C.gold}`,
-              borderRadius: "4px",
-              padding: "12px 16px",
-              marginBottom: "24px",
-              backgroundColor: "rgba(201,168,76,0.06)",
-              textAlign: "center",
-            }}
-          >
-            <p style={{ margin: 0, fontSize: "12px", color: "rgba(255,255,255,0.6)", letterSpacing: "0.05em", marginBottom: "4px" }}>
-              クロス張替え
-            </p>
-            <p style={{ margin: 0, fontFamily: "'Noto Serif JP', serif" }}>
-              <span style={{ fontSize: "clamp(22px, 5vw, 28px)", color: C.gold, fontWeight: 600 }}>900</span>
-              <span style={{ fontSize: "13px", color: C.goldLight }}> 円/㎡〜（税別）</span>
-            </p>
-            <p style={{ margin: "4px 0 0", fontSize: "11px", color: "rgba(255,255,255,0.45)" }}>
-              めくり・下地処理・廃材処分込み
-            </p>
-          </div>
-
           {/* CTA buttons */}
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
             <a

@@ -7,13 +7,13 @@ export default function MProfile() {
       <div style={{ maxWidth: "720px", margin: "0 auto" }}>
         <MSectionHeader label="ABOUT" heading={"記憶荘について"} />
 
-        {/* Logo below heading */}
+        {/* Logo below heading - centered */}
         <div style={{ textAlign: "center", marginBottom: "20px" }}>
           <img
             src="/images/logo-manshitsu-mark-gold.webp"
             alt="満室デザインLABO"
             loading="lazy"
-            style={{ width: "72px", height: "72px", objectFit: "contain" }}
+            style={{ width: "72px", height: "72px", objectFit: "contain", display: "block", margin: "0 auto" }}
           />
         </div>
 
