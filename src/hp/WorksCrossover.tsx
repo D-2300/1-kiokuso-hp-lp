@@ -151,6 +151,7 @@ export default function WorksCrossover() {
             <P>
               <strong className="font-medium">一面のモルタルが、空間の「芯」になる。</strong><br />
               壁の一面にモルタルを施工し、アクセントウォールにした。お金をかけなくても、こだわるべき場所にこだわれば空間に芯が生まれる。高い内装だけが空間づくりではない。素材の組み合わせと意図がうまく調和すれば、それだけで空間は十分な味を持つ。
+            </P>
           </div>
 
           <div className="flex flex-wrap gap-2 mt-12 mb-12">
