@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import HPApp from "./hp/HPApp";
 import LPPage from "./lp/LPPage";
 import ManshitsuPage from "./manshitsu/ManshitsuPage";
+import WorksCrossover from "./hp/WorksCrossover";
 import ScrollToTop from "./shared/ScrollToTop";
 
 function BodyBackground() {
@@ -26,6 +27,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/lp" element={<LPPage />} />
         <Route path="/manshitsu" element={<ManshitsuPage />} />
+        <Route path="/studio/works/crossover" element={<WorksCrossover />} />
         <Route path="/*" element={<HPApp />} />
       </Routes>
     </>
