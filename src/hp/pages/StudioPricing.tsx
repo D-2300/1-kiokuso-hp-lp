@@ -161,7 +161,7 @@ export default function StudioPricing() {
             gap: "10px",
           }}
         >
-          <p style={{ color: "#fff", fontFamily: "'Noto Sans JP', sans-serif", fontSize: "48px", fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>Pricing</p>
+          <p style={{ color: "#fff", fontFamily: "'Noto Sans JP', sans-serif", fontSize: "clamp(32px, 9vw, 48px)", fontWeight: 900, letterSpacing: "clamp(0.06em, 1.5vw, 0.12em)", textTransform: "uppercase" }}>Pricing</p>
           <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px" }}>料金の考え方</p>
         </div>
       </section>

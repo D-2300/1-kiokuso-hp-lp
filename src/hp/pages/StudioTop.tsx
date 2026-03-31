@@ -25,10 +25,10 @@ export default function StudioTop() {
           .hero-anton {
             font-family: 'Noto Sans JP', sans-serif; font-weight: 900;
             letter-spacing: 0.02em; text-transform: uppercase;
-            font-size: 88px; color: #fff; width: 100%; text-align: center;
+            font-size: clamp(42px, 11vw, 88px); color: #fff; width: 100%; text-align: center;
             padding: 0 16px; word-break: break-word; box-sizing: border-box;
           }
-          @media (max-width: 768px) { .hero-anton { font-size: 56px; } }
+          /* responsive font-size handled by clamp above */
           .works-preview-grid {
             display: grid; grid-template-columns: repeat(3, 1fr);
             gap: 16px; max-width: 800px; margin: 0 auto; padding: 0 24px;
