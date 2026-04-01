@@ -4,6 +4,8 @@ import HPApp from "./hp/HPApp";
 import LPPage from "./lp/LPPage";
 import ManshitsuPage from "./manshitsu/ManshitsuPage";
 import WorksCrossover from "./hp/WorksCrossover";
+import ArticleList from "./hp/pages/ArticleList";
+import ArticleDetail from "./hp/pages/ArticleDetail";
 import ScrollToTop from "./shared/ScrollToTop";
 
 function BodyBackground() {
@@ -28,6 +30,8 @@ export default function AppRoutes() {
         <Route path="/lp" element={<LPPage />} />
         <Route path="/manshitsu" element={<ManshitsuPage />} />
         <Route path="/studio/works/crossover" element={<WorksCrossover />} />
+        <Route path="/studio/articles" element={<ArticleList />} />
+        <Route path="/studio/articles/:slug" element={<ArticleDetail />} />
         <Route path="/*" element={<HPApp />} />
       </Routes>
     </>

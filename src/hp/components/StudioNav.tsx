@@ -5,6 +5,7 @@ const navLinks = [
   { to: "/studio", label: "Top" },
   { to: "/studio/about", label: "About" },
   { to: "/studio/works", label: "Works" },
+  { to: "/studio/articles", label: "Articles" },
   { to: "/studio/pricing", label: "Pricing" },
 ];
 
@@ -122,6 +123,9 @@ export default function StudioNav() {
         </Link>
         <Link to="/studio/works" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
           Works
+        </Link>
+        <Link to="/studio/articles" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
+          Articles
         </Link>
         <Link to="/studio/pricing" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none" }}>
           Pricing

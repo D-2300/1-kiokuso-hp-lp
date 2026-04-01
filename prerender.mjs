@@ -17,6 +17,13 @@ const ROUTES = [
   "/reform",
   "/fudousan",
   "/manshitsu",
+  "/studio/articles",
+  "/studio/articles/crossover",
+  "/studio/articles/tsubo-tanka-sendai",
+  "/studio/articles/diy-pro-combination",
+  "/studio/articles/cafe-interior-cost",
+  "/studio/articles/skeleton-vs-inuki",
+  "/studio/articles/interior-failure-cases",
 ];
 
 async function prerender() {

@@ -6,6 +6,14 @@ Claude Code / Claude Cowork間の作業同期用ログ。
 
 ---
 
+## 2026-04-02
+- [Code] 記事システム構築: データ層(src/data/articles.ts)、一覧ページ(/studio/articles)、詳細ページ(/studio/articles/:slug)
+- [Code] ギャラリーカルーセル(GalleryCarousel)・記事カード(ArticleCard)コンポーネント追加
+- [Code] CROSSOVER施工事例を記事データとして移植（初期サンプル）
+- [Code] StudioNavに「Articles」リンク追加（PC・モバイル両対応）
+- [Code] prerender.mjsに記事ルート追加
+- [Code] 記事5本追加: 坪単価全公開(seo)、DIY×プロ分業(column)、カフェ開業費用(seo)、スケルトンvs居抜き(column)、内装工事の失敗例(column)
+
 ## 2026-04-01
 - [Code] CLAUDE.md / CHANGELOG.md を作成（プロジェクト初期設定）
 - [Code] CROSSOVER事例ページの英語見出し・タイムラインのfont-weightをmedium(500)に統一
