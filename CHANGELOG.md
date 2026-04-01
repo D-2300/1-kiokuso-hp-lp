@@ -8,6 +8,7 @@ Claude Code / Claude Cowork間の作業同期用ログ。
 
 ## 2026-04-01
 - [Code] CLAUDE.md / CHANGELOG.md を作成（プロジェクト初期設定）
+- [Code] CROSSOVER事例ページの英語見出し・タイムラインのfont-weightをmedium(500)に統一
 
 ## 2026-03-31
 - [Cowork] CROSSOVER事例ページ作成・ピックアップ記事セクション追加
