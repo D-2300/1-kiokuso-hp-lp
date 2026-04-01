@@ -23,7 +23,7 @@ export default function WorksCrossover() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/70" />
           <div className="relative z-10 px-6 md:px-12 pb-16 max-w-[900px]">
-            <div className="text-[13px] tracking-[4px] text-white/60 mb-3 font-medium">
+            <div className="text-[13px] tracking-[4px] text-white/60 mb-3 font-semibold">
               WORKS — CASE 001
             </div>
             <h1 className="font-normal text-[clamp(24px,4vw,40px)] text-white leading-relaxed mb-2">
@@ -97,7 +97,7 @@ export default function WorksCrossover() {
               { day: 'Day 9–10', text: 'シーリングファン設置。照明・電気配線の最終調整。什器搬入・ディスプレイ配置。' },
             ].map((item) => (
               <div key={item.day} className="flex flex-col md:flex-row gap-1 md:gap-6 py-5 border-b border-[#4A6741]/8">
-                <div className="shrink-0 w-20 text-sm tracking-[1px] text-[#4A6741] pt-0.5 font-medium">
+                <div className="shrink-0 w-20 text-sm tracking-[1px] text-[#4A6741] pt-0.5 font-semibold">
                   {item.day}
                 </div>
                 <div className="text-sm text-[#555] leading-relaxed">{item.text}</div>
@@ -105,7 +105,7 @@ export default function WorksCrossover() {
             ))}
           </div>
 
-          <div className="text-[13px] tracking-[4px] text-[#888] mb-4 font-medium">
+          <div className="text-[13px] tracking-[4px] text-[#888] mb-4 font-semibold">
             DURING CONSTRUCTION
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-14">
@@ -196,7 +196,7 @@ export default function WorksCrossover() {
 function SectionHeading({ en, ja }: { en: string; ja: string }) {
   return (
     <div className="mt-[72px] mb-8">
-      <div className="font-medium text-[32px] tracking-[4px] text-[#4A6741]">
+      <div className="font-semibold text-[32px] tracking-[4px] text-[#4A6741]">
         {en}
       </div>
       <div className="text-xs tracking-[2px] text-[#888] mt-1">{ja}</div>
