@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import HPApp from "./hp/HPApp";
 import LPPage from "./lp/LPPage";
 import ManshitsuPage from "./manshitsu/ManshitsuPage";
-import TenantPage from "./tenant/TenantPage";
+import TenantLPPage from "./lp/tenant/TenantLPPage";
 import WorksCrossover from "./hp/WorksCrossover";
 import ArticleList from "./hp/pages/ArticleList";
 import ArticleDetail from "./hp/pages/ArticleDetail";
@@ -30,7 +30,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/lp" element={<LPPage />} />
         <Route path="/manshitsu" element={<ManshitsuPage />} />
-        <Route path="/lp/tenant" element={<TenantPage />} />
+        <Route path="/lp/tenant" element={<TenantLPPage />} />
         <Route path="/studio/works/crossover" element={<WorksCrossover />} />
         <Route path="/studio/articles" element={<ArticleList />} />
         <Route path="/studio/articles/:slug" element={<ArticleDetail />} />
