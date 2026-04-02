@@ -7,6 +7,7 @@ export default function TenantHero() {
     <section
       style={{
         minHeight: "100vh",
+        maxHeight: "900px",
         background: "#1a1f14",
         display: "flex",
         flexDirection: "column",
@@ -31,7 +32,7 @@ export default function TenantHero() {
         style={{
           position: "relative",
           zIndex: 1,
-          maxWidth: "560px",
+          maxWidth: "680px",
           width: "100%",
           textAlign: "center",
         }}
@@ -70,7 +71,7 @@ export default function TenantHero() {
         {/* Headline */}
         <h1
           style={{
-            fontSize: "clamp(24px, 6vw, 38px)",
+            fontSize: "clamp(26px, 5vw, 40px)",
             fontWeight: 700,
             color: "#fff",
             lineHeight: 1.7,

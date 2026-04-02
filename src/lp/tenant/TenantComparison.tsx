@@ -12,7 +12,7 @@ const rows = [
 export default function TenantComparison() {
   return (
     <section style={{ padding: "64px 24px", background: "#1a1f14" }}>
-      <div style={{ maxWidth: "560px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
         <span style={{ display: "block", textAlign: "center", fontSize: "11px", fontWeight: 500, letterSpacing: ".15em", color: "#C9A84C", marginBottom: "10px" }}>
           COMPARISON
         </span>

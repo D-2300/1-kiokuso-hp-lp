@@ -20,7 +20,7 @@ const faqs = [
 export default function TenantFAQ() {
   return (
     <section style={{ padding: "64px 24px", background: "#f9f8f6" }}>
-      <div style={{ maxWidth: "560px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
         <h2 style={{ fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
           よくある質問
         </h2>

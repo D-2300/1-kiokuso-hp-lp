@@ -148,7 +148,7 @@ const reasons = [
 export default function TenantReasons() {
   return (
     <section style={{ padding: "64px 24px", background: "#fff" }}>
-      <div style={{ maxWidth: "560px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
         <span style={{ display: "block", textAlign: "center", fontSize: "11px", fontWeight: 500, letterSpacing: ".15em", color: "#4A6741", marginBottom: "10px" }}>
           WHY
         </span>

@@ -1,15 +1,16 @@
 export default function TenantHeroBand() {
   return (
-    <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
+    <div style={{ position: "relative", width: "100%", overflow: "hidden", maxWidth: "960px", margin: "0 auto" }}>
       <img
-        src="/images/kai-ken-blueprint-meeting-sm.webp"
+        src="/images/kai-ken-blueprint-meeting.webp"
         alt="KAIとKENが施工現場で図面を広げて打ち合わせ"
         style={{
           width: "100%",
-          height: "clamp(180px, 25vw, 280px)",
+          height: "clamp(180px, 25vw, 300px)",
           objectFit: "cover",
           objectPosition: "center",
           display: "block",
+          borderRadius: "0",
         }}
       />
       {/* Top gradient overlay */}
@@ -19,7 +20,7 @@ export default function TenantHeroBand() {
           top: 0,
           left: 0,
           right: 0,
-          height: "40px",
+          height: "60px",
           background: "linear-gradient(to bottom, #1a1f14, transparent)",
           pointerEvents: "none",
         }}
@@ -31,7 +32,7 @@ export default function TenantHeroBand() {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "40px",
+          height: "60px",
           background: "linear-gradient(to top, #ffffff, transparent)",
           pointerEvents: "none",
         }}
