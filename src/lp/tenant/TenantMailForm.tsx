@@ -20,6 +20,18 @@ export default function TenantMailForm() {
         .t-mail-input:focus { outline: none; border-color: #4A6741; }
       `}</style>
       <div style={{ maxWidth: "560px", margin: "0 auto" }}>
+        <img
+          src="/images/consultation-salon-owner-sm.webp"
+          alt="美容院オーナーとKAIが施工現場で図面を見ながら打ち合わせ"
+          style={{
+            width: "clamp(280px, 90vw, 480px)",
+            maxHeight: "240px",
+            borderRadius: "12px",
+            objectFit: "cover",
+            display: "block",
+            margin: "0 auto 32px",
+          }}
+        />
         <span style={{ display: "block", textAlign: "center", fontSize: "11px", fontWeight: 500, letterSpacing: ".15em", color: "#4A6741", marginBottom: "10px" }}>
           CONTACT
         </span>

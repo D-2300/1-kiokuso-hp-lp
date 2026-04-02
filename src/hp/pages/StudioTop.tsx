@@ -5,6 +5,7 @@ import ScrollFadeIn from "../../shared/ScrollFadeIn";
 import TextureBand from "../../shared/TextureBand";
 import Logo from "../../shared/Logo";
 import { colors } from "../../shared/design-tokens";
+import TenantSupportSection from "../components/TenantSupportSection";
 
 const worksPreview = [
   { img: "/images/yakiniku-after-sm.webp", type: "焼肉店", cost: "¥360万" },
@@ -132,7 +133,7 @@ export default function StudioTop() {
                 display: "flex", alignItems: "center", justifyContent: "center",
                 gap: "12px", marginBottom: "32px",
               }}>
-                <img src="/images/about-dai-sm.webp" alt="KEN"
+                <img src="/images/about-ken-sm.webp" alt="KEN"
                   style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
                 <div style={{ textAlign: "left" }}>
                   <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text }}>KEN</p>
@@ -224,6 +225,11 @@ export default function StudioTop() {
               </Link>
             </div>
           </section>
+        </ScrollFadeIn>
+
+        {/* Tenant Support */}
+        <ScrollFadeIn>
+          <TenantSupportSection />
         </ScrollFadeIn>
 
         <TextureBand src="/assets/textures/tile-water-droplets-warm-sm.webp" height={180} />

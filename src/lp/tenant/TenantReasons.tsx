@@ -103,6 +103,7 @@ const reasons = [
     num: 1,
     who: "── KENの現場から",
     title: <>撤退・解体の情報が<br />先に入るから</>,
+    photo: { src: "/images/kai-ken-onsite-check-sm.webp", alt: "KAIとKENが現場で壁や設備を確認している様子" },
     body: "KENは大工歴20年以上。日常的に、閉店する店舗の原状回復や解体工事を手がけています。つまり「この物件、もうすぐ空きますよ」という情報が、ネットに出回る前に入ってきます。",
     bullets: [
       "閉店が決まった段階で情報が入る",
@@ -118,6 +119,7 @@ const reasons = [
     num: 2,
     who: "── KAIの不動産経験から",
     title: <>ただの空き情報じゃない。<br />裏の事情まで読める</>,
+    photo: { src: "/images/kai-ken-blueprint-meeting-sm.webp", alt: "KAIとKENが施工現場で図面を広げて打ち合わせ" },
     body: "KAIは元不動産業。不動産会社との人脈が今もあるので、ネットには出回らない情報を持っています。しかもビジネス経験が豊富なので、「空いてますよ」だけでなく、その物件の本質をお伝えできます。",
     bullets: [
       "前テナントの業態・営業年数・なぜ撤退したか",
@@ -135,6 +137,7 @@ const reasons = [
     num: 3,
     who: "── KAI & KEN 共通",
     title: <>不動産屋じゃないから<br />正直に言える</>,
+    photo: { src: "/images/consultation-cafe-owner-sm.webp", alt: "カフェオーナーと笑顔で打ち合わせする様子" },
     body: "不動産屋は「この物件を契約してほしい」が仕事。仲介手数料は契約が成立して初めて発生するから、デメリットは言いにくい構造です。",
     body2: "私たちは内装工事が本業。物件を契約させる必要がありません。むしろ、変な物件を掴まれると困る。排気ダクトが通せない物件で契約されたら、困るのはKEN。立地が悪くて半年で閉店されたら、お互いにとって不幸です。",
     bullets: [],
@@ -160,6 +163,22 @@ export default function TenantReasons() {
               <div style={{ background: r.illustBg, padding: "28px 24px", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "140px" }}>
                 <r.Illust />
               </div>
+              {/* Photo */}
+              {r.photo && (
+                <div style={{ padding: "0 24px", marginTop: "-4px" }}>
+                  <img
+                    src={r.photo.src}
+                    alt={r.photo.alt}
+                    style={{
+                      width: "100%",
+                      borderRadius: "8px",
+                      objectFit: "cover",
+                      display: "block",
+                      maxHeight: "200px",
+                    }}
+                  />
+                </div>
+              )}
               {/* Body */}
               <div style={{ padding: "24px 24px 28px" }}>
                 <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "24px", height: "24px", borderRadius: "50%", background: "#4A6741", color: "#fff", fontSize: "12px", fontWeight: 700, marginBottom: "6px" }}>

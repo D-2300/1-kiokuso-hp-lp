@@ -4,6 +4,18 @@ const lineSvgPath = "M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H1
 export default function TenantBottomCTA() {
   return (
     <section style={{ background: "#1a1f14", padding: "64px 24px", textAlign: "center" }}>
+      <img
+        src="/images/kai-ken-casual-talk-sm.webp"
+        alt="KAIとKENがコーヒー片手にリラックスした打ち合わせ"
+        style={{
+          width: "clamp(280px, 90vw, 480px)",
+          borderRadius: "12px",
+          objectFit: "cover",
+          display: "block",
+          margin: "0 auto 32px",
+          maxHeight: "280px",
+        }}
+      />
       <h2 style={{ fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#fff", marginBottom: "10px", lineHeight: 1.7 }}>
         ネットに出回らない<br />
         <em style={{ fontStyle: "normal", color: "#C9A84C" }}>掘り出し物件情報</em>、届けます。
