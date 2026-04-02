@@ -134,8 +134,8 @@ export default function TenantHero() {
         <div style={{ display: "flex", gap: "24px", justifyContent: "center", alignItems: "flex-start" }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1, maxWidth: "160px" }}>
             <img
-              src="/images/about-dai.webp"
-              alt="KAI"
+              src="/images/about-kai-sm.webp"
+              alt="KAI - ビジネス・交渉担当"
               style={{
                 width: "60px",
                 height: "60px",
@@ -154,8 +154,8 @@ export default function TenantHero() {
           <span style={{ fontSize: "18px", fontWeight: 300, color: "rgba(201,168,76,.5)", alignSelf: "center", marginTop: "28px" }}>&times;</span>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1, maxWidth: "160px" }}>
             <img
-              src="/images/about-dai.webp"
-              alt="KEN"
+              src="/images/about-ken-sm.webp"
+              alt="KEN - 現場・施工担当"
               style={{
                 width: "60px",
                 height: "60px",

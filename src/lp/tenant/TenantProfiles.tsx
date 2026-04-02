@@ -2,14 +2,16 @@ const profiles = [
   {
     name: "KAI",
     role: "ビジネス・交渉担当",
-    img: "/images/about-dai.webp",
+    img: "/images/about-kai-sm.webp",
+    alt: "KAI - ビジネス・交渉担当",
     body: "元不動産業。物件の仲介・管理を経験した後、店舗内装の世界へ。不動産会社との人脈が今もあり、ネットに出回る前の物件情報が入ります。ビジネス経験を活かして、物件の交渉や出店計画の相談にも対応します。",
     tags: ["元不動産業", "物件交渉", "出店計画"],
   },
   {
     name: "KEN",
     role: "現場・施工担当",
-    img: "/images/about-dai.webp",
+    img: "/images/about-ken-sm.webp",
+    alt: "KEN - 現場・施工担当",
     body: "大工一筋20年以上。店舗内装の設計・施工を年間30件以上手がけています。撤退・解体の現場にも立ち会うから、物件の中身を誰よりも知っている。居抜きで何が使えて何を変えるべきか、現場を見て即判断できます。",
     tags: ["大工歴20年+", "年間30件+施工", "設計〜施工一貫"],
   },
@@ -31,7 +33,7 @@ export default function TenantProfiles() {
             <div key={p.name} style={{ background: "#f9f8f6", borderRadius: "12px", padding: "28px 24px", display: "flex", gap: "20px", alignItems: "flex-start" }}>
               <img
                 src={p.img}
-                alt={p.name}
+                alt={p.alt}
                 style={{ width: "64px", height: "64px", borderRadius: "50%", objectFit: "cover", flexShrink: 0, background: "#e0e0e0" }}
               />
               <div>
