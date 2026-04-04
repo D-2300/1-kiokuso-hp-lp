@@ -213,7 +213,7 @@ export default function TenantBeforeAfterCTA() {
               lineHeight: 1.5,
             }}
           >
-            この物件を見つけてから<br />5週間で、こうなりました。
+            この物件を見つけてから<br />2週間で、こうなりました。
           </h2>
         </div>
 
@@ -241,7 +241,7 @@ export default function TenantBeforeAfterCTA() {
           </p>
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", alignItems: "center" }}>
             <span style={{ fontSize: "13px", color: "#666" }}>
-              工期: <strong style={{ color: "#333" }}>5週間</strong>
+              工期: <strong style={{ color: "#333" }}>約10日間</strong>
             </span>
             <span style={{ fontSize: "13px", color: "#666" }}>
               費用: <strong style={{ color: "#C9A84C", fontSize: "16px" }}>90万円</strong>

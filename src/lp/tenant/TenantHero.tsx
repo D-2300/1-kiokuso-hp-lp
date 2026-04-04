@@ -65,7 +65,7 @@ export default function TenantHero() {
             marginBottom: "14px",
           }}
         >
-          物件契約の前に、知ってください。
+          飲食店の物件探し、始める前に。
         </p>
 
         {/* Headline */}
@@ -79,8 +79,8 @@ export default function TenantHero() {
             letterSpacing: ".02em",
           }}
         >
-          知らないだけで<br />
-          <em style={{ fontStyle: "normal", color: "#C9A84C" }}>数十万〜数百万円</em>、損してます。
+          ネットに出てない<br />
+          <em style={{ fontStyle: "normal", color: "#C9A84C" }}>掘り出し物件</em>、あります。
         </h1>
 
         {/* Sub copy */}
@@ -92,9 +92,9 @@ export default function TenantHero() {
             marginBottom: "36px",
           }}
         >
-          フリーレント交渉、敷金削減、中間マージンの構造——<br />
-          元不動産のプロと大工歴20年の職人が<br />
-          損しないための知恵を、無料でお伝えします。
+          大工歴20年の職人が解体現場から拾う「空き予定」情報と、<br />
+          元不動産のプロが持つ業界人脈——<br />
+          ネットに載る前の物件情報を、無料でお届けします。
         </p>
 
         {/* CTA */}
@@ -121,7 +121,7 @@ export default function TenantHero() {
             <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
               <path d={lineSvgPath} />
             </svg>
-            LINEで無料ガイドを受け取る
+            LINEで物件情報を受け取る
           </a>
         </div>
         <p style={{ fontSize: "12px", color: "rgba(255,255,255,.28)", marginTop: "14px" }}>
@@ -189,7 +189,7 @@ export default function TenantHero() {
             animation: "tenant-float 2s ease-in-out infinite",
           }}
         >
-          ↓ 損しないために知っておくべきこと
+          ↓ なぜ掘り出し物件を持っているのか
         </div>
       </div>
     </section>

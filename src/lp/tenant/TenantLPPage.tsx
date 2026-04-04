@@ -15,10 +15,10 @@ import LPFloatingLine from "../components/LPFloatingLine";
 
 export default function TenantLPPage() {
   useEffect(() => {
-    document.title = "仙台の飲食店テナント｜物件契約で損しないための無料ガイド";
+    document.title = "仙台の飲食店テナント｜ネットに出ない掘り出し物件情報";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "仙台で飲食店を出したい方へ。フリーレント交渉・敷金削減・内装費用の中抜き防止など、知らないだけで数十万〜数百万円損する情報を無料ガイドでお届けします。");
+      meta.setAttribute("content", "仙台で飲食店を出したい方へ。解体現場から入る空き予定情報と元不動産プロの人脈で、ネットに出る前の掘り出し物件をお届け。物件探し＆不動産攻略ガイドも無料プレゼント中。");
     }
   }, []);
 
@@ -26,9 +26,9 @@ export default function TenantLPPage() {
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333", background: "#fff" }}>
       <TenantHero />
       <TenantHeroBand />
+      <TenantReasons />
       <TenantGuideSection />
       <TenantBeforeAfterCTA />
-      <TenantReasons />
       <TenantMidCTA />
       <TenantComparison />
       <TenantProfiles />
