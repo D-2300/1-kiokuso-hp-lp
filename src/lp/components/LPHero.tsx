@@ -1,278 +1,294 @@
 import { LINE_URL } from "../../shared/design-tokens";
 
+const lineSvgPath =
+  "M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314";
+
 export default function LPHero() {
   return (
     <section
       style={{
-        position: "relative",
         minHeight: "100vh",
+        maxHeight: "900px",
+        background: "#1a1f14",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "60px 24px 40px",
+        position: "relative",
         overflow: "hidden",
-        backgroundColor: "#e8e4de",
       }}
-      className="lp-hero"
     >
-      <style>{`
-        @media (max-width: 767px) {
-          .lp-hero { min-height: 90vh !important; }
-          .lp-hero-inner { min-height: 90vh !important; }
-          .ba-card-img { height: 130px !important; }
-          .hero-catch-line1 { font-size: 28px !important; }
-          .hero-catch-line2 { font-size: 20px !important; }
-        }
-        @media (min-width: 768px) {
-          .ba-card-img { height: 180px !important; }
-          .hero-catch-line1 { font-size: 40px !important; }
-          .hero-catch-line2 { font-size: 26px !important; }
-        }
-      `}</style>
-      <img
-        src="/images/lp-hero.webp"
-          srcSet="/images/lp-hero-sm.webp 480w, /images/lp-hero.webp 1200w"
-        alt=""
-        width="1200"
-        height="800"
-        loading="eager"
-        fetchPriority="high"
-        sizes="100vw"
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-      />
+      {/* Radial glow */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 100%)",
+          background:
+            "radial-gradient(ellipse at 50% 25%, rgba(74,103,65,.14) 0%, transparent 65%)",
+          pointerEvents: "none",
         }}
       />
+
       <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundColor: "rgba(0,0,0,0.35)",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 70%)",
-        }}
-      />
-      <div
-        className="lp-hero-inner"
         style={{
           position: "relative",
           zIndex: 1,
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "28px 20px 0",
-          paddingTop: "80px",
-          maxWidth: "1200px",
-          margin: "0 auto",
-          boxSizing: "border-box",
+          maxWidth: "680px",
+          width: "100%",
+          textAlign: "center",
         }}
       >
-        <div>
-          <div
-            style={{
-              display: "inline-block",
-              backgroundColor: "rgba(255,255,255,0.92)",
-              backdropFilter: "blur(4px)",
-              padding: "6px 16px",
-              borderRadius: "4px",
-              fontSize: "clamp(14px, 2vw, 16px)",
-              fontWeight: 500,
-              color: "#333",
-              marginBottom: "12px",
-            }}
-          >
-            仙台・宮城限定
-          </div>
-
-          <p
-            style={{
-              margin: "0 0 6px",
-              fontSize: "13px",
-              fontWeight: 400,
-              letterSpacing: "3px",
-              color: "rgba(255,255,255,0.8)",
-            }}
-          >
-            店舗内装
-          </p>
-
-          <h1 style={{ margin: 0, padding: 0 }}>
-            <span
-              className="hero-catch-line1"
-              style={{
-                display: "block",
-                fontWeight: 700,
-                color: "#fff",
-                lineHeight: 1.4,
-                letterSpacing: "-0.01em",
-                textShadow: "0 2px 20px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5)",
-              }}
-            >
-              予算<span style={{ color: "#C9A84C" }}>100万円以下</span>でも、
-            </span>
-            <span
-              className="hero-catch-line1"
-              style={{
-                display: "block",
-                fontWeight: 700,
-                color: "#fff",
-                lineHeight: 1.4,
-                letterSpacing: "-0.01em",
-                textShadow: "0 2px 20px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5)",
-              }}
-            >
-              あなたの店はつくれます。
-            </span>
-          </h1>
-          <div
-            style={{
-              marginTop: "16px",
-              marginBottom: "20px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: "8px",
-            }}
-          >
-            <div style={{ width: "40px", height: "1px", backgroundColor: "#C9A84C" }} />
-            <p
-              style={{
-                margin: 0,
-                fontSize: "18px",
-                fontWeight: 500,
-                color: "#C9A84C",
-                textShadow: "0 1px 6px rgba(0,0,0,0.4)",
-              }}
-            >
-              開業準備、ぜんぶ一緒に。
-            </p>
-            <div style={{ width: "40px", height: "1px", backgroundColor: "#C9A84C" }} />
-            <p
-              style={{
-                margin: 0,
-                fontSize: "13px",
-                color: "#999999",
-                textAlign: "center",
-                marginTop: "8px",
-              }}
-            >
-              カフェ・バー・居酒屋・美容室・サロン・ジムなど業態を問わず対応
-            </p>
-          </div>
-
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 16px" }}>
-            {["見積もり無料", "見積もり内訳100%公開", "物件未定でもOK", "断りはLINE1本"].map((t) => (
-              <span key={t} style={{
-                fontSize: "11px",
-                color: "rgba(255,255,255,0.85)",
-                background: "rgba(255,255,255,0.1)",
-                borderRadius: "4px",
-                padding: "4px 10px",
-                border: "1px solid rgba(255,255,255,0.15)",
-              }}>{t}</span>
-            ))}
-          </div>
-
-          <p
-            style={{
-              margin: 0,
-              fontSize: "13px",
-              color: "rgba(255,255,255,0.65)",
-              lineHeight: 1.7,
-              textShadow: "0 2px 8px rgba(0,0,0,0.4)",
-            }}
-          >
-            居抜き活用 × 設計施工一社完結。内容と面積で変わります。
-          </p>
+        {/* Badge */}
+        <div
+          style={{
+            display: "inline-block",
+            fontSize: "11px",
+            fontWeight: 500,
+            letterSpacing: ".1em",
+            color: "#C9A84C",
+            border: "1px solid rgba(201,168,76,.3)",
+            background: "rgba(201,168,76,.08)",
+            borderRadius: "100px",
+            padding: "5px 16px",
+            marginBottom: "28px",
+          }}
+        >
+          仙台・宮城エリア限定
         </div>
 
-        <div style={{ marginTop: "auto" }}>
-          <div style={{ maxWidth: "560px", margin: "0 auto", display: "flex", gap: "8px", marginBottom: "14px" }}>
-            {[
-              { src: "/images/pricing-inuki-sm.webp", alt: "居抜き施工例", label: "居抜き状態", price: "60万円台" },
-              { src: "/images/pricing-skeleton-sm.webp", alt: "スケルトン施工例", label: "スケルトン仕様", price: "120万円台" },
-            ].map((card) => (
-              <div
-                key={card.label}
-                style={{
-                  flex: 1,
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  position: "relative",
-                }}
-              >
-                <img
-                  src={card.src}
-                  alt={card.alt}
-                  className="ba-card-img"
-                  width="320"
-                  height="180"
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background: "rgba(0,0,0,0.3)",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "10px",
-                    left: "12px",
-                  }}
-                >
-                  <p style={{ margin: 0, fontSize: "11px", color: "#fff", fontWeight: 400, lineHeight: 1.3 }}>
-                    {card.label}
-                  </p>
-                  <p style={{ margin: 0, fontSize: "20px", fontWeight: 700, color: "#fff", lineHeight: 1.2 }}>
-                    {card.price}<span style={{ fontSize: "12px", fontWeight: 400 }}>〜</span>
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Category */}
+        <p
+          style={{
+            fontSize: "clamp(12px, 2vw, 14px)",
+            fontWeight: 400,
+            letterSpacing: ".15em",
+            color: "rgba(255,255,255,.4)",
+            marginBottom: "14px",
+          }}
+        >
+          内装工事の前に、知ってください。
+        </p>
 
-          <div style={{ padding: "0 0 40px", textAlign: "center" }}>
-            <a
-              href={LINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-gtm="line_cta_click"
+        {/* Headline */}
+        <h1
+          style={{
+            fontSize: "clamp(24px, 5vw, 38px)",
+            fontWeight: 700,
+            color: "#fff",
+            lineHeight: 1.7,
+            marginBottom: "16px",
+            letterSpacing: ".02em",
+          }}
+        >
+          知らないだけで
+          <br />
+          内装費の
+          <em style={{ fontStyle: "normal", color: "#C9A84C" }}>
+            15〜30%
+          </em>
+          、余計に払っています。
+        </h1>
+
+        {/* Sub copy */}
+        <p
+          style={{
+            fontSize: "clamp(13px, 2.3vw, 15px)",
+            color: "rgba(255,255,255,.5)",
+            lineHeight: 1.9,
+            marginBottom: "36px",
+          }}
+        >
+          中間マージン、不要な解体、追加料金の構造——
+          <br />
+          大工歴20年の職人と元不動産のプロが
+          <br />
+          損しないための知恵を、無料でお伝えします。
+        </p>
+
+        {/* CTA */}
+        <div style={{ marginBottom: "12px" }}>
+          <a
+            href={LINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              background: "#06C755",
+              color: "#fff",
+              borderRadius: "999px",
+              padding: "16px 36px",
+              fontSize: "clamp(15px, 2.8vw, 18px)",
+              fontWeight: 700,
+              textDecoration: "none",
+              letterSpacing: ".03em",
+              boxShadow: "0 4px 24px rgba(6,199,85,.35)",
+            }}
+          >
+            <svg
+              viewBox="0 0 24 24"
               style={{
-                display: "inline-block",
-                backgroundColor: "#06C755",
-                color: "#fff",
-                borderRadius: "999px",
-                padding: "12px 20px",
-                fontSize: "clamp(13px, 2vw, 15px)",
-                fontWeight: 700,
-                textDecoration: "none",
-                textAlign: "center",
-                letterSpacing: "0.03em",
+                width: "22px",
+                height: "22px",
+                fill: "#fff",
+                flexShrink: 0,
               }}
             >
-              LINEで無料相談する
-            </a>
+              <path d={lineSvgPath} />
+            </svg>
+            LINEで無料ガイドを受け取る
+          </a>
+        </div>
+        <p
+          style={{
+            fontSize: "12px",
+            color: "rgba(255,255,255,.28)",
+            marginTop: "14px",
+          }}
+        >
+          無料・営業なし・LINE追加するだけ
+        </p>
+
+        {/* Divider */}
+        <div
+          style={{
+            width: "32px",
+            height: "1px",
+            background: "rgba(255,255,255,.1)",
+            margin: "32px auto",
+          }}
+        />
+
+        {/* Duo profiles */}
+        <div
+          style={{
+            display: "flex",
+            gap: "24px",
+            justifyContent: "center",
+            alignItems: "flex-start",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              flex: 1,
+              maxWidth: "160px",
+            }}
+          >
+            <img
+              src="/images/about-ken-sm.webp"
+              alt="KEN - 現場・施工担当"
+              style={{
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                objectFit: "cover",
+                border: "2px solid rgba(255,255,255,.08)",
+                marginBottom: "10px",
+                background: "rgba(255,255,255,.05)",
+              }}
+            />
             <p
               style={{
-                margin: "8px 0 0",
-                fontSize: "12px",
-                color: "rgba(255,255,255,0.7)",
-                textAlign: "center",
+                fontSize: "16px",
+                fontWeight: 700,
+                color: "rgba(255,255,255,.9)",
+                marginBottom: "2px",
+                letterSpacing: ".05em",
               }}
             >
-              強引な営業は一切しません。断りはLINE1本でOKです。
+              KEN
+            </p>
+            <p
+              style={{
+                fontSize: "11px",
+                color: "rgba(255,255,255,.35)",
+                lineHeight: 1.5,
+              }}
+            >
+              大工歴20年以上
+              <br />
+              現場・施工担当
             </p>
           </div>
+          <span
+            style={{
+              fontSize: "18px",
+              fontWeight: 300,
+              color: "rgba(201,168,76,.5)",
+              alignSelf: "center",
+              marginTop: "28px",
+            }}
+          >
+            &times;
+          </span>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              flex: 1,
+              maxWidth: "160px",
+            }}
+          >
+            <img
+              src="/images/about-kai-sm.webp"
+              alt="KAI - ビジネス・交渉担当"
+              style={{
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                objectFit: "cover",
+                border: "2px solid rgba(255,255,255,.08)",
+                marginBottom: "10px",
+                background: "rgba(255,255,255,.05)",
+              }}
+            />
+            <p
+              style={{
+                fontSize: "16px",
+                fontWeight: 700,
+                color: "rgba(255,255,255,.9)",
+                marginBottom: "2px",
+                letterSpacing: ".05em",
+              }}
+            >
+              KAI
+            </p>
+            <p
+              style={{
+                fontSize: "11px",
+                color: "rgba(255,255,255,.35)",
+                lineHeight: 1.5,
+              }}
+            >
+              元不動産業
+              <br />
+              ビジネス・交渉担当
+            </p>
+          </div>
+        </div>
+
+        {/* Scroll hint */}
+        <style>
+          {`@keyframes lp-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }`}
+        </style>
+        <div
+          style={{
+            marginTop: "32px",
+            fontSize: "11px",
+            color: "rgba(255,255,255,.2)",
+            letterSpacing: ".1em",
+            animation: "lp-float 2s ease-in-out infinite",
+          }}
+        >
+          ↓ 損しないために知っておくべきこと
         </div>
       </div>
     </section>

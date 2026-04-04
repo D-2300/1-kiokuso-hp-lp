@@ -2,21 +2,50 @@ const LINE_URL = "https://lin.ee/HVV0QJO";
 const lineSvgPath =
   "M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314";
 
-export default function LPMidCTA() {
+export default function LPBottomCTA() {
   return (
-    <section style={{ background: "#fff", padding: "48px 24px", textAlign: "center" }}>
-      <p
+    <section
+      style={{ background: "#1a1f14", padding: "64px 24px", textAlign: "center" }}
+    >
+      <img
+        src="/images/kai-ken-casual-talk-sm.webp"
+        alt="KAIとKENがコーヒー片手にリラックスした打ち合わせ"
         style={{
-          fontSize: "clamp(14px, 2.5vw, 16px)",
-          fontWeight: 500,
-          color: "#555",
-          marginBottom: "20px",
+          width: "clamp(280px, 90vw, 480px)",
+          borderRadius: "12px",
+          objectFit: "cover",
+          display: "block",
+          margin: "0 auto 32px",
+          maxHeight: "280px",
+        }}
+      />
+      <h2
+        style={{
+          fontSize: "clamp(18px, 3.5vw, 24px)",
+          fontWeight: 700,
+          color: "#fff",
+          marginBottom: "10px",
           lineHeight: 1.7,
         }}
       >
-        無料ガイド + あなたの物件に合った
+        知らないまま工事して、
         <br />
-        個別アドバイスをお届けします。
+        <em style={{ fontStyle: "normal", color: "#C9A84C" }}>
+          損してからでは遅い
+        </em>
+        のです。
+      </h2>
+      <p
+        style={{
+          fontSize: "clamp(12px, 2vw, 14px)",
+          color: "rgba(255,255,255,.4)",
+          marginBottom: "28px",
+          lineHeight: 1.8,
+        }}
+      >
+        無料ガイド + 個別見積もりアドバイス。
+        <br />
+        まずはLINEで受け取ってください。
       </p>
       <a
         href={LINE_URL}
@@ -34,7 +63,7 @@ export default function LPMidCTA() {
           fontWeight: 700,
           textDecoration: "none",
           letterSpacing: ".03em",
-          boxShadow: "0 4px 20px rgba(6,199,85,.25)",
+          boxShadow: "0 4px 24px rgba(6,199,85,.4)",
         }}
       >
         <svg
@@ -45,7 +74,13 @@ export default function LPMidCTA() {
         </svg>
         LINEで無料ガイドを受け取る
       </a>
-      <p style={{ fontSize: "12px", color: "#bbb", marginTop: "14px" }}>
+      <p
+        style={{
+          fontSize: "12px",
+          color: "rgba(255,255,255,.25)",
+          marginTop: "14px",
+        }}
+      >
         無料・営業なし・LINE追加するだけ
       </p>
     </section>
