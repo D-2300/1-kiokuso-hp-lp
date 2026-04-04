@@ -153,7 +153,7 @@ export default function TenantReasons() {
           WHY
         </span>
         <h2 style={{ fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
-          掘り出し物件情報を<br />持っている、3つの理由
+          非公開物件情報を<br />持っている、3つの理由
         </h2>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>

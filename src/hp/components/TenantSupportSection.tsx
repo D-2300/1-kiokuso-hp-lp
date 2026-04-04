@@ -75,7 +75,7 @@ export default function TenantSupportSection() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
-            掘り出し物件情報を見る →
+            非公開物件情報を見る →
           </Link>
         </div>
       </div>

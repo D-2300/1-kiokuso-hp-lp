@@ -15,10 +15,10 @@ import LPFloatingLine from "../components/LPFloatingLine";
 
 export default function TenantLPPage() {
   useEffect(() => {
-    document.title = "仙台の飲食店テナント｜ネットに出ない掘り出し物件情報";
+    document.title = "仙台の飲食店テナント｜ネットに出ない非公開物件情報";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "仙台で飲食店を出したい方へ。解体現場から入る空き予定情報と元不動産プロの人脈で、ネットに出る前の掘り出し物件をお届け。物件探し＆不動産攻略ガイドも無料プレゼント中。");
+      meta.setAttribute("content", "仙台で飲食店を出したい方へ。解体現場から入る空き予定情報と元不動産プロの人脈で、ネットに出る前の非公開物件をお届け。物件探し＆不動産攻略ガイドも無料プレゼント中。");
     }
   }, []);
 

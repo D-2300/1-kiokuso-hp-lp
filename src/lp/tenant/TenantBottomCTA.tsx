@@ -21,7 +21,7 @@ export default function TenantBottomCTA() {
         <em style={{ fontStyle: "normal", color: "#C9A84C" }}>損してからでは遅い</em>のです。
       </h2>
       <p style={{ fontSize: "clamp(12px, 2vw, 14px)", color: "rgba(255,255,255,.4)", marginBottom: "28px", lineHeight: 1.8 }}>
-        無料ガイド2冊 + 掘り出し物件情報 + 個別アドバイス。<br />まずはLINEで受け取ってください。
+        無料ガイド2冊 + 非公開物件情報 + 個別アドバイス。<br />まずはLINEで受け取ってください。
       </p>
       <a
         href={LINE_URL}

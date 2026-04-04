@@ -80,7 +80,7 @@ export default function TenantHero() {
           }}
         >
           ネットに出てない<br />
-          <em style={{ fontStyle: "normal", color: "#C9A84C" }}>掘り出し物件</em>、あります。
+          <em style={{ fontStyle: "normal", color: "#C9A84C" }}>非公開物件</em>、あります。
         </h1>
 
         {/* Sub copy */}
@@ -189,7 +189,7 @@ export default function TenantHero() {
             animation: "tenant-float 2s ease-in-out infinite",
           }}
         >
-          ↓ なぜ掘り出し物件を持っているのか
+          ↓ なぜ非公開物件を持っているのか
         </div>
       </div>
     </section>
