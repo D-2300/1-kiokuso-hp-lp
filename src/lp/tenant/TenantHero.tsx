@@ -65,13 +65,13 @@ export default function TenantHero() {
             marginBottom: "14px",
           }}
         >
-          飲食店のテナント探しに
+          物件契約の前に、知ってください。
         </p>
 
         {/* Headline */}
         <h1
           style={{
-            fontSize: "clamp(26px, 5vw, 40px)",
+            fontSize: "clamp(24px, 5vw, 38px)",
             fontWeight: 700,
             color: "#fff",
             lineHeight: 1.7,
@@ -79,8 +79,8 @@ export default function TenantHero() {
             letterSpacing: ".02em",
           }}
         >
-          ネットに出回らない<br />
-          <em style={{ fontStyle: "normal", color: "#C9A84C" }}>掘り出し物件情報</em>、届けます。
+          知らないだけで<br />
+          <em style={{ fontStyle: "normal", color: "#C9A84C" }}>数十万〜数百万円</em>、損してます。
         </h1>
 
         {/* Sub copy */}
@@ -92,9 +92,9 @@ export default function TenantHero() {
             marginBottom: "36px",
           }}
         >
-          地元の大工歴20年の作り手と、元不動産のプロ。<br />
-          現場と人脈から届く、出回る前の情報と<br />
-          その物件が本当にお得かどうかの目利き。
+          フリーレント交渉、敷金削減、中間マージンの構造——<br />
+          元不動産のプロと大工歴20年の職人が<br />
+          損しないための知恵を、無料でお伝えします。
         </p>
 
         {/* CTA */}
@@ -121,7 +121,7 @@ export default function TenantHero() {
             <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
               <path d={lineSvgPath} />
             </svg>
-            LINEで掘り出し物件情報を受け取る
+            LINEで無料ガイドを受け取る
           </a>
         </div>
         <p style={{ fontSize: "12px", color: "rgba(255,255,255,.28)", marginTop: "14px" }}>
@@ -187,7 +187,7 @@ export default function TenantHero() {
             animation: "tenant-float 2s ease-in-out infinite",
           }}
         >
-          ↓ なぜこの情報を持っているのか
+          ↓ 損しないために知っておくべきこと
         </div>
       </div>
     </section>

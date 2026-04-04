@@ -5,7 +5,7 @@ export default function TenantMidCTA() {
   return (
     <section style={{ background: "#fff", padding: "48px 24px", textAlign: "center" }}>
       <p style={{ fontSize: "clamp(14px, 2.5vw, 16px)", fontWeight: 500, color: "#555", marginBottom: "20px", lineHeight: 1.7 }}>
-        希望のエリアと業態を教えてください。<br />条件に合う物件が出た段階でお知らせします。
+        無料ガイド2冊 + あなたの物件に合った<br />個別アドバイスをお届けします。
       </p>
       <a
         href={LINE_URL}
@@ -29,7 +29,7 @@ export default function TenantMidCTA() {
         <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
           <path d={lineSvgPath} />
         </svg>
-        LINEで掘り出し物件情報を受け取る
+        LINEで無料ガイドを受け取る
       </a>
       <p style={{ fontSize: "12px", color: "#bbb", marginTop: "14px" }}>
         無料・営業なし・LINE追加するだけ

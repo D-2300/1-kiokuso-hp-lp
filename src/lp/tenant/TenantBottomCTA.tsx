@@ -17,11 +17,11 @@ export default function TenantBottomCTA() {
         }}
       />
       <h2 style={{ fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#fff", marginBottom: "10px", lineHeight: 1.7 }}>
-        ネットに出回らない<br />
-        <em style={{ fontStyle: "normal", color: "#C9A84C" }}>掘り出し物件情報</em>、届けます。
+        知らないまま契約して、<br />
+        <em style={{ fontStyle: "normal", color: "#C9A84C" }}>損してからでは遅い</em>のです。
       </h2>
       <p style={{ fontSize: "clamp(12px, 2vw, 14px)", color: "rgba(255,255,255,.4)", marginBottom: "28px", lineHeight: 1.8 }}>
-        希望のエリアと業態を教えてください。<br />条件に合う物件が出た段階でお知らせします。
+        無料ガイド2冊 + 掘り出し物件情報 + 個別アドバイス。<br />まずはLINEで受け取ってください。
       </p>
       <a
         href={LINE_URL}
@@ -45,7 +45,7 @@ export default function TenantBottomCTA() {
         <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
           <path d={lineSvgPath} />
         </svg>
-        LINEで掘り出し物件情報を受け取る
+        LINEで無料ガイドを受け取る
       </a>
       <p style={{ fontSize: "12px", color: "rgba(255,255,255,.25)", marginTop: "14px" }}>
         無料・営業なし・LINE追加するだけ
