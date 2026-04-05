@@ -188,18 +188,17 @@ function TenantBASlider() {
 
 export default function TenantBeforeAfterCTA() {
   return (
-    <section style={{ backgroundColor: "#fff", padding: "56px 24px 0" }}>
+    <section style={{ backgroundColor: "#f9f8f6", padding: "44px 24px 0" }}>
       <div style={{ maxWidth: "680px", margin: "0 auto" }}>
         {/* Section header */}
-        <div style={{ textAlign: "center", marginBottom: "28px" }}>
+        <div style={{ textAlign: "center", marginBottom: "20px" }}>
           <p
             style={{
-              margin: "0 0 10px",
-              fontSize: "0.7rem",
-              fontWeight: 300,
-              letterSpacing: "4px",
+              margin: "0 0 8px",
+              fontSize: "10px",
+              fontWeight: 600,
+              letterSpacing: "0.28em",
               color: "#C9A84C",
-              textTransform: "uppercase",
             }}
           >
             BEFORE &amp; AFTER
@@ -207,10 +206,10 @@ export default function TenantBeforeAfterCTA() {
           <h2
             style={{
               margin: 0,
-              fontSize: "clamp(1.2rem, 4vw, 1.6rem)",
+              fontSize: "clamp(17px, 3.4vw, 22px)",
               fontWeight: 700,
-              color: "#1a1a1a",
-              lineHeight: 1.5,
+              color: "#1a1f14",
+              lineHeight: 1.6,
             }}
           >
             この物件を見つけてから<br />2週間で、こうなりました。
@@ -226,27 +225,27 @@ export default function TenantBeforeAfterCTA() {
         {/* Case info */}
         <div
           style={{
-            marginTop: "16px",
-            padding: "16px 20px",
-            backgroundColor: "#f9f8f6",
+            marginTop: "14px",
+            padding: "12px 16px",
+            backgroundColor: "#fff",
             borderRadius: "10px",
-            border: "1px solid #eee",
+            border: "1px solid #e8e6e0",
           }}
         >
-          <p style={{ margin: "0 0 4px", fontSize: "clamp(16px, 3vw, 20px)", fontWeight: 700, color: "#222" }}>
+          <p style={{ margin: "0 0 4px", fontSize: "clamp(14px, 2.6vw, 16px)", fontWeight: 700, color: "#1a1f14", letterSpacing: "0.02em" }}>
             CROSSOVER
-            <span style={{ fontSize: "clamp(11px, 2vw, 13px)", fontWeight: 400, color: "#888", marginLeft: "8px" }}>
+            <span style={{ fontSize: "11px", fontWeight: 400, color: "#999", marginLeft: "8px" }}>
               Cafe &amp; Bar
             </span>
           </p>
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", alignItems: "center" }}>
-            <span style={{ fontSize: "13px", color: "#666" }}>
-              工期: <strong style={{ color: "#333" }}>約10日間</strong>
+          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", alignItems: "center" }}>
+            <span style={{ fontSize: "11px", color: "#777" }}>
+              工期 <strong style={{ color: "#333" }}>約10日間</strong>
             </span>
-            <span style={{ fontSize: "13px", color: "#666" }}>
-              費用: <strong style={{ color: "#C9A84C", fontSize: "16px" }}>90万円</strong>
+            <span style={{ fontSize: "11px", color: "#777" }}>
+              費用 <strong style={{ color: "#C9A84C", fontSize: "14px" }}>90万円</strong>
             </span>
-            <span style={{ fontSize: "13px", color: "#666" }}>18坪・スケルトン</span>
+            <span style={{ fontSize: "11px", color: "#777" }}>18坪・スケルトン</span>
           </div>
         </div>
 
@@ -254,10 +253,10 @@ export default function TenantBeforeAfterCTA() {
         <p
           style={{
             textAlign: "center",
-            fontSize: "clamp(13px, 2.3vw, 15px)",
+            fontSize: "clamp(12px, 2.1vw, 14px)",
             color: "#666",
             lineHeight: 1.8,
-            margin: "24px 0 0",
+            margin: "20px 0 0",
           }}
         >
           物件探しから内装まで一気通貫でサポート。<br />

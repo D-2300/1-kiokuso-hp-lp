@@ -19,30 +19,30 @@ const profiles = [
 
 export default function TenantProfiles() {
   return (
-    <section style={{ padding: "64px 24px", background: "#fff" }}>
+    <section style={{ padding: "48px 20px", background: "#fff" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        <span style={{ display: "block", textAlign: "center", fontSize: "11px", fontWeight: 500, letterSpacing: ".15em", color: "#4A6741", marginBottom: "10px" }}>
+        <p style={{ textAlign: "center", fontSize: "10px", fontWeight: 600, letterSpacing: "0.28em", color: "#C9A84C", marginBottom: "10px" }}>
           WHO WE ARE
-        </span>
-        <h2 style={{ fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
+        </p>
+        <h2 style={{ fontSize: "clamp(17px, 3.4vw, 22px)", fontWeight: 700, color: "#1a1f14", textAlign: "center", marginBottom: "24px", lineHeight: 1.55, letterSpacing: "0.05em" }}>
           KAI &amp; KEN
         </h2>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           {profiles.map((p) => (
-            <div key={p.name} style={{ background: "#f9f8f6", borderRadius: "12px", padding: "28px 24px", display: "flex", gap: "20px", alignItems: "flex-start" }}>
+            <div key={p.name} style={{ background: "#f9f8f6", borderRadius: "12px", padding: "20px 20px", display: "flex", gap: "16px", alignItems: "flex-start" }}>
               <img
                 src={p.img}
                 alt={p.alt}
-                style={{ width: "64px", height: "64px", borderRadius: "50%", objectFit: "cover", flexShrink: 0, background: "#e0e0e0" }}
+                style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", flexShrink: 0, background: "#e0e0e0" }}
               />
               <div>
-                <p style={{ fontSize: "18px", fontWeight: 700, color: "#222", marginBottom: "2px", letterSpacing: ".05em" }}>{p.name}</p>
-                <p style={{ fontSize: "12px", color: "#999", marginBottom: "10px" }}>{p.role}</p>
-                <p style={{ fontSize: "clamp(13px, 2.2vw, 14px)", color: "#666", lineHeight: 1.85 }}>{p.body}</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "12px" }}>
+                <p style={{ fontSize: "16px", fontWeight: 900, color: "#1a1f14", marginBottom: "2px", letterSpacing: ".05em" }}>{p.name}</p>
+                <p style={{ fontSize: "11px", color: "#999", marginBottom: "8px" }}>{p.role}</p>
+                <p style={{ fontSize: "clamp(12px, 2vw, 13px)", color: "#666", lineHeight: 1.75 }}>{p.body}</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "10px" }}>
                   {p.tags.map((tag) => (
-                    <span key={tag} style={{ fontSize: "11px", fontWeight: 500, color: "#4A6741", background: "#EAF0E8", padding: "3px 10px", borderRadius: "100px" }}>
+                    <span key={tag} style={{ fontSize: "10px", fontWeight: 500, color: "#4A6741", background: "#EAF0E8", padding: "3px 9px", borderRadius: "100px" }}>
                       {tag}
                     </span>
                   ))}

@@ -6,6 +6,20 @@ Claude Code / Claude Cowork間の作業同期用ログ。
 
 ---
 
+## 2026-04-05
+### テナントLP 情報設計リニューアル＆タイポ統一
+- [Code] 情報設計を WHY（集まる理由）と MERIT（公平評価）に分離
+  - TenantNetworkInfo 新設: 6つの情報源（酒屋・不動産・工事業者・商業施設・過去客・地域）をハブ型インフォグラフィックで可視化、KAI+KEN＋記憶荘ロゴをハブ中心に配置
+  - TenantFairEval 新設: 一般仲介 vs 記憶荘のVSカード（ダーク×ゴールド）＋収益モデル1行フロー。旧 TenantReasons / TenantComparison を置き換え
+  - TenantSteps 新設: LINEまでの3ステップ、Step1を緑反転で強調、匿名OK・無料バッジで不安除去
+- [Code] TenantHero: KAI/KEN Duoを撤去してコンパクト化、HeroBand と自然につなげる
+- [Code] TenantGuideSection: 本＋見出しを横並び化、損失リストをシンプル箇条書きに圧縮
+- [Code] セクション背景を暗↔白↔ベージュで交互配色、境界を視覚的に明確化
+- [Code] 全セクションの eyebrow(10px/0.28em/#C9A84C) と h2(clamp(17px,3.4vw,22px)/#1a1f14) を統一
+- [Code] TenantBeforeAfterCTA: rem→px統一、事例カードの padding/文字を圧縮
+- [Code] TenantProfiles: カードpadding・アバター・gap を詰めて縦方向を短縮
+- [Code] FairEval 内の KAI プロフィールカードを削除し、TenantProfiles に一本化（KAI 重複紹介の解消）
+
 ## 2026-04-04（午後）
 ### 内装LP 虎の巻中心構成にリニューアル
 - [Code] LPHero: ダーク背景(#1a1f14)の損失回避型に全面書き換え

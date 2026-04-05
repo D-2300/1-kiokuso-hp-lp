@@ -3,9 +3,10 @@ import TenantHero from "./TenantHero";
 import TenantHeroBand from "./TenantHeroBand";
 import TenantGuideSection from "./TenantGuideSection";
 import TenantBeforeAfterCTA from "./TenantBeforeAfterCTA";
-import TenantReasons from "./TenantReasons";
+import TenantNetworkInfo from "./TenantNetworkInfo";
+import TenantSteps from "./TenantSteps";
 import TenantMidCTA from "./TenantMidCTA";
-import TenantComparison from "./TenantComparison";
+import TenantFairEval from "./TenantFairEval";
 import TenantProfiles from "./TenantProfiles";
 import TenantFAQ from "./TenantFAQ";
 import TenantBottomCTA from "./TenantBottomCTA";
@@ -26,11 +27,12 @@ export default function TenantLPPage() {
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333", background: "#fff" }}>
       <TenantHero />
       <TenantHeroBand />
-      <TenantReasons />
+      <TenantNetworkInfo />
+      <TenantSteps />
       <TenantGuideSection />
       <TenantBeforeAfterCTA />
       <TenantMidCTA />
-      <TenantComparison />
+      <TenantFairEval />
       <TenantProfiles />
       <TenantFAQ />
       <TenantBottomCTA />

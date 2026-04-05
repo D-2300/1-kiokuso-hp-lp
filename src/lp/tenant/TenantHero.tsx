@@ -6,14 +6,14 @@ export default function TenantHero() {
   return (
     <section
       style={{
-        minHeight: "100vh",
-        maxHeight: "900px",
+        minHeight: "80vh",
+        maxHeight: "750px",
         background: "#1a1f14",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "60px 24px 40px",
+        padding: "36px 24px 40px",
         position: "relative",
         overflow: "hidden",
       }}
@@ -127,54 +127,6 @@ export default function TenantHero() {
         <p style={{ fontSize: "12px", color: "rgba(255,255,255,.28)", marginTop: "14px" }}>
           無料・営業なし・LINE追加するだけ
         </p>
-
-        {/* Divider */}
-        <div style={{ width: "32px", height: "1px", background: "rgba(255,255,255,.1)", margin: "32px auto" }} />
-
-        {/* Duo profiles */}
-        <div style={{ display: "flex", gap: "24px", justifyContent: "center", alignItems: "flex-start" }}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1, maxWidth: "160px" }}>
-            <img
-              src="/images/about-kai-sm.webp"
-              alt="KAI - ビジネス・交渉担当"
-              fetchpriority="high"
-              style={{
-                width: "60px",
-                height: "60px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                border: "2px solid rgba(255,255,255,.08)",
-                marginBottom: "10px",
-                background: "rgba(255,255,255,.05)",
-              }}
-            />
-            <p style={{ fontSize: "16px", fontWeight: 700, color: "rgba(255,255,255,.9)", marginBottom: "2px", letterSpacing: ".05em" }}>KAI</p>
-            <p style={{ fontSize: "11px", color: "rgba(255,255,255,.35)", lineHeight: 1.5 }}>
-              元不動産業<br />ビジネス・交渉担当
-            </p>
-          </div>
-          <span style={{ fontSize: "18px", fontWeight: 300, color: "rgba(201,168,76,.5)", alignSelf: "center", marginTop: "28px" }}>&times;</span>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1, maxWidth: "160px" }}>
-            <img
-              src="/images/about-ken-sm.webp"
-              alt="KEN - 現場・施工担当"
-              fetchpriority="high"
-              style={{
-                width: "60px",
-                height: "60px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                border: "2px solid rgba(255,255,255,.08)",
-                marginBottom: "10px",
-                background: "rgba(255,255,255,.05)",
-              }}
-            />
-            <p style={{ fontSize: "16px", fontWeight: 700, color: "rgba(255,255,255,.9)", marginBottom: "2px", letterSpacing: ".05em" }}>KEN</p>
-            <p style={{ fontSize: "11px", color: "rgba(255,255,255,.35)", lineHeight: 1.5 }}>
-              大工歴20年以上<br />現場・施工担当
-            </p>
-          </div>
-        </div>
 
         {/* Scroll hint */}
         <style>{`

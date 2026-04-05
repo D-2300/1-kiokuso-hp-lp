@@ -1,6 +1,6 @@
 export default function TenantHeroBand() {
   return (
-    <div style={{ position: "relative", width: "100%", overflow: "hidden", maxWidth: "960px", margin: "0 auto" }}>
+    <div style={{ position: "relative", width: "100%", overflow: "hidden", maxWidth: "960px", margin: "-40px auto 0" }}>
       <img
         src="/images/kai-ken-blueprint-meeting-sm.webp"
         alt="KAIとKENが施工現場で図面を広げて打ち合わせ"
