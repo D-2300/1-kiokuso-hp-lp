@@ -230,15 +230,15 @@ export default function GroupAbout() {
                 <div style={{ flex: 1 }}>
                   <div style={{ marginBottom: "6px" }}>
                     <span style={{ fontSize: "15px", fontWeight: 600, color: "#333", marginRight: "10px" }}>{item.nameJa}</span>
-                    <span style={{ fontSize: "12px", color: "#999", letterSpacing: "0.08em" }}>{item.nameEn}</span>
+                    <span style={{ fontSize: "14px", color: "#999", letterSpacing: "0.08em" }}>{item.nameEn}</span>
                   </div>
-                  <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.9, margin: "0 0 10px" }}>{item.body}</p>
+                  <p style={{ fontSize: "14px", color: "#555", lineHeight: 1.9, margin: "0 0 10px" }}>{item.body}</p>
                   {item.active && item.to ? (
-                    <Link to={item.to} style={{ fontSize: "12px", color: item.color, textDecoration: "none", fontWeight: 500 }}>
+                    <Link to={item.to} style={{ fontSize: "14px", color: item.color, textDecoration: "none", fontWeight: 500 }}>
                       {item.cta} →
                     </Link>
                   ) : (
-                    <span style={{ fontSize: "12px", color: "#BBB" }}>準備中</span>
+                    <span style={{ fontSize: "14px", color: "#BBB" }}>準備中</span>
                   )}
                 </div>
               </div>
@@ -260,7 +260,7 @@ export default function GroupAbout() {
             <img src="/images/about-ken-sm.webp" alt="KEN（謙）- 大工・施工責任者" style={{ width: "100px", minWidth: "100px", aspectRatio: "1/1", objectFit: "cover" }} />
             <div>
               <p style={{ fontSize: "18px", fontWeight: 500, color: colors.text, marginBottom: "4px" }}>KEN</p>
-              <p style={{ fontSize: "12px", color: colors.mute, marginBottom: "12px" }}>
+              <p style={{ fontSize: "14px", color: colors.mute, marginBottom: "12px" }}>
                 記憶荘 CSO（Creative Strategy Officer）
               </p>
               <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 1.8 }}>

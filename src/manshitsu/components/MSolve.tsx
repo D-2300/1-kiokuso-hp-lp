@@ -77,7 +77,7 @@ export default function MSolve() {
               <p
                 style={{
                   margin: 0,
-                  fontSize: "clamp(12px, 3vw, 14px)",
+                  fontSize: "clamp(14px, 3vw, 16px)",
                   color: M.main,
                   fontWeight: 500,
                   lineHeight: 1.65,
@@ -155,7 +155,7 @@ export default function MSolve() {
                 <p style={{ margin: "0 0 6px", fontSize: "clamp(15px, 3.8vw, 17px)", fontWeight: 600, color: C.textDark, letterSpacing: "0.02em" }}>
                   {pt.title}
                 </p>
-                <p style={{ margin: 0, fontSize: "clamp(13px, 3.2vw, 14px)", color: C.textMid, lineHeight: 1.8 }}>
+                <p style={{ margin: 0, fontSize: "clamp(14px, 3vw, 16px)", color: C.textMid, lineHeight: 1.8 }}>
                   {pt.body}
                 </p>
               </div>

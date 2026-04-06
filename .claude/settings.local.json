@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \":*)",
+      "Bash(python /tmp/fix_summary2.py)",
+      "Bash(python \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/scripts/fix_summary.py\")",
+      "Bash(python \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/scripts/add_images.py\")",
+      "Bash(python \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/scripts/fix_messages.py\")",
+      "Bash(python \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/scripts/gen_protected.py\")",
+      "Bash(python \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/scripts/embed_images.py\")",
+      "Bash(python \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/scripts/compress_and_deploy.py\")",
+      "Bash(find C:UsersinoueClaudeProjectskiokuso -maxdepth 3 -type f \\\\\\(-name *.pdf -o -name *.pptx -o -name *.docx -o -name *.xlsx \\\\\\))",
+      "Bash(grep -r \"TOMO\\\\|KOZ\\\\|tomo\\\\|koz\" C:UsersinoueClaudeProjectskiokuso --include=*.md --include=*.json)",
+      "Bash(find C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp -path *public/c* -o -path *dist/c*)",
+      "Bash(grep -E \"\\\\.\\(html|pdf|pptx|docx\\)$\")",
+      "Bash(file C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/c/*.html)",
+      "Bash(grep -r \"tomo\\\\|TMO\\\\|KOZ\\\\|koz\" C:/Users/inoue/ClaudeProjects/kiokuso --include=*.tsx --include=*.ts --include=*.jsx --include=*.js)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(cp \"C:/Users/inoue/Downloads/d1300_Exterior_photo_of_a_small_Japanese_cafe_dining_restaura_6d1f7a89-4da3-463c-8f6d-0cf00f08dcf2_3.png\" \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/cafe-exterior-day.png\")",
+      "Bash(cp \"C:/Users/inoue/Downloads/d1300_Exterior_photo_of_a_small_Japanese_cafe_dining_restaura_fffad3ca-c88c-4144-af82-47245f1577b0_3.png\" \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/cafe-exterior-dusk.png\")",
+      "Bash(cp \"C:/Users/inoue/Downloads/d1300_Interior_photo_of_a_small_Japanese_cafe_dining_restaura_e918dd7e-34e5-4c2a-bab8-a6c33641b91f_3.png\" \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/cafe-interior-counter.png\")",
+      "Bash(cp \"C:/Users/inoue/Downloads/d1300_Interior_photo_of_a_small_Japanese_cafe_dining_restaura_6fd36c83-178a-41b7-8c69-e814c70789b4_0.png\" \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/cafe-interior-tables.png\")",
+      "Bash(cp \"C:/Users/inoue/Downloads/d1300_Exterior_photo_of_a_vacant_former_restaurant_space_for__8c4bbe0f-63b6-4ff4-8a1f-c52e23e50807_3.png\" \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/cafe-before-exterior.png\")",
+      "Bash(node scripts/resize-images.mjs public/images/cafe-exterior-day.png public/images/cafe-exterior-dusk.png public/images/cafe-interior-counter.png public/images/cafe-interior-tables.png public/images/cafe-before-exterior.png public/images/cafe-before-interior.png)",
+      "Bash(node -e \":*)",
+      "Bash(node scripts/resize-images.mjs public/images/consultation-salon-owner.png)",
+      "Bash(cp \"/c/Users/inoue/Downloads/スクリーンショット 2026-04-06 184528.png\" /c/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/step-line-register.png)",
+      "Bash(cp \"/c/Users/inoue/Downloads/スクリーンショット 2026-04-06 183911.png\" /c/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/step-line-send.png)",
+      "Bash(cp \"/c/Users/inoue/Downloads/スクリーンショット 2026-04-06 184424.png\" /c/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/step-tenant-info.png)",
+      "Bash(npx vite:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

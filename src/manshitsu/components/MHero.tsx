@@ -89,7 +89,7 @@ export default function MHero() {
               <p style={{ margin: 0, fontSize: "14px", fontWeight: 600, color: C.white, letterSpacing: "0.04em", lineHeight: 1.3 }}>
                 満室デザインLABO
               </p>
-              <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.7)", letterSpacing: "0.03em", lineHeight: 1.4 }}>
+              <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.7)", letterSpacing: "0.03em", lineHeight: 1.4 }}>
                 仙台・宮城の原状回復工事なら
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function MHero() {
                 backdropFilter: "blur(4px)",
                 padding: "5px 14px",
                 borderRadius: "4px",
-                fontSize: "clamp(12px, 2vw, 14px)",
+                fontSize: "clamp(14px, 3vw, 16px)",
                 fontWeight: 500,
                 color: "#333",
               }}
@@ -167,7 +167,7 @@ export default function MHero() {
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: "20px" }}>
             {["中間マージンなし", "自社施工", "退去当日の見積もり可"].map((t) => (
               <span key={t} style={{
-                fontSize: "11px",
+                fontSize: "13px",
                 color: "rgba(255,255,255,0.85)",
                 background: "rgba(255,255,255,0.12)",
                 borderRadius: "4px",
@@ -187,14 +187,14 @@ export default function MHero() {
               textAlign: "center",
             }}
           >
-            <p style={{ margin: 0, fontSize: "12px", color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em", marginBottom: "4px" }}>
+            <p style={{ margin: 0, fontSize: "14px", color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em", marginBottom: "4px" }}>
               クロス張替え
             </p>
             <p style={{ margin: 0, fontFamily: "'Noto Serif JP', serif" }}>
               <span style={{ fontSize: "clamp(28px, 7vw, 36px)", color: C.gold, fontWeight: 600 }}>900</span>
               <span style={{ fontSize: "14px", color: C.goldLight }}> 円/㎡〜（税別）</span>
             </p>
-            <p style={{ margin: "4px 0 0", fontSize: "11px", color: "rgba(255,255,255,0.5)" }}>
+            <p style={{ margin: "4px 0 0", fontSize: "13px", color: "rgba(255,255,255,0.5)" }}>
               めくり・下地処理・廃材処分込み
             </p>
           </div>
@@ -227,7 +227,7 @@ export default function MHero() {
                 color: C.white,
                 borderRadius: "999px",
                 padding: "15px 24px",
-                fontSize: "clamp(15px, 2.5vw, 17px)",
+                fontSize: "clamp(16px, 3vw, 19px)",
                 fontWeight: 700,
                 textDecoration: "none",
                 letterSpacing: "0.04em",
@@ -251,7 +251,7 @@ export default function MHero() {
                 border: "1px solid rgba(255,255,255,0.35)",
                 borderRadius: "999px",
                 padding: "13px 24px",
-                fontSize: "15px",
+                fontSize: "16px",
                 fontWeight: 500,
                 textDecoration: "none",
                 letterSpacing: "0.04em",
@@ -262,7 +262,7 @@ export default function MHero() {
             >
               📞 {TEL_DISPLAY}
             </a>
-            <p style={{ margin: "6px 0 0", fontSize: "12px", color: "rgba(255,255,255,0.45)" }}>
+            <p style={{ margin: "6px 0 0", fontSize: "14px", color: "rgba(255,255,255,0.45)" }}>
               受付 9:00〜18:00（土日対応可）/ LINEは24時間受付
             </p>
           </div>

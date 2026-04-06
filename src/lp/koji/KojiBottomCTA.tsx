@@ -1,52 +1,90 @@
-const LINE_URL = "https://lin.ee/HVV0QJO";
+import { LINE_URL } from "../../shared/design-tokens";
+
 const lineSvgPath =
   "M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314";
 
-export default function LPBottomCTA() {
+const badges = ["🔒 匿名OK", "💰 無料", "🚫 営業なし", "⏰ あなたのペース"];
+
+export default function KojiBottomCTA() {
   return (
     <section
-      style={{ background: "#1a1f14", padding: "64px 24px", textAlign: "center" }}
+      style={{
+        background: "#1a1f14",
+        padding: "36px 24px 40px",
+        textAlign: "center",
+      }}
     >
       <img
         src="/images/kai-ken-casual-talk-sm.webp"
-        alt="KAIとKENがコーヒー片手にリラックスした打ち合わせ"
+        alt="KAIとKENが打ち合わせ"
         style={{
-          width: "clamp(280px, 90vw, 480px)",
+          width: "clamp(260px, 80vw, 420px)",
           borderRadius: "12px",
           objectFit: "cover",
           display: "block",
-          margin: "0 auto 32px",
-          maxHeight: "280px",
+          margin: "0 auto 22px",
+          maxHeight: "220px",
         }}
       />
       <h2
         style={{
-          fontSize: "clamp(18px, 3.5vw, 24px)",
+          fontSize: "clamp(20px, 4.5vw, 28px)",
           fontWeight: 700,
           color: "#fff",
-          marginBottom: "10px",
-          lineHeight: 1.7,
+          marginBottom: "8px",
+          lineHeight: 1.55,
         }}
       >
-        知らないまま工事して、
+        あなたの物件の"本当の金額"、
         <br />
         <em style={{ fontStyle: "normal", color: "#C9A84C" }}>
-          損してからでは遅い
+          工事の前にお渡しします。
         </em>
-        のです。
       </h2>
       <p
         style={{
-          fontSize: "clamp(12px, 2vw, 14px)",
-          color: "rgba(255,255,255,.4)",
-          marginBottom: "28px",
+          fontSize: "clamp(14px, 3vw, 16px)",
+          color: "rgba(255,255,255,.45)",
+          marginBottom: "16px",
           lineHeight: 1.8,
         }}
       >
-        無料ガイド + 個別見積もりアドバイス。
+        業態・坪数・物件写真を LINE で送るだけ。
         <br />
-        まずはLINEで受け取ってください。
+        「なんとなく聞いてみようかな」で大丈夫です。
       </p>
+
+      {/* Reassurance badges */}
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "6px",
+          maxWidth: "420px",
+          margin: "0 auto 20px",
+        }}
+      >
+        {badges.map((label) => (
+          <span
+            key={label}
+            style={{
+              display: "inline-block",
+              fontSize: "12px",
+              fontWeight: 500,
+              color: "rgba(255,255,255,0.75)",
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.14)",
+              borderRadius: "999px",
+              padding: "6px 12px",
+              letterSpacing: "0.02em",
+            }}
+          >
+            {label}
+          </span>
+        ))}
+      </div>
+
       <a
         href={LINE_URL}
         target="_blank"
@@ -58,8 +96,8 @@ export default function LPBottomCTA() {
           background: "#06C755",
           color: "#fff",
           borderRadius: "999px",
-          padding: "16px 36px",
-          fontSize: "clamp(15px, 2.8vw, 18px)",
+          padding: "14px 32px",
+          fontSize: "clamp(16px, 3vw, 19px)",
           fontWeight: 700,
           textDecoration: "none",
           letterSpacing: ".03em",
@@ -72,16 +110,26 @@ export default function LPBottomCTA() {
         >
           <path d={lineSvgPath} />
         </svg>
-        LINEで無料ガイドを受け取る
+        LINEで実費明細を受け取る
       </a>
       <p
         style={{
-          fontSize: "12px",
-          color: "rgba(255,255,255,.25)",
-          marginTop: "14px",
+          fontSize: "13px",
+          color: "rgba(255,255,255,.3)",
+          marginTop: "12px",
         }}
       >
-        無料・営業なし・LINE追加するだけ
+        無料・営業なし・相見積もり歓迎
+      </p>
+      <p
+        style={{
+          fontSize: "12px",
+          color: "rgba(255,255,255,0.2)",
+          marginTop: "18px",
+          lineHeight: 1.7,
+        }}
+      >
+        ※ LINE登録で「内装見積もりの虎の巻」も一緒にお渡ししています。
       </p>
     </section>
   );

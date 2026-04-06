@@ -36,7 +36,7 @@ export default function MCTA() {
         <h2
           style={{
             fontFamily: "'Noto Serif JP', serif",
-            fontSize: "clamp(18px, 4.5vw, 22px)",
+            fontSize: "clamp(20px, 4.5vw, 28px)",
             fontWeight: 600,
             color: C.white,
             lineHeight: 1.6,
@@ -51,7 +51,7 @@ export default function MCTA() {
         <p
           style={{
             margin: "0 0 32px",
-            fontSize: "clamp(13px, 3.5vw, 14px)",
+            fontSize: "clamp(14px, 3vw, 16px)",
             color: "rgba(255,255,255,0.75)",
             lineHeight: 1.8,
           }}
@@ -97,7 +97,7 @@ export default function MCTA() {
               border: "1px solid rgba(255,255,255,0.35)",
               borderRadius: "4px",
               padding: "14px 40px",
-              fontSize: "15px",
+              fontSize: "16px",
               fontWeight: 500,
               textDecoration: "none",
               letterSpacing: "0.04em",
@@ -110,7 +110,7 @@ export default function MCTA() {
           </a>
         </div>
 
-        <p style={{ margin: "16px 0 0", fontSize: "11px", color: "rgba(255,255,255,0.4)", letterSpacing: "0.02em" }}>
+        <p style={{ margin: "16px 0 0", fontSize: "13px", color: "rgba(255,255,255,0.4)", letterSpacing: "0.02em" }}>
           受付時間 9:00〜18:00（土日も対応可）/ LINEは24時間受付
         </p>
       </div>

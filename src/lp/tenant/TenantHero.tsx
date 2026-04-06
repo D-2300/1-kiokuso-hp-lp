@@ -1,3 +1,5 @@
+import React from "react";
+
 const LINE_URL = "https://lin.ee/HVV0QJO";
 
 const lineSvgPath = "M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314";
@@ -97,6 +99,55 @@ export default function TenantHero() {
           ネットに載る前の物件情報を、無料でお届けします。
         </p>
 
+        {/* Flow infographic banner */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0",
+            marginBottom: "32px",
+            padding: "0 8px",
+          }}
+        >
+          {[
+            { img: "/images/step-line-register-sm.webp", label: "LINE追加", time: "10秒", highlight: true, pos: "center" },
+            { img: "/images/step-line-send-sm.webp", label: "希望を伝える", time: "2分", highlight: false, pos: "center" },
+            { img: "/images/step-tenant-info-sm.webp", label: "物件情報GET", time: "数日〜", highlight: false, pos: "center" },
+          ].map((step, i) => (
+            <React.Fragment key={i}>
+              {i > 0 && (
+                <div style={{ flex: "0 0 auto", padding: "0 clamp(4px, 1.5vw, 12px)", marginBottom: "16px" }}>
+                  <svg viewBox="0 0 24 12" style={{ width: "clamp(18px, 4vw, 28px)", height: "auto" }}>
+                    <path d="M0 6h20m0 0l-5-4m5 4l-5 4" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+              )}
+              <div style={{ textAlign: "center", flex: "0 0 auto" }}>
+                <div
+                  style={{
+                    width: "clamp(96px, 25vw, 140px)",
+                    height: "clamp(96px, 25vw, 140px)",
+                    borderRadius: "14px",
+                    overflow: "hidden",
+                    margin: "0 auto 6px",
+                    border: step.highlight ? "2.5px solid #06C755" : "2px solid rgba(201,168,76,.45)",
+                    boxShadow: step.highlight ? "0 0 16px rgba(6,199,85,.35)" : "0 0 12px rgba(201,168,76,.15)",
+                  }}
+                >
+                  <img
+                    src={step.img}
+                    alt={step.label}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: step.pos, transform: step.scale ? `scale(${step.scale})` : undefined }}
+                  />
+                </div>
+                <span style={{ fontSize: "clamp(10px, 2vw, 12px)", fontWeight: 700, color: "#fff", display: "block" }}>{step.label}</span>
+                <span style={{ fontSize: "clamp(9px, 1.6vw, 10px)", color: "rgba(255,255,255,.4)", display: "block", marginTop: "2px" }}>{step.time}</span>
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
+
         {/* CTA */}
         <div style={{ marginBottom: "12px" }}>
           <a
@@ -121,12 +172,24 @@ export default function TenantHero() {
             <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
               <path d={lineSvgPath} />
             </svg>
-            LINEで物件情報を受け取る
+            無料で物件情報を受け取る
           </a>
         </div>
-        <p style={{ fontSize: "12px", color: "rgba(255,255,255,.28)", marginTop: "14px" }}>
-          無料・営業なし・LINE追加するだけ
-        </p>
+        <div style={{
+          display: "flex", justifyContent: "center", gap: "10px", flexWrap: "wrap", marginTop: "16px",
+        }}>
+          {["匿名OK", "営業なし", "LINE追加するだけ"].map((t) => (
+            <span key={t} style={{
+              fontSize: "13px", fontWeight: 600, color: "rgba(255,255,255,.7)",
+              background: "rgba(255,255,255,.1)",
+              border: "1px solid rgba(255,255,255,.15)",
+              borderRadius: "999px", padding: "5px 14px",
+              letterSpacing: ".03em",
+            }}>
+              {t}
+            </span>
+          ))}
+        </div>
 
         {/* Scroll hint */}
         <style>{`

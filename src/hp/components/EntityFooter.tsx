@@ -46,7 +46,7 @@ export default function EntityFooter({
       <p
         style={{
           color: themeLight,
-          fontSize: "12px",
+          fontSize: "14px",
           fontWeight: 300,
           letterSpacing: "0.2em",
           marginBottom: "32px",
@@ -59,7 +59,7 @@ export default function EntityFooter({
         <p
           style={{
             color: "rgba(255,255,255,0.7)",
-            fontSize: "13px",
+            fontSize: "14px",
             letterSpacing: "0.08em",
             lineHeight: 1.8,
             marginBottom: "24px",
@@ -133,7 +133,7 @@ export default function EntityFooter({
       <div style={{ marginBottom: "8px" }}>
         <Link
           to="/privacy"
-          style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px", textDecoration: "none" }}
+          style={{ color: "rgba(255,255,255,0.3)", fontSize: "14px", textDecoration: "none" }}
         >
           プライバシーポリシー
         </Link>
@@ -141,7 +141,7 @@ export default function EntityFooter({
       <p
         style={{
           color: themeMid,
-          fontSize: "11px",
+          fontSize: "13px",
           letterSpacing: "0.05em",
         }}
       >

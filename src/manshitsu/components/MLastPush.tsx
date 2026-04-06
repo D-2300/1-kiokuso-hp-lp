@@ -10,7 +10,7 @@ export default function MLastPush() {
           style={{
             margin: "0 0 20px",
             fontFamily: "'Noto Serif JP', serif",
-            fontSize: "clamp(17px, 4.2vw, 20px)",
+            fontSize: "clamp(20px, 4.5vw, 28px)",
             fontWeight: 400,
             color: C.textDark,
             lineHeight: 2.0,
@@ -47,7 +47,7 @@ export default function MLastPush() {
           style={{
             margin: 0,
             fontFamily: "'Noto Sans JP', sans-serif",
-            fontSize: "13px",
+            fontSize: "14px",
             color: C.textMid,
             lineHeight: 1.9,
             letterSpacing: "0.02em",

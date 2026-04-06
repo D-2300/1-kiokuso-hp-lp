@@ -6,7 +6,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const ROUTES = [
   "/",
-  "/lp",
   "/about",
   "/studio",
   "/studio/about",
@@ -18,6 +17,7 @@ const ROUTES = [
   "/fudousan",
   "/manshitsu",
   "/lp/tenant",
+  "/lp/koji",
   "/studio/articles",
   "/studio/articles/crossover",
   "/studio/articles/tsubo-tanka-sendai",

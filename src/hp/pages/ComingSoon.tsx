@@ -233,7 +233,7 @@ export default function ComingSoon({
             ))}
           </div>
 
-          <p style={{ fontSize: "13px", color: "#888", marginBottom: "32px", letterSpacing: "0.05em" }}>
+          <p style={{ fontSize: "14px", color: "#888", marginBottom: "32px", letterSpacing: "0.05em" }}>
             {taglineSub}
           </p>
         </section>
@@ -339,7 +339,7 @@ export default function ComingSoon({
           <p
             style={{
               textAlign: "center",
-              fontSize: "12px",
+              fontSize: "14px",
               color: "#999",
               letterSpacing: "0.1em",
               paddingBottom: "48px",

@@ -46,7 +46,7 @@ export default function WorksCrossover() {
                 { label: 'Area', value: '18坪' },
               ].map((spec) => (
                 <div key={spec.label} className="bg-[#F8F5F0] py-6 text-center">
-                  <div className="text-[11px] tracking-[3px] text-[#888] uppercase mb-2">
+                  <div className="text-[13px] tracking-[3px] text-[#888] uppercase mb-2">
                     {spec.label}
                   </div>
                   <div className="font-normal text-lg text-[#333]">

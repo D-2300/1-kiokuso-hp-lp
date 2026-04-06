@@ -33,7 +33,7 @@ export default function StudioCTA({
         <p
           style={{
             color: "#A8BFA2",
-            fontSize: "13px",
+            fontSize: "14px",
             letterSpacing: "0.08em",
             marginBottom: "40px",
           }}

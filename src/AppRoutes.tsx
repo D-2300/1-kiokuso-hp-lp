@@ -1,9 +1,9 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import HPApp from "./hp/HPApp";
-import LPPage from "./lp/LPPage";
 import ManshitsuPage from "./manshitsu/ManshitsuPage";
 import TenantLPPage from "./lp/tenant/TenantLPPage";
+import KojiLPPage from "./lp/koji/KojiLPPage";
 import WorksCrossover from "./hp/WorksCrossover";
 import ArticleList from "./hp/pages/ArticleList";
 import ArticleDetail from "./hp/pages/ArticleDetail";
@@ -28,7 +28,8 @@ export default function AppRoutes() {
       <BodyBackground />
       <ScrollToTop />
       <Routes>
-        <Route path="/lp" element={<LPPage />} />
+        <Route path="/lp" element={<Navigate to="/lp/koji/" replace />} />
+        <Route path="/lp/koji" element={<KojiLPPage />} />
         <Route path="/manshitsu" element={<ManshitsuPage />} />
         <Route path="/lp/tenant" element={<TenantLPPage />} />
         <Route path="/studio/works/crossover" element={<WorksCrossover />} />

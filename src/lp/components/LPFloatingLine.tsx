@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-export default function LPFloatingLine() {
+export default function LPFloatingLine({ label = "LINEで無料見積もり" }: { label?: string }) {
   const [visible, setVisible] = useState(false);
   const [hiddenByFinalCTA, setHiddenByFinalCTA] = useState(false);
   const finalCTARef = useRef<Element | null>(null);
@@ -114,7 +114,7 @@ export default function LPFloatingLine() {
             }}
             className="floating-line-text"
           >
-            LINEで無料見積もり
+            {label}
           </span>
         </div>
 

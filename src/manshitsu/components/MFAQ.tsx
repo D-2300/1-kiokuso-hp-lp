@@ -53,7 +53,7 @@ export default function MFAQ() {
               >
                 <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
                   <span style={{ color: M.main, fontWeight: 700, fontSize: "14px", flexShrink: 0, marginTop: "1px" }}>Q</span>
-                  <span style={{ fontSize: "clamp(13px, 3.5vw, 15px)", fontWeight: 500, color: C.textDark, lineHeight: 1.7 }}>
+                  <span style={{ fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 500, color: C.textDark, lineHeight: 1.7 }}>
                     {faq.q}
                   </span>
                 </div>
@@ -75,7 +75,7 @@ export default function MFAQ() {
               {open === i && (
                 <div style={{ padding: "0 0 18px 26px", display: "flex", gap: "12px" }}>
                   <span style={{ color: M.light, fontWeight: 700, fontSize: "14px", flexShrink: 0, marginTop: "1px" }}>A</span>
-                  <p style={{ margin: 0, fontSize: "clamp(13px, 3.2vw, 14px)", color: C.textMid, lineHeight: 1.85 }}>
+                  <p style={{ margin: 0, fontSize: "clamp(14px, 3vw, 16px)", color: C.textMid, lineHeight: 1.85 }}>
                     {faq.a}
                   </p>
                 </div>

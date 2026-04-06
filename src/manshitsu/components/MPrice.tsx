@@ -33,8 +33,8 @@ export default function MPrice() {
         <div style={{ borderRadius: "4px", overflow: "hidden", border: "1px solid #E8E3DC", marginBottom: "12px" }}>
           <div style={{ backgroundColor: M.main, padding: "10px 16px" }}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <span style={{ fontSize: "11px", fontWeight: 500, color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>施工内容</span>
-              <span style={{ fontSize: "11px", fontWeight: 500, color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>単価（税別）</span>
+              <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>施工内容</span>
+              <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>単価（税別）</span>
             </div>
           </div>
           {rows.map((row, i) => (
@@ -50,17 +50,17 @@ export default function MPrice() {
                 gap: "12px",
               }}
             >
-              <span style={{ fontSize: "clamp(12px, 3vw, 13px)", color: C.textDark, lineHeight: 1.5, flex: 1 }}>
+              <span style={{ fontSize: "clamp(14px, 3vw, 16px)", color: C.textDark, lineHeight: 1.5, flex: 1 }}>
                 {row.label}
               </span>
-              <span style={{ fontSize: "clamp(13px, 3vw, 14px)", color: M.dark, fontWeight: 500, whiteSpace: "nowrap", flexShrink: 0 }}>
+              <span style={{ fontSize: "clamp(14px, 3vw, 16px)", color: M.dark, fontWeight: 500, whiteSpace: "nowrap", flexShrink: 0 }}>
                 {row.price}
               </span>
             </div>
           ))}
         </div>
 
-        <p style={{ margin: 0, fontSize: "11px", color: C.warmGray, lineHeight: 1.8, letterSpacing: "0.02em" }}>
+        <p style={{ margin: 0, fontSize: "13px", color: C.warmGray, lineHeight: 1.8, letterSpacing: "0.02em" }}>
           ※最低発注金額 35,000円（税別）〜　※使用材料はサンゲツ・リリカラ等のJIS規格品。F☆☆☆☆対応。
         </p>
       </div>

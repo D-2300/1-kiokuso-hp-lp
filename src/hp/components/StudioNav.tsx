@@ -105,7 +105,7 @@ export default function StudioNav() {
         }}>✕</button>
         {/* スタジオ内ページ */}
         <p style={{
-          fontSize: "10px",
+          fontSize: "12px",
           fontWeight: 700,
           letterSpacing: "0.2em",
           textTransform: "uppercase",

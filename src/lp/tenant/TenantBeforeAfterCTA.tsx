@@ -195,7 +195,7 @@ export default function TenantBeforeAfterCTA() {
           <p
             style={{
               margin: "0 0 8px",
-              fontSize: "10px",
+              fontSize: "12px",
               fontWeight: 600,
               letterSpacing: "0.28em",
               color: "#C9A84C",
@@ -206,7 +206,7 @@ export default function TenantBeforeAfterCTA() {
           <h2
             style={{
               margin: 0,
-              fontSize: "clamp(17px, 3.4vw, 22px)",
+              fontSize: "clamp(20px, 4.5vw, 28px)",
               fontWeight: 700,
               color: "#1a1f14",
               lineHeight: 1.6,
@@ -218,7 +218,7 @@ export default function TenantBeforeAfterCTA() {
 
         {/* Slider */}
         <TenantBASlider />
-        <p style={{ textAlign: "center", fontSize: "11px", color: "#999", margin: "10px 0 0" }}>
+        <p style={{ textAlign: "center", fontSize: "13px", color: "#999", margin: "10px 0 0" }}>
           ◀ スライドして比較 ▶
         </p>
 
@@ -234,18 +234,18 @@ export default function TenantBeforeAfterCTA() {
         >
           <p style={{ margin: "0 0 4px", fontSize: "clamp(14px, 2.6vw, 16px)", fontWeight: 700, color: "#1a1f14", letterSpacing: "0.02em" }}>
             CROSSOVER
-            <span style={{ fontSize: "11px", fontWeight: 400, color: "#999", marginLeft: "8px" }}>
+            <span style={{ fontSize: "13px", fontWeight: 400, color: "#999", marginLeft: "8px" }}>
               Cafe &amp; Bar
             </span>
           </p>
           <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", alignItems: "center" }}>
-            <span style={{ fontSize: "11px", color: "#777" }}>
+            <span style={{ fontSize: "13px", color: "#777" }}>
               工期 <strong style={{ color: "#333" }}>約10日間</strong>
             </span>
-            <span style={{ fontSize: "11px", color: "#777" }}>
+            <span style={{ fontSize: "13px", color: "#777" }}>
               費用 <strong style={{ color: "#C9A84C", fontSize: "14px" }}>90万円</strong>
             </span>
-            <span style={{ fontSize: "11px", color: "#777" }}>18坪・スケルトン</span>
+            <span style={{ fontSize: "13px", color: "#777" }}>18坪・スケルトン</span>
           </div>
         </div>
 
@@ -253,7 +253,7 @@ export default function TenantBeforeAfterCTA() {
         <p
           style={{
             textAlign: "center",
-            fontSize: "clamp(12px, 2.1vw, 14px)",
+            fontSize: "clamp(14px, 3vw, 16px)",
             color: "#666",
             lineHeight: 1.8,
             margin: "20px 0 0",

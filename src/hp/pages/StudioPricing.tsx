@@ -92,7 +92,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         }}
       >
         <div style={{ display: "flex", alignItems: "baseline", gap: "10px", flex: 1 }}>
-          <span style={{ fontSize: "13px", fontWeight: 700, color: "#C9A84C", minWidth: "16px" }}>Q</span>
+          <span style={{ fontSize: "14px", fontWeight: 700, color: "#C9A84C", minWidth: "16px" }}>Q</span>
           <span style={{ fontSize: "14px", color: "#333", lineHeight: 1.7, fontWeight: 500 }}>{q}</span>
         </div>
         <span style={{ fontSize: "18px", color: "#C9A84C", fontWeight: 300, flexShrink: 0 }}>
@@ -216,10 +216,10 @@ export default function StudioPricing() {
                 <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text, marginBottom: "4px" }}>
                   {item.label}
                 </p>
-                <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.8, marginBottom: "2px" }}>
+                <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 1.8, marginBottom: "2px" }}>
                   {item.example}
                 </p>
-                <p style={{ fontSize: "13px", color: colors.fukamidori.main, fontWeight: 500 }}>
+                <p style={{ fontSize: "14px", color: colors.fukamidori.main, fontWeight: 500 }}>
                   → {item.saving}
                 </p>
               </div>
@@ -256,7 +256,7 @@ export default function StudioPricing() {
               </div>
             ))}
           </div>
-          <p style={{ marginTop: "24px", fontSize: "12px", color: colors.mute, lineHeight: 1.8 }}>
+          <p style={{ marginTop: "24px", fontSize: "14px", color: colors.mute, lineHeight: 1.8 }}>
             ※ 物件の状態・広さ・ご要望によって変わります。
             <br />
             LINEで物件の写真をお送りいただければ、概算をお伝えします。
@@ -284,7 +284,7 @@ export default function StudioPricing() {
                 }}
               >
                 <div style={{ minWidth: "32px", textAlign: "center" }}>
-                  <span style={{ fontFamily: "'Noto Sans JP', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "2px", color: "#C9A84C" }}>
+                  <span style={{ fontFamily: "'Noto Sans JP', sans-serif", fontSize: "13px", fontWeight: 700, letterSpacing: "2px", color: "#C9A84C" }}>
                     STEP
                   </span>
                   <p style={{ fontFamily: "'Noto Sans JP', sans-serif", fontSize: "28px", fontWeight: 700, color: "#C9A84C", margin: "0", lineHeight: 1 }}>
@@ -295,10 +295,10 @@ export default function StudioPricing() {
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "8px", gap: "12px" }}>
                     <p style={{ fontSize: "15px", fontWeight: 500, color: "#333", margin: 0 }}>{step.title}</p>
                     {step.fee && (
-                      <span style={{ fontSize: "12px", color: "#999", whiteSpace: "nowrap", flexShrink: 0 }}>{step.fee}</span>
+                      <span style={{ fontSize: "14px", color: "#999", whiteSpace: "nowrap", flexShrink: 0 }}>{step.fee}</span>
                     )}
                   </div>
-                  <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.9, margin: 0 }}>{step.body}</p>
+                  <p style={{ fontSize: "14px", color: "#666", lineHeight: 1.9, margin: 0 }}>{step.body}</p>
                 </div>
               </div>
             ))}
@@ -321,7 +321,7 @@ export default function StudioPricing() {
               "最短工期・突貫工事（丁寧に進めるため、急ぎの対応は難しい場合があります）",
               "施工のみの依頼（設計から一貫で対応しています）",
             ].map((item) => (
-              <li key={item} style={{ fontSize: "13px", color: "#999", lineHeight: 1.8, display: "flex", gap: "8px" }}>
+              <li key={item} style={{ fontSize: "14px", color: "#999", lineHeight: 1.8, display: "flex", gap: "8px" }}>
                 <span style={{ color: "#ccc", flexShrink: 0 }}>・</span>
                 <span>{item}</span>
               </li>

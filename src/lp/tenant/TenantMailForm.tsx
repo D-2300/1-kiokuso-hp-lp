@@ -32,13 +32,13 @@ export default function TenantMailForm() {
             margin: "0 auto 32px",
           }}
         />
-        <span style={{ display: "block", textAlign: "center", fontSize: "11px", fontWeight: 500, letterSpacing: ".15em", color: "#4A6741", marginBottom: "10px" }}>
+        <span style={{ display: "block", textAlign: "center", fontSize: "12px", fontWeight: 500, letterSpacing: ".15em", color: "#4A6741", marginBottom: "10px" }}>
           CONTACT
         </span>
-        <h2 style={{ fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
+        <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
           メールでのお問い合わせ
         </h2>
-        <p style={{ fontSize: "clamp(13px, 2.2vw, 14px)", color: "#888", textAlign: "center", lineHeight: 1.8, marginBottom: "28px" }}>
+        <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "#888", textAlign: "center", lineHeight: 1.8, marginBottom: "28px" }}>
           LINEをお使いでない方は、<br />こちらからお気軽にご連絡ください。
         </p>
 
@@ -85,7 +85,7 @@ export default function TenantMailForm() {
           >
             メールで問い合わせる
           </button>
-          <p style={{ fontSize: "11px", color: "#bbb", textAlign: "center", marginTop: "4px" }}>
+          <p style={{ fontSize: "13px", color: "#bbb", textAlign: "center", marginTop: "4px" }}>
             無料・営業なし・24時間以内に返信します
           </p>
         </form>

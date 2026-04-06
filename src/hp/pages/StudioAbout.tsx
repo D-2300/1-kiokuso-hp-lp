@@ -40,7 +40,7 @@ export default function StudioAbout() {
       {/* OUR APPROACH — Essay */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 24px 0", maxWidth: "640px", margin: "0 auto" }}>
-          <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 40px", textTransform: "uppercase" }}>
+          <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 40px", textTransform: "uppercase" }}>
             Our Approach
           </p>
 
@@ -100,7 +100,7 @@ export default function StudioAbout() {
       {/* Business Types */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 24px 40px", maxWidth: "900px", margin: "0 auto" }}>
-          <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 16px", textTransform: "uppercase" }}>
+          <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 16px", textTransform: "uppercase" }}>
             Business Types
           </p>
           <h3 style={{ fontSize: "20px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 32px", lineHeight: 1.6 }}>
@@ -129,7 +129,7 @@ export default function StudioAbout() {
                 <div style={{ borderRadius: "8px", overflow: "hidden", marginBottom: "8px" }}>
                   <img src={item.src} alt={item.label} style={{ width: "100%", height: "120px", objectFit: "cover", display: "block" }} />
                 </div>
-                <p style={{ margin: 0, fontSize: "13px", color: "#555" }}>{item.label}</p>
+                <p style={{ margin: 0, fontSize: "14px", color: "#555" }}>{item.label}</p>
               </div>
             ))}
           </div>
@@ -139,7 +139,7 @@ export default function StudioAbout() {
       {/* Voice */}
       <ScrollFadeIn>
         <section style={{ padding: "40px 24px 80px", maxWidth: "640px", margin: "0 auto" }}>
-          <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 16px", textTransform: "uppercase" }}>
+          <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 16px", textTransform: "uppercase" }}>
             Voice
           </p>
           <h3 style={{ fontSize: "20px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 32px", lineHeight: 1.6 }}>
@@ -157,7 +157,7 @@ export default function StudioAbout() {
                 <p style={{ margin: "0 0 8px", fontSize: "15px", color: "#444", lineHeight: 1.8 }}>
                   「{v.text}」
                 </p>
-                <p style={{ margin: 0, fontSize: "12px", color: "#999" }}>
+                <p style={{ margin: 0, fontSize: "14px", color: "#999" }}>
                   {v.author}・{v.detail}
                 </p>
               </div>
@@ -170,7 +170,7 @@ export default function StudioAbout() {
       <ScrollFadeIn>
         <section style={{ padding: "80px 24px", backgroundColor: "rgba(46,66,41,0.03)" }}>
           <div style={{ maxWidth: "560px", margin: "0 auto" }}>
-            <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 40px", textTransform: "uppercase" }}>
+            <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 40px", textTransform: "uppercase" }}>
               About KAI &amp; KEN
             </p>
 
@@ -185,7 +185,7 @@ export default function StudioAbout() {
             <p style={{ fontSize: "22px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 4px" }}>
               KAI
             </p>
-            <p style={{ fontSize: "13px", color: "#888", margin: "0 0 28px" }}>プランニング・物件サポート</p>
+            <p style={{ fontSize: "14px", color: "#888", margin: "0 0 28px" }}>プランニング・物件サポート</p>
             <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
               元不動産業の経験を活かし、物件探しから内装プランニングまでを担当。
               不動産会社との人脈が今もあり、ネットに出回る前の物件情報をキャッチできます。
@@ -209,7 +209,7 @@ export default function StudioAbout() {
             <p style={{ fontSize: "22px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 4px" }}>
               KEN
             </p>
-            <p style={{ fontSize: "13px", color: "#888", margin: "0 0 28px" }}>大工・施工責任者</p>
+            <p style={{ fontSize: "14px", color: "#888", margin: "0 0 28px" }}>大工・施工責任者</p>
             <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
               前職では店舗内装の現場監督として、飲食店・美容室・ジム・物販店など
               さまざまな業態の内装を手がけてきました。
@@ -233,7 +233,7 @@ export default function StudioAbout() {
       {/* SERVICE AREA */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 24px", maxWidth: "560px", margin: "0 auto" }}>
-          <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 32px", textTransform: "uppercase" }}>
+          <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 32px", textTransform: "uppercase" }}>
             Service Area
           </p>
           <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "0 0 20px" }}>
@@ -241,7 +241,7 @@ export default function StudioAbout() {
             ご希望があれば東北全域も対応可能です。
           </p>
           <p style={{ fontSize: "14px", lineHeight: 2.0, color: "#777", margin: 0 }}>
-            <span style={{ fontSize: "12px", color: "#aaa", marginRight: "8px" }}>対応業態</span>
+            <span style={{ fontSize: "14px", color: "#aaa", marginRight: "8px" }}>対応業態</span>
             飲食店・カフェ・テイクアウト・居酒屋/バー・美容室・ネイルサロン・パーソナルジム・物販店 など
           </p>
         </section>

@@ -60,7 +60,7 @@ export default function MBeforeAfter() {
                       position: "absolute",
                       top: "8px",
                       left: "8px",
-                      fontSize: "11px",
+                      fontSize: "13px",
                       fontWeight: 600,
                       letterSpacing: "0.08em",
                       padding: "3px 10px",
@@ -93,7 +93,7 @@ export default function MBeforeAfter() {
                       position: "absolute",
                       top: "8px",
                       left: "8px",
-                      fontSize: "11px",
+                      fontSize: "13px",
                       fontWeight: 600,
                       letterSpacing: "0.08em",
                       padding: "3px 10px",
@@ -110,7 +110,7 @@ export default function MBeforeAfter() {
                 <p style={{ margin: "0 0 2px", fontSize: "14px", fontWeight: 500, color: "rgba(255,255,255,0.85)" }}>
                   {c.type}
                 </p>
-                <p style={{ margin: 0, fontSize: "13px", color: C.gold }}>
+                <p style={{ margin: 0, fontSize: "14px", color: C.gold }}>
                   {c.cost}
                 </p>
               </div>
@@ -122,7 +122,7 @@ export default function MBeforeAfter() {
           style={{
             margin: 0,
             textAlign: "center",
-            fontSize: "12px",
+            fontSize: "14px",
             color: "rgba(255,255,255,0.4)",
             lineHeight: 1.7,
             letterSpacing: "0.02em",

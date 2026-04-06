@@ -48,8 +48,8 @@ export default function MOneStop() {
               }}
             >
               <p style={{ margin: "0 0 6px", fontSize: "22px", lineHeight: 1 }}>{s.icon}</p>
-              <p style={{ margin: "0 0 3px", fontSize: "clamp(12px, 3vw, 14px)", fontWeight: 600, color: M.dark }}>{s.name}</p>
-              <p style={{ margin: 0, fontSize: "11px", color: M.mid, letterSpacing: "0.03em" }}>{s.detail}</p>
+              <p style={{ margin: "0 0 3px", fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 600, color: M.dark }}>{s.name}</p>
+              <p style={{ margin: 0, fontSize: "13px", color: M.mid, letterSpacing: "0.03em" }}>{s.detail}</p>
             </div>
           ))}
         </div>
@@ -65,7 +65,7 @@ export default function MOneStop() {
           <p
             style={{
               margin: 0,
-              fontSize: "clamp(12px, 3.2vw, 13px)",
+              fontSize: "clamp(14px, 3vw, 16px)",
               color: C.textMid,
               lineHeight: 1.85,
               textAlign: "center",

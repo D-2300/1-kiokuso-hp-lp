@@ -28,7 +28,7 @@ export default function TenantSupportSection() {
       `}</style>
 
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-        <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 16px", textTransform: "uppercase", textAlign: "center" }}>
+        <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 16px", textTransform: "uppercase", textAlign: "center" }}>
           Tenant Support
         </p>
         <h3 style={{ fontSize: "20px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 40px", lineHeight: 1.6, textAlign: "center" }}>

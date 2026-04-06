@@ -21,10 +21,10 @@ export default function TenantProfiles() {
   return (
     <section style={{ padding: "48px 20px", background: "#fff" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        <p style={{ textAlign: "center", fontSize: "10px", fontWeight: 600, letterSpacing: "0.28em", color: "#C9A84C", marginBottom: "10px" }}>
+        <p style={{ textAlign: "center", fontSize: "12px", fontWeight: 600, letterSpacing: "0.28em", color: "#C9A84C", marginBottom: "10px" }}>
           WHO WE ARE
         </p>
-        <h2 style={{ fontSize: "clamp(17px, 3.4vw, 22px)", fontWeight: 700, color: "#1a1f14", textAlign: "center", marginBottom: "24px", lineHeight: 1.55, letterSpacing: "0.05em" }}>
+        <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#1a1f14", textAlign: "center", marginBottom: "24px", lineHeight: 1.55, letterSpacing: "0.05em" }}>
           KAI &amp; KEN
         </h2>
 
@@ -38,11 +38,11 @@ export default function TenantProfiles() {
               />
               <div>
                 <p style={{ fontSize: "16px", fontWeight: 900, color: "#1a1f14", marginBottom: "2px", letterSpacing: ".05em" }}>{p.name}</p>
-                <p style={{ fontSize: "11px", color: "#999", marginBottom: "8px" }}>{p.role}</p>
-                <p style={{ fontSize: "clamp(12px, 2vw, 13px)", color: "#666", lineHeight: 1.75 }}>{p.body}</p>
+                <p style={{ fontSize: "13px", color: "#999", marginBottom: "8px" }}>{p.role}</p>
+                <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "#666", lineHeight: 1.75 }}>{p.body}</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "10px" }}>
                   {p.tags.map((tag) => (
-                    <span key={tag} style={{ fontSize: "10px", fontWeight: 500, color: "#4A6741", background: "#EAF0E8", padding: "3px 9px", borderRadius: "100px" }}>
+                    <span key={tag} style={{ fontSize: "11px", fontWeight: 500, color: "#4A6741", background: "#EAF0E8", padding: "3px 9px", borderRadius: "100px" }}>
                       {tag}
                     </span>
                   ))}

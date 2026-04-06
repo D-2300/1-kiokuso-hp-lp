@@ -154,7 +154,7 @@ export default function StudioFooter() {
       <div style={{ marginTop: "24px", marginBottom: "8px" }}>
         <Link
           to="/privacy"
-          style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px", textDecoration: "none" }}
+          style={{ color: "rgba(255,255,255,0.3)", fontSize: "14px", textDecoration: "none" }}
         >
           プライバシーポリシー
         </Link>
@@ -162,7 +162,7 @@ export default function StudioFooter() {
       <p
         style={{
           color: "rgba(255,255,255,0.3)",
-          fontSize: "13px",
+          fontSize: "14px",
           letterSpacing: "0.05em",
           marginTop: 0,
           marginBottom: 0,

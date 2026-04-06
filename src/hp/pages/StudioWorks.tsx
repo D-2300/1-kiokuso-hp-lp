@@ -136,7 +136,7 @@ function PickupSection() {
           display: "inline-block",
           background: "#C9A84C",
           color: "#fff",
-          fontSize: "10px",
+          fontSize: "12px",
           fontWeight: 700,
           letterSpacing: "0.15em",
           padding: "3px 10px",
@@ -145,7 +145,7 @@ function PickupSection() {
         }}>
           PICKUP
         </span>
-        <span style={{ fontSize: "13px", color: "#888", letterSpacing: "0.08em" }}>
+        <span style={{ fontSize: "14px", color: "#888", letterSpacing: "0.08em" }}>
           ピックアップ記事
         </span>
       </div>
@@ -185,7 +185,7 @@ function PickupSection() {
             <div style={{ position: "absolute", bottom: "20px", left: "24px", right: "24px" }}>
               <p style={{
                 color: "rgba(255,255,255,0.6)",
-                fontSize: "11px",
+                fontSize: "13px",
                 letterSpacing: "0.2em",
                 margin: "0 0 6px",
                 textTransform: "uppercase",
@@ -194,7 +194,7 @@ function PickupSection() {
               </p>
               <p style={{
                 color: "#fff",
-                fontSize: "clamp(18px, 3.5vw, 26px)",
+                fontSize: "clamp(20px, 3.5vw, 28px)",
                 fontWeight: 700,
                 margin: "0 0 4px",
                 lineHeight: 1.4,
@@ -213,7 +213,7 @@ function PickupSection() {
                 { label: "坪数", value: "18坪" },
               ].map((s) => (
                 <span key={s.label} style={{
-                  fontSize: "12px",
+                  fontSize: "14px",
                   color: "#555",
                   border: "1px solid rgba(201,168,76,0.3)",
                   borderRadius: "4px",
@@ -232,7 +232,7 @@ function PickupSection() {
               閉店バーの什器をフル活用し、スケルトンから90万円・10日でバスケカフェバーを完成。施工の背景とプロセスを詳しく紹介しています。
             </p>
             <span style={{
-              fontSize: "13px",
+              fontSize: "14px",
               color: "#4A6741",
               fontWeight: 600,
               letterSpacing: "0.06em",
@@ -277,7 +277,7 @@ function WorkCard({ work }: { work: Work }) {
                 left: "8px",
                 background: "rgba(0,0,0,0.5)",
                 color: "#fff",
-                fontSize: "11px",
+                fontSize: "13px",
                 fontFamily: "'Noto Sans JP', sans-serif",
                 fontWeight: 700,
                 letterSpacing: "0.08em",
@@ -311,19 +311,19 @@ function WorkCard({ work }: { work: Work }) {
                 textAlign: "center",
               }}
             >
-              <p style={{ margin: 0, fontSize: "9px", color: colors.mute, fontWeight: 500 }}>{spec.label}</p>
-              <p style={{ margin: "1px 0 0", fontSize: "11px", fontWeight: 700, color: colors.text, whiteSpace: "nowrap" }}>
+              <p style={{ margin: 0, fontSize: "11px", color: colors.mute, fontWeight: 500 }}>{spec.label}</p>
+              <p style={{ margin: "1px 0 0", fontSize: "13px", fontWeight: 700, color: colors.text, whiteSpace: "nowrap" }}>
                 {spec.value}
               </p>
             </div>
           ))}
         </div>
-        <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 2.0, margin: "0 0 12px", whiteSpace: "pre-line", flex: 1 }}>
+        <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 2.0, margin: "0 0 12px", whiteSpace: "pre-line", flex: 1 }}>
           {work.story}
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", flexShrink: 0 }}>
           {work.tags.map((tag) => (
-            <span key={tag} style={{ fontSize: "11px", color: "#888" }}>
+            <span key={tag} style={{ fontSize: "13px", color: "#888" }}>
               #{tag}
             </span>
           ))}

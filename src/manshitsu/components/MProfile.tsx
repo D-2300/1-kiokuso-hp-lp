@@ -44,7 +44,7 @@ export default function MProfile() {
                 objectFit: "cover",
               }}
             />
-            <p style={{ margin: "6px 0 0", fontSize: "11px", letterSpacing: "0.06em", color: M.mid, fontWeight: 500 }}>
+            <p style={{ margin: "6px 0 0", fontSize: "13px", letterSpacing: "0.06em", color: M.mid, fontWeight: 500 }}>
               CSO
             </p>
             <p style={{ margin: 0, fontSize: "14px", fontWeight: 600, color: C.textDark }}>
@@ -54,7 +54,7 @@ export default function MProfile() {
 
           {/* Comment text */}
           <div style={{ flex: 1, minWidth: 0 }}>
-            <p style={{ margin: 0, fontSize: "clamp(13px, 3.2vw, 14px)", color: C.textMid, lineHeight: 1.9 }}>
+            <p style={{ margin: 0, fontSize: "clamp(14px, 3vw, 16px)", color: C.textMid, lineHeight: 1.9 }}>
               カフェやバー、美容室など年間50件以上の店舗内装を手がけてきた経験から、「空間の印象が人の行動を変える」と確信しています。その知見を賃貸の原状回復に応用し、"ただ戻す"のではなく"選ばれる部屋"をつくるのが私たちの仕事です。
             </p>
           </div>

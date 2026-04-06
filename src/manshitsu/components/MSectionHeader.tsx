@@ -29,7 +29,7 @@ export default function MSectionHeader({ label, heading, headingColor = C.textDa
         style={{
           margin: 0,
           fontFamily: "'Noto Serif JP', serif",
-          fontSize: "clamp(18px, 4.5vw, 24px)",
+          fontSize: "clamp(20px, 4.5vw, 28px)",
           fontWeight: 600,
           color: headingColor,
           lineHeight: 1.55,

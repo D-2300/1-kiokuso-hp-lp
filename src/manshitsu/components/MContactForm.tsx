@@ -83,7 +83,7 @@ export default function MContactForm() {
             style={{
               margin: "0 0 8px",
               fontFamily: "'Noto Serif JP', serif",
-              fontSize: "clamp(18px, 4.5vw, 22px)",
+              fontSize: "clamp(20px, 4.5vw, 28px)",
               fontWeight: 600,
               color: C.textDark,
               lineHeight: 1.5,
@@ -140,10 +140,10 @@ export default function MContactForm() {
             <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
               <label
                 htmlFor="mf-name"
-                style={{ fontSize: "13px", fontWeight: 500, color: C.textDark }}
+                style={{ fontSize: "14px", fontWeight: 500, color: C.textDark }}
               >
                 お名前
-                <span style={{ marginLeft: "6px", fontSize: "11px", color: C.gold, fontWeight: 400 }}>必須</span>
+                <span style={{ marginLeft: "6px", fontSize: "13px", color: C.gold, fontWeight: 400 }}>必須</span>
               </label>
               <input
                 id="mf-name"
@@ -160,10 +160,10 @@ export default function MContactForm() {
             <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
               <label
                 htmlFor="mf-contact"
-                style={{ fontSize: "13px", fontWeight: 500, color: C.textDark }}
+                style={{ fontSize: "14px", fontWeight: 500, color: C.textDark }}
               >
                 メールアドレスまたは電話番号
-                <span style={{ marginLeft: "6px", fontSize: "11px", color: C.gold, fontWeight: 400 }}>必須</span>
+                <span style={{ marginLeft: "6px", fontSize: "13px", color: C.gold, fontWeight: 400 }}>必須</span>
               </label>
               <input
                 id="mf-contact"
@@ -180,10 +180,10 @@ export default function MContactForm() {
             <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
               <label
                 htmlFor="mf-property"
-                style={{ fontSize: "13px", fontWeight: 500, color: C.textDark }}
+                style={{ fontSize: "14px", fontWeight: 500, color: C.textDark }}
               >
                 物件情報
-                <span style={{ marginLeft: "6px", fontSize: "11px", color: C.warmGray, fontWeight: 400 }}>任意</span>
+                <span style={{ marginLeft: "6px", fontSize: "13px", color: C.warmGray, fontWeight: 400 }}>任意</span>
               </label>
               <input
                 id="mf-property"
@@ -199,10 +199,10 @@ export default function MContactForm() {
             <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
               <label
                 htmlFor="mf-message"
-                style={{ fontSize: "13px", fontWeight: 500, color: C.textDark }}
+                style={{ fontSize: "14px", fontWeight: 500, color: C.textDark }}
               >
                 ご相談内容
-                <span style={{ marginLeft: "6px", fontSize: "11px", color: C.warmGray, fontWeight: 400 }}>任意</span>
+                <span style={{ marginLeft: "6px", fontSize: "13px", color: C.warmGray, fontWeight: 400 }}>任意</span>
               </label>
               <textarea
                 id="mf-message"
@@ -229,7 +229,7 @@ export default function MContactForm() {
                 borderRadius: "4px",
                 padding: "15px",
                 width: "100%",
-                fontSize: "15px",
+                fontSize: "16px",
                 fontWeight: 700,
                 border: "none",
                 cursor: submitting ? "not-allowed" : "pointer",
@@ -242,7 +242,7 @@ export default function MContactForm() {
               {submitting ? "送信中..." : "無料で見積もりを依頼する"}
             </button>
 
-            <p style={{ margin: 0, fontSize: "11px", color: C.warmGray, textAlign: "center", lineHeight: 1.7 }}>
+            <p style={{ margin: 0, fontSize: "13px", color: C.warmGray, textAlign: "center", lineHeight: 1.7 }}>
               お見積もりは無料です。お気軽にお問い合わせください。
             </p>
           </form>

@@ -16,12 +16,12 @@ export default function TenantBottomCTA() {
           maxHeight: "280px",
         }}
       />
-      <h2 style={{ fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#fff", marginBottom: "10px", lineHeight: 1.7 }}>
+      <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#fff", marginBottom: "10px", lineHeight: 1.7 }}>
         知らないまま契約して、<br />
         <em style={{ fontStyle: "normal", color: "#C9A84C" }}>損してからでは遅い</em>のです。
       </h2>
-      <p style={{ fontSize: "clamp(12px, 2vw, 14px)", color: "rgba(255,255,255,.4)", marginBottom: "28px", lineHeight: 1.8 }}>
-        無料ガイド2冊 + 非公開物件情報 + 個別アドバイス。<br />まずはLINEで受け取ってください。
+      <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "rgba(255,255,255,.4)", marginBottom: "28px", lineHeight: 1.8 }}>
+        無料ガイド2冊 + 非公開物件情報 + 個別アドバイス。<br />まずは気軽にLINEしてください。
       </p>
       <a
         href={LINE_URL}
@@ -35,7 +35,7 @@ export default function TenantBottomCTA() {
           color: "#fff",
           borderRadius: "999px",
           padding: "16px 36px",
-          fontSize: "clamp(15px, 2.8vw, 18px)",
+          fontSize: "clamp(16px, 3vw, 19px)",
           fontWeight: 700,
           textDecoration: "none",
           letterSpacing: ".03em",
@@ -45,7 +45,7 @@ export default function TenantBottomCTA() {
         <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
           <path d={lineSvgPath} />
         </svg>
-        LINEで無料ガイドを受け取る
+        LINEで気軽に相談してみる
       </a>
       <p style={{ fontSize: "12px", color: "rgba(255,255,255,.25)", marginTop: "14px" }}>
         無料・営業なし・LINE追加するだけ

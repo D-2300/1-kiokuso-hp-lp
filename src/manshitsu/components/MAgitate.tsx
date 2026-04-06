@@ -27,7 +27,7 @@ export default function MAgitate() {
         </p>
 
         <div style={{ marginBottom: "28px" }}>
-          <p style={{ margin: "0 0 10px", fontSize: "12px", fontWeight: 500, color: C.accentRed, letterSpacing: "0.05em" }}>
+          <p style={{ margin: "0 0 10px", fontSize: "14px", fontWeight: 500, color: C.accentRed, letterSpacing: "0.05em" }}>
             管理会社経由のルート
           </p>
           <div
@@ -53,7 +53,7 @@ export default function MAgitate() {
                     backgroundColor: "rgba(196,77,63,0.08)",
                     border: "1px solid rgba(196,77,63,0.15)",
                     color: i === 0 ? C.textDark : C.accentRed,
-                    fontSize: "clamp(11px, 2.8vw, 13px)",
+                    fontSize: "clamp(14px, 3vw, 16px)",
                     fontWeight: i === 0 ? 400 : 500,
                     whiteSpace: "nowrap",
                   }}
@@ -78,7 +78,7 @@ export default function MAgitate() {
             ▼
           </div>
 
-          <p style={{ margin: "0 0 10px", fontSize: "12px", fontWeight: 500, color: M.main, letterSpacing: "0.05em" }}>
+          <p style={{ margin: "0 0 10px", fontSize: "14px", fontWeight: 500, color: M.main, letterSpacing: "0.05em" }}>
             満室デザインLABOに直接のルート
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
@@ -91,7 +91,7 @@ export default function MAgitate() {
                     backgroundColor: "rgba(107,64,102,0.08)",
                     border: "1px solid rgba(107,64,102,0.2)",
                     color: i === 0 ? C.textDark : M.main,
-                    fontSize: "clamp(11px, 2.8vw, 13px)",
+                    fontSize: "clamp(14px, 3vw, 16px)",
                     fontWeight: i === 0 ? 400 : 600,
                     whiteSpace: "nowrap",
                   }}
@@ -107,16 +107,16 @@ export default function MAgitate() {
         </div>
 
         <div style={{ overflowX: "auto", marginBottom: "20px" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "clamp(12px, 3vw, 14px)" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "clamp(14px, 3vw, 16px)" }}>
             <thead>
               <tr>
-                <th style={{ padding: "10px 12px", textAlign: "left", borderBottom: `2px solid ${M.light}`, color: C.textMid, fontWeight: 500, fontSize: "11px", letterSpacing: "0.04em" }}>
+                <th style={{ padding: "10px 12px", textAlign: "left", borderBottom: `2px solid ${M.light}`, color: C.textMid, fontWeight: 500, fontSize: "13px", letterSpacing: "0.04em" }}>
                   1K（52㎡）全面の場合
                 </th>
-                <th style={{ padding: "10px 12px", textAlign: "right", borderBottom: `2px solid ${M.light}`, color: C.textMid, fontWeight: 500, fontSize: "11px" }}>
+                <th style={{ padding: "10px 12px", textAlign: "right", borderBottom: `2px solid ${M.light}`, color: C.textMid, fontWeight: 500, fontSize: "13px" }}>
                   管理会社経由
                 </th>
-                <th style={{ padding: "10px 12px", textAlign: "right", borderBottom: `2px solid ${M.main}`, backgroundColor: "rgba(107,64,102,0.03)", color: M.dark, fontWeight: 600, fontSize: "11px" }}>
+                <th style={{ padding: "10px 12px", textAlign: "right", borderBottom: `2px solid ${M.main}`, backgroundColor: "rgba(107,64,102,0.03)", color: M.dark, fontWeight: 600, fontSize: "13px" }}>
                   満室デザインLABO
                 </th>
               </tr>
@@ -147,7 +147,7 @@ export default function MAgitate() {
             marginBottom: "20px",
           }}
         >
-          <p style={{ margin: "0 0 6px", fontSize: "12px", color: "rgba(255,255,255,0.55)", letterSpacing: "0.06em" }}>
+          <p style={{ margin: "0 0 6px", fontSize: "14px", color: "rgba(255,255,255,0.55)", letterSpacing: "0.06em" }}>
             1回の退去で浮く金額
           </p>
           <p style={{ margin: "0 0 4px" }}>
@@ -155,7 +155,7 @@ export default function MAgitate() {
               約 41,400円
             </span>
           </p>
-          <p style={{ margin: 0, fontSize: "12px", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>
+          <p style={{ margin: 0, fontSize: "14px", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>
             年3回退去があれば、年間で約12万円のコスト削減
           </p>
         </div>
@@ -172,7 +172,7 @@ export default function MAgitate() {
             style={{
               margin: 0,
               fontFamily: "'Noto Sans JP', sans-serif",
-              fontSize: "clamp(12px, 3vw, 13px)",
+              fontSize: "clamp(14px, 3vw, 16px)",
               color: C.textDark,
               lineHeight: 1.85,
             }}

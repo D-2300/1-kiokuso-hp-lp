@@ -30,33 +30,27 @@ export default function TenantGuideSection() {
     <section style={{ background: "#fff", padding: "44px 20px 36px" }}>
       <div style={{ maxWidth: "680px", margin: "0 auto" }}>
 
-        {/* Header + Book side by side */}
-        <div style={{
-          display: "flex", gap: "16px", alignItems: "center",
-          marginBottom: "16px", flexWrap: "wrap",
-        }}>
-          <img
-            src="/images/guide-fudousan-book-sm.webp"
-            alt="不動産攻略ガイド"
-            style={{
-              width: "clamp(90px, 22vw, 130px)", height: "auto",
-              filter: "drop-shadow(0 3px 10px rgba(107,58,80,0.15))",
-              flexShrink: 0,
-            }}
-          />
-          <div style={{ flex: 1, minWidth: "180px" }}>
-            <p style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.28em", color: "#C9A84C", marginBottom: "6px" }}>
-              FREE GUIDE
-            </p>
-            <h2 style={{ fontSize: "clamp(17px, 3.4vw, 22px)", fontWeight: 700, color: "#1a1f14", lineHeight: 1.55, marginBottom: "6px" }}>
-              知らないだけで、<br />
-              数十万〜数百万円<em style={{ fontStyle: "normal", color: "#C9A84C" }}>損</em>しています。
-            </h2>
-            <p style={{ fontSize: "clamp(11px, 2vw, 12px)", color: "#888", lineHeight: 1.5 }}>
-              物件契約の前に知っておくべきことを<br />元不動産のプロがまとめました。
-            </p>
-          </div>
-        </div>
+        {/* Header + Book */}
+        <p style={{ textAlign: "center", fontSize: "12px", fontWeight: 600, letterSpacing: "0.28em", color: "#C9A84C", marginBottom: "10px" }}>
+          FREE GUIDE
+        </p>
+        <h2 style={{ textAlign: "center", fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#1a1f14", lineHeight: 1.55, marginBottom: "16px" }}>
+          <span style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "#888", fontWeight: 400 }}>"不動産屋の仕組み"を知らないだけで、</span><br />
+          数十万〜数百万円<em style={{ fontStyle: "normal", color: "#C9A84C" }}>損</em>しています。
+        </h2>
+        <img
+          src="/images/guide-fudousan-book-sm.webp"
+          alt="不動産攻略ガイド"
+          style={{
+            display: "block",
+            width: "clamp(160px, 40vw, 220px)", height: "auto",
+            margin: "0 auto 16px",
+            filter: "drop-shadow(0 4px 14px rgba(107,58,80,0.2))",
+          }}
+        />
+        <p style={{ textAlign: "center", fontSize: "clamp(14px, 3vw, 16px)", color: "#888", lineHeight: 1.6, marginBottom: "20px" }}>
+          物件契約の前に知っておくべきことを<br />元不動産のプロがまとめました。
+        </p>
 
         {/* Loss items - compact list */}
         <div style={{
@@ -64,18 +58,18 @@ export default function TenantGuideSection() {
           padding: "12px 14px", marginBottom: "16px",
           border: "1px solid rgba(204,51,51,0.08)",
         }}>
-          <p style={{ fontSize: "clamp(12px, 2.2vw, 13px)", fontWeight: 700, color: "#cc3333", marginBottom: "8px" }}>
+          <p style={{ fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 700, color: "#cc3333", marginBottom: "8px" }}>
             知らないと、こうなります：
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
             {losses.map((text, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ color: "#cc3333", fontSize: "12px", fontWeight: 700, flexShrink: 0 }}>✕</span>
-                <span style={{ fontSize: "clamp(11px, 2vw, 13px)", fontWeight: 600, color: "#444", lineHeight: 1.6 }}>{text}</span>
+                <span style={{ fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 600, color: "#444", lineHeight: 1.6 }}>{text}</span>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: "10px", color: "#aaa", marginTop: "8px", textAlign: "center" }}>
+          <p style={{ fontSize: "12px", color: "#aaa", marginTop: "8px", textAlign: "center" }}>
             ※ これらは全て、知っていれば防げることです。
           </p>
         </div>
@@ -88,7 +82,7 @@ export default function TenantGuideSection() {
           <p style={{ fontSize: "clamp(13px, 2.5vw, 15px)", fontWeight: 700, color: "#fff", lineHeight: 1.6, marginBottom: "4px" }}>
             これだけでも、受け取ってください。
           </p>
-          <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", marginBottom: "14px" }}>
+          <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.35)", marginBottom: "14px" }}>
             LINE登録で攻略ガイドを無料でお渡ししています。
           </p>
           <button
@@ -106,7 +100,7 @@ export default function TenantGuideSection() {
             </svg>
             LINEで攻略ガイドを受け取る
           </button>
-          <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.2)", marginTop: "10px" }}>
+          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.2)", marginTop: "10px" }}>
             無料・営業なし・LINE追加するだけ
           </p>
         </div>

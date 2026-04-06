@@ -244,22 +244,22 @@ export default function LPBeforeAfterSlider() {
   };
 
   return (
-    <section style={{ backgroundColor: "#fff" }}>
+    <section style={{ backgroundColor: "#f9f8f6" }}>
       <div
         style={{
           maxWidth: "720px",
           margin: "0 auto",
-          padding: "48px 24px 0",
+          padding: "40px 24px 40px",
         }}
       >
         {/* Section header */}
-        <div style={{ textAlign: "center", marginBottom: "32px" }}>
+        <div style={{ textAlign: "center", marginBottom: "20px" }}>
           <p
             style={{
               margin: "0 0 10px",
-              fontSize: "0.7rem",
-              fontWeight: 300,
-              letterSpacing: "4px",
+              fontSize: "10px",
+              fontWeight: 600,
+              letterSpacing: "0.28em",
               color: "#C9A84C",
               textTransform: "uppercase",
             }}
@@ -269,11 +269,10 @@ export default function LPBeforeAfterSlider() {
           <h2
             style={{
               margin: 0,
-              fontSize: "clamp(1.25rem, 4vw, 1.75rem)",
+              fontSize: "clamp(17px, 3.4vw, 22px)",
               fontWeight: 700,
-              color: "#1a1a1a",
-              lineHeight: 1.4,
-              letterSpacing: "-0.01em",
+              color: "#1a1f14",
+              lineHeight: 1.55,
             }}
           >
             実際に、こうなりました。
@@ -300,9 +299,9 @@ export default function LPBeforeAfterSlider() {
           style={{
             marginTop: "16px",
             padding: "16px 20px",
-            backgroundColor: "#f9f8f6",
+            backgroundColor: "#fff",
             borderRadius: "10px",
-            border: "1px solid #eee",
+            border: "1px solid #e8e4de",
           }}
         >
           <p
@@ -347,10 +346,10 @@ export default function LPBeforeAfterSlider() {
         </div>
 
         {/* Teaser thumbnails + LINE CTA */}
-        <div style={{ marginTop: "40px" }}>
+        <div style={{ marginTop: "28px" }}>
           <p
             style={{
-              margin: "0 0 16px",
+              margin: "0 0 12px",
               fontSize: "clamp(14px, 2.5vw, 16px)",
               fontWeight: 600,
               color: "#333",
@@ -366,7 +365,7 @@ export default function LPBeforeAfterSlider() {
               display: "grid",
               gridTemplateColumns: "repeat(4, 1fr)",
               gap: "8px",
-              marginBottom: "20px",
+              marginBottom: "16px",
             }}
           >
             {teaserCases.map((c, i) => (
@@ -425,7 +424,7 @@ export default function LPBeforeAfterSlider() {
             style={{
               background: "#2E4229",
               borderRadius: "14px",
-              padding: "28px 20px",
+              padding: "22px 20px",
               textAlign: "center",
               border: "1px solid rgba(201,168,76,0.2)",
             }}

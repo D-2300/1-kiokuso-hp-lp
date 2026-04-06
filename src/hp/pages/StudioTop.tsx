@@ -99,7 +99,7 @@ export default function StudioTop() {
         <ScrollFadeIn>
           <section style={{ padding: "80px 20px", textAlign: "center", backgroundColor: colors.beige }}>
             <div style={{ maxWidth: "480px", margin: "0 auto" }}>
-              <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 20px", textTransform: "uppercase" }}>
+              <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, margin: "0 0 20px", textTransform: "uppercase" }}>
                 What We Do
               </p>
               <p style={{ fontSize: "24px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 24px", lineHeight: 1.5 }}>
@@ -116,7 +116,7 @@ export default function StudioTop() {
                     border: "1px solid rgba(201,168,76,0.3)", borderRadius: "6px",
                     padding: "8px 20px", fontSize: "14px", color: colors.text,
                   }}>
-                    <span style={{ color: colors.mute, fontSize: "12px", marginRight: "6px" }}>{badge.label}</span>
+                    <span style={{ color: colors.mute, fontSize: "14px", marginRight: "6px" }}>{badge.label}</span>
                     {badge.value}
                   </div>
                 ))}
@@ -137,7 +137,7 @@ export default function StudioTop() {
                   style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
                 <div style={{ textAlign: "left" }}>
                   <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text }}>KEN</p>
-                  <p style={{ fontSize: "11px", color: colors.mute, marginTop: "2px" }}>記憶荘 店舗内装スタジオ</p>
+                  <p style={{ fontSize: "14px", color: colors.mute, marginTop: "2px" }}>記憶荘 店舗内装スタジオ</p>
                 </div>
               </div>
               <div style={{ fontSize: "15px", lineHeight: 2.4, color: colors.text, textAlign: "center" }}>
@@ -163,10 +163,10 @@ export default function StudioTop() {
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}>
               <span style={{
                 display: "inline-block", background: "#C9A84C", color: "#fff",
-                fontSize: "9px", fontWeight: 700, letterSpacing: "0.15em",
+                fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em",
                 padding: "2px 8px", borderRadius: "2px", textTransform: "uppercase",
               }}>PICKUP</span>
-              <span style={{ fontSize: "11px", color: "#888", letterSpacing: "0.06em" }}>
+              <span style={{ fontSize: "13px", color: "#888", letterSpacing: "0.06em" }}>
                 ピックアップ記事
               </span>
             </div>
@@ -177,16 +177,16 @@ export default function StudioTop() {
                 style={{ width: "100%", height: "100%", minHeight: "120px", objectFit: "cover", display: "block" }}
               />
               <div style={{ padding: "14px 16px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "6px" }}>
-                <p style={{ margin: 0, fontSize: "10px", color: "#C9A84C", letterSpacing: "0.12em", textTransform: "uppercase" }}>
+                <p style={{ margin: 0, fontSize: "12px", color: "#C9A84C", letterSpacing: "0.12em", textTransform: "uppercase" }}>
                   CASE 001
                 </p>
                 <p style={{ margin: 0, fontSize: "15px", fontWeight: 700, color: colors.text, lineHeight: 1.4 }}>
                   バスケットボール<br />Cafe&Bar CROSSOVER
                 </p>
-                <p style={{ margin: 0, fontSize: "12px", color: "#888", lineHeight: 1.6 }}>
+                <p style={{ margin: 0, fontSize: "14px", color: "#888", lineHeight: 1.6 }}>
                   ¥900,000・約10日・スケルトン
                 </p>
-                <span style={{ fontSize: "12px", color: "#4A6741", fontWeight: 600, marginTop: "2px" }}>
+                <span style={{ fontSize: "14px", color: "#4A6741", fontWeight: 600, marginTop: "2px" }}>
                   詳しく見る →
                 </span>
               </div>
@@ -197,7 +197,7 @@ export default function StudioTop() {
         {/* Works Preview */}
         <ScrollFadeIn>
           <section style={{ padding: "64px 0" }}>
-            <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, textAlign: "center", margin: "0 0 8px", textTransform: "uppercase" }}>
+            <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, textAlign: "center", margin: "0 0 8px", textTransform: "uppercase" }}>
               Works
             </p>
             <p style={{ fontSize: "20px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", textAlign: "center", margin: "0 0 32px" }}>
@@ -209,7 +209,7 @@ export default function StudioTop() {
                   <img src={w.img} alt={w.type}
                     style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "8px", display: "block" }} />
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginTop: "10px", padding: "0 2px" }}>
-                    <span style={{ fontSize: "13px", color: "#555" }}>{w.type}</span>
+                    <span style={{ fontSize: "14px", color: "#555" }}>{w.type}</span>
                     <span style={{ fontSize: "15px", fontWeight: 500, color: colors.text }}>{w.cost}</span>
                   </div>
                 </div>
@@ -217,7 +217,7 @@ export default function StudioTop() {
             </div>
             <div style={{ textAlign: "center", marginTop: "32px", padding: "0 24px" }}>
               <Link to="/studio/works"
-                style={{ fontSize: "13px", color: colors.fukamidori.main, textDecoration: "none", letterSpacing: "0.05em" }}
+                style={{ fontSize: "14px", color: colors.fukamidori.main, textDecoration: "none", letterSpacing: "0.05em" }}
                 onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
               >
@@ -240,18 +240,18 @@ export default function StudioTop() {
             <div style={{ display: "flex", justifyContent: "center", gap: "48px", flexWrap: "wrap" }}>
               <Link to="/studio/about" style={{ textDecoration: "none", textAlign: "center" }}>
                 <p style={{ fontSize: "14px", fontWeight: 300, letterSpacing: "0.15em", color: colors.text }}>About</p>
-                <p style={{ fontSize: "12px", color: colors.mute, marginTop: "4px" }}>スタジオについて</p>
-                <p style={{ fontSize: "13px", color: colors.fukamidori.main, marginTop: "8px" }}>→</p>
+                <p style={{ fontSize: "14px", color: colors.mute, marginTop: "4px" }}>スタジオについて</p>
+                <p style={{ fontSize: "14px", color: colors.fukamidori.main, marginTop: "8px" }}>→</p>
               </Link>
               <Link to="/studio/works" style={{ textDecoration: "none", textAlign: "center" }}>
                 <p style={{ fontSize: "14px", fontWeight: 300, letterSpacing: "0.15em", color: colors.text }}>Works</p>
-                <p style={{ fontSize: "12px", color: colors.mute, marginTop: "4px" }}>施工事例</p>
-                <p style={{ fontSize: "13px", color: colors.fukamidori.main, marginTop: "8px" }}>→</p>
+                <p style={{ fontSize: "14px", color: colors.mute, marginTop: "4px" }}>施工事例</p>
+                <p style={{ fontSize: "14px", color: colors.fukamidori.main, marginTop: "8px" }}>→</p>
               </Link>
               <Link to="/studio/pricing" style={{ textDecoration: "none", textAlign: "center" }}>
                 <p style={{ fontSize: "14px", fontWeight: 300, letterSpacing: "0.15em", color: colors.text }}>Pricing</p>
-                <p style={{ fontSize: "12px", color: colors.mute, marginTop: "4px" }}>料金の考え方</p>
-                <p style={{ fontSize: "13px", color: colors.fukamidori.main, marginTop: "8px" }}>→</p>
+                <p style={{ fontSize: "14px", color: colors.mute, marginTop: "4px" }}>料金の考え方</p>
+                <p style={{ fontSize: "14px", color: colors.fukamidori.main, marginTop: "8px" }}>→</p>
               </Link>
             </div>
           </section>

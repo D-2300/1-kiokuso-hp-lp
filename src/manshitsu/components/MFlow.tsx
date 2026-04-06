@@ -92,7 +92,7 @@ export default function MFlow() {
                     {step.tag && (
                       <span
                         style={{
-                          fontSize: "11px",
+                          fontSize: "13px",
                           fontWeight: 600,
                           color: C.white,
                           backgroundColor: step.tagColor,
@@ -107,7 +107,7 @@ export default function MFlow() {
                     {step.tag2 && (
                       <span
                         style={{
-                          fontSize: "11px",
+                          fontSize: "13px",
                           fontWeight: 600,
                           color: C.white,
                           backgroundColor: step.tag2Color,
@@ -120,7 +120,7 @@ export default function MFlow() {
                       </span>
                     )}
                   </div>
-                  <p style={{ margin: 0, fontSize: "clamp(13px, 3.2vw, 14px)", color: C.textMid, lineHeight: 1.8 }}>
+                  <p style={{ margin: 0, fontSize: "clamp(14px, 3vw, 16px)", color: C.textMid, lineHeight: 1.8 }}>
                     {step.body}
                   </p>
                 </div>

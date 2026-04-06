@@ -23,7 +23,7 @@ function CompareCol({
     >
       <p
         style={{
-          fontSize: "10px",
+          fontSize: "12px",
           fontWeight: 700,
           letterSpacing: "0.12em",
           textAlign: "center",
@@ -36,7 +36,7 @@ function CompareCol({
       <p
         style={{
           textAlign: "center",
-          fontSize: "clamp(12px, 2.3vw, 14px)",
+          fontSize: "clamp(14px, 3vw, 16px)",
           fontWeight: 700,
           lineHeight: 1.5,
           marginBottom: "14px",
@@ -52,7 +52,7 @@ function CompareCol({
           <li
             key={i}
             style={{
-              fontSize: "clamp(10.5px, 1.9vw, 12px)",
+              fontSize: "clamp(12px, 2.5vw, 14px)",
               lineHeight: 1.55,
               display: "flex",
               alignItems: "flex-start",
@@ -79,7 +79,7 @@ export default function TenantFairEval() {
         <p
           style={{
             textAlign: "center",
-            fontSize: "10px",
+            fontSize: "12px",
             fontWeight: 600,
             letterSpacing: "0.28em",
             color: "#C9A84C",
@@ -90,7 +90,7 @@ export default function TenantFairEval() {
         </p>
         <h2
           style={{
-            fontSize: "clamp(18px, 3.6vw, 24px)",
+            fontSize: "clamp(20px, 4.5vw, 28px)",
             fontWeight: 700,
             color: "#1a1f14",
             textAlign: "center",
@@ -104,7 +104,7 @@ export default function TenantFairEval() {
         <p
           style={{
             textAlign: "center",
-            fontSize: "clamp(11px, 2vw, 13px)",
+            fontSize: "clamp(14px, 3vw, 16px)",
             color: "#888",
             marginBottom: "28px",
             lineHeight: 1.6,
@@ -158,7 +158,7 @@ export default function TenantFairEval() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "10px",
+              fontSize: "12px",
               fontWeight: 900,
               color: "#999",
               letterSpacing: "0.05em",
@@ -185,21 +185,21 @@ export default function TenantFairEval() {
             marginBottom: "32px",
           }}
         >
-          <span style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em", color: "#C9A84C" }}>
+          <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em", color: "#C9A84C" }}>
             収益モデル
           </span>
           <span style={{ color: "#ddd" }}>|</span>
-          <span style={{ fontSize: "clamp(11px, 2vw, 13px)", fontWeight: 700, color: "#1a1f14" }}>
+          <span style={{ fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 700, color: "#1a1f14" }}>
             物件探し <span style={{ color: "#999", fontWeight: 900 }}>¥0</span>
           </span>
           <span style={{ fontSize: "12px", color: "#ccc" }}>→</span>
-          <span style={{ fontSize: "clamp(11px, 2vw, 13px)", fontWeight: 700, color: "#2E4229" }}>
+          <span style={{ fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 700, color: "#2E4229" }}>
             内装工事が本業
           </span>
         </div>
 
         {/* Footnote */}
-        <p style={{ textAlign: "center", fontSize: "10px", color: "#aaa", lineHeight: 1.7 }}>
+        <p style={{ textAlign: "center", fontSize: "12px", color: "#aaa", lineHeight: 1.7 }}>
           ※ 物件情報のご紹介・ご相談は無料です。契約を急かすことは一切ありません。
         </p>
       </div>

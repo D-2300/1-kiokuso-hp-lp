@@ -212,7 +212,7 @@ export default function GroupTop() {
               }}
             >
               <img src="/assets/logos/logo-group-dark.webp" alt="" style={{ height: "36px" }} />
-              <span style={{ fontSize: "11px", color: "#999", letterSpacing: "0.1em" }}>記憶荘グループ</span>
+              <span style={{ fontSize: "13px", color: "#999", letterSpacing: "0.1em" }}>記憶荘グループ</span>
             </div>
 
             <p style={{ fontSize: "15px", fontWeight: 400, color: "#666", lineHeight: 1.9, textAlign: "center", marginBottom: "32px", fontFamily: "'Noto Sans JP', sans-serif" }}>
@@ -246,20 +246,20 @@ export default function GroupTop() {
                   <div style={{ marginBottom: "12px" }}>
                     <img src={b.logoSrc} alt="" style={{ height: "32px" }} />
                   </div>
-                  <p style={{ fontSize: "13px", fontWeight: 500, color: "#fff", marginBottom: "4px" }}>
+                  <p style={{ fontSize: "14px", fontWeight: 500, color: "#fff", marginBottom: "4px" }}>
                     {b.nameJa}
                   </p>
-                  <p style={{ fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", color: "rgba(255,255,255,0.7)", marginBottom: "8px" }}>
+                  <p style={{ fontSize: "13px", fontWeight: 300, letterSpacing: "0.12em", color: "rgba(255,255,255,0.7)", marginBottom: "8px" }}>
                     {b.nameEn}
                   </p>
-                  <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.8)", marginBottom: "16px" }}>
+                  <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.8)", marginBottom: "16px" }}>
                     {b.desc}
                   </p>
-                  <p style={{ fontSize: "12px", color: "#C9A84C", fontWeight: 500 }}>
+                  <p style={{ fontSize: "14px", color: "#C9A84C", fontWeight: 500 }}>
                     詳しく見る →
                   </p>
                   {!b.active && (
-                    <p style={{ fontSize: "12px", color: "#BBB", fontWeight: 400, marginTop: "4px" }}>
+                    <p style={{ fontSize: "14px", color: "#BBB", fontWeight: 400, marginTop: "4px" }}>
                       準備中
                     </p>
                   )}
@@ -282,10 +282,10 @@ export default function GroupTop() {
                 to="/about"
                 style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
               >
-                <p style={{ fontSize: "13px", fontWeight: 300, letterSpacing: "0.2em", color: colors.sub }}>
+                <p style={{ fontSize: "14px", fontWeight: 300, letterSpacing: "0.2em", color: colors.sub }}>
                   About
                 </p>
-                <p style={{ fontSize: "12px", color: colors.mute, marginTop: "4px", marginBottom: "12px" }}>
+                <p style={{ fontSize: "14px", color: colors.mute, marginTop: "4px", marginBottom: "12px" }}>
                   記憶荘について
                 </p>
                 <p style={{ fontSize: "14px", color: colors.shuurushi.main, cursor: "pointer" }}>→</p>

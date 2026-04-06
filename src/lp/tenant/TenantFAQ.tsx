@@ -21,17 +21,17 @@ export default function TenantFAQ() {
   return (
     <section style={{ padding: "64px 24px", background: "#f9f8f6" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "clamp(18px, 3.5vw, 24px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
+        <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
           よくある質問
         </h2>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
           {faqs.map((faq, i) => (
             <div key={i}>
-              <p style={{ fontSize: "clamp(13px, 2.2vw, 14px)", fontWeight: 700, color: "#4A6741", marginBottom: "6px" }}>
+              <p style={{ fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 700, color: "#4A6741", marginBottom: "6px" }}>
                 {faq.q}
               </p>
-              <p style={{ fontSize: "clamp(13px, 2.2vw, 14px)", color: "#666", lineHeight: 1.85 }}>
+              <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "#666", lineHeight: 1.85 }}>
                 {faq.a}
               </p>
             </div>

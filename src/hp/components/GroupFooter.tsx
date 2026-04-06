@@ -17,7 +17,7 @@ export default function GroupFooter() {
       <p
         style={{
           color: "#D4A0A0",
-          fontSize: "12px",
+          fontSize: "14px",
           fontWeight: 300,
           letterSpacing: "0.2em",
           marginBottom: "32px",
@@ -96,7 +96,7 @@ export default function GroupFooter() {
       <div style={{ marginBottom: "8px" }}>
         <Link
           to="/privacy"
-          style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px", textDecoration: "none" }}
+          style={{ color: "rgba(255,255,255,0.3)", fontSize: "14px", textDecoration: "none" }}
         >
           プライバシーポリシー
         </Link>
@@ -104,7 +104,7 @@ export default function GroupFooter() {
       <p
         style={{
           color: "#B06060",
-          fontSize: "11px",
+          fontSize: "13px",
           letterSpacing: "0.05em",
         }}
       >

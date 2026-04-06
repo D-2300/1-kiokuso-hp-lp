@@ -112,7 +112,7 @@ export default function GroupNav() {
         }}>✕</button>
         {/* グループ本体 */}
         <p style={{
-          fontSize: "10px",
+          fontSize: "12px",
           fontWeight: 700,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
@@ -139,7 +139,7 @@ export default function GroupNav() {
 
         {/* 事業体 */}
         <p style={{
-          fontSize: "10px",
+          fontSize: "12px",
           fontWeight: 700,
           letterSpacing: "0.2em",
           textTransform: "uppercase",

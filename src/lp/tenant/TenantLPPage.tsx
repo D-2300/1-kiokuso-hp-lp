@@ -5,7 +5,7 @@ import TenantGuideSection from "./TenantGuideSection";
 import TenantBeforeAfterCTA from "./TenantBeforeAfterCTA";
 import TenantNetworkInfo from "./TenantNetworkInfo";
 import TenantSteps from "./TenantSteps";
-import TenantMidCTA from "./TenantMidCTA";
+// TenantMidCTA removed - redundant with TenantGuideSection CTA
 import TenantFairEval from "./TenantFairEval";
 import TenantProfiles from "./TenantProfiles";
 import TenantFAQ from "./TenantFAQ";
@@ -31,14 +31,13 @@ export default function TenantLPPage() {
       <TenantSteps />
       <TenantGuideSection />
       <TenantBeforeAfterCTA />
-      <TenantMidCTA />
       <TenantFairEval />
       <TenantProfiles />
       <TenantFAQ />
       <TenantBottomCTA />
       <TenantMailForm />
       <TenantFooter />
-      <LPFloatingLine />
+      <LPFloatingLine label="無料で物件情報を受け取る" />
     </div>
   );
 }

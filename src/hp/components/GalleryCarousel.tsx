@@ -99,7 +99,7 @@ export default function GalleryCarousel({ photos }: Props) {
                     className="w-full h-[240px] object-cover"
                     loading="lazy"
                   />
-                  <div className="text-[10px] tracking-[2px] text-[#888] uppercase mt-2">
+                  <div className="text-[12px] tracking-[2px] text-[#888] uppercase mt-2">
                     {photo.phase}
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function GalleryCarousel({ photos }: Props) {
                 }`}
                 loading="lazy"
               />
-              <div className="text-[10px] tracking-[2px] text-[#888] uppercase mt-1.5">
+              <div className="text-[12px] tracking-[2px] text-[#888] uppercase mt-1.5">
                 {photo.phase}
               </div>
             </div>

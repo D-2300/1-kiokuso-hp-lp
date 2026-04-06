@@ -1,3 +1,5 @@
+> **共通コンテキスト（正本）: C:\Users\inoue\claude-context\kiokuso_sub_context\CLAUDE.md を最初に読むこと**
+> ※ 親フォルダ（claude-context\CLAUDE.md）は廃止。kiokuso_sub_context内のものが唯一の正本。
 # 記憶荘（Kiokuso）LP/HP プロジェクト
 
 ## 概要
