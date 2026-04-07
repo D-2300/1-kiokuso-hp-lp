@@ -7,51 +7,70 @@ const steps = [
 
 export default function TenantSteps() {
   return (
-    <section style={{ padding: "44px 20px 40px", background: "#f9f8f6" }}>
+    <section id="tenant-steps" style={{ padding: "44px 20px 40px", background: "#f9f8f6" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto" }}>
         <p style={{ textAlign: "center", fontSize: "12px", fontWeight: 600, letterSpacing: "0.28em", color: "#C9A84C", marginBottom: "10px" }}>
           STEPS
         </p>
-        <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#1a1f14", textAlign: "center", marginBottom: "20px", lineHeight: 1.55 }}>
+        <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#1a1f14", textAlign: "center", marginBottom: "8px", lineHeight: 1.55 }}>
           物件情報を受け取るまでの<span style={{ color: "#06C755" }}>かんたん3ステップ</span>
         </h2>
+        <p style={{ textAlign: "center", fontSize: "clamp(13px, 2.5vw, 15px)", fontWeight: 700, color: "#06C755", marginBottom: "20px" }}>
+          不動産攻略ガイド プレゼント中！
+        </p>
 
-        {/* Steps - compact horizontal cards */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "0", marginBottom: "20px" }}>
-          {steps.map((s, i) => {
-            const isFirst = s.num === 1;
-            return (
-              <div key={s.num}>
-                <div style={{
-                  display: "flex", gap: "12px", alignItems: "center",
-                  padding: isFirst ? "14px 16px" : "12px 14px",
-                  background: isFirst ? "#06C755" : "#fff",
-                  borderRadius: "12px",
-                  border: isFirst ? "none" : "1px solid #eee",
-                }}>
-                  <div style={{
-                    width: "36px", height: "36px", borderRadius: "50%", flexShrink: 0,
-                    background: isFirst ? "#fff" : "linear-gradient(135deg, #06C755, #05a847)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: isFirst ? "#06C755" : "#fff", fontSize: "15px", fontWeight: 900,
-                  }}>
-                    {s.num}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
-                      <span style={{ fontSize: "clamp(15px, 3vw, 17px)", fontWeight: 700, color: isFirst ? "#fff" : "#222" }}>{s.title}</span>
-                      <span style={{ fontSize: "12px", fontWeight: 600, color: isFirst ? "rgba(255,255,255,0.7)" : "#06C755" }}>{s.time}</span>
-                    </div>
-                    <p style={{ fontSize: "clamp(13px, 2.5vw, 14px)", color: isFirst ? "rgba(255,255,255,0.85)" : "#888", marginTop: "2px", fontWeight: isFirst ? 600 : 400 }}>{s.desc}</p>
-                  </div>
+        {/* Visual flow infographic - LINE green background band */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0",
+            marginBottom: "28px",
+            padding: "16px 8px",
+            background: "#06C755",
+            borderRadius: "16px",
+          }}
+        >
+          {[
+            { img: "/images/step-line-register-sm.webp", label: "LINE追加", time: "10秒", highlight: true },
+            { img: "/images/step-line-send-sm.webp", label: "希望を伝える", time: "2分", highlight: false },
+            { img: "/images/step-tenant-info-sm.webp", label: "物件情報GET", time: "数日〜", highlight: false },
+          ].map((step, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center" }}>
+              {i > 0 && (
+                <div style={{ padding: "0 clamp(4px, 1.5vw, 12px)", marginBottom: "16px" }}>
+                  <svg viewBox="0 0 24 12" style={{ width: "clamp(18px, 4vw, 28px)", height: "auto" }}>
+                    <path d="M0 6h20m0 0l-5-4m5 4l-5 4" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </div>
-                {i < steps.length - 1 && (
-                  <div style={{ textAlign: "center", color: "#ddd", fontSize: "14px", lineHeight: 1, padding: "2px 0" }}>↓</div>
-                )}
+              )}
+              <div style={{ textAlign: "center" }}>
+                <div
+                  style={{
+                    width: "clamp(88px, 22vw, 130px)",
+                    height: "clamp(88px, 22vw, 130px)",
+                    borderRadius: "14px",
+                    overflow: "hidden",
+                    margin: "0 auto 6px",
+                    border: step.highlight ? "2.5px solid #fff" : "2px solid rgba(255,255,255,.5)",
+                    boxShadow: "0 4px 16px rgba(0,0,0,.15)",
+                  }}
+                >
+                  <img
+                    src={step.img}
+                    alt={step.label}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                </div>
+                <span style={{ fontSize: "clamp(10px, 2vw, 12px)", fontWeight: 700, color: "#fff", display: "block" }}>{step.label}</span>
+                <span style={{ fontSize: "clamp(9px, 1.6vw, 10px)", color: "rgba(255,255,255,0.6)", display: "block", marginTop: "2px" }}>{step.time}</span>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
+
+        {/* Steps - removed duplicate cards, visual flow above is sufficient */}
 
         {/* Trust badges + message combined */}
         <div style={{

@@ -6,6 +6,16 @@ Claude Code / Claude Cowork間の作業同期用ログ。
 
 ---
 
+## 2026-04-08
+### テナントLP 案A+C — Hero統合 & セクション構成大幅見直し
+- [Code] **TenantHero.tsx 全面リライト**：H1を「お店の成功は、物件選びから始まっている。」に変更（伴走・パートナーシップ訴求）。サブコピー「内装をつくる側だから、この物件で成功できるかから一緒に考えられます。物件探しから、伴走します。」。物件チラ見せ（AVAILABLE NOW）をHero内に統合 — 14件プールから6件ランダム表示、ルーレット演出、blur家賃、カラーライン7色、ページロード時にアニメーション自動発火。CTAもHero内に配置
+- [Code] **TenantYourSide.tsx 新規作成（YOUR SIDE）**：Hero直後の2段目。3つの問いかけカード（集客・第一印象・交渉）をインラインSVGイラスト付きで表示。結論ブリッジ「物件をつくる側だから」のAha!メッセージ、無料相談バッジ
+- [Code] **TenantLPPage.tsx 構成変更**：Hero(物件リスト統合) → YourSide → Steps → Guide → BA → FairEval → Profiles → FAQ → CTA。HeroBand・NetworkInfo・旧AvailableNow(独立版)を削除
+- [Code] **TenantSteps.tsx**：id="tenant-steps" 追加（YOUR SIDEからのアンカーリンク用）
+- 背景: Clarity録画分析で「興味はあるがLINE登録せず離脱」するユーザー層の取り込みを狙う施策。CVR 7.9% → 10%+ 目標
+
+---
+
 ## 2026-04-06
 ### テナントLP大幅改修 & サイト全体フォントサイズ拡大
 - [Code] **テナントLPヒーローにインフォグラフィック追加**：LINE追加→希望を伝える→物件情報GETの3ステップをAI生成イラスト付きで表示。ユーザーが瞬間的にサービスの流れを理解できるように
