@@ -18,20 +18,130 @@ interface Property {
 }
 
 const allProperties: Property[] = [
+  // 仙台市青葉区
   { area: "国分町", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "1F"], rent: "20万円", color: "warm" },
   { area: "一番町", type: "skeleton", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "15万円", color: "blue" },
-  { area: "青葉区", type: "inuki", tsubo: "10坪〜", tags: ["飲食可", "設備込"], rent: "10万円", color: "green" },
-  { area: "宮城野区", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "18万円", color: "purple" },
-  { area: "泉区", type: "skeleton", tsubo: "30坪〜", tags: ["飲食可", "新築"], rent: "12万円", color: "teal" },
-  { area: "太白区", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "角地"], rent: "14万円", color: "slate" },
   { area: "青葉通", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "B1F"], rent: "16万円", color: "rose" },
   { area: "国分町", type: "inuki", tsubo: "〜10坪", tags: ["飲食可", "小規模"], rent: "8万円", color: "warm" },
-  { area: "長町", type: "skeleton", tsubo: "30坪〜", tags: ["飲食可", "駅近"], rent: "22万円", color: "blue" },
   { area: "五橋", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "13万円", color: "green" },
   { area: "本町", type: "skeleton", tsubo: "〜30坪", tags: ["オフィス街", "路面"], rent: "19万円", color: "purple" },
-  { area: "南光台", type: "inuki", tsubo: "40坪〜", tags: ["飲食可", "駐車場"], rent: "11万円", color: "teal" },
   { area: "中央", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "2F"], rent: "9万円", color: "slate" },
+  { area: "一番町", type: "inuki", tsubo: "10坪〜", tags: ["飲食可", "角地"], rent: "12万円", color: "teal" },
+  { area: "大町", type: "skeleton", tsubo: "〜25坪", tags: ["飲食可", "路面"], rent: "18万円", color: "blue" },
+  { area: "立町", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "1F"], rent: "11万円", color: "warm" },
+  { area: "上杉", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "14万円", color: "green" },
+  { area: "北目町", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "10万円", color: "slate" },
+  { area: "花京院", type: "skeleton", tsubo: "〜15坪", tags: ["飲食可", "駅近"], rent: "16万円", color: "rose" },
+  { area: "木町通", type: "inuki", tsubo: "10坪〜", tags: ["飲食可", "小規模"], rent: "7万円", color: "purple" },
+  { area: "国分町", type: "skeleton", tsubo: "30坪〜", tags: ["飲食可", "B1F"], rent: "22万円", color: "teal" },
+  { area: "広瀬町", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "2F"], rent: "9万円", color: "blue" },
+  { area: "春日町", type: "inuki", tsubo: "〜10坪", tags: ["飲食可", "路面"], rent: "8万円", color: "warm" },
+  // 仙台市宮城野区
+  { area: "宮城野区", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "18万円", color: "purple" },
   { area: "仙台駅東", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "駅前"], rent: "17万円", color: "rose" },
+  { area: "榴岡", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "14万円", color: "green" },
+  { area: "小田原", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "1F"], rent: "12万円", color: "slate" },
+  { area: "原町", type: "inuki", tsubo: "〜25坪", tags: ["飲食可", "駐車場"], rent: "10万円", color: "teal" },
+  { area: "苦竹", type: "skeleton", tsubo: "30坪〜", tags: ["飲食可", "新築"], rent: "15万円", color: "warm" },
+  { area: "宮城野", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "角地"], rent: "11万円", color: "blue" },
+  { area: "岩切", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "8万円", color: "purple" },
+  // 仙台市若林区
+  { area: "若林区", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "13万円", color: "green" },
+  { area: "荒井", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駅近"], rent: "12万円", color: "rose" },
+  { area: "連坊", type: "skeleton", tsubo: "〜15坪", tags: ["飲食可", "1F"], rent: "10万円", color: "slate" },
+  { area: "卸町", type: "inuki", tsubo: "30坪〜", tags: ["飲食可", "駐車場"], rent: "9万円", color: "teal" },
+  { area: "河原町", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "14万円", color: "warm" },
+  { area: "六丁の目", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "新築"], rent: "11万円", color: "blue" },
+  // 仙台市泉区
+  { area: "泉区", type: "skeleton", tsubo: "30坪〜", tags: ["飲食可", "新築"], rent: "12万円", color: "teal" },
+  { area: "泉中央", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "駅近"], rent: "15万円", color: "purple" },
+  { area: "八乙女", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "11万円", color: "green" },
+  { area: "将監", type: "inuki", tsubo: "〜25坪", tags: ["飲食可", "路面"], rent: "10万円", color: "rose" },
+  { area: "南中山", type: "skeleton", tsubo: "〜15坪", tags: ["飲食可", "1F"], rent: "9万円", color: "slate" },
+  { area: "市名坂", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "角地"], rent: "8万円", color: "warm" },
+  // 仙台市太白区
+  { area: "太白区", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "角地"], rent: "14万円", color: "slate" },
+  { area: "長町", type: "skeleton", tsubo: "30坪〜", tags: ["飲食可", "駅近"], rent: "22万円", color: "blue" },
+  { area: "南光台", type: "inuki", tsubo: "40坪〜", tags: ["飲食可", "駐車場"], rent: "11万円", color: "teal" },
+  { area: "長町南", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "16万円", color: "warm" },
+  { area: "富沢", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駅近"], rent: "13万円", color: "purple" },
+  { area: "鈎取", type: "skeleton", tsubo: "〜30坪", tags: ["飲食可", "駐車場"], rent: "10万円", color: "green" },
+  { area: "西多賀", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "9万円", color: "rose" },
+  { area: "山田", type: "inuki", tsubo: "30坪〜", tags: ["飲食可", "駐車場"], rent: "7万円", color: "slate" },
+  // 石巻市
+  { area: "石巻駅前", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "路面"], rent: "10万円", color: "warm" },
+  { area: "石巻中央", type: "skeleton", tsubo: "〜25坪", tags: ["飲食可", "1F"], rent: "8万円", color: "blue" },
+  { area: "蛇田", type: "inuki", tsubo: "30坪〜", tags: ["飲食可", "駐車場"], rent: "9万円", color: "green" },
+  { area: "石巻西", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "駅近"], rent: "11万円", color: "purple" },
+  // 大崎市
+  { area: "古川駅前", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "駅近"], rent: "9万円", color: "teal" },
+  { area: "古川", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "路面"], rent: "8万円", color: "rose" },
+  { area: "古川七日町", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "1F"], rent: "7万円", color: "slate" },
+  { area: "三本木", type: "skeleton", tsubo: "30坪〜", tags: ["飲食可", "駐車場"], rent: "6万円", color: "warm" },
+  // 名取市
+  { area: "名取駅前", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "駅近"], rent: "12万円", color: "blue" },
+  { area: "杜せきのした", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "路面"], rent: "14万円", color: "green" },
+  { area: "名取", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "駐車場"], rent: "9万円", color: "purple" },
+  { area: "増田", type: "skeleton", tsubo: "〜25坪", tags: ["飲食可", "1F"], rent: "10万円", color: "teal" },
+  // 多賀城市
+  { area: "多賀城駅前", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "駅近"], rent: "10万円", color: "rose" },
+  { area: "多賀城", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "路面"], rent: "8万円", color: "slate" },
+  // 塩竈市
+  { area: "塩釜駅前", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "9万円", color: "warm" },
+  { area: "本塩釜", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "駅近"], rent: "8万円", color: "blue" },
+  { area: "塩釜", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "1F"], rent: "7万円", color: "green" },
+  // 岩沼市
+  { area: "岩沼駅前", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "駅近"], rent: "9万円", color: "purple" },
+  { area: "岩沼", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "8万円", color: "teal" },
+  // 富谷市
+  { area: "富谷", type: "inuki", tsubo: "30坪〜", tags: ["飲食可", "駐車場"], rent: "10万円", color: "rose" },
+  { area: "成田", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "新築"], rent: "11万円", color: "slate" },
+  // 利府町
+  { area: "利府", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "8万円", color: "warm" },
+  { area: "利府駅前", type: "skeleton", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "9万円", color: "blue" },
+  // 大和町・大衡村
+  { area: "大和", type: "inuki", tsubo: "30坪〜", tags: ["飲食可", "駐車場"], rent: "7万円", color: "green" },
+  { area: "吉岡", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "8万円", color: "purple" },
+  // 気仙沼市
+  { area: "気仙沼", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "7万円", color: "teal" },
+  { area: "気仙沼駅前", type: "skeleton", tsubo: "〜15坪", tags: ["飲食可", "1F"], rent: "6万円", color: "rose" },
+  // 登米市
+  { area: "登米", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "6万円", color: "slate" },
+  { area: "佐沼", type: "skeleton", tsubo: "〜25坪", tags: ["飲食可", "路面"], rent: "7万円", color: "warm" },
+  // 栗原市
+  { area: "栗原", type: "inuki", tsubo: "30坪〜", tags: ["飲食可", "駐車場"], rent: "5万円", color: "blue" },
+  { area: "築館", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "6万円", color: "green" },
+  // 白石市
+  { area: "白石駅前", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "駅近"], rent: "7万円", color: "purple" },
+  { area: "白石", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "路面"], rent: "6万円", color: "teal" },
+  // 角田市
+  { area: "角田", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "6万円", color: "rose" },
+  // 東松島市
+  { area: "矢本", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "7万円", color: "slate" },
+  { area: "東松島", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "8万円", color: "warm" },
+  // 亘理町・山元町
+  { area: "亘理", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "7万円", color: "blue" },
+  { area: "山元", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "6万円", color: "green" },
+  // 柴田町・大河原町
+  { area: "大河原", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "駅近"], rent: "8万円", color: "purple" },
+  { area: "柴田", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "7万円", color: "teal" },
+  { area: "船岡", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "6万円", color: "rose" },
+  // 村田町・川崎町
+  { area: "村田", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "5万円", color: "slate" },
+  // 松島町・七ヶ浜町
+  { area: "松島", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "9万円", color: "warm" },
+  { area: "七ヶ浜", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "1F"], rent: "8万円", color: "blue" },
+  // 仙台市追加
+  { area: "あすと長町", type: "skeleton", tsubo: "〜25坪", tags: ["飲食可", "新築"], rent: "18万円", color: "green" },
+  { area: "北四番丁", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "12万円", color: "purple" },
+  { area: "勾当台", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "B1F"], rent: "20万円", color: "teal" },
+  { area: "仙台駅西", type: "inuki", tsubo: "〜10坪", tags: ["飲食可", "駅近"], rent: "15万円", color: "rose" },
+  { area: "東照宮", type: "inuki", tsubo: "20坪〜", tags: ["飲食可", "駐車場"], rent: "10万円", color: "slate" },
+  { area: "北仙台", type: "skeleton", tsubo: "〜20坪", tags: ["飲食可", "駅近"], rent: "13万円", color: "warm" },
+  { area: "台原", type: "inuki", tsubo: "〜15坪", tags: ["飲食可", "路面"], rent: "9万円", color: "blue" },
+  { area: "旭ヶ丘", type: "skeleton", tsubo: "20坪〜", tags: ["飲食可", "1F"], rent: "11万円", color: "green" },
+  { area: "薬師堂", type: "inuki", tsubo: "〜20坪", tags: ["飲食可", "路面"], rent: "10万円", color: "purple" },
+  { area: "愛宕橋", type: "skeleton", tsubo: "〜15坪", tags: ["飲食可", "駅近"], rent: "12万円", color: "teal" },
 ];
 
 const colorMap: Record<ColorName, string> = {
@@ -57,9 +167,9 @@ function getUpdateDate(): string {
 }
 
 const statusTexts = [
-  "物件情報を照合中...",
-  "条件に合う物件を検索中...",
-  "ネットワークから最新情報を取得中...",
+  "物件情報を読み込み中...",
+  "宮城県内の最新情報を取得中...",
+  "非公開物件を確認中...",
 ];
 
 export default function TenantHero() {
@@ -179,7 +289,7 @@ export default function TenantHero() {
             {updateDate}
           </p>
           <p style={{ fontSize: "12px", color: phase === "done" ? "#a0c090" : "#7a9b6a", marginBottom: "16px", minHeight: "18px" }}>
-            {phase === "done" ? "条件に合う物件が見つかりました" : statusTexts[statusIdx]}
+            {phase === "done" ? "現在ご紹介可能な物件の一部です" : statusTexts[statusIdx]}
           </p>
 
           {/* Rows */}
@@ -220,7 +330,7 @@ export default function TenantHero() {
                   </div>
                   <div style={{ flex: 1, display: "flex", alignItems: "center", gap: "12px", padding: "0 14px", height: "100%", minWidth: 0 }}>
                     <span style={{ fontSize: "14px", fontWeight: 700, color: "#2a2a2a", whiteSpace: "nowrap", flexShrink: 0 }}>
-                      仙台 {prop.area}
+                      {prop.area}
                     </span>
                     <div style={{ display: "flex", gap: "5px", flexWrap: "nowrap", overflow: "hidden" }}>
                       {[prop.tsubo, ...prop.tags].map((tag, ti) => (
