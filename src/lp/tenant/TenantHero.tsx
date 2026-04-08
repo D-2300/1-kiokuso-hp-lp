@@ -149,6 +149,17 @@ const colorMap: Record<ColorName, string> = {
   purple: "#9b7abf", teal: "#5bb8b8", slate: "#99a0aa", rose: "#c8889a",
 };
 
+// 仙台市内のエリア名
+const sendaiAreas = new Set([
+  "国分町","一番町","青葉通","五橋","本町","中央","大町","立町","上杉","北目町",
+  "花京院","木町通","広瀬町","春日町","北四番丁","勾当台","仙台駅西","東照宮",
+  "北仙台","台原","旭ヶ丘","薬師堂","愛宕橋",
+  "宮城野区","仙台駅東","榴岡","小田原","原町","苦竹","宮城野","岩切",
+  "若林区","荒井","連坊","卸町","河原町","六丁の目",
+  "泉区","泉中央","八乙女","将監","南中山","市名坂",
+  "太白区","長町","南光台","長町南","富沢","鈎取","西多賀","山田","あすと長町",
+]);
+
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -156,6 +167,13 @@ function shuffle<T>(arr: T[]): T[] {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+/** 仙台市から6件 + 仙台市外から2件を抽出 */
+function selectProperties(all: Property[]): Property[] {
+  const sendai = shuffle(all.filter(p => sendaiAreas.has(p.area))).slice(0, 6);
+  const other = shuffle(all.filter(p => !sendaiAreas.has(p.area))).slice(0, 2);
+  return shuffle([...sendai, ...other]);
 }
 
 function getUpdateDate(): string {
@@ -173,7 +191,7 @@ const statusTexts = [
 ];
 
 export default function TenantHero() {
-  const [selected] = useState<Property[]>(() => shuffle(allProperties).slice(0, 6));
+  const [selected] = useState<Property[]>(() => selectProperties(allProperties));
   const [updateDate] = useState(getUpdateDate);
   const [phase, setPhase] = useState<"loading" | "done">("loading");
   const [statusIdx, setStatusIdx] = useState(0);
@@ -305,7 +323,7 @@ export default function TenantHero() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    height: "52px",
+                    height: "44px",
                     borderRadius: "8px",
                     overflow: "hidden",
                     background: "#F8F5F0",
