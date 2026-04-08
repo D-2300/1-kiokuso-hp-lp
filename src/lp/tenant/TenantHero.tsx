@@ -377,7 +377,7 @@ export default function TenantHero() {
 
           {/* Count */}
           <p style={{ fontSize: "12px", color: "#7a8a70", marginBottom: "24px", opacity: showCount ? 1 : 0, transition: "opacity 0.5s" }}>
-            他にも <strong style={{ color: "#a0c090", fontSize: "14px" }}>{remainingCount}</strong> 件の非公開物件があります
+            他にも多数の非公開物件があります
           </p>
         </div>
 
