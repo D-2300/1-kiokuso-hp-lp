@@ -149,12 +149,15 @@ const colorMap: Record<ColorName, string> = {
   purple: "#9b7abf", teal: "#5bb8b8", slate: "#99a0aa", rose: "#c8889a",
 };
 
-// 仙台市内のエリア名
-const sendaiAreas = new Set([
-  "国分町","一番町","青葉通","五橋","本町","中央","大町","立町","上杉","北目町",
-  "花京院","木町通","広瀬町","春日町","北四番丁","勾当台","仙台駅西","東照宮",
-  "北仙台","台原","旭ヶ丘","薬師堂","愛宕橋",
-  "宮城野区","仙台駅東","榴岡","小田原","原町","苦竹","宮城野","岩切",
+// 仙台市繁華街（4割 = 8件中3件）
+const hankagaiAreas = new Set([
+  "国分町","一番町","青葉通","大町","立町","勾当台","仙台駅東","仙台駅西",
+  "花京院","榴岡","北四番丁","五橋","本町","中央",
+]);
+// 仙台市その他（3件）
+const sendaiOtherAreas = new Set([
+  "上杉","北目町","木町通","広瀬町","春日町","東照宮","北仙台","台原","旭ヶ丘","薬師堂","愛宕橋",
+  "宮城野区","小田原","原町","苦竹","宮城野","岩切",
   "若林区","荒井","連坊","卸町","河原町","六丁の目",
   "泉区","泉中央","八乙女","将監","南中山","市名坂",
   "太白区","長町","南光台","長町南","富沢","鈎取","西多賀","山田","あすと長町",
@@ -169,11 +172,12 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-/** 仙台市から6件 + 仙台市外から2件を抽出 */
+/** 繁華街3件 + 仙台その他3件 + 市外2件 を抽出 */
 function selectProperties(all: Property[]): Property[] {
-  const sendai = shuffle(all.filter(p => sendaiAreas.has(p.area))).slice(0, 6);
-  const other = shuffle(all.filter(p => !sendaiAreas.has(p.area))).slice(0, 2);
-  return shuffle([...sendai, ...other]);
+  const hankagai = shuffle(all.filter(p => hankagaiAreas.has(p.area))).slice(0, 3);
+  const sendaiOther = shuffle(all.filter(p => sendaiOtherAreas.has(p.area))).slice(0, 3);
+  const other = shuffle(all.filter(p => !hankagaiAreas.has(p.area) && !sendaiOtherAreas.has(p.area))).slice(0, 2);
+  return shuffle([...hankagai, ...sendaiOther, ...other]);
 }
 
 function getUpdateDate(): string {
