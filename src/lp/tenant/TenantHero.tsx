@@ -172,12 +172,15 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-/** 繁華街3件 + 仙台その他3件 + 市外2件 を抽出 */
+/** 国分町1件確定 + 繁華街2件 + 仙台その他3件 + 市外2件 を抽出 */
 function selectProperties(all: Property[]): Property[] {
-  const hankagai = shuffle(all.filter(p => hankagaiAreas.has(p.area))).slice(0, 3);
+  // 国分町から必ず1件
+  const kokubunsho = shuffle(all.filter(p => p.area === "国分町")).slice(0, 1);
+  // 残りの繁華街から2件（国分町を除く）
+  const hankagai = shuffle(all.filter(p => hankagaiAreas.has(p.area) && p.area !== "国分町")).slice(0, 2);
   const sendaiOther = shuffle(all.filter(p => sendaiOtherAreas.has(p.area))).slice(0, 3);
   const other = shuffle(all.filter(p => !hankagaiAreas.has(p.area) && !sendaiOtherAreas.has(p.area))).slice(0, 2);
-  return shuffle([...hankagai, ...sendaiOther, ...other]);
+  return shuffle([...kokubunsho, ...hankagai, ...sendaiOther, ...other]);
 }
 
 function getUpdateDate(): string {
