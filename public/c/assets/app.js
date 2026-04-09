@@ -111,8 +111,8 @@ function renderTable() {
       <td><span class="stars">${stars}</span><span class="prob-pct">${pctLabel}</span></td>
       <td class="num">${c.amount || 0}<span style="font-size:11px;color:var(--text2)">万</span></td>
       <td>${esc(c.staff)}</td>
-      <td><a href="staff/${c.id}.html" class="act-btn staff" target="_blank" onclick="event.stopPropagation()">🔒 カルテ</a></td>
-      <td><a href="proposal/${c.id}.html" class="act-btn proposal" target="_blank" onclick="event.stopPropagation()">📄 提案</a></td>
+      <td><a href="staff/${c.id}.html" class="act-btn staff" target="_blank" onclick="event.stopPropagation()">🔒 最新カルテ</a></td>
+      <td><a href="proposal/${c.id}.html" class="act-btn proposal" target="_blank" onclick="event.stopPropagation()">📄 最新提案</a></td>
       <td class="mono">${c.updated || ''}</td>
     </tr>`;
   }).join('');
