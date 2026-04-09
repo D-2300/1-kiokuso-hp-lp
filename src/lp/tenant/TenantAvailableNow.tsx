@@ -75,6 +75,7 @@ export default function TenantAvailableNow() {
   const [animatedRows, setAnimatedRows] = useState<number[]>([]);
   const [showCount, setShowCount] = useState(false);
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
+  const [openRow, setOpenRow] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const hasAnimated = useRef(false);
 
@@ -195,160 +196,220 @@ export default function TenantAvailableNow() {
           {selected.map((prop, i) => {
             const isVisible = animatedRows.includes(i);
             const isHovered = hoveredRow === i;
+            const isOpen = openRow === i;
             return (
-              <div
-                key={i}
-                onMouseEnter={() => setHoveredRow(i)}
-                onMouseLeave={() => setHoveredRow(null)}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  height: "52px",
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  background: "#1c1e1f",
-                  borderStyle: "solid",
-                  borderTopColor: isHovered ? "#3a3c3e" : "#2a2c2e",
-                  borderRightColor: isHovered ? "#3a3c3e" : "#2a2c2e",
-                  borderBottomColor: isHovered ? "#3a3c3e" : "#2a2c2e",
-                  borderLeftColor: colorMap[prop.color],
-                  borderWidth: "1px",
-                  borderLeftWidth: "3px",
-                  cursor: "pointer",
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible
-                    ? isHovered
-                      ? "scale(1.01)"
-                      : "translateX(0)"
-                    : "translateX(-40px)",
-                  filter: isVisible ? "blur(0)" : "blur(3px)",
-                  transition: isVisible
-                    ? "transform 0.2s, box-shadow 0.2s, border-color 0.2s"
-                    : "none",
-                  animation: isVisible ? "rowSlideIn 0.45s cubic-bezier(0.34,1.4,0.64,1) forwards" : "none",
-                  boxShadow: isHovered ? "0 3px 16px rgba(0,0,0,0.3)" : "none",
-                }}
-              >
-                {/* Type badge */}
+              <div key={i}>
                 <div
-                  style={{
-                    flexShrink: 0,
-                    width: "68px",
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "10px",
-                    fontWeight: 700,
-                    letterSpacing: "0.5px",
-                    color: "#fff",
-                    background: prop.type === "inuki" ? "#5c4a2e" : "#2e4a5c",
+                  onMouseEnter={() => setHoveredRow(i)}
+                  onMouseLeave={() => setHoveredRow(null)}
+                  onClick={() => {
+                    setOpenRow(isOpen ? null : i);
+                    window.dataLayer?.push({ event: "property_detail_click", property_area: prop.area, property_index: i });
                   }}
-                >
-                  {prop.type === "inuki" ? "居抜き" : "スケルトン"}
-                </div>
-
-                {/* Info */}
-                <div
                   style={{
-                    flex: 1,
                     display: "flex",
                     alignItems: "center",
-                    gap: "12px",
-                    padding: "0 14px",
-                    height: "100%",
-                    minWidth: 0,
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      color: "#e8e0d6",
-                      whiteSpace: "nowrap",
-                      flexShrink: 0,
-                    }}
-                  >
-                    仙台 {prop.area}
-                  </span>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "5px",
-                      flexWrap: "nowrap",
-                      overflow: "hidden",
-                    }}
-                  >
-                    {[prop.tsubo, ...prop.tags].map((tag, ti) => (
-                      <span
-                        key={ti}
-                        style={{
-                          fontSize: "10px",
-                          padding: "2px 8px",
-                          borderRadius: "10px",
-                          background: "rgba(255,255,255,0.05)",
-                          color: "rgba(255,255,255,0.45)",
-                          border: "1px solid rgba(255,255,255,0.07)",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Rent (blurred) */}
-                <div
-                  style={{
-                    flexShrink: 0,
-                    width: "100px",
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background: "#161819",
-                    position: "relative",
+                    height: "52px",
+                    borderRadius: isOpen ? "8px 8px 0 0" : "8px",
                     overflow: "hidden",
-                    borderLeft: "1px solid rgba(255,255,255,0.04)",
+                    background: "#1c1e1f",
+                    borderStyle: "solid",
+                    borderTopColor: isHovered || isOpen ? "#3a3c3e" : "#2a2c2e",
+                    borderRightColor: isHovered || isOpen ? "#3a3c3e" : "#2a2c2e",
+                    borderBottomColor: isOpen ? "transparent" : isHovered ? "#3a3c3e" : "#2a2c2e",
+                    borderLeftColor: colorMap[prop.color],
+                    borderWidth: "1px",
+                    borderLeftWidth: "3px",
+                    cursor: "pointer",
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible
+                      ? isHovered
+                        ? "scale(1.01)"
+                        : "translateX(0)"
+                      : "translateX(-40px)",
+                    filter: isVisible ? "blur(0)" : "blur(3px)",
+                    transition: isVisible
+                      ? "transform 0.2s, box-shadow 0.2s, border-color 0.2s, border-radius 0.2s"
+                      : "none",
+                    animation: isVisible ? "rowSlideIn 0.45s cubic-bezier(0.34,1.4,0.64,1) forwards" : "none",
+                    boxShadow: isHovered ? "0 3px 16px rgba(0,0,0,0.3)" : "none",
                   }}
                 >
-                  <span
-                    style={{
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      color: "#ddd",
-                      filter: "blur(6px)",
-                      userSelect: "none",
-                    }}
-                  >
-                    {prop.rent}
-                  </span>
-                  {/* Hover overlay */}
+                  {/* Type badge */}
                   <div
                     style={{
-                      position: "absolute",
-                      inset: 0,
+                      flexShrink: 0,
+                      width: "68px",
+                      height: "100%",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      background: "rgba(0,0,0,0.25)",
-                      opacity: isHovered ? 1 : 0,
-                      transition: "opacity 0.25s",
+                      fontSize: "10px",
+                      fontWeight: 700,
+                      letterSpacing: "0.5px",
+                      color: "#fff",
+                      background: prop.type === "inuki" ? "#5c4a2e" : "#2e4a5c",
+                    }}
+                  >
+                    {prop.type === "inuki" ? "居抜き" : "スケルトン"}
+                  </div>
+
+                  {/* Info */}
+                  <div
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                      padding: "0 14px",
+                      height: "100%",
+                      minWidth: 0,
                     }}
                   >
                     <span
                       style={{
-                        fontSize: "10px",
-                        color: "#c8dcc8",
-                        background: "rgba(74,103,65,0.45)",
-                        padding: "4px 10px",
-                        borderRadius: "10px",
-                        border: "1px solid rgba(255,255,255,0.08)",
+                        fontSize: "14px",
+                        fontWeight: 700,
+                        color: "#e8e0d6",
+                        whiteSpace: "nowrap",
+                        flexShrink: 0,
                       }}
                     >
-                      詳細を見る
+                      仙台 {prop.area}
                     </span>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "5px",
+                        flexWrap: "nowrap",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {[prop.tsubo, ...prop.tags].map((tag, ti) => (
+                        <span
+                          key={ti}
+                          style={{
+                            fontSize: "10px",
+                            padding: "2px 8px",
+                            borderRadius: "10px",
+                            background: "rgba(255,255,255,0.05)",
+                            color: "rgba(255,255,255,0.45)",
+                            border: "1px solid rgba(255,255,255,0.07)",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Rent (blurred) */}
+                  <div
+                    style={{
+                      flexShrink: 0,
+                      width: "100px",
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#161819",
+                      position: "relative",
+                      overflow: "hidden",
+                      borderLeft: "1px solid rgba(255,255,255,0.04)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: 700,
+                        color: "#ddd",
+                        filter: "blur(6px)",
+                        userSelect: "none",
+                      }}
+                    >
+                      {prop.rent}
+                    </span>
+                    {/* Hover overlay */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "rgba(0,0,0,0.25)",
+                        opacity: isHovered ? 1 : 0,
+                        transition: "opacity 0.25s",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: "10px",
+                          color: "#c8dcc8",
+                          background: "rgba(74,103,65,0.45)",
+                          padding: "4px 10px",
+                          borderRadius: "10px",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                        }}
+                      >
+                        詳細を見る
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Accordion panel */}
+                <div
+                  style={{
+                    maxHeight: isOpen ? "200px" : "0",
+                    overflow: "hidden",
+                    transition: "max-height 0.3s ease",
+                  }}
+                >
+                  <div
+                    style={{
+                      background: "linear-gradient(135deg, #1a2418, #1e2818)",
+                      border: "1px solid #3a5a30",
+                      borderTop: "none",
+                      borderRadius: "0 0 8px 8px",
+                      padding: "20px 16px",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p style={{ fontSize: "14px", color: "#f0ebe4", marginBottom: "12px", lineHeight: 1.6 }}>
+                      この物件の詳細（家賃・写真・条件）は<br />LINEでお送りしています
+                    </p>
+                    <a
+                      href={LINE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.dataLayer?.push({ event: "line_cta_click", location: "property_accordion", property_area: prop.area });
+                      }}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        padding: "12px 24px",
+                        background: "#06C755",
+                        color: "#fff",
+                        fontSize: "14px",
+                        fontWeight: 700,
+                        borderRadius: "50px",
+                        textDecoration: "none",
+                        boxShadow: "0 4px 20px rgba(6,199,85,0.25)",
+                      }}
+                    >
+                      <svg viewBox="0 0 24 24" style={{ width: "18px", height: "18px", fill: "#fff", flexShrink: 0 }}>
+                        <path d={lineSvgPath} />
+                      </svg>
+                      この物件の詳細をLINEで受け取る
+                    </a>
+                    <p style={{ fontSize: "12px", color: "#8a8578", marginTop: "10px" }}>
+                      30秒で完了・匿名OK・営業なし
+                    </p>
                   </div>
                 </div>
               </div>
