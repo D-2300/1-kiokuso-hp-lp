@@ -268,8 +268,9 @@ function addCase(e) {
   e.preventDefault();
   const form = e.target;
   const id = form.querySelector('#add-id').value.trim();
-  const pw_staff = id.replace(/-/g,'') + '2026';
-  const pw_proposal = id + '-' + form.querySelector('#add-name').value.trim().split(' ')[0].toLowerCase();
+  const nameOrShop = (form.querySelector('#add-shop').value.trim() || form.querySelector('#add-name').value.trim()).split(/[\s（(]/)[0].toLowerCase();
+  const pw_staff = nameOrShop + '2026';
+  const pw_proposal = nameOrShop + '2026';
 
   const newCase = {
     id: id,
