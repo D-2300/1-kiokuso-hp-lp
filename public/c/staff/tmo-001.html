@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>🔒 TOMO様｜ベーグル屋（店名未定）｜スタッフ用カルテ｜記憶荘</title>
+<link rel="stylesheet" href="../assets/style-staff.css">
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="pw-screen">
+  <div style="text-align:center">
+    <div class="pw-logo">記憶荘 — Staff Only</div>
+    <div class="pw-title">TOMO 様<br>ベーグル屋（店名未定）｜顧客カルテ</div>
+    <div class="pw-box">
+      <input type="password" class="pw-input" id="pw-input" placeholder="パスワードを入力">
+      <button class="pw-btn" id="pw-btn" onclick="checkPW()">開く</button>
+    </div>
+    <div class="pw-err" id="pw-err"></div>
+    <div class="pw-hint">担当スタッフのみアクセス可能</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
+
+<div class="staff-banner">🔒 スタッフ専用 — 社外秘 — TOMO様｜ベーグル屋（店名未定） 顧客カルテ</div>
+
+<!-- NAV BAR -->
+<div class="nav-bar">
+  <a href="../" class="nav-btn">← ポータル</a>
+  <a href="../proposal/tmo-001.html" class="nav-btn" target="_blank">📄 お客様提案資料を開く</a>
+  <div class="nav-spacer"></div>
+  <button class="nav-btn" onclick="copyProposalURL()">📋 提案資料URLコピー</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-line"></div>
+  <div class="hi">
+    <div class="hmeta">
+      初回ヒアリング: 2026-04-06<br>
+      担当: KAI（記憶荘）<br>
+      【スタッフ専用カルテ】
+    </div>
+    <div class="brand">記憶荘 — Customer Profile</div>
+    <div class="htitle">TOMO<br>ベーグル屋（店名未定） <em>様</em></div>
+    <div class="hsub">ベーグル・パン屋 / 榴ヶ岡〜東照宮エリア</div>
+    <div class="hbadge">提案済み</div>
+    <div class="hero-contact">
+      <span>📞 （未登録）</span>
+      <span>📍 榴ヶ岡〜東照宮エリア</span>
+      <span>💬 LINE 登録済み</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- 00. 案件サマリー・戦略メモ -->
+<div class="summary-block">
+  <div class="sb-head">
+    <span class="sb-head-icon">📋</span>
+    <span class="sb-head-title">案件サマリー・戦略メモ</span>
+    <span class="sb-head-badge">スタッフ専用</span>
+  </div>
+  <div class="sb-body">
+    <div class="sb-grid">
+      <div class="sb-item">
+        <div class="sb-label">案件名</div>
+        <div class="sb-value">ベーグル屋 / ベーグル・パン屋</div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">フェーズ</div>
+        <div class="sb-value"><span class="tag tok">提案済み</span></div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">温度感</div>
+        <div class="sb-value"><span class="tag tg">★★★☆☆ 中（物件次第）</span></div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">注意フラグ</div>
+        <div class="sb-value"><span class="tag tg">なし</span></div>
+      </div>
+    </div>
+    <div class="verdict">
+      <div class="v-card hot">
+        <div class="v-card-title">⚠️ 最重要確認事項</div>
+        居抜きテナントが見つかるか。住居→商用転用は99%不可の調査結果あり。東照宮エリア15万円の居抜き物件が有力候補。
+      </div>
+      <div class="v-card cool">
+        <div class="v-card-title">💡 記憶荘の勝ち筋</div>
+        DIY対応・居抜き活用でコスト圧縮。3プラン比較資料で信頼獲得済み。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 01 基本情報 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">01</span><span class="sec-t">基本情報</span></div>
+  <div class="sec-bd">
+    <div class="g2">
+      <div>
+        <div class="f"><div class="fl">氏名</div><div class="fv">TOMO</div></div>
+        <div class="f"><div class="fl">電話番号</div><div class="fv">（未登録）</div></div>
+        <div class="f"><div class="fl">LINE</div><div class="fv">登録済み</div></div>
+        <div class="f"><div class="fl">店舗名</div><div class="fv">ベーグル屋（店名未定）</div></div>
+        <div class="f"><div class="fl">業態</div><div class="fv">ベーグルを中心としたパン屋</div></div>
+      </div>
+      <div>
+        <div class="f"><div class="fl">経営歴</div><div class="fv">マルシェ販売2年</div></div>
+        <div class="f"><div class="fl">経緯</div><div class="fv">LINE問い合わせ</div></div>
+        <div class="f"><div class="fl">スタッフ状況</div><div class="fv">3名体制（TOMO含む）、人件費月30万</div></div>
+        <div class="f"><div class="fl">集客方法</div><div class="fv">マルシェ出店実績あり</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 現店舗の状況 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">02</span><span class="sec-t">現店舗の状況</span></div>
+  <div class="sec-bd">
+    <div class="g3">
+      <div class="f"><div class="fl">月額家賃</div><div class="fv lg">なし（実店舗なし）</div></div>
+      <div class="f"><div class="fl">差入敷金</div><div class="fv lg">—</div></div>
+      <div class="f"><div class="fl">解約予告</div><div class="fv lg">—</div></div>
+    </div>
+    <hr>
+    <div class="g2">
+      <div>
+        <div class="f"><div class="fl">現状</div><div class="fv">実店舗なし（マルシェ販売のみ）</div></div>
+        <div class="f"><div class="fl">備考</div><div class="fv">初出店</div></div>
+      </div>
+      <div>
+        <div class="f"><div class="fl">契約形態</div><div class="fv">—</div></div>
+        <div class="f"><div class="fl">内装の状態</div><div class="fv">—</div></div>
+      </div>
+    </div>
+    <div class="img-placeholder">
+      <div class="ip-icon">📷</div>
+      <div class="ip-label">現店舗 内観写真</div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 設備・機材 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">03</span><span class="sec-t">設備・機材（移設対象）</span></div>
+  <div class="sec-bd">
+    <table class="info-table">
+      <tr><th>オーブン</th><td>パン焼き用</td></tr>
+      <tr><th>ミキサー・成形台</th><td>パン生地用</td></tr>
+      <tr><th>ショーケース</th><td>予定（未購入）</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 04 希望条件 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">04</span><span class="sec-t">希望条件（ヒアリング結果）</span></div>
+  <div class="sec-bd">
+    <div class="g2">
+      <div>
+        <div class="f"><div class="fl">エリア</div><div class="fv">榴ヶ岡・宮町・東照宮・東仙台・幸町・原町・宮城野原・鶴ヶ谷・南光台</div></div>
+        <div class="f"><div class="fl">広さ</div><div class="fv">工房広め、売り場は狭くてOK、イートイン少しあれば最高</div></div>
+        <div class="f"><div class="fl">家賃</div><div class="fv">10万円目標（MAX 15万）</div></div>
+        <div class="f"><div class="fl">時期</div><div class="fv">いい物件があれば</div></div>
+      </div>
+      <div>
+        <div class="f"><div class="fl">居抜き希望</div><div class="fv">はい（強く希望）</div></div>
+        <div class="f"><div class="fl">内装こだわり</div><div class="fv">白基調、木のテーブルにパンを並べるスタイル</div></div>
+        <div class="f"><div class="fl">予算感</div><div class="fv">できるだけ抑えたい、DIY希望</div></div>
+        <div class="f"><div class="fl">補助金</div><div class="fv">未確認</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 候補物件詳細 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">05</span><span class="sec-t">候補物件詳細</span></div>
+  <div class="sec-bd">
+    <table class="info-table">
+      <tr><th>有力候補</th><td>東照宮エリアの居抜き物件（約15万円/月）</td></tr>
+      <tr><th>問い合わせ状況</th><td>10件問い合わせ済み</td></tr>
+      <tr><th>調査結果</th><td>住居→商用転用はほぼ不可（&lt;1%）。居抜きテナントが現実的</td></tr>
+    </table>
+    <div class="img-placeholder">
+      <div class="ip-icon">📷</div>
+      <div class="ip-label">候補物件 写真</div>
+    </div>
+  </div>
+</div>
+
+<!-- 06 物件内部評価・リスク -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">06</span><span class="sec-t">物件内部評価・リスク（スタッフ専用）</span></div>
+  <div class="sec-bd">
+    <ul class="chk">
+      <li><div class="ci w">!</div><div><strong>給排水確認</strong> <span class="tag tw">未確認</span></div></li>
+      <li><div class="ci w">!</div><div><strong>用途変更の許可</strong> <span class="tag tw">未確認</span></div></li>
+      <li><div class="ci w">!</div><div><strong>電気容量</strong> <span class="tag tg">要確認</span></div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 07 費用シミュレーション -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">07</span><span class="sec-t">費用シミュレーション</span></div>
+  <div class="sec-bd">
+    <table class="info-table">
+      <tr>
+        <th></th>
+        <th style="font-weight:700">Plan A 居抜きテナント</th>
+        <th style="font-weight:700">Plan B 一軒家リフォーム</th>
+        <th style="font-weight:700">Plan C 住み込み型</th>
+      </tr>
+      <tr>
+        <th>初期費用</th>
+        <td>80〜100万円</td>
+        <td>200〜300万円</td>
+        <td>250〜350万円</td>
+      </tr>
+      <tr>
+        <th>家賃</th>
+        <td>15万円/月</td>
+        <td>10万円/月</td>
+        <td>5万円/月</td>
+      </tr>
+      <tr>
+        <th>固定費</th>
+        <td>月45万円</td>
+        <td>月40万円</td>
+        <td>月35万円</td>
+      </tr>
+      <tr>
+        <th>損益分岐</th>
+        <td>79万円/月</td>
+        <td>70万円/月</td>
+        <td>61万円/月</td>
+      </tr>
+    </table>
+    <p style="margin-top:12px;font-weight:700;color:var(--acc)">→ Plan A（居抜きテナント）推奨：初期費用が最も低く、リスクを抑えてスタート可能</p>
+  </div>
+</div>
+
+<!-- 08 選択肢比較 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">08</span><span class="sec-t">選択肢比較</span></div>
+  <div class="sec-bd">
+    <p style="color:var(--mut);font-size:13px">Section 07の3プラン比較を参照。Plan A推奨で提案済み。</p>
+  </div>
+</div>
+
+<!-- 09 チェックリスト -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">09</span><span class="sec-t">チェックリスト</span></div>
+  <div class="sec-bd">
+    <ul class="chk">
+      <li><div class="ci g">✓</div><div><strong>LINE友だち追加</strong></div></li>
+      <li><div class="ci g">✓</div><div><strong>初回ヒアリング</strong></div></li>
+      <li><div class="ci g">✓</div><div><strong>たたき台資料作成</strong></div></li>
+      <li><div class="ci w">!</div><div><strong>物件リサーチ</strong> <span class="tag tw">進行中</span></div></li>
+      <li><div class="ci w">!</div><div><strong>内見同行</strong> <span class="tag tw">未</span></div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 10 関係構築・営業メモ -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">10</span><span class="sec-t">🔒 関係構築・営業メモ</span></div>
+  <div class="sec-bd">
+    <table class="info-table">
+      <tr><th>性格・タイプ</th><td>慎重だが前向き</td></tr>
+      <tr><th>決定権者</th><td>本人</td></tr>
+      <tr><th>競合リスク</th><td>低（DIY対応が刺さっている）</td></tr>
+      <tr><th>信頼構築ポイント</th><td>3プラン比較で数字を見せたことで信頼獲得</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 11 対応タイムライン -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">11</span><span class="sec-t">対応タイムライン</span></div>
+  <div class="sec-bd">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2026-04-06</div>
+        <div class="tl-text">LINE問い合わせ、初回ヒアリング</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2026-04-06</div>
+        <div class="tl-text">たたき台資料送付済み</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2026-04-09</div>
+        <div class="tl-text">物件リサーチ継続中</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 12 次のアクション -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">12</span><span class="sec-t">次のアクション</span></div>
+  <div class="sec-bd">
+    <ul class="acts">
+      <li><div class="an a">1</div><div><strong>東照宮エリア居抜き物件の詳細確認</strong></div></li>
+      <li><div class="an">2</div><div><strong>内見日程の調整</strong></div></li>
+      <li><div class="an">3</div><div><strong>物件確定後、見積もり作成</strong></div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 13. 備考・追記メモ -->
+<div class="notes-section">
+  <div class="notes-head">
+    <span style="font-size:16px">📝</span>
+    <span class="notes-head-title">スタッフ備考欄</span>
+    <span style="margin-left:auto;font-size:10px;opacity:.7">スタッフ専用 ― 社外秘</span>
+  </div>
+  <div class="notes-body">
+    <div id="notes-list"></div>
+    <button class="add-note-btn" onclick="addNote()">＋ メモを追加</button>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="footer">
+  <strong>記憶荘（Kiokuso）― Staff Document</strong>
+  このファイルはスタッフ専用です。社外への共有禁止。<br>
+  kiokuso.jp ｜ LINE @749cuola ｜ 仙台・宮城
+</div>
+
+</div><!-- /main-content -->
+
+<script>
+const CORRECT = 'tmo2026';
+function checkPW(){
+  const v = document.getElementById('pw-input').value;
+  if(v === CORRECT){
+    sessionStorage.setItem('staff-tmo-001', '1');
+    document.getElementById('pw-screen').style.display='none';
+    document.getElementById('main-content').style.display='block';
+  } else {
+    const err = document.getElementById('pw-err');
+    err.textContent='パスワードが違います';
+    document.getElementById('pw-input').value='';
+    setTimeout(()=>err.textContent='',2500);
+  }
+}
+document.getElementById('pw-input').addEventListener('keydown', e=>{
+  if(e.key==='Enter') checkPW();
+});
+if(sessionStorage.getItem('staff-tmo-001')){
+  document.getElementById('pw-screen').style.display='none';
+  document.getElementById('main-content').style.display='block';
+}
+
+function copyProposalURL(){
+  const url = location.origin + '/c/proposal/tmo-001.html';
+  navigator.clipboard.writeText(url).then(()=>{
+    const btn = event.target;
+    const orig = btn.textContent;
+    btn.textContent = '✓ コピーしました';
+    setTimeout(()=> btn.textContent = orig, 2000);
+  });
+}
+
+const STORAGE_KEY = 'tmo-001-karte-notes-v1';
+function saveNotes() {
+  const notes = [...document.querySelectorAll('.note-entry')].map(el => ({
+    meta: [...el.querySelectorAll('.ne-meta span')].map(s => s.textContent),
+    body: el.querySelector('.ne-body').value
+  }));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+}
+function loadNotes() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+  const notes = JSON.parse(saved);
+  const list = document.getElementById('notes-list');
+  list.innerHTML = '';
+  notes.forEach(n => {
+    const div = document.createElement('div');
+    div.className = 'note-entry';
+    div.innerHTML = '<div class="ne-meta">'+n.meta.map(t=>'<span>'+t+'</span>').join('')+'</div><textarea class="ne-body">'+n.body+'</textarea>';
+    div.querySelector('textarea').addEventListener('input', saveNotes);
+    list.appendChild(div);
+  });
+}
+let noteCount = 0;
+function addNote() {
+  noteCount++;
+  const today = new Date();
+  const d = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+  const div = document.createElement('div');
+  div.className = 'note-entry';
+  div.innerHTML = '<div class="ne-meta"><span>'+d+'</span><span>KAI</span><span>追加メモ #'+noteCount+'</span></div><textarea class="ne-body" placeholder="メモを入力..."></textarea>';
+  div.querySelector('textarea').addEventListener('input', saveNotes);
+  document.getElementById('notes-list').appendChild(div);
+  div.querySelector('textarea').focus();
+  saveNotes();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  loadNotes();
+  document.querySelectorAll('.ne-body').forEach(el => {
+    el.addEventListener('input', saveNotes);
+  });
+});
+</script>
+</body>
+</html>

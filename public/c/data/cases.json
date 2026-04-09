@@ -20,6 +20,48 @@
       "tags": ["友人内装屋あり", "シェアサロン案"],
       "created": "2026-04-08",
       "updated": "2026-04-09"
+    },
+    {
+      "id": "tmo-001",
+      "name": "TOMO",
+      "shop": "ベーグル屋（店名未定）",
+      "type": "ベーグル・パン屋",
+      "area": "榴ヶ岡〜東照宮エリア",
+      "phone": "",
+      "line": "登録済み",
+      "status": "active",
+      "phase": "提案済み",
+      "progress": 40,
+      "probability": 35,
+      "amount": 100,
+      "staff": "DAI",
+      "pw_staff": "tmo2026",
+      "pw_proposal": "tmo-tomo",
+      "memo": "マルシェ歴2年。居抜きテナント推奨。東照宮エリア15万物件あり。3名体制。DIY希望。家賃10万目標。",
+      "tags": ["居抜き希望", "DIY希望", "マルシェ経験"],
+      "created": "2026-04-06",
+      "updated": "2026-04-09"
+    },
+    {
+      "id": "koz-001",
+      "name": "齋藤",
+      "shop": "KOZ（サパー）",
+      "type": "サパー（サウンドバー）",
+      "area": "青葉区国分町",
+      "phone": "",
+      "line": "登録済み",
+      "status": "active",
+      "phase": "提案済み",
+      "progress": 45,
+      "probability": 55,
+      "amount": 300,
+      "staff": "DAI",
+      "pw_staff": "koz2026",
+      "pw_proposal": "koz-saito",
+      "memo": "石巻・古川で2店舗経営中。国分町でサパー出店。ライオンビル太陽館5F候補（25坪/39万）。10月オープン目標。融資検討中。",
+      "tags": ["経営経験あり", "国分町", "10月目標", "融資検討"],
+      "created": "2026-04-09",
+      "updated": "2026-04-09"
     }
   ]
 }
