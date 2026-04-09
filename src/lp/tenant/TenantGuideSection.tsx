@@ -35,7 +35,7 @@ export default function TenantGuideSection() {
           FREE GUIDE
         </p>
         <h2 style={{ textAlign: "center", fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#1a1f14", lineHeight: 1.55, marginBottom: "16px" }}>
-          <span style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "#888", fontWeight: 400 }}>"不動産屋の仕組み"を知らないだけで、</span><br />
+          <span style={{ fontSize: "clamp(18px, 4vw, 24px)", color: "#1a1f14", fontWeight: 700 }}>"不動産屋の仕組み"を知らないだけで、</span><br />
           数十万〜数百万円<em style={{ fontStyle: "normal", color: "#C9A84C" }}>損</em>しています。
         </h2>
         <img

@@ -28,7 +28,13 @@
       "Bash(cp \"/c/Users/inoue/Downloads/スクリーンショット 2026-04-06 183911.png\" /c/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/step-line-send.png)",
       "Bash(cp \"/c/Users/inoue/Downloads/スクリーンショット 2026-04-06 184424.png\" /c/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/public/images/step-tenant-info.png)",
       "Bash(npx vite:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(del \"C:\\\\Users\\\\inoue\\\\ClaudeProjects\\\\kiokuso\\\\kiokuso-hp-lp\\\\.git\\\\index.lock\")",
+      "Bash(rm -f \"C:/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp/.git/index.lock\")",
+      "Bash(cmd.exe /c \"del /f C:\\\\Users\\\\inoue\\\\ClaudeProjects\\\\kiokuso\\\\kiokuso-hp-lp\\\\.git\\\\index.lock\")",
+      "Bash(git push:*)",
+      "Bash(find /c/Users/inoue/ClaudeProjects/kiokuso/kiokuso-hp-lp -type f -name *enantLP* -o -name *TenantLp*)"
     ]
   }
 }

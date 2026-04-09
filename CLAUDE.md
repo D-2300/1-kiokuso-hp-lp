@@ -1,5 +1,3 @@
-> **共通コンテキスト（正本）: C:\Users\inoue\claude-context\kiokuso_sub_context\CLAUDE.md を最初に読むこと**
-> ※ 親フォルダ（claude-context\CLAUDE.md）は廃止。kiokuso_sub_context内のものが唯一の正本。
 # 記憶荘（Kiokuso）LP/HP プロジェクト
 
 ## 概要
@@ -15,7 +13,7 @@
 - LINE公式: lin.ee/HVV0QJO
 
 ## 技術スタック
-- React + TypeScript + Vite + Tailwind CSS + Supabase + React Router
+- React + TypeScript + Vite + Tailwind CSS + React Router
 
 ## デプロイ
 - mainブランチにpushでNetlify自動デプロイ
@@ -35,13 +33,6 @@
 - 気軽さ・敷居の低さを重視（高級感は出さない）
 - 参考: エムトラスト（mtrust-obr.com）のLP構造、きなり（kinari.life）の温かさ
 - 反面教師: 過度に西洋的・舶来イメージに寄せない
-
-## サブプロジェクト: 満室デザインLABO
-- 賃貸オーナー向け原状回復の別ブランド
-- コードは `/src/manshitsu/` に格納
-- ルーティング: `/manshitsu` → ManshitsuPage
-- 記憶荘とは別のカラースキーム（紫+ゴールド）
-- 別Adsアカウント・別LINE・別電話番号で運用予定
 
 ## 運用チャネル
 - Google広告（検索広告、アカウント: 183-797-5158）

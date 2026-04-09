@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-export default function LPContactForm() {
+export default function LPContactForm({ title = "無料見積もり・お問い合わせ" }: { title?: string }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -78,7 +78,7 @@ export default function LPContactForm() {
               lineHeight: 1.4,
             }}
           >
-            無料見積もり・お問い合わせ
+            {title}
           </h2>
           <p style={{ margin: 0, fontSize: 14, color: "#888" }}>
             翌営業日までにご返信いたします。
