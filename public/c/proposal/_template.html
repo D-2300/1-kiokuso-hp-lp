@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>{{NAME}}様｜{{SHOP}} ご提案資料｜記憶荘</title>
+<link rel="stylesheet" href="../assets/style-proposal.css">
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="pw-screen">
+  <div style="text-align:center">
+    <div class="pw-logo">記憶荘 — Proposal</div>
+    <div class="pw-title">{{NAME}} 様<br>{{SHOP}}｜ご提案資料</div>
+    <div class="pw-box">
+      <input type="password" class="pw-input" id="pw-input" placeholder="パスワードを入力">
+      <button class="pw-btn" id="pw-btn" onclick="checkPW()">開く</button>
+    </div>
+    <div class="pw-err" id="pw-err"></div>
+    <div class="pw-hint">{{NAME}}様専用の資料です</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
+
+<!-- HEADER -->
+<header class="prop-header">
+  <div class="prop-brand">記憶荘 — Kiokuso Interior Studio</div>
+  <div class="prop-badge">CONFIDENTIAL</div>
+  <div class="prop-title">{{NAME}} 様<br><em>{{SHOP}}</em> ご提案資料</div>
+  <div class="prop-sub">{{TYPE}} / {{AREA}}</div>
+  <div class="prop-date">{{DATE}} 作成</div>
+</header>
+
+<div class="container">
+
+<!-- 01 ご挨拶 -->
+<section>
+  <div class="sec-label">01</div>
+  <h2>ご挨拶</h2>
+  <div class="letter">
+    {{NAME}}様<br><br>
+    このたびはお問い合わせいただき、ありがとうございます。<br>
+    お伺いしたご状況をもとに、費用の<strong>たたき台</strong>をまとめました。<br><br>
+    まだ概算レベルですが、「こういう数字感なんだな」という参考としてご覧ください。<br><br>
+    ご不明点はいつでもLINEでお気軽にどうぞ。
+    <div class="sign">記憶荘　{{STAFF}}</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">記憶荘について</div>
+    <p style="font-size:14px;line-height:2">
+      仙台の店舗内装スタジオです。<strong>居抜き活用・DIY対応・施主支給OK</strong>で、コストを抑えた出店をサポートしています。坪単価を全公開し、営業は一切いたしません。
+    </p>
+  </div>
+</section>
+
+<!-- 02 ヒアリング内容の確認 -->
+<section>
+  <div class="sec-label">02</div>
+  <h2>ヒアリング内容の<em>確認</em></h2>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:16px">お伺いした内容を整理しました。認識違いがあればお知らせください。</p>
+  <table class="info-table">
+    <tr><td>店舗名</td><td>{{SHOP}}</td></tr>
+    <tr><td>業態</td><td>{{TYPE}}</td></tr>
+    <tr><td>ご希望エリア</td><td>（ヒアリング後記入）</td></tr>
+    <tr><td>ご希望の広さ</td><td>（ヒアリング後記入）</td></tr>
+    <tr><td>家賃上限</td><td>（ヒアリング後記入）</td></tr>
+    <tr><td>移転時期</td><td>（ヒアリング後記入）</td></tr>
+  </table>
+</section>
+
+<!-- 03 候補物件のご紹介 -->
+<section>
+  <div class="sec-label">03</div>
+  <h2>候補物件の<em>ご紹介</em></h2>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:16px">候補物件が見つかり次第、ここに詳細を記載します。</p>
+  <div class="img-placeholder">
+    <div class="ip-icon">📷</div>
+    <div class="ip-label">候補物件 写真</div>
+  </div>
+</section>
+
+<!-- 04 費用シミュレーション -->
+<section>
+  <div class="sec-label">04</div>
+  <h2>費用<em>シミュレーション</em></h2>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:16px">物件の詳細確認後に作成します。</p>
+
+  <div class="vs-section">
+    <div class="vs-header">
+      <h3>内装工事費の比較</h3>
+      <p>記憶荘なら、一般相場の半分以下も</p>
+    </div>
+    <div class="vs-grid">
+      <div class="vs-card general">
+        <div class="vs-badge">一般的な相場</div>
+        <h4>フルオーダー施工</h4>
+        <div class="vs-price">（算出中）</div>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-card kiokuso">
+        <div class="vs-badge">記憶荘</div>
+        <h4>居抜き活用 + 直接施工</h4>
+        <div class="vs-price">（算出中）</div>
+        <ul>
+          <li>既存機材の持ち込みOK</li>
+          <li>施主支給・DIY対応可</li>
+          <li>坪単価を全公開</li>
+          <li>紹介料・上乗せなし</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 スケジュール感 -->
+<section>
+  <div class="sec-label">05</div>
+  <h2>想定<em>スケジュール</em></h2>
+  <div class="timeline">
+    <div class="tl-item current">
+      <div class="tl-date">現在</div>
+      <div class="tl-title">情報収集・物件確認</div>
+      <div class="tl-desc">ご要望の整理と候補物件の調査</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">STEP 2</div>
+      <div class="tl-title">費用の精査・ご提案</div>
+      <div class="tl-desc">物件確認の結果をもとに見積りをご提示</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">STEP 3</div>
+      <div class="tl-title">ご判断・契約手続き</div>
+      <div class="tl-desc">方向性を決定し、契約手続きへ</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">STEP 4</div>
+      <div class="tl-title">内装工事</div>
+      <div class="tl-desc">設計・施工・仕上げ</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">STEP 5</div>
+      <div class="tl-title">オープン</div>
+      <div class="tl-desc">工事完了・営業開始</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 選択肢の比較 -->
+<section>
+  <div class="sec-label">06</div>
+  <h2>選択肢の<em>比較</em></h2>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:16px">ヒアリング後に作成します。</p>
+</section>
+
+<!-- 07 記憶荘のサポート内容 -->
+<section>
+  <div class="sec-label">07</div>
+  <h2>記憶荘の<em>サポート内容</em></h2>
+  <div class="action-grid">
+    <div class="action-card studio">
+      <h4>🏠 物件探し・交渉</h4>
+      <ol>
+        <li>ご希望条件に合う物件のリサーチ</li>
+        <li>不動産会社への問い合わせ代行</li>
+        <li>家賃交渉・フリーレント交渉</li>
+      </ol>
+    </div>
+    <div class="action-card studio">
+      <h4>🔨 内装工事</h4>
+      <ol>
+        <li>坪単価を全公開した見積り</li>
+        <li>居抜き活用・DIY対応</li>
+        <li>施主支給OK（コスト圧縮）</li>
+      </ol>
+    </div>
+  </div>
+  <div class="card" style="text-align:center;margin-top:16px">
+    <p style="font-size:14px;line-height:2">
+      記憶荘は<strong>紹介料・上乗せ一切なし</strong>。<br>
+      まずは情報収集だけでもお気軽にどうぞ。
+    </p>
+  </div>
+</section>
+
+<!-- 08 次のステップ -->
+<section>
+  <div class="sec-label">08</div>
+  <h2>次の<em>ステップ</em></h2>
+  <div class="action-grid">
+    <div class="action-card client">
+      <h4>📱 {{NAME}}様にお願いしたいこと</h4>
+      <ol>
+        <li>この資料の内容にズレがないか確認</li>
+        <li>ご不明点があればLINEでお知らせ</li>
+      </ol>
+    </div>
+    <div class="action-card studio">
+      <h4>🏗️ 記憶荘が進めること</h4>
+      <ol>
+        <li>候補物件のリサーチ</li>
+        <li>詳細調査と見積り作成</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 09 お問い合わせ -->
+<section style="border-bottom:none;padding-bottom:0">
+  <div class="cta-section">
+    <h2>お気軽にご相談ください</h2>
+    <p>ご質問・ご不明点はLINEでいつでもどうぞ。</p>
+    <a href="https://lin.ee/HVV0QJO" class="cta-btn" target="_blank">💬 LINEで相談する</a>
+    <div class="cta-phone">📞 080-6049-4877（記憶荘）</div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<footer class="prop-footer">
+  <strong>記憶荘（Kiokuso）</strong>
+  この資料は{{NAME}}様専用です。第三者への共有はお控えください。<br>
+  kiokuso.jp ｜ 仙台・宮城の店舗内装スタジオ
+</footer>
+
+</div><!-- /main-content -->
+
+<script>
+const CORRECT = '{{PW_PROPOSAL}}';
+function checkPW(){
+  const v = document.getElementById('pw-input').value;
+  if(v === CORRECT){
+    sessionStorage.setItem('prop-{{ID}}', '1');
+    document.getElementById('pw-screen').style.display='none';
+    document.getElementById('main-content').style.display='block';
+  } else {
+    const err = document.getElementById('pw-err');
+    err.textContent='パスワードが違います';
+    document.getElementById('pw-input').value='';
+    setTimeout(()=>err.textContent='',2500);
+  }
+}
+document.getElementById('pw-input').addEventListener('keydown', e=>{
+  if(e.key==='Enter') checkPW();
+});
+if(sessionStorage.getItem('prop-{{ID}}')){
+  document.getElementById('pw-screen').style.display='none';
+  document.getElementById('main-content').style.display='block';
+}
+</script>
+</body>
+</html>

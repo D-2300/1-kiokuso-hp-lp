@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>🔒 案件管理ポータル｜記憶荘 Staff Only</title>
+<link rel="stylesheet" href="assets/style-portal.css">
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="pw-screen">
+  <div style="text-align:center">
+    <div class="pw-logo">記憶荘 — Staff Only</div>
+    <div class="pw-title">案件管理ポータル</div>
+    <div class="pw-box">
+      <input type="password" id="pw-input" placeholder="アクセスコードを入力">
+      <button id="pw-btn">開く</button>
+    </div>
+    <div class="pw-err" id="pw-err"></div>
+    <div class="pw-hint">記憶荘スタッフ専用</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
+
+<!-- HEADER -->
+<div class="portal-header">
+  <div class="portal-brand">
+    <div>
+      <div class="portal-brand-name">記憶荘</div>
+      <div class="portal-brand-sub">案件管理ポータル — Staff Only</div>
+    </div>
+  </div>
+  <div class="portal-clock" id="clock"></div>
+</div>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip">
+  <div class="kpi-card">
+    <div class="kpi-label">全案件数</div>
+    <div class="kpi-value" id="kpi-total">0</div>
+    <div class="kpi-unit">件</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">進行中</div>
+    <div class="kpi-value" id="kpi-active">0</div>
+    <div class="kpi-unit">件</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">待機/情報収集</div>
+    <div class="kpi-value" id="kpi-waiting">0</div>
+    <div class="kpi-unit">件</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">成約済み</div>
+    <div class="kpi-value" id="kpi-won">0</div>
+    <div class="kpi-unit">件</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">見込み総額</div>
+    <div class="kpi-value" id="kpi-amount">0</div>
+    <div class="kpi-unit">万円</div>
+  </div>
+</div>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <div class="toolbar-search">
+    <input type="text" id="search-input" placeholder="案件を検索（顧客名・店舗名・エリア…）">
+  </div>
+  <div class="filter-btns">
+    <button class="filter-btn active" data-phase="all">全て</button>
+    <button class="filter-btn" data-phase="初回接触">初回接触</button>
+    <button class="filter-btn" data-phase="情報収集中">情報収集中</button>
+    <button class="filter-btn" data-phase="提案準備中">提案準備中</button>
+    <button class="filter-btn" data-phase="提案済み">提案済み</button>
+    <button class="filter-btn" data-phase="検討中">検討中</button>
+    <button class="filter-btn" data-phase="見積提出済">見積提出済</button>
+    <button class="filter-btn" data-phase="成約">成約</button>
+    <button class="filter-btn" data-phase="失注">失注</button>
+    <button class="filter-btn" data-phase="保留">保留</button>
+  </div>
+  <button class="btn-add" onclick="openAddModal()">＋ 新規案件</button>
+  <button class="btn-export" onclick="exportCSV()">📥 CSV</button>
+</div>
+
+<!-- TABLE -->
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th data-col="id"># <span class="sort-arrow"></span></th>
+        <th data-col="name">顧客名 <span class="sort-arrow"></span></th>
+        <th data-col="shop">店舗名 <span class="sort-arrow"></span></th>
+        <th data-col="type">業態 <span class="sort-arrow"></span></th>
+        <th data-col="area">エリア <span class="sort-arrow"></span></th>
+        <th data-col="phase">フェーズ <span class="sort-arrow"></span></th>
+        <th data-col="progress">進捗 <span class="sort-arrow"></span></th>
+        <th data-col="probability">成約可能性 <span class="sort-arrow"></span></th>
+        <th data-col="amount">見込み額 <span class="sort-arrow"></span></th>
+        <th data-col="staff">担当 <span class="sort-arrow"></span></th>
+        <th>カルテ</th>
+        <th>提案資料</th>
+        <th data-col="updated">更新日 <span class="sort-arrow"></span></th>
+      </tr>
+    </thead>
+    <tbody id="cases-tbody"></tbody>
+  </table>
+</div>
+
+<!-- DETAIL OVERLAY + PANEL -->
+<div class="detail-overlay" id="detail-overlay" onclick="closeDetail()"></div>
+<div class="detail-panel" id="detail-panel">
+  <div class="detail-head">
+    <div class="detail-title" id="detail-name"></div>
+    <button class="detail-close" onclick="closeDetail()">&times;</button>
+  </div>
+  <div class="detail-body">
+    <div class="detail-field">
+      <div class="detail-field-label">業態</div>
+      <div class="detail-field-value" id="detail-type"></div>
+    </div>
+    <div class="detail-field">
+      <div class="detail-field-label">エリア</div>
+      <div class="detail-field-value" id="detail-area"></div>
+    </div>
+    <div class="detail-field">
+      <div class="detail-field-label">電話</div>
+      <div class="detail-field-value" id="detail-phone"></div>
+    </div>
+    <div class="detail-field">
+      <div class="detail-field-label">LINE</div>
+      <div class="detail-field-value" id="detail-line"></div>
+    </div>
+    <div class="detail-field">
+      <div class="detail-field-label">担当</div>
+      <div class="detail-field-value" id="detail-staff"></div>
+    </div>
+    <div class="detail-field">
+      <div class="detail-field-label">見込み額</div>
+      <div class="detail-field-value gold" id="detail-amount"></div>
+    </div>
+    <div class="detail-field">
+      <div class="detail-field-label">タグ</div>
+      <div class="detail-field-value" id="detail-tags" style="font-size:12px"></div>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:16px 0">
+
+    <div class="detail-field">
+      <div class="detail-field-label">フェーズ</div>
+      <div id="detail-phase"></div>
+      <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px">
+        <button class="filter-btn" onclick="changePhase('初回接触')">初回接触</button>
+        <button class="filter-btn" onclick="changePhase('情報収集中')">情報収集中</button>
+        <button class="filter-btn" onclick="changePhase('提案準備中')">提案準備中</button>
+        <button class="filter-btn" onclick="changePhase('提案済み')">提案済み</button>
+        <button class="filter-btn" onclick="changePhase('検討中')">検討中</button>
+        <button class="filter-btn" onclick="changePhase('見積提出済')">見積提出済</button>
+        <button class="filter-btn" onclick="changePhase('成約')">成約</button>
+        <button class="filter-btn" onclick="changePhase('失注')">失注</button>
+        <button class="filter-btn" onclick="changePhase('保留')">保留</button>
+      </div>
+    </div>
+
+    <div class="detail-field">
+      <div class="detail-field-label">進捗</div>
+      <div class="slider-wrap">
+        <input type="range" id="detail-progress" min="0" max="100" step="5">
+        <span class="slider-val" id="detail-progress-val">0%</span>
+      </div>
+    </div>
+
+    <div class="detail-field">
+      <div class="detail-field-label">成約可能性</div>
+      <div class="slider-wrap">
+        <input type="range" id="detail-probability" min="0" max="100" step="5">
+        <span class="slider-val" id="detail-probability-val">0%</span>
+      </div>
+    </div>
+
+    <div class="detail-actions">
+      <a id="detail-karte-link" href="#" class="act-btn staff" target="_blank">🔒 カルテを開く</a>
+      <a id="detail-proposal-link" href="#" class="act-btn proposal" target="_blank">📄 提案資料を開く</a>
+    </div>
+
+    <div style="margin-top:8px">
+      <button class="copy-url-btn" onclick="copyProposalURL()">📋 お客様用共有リンクをコピー</button>
+    </div>
+
+    <div class="detail-memo" style="margin-top:16px">
+      <div class="detail-field-label">メモ</div>
+      <textarea id="detail-memo" placeholder="メモを入力..."></textarea>
+    </div>
+
+    <div style="margin-top:20px;text-align:right">
+      <button class="filter-btn" style="border-color:#c0392b;color:#c0392b" onclick="selectedCase && deleteCase(selectedCase.id)">🗑 削除</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD MODAL -->
+<div class="modal-overlay" id="add-modal">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-head">
+      <div class="modal-title">＋ 新規案件</div>
+      <button class="modal-close" onclick="closeAddModal()">&times;</button>
+    </div>
+    <form id="add-form">
+      <div class="modal-body">
+        <div class="modal-row">
+          <div>
+            <label>案件ID</label>
+            <input type="text" id="add-id" required>
+          </div>
+          <div>
+            <label>担当者</label>
+            <input type="text" id="add-staff" value="DAI">
+          </div>
+        </div>
+        <div class="modal-row">
+          <div>
+            <label>顧客名</label>
+            <input type="text" id="add-name" required placeholder="例: 山田 太郎">
+          </div>
+          <div>
+            <label>店舗名</label>
+            <input type="text" id="add-shop" required placeholder="例: カフェ 山田">
+          </div>
+        </div>
+        <div class="modal-row">
+          <div>
+            <label>業態</label>
+            <input type="text" id="add-type" placeholder="例: 飲食店">
+          </div>
+          <div>
+            <label>エリア</label>
+            <input type="text" id="add-area" placeholder="例: 仙台市青葉区">
+          </div>
+        </div>
+        <div class="modal-row">
+          <div>
+            <label>電話番号</label>
+            <input type="text" id="add-phone" placeholder="例: 090-xxxx-xxxx">
+          </div>
+          <div>
+            <label>LINE</label>
+            <input type="text" id="add-line" placeholder="例: 登録済み">
+          </div>
+        </div>
+        <div class="modal-row">
+          <div>
+            <label>フェーズ</label>
+            <select id="add-phase">
+              <option value="初回接触">初回接触</option>
+              <option value="情報収集中" selected>情報収集中</option>
+              <option value="提案準備中">提案準備中</option>
+              <option value="提案済み">提案済み</option>
+              <option value="検討中">検討中</option>
+              <option value="見積提出済">見積提出済</option>
+              <option value="成約">成約</option>
+              <option value="失注">失注</option>
+              <option value="保留">保留</option>
+            </select>
+          </div>
+          <div>
+            <label>見込み工事額（万円）</label>
+            <input type="number" id="add-amount" placeholder="例: 150" min="0">
+          </div>
+        </div>
+        <label>成約可能性（%）</label>
+        <div class="slider-wrap" style="margin-bottom:8px">
+          <input type="range" id="add-probability" min="0" max="100" step="5" value="20">
+          <span class="slider-val" id="add-probability-val">20%</span>
+        </div>
+        <label>進捗（%）</label>
+        <div class="slider-wrap" style="margin-bottom:8px">
+          <input type="range" id="add-progress" min="0" max="100" step="5" value="0">
+          <span class="slider-val" id="add-progress-val">0%</span>
+        </div>
+        <label>メモ</label>
+        <textarea id="add-memo" rows="3" placeholder="自由記入…"></textarea>
+      </div>
+      <div class="modal-foot">
+        <button type="button" class="btn-cancel" onclick="closeAddModal()">キャンセル</button>
+        <button type="submit" class="btn-save">保存</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="portal-footer">
+  <strong>記憶荘（Kiokuso）</strong>
+  Staff Only — 社外秘 ｜ kiokuso.jp
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+</div><!-- /main-content -->
+
+<script src="assets/app.js"></script>
+<script>
+// ── PASSWORD ──
+const PORTAL_PW = 'kuku0222';
+const pwInput = document.getElementById('pw-input');
+const pwBtn = document.getElementById('pw-btn');
+
+function checkPortalPW() {
+  if (pwInput.value === PORTAL_PW) {
+    sessionStorage.setItem('portal-auth', '1');
+    document.getElementById('pw-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+  } else {
+    const err = document.getElementById('pw-err');
+    err.textContent = 'パスワードが違います';
+    pwInput.value = '';
+    setTimeout(() => err.textContent = '', 2500);
+  }
+}
+pwBtn.addEventListener('click', checkPortalPW);
+pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkPortalPW(); });
+
+// Auto-unlock
+if (sessionStorage.getItem('portal-auth')) {
+  document.getElementById('pw-screen').style.display = 'none';
+  document.getElementById('main-content').style.display = 'block';
+}
+
+// Slider display for add modal
+document.getElementById('add-probability').addEventListener('input', e => {
+  document.getElementById('add-probability-val').textContent = e.target.value + '%';
+});
+document.getElementById('add-progress').addEventListener('input', e => {
+  document.getElementById('add-progress-val').textContent = e.target.value + '%';
+});
+</script>
+</body>
+</html>

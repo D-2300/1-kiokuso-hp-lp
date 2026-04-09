@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "id": "bond-001",
+      "name": "菅原 康太",
+      "shop": "ヘアサロン ボンド",
+      "type": "美容室",
+      "area": "宮城野区榴岡",
+      "phone": "090-6628-0669",
+      "line": "登録済み",
+      "status": "active",
+      "phase": "情報収集中",
+      "progress": 25,
+      "probability": 50,
+      "amount": 150,
+      "staff": "DAI",
+      "pw_staff": "bond2026",
+      "pw_proposal": "bond-sugawara",
+      "memo": "移転 or シェアサロン化検討中。候補物件T1035-1あり。",
+      "tags": ["友人内装屋あり", "シェアサロン案"],
+      "created": "2026-04-08",
+      "updated": "2026-04-09"
+    }
+  ]
+}

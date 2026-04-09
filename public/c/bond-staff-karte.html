@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔒 菅原康太様｜ヘアサロン ボンド｜スタッフ用カルテ｜記憶荘</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
+:root{--ink:#1a1a1a;--smoke:#f5f3ef;--warm:#e8e2d8;--accent:#8b6f47;--al:#c4a882;--ap:#f0e8db;--mut:#8a8278;--red:#c0392b;--grn:#2d6a4f;--lin:#d4cfc7;--wh:#fff;--info:#2c6fbb;--warn:#d4a017}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--smoke);color:var(--ink);font-size:14px;line-height:1.7}
+
+/* ── PASSWORD SCREEN ── */
+#pw-screen{position:fixed;inset:0;background:var(--ink);display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;gap:20px}
+.pw-logo{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.3em;color:var(--al);text-transform:uppercase;margin-bottom:8px}
+.pw-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:300;color:#fff;letter-spacing:.06em;margin-bottom:24px;text-align:center}
+.pw-box{display:flex;gap:0;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+#pw-input{background:#fff;border:none;padding:13px 18px;font-size:15px;font-family:'Noto Sans JP',sans-serif;width:220px;outline:none;letter-spacing:.06em}
+#pw-btn{background:var(--accent);color:#fff;border:none;padding:13px 20px;font-size:13px;cursor:pointer;font-family:'Noto Sans JP',sans-serif;letter-spacing:.06em;transition:background .2s}
+#pw-btn:hover{background:#7a6040}
+.pw-err{color:#e08080;font-size:12px;letter-spacing:.06em;min-height:18px}
+.pw-hint{font-size:11px;color:#555;letter-spacing:.08em;margin-top:4px}
+
+/* ── MAIN ── */
+#main-content{display:none}
+
+/* ── STAFF BANNER ── */
+.staff-banner{background:linear-gradient(90deg,#1a1a1a,#2a2520);color:var(--al);text-align:center;padding:8px 20px;font-size:11px;letter-spacing:.18em;position:sticky;top:0;z-index:100;border-bottom:1px solid #3a3530}
+
+/* ── HERO ── */
+.hero{background:var(--ink);color:#fff;padding:56px 40px 44px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#2c2520 0%,#1a1a1a 55%,#0f0f0f 100%)}
+.hero-line{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--al),var(--accent),transparent);animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%,100%{opacity:.5;transform:scaleX(.7)}50%{opacity:1;transform:scaleX(1)}}
+.hi{position:relative;z-index:1;max-width:860px;margin:0 auto}
+.brand{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.28em;color:var(--al);text-transform:uppercase;margin-bottom:24px}
+.htitle{font-family:'Noto Serif JP',serif;font-size:clamp(24px,4.5vw,38px);font-weight:300;letter-spacing:.04em;line-height:1.35;margin-bottom:10px}
+.htitle em{font-style:normal;color:var(--al)}
+.hsub{font-size:12px;color:#aaa;letter-spacing:.1em}
+.hmeta{position:absolute;top:0;right:0;text-align:right;font-size:11px;color:#666;line-height:2}
+.hbadge{display:inline-block;border:1px solid var(--accent);color:var(--al);font-size:10px;padding:4px 14px;letter-spacing:.15em;border-radius:2px;margin-top:16px}
+.hero-contact{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12px;color:#a09890;margin-top:16px;position:relative;z-index:1}
+.hero-contact span{display:flex;align-items:center;gap:4px}
+
+/* ── WRAP ── */
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
+
+/* ── SUMMARY BLOCK ── */
+.summary-block{background:var(--wh);border:2px solid var(--accent);border-radius:8px;margin-bottom:24px;overflow:hidden}
+.sb-head{background:var(--accent);color:#fff;padding:12px 22px;display:flex;align-items:center;gap:10px}
+.sb-head-icon{font-size:16px}
+.sb-head-title{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:600;letter-spacing:.06em}
+.sb-head-badge{margin-left:auto;background:rgba(255,255,255,.2);font-size:10px;padding:3px 10px;border-radius:10px;letter-spacing:.1em}
+.sb-body{padding:20px 22px}
+.sb-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:620px){.sb-grid{grid-template-columns:1fr}}
+.sb-item{border-left:3px solid var(--al);padding-left:12px}
+.sb-label{font-size:10px;color:var(--mut);letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
+.sb-value{font-size:13px;font-weight:500}
+.sb-value.acc{color:var(--accent);font-family:'Cormorant Garamond',serif;font-size:18px}
+
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:620px){.verdict{grid-template-columns:1fr}}
+.v-card{border-radius:6px;padding:14px 16px;font-size:12.5px;line-height:1.8}
+.v-card.hot{background:#fff8e7;border:1px solid #f0c060}
+.v-card.cool{background:#eef4ff;border:1px solid #a0b8e0}
+.v-card-title{font-weight:700;font-size:13px;margin-bottom:6px}
+.v-card.hot .v-card-title{color:#7a5c00}
+.v-card.cool .v-card-title{color:#2a4080}
+
+/* ── SECTION ── */
+.sec{background:var(--wh);border:1px solid var(--lin);border-radius:6px;margin-bottom:22px;overflow:hidden}
+.sec-hd{background:linear-gradient(135deg,var(--warm),#ede7dc);border-bottom:1px solid var(--lin);padding:11px 22px;display:flex;align-items:center;gap:10px}
+.sec-n{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--accent);letter-spacing:.2em}
+.sec-t{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.06em}
+.sec-bd{padding:22px}
+
+/* ── INTERNAL MEMO ── */
+.internal-memo{background:#fff9f0;border:1px dashed var(--al);border-radius:6px;padding:14px 18px;font-size:12.5px;line-height:1.9;color:#5a4030;margin-top:14px}
+.internal-memo .im-head{display:flex;align-items:center;gap:6px;font-weight:700;color:var(--accent);font-size:12px;letter-spacing:.08em;margin-bottom:8px;text-transform:uppercase}
+.internal-memo .im-head::before{content:'🔒';font-size:11px}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:620px){.g2,.g3{grid-template-columns:1fr}}
+
+/* ── FIELD ── */
+.f{margin-bottom:13px}.f:last-child{margin-bottom:0}
+.fl{font-size:10px;color:var(--mut);letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px}
+.fv{font-size:14px;font-weight:500;padding:6px 0;border-bottom:1px solid var(--lin)}
+.fv.lg{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--accent)}
+.fv.nt{font-size:12px;font-weight:400;color:var(--mut);font-style:italic}
+
+/* ── TAG ── */
+.tag{display:inline-block;padding:3px 10px;border-radius:2px;font-size:11px;margin:2px}
+.tw{background:#fff3cd;color:#856404;border:1px solid #ffc107}
+.tok{background:#d1e7dd;color:#0f5132;border:1px solid #198754}
+.ti{background:#cfe2ff;color:#084298;border:1px solid #0d6efd}
+.tg{background:var(--warm);color:var(--mut);border:1px solid var(--lin)}
+.tr{background:#fde8e8;color:var(--red);border:1px solid #e88}
+
+/* ── MEMO ── */
+.memo{background:#fffdf8;border-left:3px solid var(--al);padding:13px 17px;font-size:13px;line-height:1.9;color:#4a4540;border-radius:0 4px 4px 0;margin-top:14px}
+.memo strong{color:var(--accent)}
+
+/* ── ALERT ── */
+.alert{border:1px solid;border-radius:6px;padding:13px 17px;font-size:13px;line-height:1.8;margin-bottom:12px}
+.aw{background:#fff8e7;border-color:#f0c060;color:#7a5c00}
+.ai{background:#eef4ff;border-color:#a0b8e0;color:#2a4080}
+hr{border:none;border-top:1px solid var(--lin);margin:18px 0}
+
+/* ── OPTION CARDS ── */
+.opt-visual{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:620px){.opt-visual{grid-template-columns:1fr}}
+.ov-card{border-radius:8px;overflow:hidden;border:2px solid var(--lin)}
+.ov-card.feat{border-color:var(--accent)}
+.ov-top{padding:14px 18px;background:var(--warm);text-align:center}
+.ov-card.feat .ov-top{background:var(--accent);color:#fff}
+.ov-tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.7;margin-bottom:4px}
+.ov-name{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:600}
+.ov-body{padding:18px}
+.ov-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--lin);font-size:13px}
+.ov-row:last-child{border-bottom:none}
+.ov-key{color:var(--mut);font-size:12px}
+.ov-val{font-weight:500}
+.ov-val.red{color:var(--red)}
+.ov-val.grn{color:var(--grn)}
+.ov-val.acc{color:var(--accent);font-family:'Cormorant Garamond',serif;font-size:17px}
+
+/* KPI STRIP */
+.kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+@media(max-width:620px){.kpi-strip{grid-template-columns:1fr}}
+.kpi{background:var(--wh);border:1px solid var(--lin);border-radius:6px;padding:20px 16px 16px;text-align:center;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
+.kpi-l{font-size:10px;color:var(--mut);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.kpi-v{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--accent);line-height:1}
+.kpi-u{font-size:11px;color:var(--mut);margin-top:3px}
+
+/* COST TABLE */
+.ctbl{width:100%;border-collapse:collapse;font-size:13px}
+.ctbl th{background:var(--warm);padding:8px 12px;text-align:left;font-size:11px;letter-spacing:.1em;color:var(--mut);border-bottom:1px solid var(--lin)}
+.ctbl td{padding:11px 12px;border-bottom:1px solid var(--lin);vertical-align:top}
+.ctbl tr:last-child td{border-bottom:none}
+.num{text-align:right;font-family:'Cormorant Garamond',serif;font-size:17px}
+.num.r{color:var(--red)}.num.g{color:var(--grn)}
+.trow td{background:var(--warm);font-weight:600;border-top:2px solid var(--al)}
+
+/* CHECK LIST */
+.chk{list-style:none}
+.chk li{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--lin);font-size:13px}
+.chk li:last-child{border-bottom:none}
+.ci{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;margin-top:2px}
+.ci.ok{background:#d1e7dd;color:var(--grn)}.ci.w{background:#fff3cd;color:#856404}
+
+/* ACTION LIST */
+.acts{list-style:none}
+.acts li{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--lin);font-size:13px}
+.acts li:last-child{border-bottom:none}
+.an{min-width:26px;height:26px;background:var(--ink);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:'Cormorant Garamond',serif;flex-shrink:0;margin-top:1px}
+.an.a{background:var(--accent)}
+
+/* FLOW SVG */
+.flow-wrap{background:var(--wh);border:1px solid var(--lin);border-radius:8px;padding:20px;overflow-x:auto;margin-bottom:18px}
+
+/* ── TIMELINE ── */
+.tl-item{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid #f0ece6}
+.tl-item:last-child{border-bottom:none}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px;flex-shrink:0}
+.tl-content{flex:1}
+.tl-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--mut)}
+.tl-text{font-size:13px;margin-top:2px}
+
+/* ── INFO TABLE (from karte) ── */
+.info-table{width:100%;border-collapse:collapse}
+.info-table th{text-align:left;font-weight:500;font-size:12px;color:var(--mut);padding:8px 12px;width:140px;vertical-align:top;white-space:nowrap;background:#fafaf8;border-bottom:1px solid var(--lin)}
+.info-table td{padding:8px 12px;border-bottom:1px solid var(--lin);font-size:13px}
+.info-table tr:last-child th,.info-table tr:last-child td{border-bottom:none}
+
+/* ── IMAGE PLACEHOLDER ── */
+.img-placeholder{background:linear-gradient(135deg,#f0ebe3,#e8e2d8);border:2px dashed var(--al);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--mut);font-size:12px;min-height:200px;margin:12px 0}
+.img-placeholder .ip-icon{font-size:32px;opacity:.5}
+.img-placeholder .ip-label{letter-spacing:.1em}
+
+/* ── NOTES SECTION ── */
+.notes-section{background:var(--wh);border:2px solid #c0a060;border-radius:8px;margin-top:28px;overflow:hidden}
+.notes-head{background:linear-gradient(90deg,#3a2e1e,#2a2010);color:var(--al);padding:12px 22px;display:flex;align-items:center;gap:10px}
+.notes-head-title{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:600;letter-spacing:.08em}
+.notes-body{padding:22px}
+.notes-date-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.notes-date-label{font-size:10px;color:var(--mut);letter-spacing:.14em;text-transform:uppercase;min-width:60px}
+.notes-date-val{font-size:13px;border-bottom:1px solid var(--lin);flex:1;padding:4px 0}
+.note-entry{border:1px solid var(--lin);border-radius:6px;padding:16px;margin-bottom:14px;background:#fafaf8}
+.note-entry:last-child{margin-bottom:0}
+.ne-meta{display:flex;gap:12px;margin-bottom:8px;font-size:11px;color:var(--mut)}
+.ne-meta span{background:var(--warm);padding:2px 8px;border-radius:10px}
+.ne-body{font-size:13px;line-height:1.85;color:#3a3530;white-space:pre-wrap;border:none;width:100%;background:transparent;resize:vertical;font-family:'Noto Sans JP',sans-serif;min-height:80px;outline:none}
+.add-note-btn{display:flex;align-items:center;gap:8px;border:1.5px dashed var(--al);border-radius:6px;padding:14px 18px;font-size:13px;color:var(--accent);cursor:pointer;background:transparent;width:100%;justify-content:center;letter-spacing:.06em;transition:background .2s}
+.add-note-btn:hover{background:var(--ap)}
+
+/* FOOTER */
+.footer{text-align:center;padding:32px 20px;color:var(--mut);font-size:11px;letter-spacing:.1em;border-top:1px solid var(--lin);margin-top:8px}
+.footer strong{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--accent);margin-bottom:4px}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="pw-screen">
+  <div style="text-align:center">
+    <div class="pw-logo">記憶荘 — Staff Only</div>
+    <div class="pw-title">菅原 康太 様<br>ヘアサロン ボンド｜顧客カルテ</div>
+    <div class="pw-box">
+      <input type="password" id="pw-input" placeholder="パスワードを入力">
+      <button id="pw-btn" onclick="checkPW()">開く</button>
+    </div>
+    <div class="pw-err" id="pw-err"></div>
+    <div class="pw-hint">担当スタッフのみアクセス可能</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
+
+<div class="staff-banner">🔒 スタッフ専用 — 社外秘 — 菅原康太様｜ヘアサロン ボンド 顧客カルテ</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-line"></div>
+  <div class="hi">
+    <div class="hmeta">
+      初回ヒアリング: 2026年4月8日<br>
+      担当: DAI（記憶荘）<br>
+      【スタッフ専用カルテ】
+    </div>
+    <div class="brand">記憶荘 — Customer Profile</div>
+    <div class="htitle">菅原 康太<small style="font-size:14px;color:#b0a89e;margin-left:8px;font-weight:300">（すがわら こうた）</small><br>ヘアサロン <em>ボンド</em> 様</div>
+    <div class="hsub">Hair Salon BOND / 仙台市 宮城野区榴岡 / 代表</div>
+    <div class="hbadge">移転 OR シェアサロン化 ― 検討中</div>
+    <div class="hero-contact">
+      <span>📞 090-6628-0669</span>
+      <span>📍 宮城野区榴岡3丁目（現店舗）</span>
+      <span>💬 LINE登録済（虎の巻DL経由）</span>
+      <span>🌐 ホットペッパー掲載あり</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ★ 案件サマリー ★ -->
+<div class="summary-block">
+  <div class="sb-head">
+    <span class="sb-head-icon">📋</span>
+    <span class="sb-head-title">案件サマリー・戦略メモ</span>
+    <span class="sb-head-badge">スタッフ専用</span>
+  </div>
+  <div class="sb-body">
+    <div class="sb-grid">
+      <div class="sb-item">
+        <div class="sb-label">案件名</div>
+        <div class="sb-value">ヘアサロン ボンド / 美容室移転相談</div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">フェーズ</div>
+        <div class="sb-value"><span class="tag tok">情報収集段階</span></div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">温度感</div>
+        <div class="sb-value"><span class="tag tw">中〜やや高</span></div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">注意フラグ</div>
+        <div class="sb-value"><span class="tag tr">友人の内装屋あり</span> <span class="tag ti">シェアサロン案も検討中</span></div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">現家賃</div>
+        <div class="sb-value acc">月25万円</div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">敷金（返還見込み）</div>
+        <div class="sb-value acc">約270万円</div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">移転動機</div>
+        <div class="sb-value">スタッフとのトラブル→一人営業に切替→家賃25万が重い。家賃10万下がれば工事費かけても1年でペイできるという計算。</div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-label">迷っている点</div>
+        <div class="sb-value">①移転 vs ②現店舗でシェアサロン化の二択。東口にシェアサロンが無いことに着目している。</div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <div class="v-card hot">
+        <div class="v-card-title">⚠️ 最重要確認事項</div>
+        候補物件（事務所）の<strong>用途変更許可</strong>と<strong>排水配管の位置</strong>が全ての前提。これが通らなければ移転案は崩れる。物件受取り次第、最初に確認する。
+      </div>
+      <div class="v-card cool">
+        <div class="v-card-title">💡 記憶荘の勝ち筋</div>
+        ①物件探し→内装まで一気通貫（友人内装屋には不動産機能なし）②原状回復・退去交渉のサポート（元不動産経験）③フリーレント・指し値交渉力④費用の叩き台資料で信頼獲得
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip">
+  <div class="kpi">
+    <div class="kpi-l">現在の月額家賃</div>
+    <div class="kpi-v">25</div>
+    <div class="kpi-u">万円 / 月</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-l">差入敷金（推定）</div>
+    <div class="kpi-v">270</div>
+    <div class="kpi-u">万円</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-l">対象規模（候補物件）</div>
+    <div class="kpi-v">20</div>
+    <div class="kpi-u">坪</div>
+  </div>
+</div>
+
+<!-- 01 基本情報 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">01</span><span class="sec-t">基本情報</span></div>
+  <div class="sec-bd">
+    <div class="g2">
+      <div>
+        <div class="f"><div class="fl">氏名</div><div class="fv">菅原 康太（すがわら こうた）</div></div>
+        <div class="f"><div class="fl">電話番号</div><div class="fv">090-6628-0669</div></div>
+        <div class="f"><div class="fl">LINE</div><div class="fv">登録済み（友だち追加→虎の巻DL経由）</div></div>
+        <div class="f"><div class="fl">店舗名</div><div class="fv">ヘアサロン ボンド（Hair Salon BOND）</div></div>
+        <div class="f"><div class="fl">業態</div><div class="fv">美容室（夫婦経営）</div></div>
+      </div>
+      <div>
+        <div class="f"><div class="fl">経営歴（現物件）</div><div class="fv">約12年（前会社より買取独立）</div></div>
+        <div class="f"><div class="fl">物件自体の美容室歴</div><div class="fv">20年以上</div></div>
+        <div class="f"><div class="fl">経緯</div><div class="fv">以前勤めていた会社の美容室を12年前に買い取り独立開業。念書ベースの契約で引き継ぎ。</div></div>
+        <div class="f"><div class="fl">スタッフ状況</div><div class="fv">元スタッフあり→<strong>揉めて離脱</strong>。現在は夫婦のみ運営。</div></div>
+        <div class="f"><div class="fl">集客</div><div class="fv">ホットペッパー掲載あり</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 現店舗の状況 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">02</span><span class="sec-t">現店舗の状況</span></div>
+  <div class="sec-bd">
+    <div class="g3">
+      <div class="f"><div class="fl">月額家賃</div><div class="fv lg">¥250,000</div></div>
+      <div class="f"><div class="fl">差入敷金（推定）</div><div class="fv lg">¥2,700,000</div></div>
+      <div class="f"><div class="fl">解約予告</div><div class="fv lg">2ヶ月前</div></div>
+    </div>
+    <hr>
+    <div class="g2">
+      <div>
+        <div class="f"><div class="fl">シャンプー台</div><div class="fv">2台（同時稼働で排水問題なし）</div></div>
+        <div class="f"><div class="fl">セット面</div><div class="fv">壁付け（移設不可→新設必要）</div></div>
+        <div class="f"><div class="fl">セット椅子</div><div class="fv">4脚（移設可能）</div></div>
+        <div class="f"><div class="fl">流し台</div><div class="fv">1台 幅180cm（移設希望）</div></div>
+      </div>
+      <div>
+        <div class="f"><div class="fl">定期借家・期間縛り</div><div class="fv"><span class="tag tok">なし ✓</span>（普通賃貸借・長期入居）</div></div>
+        <div class="f"><div class="fl">天井の状態</div><div class="fv"><span class="tag tw">躯体現し（スケルトン）</span></div></div>
+        <div class="f"><div class="fl">内装ベース</div><div class="fv">白基調（3年前にコロナ補助金で改装済。友人の内装屋が施工、デザインは菅原さん自身）</div></div>
+        <div class="f"><div class="fl">契約形態</div><div class="fv"><span class="tag tw">念書ベース — 要確認</span></div></div>
+      </div>
+    </div>
+    <div class="memo">
+      <strong>【DAI所見】原状回復リスクは低い</strong><br>
+      天井スケルトンは費用が思ったより低い可能性大。白基調で次の入居者が入りやすく、スケルトン戻しを大家に求めると逆に決まりづらく嫌がるケース多い。退去交渉でコスト圧縮余地あり。ただし念書形式の契約書の条件確認は必須。
+    </div>
+    <div class="internal-memo">
+      <div class="im-head">内部メモ（スタッフ専用）</div>
+      前職会社から買い取って独立したという経緯から、<strong>退去条件が一般的な賃貸借契約と異なる可能性がある</strong>。念書の内容を退去前に必ずDAIが確認する。スタッフトラブルが移転の一因であり、シェアサロン化した場合の<strong>他者との協業リスク</strong>についても将来的に触れておく必要がある。
+    </div>
+
+    <!-- 画像枠 -->
+    <div class="img-placeholder">
+      <div class="ip-icon">📷</div>
+      <div class="ip-label">現店舗 内観写真</div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 移転 vs シェアサロン比較 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">03</span><span class="sec-t">移転 vs シェアサロン化 ― 比較</span></div>
+  <div class="sec-bd">
+    <div class="opt-visual">
+      <div class="ov-card feat">
+        <div class="ov-top"><div class="ov-tag">Option A</div><div class="ov-name">移　転</div></div>
+        <div class="ov-body">
+          <div class="ov-row"><span class="ov-key">対象規模</span><span class="ov-val">約20坪</span></div>
+          <div class="ov-row"><span class="ov-key">記憶荘の内装費</span><span class="ov-val acc">¥100〜200万</span></div>
+          <div class="ov-row"><span class="ov-key">他社の場合</span><span class="ov-val red">¥300〜400万</span></div>
+          <div class="ov-row"><span class="ov-key">家賃10万削減なら</span><span class="ov-val grn">約1年でペイ</span></div>
+          <div class="ov-row"><span class="ov-key">主な課題</span><span class="ov-val">用途変更・配管確認</span></div>
+        </div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-top"><div class="ov-tag">Option B</div><div class="ov-name">シェアサロン化</div></div>
+        <div class="ov-body">
+          <div class="ov-row"><span class="ov-key">現地設備</span><span class="ov-val grn">そのまま活用</span></div>
+          <div class="ov-row"><span class="ov-key">移転コスト</span><span class="ov-val grn">不要</span></div>
+          <div class="ov-row"><span class="ov-key">東口のシェアサロン</span><span class="ov-val acc">0件（空白市場）</span></div>
+          <div class="ov-row"><span class="ov-key">競合（一番町）</span><span class="ov-val">2〜3件</span></div>
+          <div class="ov-row"><span class="ov-key">主な課題</span><span class="ov-val">集客・管理コスト</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 希望移転条件 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">04</span><span class="sec-t">希望移転条件（LINEヒアリング）</span></div>
+  <div class="sec-bd">
+    <div class="g2">
+      <div>
+        <div class="f"><div class="fl">エリア</div><div class="fv">宮城野区榴岡3丁目近辺</div></div>
+        <div class="f"><div class="fl">広さ</div><div class="fv">10〜15坪</div></div>
+        <div class="f"><div class="fl">家賃</div><div class="fv"><strong>15万以内</strong>（理想は<strong>12万前後</strong>）</div></div>
+        <div class="f"><div class="fl">時期</div><div class="fv">いい物件があればすぐ動きたい</div></div>
+      </div>
+      <div>
+        <div class="f"><div class="fl">居抜き希望</div><div class="fv">使えるものは持っていきたい（機材移設型）</div></div>
+        <div class="f"><div class="fl">内装こだわり</div><div class="fv"><strong>あまりない</strong>（自分でデザイン考えるタイプ）</div></div>
+        <div class="f"><div class="fl">予算感</div><div class="fv">敷金270万−原状回復費＋持ち出し100万以内</div></div>
+        <div class="f"><div class="fl">補助金</div><div class="fv"><span class="tag tg">消極的</span> 1回利用歴あるが「面倒」。認定支援機関を嫌がる。</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 候補物件 T1035-1 -->
+<div class="sec" style="border-color:var(--accent)">
+  <div class="sec-hd" style="background:linear-gradient(135deg,#2a2010,#1a1a1a);color:#fff">
+    <span class="sec-n" style="color:var(--al)">05</span>
+    <span class="sec-t" style="color:#fff">【候補物件】T1035-1 ― 詳細レポート</span>
+    <span style="margin-left:auto;font-size:10px;background:var(--accent);padding:3px 10px;border-radius:10px;color:#fff">菅原さんから提示</span>
+  </div>
+  <div class="sec-bd">
+
+    <div style="background:var(--ink);color:#fff;border-radius:6px;padding:18px 20px;margin-bottom:18px;position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--al))"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--al);letter-spacing:.2em;margin-bottom:6px">T1035-1 ― 仙台テナント.com / 銀河不動産GREX</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:300;margin-bottom:4px">現店舗の真裏 ― 仙台駅徒歩8分・1階路面物件</div>
+      <div style="font-size:12px;color:#aaa">仙台市宮城野区榴岡三丁目 ｜ SRC造 12階建1F ｜ 1983年築（43年）｜ 普通賃貸借2年</div>
+    </div>
+
+    <!-- 画像枠 -->
+    <div class="g2" style="margin-bottom:18px">
+      <div class="img-placeholder" style="min-height:180px">
+        <div class="ip-icon">📷</div>
+        <div class="ip-label">T1035-1 外観写真</div>
+      </div>
+      <div class="img-placeholder" style="min-height:180px">
+        <div class="ip-icon">📐</div>
+        <div class="ip-label">T1035-1 間取り図</div>
+      </div>
+    </div>
+
+    <div class="g3" style="margin-bottom:18px">
+      <div style="background:var(--wh);border:1px solid var(--lin);border-radius:6px;padding:14px;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--grn)"></div>
+        <div style="font-size:10px;color:var(--mut);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px">月額賃料（管理費込）</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--grn)">¥162,182</div>
+        <div style="font-size:10px;color:var(--mut)">賃料¥149,091 ＋ 管理費¥13,091</div>
+      </div>
+      <div style="background:var(--wh);border:1px solid var(--lin);border-radius:6px;padding:14px;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)"></div>
+        <div style="font-size:10px;color:var(--mut);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px">面積</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--accent)">19.43坪</div>
+        <div style="font-size:10px;color:var(--mut)">64.26㎡ ／ 1階路面</div>
+      </div>
+      <div style="background:var(--wh);border:1px solid var(--lin);border-radius:6px;padding:14px;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--grn)"></div>
+        <div style="font-size:10px;color:var(--mut);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px">月次削減額</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--grn)">▲¥87,818</div>
+        <div style="font-size:10px;color:var(--mut)">年間 ▲¥1,053,816</div>
+      </div>
+    </div>
+
+    <div class="g2" style="margin-bottom:16px">
+      <div>
+        <div class="f"><div class="fl">所在地</div><div class="fv">仙台市宮城野区榴岡三丁目</div></div>
+        <div class="f"><div class="fl">アクセス</div><div class="fv">仙台駅 徒歩8分</div></div>
+        <div class="f"><div class="fl">階数・形態</div><div class="fv"><span class="tag tok">1階路面 ✓</span></div></div>
+        <div class="f"><div class="fl">敷金/礼金</div><div class="fv">3ヶ月 / 1ヶ月</div></div>
+        <div class="f"><div class="fl">駐車場</div><div class="fv">¥15,000/月</div></div>
+      </div>
+      <div>
+        <div class="f"><div class="fl">本体設備</div><div class="fv">電気・<strong>上下水道</strong>・都市ガス</div></div>
+        <div class="f"><div class="fl">各戸設備</div><div class="fv">トイレ・エアコン・<strong>給湯</strong></div></div>
+        <div class="f"><div class="fl">掲載業種</div><div class="fv"><span class="tag tw">物販・医療・エステ・教室・ネイル…（美容室の明記なし）</span></div></div>
+        <div class="f"><div class="fl">保証会社</div><div class="fv">アーク賃貸保証</div></div>
+        <div class="f"><div class="fl">取引態様</div><div class="fv">媒介（銀河不動産GREX）</div></div>
+      </div>
+    </div>
+
+    <!-- 契約時費用 -->
+    <div style="background:#fafaf8;border-radius:6px;padding:16px;margin-bottom:16px">
+      <div style="font-size:11px;color:var(--mut);letter-spacing:.12em;margin-bottom:10px">契約時費用（税別概算）</div>
+      <table class="ctbl">
+        <tr><td>前家賃</td><td class="num">¥162,182</td></tr>
+        <tr><td>敷金（3ヶ月）</td><td class="num">¥447,273</td></tr>
+        <tr><td>礼金（1ヶ月）</td><td class="num">¥149,091</td></tr>
+        <tr><td>仲介手数料</td><td class="num">¥149,091</td></tr>
+        <tr><td>保証料</td><td class="num">¥162,182</td></tr>
+        <tr class="trow"><td><strong>契約時合計</strong></td><td class="num" style="font-size:19px">¥1,069,819</td></tr>
+      </table>
+    </div>
+
+    <div class="alert ai">
+      💡 <strong>上下水道・給湯が本体設備に含まれている点が大きい。</strong>配管引き込みコストが抑えられる可能性が高く、美容室にとって最も気になる「排水工事の追加費用」リスクが低い物件。
+    </div>
+    <div class="alert aw">
+      ⚠️ <strong>要確認：掲載業種に「美容室」の明記なし。</strong>用途変更許可をオーナーに確認するのが最初のアクション。
+    </div>
+
+    <div class="internal-memo">
+      <div class="im-head">内部メモ（スタッフ専用）</div>
+      <strong>この物件は非常に条件が良い。</strong>サイズ（19.43坪≒ほぼ20坪）・賃料（月▲約8.8万）・上下水道完備・1階路面すべてが合致。現家賃25万→16.2万への削減は「月10万下がれば1年でペイ」というオーナーの判断軸にほぼ到達する。掲載が2024年12月〜で長期化→<strong>指し値交渉チャンス</strong>。<br><br>
+      同エリアのT1035-3（21.88坪・¥152,091＋管理費）も同ビルと推定され、用途変更が許可されれば隣接区画も視野に入る。<br><br>
+      <strong>交渉戦略：</strong>①美容室入居可否の確認 ②給排水工事の可否・費用の概算 ③賃料14万以下への減額交渉 ④2〜3ヶ月のフリーレント要求 ⑤長期掲載を根拠にした指し値<br><br>
+      <strong>早めにGREXへ問い合わせ、用途変更可否を先行確認することを推奨。</strong>
+    </div>
+
+    <div style="text-align:center;margin-top:14px">
+      <a href="https://www.sendai-tenant.com/tenant/t1035-1/syosai.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;padding:10px 22px;border-radius:4px;font-size:13px;letter-spacing:.06em">物件詳細ページ（仙台テナント.com）→</a>
+    </div>
+  </div>
+</div>
+
+<!-- 06 資金フロー試算 -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">06</span><span class="sec-t">資金フロー試算（たたき台）</span></div>
+  <div class="sec-bd">
+    <p style="font-size:12px;color:var(--mut);margin-bottom:12px">20坪・事務所からの造作の場合。電話で「100〜200弱、他社なら300〜400」と伝達済み。</p>
+    <div class="flow-wrap">
+      <svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans JP',sans-serif">
+        <rect width="780" height="200" fill="#fafaf8" rx="6"/>
+        <line x1="150" y1="100" x2="207" y2="100" stroke="#c4a882" stroke-width="2" stroke-dasharray="4,3"/>
+        <line x1="305" y1="100" x2="362" y2="100" stroke="#c4a882" stroke-width="2" stroke-dasharray="4,3"/>
+        <line x1="460" y1="100" x2="517" y2="100" stroke="#c4a882" stroke-width="2" stroke-dasharray="4,3"/>
+        <line x1="615" y1="100" x2="672" y2="100" stroke="#c4a882" stroke-width="2" stroke-dasharray="4,3"/>
+        <polygon points="207,95 218,100 207,105" fill="#c4a882"/>
+        <polygon points="362,95 373,100 362,105" fill="#c4a882"/>
+        <polygon points="517,95 528,100 517,105" fill="#c4a882"/>
+        <polygon points="672,95 683,100 672,105" fill="#c4a882"/>
+        <g><rect x="10" y="60" width="140" height="80" rx="6" fill="#2d6a4f"/><text x="80" y="88" text-anchor="middle" fill="#fff" font-size="10" letter-spacing="1">敷金返還（予定）</text><text x="80" y="114" text-anchor="middle" fill="#a8d5b5" font-size="20" font-weight="bold" font-family="'Cormorant Garamond',serif">＋270万</text></g>
+        <g><rect x="218" y="60" width="140" height="80" rx="6" fill="#fff" stroke="#d4cfc7"/><text x="288" y="88" text-anchor="middle" fill="#8a8278" font-size="10" letter-spacing="1">原状回復・引越し</text><text x="288" y="114" text-anchor="middle" fill="#c0392b" font-size="19" font-weight="bold" font-family="'Cormorant Garamond',serif">－30〜80万</text></g>
+        <g><rect x="373" y="60" width="140" height="80" rx="6" fill="#fff" stroke="#d4cfc7"/><text x="443" y="82" text-anchor="middle" fill="#8a8278" font-size="10" letter-spacing="1">新規内装工事</text><text x="443" y="97" text-anchor="middle" fill="#8a8278" font-size="9">（記憶荘 / 20坪）</text><text x="443" y="120" text-anchor="middle" fill="#c0392b" font-size="19" font-weight="bold" font-family="'Cormorant Garamond',serif">－100〜200万</text></g>
+        <g><rect x="528" y="60" width="140" height="80" rx="6" fill="#fff" stroke="#d4cfc7"/><text x="598" y="82" text-anchor="middle" fill="#8a8278" font-size="10" letter-spacing="1">新物件 敷金礼金等</text><text x="598" y="97" text-anchor="middle" fill="#8a8278" font-size="9">（交渉次第で削減余地）</text><text x="598" y="120" text-anchor="middle" fill="#c0392b" font-size="19" font-weight="bold" font-family="'Cormorant Garamond',serif">－30〜60万</text></g>
+        <g><rect x="683" y="48" width="92" height="104" rx="6" fill="#8b6f47"/><text x="729" y="86" text-anchor="middle" fill="#f0e8db" font-size="9" letter-spacing="1">実質持ち出し</text><text x="729" y="101" text-anchor="middle" fill="#f0e8db" font-size="9">イメージ</text><text x="729" y="126" text-anchor="middle" fill="#fff" font-size="17" font-weight="bold" font-family="'Cormorant Garamond',serif">¥0〜</text><text x="729" y="142" text-anchor="middle" fill="#fff" font-size="17" font-weight="bold" font-family="'Cormorant Garamond',serif">70万程度</text></g>
+      </svg>
+    </div>
+    <table class="ctbl">
+      <thead><tr><th>項目</th><th>内容</th><th style="text-align:right">金額（概算）</th></tr></thead>
+      <tbody>
+        <tr><td>敷金返還（予定）</td><td>現契約の差入敷金</td><td class="num g">＋ ¥2,700,000</td></tr>
+        <tr><td>原状回復費用</td><td>天井・クロス等（交渉次第で圧縮余地あり）</td><td class="num r">－ ¥300,000〜500,000</td></tr>
+        <tr><td>引越し・機材移設</td><td>シャンプー台2台・流し台・セット面</td><td class="num r">－ ¥100,000〜300,000</td></tr>
+        <tr><td>新規内装工事（記憶荘）</td><td>20坪 基本仕上げ</td><td class="num r">－ ¥1,000,000〜2,000,000</td></tr>
+        <tr><td>新物件 契約金（T1035-1）</td><td>敷金3ヶ月＋礼金1ヶ月＋仲介＋保証</td><td class="num r">－ ¥1,069,819</td></tr>
+        <tr class="trow"><td colspan="2"><strong>総額レンジ（税別）</strong></td><td class="num" style="font-size:19px">¥2,670,000〜3,570,000</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:12px;padding:12px;background:#e8f4e8;border-radius:6px;font-size:13px">
+      <strong>資金源：</strong>現テナント敷金 約270万円 → 原状回復費控除後の残金＋持ち出し100万以内が菅原さんの想定ライン。
+    </div>
+    <div class="memo" style="margin-top:14px">
+      <strong>※あくまでたたき台。</strong> 配管新設が必要な場合は＋¥50〜200万の追加コストも想定内。友人の内装職人（日当ベース）との分担次第でさらに圧縮可能。
+    </div>
+  </div>
+</div>
+
+<!-- 07 物件適合チェックリスト -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">07</span><span class="sec-t">物件適合チェックリスト（美容室）</span></div>
+  <div class="sec-bd">
+    <ul class="chk">
+      <li><div class="ci ok">✓</div><div><strong>給排水（既存配管）</strong> <span class="tag tok" style="margin-left:5px">現店舗は問題なし</span><br><span style="color:var(--mut);font-size:12px">現物件：シャンプー台2台同時稼働で詰まり等なし。移転先は要現地確認。</span></div></li>
+      <li><div class="ci w">!</div><div><strong>用途変更の許可（オーナー合意）</strong> <span class="tag tw" style="margin-left:5px">未確認</span><br><span style="color:var(--mut);font-size:12px">事務所物件への美容室出店は拒否されるケースあり。物件確認の最初に必ず確認。</span></div></li>
+      <li><div class="ci w">!</div><div><strong>排水管の位置・口径（配管新設コスト）</strong> <span class="tag tw" style="margin-left:5px">現地確認必須</span><br><span style="color:var(--mut);font-size:12px">配管がない場合、引き込み工事で数十〜数百万円の追加コストになる可能性。</span></div></li>
+      <li><div class="ci w">!</div><div><strong>電気容量（200V / アンペア数）</strong> <span class="tag tg" style="margin-left:5px">要確認</span><br><span style="color:var(--mut);font-size:12px">事務所仕様のままでは容量不足の場合あり。</span></div></li>
+      <li><div class="ci ok">✓</div><div><strong>看板・外装変更</strong> <span class="tag tg" style="margin-left:5px">一般的に問題少なめ</span></div></li>
+      <li><div class="ci w">!</div><div><strong>現物件の退去条件（念書）</strong> <span class="tag tw" style="margin-left:5px">要精読</span><br><span style="color:var(--mut);font-size:12px">前職会社からの買取時の念書。一般的な賃貸借契約と条件が異なる可能性。退去時にDAIが一緒に確認。</span></div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 08 関係構築・営業メモ -->
+<div class="sec" style="border-color:var(--accent)">
+  <div class="sec-hd" style="background:linear-gradient(135deg,#fff9f0,#faf3e8)">
+    <span class="sec-n">08</span>
+    <span class="sec-t">🔒 関係構築・営業メモ</span>
+  </div>
+  <div class="sec-bd">
+    <table class="info-table">
+      <tr><th>性格・タイプ</th><td>内装にこだわりなし。自分でデザイン考えるタイプ。補助金は面倒がる実務派。即断即決よりじっくり比較検討型。</td></tr>
+      <tr><th>決定権者</th><td>本人＋奥様（夫婦経営）。奥様の安心感も重要ファクター。電話で「奥様にも安心していただけるよう数字の叩き台を」と伝達済み。</td></tr>
+      <tr><th>スタッフ問題</th><td>元スタッフと揉めた→退職。詳細不明だが心理的負担あり。<strong>深掘りは避ける。</strong></td></tr>
+      <tr><th>友人内装屋</th><td>日当ベースで動く人。過去の改装実績あり。敵対せず「サポートしてくれる方がいて心強い」と伝達済。記憶荘の強みは不動産+内装の一気通貫であり、<strong>友人内装屋との共存路線でOK。</strong></td></tr>
+      <tr><th>補助金への姿勢</th><td>1回利用歴あるが「認定支援機関」の絡みが面倒と感じている。強く推さない。条件合えば提案の余地あり。</td></tr>
+      <tr><th>シェアサロン案</th><td>東口にシェアサロンがないことを本人が認識。家賃負担が減れば移転不要という判断もあり得る。→どちらに転んでも対応できる姿勢を維持。</td></tr>
+      <tr><th>信頼構築ポイント</th><td>「営業しない」「紹介料・上乗せなし」「いつか機会があれば」→ <strong>このスタンスを崩さない。</strong>叩き台資料の品質で専門性をアピール。</td></tr>
+      <tr><th>競合リスク</th><td>友人内装屋が「また協力する」と言っている。→ 価格勝負だけでなく提案力・不動産サポートで差別化。</td></tr>
+    </table>
+    <div class="internal-memo">
+      <div class="im-head">内部メモ（スタッフ専用）</div>
+      移転検討の背景にスタッフトラブルあり（詳細不明）。シェアサロン化を選ぶ場合、同様のトラブルリスクが残る点を将来的に確認すべき。奥様が判断に関与するため、<strong>資料はわかりやすい数字ベース</strong>で作ること。友人内装職人の協業については「うちの方でお手伝いできる範囲で」と柔軟対応を表明済み。
+    </div>
+  </div>
+</div>
+
+<!-- 09 対応タイムライン -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">09</span><span class="sec-t">対応タイムライン</span></div>
+  <div class="sec-bd">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2026.04.08</div>
+        <div class="tl-text">LINE友だち追加。条件ヒアリング（テキスト）。エリア：榴岡近辺 / 10〜15坪 / 15万以内（理想12万）/ すぐ動きたい。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2026.04.08</div>
+        <div class="tl-text">電話ヒアリング実施（約15分）。設備・原状回復・予算・候補物件・シェアサロン案など詳細確認。「営業しない」「いつか機会が持てれば」のスタンスで安心感を与えた。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2026.04.08</div>
+        <div class="tl-text">菅原さんから候補物件URL送付（T1035-1：現店舗真裏のマンション1F）。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--warn)"></div>
+      <div class="tl-content">
+        <div class="tl-date">NEXT</div>
+        <div class="tl-text"><strong>① T1035-1の業態適合性調査（美容室可否・給排水）→ GREXへ問い合わせ</strong><br>② 費用の叩き台資料をお客様用HTMLで作成<br>③ 他候補物件のリサーチ（長期掲載物件優先・東口エリア）<br>④ シェアサロン市場調査（一番町の既存店料金モデル）<br>⑤ LINEで資料送付</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 10 次のアクション -->
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">10</span><span class="sec-t">次のアクション</span></div>
+  <div class="sec-bd">
+    <ul class="acts">
+      <li><div class="an a">1</div><div><strong>T1035-1 用途変更可否・排水管確認</strong>（GREXへ問い合わせ）<br><span style="color:var(--mut);font-size:12px">最優先。これが通らなければ移転案は崩れる。</span></div></li>
+      <li><div class="an a">2</div><div><strong>たたき台資料の作成（出店提案書）</strong><br><span style="color:var(--mut);font-size:12px">移転費用概算 ／ シェアサロン化概算 ／ 損益分岐点の比較 → 奥様も含めて判断できる資料</span></div></li>
+      <li><div class="an">3</div><div><strong>現物件の退去条件を確認</strong>（念書の精読）<br><span style="color:var(--mut);font-size:12px">原状回復義務の範囲・解約予告期間・特約の有無を一緒に確認</span></div></li>
+      <li><div class="an">4</div><div><strong>長期掲載物件のリサーチ（東口エリア）</strong><br><span style="color:var(--mut);font-size:12px">指し値・フリーレント交渉余地のある物件をピックアップ。20坪・給排水あり・店舗利用可が条件</span></div></li>
+      <li><div class="an">5</div><div><strong>シェアサロン市場調査（仙台東口）</strong><br><span style="color:var(--mut);font-size:12px">一番町の既存店舗の料金モデルを調べ、東口出店の収益試算</span></div></li>
+      <li><div class="an">6</div><div><strong>お客様用資料をLINEで送付</strong><br><span style="color:var(--mut);font-size:12px">叩き台の品質で専門性をアピール。営業感を出さない。</span></div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ★ NOTES SECTION ★ -->
+<div class="notes-section">
+  <div class="notes-head">
+    <span style="font-size:16px">📝</span>
+    <span class="notes-head-title">スタッフ備考欄</span>
+    <span style="margin-left:auto;font-size:10px;opacity:.7">スタッフ専用 ― 社外秘</span>
+  </div>
+  <div class="notes-body">
+    <div class="notes-date-row">
+      <span class="notes-date-label">初回対応日</span>
+      <span class="notes-date-val">2026年4月8日</span>
+    </div>
+    <div class="notes-date-row">
+      <span class="notes-date-label">担当者</span>
+      <span class="notes-date-val">DAI</span>
+    </div>
+    <div id="notes-list">
+      <div class="note-entry">
+        <div class="ne-meta">
+          <span>2026-04-08</span>
+          <span>DAI</span>
+          <span>初回ヒアリング</span>
+        </div>
+        <textarea class="ne-body">LINE経由で初回対応。移転・シェアサロン化の2択で検討中。候補物件（事務所・現店舗真裏）の送付あり。奥様も判断に関与。急いでいないため、じっくり数字で説明するアプローチが有効。「営業しない」スタンスで安心感を構築。</textarea>
+      </div>
+      <div class="note-entry">
+        <div class="ne-meta">
+          <span>2026-04-09</span>
+          <span>DAI</span>
+          <span>カルテ作成</span>
+        </div>
+        <textarea class="ne-body">電話ヒアリング＋LINEやり取りから顧客カルテ作成。次回：物件調査結果（T1035-1 GREX問い合わせ）とお客様用資料を送付予定。</textarea>
+      </div>
+    </div>
+    <button class="add-note-btn" onclick="addNote()">＋ メモを追加</button>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="footer">
+  <strong>記憶荘（Kiokuso）― Staff Document</strong>
+  このファイルはスタッフ専用です。社外への共有禁止。<br>
+  kiokuso.jp ｜ LINE @749cuola ｜ 仙台・宮城
+</div>
+
+</div><!-- /main-content -->
+
+<script>
+// ── PASSWORD ──
+const CORRECT = 'bond2026';
+function checkPW(){
+  const v = document.getElementById('pw-input').value;
+  if(v === CORRECT){
+    document.getElementById('pw-screen').style.display='none';
+    document.getElementById('main-content').style.display='block';
+  } else {
+    const err = document.getElementById('pw-err');
+    err.textContent='パスワードが違います';
+    document.getElementById('pw-input').value='';
+    setTimeout(()=>err.textContent='',2500);
+  }
+}
+document.getElementById('pw-input').addEventListener('keydown', e=>{
+  if(e.key==='Enter') checkPW();
+});
+
+// ── NOTES with localStorage ──
+const STORAGE_KEY = 'bond-karte-notes-v1';
+
+function saveNotes() {
+  const notes = [...document.querySelectorAll('.note-entry')].map(el => ({
+    meta: [...el.querySelectorAll('.ne-meta span')].map(s => s.textContent),
+    body: el.querySelector('.ne-body').value
+  }));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+}
+
+function loadNotes() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+  const notes = JSON.parse(saved);
+  const list = document.getElementById('notes-list');
+  list.innerHTML = '';
+  notes.forEach(n => {
+    const div = document.createElement('div');
+    div.className = 'note-entry';
+    div.innerHTML = `
+      <div class="ne-meta">${n.meta.map(t=>`<span>${t}</span>`).join('')}</div>
+      <textarea class="ne-body">${n.body}</textarea>
+    `;
+    div.querySelector('textarea').addEventListener('input', saveNotes);
+    list.appendChild(div);
+  });
+}
+
+let noteCount = 0;
+function addNote() {
+  noteCount++;
+  const today = new Date();
+  const d = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  const div = document.createElement('div');
+  div.className = 'note-entry';
+  div.innerHTML = `
+    <div class="ne-meta"><span>${d}</span><span>DAI</span><span>追加メモ #${noteCount}</span></div>
+    <textarea class="ne-body" placeholder="メモを入力..."></textarea>
+  `;
+  div.querySelector('textarea').addEventListener('input', saveNotes);
+  document.getElementById('notes-list').appendChild(div);
+  div.querySelector('textarea').focus();
+  saveNotes();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadNotes();
+  document.querySelectorAll('.ne-body').forEach(el => {
+    el.addEventListener('input', saveNotes);
+  });
+});
+</script>
+</body>
+</html>

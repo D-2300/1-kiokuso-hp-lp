@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /c/staff/
+Disallow: /c/data/
+Disallow: /c/assets/app.js
