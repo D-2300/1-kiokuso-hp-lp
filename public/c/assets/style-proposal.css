@@ -33,13 +33,17 @@ body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: va
 #main-content { display: none; }
 
 /* HEADER */
-.prop-header { text-align: center; padding: 60px 24px 48px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--surface), var(--bg)); }
-.prop-brand { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .28em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
-.prop-badge { display: inline-block; font-size: 11px; letter-spacing: 2px; color: var(--gold); border: 1px solid var(--gold); border-radius: 20px; padding: 4px 16px; margin-bottom: 16px; }
-.prop-title { font-family: 'Noto Serif JP', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 600; letter-spacing: .04em; line-height: 1.4; margin-bottom: 8px; }
+.prop-header { text-align: center; padding: 72px 24px 56px; background: linear-gradient(160deg, #2a2018 0%, #3d3225 40%, #4a3828 100%); color: #fff; position: relative; overflow: hidden; }
+.prop-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 20%, rgba(200,149,108,.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(200,149,108,.1) 0%, transparent 50%); pointer-events: none; }
+.prop-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.prop-header > * { position: relative; z-index: 1; }
+.prop-brand { font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: .32em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+.prop-badge { display: inline-block; font-size: 10px; letter-spacing: 3px; color: var(--gold); border: 1px solid rgba(200,149,108,.5); border-radius: 20px; padding: 5px 20px; margin-bottom: 20px; backdrop-filter: blur(4px); background: rgba(200,149,108,.08); }
+.prop-title { font-family: 'Noto Serif JP', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 600; letter-spacing: .04em; line-height: 1.5; margin-bottom: 10px; color: #fff; }
 .prop-title em { font-style: normal; color: var(--gold); }
-.prop-sub { font-size: 13px; color: var(--text2); letter-spacing: .08em; }
-.prop-date { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--text3); margin-top: 8px; }
+.prop-sub { font-size: 13px; color: rgba(255,255,255,.55); letter-spacing: .08em; }
+.prop-date { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(255,255,255,.35); margin-top: 12px; }
+.prop-header .header-line { width: 48px; height: 1px; background: var(--gold); margin: 16px auto; opacity: .6; }
 
 /* CONTAINER */
 .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
