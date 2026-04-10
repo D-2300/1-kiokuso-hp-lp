@@ -14,6 +14,7 @@ interface Property {
   tsubo: string;
   tags: string[];
   rent: string;
+  /** 旧デザインの行ボーダー用フィールド。v7b以降では未使用だが、データ定義を残すために保持 */
   color: ColorName;
 }
 
@@ -144,11 +145,6 @@ const allProperties: Property[] = [
   { area: "愛宕橋", type: "skeleton", tsubo: "〜15坪", tags: ["飲食可", "駅近"], rent: "12万円", color: "teal" },
 ];
 
-const colorMap: Record<ColorName, string> = {
-  warm: "#d4a85c", blue: "#7ab8e0", green: "#7a9b6a",
-  purple: "#9b7abf", teal: "#5bb8b8", slate: "#99a0aa", rose: "#c8889a",
-};
-
 // 仙台市繁華街（4割 = 8件中3件）
 const hankagaiAreas = new Set([
   "国分町","一番町","青葉通","大町","立町","勾当台","仙台駅東","仙台駅西",
@@ -191,303 +187,462 @@ function getUpdateDate(): string {
   return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日 更新`;
 }
 
-const statusTexts = [
-  "物件情報を読み込み中...",
-  "宮城県内の最新情報を取得中...",
-  "非公開物件を確認中...",
-];
-
 export default function TenantHero() {
   const [selected] = useState<Property[]>(() => selectProperties(allProperties));
   const [updateDate] = useState(getUpdateDate);
-  const [phase, setPhase] = useState<"loading" | "done">("loading");
-  const [statusIdx, setStatusIdx] = useState(0);
   const [animatedRows, setAnimatedRows] = useState<number[]>([]);
   const [showCount, setShowCount] = useState(false);
-  const [hoveredRow, setHoveredRow] = useState<number | null>(null);
-  const [openRow, setOpenRow] = useState<number | null>(null);
   const hasStarted = useRef(false);
 
   useEffect(() => {
     if (hasStarted.current) return;
     hasStarted.current = true;
 
-    let si = 0;
-    const flickerInterval = setInterval(() => {
-      si++;
-      setStatusIdx(si % statusTexts.length);
-    }, 400);
-
+    // 初回表示時、物件行を上から順に 80ms ずつずらしてフェードイン
     setTimeout(() => {
-      clearInterval(flickerInterval);
-      setPhase("done");
       selected.forEach((_, i) => {
-        setTimeout(() => setAnimatedRows((prev) => [...prev, i]), i * 150);
+        setTimeout(() => setAnimatedRows((prev) => [...prev, i]), i * 80);
       });
-      setTimeout(() => setShowCount(true), selected.length * 150 + 300);
-    }, 1000);
-  }, []);
+      // 全行のフェードイン完了後、「他にも X 件」の X を表示
+      setTimeout(() => setShowCount(true), selected.length * 80 + 200);
+    }, 300);
+  }, [selected]);
 
   const remainingCount = allProperties.length - selected.length;
 
   return (
-    <section
-      style={{
-        background: "linear-gradient(180deg, #232820 0%, #1e2318 60%, #1a1e16 100%)",
-        padding: "36px 16px 48px",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Radial glow */}
-      <div
+    <>
+      {/* ─── Hero section ─── */}
+      <section
         style={{
-          position: "absolute",
-          inset: 0,
-          background: "radial-gradient(ellipse at 50% 10%, rgba(74,103,65,.18) 0%, rgba(100,140,80,.08) 35%, transparent 65%)",
-          pointerEvents: "none",
+          background: "linear-gradient(180deg, #232820 0%, #1e2318 60%, #1a1e16 100%)",
+          padding: "36px 16px 48px",
+          position: "relative",
+          overflow: "hidden",
         }}
-      />
-
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "680px", width: "100%", margin: "0 auto", textAlign: "center" }}>
-        {/* Badge */}
+      >
+        {/* Radial glow */}
         <div
           style={{
-            display: "inline-block",
-            fontSize: "11px",
-            fontWeight: 500,
-            letterSpacing: ".1em",
-            color: "#8aab80",
-            border: "1px solid rgba(74,103,65,.4)",
-            background: "rgba(74,103,65,.12)",
-            borderRadius: "100px",
-            padding: "5px 16px",
-            marginBottom: "28px",
+            position: "absolute",
+            inset: 0,
+            background: "radial-gradient(ellipse at 50% 10%, rgba(74,103,65,.18) 0%, rgba(100,140,80,.08) 35%, transparent 65%)",
+            pointerEvents: "none",
           }}
-        >
-          仙台・宮城エリア限定
+        />
+
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "680px", width: "100%", margin: "0 auto", textAlign: "center" }}>
+          {/* Badge */}
+          <div
+            style={{
+              display: "inline-block",
+              fontSize: "11px",
+              fontWeight: 500,
+              letterSpacing: ".1em",
+              color: "#8aab80",
+              border: "1px solid rgba(74,103,65,.4)",
+              background: "rgba(74,103,65,.12)",
+              borderRadius: "100px",
+              padding: "5px 16px",
+              marginBottom: "28px",
+            }}
+          >
+            仙台・宮城エリア限定
+          </div>
+
+          {/* Category */}
+          <p style={{ fontSize: "clamp(12px, 2vw, 14px)", fontWeight: 400, letterSpacing: ".15em", color: "rgba(200,220,200,.5)", marginBottom: "14px" }}>
+            飲食店の物件探し × 内装工事
+          </p>
+
+          {/* H1 */}
+          <h1
+            style={{
+              fontSize: "clamp(22px, 5vw, 36px)",
+              fontWeight: 700,
+              color: "#f0f0ea",
+              lineHeight: 1.7,
+              marginBottom: "12px",
+              letterSpacing: ".02em",
+            }}
+          >
+            お店の成功は、<br />
+            <em style={{ fontStyle: "normal", color: "#a0c090" }}>物件選び</em>から始まっている。
+          </h1>
+
+          {/* Sub copy */}
+          <p
+            style={{
+              fontSize: "clamp(13px, 2.3vw, 15px)",
+              color: "rgba(220,230,210,.6)",
+              lineHeight: 1.9,
+              marginBottom: "28px",
+            }}
+          >
+            内装をつくる側だから、「この物件で成功できるか」から<br />
+            一緒に考えられます。物件探しから、伴走します。
+          </p>
+
+          {/* Preview hint pill */}
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              fontSize: "12px",
+              color: "#7a9b6a",
+              padding: "8px 18px",
+              background: "rgba(122,155,106,0.08)",
+              border: "1px solid rgba(122,155,106,0.2)",
+              borderRadius: "24px",
+            }}
+          >
+            <span
+              style={{
+                width: "6px",
+                height: "6px",
+                background: "#7a9b6a",
+                borderRadius: "50%",
+                display: "inline-block",
+                animation: "tenantHeroPulse 2s infinite",
+              }}
+            />
+            現在 <strong style={{ color: "#c8dcc8", margin: "0 2px" }}>{selected.length}件</strong> の非公開物件をご紹介可能です
+          </div>
         </div>
+      </section>
 
-        {/* Category */}
-        <p style={{ fontSize: "clamp(12px, 2vw, 14px)", fontWeight: 400, letterSpacing: ".15em", color: "rgba(200,220,200,.5)", marginBottom: "14px" }}>
-          飲食店の物件探し × 内装工事
-        </p>
+      {/* Arrow down */}
+      <div
+        style={{
+          background: "#111",
+          textAlign: "center",
+          padding: "12px",
+          color: "#333",
+          fontSize: "20px",
+          animation: "tenantHeroArrowBounce 1.5s infinite",
+        }}
+      >
+        ▼
+      </div>
 
-        {/* H1 */}
-        <h1
-          style={{
-            fontSize: "clamp(22px, 5vw, 36px)",
-            fontWeight: 700,
-            color: "#f0f0ea",
-            lineHeight: 1.7,
-            marginBottom: "12px",
-            letterSpacing: ".02em",
-          }}
-        >
-          お店の成功は、<br />
-          <em style={{ fontStyle: "normal", color: "#a0c090" }}>物件選び</em>から始まっている。
-        </h1>
-
-        {/* Sub copy */}
+      {/* ─── Property section (Available Now) ─── */}
+      <section
+        style={{
+          padding: "48px 16px 56px",
+          background: "linear-gradient(180deg, #151715 0%, #17191a 50%, #111 100%)",
+        }}
+      >
+        {/* Section label */}
         <p
           style={{
-            fontSize: "clamp(13px, 2.3vw, 15px)",
-            color: "rgba(220,230,210,.6)",
-            lineHeight: 1.9,
-            marginBottom: "32px",
+            textAlign: "center",
+            fontSize: "11px",
+            letterSpacing: "4px",
+            color: "#a0b090",
+            marginBottom: "8px",
+            textTransform: "uppercase" as const,
           }}
         >
-          内装をつくる側だから、「この物件で成功できるか」から<br />
-          一緒に考えられます。物件探しから、伴走します。
+          Available Now
         </p>
 
-        {/* ─── Property list (AVAILABLE NOW) ─── */}
-        <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-          {/* Section label */}
-          <p style={{ fontSize: "11px", letterSpacing: "4px", color: "#7a9b6a", marginBottom: "6px", textTransform: "uppercase" as const }}>
-            Available Now
-          </p>
-          <p style={{ fontSize: "clamp(15px, 3.5vw, 17px)", fontWeight: 700, color: "#f0f0ea", marginBottom: "6px" }}>
-            現在ご紹介可能な物件
-          </p>
-          <p style={{ fontSize: "12px", color: "#8a9a80", marginBottom: "4px" }}>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", background: "#7a9b6a", borderRadius: "50%", marginRight: "6px", verticalAlign: "middle", animation: "availablePulse 2s infinite" }} />
-            {updateDate}
-          </p>
-          <p style={{ fontSize: "12px", color: phase === "done" ? "#a0c090" : "#7a9b6a", marginBottom: "16px", minHeight: "18px" }}>
-            {phase === "done" ? "現在ご紹介可能な物件の一部です" : statusTexts[statusIdx]}
-          </p>
+        {/* Title */}
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: "clamp(18px, 4.5vw, 20px)",
+            fontWeight: 700,
+            color: "#f0ebe4",
+            marginBottom: "6px",
+          }}
+        >
+          現在ご紹介可能な物件
+        </h2>
 
-          {/* Rows */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "20px" }}>
+        {/* Update date */}
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "12px",
+            color: "#8a8578",
+            marginBottom: "20px",
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              width: "6px",
+              height: "6px",
+              background: "#7a9b6a",
+              borderRadius: "50%",
+              marginRight: "6px",
+              verticalAlign: "middle",
+              animation: "tenantHeroPulse 2s infinite",
+            }}
+          />
+          {updateDate}
+        </p>
+
+        {/* Property bundle container */}
+        <div
+          role="list"
+          style={{
+            maxWidth: "420px",
+            margin: "0 auto",
+            border: "1px solid #333",
+            borderRadius: "10px",
+            background: "#191b1c",
+            overflow: "hidden",
+          }}
+        >
+          {/* Bundle header */}
+          <div
+            style={{
+              padding: "10px 16px",
+              background: "#1e2022",
+              borderBottom: "1px solid #2a2a2a",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <span style={{ fontSize: "11px", color: "#888", letterSpacing: "1px" }}>
+              非公開 物件リスト
+            </span>
+            <span style={{ fontSize: "11px", color: "#7a9b6a", fontWeight: 600 }}>
+              {selected.length}件
+            </span>
+          </div>
+
+          {/* Property rows */}
+          <div>
             {selected.map((prop, i) => {
               const isVisible = animatedRows.includes(i);
-              const isHovered = hoveredRow === i;
-              const isOpen = openRow === i;
+              const isLast = i === selected.length - 1;
               return (
-                <div key={i}>
-                  <div
-                    onMouseEnter={() => setHoveredRow(i)}
-                    onMouseLeave={() => setHoveredRow(null)}
-                    onClick={() => {
-                      setOpenRow(isOpen ? null : i);
-                      window.dataLayer?.push({ event: "property_detail_click", property_area: prop.area, property_index: i });
+                <div
+                  key={i}
+                  role="listitem"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "8px 16px",
+                    borderBottom: isLast ? "none" : "1px solid #222",
+                    gap: "10px",
+                    cursor: "default",
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? "translateY(0)" : "translateY(8px)",
+                    transition: "opacity 0.3s ease-out, transform 0.3s ease-out",
+                  }}
+                >
+                  {/* Type badge */}
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      fontSize: "9px",
+                      fontWeight: 700,
+                      padding: "3px 7px",
+                      borderRadius: "3px",
+                      color: "#fff",
+                      width: "52px",
+                      textAlign: "center",
+                      background: prop.type === "inuki" ? "#5c4a2e" : "#2e4a5c",
                     }}
+                  >
+                    {prop.type === "inuki" ? "居抜き" : "スケルトン"}
+                  </span>
+
+                  {/* Area */}
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      color: "#e8e0d6",
+                      whiteSpace: "nowrap",
+                      flexShrink: 0,
+                      minWidth: "70px",
+                    }}
+                  >
+                    {prop.area}
+                  </span>
+
+                  {/* Tags */}
+                  <div
                     style={{
                       display: "flex",
-                      alignItems: "center",
-                      height: "44px",
-                      borderRadius: isOpen ? "8px 8px 0 0" : "8px",
+                      gap: "4px",
+                      flex: 1,
                       overflow: "hidden",
-                      background: "#F8F5F0",
-                      borderStyle: "solid",
-                      borderTopColor: isHovered || isOpen ? "#d8d0c4" : "#ece6dc",
-                      borderRightColor: isHovered || isOpen ? "#d8d0c4" : "#ece6dc",
-                      borderBottomColor: isOpen ? "transparent" : isHovered ? "#d8d0c4" : "#ece6dc",
-                      borderLeftColor: colorMap[prop.color],
-                      borderWidth: "1px",
-                      borderLeftWidth: "3px",
-                      cursor: "pointer",
-                      opacity: isVisible ? 1 : 0,
-                      transform: isVisible ? (isHovered ? "scale(1.01)" : "translateX(0)") : "translateX(-40px)",
-                      filter: isVisible ? "blur(0)" : "blur(3px)",
-                      transition: isVisible ? "transform 0.2s, box-shadow 0.2s, border-color 0.2s, border-radius 0.2s" : "none",
-                      animation: isVisible ? "rowSlideIn 0.45s cubic-bezier(0.34,1.4,0.64,1) forwards" : "none",
-                      boxShadow: isHovered ? "0 3px 16px rgba(0,0,0,0.1)" : "0 1px 4px rgba(0,0,0,0.06)",
                     }}
                   >
-                    <div style={{ flexShrink: 0, width: "68px", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10px", fontWeight: 700, letterSpacing: "0.5px", color: "#fff", background: prop.type === "inuki" ? "#6a7a58" : "#5a7068" }}>
-                      {prop.type === "inuki" ? "居抜き" : "スケルトン"}
-                    </div>
-                    <div style={{ flex: 1, display: "flex", alignItems: "center", gap: "12px", padding: "0 14px", height: "100%", minWidth: 0 }}>
-                      <span style={{ fontSize: "14px", fontWeight: 700, color: "#2a2a2a", whiteSpace: "nowrap", flexShrink: 0 }}>
-                        {prop.area}
-                      </span>
-                      <div style={{ display: "flex", gap: "5px", flexWrap: "nowrap", overflow: "hidden" }}>
-                        {[prop.tsubo, ...prop.tags].map((tag, ti) => (
-                          <span key={ti} style={{ fontSize: "10px", padding: "2px 8px", borderRadius: "10px", background: "#f0ece4", color: "#6a6050", border: "1px solid #e0d8cc", whiteSpace: "nowrap" }}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div style={{ flexShrink: 0, width: "100px", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "#f2ede6", position: "relative", overflow: "hidden", borderLeft: "1px solid #e4ddd4" }}>
-                      <span style={{ fontSize: "14px", fontWeight: 700, color: "#555", filter: "blur(6px)", userSelect: "none" }}>{prop.rent}</span>
-                      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.6)", opacity: isHovered ? 1 : 0, transition: "opacity 0.25s" }}>
-                        <span style={{ fontSize: "10px", color: "#fff", background: "#4A6741", padding: "4px 10px", borderRadius: "10px" }}>
-                          詳細を見る
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Accordion panel */}
-                  <div
-                    style={{
-                      maxHeight: isOpen ? "200px" : "0",
-                      overflow: "hidden",
-                      transition: "max-height 0.3s ease",
-                    }}
-                  >
-                    <div
-                      style={{
-                        background: "linear-gradient(135deg, #1a2418, #1e2818)",
-                        border: "1px solid #3a5a30",
-                        borderTop: "none",
-                        borderRadius: "0 0 8px 8px",
-                        padding: "20px 16px",
-                        textAlign: "center",
-                      }}
-                    >
-                      <p style={{ fontSize: "14px", color: "#f0ebe4", marginBottom: "12px", lineHeight: 1.6 }}>
-                        この物件の詳細（家賃・写真・条件）は<br />LINEでお送りしています
-                      </p>
-                      <a
-                        href={LINE_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.dataLayer?.push({ event: "line_cta_click", location: "property_accordion", property_area: prop.area });
-                        }}
+                    {[prop.tsubo, ...prop.tags].map((tag, ti) => (
+                      <span
+                        key={ti}
                         style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: "8px",
-                          padding: "12px 24px",
-                          background: "#06C755",
-                          color: "#fff",
-                          fontSize: "14px",
-                          fontWeight: 700,
-                          borderRadius: "50px",
-                          textDecoration: "none",
-                          boxShadow: "0 4px 20px rgba(6,199,85,0.25)",
+                          fontSize: "9px",
+                          padding: "2px 6px",
+                          borderRadius: "8px",
+                          background: "rgba(255,255,255,0.04)",
+                          color: "rgba(255,255,255,0.35)",
+                          border: "1px solid rgba(255,255,255,0.06)",
+                          whiteSpace: "nowrap",
                         }}
                       >
-                        <svg viewBox="0 0 24 24" style={{ width: "18px", height: "18px", fill: "#fff", flexShrink: 0 }}>
-                          <path d={lineSvgPath} />
-                        </svg>
-                        この物件の詳細をLINEで受け取る
-                      </a>
-                      <p style={{ fontSize: "12px", color: "#8a8578", marginTop: "10px" }}>
-                        30秒で完了・匿名OK・営業なし
-                      </p>
-                    </div>
+                        {tag}
+                      </span>
+                    ))}
                   </div>
+
+                  {/* Rent (blurred) */}
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      color: "#ccc",
+                      filter: "blur(5px)",
+                      userSelect: "none",
+                      minWidth: "50px",
+                      textAlign: "right",
+                    }}
+                  >
+                    {prop.rent}
+                  </span>
                 </div>
               );
             })}
           </div>
 
-          {/* Count */}
-          <p style={{ fontSize: "12px", color: "#7a8a70", marginBottom: "24px", opacity: showCount ? 1 : 0, transition: "opacity 0.5s" }}>
-            他にも多数の非公開物件があります
-          </p>
+          {/* Bundle footer */}
+          <div
+            style={{
+              padding: "10px 16px",
+              background: "#1a1c1d",
+              borderTop: "1px solid #2a2a2a",
+              textAlign: "center",
+            }}
+          >
+            <div style={{ fontSize: "10px", color: "#555", marginBottom: "4px" }}>
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                style={{ width: "10px", height: "10px", verticalAlign: "middle", marginRight: "3px" }}
+                aria-hidden="true"
+              >
+                <rect x="3" y="7" width="10" height="7" rx="1.5" stroke="#555" strokeWidth="1.2" />
+                <path d="M5 7V5a3 3 0 016 0v2" stroke="#555" strokeWidth="1.2" strokeLinecap="round" />
+              </svg>
+              住所・写真・詳細条件は非公開
+            </div>
+            <div style={{ fontSize: "11px", color: "#666" }}>
+              他にも{" "}
+              <strong
+                style={{
+                  color: "#a0c090",
+                  opacity: showCount ? 1 : 0,
+                  transition: "opacity 0.5s",
+                }}
+              >
+                {showCount ? remainingCount : "--"}
+              </strong>{" "}
+              件あります
+            </div>
+          </div>
         </div>
 
-        {/* CTA */}
-        <div style={{ marginBottom: "10px" }}>
+        {/* Flow bridge: arrow + CTA */}
+        <div
+          style={{
+            maxWidth: "420px",
+            margin: "0 auto",
+            textAlign: "center",
+            padding: "20px 0 0",
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              width: "2px",
+              height: "32px",
+              background: "linear-gradient(180deg, #333, #06C755)",
+              borderRadius: "1px",
+            }}
+          />
+          <span
+            style={{
+              display: "block",
+              margin: "0 auto",
+              width: 0,
+              height: 0,
+              borderLeft: "7px solid transparent",
+              borderRight: "7px solid transparent",
+              borderTop: "9px solid #06C755",
+            }}
+          />
+          <div
+            style={{
+              fontSize: "13px",
+              color: "#a0b090",
+              margin: "12px 0 16px",
+              lineHeight: 1.6,
+            }}
+          >
+            この情報が欲しい方は
+          </div>
           <a
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => { window.dataLayer?.push({ event: "line_cta_click", location: "hero" }); }}
+            onClick={() => {
+              window.dataLayer?.push({ event: "line_cta_click", location: "tenant_hero_bundle" });
+            }}
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: "10px",
+              padding: "15px 34px",
               background: "#06C755",
               color: "#fff",
-              borderRadius: "999px",
-              padding: "14px 32px",
-              fontSize: "clamp(15px, 2.8vw, 18px)",
+              fontSize: "15px",
               fontWeight: 700,
+              borderRadius: "50px",
               textDecoration: "none",
-              letterSpacing: ".03em",
-              boxShadow: "0 4px 24px rgba(6,199,85,.35)",
+              boxShadow: "0 4px 20px rgba(6,199,85,0.25)",
             }}
           >
             <svg viewBox="0 0 24 24" style={{ width: "20px", height: "20px", fill: "#fff", flexShrink: 0 }}>
               <path d={lineSvgPath} />
             </svg>
-            物件情報をLINEで受け取る
+            物件資料をLINEで受け取る
           </a>
+          <div style={{ fontSize: "12px", color: "#777", marginTop: "8px" }}>
+            無料・匿名OK・営業なし
+          </div>
         </div>
-        <p style={{ fontSize: "12px", color: "#8a9a80", marginTop: "8px" }}>無料・匿名OK・営業なし</p>
-        <p style={{ fontSize: "11px", color: "#607058", marginTop: "12px" }}>※ 物件情報は随時入れ替わります</p>
-      </div>
+
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "11px",
+            color: "#555",
+            marginTop: "24px",
+          }}
+        >
+          ※ 物件情報は随時入れ替わります
+        </p>
+      </section>
 
       <style>{`
-        @keyframes rowSlideIn {
-          0% { opacity: 0; transform: translateX(-40px); filter: blur(3px); }
-          70% { opacity: 1; transform: translateX(4px); filter: blur(0); }
-          100% { opacity: 1; transform: translateX(0); filter: blur(0); }
-        }
-        @keyframes availablePulse {
+        @keyframes tenantHeroPulse {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.4; }
         }
+        @keyframes tenantHeroArrowBounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(4px); }
+        }
       `}</style>
-    </section>
+    </>
   );
 }

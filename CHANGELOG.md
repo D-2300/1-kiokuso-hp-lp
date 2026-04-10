@@ -6,6 +6,17 @@ Claude Code / Claude Cowork間の作業同期用ログ。
 
 ---
 
+## 2026-04-10
+### テナントLP 物件セクション改修 — 1カラム束表示 + 「詳細を見る」廃止
+- [Code] **TenantHero.tsx 物件セクション全面再設計（v7b プロトタイプ準拠）**：物件カード個別のクリック/ホバーインタラクションを全廃し、8件の物件を1つの枠（.property-bundle）で囲んだ「非公開 物件リスト」として束表示。枠下に矢印ブリッジ+LINE CTA（「物件資料をLINEで受け取る」）を1つだけ配置。前回のアコーディオン案（2026-04-09）を上書き
+- [Code] **廃止した要素**：行の `cursor: pointer` / hover時の scale / 「詳細を見る」オーバーレイ / 行個別クリックイベント / アコーディオンパネル / `colorMap` / 照合中フリッカー演出 / `property_detail_click` / `line_cta_click(property_accordion)` イベント
+- [Code] **ヒーロー下部にプレビューヒント追加**：丸型pill「現在 8件 の非公開物件をご紹介可能です」（ドット pulse 2s、件数は selected.length から動的注入）
+- [Code] **新構造**：枠ヘッダー（ラベル+件数）→ prop-row × 8（タイプバッジ/エリア/タグ/家賃blur(5px)のコンパクト1行、role="listitem"）→ 枠フッター（🔒 非公開ラベル+「他にも X 件あります」フェードイン）→ 縦線+矢印頭→「この情報が欲しい方は」→ LINE CTA → 「無料・匿名OK・営業なし」→ 「※ 物件情報は随時入れ替わります」
+- [Code] **アニメーション**：`tenantHeroPulse`（ドット）と `tenantHeroArrowBounce`（▼）のみ。行は opacity+translateY(8px) フェードインを 80ms ずつスタッガー、完了後「他にも X 件」の数字をフェード表示。旧 `rowSlideIn` / `availablePulse` keyframe は廃止
+- [Code] GTMイベント `line_cta_click(tenant_hero_bundle)` に変更。既存の `line_cta_click(hero)` は廃止
+
+---
+
 ## 2026-04-09
 ### テナントLP デッドクリック修正 — 物件カード「詳細を見る」アコーディオン化
 - [Code] **TenantHero.tsx / TenantAvailableNow.tsx**: 物件行タップ/クリックでLINE登録パネルをインラインスライドダウン展開するアコーディオン機能を追加。デッドクリック率37%（「詳細を見る」が全タップ47%を占め全てデッドクリック）の直接原因を解消。パネルは1つだけ同時展開、グリーン系グラデ背景、LINE CTAボタン付き。GTMイベント `property_detail_click` / `line_cta_click(property_accordion)` 追加。TenantHero（実際にページで使用中）とTenantAvailableNow（スタンドアロン版）の両方に実装
