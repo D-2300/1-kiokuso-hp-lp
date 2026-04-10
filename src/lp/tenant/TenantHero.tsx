@@ -190,6 +190,9 @@ function getUpdateDate(): string {
 export default function TenantHero() {
   const [selected] = useState<Property[]>(() => selectProperties(allProperties));
   const [updateDate] = useState(getUpdateDate);
+  // 「他にも X 件あります」の X は 30〜50 の範囲でランダムに表示
+  // （allProperties.length を使うと毎回きっかり99や100になり数字が嘘くさくなるため）
+  const [remainingCount] = useState<number>(() => Math.floor(Math.random() * 21) + 30);
   const [animatedRows, setAnimatedRows] = useState<number[]>([]);
   const [showCount, setShowCount] = useState(false);
   const hasStarted = useRef(false);
@@ -207,8 +210,6 @@ export default function TenantHero() {
       setTimeout(() => setShowCount(true), selected.length * 80 + 200);
     }, 300);
   }, [selected]);
-
-  const remainingCount = allProperties.length - selected.length;
 
   return (
     <>
@@ -276,49 +277,22 @@ export default function TenantHero() {
               fontSize: "clamp(13px, 2.3vw, 15px)",
               color: "rgba(220,230,210,.6)",
               lineHeight: 1.9,
-              marginBottom: "28px",
+              marginBottom: 0,
             }}
           >
             内装をつくる側だから、「この物件で成功できるか」から<br />
             一緒に考えられます。物件探しから、伴走します。
           </p>
-
-          {/* Preview hint pill */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              fontSize: "12px",
-              color: "#7a9b6a",
-              padding: "8px 18px",
-              background: "rgba(122,155,106,0.08)",
-              border: "1px solid rgba(122,155,106,0.2)",
-              borderRadius: "24px",
-            }}
-          >
-            <span
-              style={{
-                width: "6px",
-                height: "6px",
-                background: "#7a9b6a",
-                borderRadius: "50%",
-                display: "inline-block",
-                animation: "tenantHeroPulse 2s infinite",
-              }}
-            />
-            現在 <strong style={{ color: "#c8dcc8", margin: "0 2px" }}>{selected.length}件</strong> の非公開物件をご紹介可能です
-          </div>
         </div>
       </section>
 
       {/* Arrow down */}
       <div
         style={{
-          background: "#111",
+          background: "#f5f2ec",
           textAlign: "center",
           padding: "12px",
-          color: "#333",
+          color: "#b8a890",
           fontSize: "20px",
           animation: "tenantHeroArrowBounce 1.5s infinite",
         }}
@@ -330,7 +304,7 @@ export default function TenantHero() {
       <section
         style={{
           padding: "48px 16px 56px",
-          background: "linear-gradient(180deg, #151715 0%, #17191a 50%, #111 100%)",
+          background: "linear-gradient(180deg, #f5f2ec 0%, #faf7f2 50%, #ffffff 100%)",
         }}
       >
         {/* Section label */}
@@ -339,7 +313,7 @@ export default function TenantHero() {
             textAlign: "center",
             fontSize: "11px",
             letterSpacing: "4px",
-            color: "#a0b090",
+            color: "#6a8a5a",
             marginBottom: "8px",
             textTransform: "uppercase" as const,
           }}
@@ -353,7 +327,7 @@ export default function TenantHero() {
             textAlign: "center",
             fontSize: "clamp(18px, 4.5vw, 20px)",
             fontWeight: 700,
-            color: "#f0ebe4",
+            color: "#2a2a2a",
             marginBottom: "6px",
           }}
         >
@@ -365,7 +339,7 @@ export default function TenantHero() {
           style={{
             textAlign: "center",
             fontSize: "12px",
-            color: "#8a8578",
+            color: "#8a7a6a",
             marginBottom: "20px",
           }}
         >
@@ -374,7 +348,7 @@ export default function TenantHero() {
               display: "inline-block",
               width: "6px",
               height: "6px",
-              background: "#7a9b6a",
+              background: "#d4a85c",
               borderRadius: "50%",
               marginRight: "6px",
               verticalAlign: "middle",
@@ -390,27 +364,28 @@ export default function TenantHero() {
           style={{
             maxWidth: "420px",
             margin: "0 auto",
-            border: "1px solid #333",
+            border: "1px solid #e0d8cc",
             borderRadius: "10px",
-            background: "#191b1c",
+            background: "#ffffff",
             overflow: "hidden",
+            boxShadow: "0 2px 12px rgba(60,40,20,0.06)",
           }}
         >
           {/* Bundle header */}
           <div
             style={{
               padding: "10px 16px",
-              background: "#1e2022",
-              borderBottom: "1px solid #2a2a2a",
+              background: "#faf7f2",
+              borderBottom: "1px solid #ece6dc",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
             }}
           >
-            <span style={{ fontSize: "11px", color: "#888", letterSpacing: "1px" }}>
+            <span style={{ fontSize: "11px", color: "#8a7a6a", letterSpacing: "1px" }}>
               非公開 物件リスト
             </span>
-            <span style={{ fontSize: "11px", color: "#7a9b6a", fontWeight: 600 }}>
+            <span style={{ fontSize: "11px", color: "#5a7a4a", fontWeight: 600 }}>
               {selected.length}件
             </span>
           </div>
@@ -428,7 +403,7 @@ export default function TenantHero() {
                     display: "flex",
                     alignItems: "center",
                     padding: "8px 16px",
-                    borderBottom: isLast ? "none" : "1px solid #222",
+                    borderBottom: isLast ? "none" : "1px solid #ece6dc",
                     gap: "10px",
                     cursor: "default",
                     opacity: isVisible ? 1 : 0,
@@ -447,7 +422,7 @@ export default function TenantHero() {
                       color: "#fff",
                       width: "52px",
                       textAlign: "center",
-                      background: prop.type === "inuki" ? "#5c4a2e" : "#2e4a5c",
+                      background: prop.type === "inuki" ? "#8a6a3e" : "#3e6a8a",
                     }}
                   >
                     {prop.type === "inuki" ? "居抜き" : "スケルトン"}
@@ -458,7 +433,7 @@ export default function TenantHero() {
                     style={{
                       fontSize: "13px",
                       fontWeight: 700,
-                      color: "#e8e0d6",
+                      color: "#2a2a2a",
                       whiteSpace: "nowrap",
                       flexShrink: 0,
                       minWidth: "70px",
@@ -483,9 +458,9 @@ export default function TenantHero() {
                           fontSize: "9px",
                           padding: "2px 6px",
                           borderRadius: "8px",
-                          background: "rgba(255,255,255,0.04)",
-                          color: "rgba(255,255,255,0.35)",
-                          border: "1px solid rgba(255,255,255,0.06)",
+                          background: "#f4efe6",
+                          color: "#8a7a6a",
+                          border: "1px solid #e8e0d4",
                           whiteSpace: "nowrap",
                         }}
                       >
@@ -500,7 +475,7 @@ export default function TenantHero() {
                       flexShrink: 0,
                       fontSize: "13px",
                       fontWeight: 700,
-                      color: "#ccc",
+                      color: "#555",
                       filter: "blur(5px)",
                       userSelect: "none",
                       minWidth: "50px",
@@ -518,28 +493,28 @@ export default function TenantHero() {
           <div
             style={{
               padding: "10px 16px",
-              background: "#1a1c1d",
-              borderTop: "1px solid #2a2a2a",
+              background: "#faf7f2",
+              borderTop: "1px solid #ece6dc",
               textAlign: "center",
             }}
           >
-            <div style={{ fontSize: "10px", color: "#555", marginBottom: "4px" }}>
+            <div style={{ fontSize: "10px", color: "#8a7a6a", marginBottom: "4px" }}>
               <svg
                 viewBox="0 0 16 16"
                 fill="none"
                 style={{ width: "10px", height: "10px", verticalAlign: "middle", marginRight: "3px" }}
                 aria-hidden="true"
               >
-                <rect x="3" y="7" width="10" height="7" rx="1.5" stroke="#555" strokeWidth="1.2" />
-                <path d="M5 7V5a3 3 0 016 0v2" stroke="#555" strokeWidth="1.2" strokeLinecap="round" />
+                <rect x="3" y="7" width="10" height="7" rx="1.5" stroke="#8a7a6a" strokeWidth="1.2" />
+                <path d="M5 7V5a3 3 0 016 0v2" stroke="#8a7a6a" strokeWidth="1.2" strokeLinecap="round" />
               </svg>
               住所・写真・詳細条件は非公開
             </div>
-            <div style={{ fontSize: "11px", color: "#666" }}>
+            <div style={{ fontSize: "11px", color: "#8a7a6a" }}>
               他にも{" "}
               <strong
                 style={{
-                  color: "#a0c090",
+                  color: "#5a7a4a",
                   opacity: showCount ? 1 : 0,
                   transition: "opacity 0.5s",
                 }}
@@ -565,7 +540,7 @@ export default function TenantHero() {
               display: "inline-block",
               width: "2px",
               height: "32px",
-              background: "linear-gradient(180deg, #333, #06C755)",
+              background: "linear-gradient(180deg, #d8d0c4, #06C755)",
               borderRadius: "1px",
             }}
           />
@@ -583,7 +558,7 @@ export default function TenantHero() {
           <div
             style={{
               fontSize: "13px",
-              color: "#a0b090",
+              color: "#5a7a4a",
               margin: "12px 0 16px",
               lineHeight: 1.6,
             }}
@@ -616,7 +591,7 @@ export default function TenantHero() {
             </svg>
             物件資料をLINEで受け取る
           </a>
-          <div style={{ fontSize: "12px", color: "#777", marginTop: "8px" }}>
+          <div style={{ fontSize: "12px", color: "#8a7a6a", marginTop: "8px" }}>
             無料・匿名OK・営業なし
           </div>
         </div>
@@ -625,7 +600,7 @@ export default function TenantHero() {
           style={{
             textAlign: "center",
             fontSize: "11px",
-            color: "#555",
+            color: "#a09080",
             marginTop: "24px",
           }}
         >
