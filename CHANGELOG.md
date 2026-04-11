@@ -6,6 +6,12 @@ Claude Code / Claude Cowork間の作業同期用ログ。
 
 ---
 
+## 2026-04-10
+### ClickCease トラッキングタグ埋め込み
+- [Code] **index.html**: ClickCease（クリック不正検知）のトラッキングタグを `<head>` 先頭と `<body>` 先頭に追加。`ob.brilliantlocco.com` の async script（`ct_clicktrue` クラス付き）とnoscript iframe。Google Ads連携は完了済みで、本タグ埋め込みにより不正クリックの自動ブロックが稼働する。既存のGTM/Clarityとは別ドメインのため競合なし。トライアル期限 2026-04-17。デプロイ後 app.clickcease.com の Connection status で検出確認
+
+---
+
 ## 2026-04-10（追加修正・本番反映後のフィードバック対応）
 ### テナントLP 物件セクション微調整 — 色反転・ゴールドドット・件数ランダム化
 - [Code] **ヒーローのプレビューヒント削除**：「現在 8件 の非公開物件をご紹介可能です」pillを廃止し、サブコピー直下に詰めて表示。ヒーローがスッキリ
