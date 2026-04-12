@@ -45,10 +45,10 @@ export default function TenantBottomCTA() {
         <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
           <path d={lineSvgPath} />
         </svg>
-        LINEで気軽に相談してみる
+        無料ガイド2冊+物件情報を受け取る
       </a>
       <p style={{ fontSize: "12px", color: "rgba(255,255,255,.25)", marginTop: "14px" }}>
-        無料・営業なし・LINE追加するだけ
+        1分で完了・営業なし・いつでもブロック可能
       </p>
     </section>
   );

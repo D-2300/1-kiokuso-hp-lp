@@ -10,6 +10,8 @@ import TenantProfiles from "./TenantProfiles";
 import TenantFAQ from "./TenantFAQ";
 import TenantBottomCTA from "./TenantBottomCTA";
 import TenantMailForm from "./TenantMailForm";
+import TenantMidCTA from "./TenantMidCTA";
+import TenantExitPopup from "./TenantExitPopup";
 import TenantFooter from "./TenantFooter";
 import LPFloatingLine from "../components/LPFloatingLine";
 // HeroBand removed - dark→dark接続で不要
@@ -29,6 +31,7 @@ export default function TenantLPPage() {
       <TenantHero />
       <TenantYourSide />
       <TenantSteps />
+      <TenantMidCTA />
       <TenantGuideSection />
       <TenantBeforeAfterCTA />
       <TenantFairEval />
@@ -37,7 +40,8 @@ export default function TenantLPPage() {
       <TenantBottomCTA />
       <TenantMailForm />
       <TenantFooter />
-      <LPFloatingLine label="無料で物件情報を受け取る" />
+      <LPFloatingLine label="非公開物件をチェック" />
+      <TenantExitPopup />
     </div>
   );
 }

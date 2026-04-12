@@ -589,10 +589,10 @@ export default function TenantHero() {
             <svg viewBox="0 0 24 24" style={{ width: "20px", height: "20px", fill: "#fff", flexShrink: 0 }}>
               <path d={lineSvgPath} />
             </svg>
-            物件資料をLINEで受け取る
+            非公開の物件リストを見る
           </a>
           <div style={{ fontSize: "12px", color: "#8a7a6a", marginTop: "8px" }}>
-            無料・匿名OK・営業なし
+            無料・営業なし・いつでもブロック可能
           </div>
         </div>
 

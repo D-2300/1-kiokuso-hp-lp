@@ -98,10 +98,10 @@ export default function TenantGuideSection() {
             <svg viewBox="0 0 24 24" style={{ width: "20px", height: "20px", fill: "#fff", flexShrink: 0 }}>
               <path d={lineSvgPath} />
             </svg>
-            LINEで攻略ガイドを受け取る
+            無料ガイドを今すぐ読む
           </button>
           <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.2)", marginTop: "10px" }}>
-            無料・営業なし・LINE追加するだけ
+            1分で完了・営業なし・いつでもブロック可能
           </p>
         </div>
       </div>
