@@ -44,8 +44,8 @@ export default function MCTA() {
             letterSpacing: "0.02em",
           }}
         >
-          あなたの検討物件、<br />
-          儲かるか診断します。
+          まずは、管理会社の見積書を<br />
+          送ってください。
         </h2>
 
         <p
@@ -56,7 +56,7 @@ export default function MCTA() {
             lineHeight: 1.8,
           }}
         >
-          改修費・利回り改善・完成イメージを無料でお届けします。
+          「もっと安くなるかも」の答えを、当日中にお返しします。
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
@@ -83,7 +83,7 @@ export default function MCTA() {
               boxShadow: "0 4px 16px rgba(6,199,85,0.25)",
             }}
           >
-            非公開の物件情報を見る
+            LINEで相談する
           </a>
           <a
             href={`tel:${TEL}`}
@@ -111,7 +111,7 @@ export default function MCTA() {
         </div>
 
         <p style={{ margin: "16px 0 0", fontSize: "13px", color: "rgba(255,255,255,0.4)", letterSpacing: "0.02em" }}>
-          1分で完了・営業なし・いつでもブロック可能
+          受付時間 9:00〜18:00（土日も対応可）/ LINEは24時間受付
         </p>
       </div>
     </section>

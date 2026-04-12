@@ -2,17 +2,17 @@ import { M, C } from "../tokens";
 import MSectionHeader from "./MSectionHeader";
 
 const items = [
-  <>利回りの良い物件は<em>すぐ売れてしまう</em>。ネットに出たときにはもう遅い。</>,
-  <>残っているのは築古・空室あり・修繕費がかかりそうな物件ばかり。<em>手を出していいのか分からない</em>。</>,
-  <>不動産屋に相談しても、<em>内装の改修費がいくらかかるか</em>は教えてくれない。利回り計算が完成しない。</>,
-  <>「リフォームすれば儲かるかも」と思っても、<em>どこに頼めばいくらで直せるのか</em>見当がつかない。</>,
+  <>管理会社の見積もり、<em>毎回なんか高い</em>気がする。でも相場がわからないから、そのまま通してしまう。</>,
+  <>退去が出るたびに<em>10万、15万</em>と出ていく。家賃収入が右から左に消えていく感覚。</>,
+  <>自分で業者を探せばコストは下がるらしい。でも<em>どこに頼めばいいのかわからない</em>し、管理会社の機嫌を損ねるのも怖い。</>,
+  <>3月の繁忙期、管理会社から<em>見積もりが出てくるのが遅い</em>。その間にも空室が続いて家賃が入らない。</>,
 ];
 
 export default function MProblem() {
   return (
     <section style={{ backgroundColor: C.white, padding: "48px 20px" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        <MSectionHeader label="PROBLEM" heading={"「儲かる物件」が\n見つからない。"} />
+        <MSectionHeader label="PROBLEM" heading={"退去のたびに、利益が\n削られていく気がする。"} />
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           {items.map((item, i) => (

@@ -54,7 +54,7 @@ export default function MFloatingCTA() {
           boxShadow: "0 2px 8px rgba(6,199,85,0.3)",
         }}
       >
-        非公開物件を見る
+        LINEで相談
       </a>
       <a
         href={`tel:${TEL}`}
