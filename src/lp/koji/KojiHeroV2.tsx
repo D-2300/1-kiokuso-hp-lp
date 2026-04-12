@@ -7,106 +7,94 @@ export default function KojiHeroV2() {
   return (
     <section
       style={{
-        minHeight: "85vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        padding: "80px 24px 60px",
+        padding: "48px 20px 40px",
         position: "relative",
         background: "linear-gradient(180deg, #FAF6F0 0%, #F0EBE3 100%)",
       }}
     >
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "720px" }}>
-        {/* KAI & KEN photo */}
-        <div style={{
-          width: "clamp(100px, 25vw, 160px)", height: "clamp(100px, 25vw, 160px)",
-          borderRadius: "50%", overflow: "hidden", margin: "0 auto 20px",
-          border: "4px solid #fff", boxShadow: "0 4px 24px rgba(93,74,42,0.15)",
-        }}>
-          <img src="/images/kai-ken-blueprint-meeting-sm.webp" alt="KAI & KEN" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-        </div>
-
+      <div style={{ position: "relative", zIndex: 1, maxWidth: "720px", width: "100%" }}>
+        {/* Badge */}
         <span
           style={{
             display: "inline-block",
-            padding: "6px 20px",
+            padding: "5px 16px",
             background: "#E8F0E4",
             color: "#6B8E5A",
             borderRadius: "100px",
-            fontSize: "13px",
+            fontSize: "12px",
             fontWeight: 500,
             letterSpacing: "0.5px",
-            marginBottom: "28px",
-          }}
-        >
-          完全無料・営業一切なし
-        </span>
-
-        <h1
-          style={{
-            fontFamily: "'Zen Maru Gothic', 'Noto Sans JP', sans-serif",
-            fontSize: "clamp(26px, 5vw, 42px)",
-            fontWeight: 700,
-            lineHeight: 1.5,
-            color: "#3D2E16",
             marginBottom: "20px",
           }}
         >
-          <span style={{ color: "#8B6914", position: "relative" }}>
-            不動産プロ×内装プロ
-          </span>
-          が
-          <br />
-          あなた専用の出店プランを
-          <br />
-          丸ごとお届け
+          仙台・宮城エリア限定
+        </span>
+
+        {/* H1 - 検索意図に即答 */}
+        <h1
+          style={{
+            fontFamily: "'Zen Maru Gothic', 'Noto Sans JP', sans-serif",
+            fontSize: "clamp(22px, 5vw, 36px)",
+            fontWeight: 700,
+            lineHeight: 1.6,
+            color: "#3D2E16",
+            marginBottom: "16px",
+          }}
+        >
+          店舗内装、<br />
+          <span style={{ color: "#8B6914" }}>いくらかかるか</span>
+          知っていますか？
         </h1>
 
         <p
           style={{
             fontSize: "clamp(14px, 2.5vw, 17px)",
             color: "#7A6B55",
-            marginBottom: "40px",
+            marginBottom: "24px",
             fontWeight: 300,
             lineHeight: 1.8,
           }}
         >
-          業種・広さ・エリアを教えてください。
-          <br />
-          完成イメージ、費用、スケジュール——すべて含めた提案書を無料で作成いたします。
+          同じ10坪のカフェでも、頼む先で<strong style={{ color: "#3D2E16", fontWeight: 600 }}>220万円</strong>変わります。<br />
+          まずは「あなたの場合いくらか」を知ることから。
         </p>
 
-        {/* What you get icons */}
+        {/* Price teaser - 検索意図への即答 */}
         <div style={{
-          display: "flex", justifyContent: "center", gap: "clamp(12px, 3vw, 24px)",
-          flexWrap: "wrap", marginBottom: "32px",
+          display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px",
+          maxWidth: "380px", margin: "0 auto 28px",
         }}>
-          {[
-            { emoji: "\ud83c\udfe0", label: "\u5b8c\u6210\u30a4\u30e1\u30fc\u30b8" },
-            { emoji: "\ud83d\udcb0", label: "\u8cbb\u7528\u660e\u7d30" },
-            { emoji: "\ud83d\udccd", label: "\u7269\u4ef6\u8abf\u67fb" },
-            { emoji: "\ud83d\uddd3\ufe0f", label: "\u958b\u696d\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb" },
-          ].map((item, i) => (
-            <div key={i} style={{
-              display: "flex", flexDirection: "column", alignItems: "center", gap: "4px",
-            }}>
-              <span style={{
-                width: "48px", height: "48px", borderRadius: "12px",
-                background: "#fff", boxShadow: "0 2px 12px rgba(93,74,42,0.08)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "22px",
-              }}>
-                {item.emoji}
-              </span>
-              <span style={{ fontSize: "11px", fontWeight: 600, color: "#5C4A2A", letterSpacing: "0.02em" }}>
-                {item.label}
-              </span>
-            </div>
-          ))}
+          <div style={{
+            background: "#fff", borderRadius: "12px", padding: "16px 12px",
+            boxShadow: "0 2px 12px rgba(93,74,42,0.08)",
+          }}>
+            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#999", marginBottom: "4px" }}>一般的な相場</div>
+            <div style={{
+              fontFamily: "'Zen Maru Gothic', sans-serif",
+              fontSize: "clamp(20px, 5vw, 28px)", fontWeight: 700,
+              color: "rgba(61,46,22,0.35)", textDecoration: "line-through",
+            }}>300万〜</div>
+          </div>
+          <div style={{
+            background: "rgba(107,142,90,0.1)", borderRadius: "12px", padding: "16px 12px",
+            border: "2px solid rgba(107,142,90,0.3)",
+          }}>
+            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#6B8E5A", marginBottom: "4px" }}>記憶荘の場合</div>
+            <div style={{
+              fontFamily: "'Zen Maru Gothic', sans-serif",
+              fontSize: "clamp(20px, 5vw, 28px)", fontWeight: 700, color: "#8B6914",
+            }}>80万〜</div>
+          </div>
         </div>
+        <p style={{ fontSize: "11px", color: "#aaa", marginBottom: "24px" }}>
+          ※ カフェ10坪・居抜き活用の例。業態・坪数で変わります
+        </p>
 
+        {/* CTA */}
         <a
           href={LINE_URL}
           target="_blank"
@@ -115,11 +103,11 @@ export default function KojiHeroV2() {
             display: "inline-flex",
             alignItems: "center",
             gap: "10px",
-            padding: "18px 48px",
+            padding: "16px 40px",
             background: "#06C755",
             color: "#fff",
             borderRadius: "60px",
-            fontSize: "17px",
+            fontSize: "clamp(15px, 3vw, 17px)",
             fontWeight: 700,
             textDecoration: "none",
             boxShadow: "0 4px 20px rgba(6,199,85,0.3)",
@@ -128,31 +116,11 @@ export default function KojiHeroV2() {
           <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
             <path d={lineSvgPath} />
           </svg>
-          LINEで受け取る
+          あなたの場合の費用を見る
         </a>
-      </div>
-
-      <style>{`
-        @keyframes koji-scroll-bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
-      `}</style>
-      <div
-        style={{
-          position: "absolute",
-          bottom: "30px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "8px",
-          color: "#7A6B55",
-          fontSize: "11px",
-          letterSpacing: "2px",
-          animation: "koji-scroll-bounce 2s infinite",
-        }}
-      >
-        SCROLL
-        <div style={{ width: "1px", height: "30px", background: "#C4A35A" }} />
+        <p style={{ fontSize: "12px", color: "#aaa", marginTop: "10px" }}>
+          1分で完了・営業なし・いつでもブロック可能
+        </p>
       </div>
     </section>
   );

@@ -120,10 +120,10 @@ export default function KojiShowcase() {
             <svg viewBox="0 0 24 24" style={{ width: "20px", height: "20px", fill: "#fff", flexShrink: 0 }}>
               <path d={lineSvgPath} />
             </svg>
-            LINEで提案書を受け取る
+            あなた専用の提案書を受け取る
           </a>
           <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.2)", marginTop: "10px" }}>
-            完全無料・営業なし・断ってOK
+            1分で完了・営業なし・いつでもブロック可能
           </p>
         </div>
       </div>

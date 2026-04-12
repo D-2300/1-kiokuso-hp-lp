@@ -88,7 +88,7 @@ export default function KojiHowItWorks() {
             <svg viewBox="0 0 24 24" style={{ width: "20px", height: "20px", fill: "#fff", flexShrink: 0 }}>
               <path d={lineSvgPath} />
             </svg>
-            LINEで提案書を受け取る
+            あなたの場合の費用を見る
           </a>
         </div>
       </div>

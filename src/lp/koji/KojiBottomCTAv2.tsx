@@ -43,10 +43,10 @@ export default function KojiBottomCTAv2() {
           <svg viewBox="0 0 24 24" style={{ width: "22px", height: "22px", fill: "#fff", flexShrink: 0 }}>
             <path d={lineSvgPath} />
           </svg>
-          LINEで提案書を受け取る
+          あなたの場合の費用を見る
         </a>
         <p style={{ marginTop: "16px", fontSize: "13px", color: "#7A6B55" }}>
-          完全無料・営業なし・断ってOK
+          1分で完了・営業なし・いつでもブロック可能
         </p>
       </div>
     </section>
