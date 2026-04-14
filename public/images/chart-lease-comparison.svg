@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="'Noto Sans JP', sans-serif">
+  <!-- Background -->
+  <rect width="800" height="520" fill="#F8F5F0" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-size="18" font-weight="700" fill="#333">定期借家契約 vs 普通賃貸借契約</text>
+  <text x="400" y="62" text-anchor="middle" font-size="12" font-weight="400" fill="#999">Fixed-term Lease vs. Standard Lease</text>
+
+  <!-- Table -->
+  <g transform="translate(50, 85)">
+    <!-- Header row -->
+    <rect x="0" y="0" width="180" height="50" fill="#5C3A21" rx="6" ry="0"/>
+    <rect x="185" y="0" width="270" height="50" fill="#8B3A3A" rx="6" ry="0"/>
+    <rect x="460" y="0" width="270" height="50" fill="#4A6741" rx="6" ry="0"/>
+
+    <text x="90" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">比較項目</text>
+    <text x="320" y="25" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">定期借家契約</text>
+    <text x="320" y="43" text-anchor="middle" font-size="10" fill="#D4A0A0">Fixed-term</text>
+    <text x="595" y="25" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">普通賃貸借契約</text>
+    <text x="595" y="43" text-anchor="middle" font-size="10" fill="#A8BFA2">Standard</text>
+
+    <!-- Row 1: 契約期間 -->
+    <rect x="0" y="55" width="180" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="185" y="55" width="270" height="60" fill="#F5EAEA" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="460" y="55" width="270" height="60" fill="#EAF0E8" stroke="#e0d8cf" stroke-width="1"/>
+
+    <text x="90" y="90" text-anchor="middle" font-size="13" font-weight="600" fill="#333">契約期間</text>
+    <text x="320" y="83" text-anchor="middle" font-size="12" fill="#333">3年・5年など</text>
+    <text x="320" y="102" text-anchor="middle" font-size="11" fill="#8B3A3A" font-weight="500">期間満了で終了</text>
+    <text x="595" y="83" text-anchor="middle" font-size="12" fill="#333">定めあり</text>
+    <text x="595" y="102" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">借主の希望で更新可能</text>
+
+    <!-- Row 2: 中途解約 -->
+    <rect x="0" y="120" width="180" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="185" y="120" width="270" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="460" y="120" width="270" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1"/>
+
+    <text x="90" y="155" text-anchor="middle" font-size="13" font-weight="600" fill="#333">中途解約</text>
+    <text x="320" y="148" text-anchor="middle" font-size="12" fill="#333">原則できない</text>
+    <text x="320" y="167" text-anchor="middle" font-size="11" fill="#8B3A3A" font-weight="500">違約金が発生することが多い</text>
+    <text x="595" y="148" text-anchor="middle" font-size="12" fill="#333">3〜6ヶ月前の告知で可能</text>
+    <text x="595" y="167" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">借主に有利</text>
+
+    <!-- Row 3: 敷金ペナルティ -->
+    <rect x="0" y="185" width="180" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="185" y="185" width="270" height="60" fill="#F5EAEA" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="460" y="185" width="270" height="60" fill="#EAF0E8" stroke="#e0d8cf" stroke-width="1"/>
+
+    <text x="90" y="215" text-anchor="middle" font-size="13" font-weight="600" fill="#333">敷金</text>
+    <text x="90" y="233" text-anchor="middle" font-size="13" font-weight="600" fill="#333">ペナルティ</text>
+    <text x="320" y="213" text-anchor="middle" font-size="12" fill="#333">残存期間に応じて</text>
+    <text x="320" y="232" text-anchor="middle" font-size="11" fill="#8B3A3A" font-weight="500">敷金50%償却等あり</text>
+    <text x="595" y="213" text-anchor="middle" font-size="12" fill="#333">原状回復費を差し引いて</text>
+    <text x="595" y="232" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">残額は返還が原則</text>
+
+    <!-- Row 4: 大家のメリット -->
+    <rect x="0" y="250" width="180" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="185" y="250" width="270" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="460" y="250" width="270" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1"/>
+
+    <text x="90" y="285" text-anchor="middle" font-size="13" font-weight="600" fill="#333">大家の立場</text>
+    <text x="320" y="278" text-anchor="middle" font-size="12" fill="#333">収入期間が確定する</text>
+    <text x="320" y="297" text-anchor="middle" font-size="11" fill="#666">計画が立てやすい</text>
+    <text x="595" y="278" text-anchor="middle" font-size="12" fill="#333">退去リスクがある</text>
+    <text x="595" y="297" text-anchor="middle" font-size="11" fill="#666">条件交渉に応じやすい傾向</text>
+
+    <!-- Row 5: リスク -->
+    <rect x="0" y="315" width="180" height="60" fill="#fff" stroke="#e0d8cf" stroke-width="1" rx="0" ry="0"/>
+    <rect x="185" y="315" width="270" height="60" fill="#F5EAEA" stroke="#e0d8cf" stroke-width="1"/>
+    <rect x="460" y="315" width="270" height="60" fill="#EAF0E8" stroke="#e0d8cf" stroke-width="1"/>
+
+    <text x="90" y="345" text-anchor="middle" font-size="13" font-weight="600" fill="#333">借主の</text>
+    <text x="90" y="363" text-anchor="middle" font-size="13" font-weight="600" fill="#333">リスク</text>
+    <text x="320" y="350" text-anchor="middle" font-size="12" fill="#8B3A3A" font-weight="600">途中で辞めにくい</text>
+    <text x="595" y="350" text-anchor="middle" font-size="12" fill="#4A6741" font-weight="600">告知期間の見落としに注意</text>
+  </g>
+
+  <!-- Bottom note -->
+  <rect x="50" y="475" width="700" height="32" fill="#5C3A21" fill-opacity="0.06" rx="6"/>
+  <text x="400" y="496" text-anchor="middle" font-size="12" font-weight="500" fill="#5C3A21">契約前に必ず確認 → どちらの契約形態か ＋ 中途解約の条件</text>
+</svg>

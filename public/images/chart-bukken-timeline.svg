@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="'Noto Sans JP', sans-serif">
+  <defs>
+    <linearGradient id="priceLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B3A3A"/>
+      <stop offset="100%" stop-color="#4A6741"/>
+    </linearGradient>
+    <linearGradient id="flexLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4A7080"/>
+      <stop offset="100%" stop-color="#4A6741"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="#F8F5F0" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-size="18" font-weight="700" fill="#333">物件の掲載期間と交渉しやすさの関係</text>
+  <text x="400" y="62" text-anchor="middle" font-size="12" font-weight="400" fill="#999">Property Listing Duration vs. Negotiation Leverage</text>
+
+  <!-- Chart area -->
+  <g transform="translate(100, 90)">
+    <!-- Y axis -->
+    <line x1="0" y1="0" x2="0" y2="300" stroke="#ccc" stroke-width="1"/>
+    <!-- X axis -->
+    <line x1="0" y1="300" x2="600" y2="300" stroke="#ccc" stroke-width="1"/>
+
+    <!-- Y axis labels -->
+    <text x="-12" y="8" text-anchor="end" font-size="11" fill="#666">高</text>
+    <text x="-12" y="305" text-anchor="end" font-size="11" fill="#666">低</text>
+
+    <!-- X axis labels -->
+    <text x="0" y="325" text-anchor="middle" font-size="11" fill="#666">掲載直後</text>
+    <text x="200" y="325" text-anchor="middle" font-size="11" fill="#666">1〜3ヶ月</text>
+    <text x="400" y="325" text-anchor="middle" font-size="11" fill="#666">3〜6ヶ月</text>
+    <text x="600" y="325" text-anchor="middle" font-size="11" fill="#666">6ヶ月〜</text>
+    <text x="300" y="350" text-anchor="middle" font-size="13" font-weight="500" fill="#666">← 掲載期間 →</text>
+
+    <!-- Grid lines -->
+    <line x1="0" y1="75" x2="600" y2="75" stroke="#eee" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="0" y1="150" x2="600" y2="150" stroke="#eee" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="0" y1="225" x2="600" y2="225" stroke="#eee" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="200" y1="0" x2="200" y2="300" stroke="#eee" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="400" y1="0" x2="400" y2="300" stroke="#eee" stroke-width="1" stroke-dasharray="4"/>
+
+    <!-- Price line (starts high, drops over time) -->
+    <path d="M 0,30 C 100,35 150,80 200,120 S 350,200 400,230 S 500,260 600,270" fill="none" stroke="#8B3A3A" stroke-width="3"/>
+    <!-- Price label -->
+    <circle cx="60" cy="38" r="4" fill="#8B3A3A"/>
+    <text x="72" y="35" font-size="12" font-weight="600" fill="#8B3A3A">家賃・条件の厳しさ</text>
+
+    <!-- Negotiation flexibility line (starts low, rises over time) -->
+    <path d="M 0,270 C 100,265 150,230 200,190 S 350,110 400,80 S 500,45 600,30" fill="none" stroke="#4A6741" stroke-width="3"/>
+    <!-- Flexibility label -->
+    <circle cx="350" cy="95" r="4" fill="#4A6741"/>
+    <text x="362" y="92" font-size="12" font-weight="600" fill="#4A6741">交渉の余地</text>
+
+    <!-- Zones -->
+    <rect x="0" y="0" width="200" height="300" fill="#8B3A3A" fill-opacity="0.04" rx="4"/>
+    <rect x="400" y="0" width="200" height="300" fill="#4A6741" fill-opacity="0.06" rx="4"/>
+
+    <!-- Zone labels -->
+    <text x="100" y="290" text-anchor="middle" font-size="11" font-weight="600" fill="#8B3A3A" opacity="0.7">大家が強気</text>
+    <text x="500" y="290" text-anchor="middle" font-size="11" font-weight="600" fill="#4A6741" opacity="0.8">交渉チャンス</text>
+  </g>
+
+  <!-- Bottom callouts -->
+  <g transform="translate(0, 440)">
+    <rect x="60" y="0" width="300" height="32" fill="#8B3A3A" fill-opacity="0.08" rx="6"/>
+    <text x="210" y="21" text-anchor="middle" font-size="11" font-weight="500" fill="#8B3A3A">未公開・新着 → 高い・条件が固い</text>
+
+    <rect x="440" y="0" width="300" height="32" fill="#4A6741" fill-opacity="0.1" rx="6"/>
+    <text x="590" y="21" text-anchor="middle" font-size="11" font-weight="500" fill="#4A6741">長期掲載 → 値下げ・条件緩和の可能性</text>
+  </g>
+</svg>
