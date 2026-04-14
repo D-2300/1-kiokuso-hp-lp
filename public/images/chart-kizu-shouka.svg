@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="'Noto Sans JP', sans-serif">
+  <rect width="800" height="520" fill="#F8F5F0" rx="12"/>
+
+  <text x="400" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#333">公開物件の「傷」を自分が消化できるかが鍵</text>
+  <text x="400" y="58" text-anchor="middle" font-size="12" font-weight="400" fill="#999">他の人のマイナス ＝ あなたにとってのチャンス</text>
+
+  <!-- 3 columns: 傷 → 一般的な評価 → 自分なら？ -->
+
+  <!-- Headers -->
+  <rect x="30" y="80" width="220" height="42" fill="#8B3A3A" rx="8"/>
+  <text x="140" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">物件の「傷」</text>
+
+  <rect x="290" y="80" width="220" height="42" fill="#999" rx="8"/>
+  <text x="400" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">一般的な評価</text>
+
+  <rect x="550" y="80" width="220" height="42" fill="#4A6741" rx="8"/>
+  <text x="660" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">自分なら消化できる？</text>
+
+  <!-- Row 1: 立地が悪い -->
+  <rect x="30" y="132" width="220" height="80" fill="#fff" stroke="#e0d8cf" stroke-width="1" rx="6"/>
+  <text x="140" y="160" text-anchor="middle" font-size="14" font-weight="600" fill="#8B3A3A">立地が悪い</text>
+  <text x="140" y="180" text-anchor="middle" font-size="11" fill="#666">駅から遠い・通行量が少ない</text>
+
+  <rect x="290" y="132" width="220" height="80" fill="#fff" stroke="#e0d8cf" stroke-width="1" rx="6"/>
+  <text x="400" y="160" text-anchor="middle" font-size="12" fill="#666">集客できない</text>
+  <text x="400" y="180" text-anchor="middle" font-size="12" fill="#8B3A3A" font-weight="500">→ 敬遠される</text>
+
+  <rect x="550" y="132" width="220" height="80" fill="#EAF0E8" stroke="#4A6741" stroke-width="1.5" rx="6"/>
+  <text x="660" y="155" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">自分の顧客がいるエリア</text>
+  <text x="660" y="175" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">SNS集客で通行量は不要</text>
+  <text x="660" y="198" text-anchor="middle" font-size="12" fill="#4A6741" font-weight="700">→ 家賃が安い分プラス</text>
+
+  <!-- Arrow between cols -->
+  <text x="265" y="175" text-anchor="middle" font-size="16" fill="#ccc">→</text>
+  <text x="525" y="175" text-anchor="middle" font-size="16" fill="#4A6741">→</text>
+
+  <!-- Row 2: 水回りが弱い -->
+  <rect x="30" y="222" width="220" height="80" fill="#fff" stroke="#e0d8cf" stroke-width="1" rx="6"/>
+  <text x="140" y="250" text-anchor="middle" font-size="14" font-weight="600" fill="#8B3A3A">水回りが弱い</text>
+  <text x="140" y="270" text-anchor="middle" font-size="11" fill="#666">給排水が引けない・配管が古い</text>
+
+  <rect x="290" y="222" width="220" height="80" fill="#fff" stroke="#e0d8cf" stroke-width="1" rx="6"/>
+  <text x="400" y="250" text-anchor="middle" font-size="12" fill="#666">飲食店は無理</text>
+  <text x="400" y="270" text-anchor="middle" font-size="12" fill="#8B3A3A" font-weight="500">→ 敬遠される</text>
+
+  <rect x="550" y="222" width="220" height="80" fill="#EAF0E8" stroke="#4A6741" stroke-width="1.5" rx="6"/>
+  <text x="660" y="245" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">水を使わない業態</text>
+  <text x="660" y="265" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">共有部から引く裏技あり</text>
+  <text x="660" y="288" text-anchor="middle" font-size="12" fill="#4A6741" font-weight="700">→ 内装屋の工夫で解決</text>
+
+  <text x="265" y="265" text-anchor="middle" font-size="16" fill="#ccc">→</text>
+  <text x="525" y="265" text-anchor="middle" font-size="16" fill="#4A6741">→</text>
+
+  <!-- Row 3: 家賃が高い -->
+  <rect x="30" y="312" width="220" height="80" fill="#fff" stroke="#e0d8cf" stroke-width="1" rx="6"/>
+  <text x="140" y="340" text-anchor="middle" font-size="14" font-weight="600" fill="#8B3A3A">家賃が高い</text>
+  <text x="140" y="360" text-anchor="middle" font-size="11" fill="#666">相場より割高に見える</text>
+
+  <rect x="290" y="312" width="220" height="80" fill="#fff" stroke="#e0d8cf" stroke-width="1" rx="6"/>
+  <text x="400" y="340" text-anchor="middle" font-size="12" fill="#666">予算オーバー</text>
+  <text x="400" y="360" text-anchor="middle" font-size="12" fill="#8B3A3A" font-weight="500">→ 敬遠される</text>
+
+  <rect x="550" y="312" width="220" height="80" fill="#EAF0E8" stroke="#4A6741" stroke-width="1.5" rx="6"/>
+  <text x="660" y="335" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">居抜きで工事費を圧縮</text>
+  <text x="660" y="355" text-anchor="middle" font-size="11" fill="#4A6741" font-weight="500">客単価で回収できる立地</text>
+  <text x="660" y="378" text-anchor="middle" font-size="12" fill="#4A6741" font-weight="700">→ トータルで得になる</text>
+
+  <text x="265" y="355" text-anchor="middle" font-size="16" fill="#ccc">→</text>
+  <text x="525" y="355" text-anchor="middle" font-size="16" fill="#4A6741">→</text>
+
+  <!-- Bottom message -->
+  <rect x="60" y="415" width="680" height="80" fill="#fff" stroke="#4A6741" stroke-width="2" rx="10"/>
+  <text x="400" y="445" text-anchor="middle" font-size="14" font-weight="700" fill="#4A6741">自分の基準があるから「傷」を正しく評価できる</text>
+  <text x="400" y="470" text-anchor="middle" font-size="12" fill="#666">基準がないまま探すと → 「ここならいけるかも」という感覚で判断してしまう</text>
+  <text x="400" y="488" text-anchor="middle" font-size="12" fill="#4A6741" font-weight="500">基準がある状態で探すと → マイナスを強みに変える交渉ができる</text>
+</svg>
