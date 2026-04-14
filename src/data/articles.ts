@@ -364,7 +364,7 @@ export const articles: Article[] = [
     category: 'column',
     title: '店舗退去の原状回復ルール｜敷金は戻る？定期借家と普通賃貸の違いを内装屋が解説',
     enTitle: 'Exit Strategy',
-    thumbnail: `${IMG}/showcase-office.webp`,
+    thumbnail: `${IMG}/studio-construction.webp`,
     publishedAt: '2026-04-14',
     excerpt:
       '退去時にスケルトンに戻す？内装を残せる？敷金は返ってくる？定期借家と普通賃貸で何が変わる？出店前に知っておくべき退去ルールを解説。',
@@ -413,7 +413,7 @@ export const articles: Article[] = [
     category: 'column',
     title: '「未公開物件＝お宝」は本当か？非公開テナント物件の裏側を内装屋が解説',
     enTitle: 'Hidden Properties',
-    thumbnail: `${IMG}/area-map.webp`,
+    thumbnail: `${IMG}/showcase-renov.webp`,
     publishedAt: '2026-04-14',
     excerpt:
       '「ネットに載っていない物件こそ良い物件」と思っていませんか？未公開物件の実態と、店舗物件探しで本当に大事なポイントを解説。',
@@ -457,7 +457,7 @@ export const articles: Article[] = [
     category: 'column',
     title: '店舗物件を探す前にやるべきこと｜「基準」がないまま探すと失敗する理由',
     enTitle: 'Property Criteria',
-    thumbnail: `${IMG}/why-business-plan.webp`,
+    thumbnail: `${IMG}/solution-finance-advice.webp`,
     publishedAt: '2026-04-14',
     excerpt:
       '物件探しで最も重要なのは「良い物件を見つけること」ではなく「自分の基準を持つこと」。客層・エリア・予算・設備条件の整理法を解説。',
