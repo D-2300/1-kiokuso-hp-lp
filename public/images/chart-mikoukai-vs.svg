@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" font-family="'Noto Sans JP', sans-serif">
+  <!-- Background -->
+  <rect width="800" height="440" fill="#F8F5F0" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#333">未公開物件 vs 長期掲載物件</text>
+  <text x="400" y="58" text-anchor="middle" font-size="12" font-weight="400" fill="#999">大家の心理から見た比較</text>
+
+  <!-- VS layout -->
+  <!-- Left: 未公開 -->
+  <g transform="translate(200, 80)">
+    <rect x="-170" y="0" width="340" height="300" fill="#fff" stroke="#8B3A3A" stroke-width="2" rx="12"/>
+
+    <!-- Header -->
+    <rect x="-170" y="0" width="340" height="50" fill="#8B3A3A" rx="12"/>
+    <rect x="-170" y="25" width="340" height="25" fill="#8B3A3A"/>
+    <text x="0" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">未公開・新着物件</text>
+
+    <!-- Items -->
+    <g transform="translate(-145, 70)">
+      <text x="0" y="0" font-size="13" fill="#333" font-weight="600">大家の心理</text>
+      <text x="0" y="22" font-size="12" fill="#666">「いい条件で貸せるはず」</text>
+      <text x="0" y="42" font-size="12" fill="#666">→ 強気の姿勢</text>
+
+      <line x1="0" y1="58" x2="290" y2="58" stroke="#eee" stroke-width="1"/>
+
+      <text x="0" y="80" font-size="13" fill="#8B3A3A" font-weight="600">家賃</text>
+      <text x="120" y="80" font-size="14" fill="#8B3A3A" font-weight="700">最高値</text>
+
+      <line x1="0" y1="96" x2="290" y2="96" stroke="#eee" stroke-width="1"/>
+
+      <text x="0" y="118" font-size="13" fill="#8B3A3A" font-weight="600">値下げ交渉</text>
+      <text x="120" y="118" font-size="14" fill="#8B3A3A" font-weight="700">応じにくい</text>
+
+      <line x1="0" y1="134" x2="290" y2="134" stroke="#eee" stroke-width="1"/>
+
+      <text x="0" y="156" font-size="13" fill="#8B3A3A" font-weight="600">業種制限</text>
+      <text x="120" y="156" font-size="14" fill="#8B3A3A" font-weight="700">厳しい</text>
+
+      <line x1="0" y1="172" x2="290" y2="172" stroke="#eee" stroke-width="1"/>
+
+      <text x="0" y="194" font-size="13" fill="#8B3A3A" font-weight="600">フリーレント</text>
+      <text x="120" y="194" font-size="14" fill="#8B3A3A" font-weight="700">期待できない</text>
+    </g>
+  </g>
+
+  <!-- VS circle -->
+  <circle cx="400" cy="230" r="24" fill="#5C3A21"/>
+  <text x="400" y="235" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">VS</text>
+
+  <!-- Right: 長期掲載 -->
+  <g transform="translate(600, 80)">
+    <rect x="-170" y="0" width="340" height="300" fill="#fff" stroke="#4A6741" stroke-width="2" rx="12"/>
+
+    <!-- Header -->
+    <rect x="-170" y="0" width="340" height="50" fill="#4A6741" rx="12"/>
+    <rect x="-170" y="25" width="340" height="25" fill="#4A6741"/>
+    <text x="0" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">長期掲載物件</text>
+
+    <!-- Items -->
+    <g transform="translate(-145, 70)">
+      <text x="0" y="0" font-size="13" fill="#333" font-weight="600">大家の心理</text>
+      <text x="0" y="22" font-size="12" fill="#666">「早く埋めたい…」</text>
+      <text x="0" y="42" font-size="12" fill="#666">→ 柔軟な姿勢</text>
+
+      <line x1="0" y1="58" x2="290" y2="58" stroke="#eee" stroke-width="1"/>
+
+      <text x="0" y="80" font-size="13" fill="#4A6741" font-weight="600">家賃</text>
+      <text x="120" y="80" font-size="14" fill="#4A6741" font-weight="700">交渉で下がる</text>
+
+      <line x1="0" y1="96" x2="290" y2="96" stroke="#eee" stroke-width="1"/>
+
+      <text x="0" y="118" font-size="13" fill="#4A6741" font-weight="600">値下げ交渉</text>
+      <text x="120" y="118" font-size="14" fill="#4A6741" font-weight="700">応じやすい</text>
+
+      <line x1="0" y1="134" x2="290" y2="134" stroke="#eee" stroke-width="1"/>
+
+      <text x="0" y="156" font-size="13" fill="#4A6741" font-weight="600">業種制限</text>
+      <text x="120" y="156" font-size="14" fill="#4A6741" font-weight="700">緩和の余地あり</text>
+
+      <line x1="0" y1="172" x2="290" y2="172" stroke="#eee" stroke-width="1"/>
+
+      <text x="0" y="194" font-size="13" fill="#4A6741" font-weight="600">フリーレント</text>
+      <text x="120" y="194" font-size="14" fill="#4A6741" font-weight="700">交渉次第で可能</text>
+    </g>
+  </g>
+
+  <!-- Bottom callout -->
+  <rect x="100" y="395" width="600" height="34" fill="#4A6741" fill-opacity="0.1" rx="8"/>
+  <text x="400" y="417" text-anchor="middle" font-size="13" font-weight="600" fill="#4A6741">予算が限られているなら、長期掲載物件の方が圧倒的に有利</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="'Noto Sans JP', sans-serif">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#F8F5F0" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#333">「未公開物件」が生まれる仕組み</text>
+  <text x="400" y="58" text-anchor="middle" font-size="12" font-weight="400" fill="#999">How "Unpublished Properties" Are Created</text>
+
+  <!-- Flow steps -->
+  <!-- Step 1 -->
+  <g transform="translate(90, 100)">
+    <rect x="-70" y="-25" width="140" height="50" fill="#fff" stroke="#5C3A21" stroke-width="2" rx="8"/>
+    <text x="0" y="-4" text-anchor="middle" font-size="12" font-weight="600" fill="#5C3A21">テナント退去</text>
+    <text x="0" y="14" text-anchor="middle" font-size="11" fill="#666">空室が発生</text>
+  </g>
+  <!-- Arrow -->
+  <line x1="165" y1="100" x2="205" y2="100" stroke="#ccc" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- Step 2 -->
+  <g transform="translate(280, 100)">
+    <rect x="-70" y="-25" width="140" height="50" fill="#fff" stroke="#5C3A21" stroke-width="2" rx="8"/>
+    <text x="0" y="-4" text-anchor="middle" font-size="12" font-weight="600" fill="#5C3A21">大家が不動産に</text>
+    <text x="0" y="14" text-anchor="middle" font-size="11" fill="#666">募集を依頼</text>
+  </g>
+  <line x1="355" y1="100" x2="395" y2="100" stroke="#ccc" stroke-width="2"/>
+
+  <!-- Step 3: THIS IS "未公開" -->
+  <g transform="translate(480, 100)">
+    <rect x="-80" y="-30" width="160" height="60" fill="#8B3A3A" fill-opacity="0.08" stroke="#8B3A3A" stroke-width="2.5" rx="8" stroke-dasharray="6,3"/>
+    <text x="0" y="-6" text-anchor="middle" font-size="13" font-weight="700" fill="#8B3A3A">情報整理中</text>
+    <text x="0" y="14" text-anchor="middle" font-size="11" fill="#8B3A3A">← ここが「未公開」</text>
+  </g>
+  <line x1="565" y1="100" x2="605" y2="100" stroke="#ccc" stroke-width="2"/>
+
+  <!-- Step 4 -->
+  <g transform="translate(690, 100)">
+    <rect x="-80" y="-25" width="160" height="50" fill="#4A6741" fill-opacity="0.1" stroke="#4A6741" stroke-width="2" rx="8"/>
+    <text x="0" y="-4" text-anchor="middle" font-size="12" font-weight="600" fill="#4A6741">ポータルサイト</text>
+    <text x="0" y="14" text-anchor="middle" font-size="11" fill="#4A6741">に掲載（公開）</text>
+  </g>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ccc"/>
+    </marker>
+  </defs>
+
+  <!-- Explanation boxes below -->
+  <g transform="translate(0, 180)">
+    <!-- Left: 未公開の実態 -->
+    <rect x="40" y="0" width="340" height="180" fill="#fff" stroke="#8B3A3A" stroke-width="1.5" rx="10"/>
+    <rect x="40" y="0" width="340" height="36" fill="#8B3A3A" rx="10"/>
+    <rect x="40" y="18" width="340" height="18" fill="#8B3A3A"/>
+    <text x="210" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">未公開の実態</text>
+
+    <text x="60" y="60" font-size="12" fill="#333">✕ 特別に良い物件だから隠している</text>
+    <text x="60" y="84" font-size="12" fill="#333">✕ 選ばれた人だけが見られる</text>
+    <line x1="60" y1="100" x2="360" y2="100" stroke="#eee" stroke-width="1"/>
+    <text x="60" y="122" font-size="12" fill="#8B3A3A" font-weight="500">○ まだ掲載されていないだけ</text>
+    <text x="60" y="146" font-size="12" fill="#8B3A3A" font-weight="500">○ 条件が確定していない</text>
+    <text x="60" y="170" font-size="12" fill="#8B3A3A" font-weight="500">○ 時間が経てば普通に公開される</text>
+
+    <!-- Right: 公開物件のメリット -->
+    <rect x="420" y="0" width="340" height="180" fill="#fff" stroke="#4A6741" stroke-width="1.5" rx="10"/>
+    <rect x="420" y="0" width="340" height="36" fill="#4A6741" rx="10"/>
+    <rect x="420" y="18" width="340" height="18" fill="#4A6741"/>
+    <text x="590" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">公開物件のメリット</text>
+
+    <text x="440" y="60" font-size="12" fill="#333">○ 写真・間取り・設備情報が揃っている</text>
+    <text x="440" y="84" font-size="12" fill="#333">○ 複数物件を比較しやすい</text>
+    <text x="440" y="108" font-size="12" fill="#333">○ 相場感がつかめる</text>
+    <text x="440" y="132" font-size="12" fill="#4A6741" font-weight="500">○ 長期掲載なら交渉余地が大きい</text>
+    <text x="440" y="156" font-size="12" fill="#4A6741" font-weight="500">○ 値下げ・フリーレント・業種緩和</text>
+  </g>
+</svg>
