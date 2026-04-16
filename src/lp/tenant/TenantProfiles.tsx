@@ -59,7 +59,7 @@ export default function TenantProfiles() {
             alt="記憶荘 店舗内装スタジオ"
             style={{ height: "24px", width: "auto", margin: "0 auto 8px", opacity: 0.45, display: "block" }}
           />
-          <p style={{ fontSize: "12px", color: "#999", lineHeight: 1.6 }}>記憶荘 店舗内装スタジオ｜仙台の店舗内装 設計・施工・物件相談</p>
+          <p style={{ fontSize: "12px", color: "#999", lineHeight: 1.6 }}>記憶荘 店舗内装スタジオ｜テナント探しから手伝う内装屋（仙台・宮城）</p>
         </div>
       </div>
     </section>
