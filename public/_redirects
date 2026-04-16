@@ -6,6 +6,11 @@
 /lp/koji/        /lp/tenant/       301!
 /lp/koji/*       /lp/tenant/       301!
 
+# 2026-04-16: 旧 /manshitsu を新ドメイン manshitsu.homes に 301 恒久転送
+/manshitsu       https://manshitsu.homes/       301!
+/manshitsu/      https://manshitsu.homes/       301!
+/manshitsu/*     https://manshitsu.homes/:splat 301!
+
 # Trailing slash redirects (canonical URL normalization)
 /lp/tenant       /lp/tenant/       301
 
