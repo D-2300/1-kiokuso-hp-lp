@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import HPApp from "./hp/HPApp";
 import ManshitsuPage from "./manshitsu/ManshitsuPage";
 import TenantLPPage from "./lp/tenant/TenantLPPage";
-import KojiLPPage from "./lp/koji/KojiLPPage";
 import WorksCrossover from "./hp/WorksCrossover";
 import ArticleList from "./hp/pages/ArticleList";
 import ArticleDetail from "./hp/pages/ArticleDetail";
@@ -28,8 +27,9 @@ export default function AppRoutes() {
       <BodyBackground />
       <ScrollToTop />
       <Routes>
-        <Route path="/lp" element={<Navigate to="/lp/koji/" replace />} />
-        <Route path="/lp/koji" element={<KojiLPPage />} />
+        <Route path="/lp" element={<Navigate to="/lp/tenant" replace />} />
+        <Route path="/lp/koji" element={<Navigate to="/lp/tenant" replace />} />
+        <Route path="/lp/koji/" element={<Navigate to="/lp/tenant" replace />} />
         <Route path="/manshitsu" element={<ManshitsuPage />} />
         <Route path="/lp/tenant" element={<TenantLPPage />} />
         <Route path="/studio/works/crossover" element={<WorksCrossover />} />

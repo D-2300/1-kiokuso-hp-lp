@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { getWeeklyPropertyCount } from "./weeklyCount";
 
 const LINE_URL = "https://lin.ee/HVV0QJO";
 
@@ -123,7 +124,7 @@ export default function TenantAvailableNow() {
     }, 1000);
   }
 
-  const remainingCount = allProperties.length - selected.length;
+  const remainingCount = getWeeklyPropertyCount();
 
   return (
     <section

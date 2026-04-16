@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { getWeeklyPropertyCount } from "./weeklyCount";
 
 const LINE_URL = "https://lin.ee/HVV0QJO";
 
@@ -190,9 +191,8 @@ function getUpdateDate(): string {
 export default function TenantHero() {
   const [selected] = useState<Property[]>(() => selectProperties(allProperties));
   const [updateDate] = useState(getUpdateDate);
-  // 「他にも X 件あります」の X は 30〜50 の範囲でランダムに表示
-  // （allProperties.length を使うと毎回きっかり99や100になり数字が嘘くさくなるため）
-  const [remainingCount] = useState<number>(() => Math.floor(Math.random() * 21) + 30);
+  // 週単位で固定される非公開物件数（40〜50の範囲で週ごとに変動）
+  const [remainingCount] = useState<number>(() => getWeeklyPropertyCount());
   const [animatedRows, setAnimatedRows] = useState<number[]>([]);
   const [showCount, setShowCount] = useState(false);
   const hasStarted = useRef(false);
@@ -253,7 +253,7 @@ export default function TenantHero() {
 
           {/* Category */}
           <p style={{ fontSize: "clamp(12px, 2vw, 14px)", fontWeight: 400, letterSpacing: ".15em", color: "rgba(200,220,200,.5)", marginBottom: "14px" }}>
-            飲食店の物件探し × 内装工事
+            テナント探しから手伝う内装屋
           </p>
 
           {/* H1 */}
@@ -281,7 +281,7 @@ export default function TenantHero() {
             }}
           >
             内装をつくる側だから、「この物件で成功できるか」から<br />
-            一緒に考えられます。物件探しから、伴走します。
+            一緒に考えられます。テナント探しから、内装工事まで。
           </p>
         </div>
       </section>

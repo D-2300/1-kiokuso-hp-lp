@@ -1,10 +1,11 @@
-# Legacy /lp/ → /lp/koji/ (301 permanent redirect)
-/lp              /lp/koji/         301
-/lp/             /lp/koji/         301
+# 2026-04-16: F2F3停止に伴い /lp/koji → /lp/tenant に変更
+/lp              /lp/tenant/       301
+/lp/             /lp/tenant/       301
+/lp/koji         /lp/tenant/       301
+/lp/koji/        /lp/tenant/       301
 
 # Trailing slash redirects (canonical URL normalization)
 /lp/tenant       /lp/tenant/       301
-/lp/koji         /lp/koji/         301
 
 # SPA fallback
 /*  /index.html  200

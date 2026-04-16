@@ -103,12 +103,12 @@ export default function StudioTop() {
                 What We Do
               </p>
               <p style={{ fontSize: "24px", fontWeight: 500, color: colors.text, fontFamily: "'Noto Serif JP', serif", margin: "0 0 24px", lineHeight: 1.5 }}>
-                仙台・宮城の店舗内装
+                テナント探しから手伝う内装屋
               </p>
               <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#555", margin: "0 0 32px" }}>
-                設計・施工・届出まで、一社で完結する店舗内装スタジオです。<br />
-                居抜き活用・DIY・施主支給を組み合わせて、<br />
-                はじめてのお店づくりを、予算の中で最善に。
+                仙台・宮城で店舗を始める方へ。<br />
+                テナント探し・内装工事・届出まで、一社で完結。<br />
+                非公開テナント情報・居抜き・スケルトン対応。
               </p>
               <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}>
                 {[{ label: "居抜き", value: "50万円〜" }, { label: "スケルトン", value: "150万円〜" }].map((badge) => (
