@@ -169,8 +169,10 @@ export default function GroupTop() {
           <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "22px", fontWeight: 700, letterSpacing: "0.18em" }}>
             記憶荘
           </p>
-          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "17px", fontWeight: 500, letterSpacing: "0.14em", marginTop: "8px" }}>
-            次の記憶が、ここから灯る。
+          <p style={{ color: "rgba(255,255,255,0.95)", fontSize: "17px", fontWeight: 500, letterSpacing: "0.12em", marginTop: "8px", lineHeight: 1.8 }}>
+            仙台で、店を始める人と、
+            <br />
+            古い物件を動かす人のために。
           </p>
         </div>
         <div
@@ -193,39 +195,11 @@ export default function GroupTop() {
       <ScrollFadeIn>
         <section style={{ backgroundColor: colors.beige, padding: "80px 32px" }}>
           <SectionHeading en="Group" ja="事業内容" align="center" />
-          <div
-            style={{
-              maxWidth: "640px",
-              margin: "0 auto",
-              border: "1px solid rgba(201,168,76,0.3)",
-              borderRadius: "12px",
-              padding: "40px 20px 20px",
-              position: "relative",
-              backgroundColor: "rgba(201,168,76,0.03)",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                top: "-28px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                backgroundColor: "#F8F5F0",
-                padding: "0 20px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "4px",
-              }}
-            >
-              <img src="/assets/logos/logo-group-dark.webp" alt="" style={{ height: "36px" }} />
-              <span style={{ fontSize: "13px", color: "#999", letterSpacing: "0.1em" }}>記憶荘グループ</span>
-            </div>
-
-            <p style={{ fontSize: "15px", fontWeight: 400, color: "#666", lineHeight: 1.9, textAlign: "center", marginBottom: "32px", fontFamily: "'Noto Sans JP', sans-serif" }}>
-              仙台を拠点に、事業用の古い空間に、次の記憶を灯す。
+          <div style={{ maxWidth: "880px", margin: "0 auto" }}>
+            <p style={{ fontSize: "15px", fontWeight: 400, color: "#666", lineHeight: 1.9, textAlign: "center", marginBottom: "40px", fontFamily: "'Noto Sans JP', sans-serif" }}>
+              店舗内装と収益物件リノベを軸に、
               <br />
-              店舗内装から収益物件の再生まで、物件探しの段階から並走します。
+              物件探し・施工・アフターまでを4つの枠で担当します。
             </p>
 
             <div
@@ -233,6 +207,8 @@ export default function GroupTop() {
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
                 gap: "16px",
+                maxWidth: "720px",
+                margin: "0 auto",
               }}
             >
               {businesses.map((b) => (
