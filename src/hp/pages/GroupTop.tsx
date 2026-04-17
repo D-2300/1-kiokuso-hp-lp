@@ -414,6 +414,85 @@ export default function GroupTop() {
         </section>
       </ScrollFadeIn>
 
+      {/* Recent Works: 直近の施工から */}
+      <ScrollFadeIn>
+        <section style={{ padding: "32px 24px 72px", backgroundColor: colors.beige }}>
+          <div style={{ maxWidth: "880px", margin: "0 auto" }}>
+            <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, textAlign: "center", margin: "0 0 8px", textTransform: "uppercase" }}>
+              Recent Works
+            </p>
+            <h2 style={{ fontSize: "20px", fontWeight: 500, textAlign: "center", margin: "0 0 32px", color: colors.text, fontFamily: "'Noto Serif JP', serif" }}>
+              最近の施工から
+            </h2>
+            <div
+              className="recent-works-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                gap: "16px",
+              }}
+            >
+              {[
+                { img: "/images/crossover-after-01-sm.webp", badge: "STUDIO", type: "Cafe & Bar", cost: "¥90万", duration: "10日", area: "仙台市若林区", scope: "スケルトン", color: colors.fukamidori.main },
+                { img: "/images/yakiniku-after-sm.webp", badge: "STUDIO", type: "焼肉店", cost: "¥360万", duration: "約30日", area: "仙台市青葉区", scope: "居抜き改装", color: colors.fukamidori.main },
+                { img: "/images/ramen-after-sm.webp", badge: "STUDIO", type: "ラーメン店", cost: "¥280万", duration: "約25日", area: "仙台市太白区", scope: "スケルトン", color: colors.fukamidori.main },
+              ].map((w, i) => (
+                <div
+                  key={i}
+                  style={{
+                    backgroundColor: "#fff",
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    border: "1px solid rgba(201,168,76,0.2)",
+                  }}
+                >
+                  <div style={{ position: "relative", height: "170px", overflow: "hidden" }}>
+                    <img src={w.img} alt={w.type} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <span
+                      style={{
+                        position: "absolute",
+                        top: "10px",
+                        left: "10px",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        color: "#fff",
+                        backgroundColor: w.color,
+                        padding: "3px 10px",
+                        borderRadius: "3px",
+                      }}
+                    >
+                      {w.badge}
+                    </span>
+                  </div>
+                  <div style={{ padding: "16px 18px 18px" }}>
+                    <p style={{ fontSize: "15px", fontWeight: 600, color: colors.text, margin: "0 0 10px" }}>
+                      {w.type}
+                    </p>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "8px", flexWrap: "wrap" }}>
+                      <span style={{ fontSize: "20px", fontWeight: 700, color: "#C9A84C", lineHeight: 1, fontFamily: "'Noto Serif JP', serif" }}>
+                        {w.cost}
+                      </span>
+                      <span style={{ fontSize: "13px", color: "#666" }}>
+                        ／ {w.duration}
+                      </span>
+                    </div>
+                    <p style={{ fontSize: "12px", color: "#888", margin: 0, lineHeight: 1.7 }}>
+                      {w.area} ・ {w.scope}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div style={{ textAlign: "center", marginTop: "24px" }}>
+              <Link to="/studio/works" style={{ fontSize: "14px", color: colors.fukamidori.main, textDecoration: "none", letterSpacing: "0.05em" }}>
+                すべての施工事例を見る →
+              </Link>
+            </div>
+          </div>
+        </section>
+      </ScrollFadeIn>
+
       {/* About 導線 */}
       <ScrollFadeIn>
         <section style={{ padding: "40px 24px 64px", textAlign: "center" }}>
