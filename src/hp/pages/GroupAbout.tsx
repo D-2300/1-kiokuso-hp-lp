@@ -20,7 +20,7 @@ const ourWork = [
     nameJa: "満室デザインLABO",
     nameEn: "KIOKUSO INVEST",
     color: "#6A4F7A",
-    logo: "/assets/logos/logo-invest-gold.webp",
+    logo: "/assets/logos/logo-invest-dark.webp",
     active: false,
     to: null,
     body: "築古アパート・戸建て投資・ゾンビハウス再生。眠っている収益物件に、内装の工夫と市場の読みで次の使い手を連れてくる専門事業。",
