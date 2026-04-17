@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>記憶荘 パートナーモデルガイド</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;background:#f7f6f3;color:#2c2c2a;line-height:1.7;padding:0}
+.wrap{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+
+/* Header */
+.header{text-align:center;padding:48px 20px 40px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;margin-bottom:32px;border-radius:0 0 24px 24px}
+.header h1{font-size:24px;font-weight:700;letter-spacing:1px;margin:0 0 8px}
+.header p{font-size:14px;opacity:.7;max-width:480px;margin:0 auto}
+
+/* Section */
+.sec{background:#fff;border-radius:16px;padding:28px 24px;margin:0 0 16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.sec-num{font-size:11px;font-weight:700;color:#378ADD;letter-spacing:1.5px;margin:0 0 6px;text-transform:uppercase}
+.sec-title{font-size:18px;font-weight:700;margin:0 0 16px;line-height:1.4}
+
+/* Compare cards */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmp{border-radius:12px;padding:16px;font-size:13px;line-height:1.8}
+.cmp-ng{background:#fef2f2;border:1px solid #fca5a5}
+.cmp-ok{background:#f0fdf4;border:1px solid #86efac}
+.cmp-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;color:#fff;margin:0 0 8px}
+.cmp-ng .cmp-badge{background:#ef4444}
+.cmp-ok .cmp-badge{background:#22c55e}
+.cmp strong{font-weight:600}
+.cmp-note{margin:8px 0 0;padding:8px 0 0;font-size:12px;line-height:1.5}
+.cmp-ng .cmp-note{border-top:1px solid #fca5a5;color:#dc2626}
+.cmp-ok .cmp-note{border-top:1px solid #86efac;color:#16a34a}
+
+/* Steps */
+.step{display:flex;gap:12px;margin:0 0 12px;align-items:flex-start}
+.step-n{width:28px;height:28px;border-radius:50%;background:#e0f2fe;color:#0369a1;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.step-t{font-size:14px;flex:1;padding-top:3px}
+.step-t strong{font-weight:600}
+
+/* Slider */
+.slider-group{margin:0 0 20px}
+.slider-row{display:flex;align-items:center;gap:12px;margin:0 0 10px}
+.slider-row label{font-size:13px;color:#666;min-width:100px}
+.slider-row input[type=range]{flex:1;height:6px;-webkit-appearance:none;background:#e5e5e5;border-radius:3px;outline:none}
+.slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:#378ADD;border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.slider-val{font-size:14px;font-weight:600;min-width:100px;text-align:right;color:#2c2c2a}
+
+/* Toggle */
+.toggle-row{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-size:13px;color:#666}
+.toggle-track{position:relative;width:40px;height:22px;background:#ccc;border-radius:11px;cursor:pointer;transition:background .2s;flex-shrink:0}
+.toggle-track.on{background:#378ADD}
+.toggle-knob{position:absolute;top:2px;left:2px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.toggle-track.on .toggle-knob{transform:translateX(18px)}
+
+/* Waterfall bars */
+.wf-bar{margin:4px 0}
+.wf-lbl{display:flex;justify-content:space-between;font-size:12px;margin:0 0 3px}
+.wf-n{color:#888}
+.wf-v{font-weight:600}
+.wf-track{height:26px;background:#f0f0ec;border-radius:8px;overflow:hidden}
+.wf-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 8px;font-size:11px;font-weight:600;color:#fff;transition:width .4s ease}
+
+/* Split grid */
+.split-grid{display:grid;gap:8px;margin:12px 0}
+.s4{grid-template-columns:repeat(4,1fr)}
+.s5{grid-template-columns:repeat(5,1fr)}
+.sp-card{background:#f7f6f3;border-radius:10px;padding:12px 8px;text-align:center}
+.sp-lbl{font-size:11px;color:#888;margin:0 0 2px}
+.sp-val{font-size:18px;font-weight:700}
+.sp-pct{font-size:11px;color:#aaa;margin:2px 0 0}
+
+/* Matrix table */
+.matrix{width:100%;border-collapse:collapse;font-size:13px}
+.matrix th{text-align:left;font-weight:600;padding:10px 12px;border-bottom:2px solid #e5e5e0;background:#fafaf7}
+.matrix td{padding:10px 12px;border-bottom:1px solid #f0f0ec;vertical-align:middle}
+.matrix tr:last-child td{border-bottom:none}
+.matrix tr:hover td{background:#fafaf7}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.pill-shared{background:#dbeafe;color:#1d4ed8}
+.pill-company{background:#ede9fe;color:#6d28d9}
+.pill-ken{background:#fef3c7;color:#92400e}
+.pill-each{background:#f3f4f6;color:#4b5563}
+
+/* Risk section */
+.risk-header{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding:12px 0 0}
+.risk-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.risk-name{font-size:15px;font-weight:600}
+.risk-sub{font-size:12px;color:#888}
+.risk-card{padding:12px 14px;margin:0 0 6px;border-left:4px solid #ddd;background:#fafaf7;border-radius:0 8px 8px 0}
+.risk-card-title{font-size:13px;font-weight:600;margin:0 0 4px}
+.risk-card-why{font-size:12px;color:#666;line-height:1.6}
+.risk-tag{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;margin:6px 4px 0 0}
+.tag-h{background:#fee2e2;color:#991b1b}
+.tag-m{background:#fef3c7;color:#92400e}
+.tag-l{background:#dcfce7;color:#166534}
+.bl-p{border-left-color:#8b5cf6}
+.bl-a{border-left-color:#f59e0b}
+.bl-b{border-left-color:#3b82f6}
+
+/* Legend */
+.legend{display:flex;gap:14px;margin:0 0 16px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#888}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+
+/* Summary */
+.summary{font-size:14px;line-height:1.9;padding:20px;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-radius:12px;border:1px solid #bfdbfe}
+.summary strong{font-weight:600}
+.summary .highlight{color:#2563eb;font-weight:700;font-size:15px}
+
+/* Note */
+.note{font-size:12px;color:#888;line-height:1.6;padding:12px 14px;background:#f7f6f3;border-radius:10px;margin:10px 0}
+
+@media(max-width:600px){
+  .compare{grid-template-columns:1fr}
+  .s4,.s5{grid-template-columns:repeat(2,1fr)}
+  .slider-row label{min-width:80px}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>記憶荘 パートナーモデルガイド</h1>
+  <p>一緒に仕事をしていく上での「お金の流れ」「経費ルール」「リスク分担」の整理</p>
+</div>
+
+<div class="wrap">
+
+<!-- SECTION 01 -->
+<div class="sec">
+  <div class="sec-num">Section 01</div>
+  <div class="sec-title">お金の流れ：売上 → 経費 → 分配</div>
+  <div class="step"><div class="step-n">1</div><div class="step-t"><strong>お客さんから売上が入る</strong>（例：¥1,500,000）</div></div>
+  <div class="step"><div class="step-n">2</div><div class="step-t"><strong>外注費を引く</strong>（水道屋・電気屋 → 例：¥600,000）</div></div>
+  <div class="step"><div class="step-n">3</div><div class="step-t"><strong>共通経費を引く</strong>（交通費・消耗品・資材 → 例：¥200,000）</div></div>
+  <div class="step"><div class="step-n">4</div><div class="step-t"><strong>残った粗利を分配</strong><br>会社 3割 ／ 税金確保 1割 ／ DAI 3割 ／ ケン君 3割</div></div>
+</div>
+
+<!-- SECTION 03 -->
+<div class="sec">
+  <div class="sec-num">Section 02</div>
+  <div class="sec-title">利益分配シミュレーション</div>
+  <div class="slider-group">
+    <div class="slider-row">
+      <label>売上</label>
+      <input type="range" min="500000" max="5000000" step="50000" value="1500000" id="rev" oninput="calc()">
+      <span class="slider-val" id="o-rev"></span>
+    </div>
+    <div class="slider-row">
+      <label>外注費</label>
+      <input type="range" min="0" max="3000000" step="50000" value="600000" id="sub" oninput="calc()">
+      <span class="slider-val" id="o-sub"></span>
+    </div>
+    <div class="slider-row">
+      <label>共通経費</label>
+      <input type="range" min="0" max="1000000" step="10000" value="200000" id="exp" oninput="calc()">
+      <span class="slider-val" id="o-exp"></span>
+    </div>
+  </div>
+  <div class="toggle-row">
+    <div class="toggle-track" id="ad-track" onclick="toggleAd()">
+      <div class="toggle-knob"></div>
+    </div>
+    <span>広告費を粗利から別途10%確保する</span>
+  </div>
+  <div id="waterfall"></div>
+  <div id="splits"></div>
+  <div class="note" id="ad-note" style="display:none">広告費10%を別枠にすると、共通経費に広告費を含めなくて済むため管理がシンプルになります。ただしDAI・ケン君の取り分はその分減ります。</div>
+</div>
+
+<!-- SECTION 04 -->
+<div class="sec">
+  <div class="sec-num">Section 03</div>
+  <div class="sec-title">経費の負担ルール：誰が何を払うか</div>
+  <table class="matrix">
+    <thead><tr><th>項目</th><th>負担</th><th>ルール</th></tr></thead>
+    <tbody>
+      <tr><td>交通費・駐車場</td><td><span class="pill pill-shared">共通経費</span></td><td>案件ごとの実費を計上</td></tr>
+      <tr><td>消耗品（案件分）</td><td><span class="pill pill-shared">共通経費</span></td><td>使った分だけ都度計上</td></tr>
+      <tr><td>資材の立替・仕入れ</td><td><span class="pill pill-shared">共通経費</span></td><td>レシート必須で精算</td></tr>
+      <tr><td>広告・集客費</td><td><span class="pill pill-shared">共通経費</span></td><td>または粗利から別途10%</td></tr>
+      <tr><td>瑕疵対応予備費</td><td><span class="pill pill-company">会社持ち</span></td><td>引渡し後の手直し費用</td></tr>
+      <tr><td>賠償責任保険</td><td><span class="pill pill-ken">ケン君持ち</span></td><td>現場作業者として加入</td></tr>
+      <tr><td>基本工具</td><td><span class="pill pill-ken">ケン君持ち</span></td><td>個人の道具は個人管理</td></tr>
+      <tr><td>車両保険・車検・整備</td><td><span class="pill pill-each">各自負担</span></td><td>保険・車検・オイル・タイヤ</td></tr>
+      <tr><td>通信費</td><td><span class="pill pill-each">各自負担</span></td><td>携帯代は各自で</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 05 -->
+<div class="sec">
+  <div class="sec-num">Section 04</div>
+  <div class="sec-title">リスクの分担：誰がどのリスクを背負うか</div>
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot" style="background:#ef4444"></span> 影響度：大</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span> 影響度：中</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span> 影響度：小</div>
+  </div>
+
+  <!-- DAI risks -->
+  <div class="risk-header">
+    <div class="risk-avatar" style="background:#ede9fe;color:#6d28d9">D</div>
+    <div><div class="risk-name">DAI / 会社が負うリスク</div><div class="risk-sub">事業の上流・顧客接点・信用を担保する側</div></div>
+  </div>
+  <div class="risk-card bl-p">
+    <div class="risk-card-title">案件獲得リスク</div>
+    <div class="risk-card-why">仕事が取れなければ全員の収入がゼロ。集客・営業・提案はDAI側が担っている。</div>
+    <span class="risk-tag tag-h">影響大</span>
+  </div>
+  <div class="risk-card bl-p">
+    <div class="risk-card-title">広告費の先行投資リスク</div>
+    <div class="risk-card-why">Google Adsなどの広告は案件が決まる前にお金が出ていく。回収できなければ会社の持ち出し。</div>
+    <span class="risk-tag tag-m">影響中</span>
+  </div>
+  <div class="risk-card bl-p">
+    <div class="risk-card-title">瑕疵対応リスク</div>
+    <div class="risk-card-why">引渡し後にお客さんから「ここ直して」と言われた場合、会社の利益から対応する。予備費を超えたら会社が被る。</div>
+    <span class="risk-tag tag-h">影響大</span>
+  </div>
+  <div class="risk-card bl-p">
+    <div class="risk-card-title">顧客クレーム・信用リスク</div>
+    <div class="risk-card-why">お客さんとの窓口はDAI。トラブル時に矢面に立つのもDAI。記憶荘のブランド・口コミに直結する。</div>
+    <span class="risk-tag tag-m">影響中</span>
+  </div>
+  <div class="risk-card bl-p">
+    <div class="risk-card-title">売掛金の未回収リスク</div>
+    <div class="risk-card-why">お客さんが払わなかった場合でも、外注費や経費はすでに出ている。回収責任は会社側。</div>
+    <span class="risk-tag tag-h">影響大</span>
+  </div>
+
+  <!-- Ken risks -->
+  <div class="risk-header" style="margin-top:20px">
+    <div class="risk-avatar" style="background:#fef3c7;color:#92400e">K</div>
+    <div><div class="risk-name">ケン君が負うリスク</div><div class="risk-sub">現場施工・物理的な作業を担う側</div></div>
+  </div>
+  <div class="risk-card bl-a">
+    <div class="risk-card-title">施工事故・賠償リスク</div>
+    <div class="risk-card-why">工事中に建物や設備を壊した、隣の店舗に被害が出た等。現場にいる人間がリスクの当事者。だから賠償責任保険はケン君が持つ。</div>
+    <span class="risk-tag tag-h">影響大</span>
+  </div>
+  <div class="risk-card bl-a">
+    <div class="risk-card-title">身体的リスク（怪我・事故）</div>
+    <div class="risk-card-why">現場作業には常に身体的な危険が伴う。これはケン君本人しか負えないリスク。</div>
+    <span class="risk-tag tag-h">影響大</span>
+  </div>
+  <div class="risk-card bl-a">
+    <div class="risk-card-title">施工品質リスク</div>
+    <div class="risk-card-why">仕上がりが悪ければやり直し。追加材料は共通経費だが、やり直しの工数はケン君の時間コスト。</div>
+    <span class="risk-tag tag-m">影響中</span>
+  </div>
+  <div class="risk-card bl-a">
+    <div class="risk-card-title">工具の破損・紛失リスク</div>
+    <div class="risk-card-why">基本工具はケン君持ち。壊れた・なくした場合の買い替えもケン君の自己負担。</div>
+    <span class="risk-tag tag-l">影響小</span>
+  </div>
+
+  <!-- Shared risks -->
+  <div class="risk-header" style="margin-top:20px">
+    <div class="risk-avatar" style="background:#dbeafe;color:#1d4ed8">共</div>
+    <div><div class="risk-name">共通で負うリスク</div><div class="risk-sub">どちらか一方では制御できないもの</div></div>
+  </div>
+  <div class="risk-card bl-b">
+    <div class="risk-card-title">外注先の品質リスク</div>
+    <div class="risk-card-why">水道屋・電気屋が期待通りの仕事をしなかった場合。手直し費用は共通経費から。</div>
+    <span class="risk-tag tag-m">影響中</span>
+  </div>
+  <div class="risk-card bl-b">
+    <div class="risk-card-title">工期遅延リスク</div>
+    <div class="risk-card-why">天候、資材遅れ、外注先の都合で工期が伸びる。両者の時間コストが増える。</div>
+    <span class="risk-tag tag-m">影響中</span>
+  </div>
+  <div class="risk-card bl-b">
+    <div class="risk-card-title">資材の価格変動リスク</div>
+    <div class="risk-card-why">見積もり後に材料費が上がった場合の差額。見積もりに有効期限を設けることで軽減。</div>
+    <span class="risk-tag tag-l">影響小</span>
+  </div>
+</div>
+
+
+</div>
+
+<script>
+var adOn = false;
+function toggleAd() {
+  adOn = !adOn;
+  document.getElementById('ad-track').classList.toggle('on', adOn);
+  calc();
+}
+function fmt(n) { return '\u00a5' + Math.round(n).toLocaleString(); }
+function calc() {
+  var rev = +document.getElementById('rev').value;
+  var sub = +document.getElementById('sub').value;
+  var exp = +document.getElementById('exp').value;
+  document.getElementById('o-rev').textContent = fmt(rev);
+  document.getElementById('o-sub').textContent = fmt(sub);
+  document.getElementById('o-exp').textContent = fmt(exp);
+  document.getElementById('ad-note').style.display = adOn ? 'block' : 'none';
+
+  var gross = Math.max(rev - sub - exp, 0);
+  var adFund = adOn ? Math.round(gross * 0.10) : 0;
+  var pool = gross - adFund;
+  var tax = Math.round(pool * 0.10);
+  var dist = pool - tax;
+  var company = Math.round(dist / 3);
+  var dai = Math.round(dist / 3);
+  var ken = dist - company - dai;
+  var mx = rev || 1;
+
+  var bars = [
+    { n: '売上', v: rev, c: '#3b82f6' },
+    { n: '外注費', v: sub, c: '#ef4444' },
+    { n: '共通経費', v: exp, c: '#f97316' },
+    { n: '粗利', v: gross, c: '#22c55e' }
+  ];
+  if (adOn) bars.push({ n: '└ 広告費確保 10%', v: adFund, c: '#8b5cf6' });
+
+  var h = '';
+  bars.forEach(function(b) {
+    var pct = Math.round((b.v / mx) * 100);
+    h += '<div class="wf-bar"><div class="wf-lbl"><span class="wf-n">' + b.n + '</span><span class="wf-v">' + fmt(b.v) + '</span></div>';
+    h += '<div class="wf-track"><div class="wf-fill" style="width:' + Math.max(pct, 2) + '%;background:' + b.c + '">' + (pct > 14 ? pct + '%' : '') + '</div></div></div>';
+  });
+  document.getElementById('waterfall').innerHTML = h;
+
+  var sp = [
+    { l: '会社', v: company },
+    { l: '税金確保', v: tax },
+    { l: 'DAI', v: dai },
+    { l: 'ケン君', v: ken }
+  ];
+  if (adOn) sp.unshift({ l: '広告費', v: adFund });
+
+  var cls = adOn ? 'split-grid s5' : 'split-grid s4';
+  var sh = '<div class="' + cls + '">';
+  sp.forEach(function(s) {
+    var pct = gross > 0 ? Math.round(s.v / gross * 100) : 0;
+    sh += '<div class="sp-card"><div class="sp-lbl">' + s.l + '</div><div class="sp-val">' + fmt(s.v) + '</div><div class="sp-pct">粗利の約' + pct + '%</div></div>';
+  });
+  sh += '</div>';
+  document.getElementById('splits').innerHTML = sh;
+}
+calc();
+</script>
+</body>
+</html>
