@@ -16,9 +16,9 @@ export default function StudioAbout() {
           <img
             src="/assets/textures/shikkui-plaster-wide.webp"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
-          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.45)" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 100%)" }} />
         </div>
         <div
           style={{
@@ -76,7 +76,7 @@ export default function StudioAbout() {
         </section>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/rusted-steel-plates-sm.webp" height={160} />
+      <TextureBand src="/assets/textures/tile-water-droplets-warm-sm.webp" height={160} />
 
       <ScrollFadeIn>
         <section style={{ padding: "0 24px 80px", maxWidth: "640px", margin: "0 auto" }}>

@@ -180,7 +180,7 @@ export default function GroupTop() {
         </section>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/yakisugi-charred-wood-sm.webp" height={220} />
+      <TextureBand src="/assets/textures/oak-hardwood-floor-sm.webp" height={220} />
 
       {/* Group */}
       <ScrollFadeIn>
@@ -270,7 +270,7 @@ export default function GroupTop() {
         </section>
       </ScrollFadeIn>
 
-      <TextureBand src="/assets/textures/mortar-wall-cracks-sm.webp" height={180} />
+      <TextureBand src="/assets/textures/tile-water-droplets-warm-sm.webp" height={180} />
 
       {/* About 導線 */}
       <ScrollFadeIn>

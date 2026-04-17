@@ -85,12 +85,12 @@ export default function HPApp() {
             carouselImages={[
               "/assets/textures/reclaimed-wood-section-sm.webp",
               "/assets/textures/old-new-timber-junction-sm.webp",
-              "/assets/textures/yakisugi-charred-wood-sm.webp",
-              "/assets/textures/earthen-wall-layers-sm.webp",
-              "/assets/textures/rusted-steel-plates-sm.webp",
-              "/assets/textures/mortar-wall-cracks-sm.webp",
+              "/assets/textures/oak-hardwood-floor-sm.webp",
+              "/assets/textures/shikkui-plaster-wide-sm.webp",
+              "/assets/textures/tile-water-droplets-warm-sm.webp",
+              "/assets/textures/brass-patina-sm.webp",
             ]}
-            carouselCaption="素材の記憶を、読み解く。"
+            carouselCaption="古い骨組みに、次の素材を重ねる。"
             logoEntity="koumuten"
             logoTo="/koumuten"
           />

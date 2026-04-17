@@ -140,12 +140,12 @@ export default function StudioPricing() {
       {/* SmallHero */}
       <section style={{ position: "relative", height: "50vh", minHeight: "320px", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, height: "100%" }}>
-          <img src="/assets/textures/earthen-wall-layers.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+          <img src="/assets/textures/earthen-wall-layers.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div
             style={{
               position: "absolute",
               inset: 0,
-              background: "rgba(0,0,0,0.45)",
+              background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 100%)",
             }}
           />
         </div>

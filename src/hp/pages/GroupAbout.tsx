@@ -57,7 +57,7 @@ export default function GroupAbout() {
       <section style={{ position: "relative", height: "50vh", minHeight: "320px", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, height: "100%", backgroundColor: "#D8D3CE" }}>
           <img
-            src="/assets/textures/yakisugi-charred-wood-sm.webp"
+            src="/assets/textures/shikkui-plaster-wide-sm.webp"
             alt=""
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
@@ -87,7 +87,7 @@ export default function GroupAbout() {
       </section>
 
       <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/yakisugi-charred-wood-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+        <img src="/assets/textures/oak-hardwood-floor-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
       </div>
 
       {/* ブロック1：記憶が宿る場所 */}
@@ -252,7 +252,7 @@ export default function GroupAbout() {
       <GoldDivider />
 
       <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/mortar-wall-cracks-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
+        <img src="/assets/textures/tile-water-droplets-warm-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
       </div>
 
       {/* STEP J：DAIプロフィール（グループ視点） */}

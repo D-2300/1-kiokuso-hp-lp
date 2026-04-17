@@ -64,9 +64,9 @@ export default function StudioTop() {
         <section style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, height: "100%" }}>
             <img src="/images/hp-cafe-interior.webp" alt=""
-              style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
               sizes="100vw" fetchPriority="high" />
-            <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.4)" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)" }} />
           </div>
           <div style={{
             position: "relative", zIndex: 1, height: "100%",

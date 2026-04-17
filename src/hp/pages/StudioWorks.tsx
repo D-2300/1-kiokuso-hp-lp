@@ -180,7 +180,7 @@ function PickupSection() {
             />
             <div style={{
               position: "absolute", inset: 0,
-              background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7))",
+              background: "linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.5))",
             }} />
             <div style={{ position: "absolute", bottom: "20px", left: "24px", right: "24px" }}>
               <p style={{
@@ -443,9 +443,9 @@ export default function StudioWorks() {
             <img
               src="/assets/textures/oak-hardwood-floor-sm.webp"
               alt=""
-              style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
-            <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.45)" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 100%)" }} />
           </div>
           <div
             style={{
