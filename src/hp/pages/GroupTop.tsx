@@ -6,39 +6,13 @@ import SectionHeading from "../../shared/SectionHeading";
 import Logo from "../../shared/Logo";
 import { colors } from "../../shared/design-tokens";
 
-function FlowStep({ step, nameJa, label, desc, color, logo }: { step: string; nameJa: string; label: string; desc: string; color: string; logo: string }) {
+function RoleCard({ nameJa, label, desc, color, logo }: { nameJa: string; label: string; desc: string; color: string; logo: string }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#fff", border: `1px solid ${color}22`, borderRadius: "10px", padding: "20px 14px", textAlign: "center" }}>
-      <p style={{ fontSize: "11px", letterSpacing: "0.18em", color: "#BBB", fontWeight: 600, margin: "0 0 10px" }}>STEP {step}</p>
-      <img src={logo} alt="" style={{ height: "28px", marginBottom: "10px", filter: "drop-shadow(0 0 0 #fff)" }} />
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#fff", border: `1px solid ${color}22`, borderRadius: "10px", padding: "24px 16px", textAlign: "center" }}>
+      <img src={logo} alt="" style={{ height: "30px", marginBottom: "14px" }} />
       <p style={{ fontSize: "13px", fontWeight: 700, letterSpacing: "0.1em", color, margin: "0 0 4px" }}>{nameJa}</p>
-      <p style={{ fontSize: "15px", fontWeight: 500, color: "#333", margin: "0 0 8px" }}>{label}</p>
-      <p style={{ fontSize: "12px", color: "#777", lineHeight: 1.6, margin: 0 }}>{desc}</p>
-    </div>
-  );
-}
-
-function FlowStepPair({ items, step }: { items: { nameJa: string; label: string; desc: string; color: string; logo: string }[]; step: string }) {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-      <p style={{ fontSize: "11px", letterSpacing: "0.18em", color: "#BBB", fontWeight: 600, margin: 0, textAlign: "center" }}>STEP {step}</p>
-      {items.map((it) => (
-        <div key={it.nameJa} style={{ display: "flex", alignItems: "center", gap: "12px", backgroundColor: "#fff", border: `1px solid ${it.color}22`, borderRadius: "10px", padding: "12px 14px", flex: 1 }}>
-          <img src={it.logo} alt="" style={{ height: "24px", flexShrink: 0 }} />
-          <div style={{ textAlign: "left", flex: 1, minWidth: 0 }}>
-            <p style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", color: it.color, margin: 0 }}>{it.nameJa}</p>
-            <p style={{ fontSize: "13px", fontWeight: 500, color: "#333", margin: "2px 0 0" }}>{it.label}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function FlowArrow() {
-  return (
-    <div className="group-flow-arrow" style={{ display: "flex", alignItems: "center", justifyContent: "center", color: "#C9A84C", fontSize: "24px" }}>
-      →
+      <p style={{ fontSize: "15px", fontWeight: 500, color: "#333", margin: "0 0 10px" }}>{label}</p>
+      <p style={{ fontSize: "12px", color: "#777", lineHeight: 1.7, margin: 0 }}>{desc}</p>
     </div>
   );
 }
@@ -281,63 +255,57 @@ export default function GroupTop() {
         </section>
       </ScrollFadeIn>
 
-      {/* Flow: 事業の流れ */}
+      {/* Roles: 4つの役割 */}
       <ScrollFadeIn>
         <section style={{ padding: "64px 24px 40px", backgroundColor: colors.beige }}>
           <div style={{ maxWidth: "880px", margin: "0 auto" }}>
             <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, textAlign: "center", margin: "0 0 8px", textTransform: "uppercase" }}>
-              Flow
+              Roles
             </p>
             <h2 style={{ fontSize: "20px", fontWeight: 500, textAlign: "center", margin: "0 0 40px", color: colors.text, fontFamily: "'Noto Serif JP', serif" }}>
-              物件探しから、内装まで。
+              4つの役割
             </h2>
             <div
-              className="group-flow"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr auto 1fr auto 1fr",
-                gap: "8px",
+                gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                gap: "12px",
                 alignItems: "stretch",
               }}
             >
-              <FlowStep
-                step="01"
+              <RoleCard
                 nameJa="ESTATE"
-                label="物件を探す"
-                desc="非公開・居抜き情報から、事業に合う場所を"
+                label="物件の入口"
+                desc="宮城の物件情報網から、事業に合う場所を"
                 color="#3E4758"
                 logo="/assets/logos/logo-fudousan-gold.webp"
               />
-              <FlowArrow />
-              <FlowStepPair
-                items={[
-                  { nameJa: "STUDIO", label: "店舗を整える", desc: "飲食・美容・物販の内装設計", color: "#5E7D55", logo: "/assets/logos/logo-studio-gold.webp" },
-                  { nameJa: "INVEST", label: "物件を整える", desc: "収益物件のリノベーション", color: "#6A4F7A", logo: "/assets/logos/logo-invest-gold.webp" },
-                ]}
-                step="02"
+              <RoleCard
+                nameJa="STUDIO"
+                label="店舗オーナー向け"
+                desc="飲食・美容・物販の設計〜施工を一貫"
+                color="#5E7D55"
+                logo="/assets/logos/logo-studio-gold.webp"
               />
-              <FlowArrow />
-              <FlowStep
-                step="03"
+              <RoleCard
+                nameJa="INVEST"
+                label="投資家向け"
+                desc="築古アパート・戸建ての収益物件リノベ"
+                color="#6A4F7A"
+                logo="/assets/logos/logo-invest-gold.webp"
+              />
+              <RoleCard
                 nameJa="BUILD"
-                label="現場で建てる"
-                desc="骨組み・大規模工事の実行"
+                label="大規模案件"
+                desc="骨組みからの再生、廃墟リノベーション"
                 color="#7A5234"
                 logo="/assets/logos/logo-koumuten-gold.webp"
               />
             </div>
             <p style={{ fontSize: "13px", color: "#888", textAlign: "center", marginTop: "32px", lineHeight: 1.8 }}>
-              4つの事業は独立していますが、窓口は一つ。
-              <br />
-              物件探しの段階から、完成後まで、同じ担当者が伴走します。
+              窓口は一つ。目的に応じて担当が動きます。
             </p>
           </div>
-          <style>{`
-            @media (max-width: 720px) {
-              .group-flow { grid-template-columns: 1fr !important; gap: 12px !important; }
-              .group-flow-arrow { transform: rotate(90deg); padding: 4px 0; }
-            }
-          `}</style>
         </section>
       </ScrollFadeIn>
 
