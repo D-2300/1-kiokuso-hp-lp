@@ -1,4 +1,4 @@
-import { LINE_URL } from "./design-tokens";
+import { LINE_URL_HP as LINE_URL } from "./design-tokens";
 
 interface LineCTAButtonProps {
   size?: "normal" | "small";

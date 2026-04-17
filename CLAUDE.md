@@ -11,7 +11,11 @@
 - 入口訴求: 非公開テナント情報・エリア別店舗情報（= ネットに落ちていない具体物）
 - 強み: 店舗情報網、一気通貫（テナント探し→内装）、元不動産×大工歴20年の2人体制
 - CTAはLINE友だち追加のみ（他のCTAは使わない）
-- LINE公式: lin.ee/HVV0QJO
+- LINE公式（流入経路別URL）:
+  - LP_tenant: lin.ee/9TamhEC（LP全般）
+  - HP_top: lin.ee/UNm5XqPe（HP全般）
+  - GBP: lin.ee/zJH3txi（Googleビジネスプロフィール用）
+  - etc: lin.ee/94DJUIb（名刺・口コミ等オフライン）
 
 ## LP運用ルール（厳守）
 - **LPでは「テナント探し」の具体物だけを打ち出す**。コンセプト哲学・世界観は出さない

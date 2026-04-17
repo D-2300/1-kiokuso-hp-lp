@@ -77,4 +77,5 @@ export const spacing = {
   lineHeight: { lp: 1.8, hp: 2.2 },
 } as const;
 
-export const LINE_URL = "https://lin.ee/HVV0QJO";
+export const LINE_URL = "https://lin.ee/9TamhEC";
+export const LINE_URL_HP = "https://lin.ee/UNm5XqPe";

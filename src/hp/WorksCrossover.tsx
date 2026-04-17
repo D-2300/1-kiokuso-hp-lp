@@ -181,7 +181,7 @@ export default function WorksCrossover() {
             物件未定でもOK。断りはLINE1本で完了です。
           </p>
           <a
-            href="https://lin.ee/HVV0QJO"
+            href="https://lin.ee/UNm5XqPe"
             className="inline-block bg-[#06C755] text-white font-normal text-sm tracking-[2px] px-12 py-4 hover:opacity-85 transition-opacity no-underline"
           >
             LINEで相談する

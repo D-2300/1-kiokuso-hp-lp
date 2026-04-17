@@ -45,7 +45,7 @@ export default function LPFloatingLine({ label = "LINEで無料見積もり" }: 
       event: "line_cta_click",
       button_location: "floating",
     });
-    window.open("https://lin.ee/HVV0QJO", "_blank");
+    window.open("https://lin.ee/9TamhEC", "_blank");
   };
 
   return (
