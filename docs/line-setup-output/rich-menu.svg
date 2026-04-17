@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="1686" viewBox="0 0 2500 1686">
+  <!-- 記憶荘 LINE リッチメニュー 3×2 ブランドベージュ×ゴールド -->
+  <defs>
+    <linearGradient id="bgMain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8F5F0"/>
+      <stop offset="100%" stop-color="#EBE0CE"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCF8F0"/>
+      <stop offset="100%" stop-color="#EADFC9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="2500" height="1686" fill="url(#bgMain)"/>
+
+  <!-- === Cell 1: 左上 物件リクエスト === -->
+  <g>
+    <rect x="40" y="40" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(416, 290)" stroke="#5C3A21" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -110 40 L 0 -70 L 110 40 L 110 130 L -110 130 Z" fill="#FFFFFF"/>
+      <path d="M -50 130 L -50 70 L 50 70 L 50 130" fill="#C9A84C" fill-opacity="0.75" stroke-width="9"/>
+      <circle cx="90" cy="10" r="48" stroke="#C9A84C" stroke-width="12" fill="#FFFFFF"/>
+      <line x1="124" y1="44" x2="165" y2="85" stroke="#C9A84C" stroke-width="14"/>
+    </g>
+    <text x="416" y="580" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#3A2816" letter-spacing="2">物件リクエスト</text>
+    <text x="416" y="670" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">PROPERTY REQUEST</text>
+  </g>
+
+  <!-- === Cell 2: 中央上 ブログで学ぶ === -->
+  <g>
+    <rect x="873" y="40" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(1250, 290)" stroke="#5C3A21" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -110 -80 L 110 -80 L 130 -60 L 130 110 L -130 110 L -130 -60 Z" fill="#FFFFFF"/>
+      <path d="M 0 -80 L 0 110"/>
+      <path d="M -130 -60 L -110 -80 M 130 -60 L 110 -80"/>
+      <line x1="-90" y1="-30" x2="-30" y2="-30" stroke="#5C3A21" stroke-width="7"/>
+      <line x1="-90" y1="5" x2="-30" y2="5" stroke="#5C3A21" stroke-width="7"/>
+      <line x1="-90" y1="40" x2="-20" y2="40" stroke="#5C3A21" stroke-width="7"/>
+      <line x1="30" y1="-30" x2="90" y2="-30" stroke="#5C3A21" stroke-width="7"/>
+      <line x1="30" y1="5" x2="90" y2="5" stroke="#5C3A21" stroke-width="7"/>
+      <line x1="20" y1="40" x2="90" y2="40" stroke="#5C3A21" stroke-width="7"/>
+    </g>
+    <text x="1250" y="580" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#3A2816" letter-spacing="2">ブログで学ぶ</text>
+    <text x="1250" y="670" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">READ BLOG</text>
+  </g>
+
+  <!-- === Cell 3: 右上 相談予約 === -->
+  <g>
+    <rect x="1707" y="40" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(2083, 290)" stroke="#5C3A21" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -120 -80 L 120 -80 L 120 50 L 25 50 L -25 105 L -25 50 L -120 50 Z" fill="#FFFFFF"/>
+      <circle cx="-50" cy="-15" r="10" fill="#5C3A21" stroke="none"/>
+      <circle cx="0" cy="-15" r="10" fill="#5C3A21" stroke="none"/>
+      <circle cx="50" cy="-15" r="10" fill="#5C3A21" stroke="none"/>
+    </g>
+    <text x="2083" y="580" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#3A2816" letter-spacing="2">相談予約</text>
+    <text x="2083" y="670" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">CONSULT</text>
+  </g>
+
+  <!-- === Cell 4: 左下 施工事例 === -->
+  <g>
+    <rect x="40" y="883" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(416, 1130)" stroke="#5C3A21" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -110 40 L 0 -70 L 110 40 L 110 130 L -110 130 Z" fill="#FFFFFF"/>
+      <line x1="-40" y1="-50" x2="60" y2="150" stroke="#C9A84C" stroke-width="10"/>
+      <path d="M -110 40 L 0 -70 L -40 -50 L -60 130 L -110 130 Z" fill="#5C3A21" fill-opacity="0.22"/>
+      <path d="M 60 150 L 110 40 L 110 130 Z" fill="#C9A84C" fill-opacity="0.8"/>
+    </g>
+    <text x="416" y="1420" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#3A2816" letter-spacing="2">施工事例</text>
+    <text x="416" y="1510" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">WORKS</text>
+  </g>
+
+  <!-- === Cell 5: 中央下 料金表 === -->
+  <g>
+    <rect x="873" y="883" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(1250, 1130)" stroke="#5C3A21" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="0" cy="10" r="95" fill="#FFFFFF"/>
+      <line x1="-40" y1="-15" x2="40" y2="-15"/>
+      <line x1="-40" y1="15" x2="40" y2="15"/>
+      <line x1="0" y1="-40" x2="-22" y2="0"/>
+      <line x1="0" y1="-40" x2="22" y2="0"/>
+      <line x1="0" y1="0" x2="0" y2="62"/>
+    </g>
+    <text x="1250" y="1420" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#3A2816" letter-spacing="2">料金表</text>
+    <text x="1250" y="1510" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">PRICING</text>
+  </g>
+
+  <!-- === Cell 6: 右下 Webサイト === -->
+  <g>
+    <rect x="1707" y="883" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(2083, 1130)" stroke="#5C3A21" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="0" cy="10" r="95" fill="#FFFFFF"/>
+      <ellipse cx="0" cy="10" rx="38" ry="95"/>
+      <line x1="-95" y1="10" x2="95" y2="10"/>
+      <line x1="-90" y1="-22" x2="90" y2="-22" stroke-width="7"/>
+      <line x1="-90" y1="42" x2="90" y2="42" stroke-width="7"/>
+    </g>
+    <text x="2083" y="1420" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#3A2816" letter-spacing="2">Webサイト</text>
+    <text x="2083" y="1510" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">WEBSITE</text>
+  </g>
+</svg>
