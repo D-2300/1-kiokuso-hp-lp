@@ -396,19 +396,28 @@ export default function TenantHero() {
               const isVisible = animatedRows.includes(i);
               const isLast = i === selected.length - 1;
               return (
-                <div
+                <a
                   key={i}
                   role="listitem"
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tenant-hero-property-row"
+                  onClick={() => {
+                    window.dataLayer?.push({ event: "line_cta_click", location: "tenant_property_row" });
+                  }}
                   style={{
                     display: "flex",
                     alignItems: "center",
                     padding: "8px 16px",
                     borderBottom: isLast ? "none" : "1px solid #ece6dc",
                     gap: "10px",
-                    cursor: "default",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    color: "inherit",
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? "translateY(0)" : "translateY(8px)",
-                    transition: "opacity 0.3s ease-out, transform 0.3s ease-out",
+                    transition: "opacity 0.3s ease-out, transform 0.3s ease-out, background 0.15s ease-out",
                   }}
                 >
                   {/* Type badge */}
@@ -484,7 +493,7 @@ export default function TenantHero() {
                   >
                     {prop.rent}
                   </span>
-                </div>
+                </a>
               );
             })}
           </div>
@@ -616,6 +625,12 @@ export default function TenantHero() {
         @keyframes tenantHeroArrowBounce {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(4px); }
+        }
+        .tenant-hero-property-row:hover {
+          background: #faf7f2;
+        }
+        .tenant-hero-property-row:active {
+          background: #f4efe6;
         }
       `}</style>
     </>

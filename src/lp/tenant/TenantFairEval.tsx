@@ -106,12 +106,36 @@ export default function TenantFairEval() {
             textAlign: "center",
             fontSize: "clamp(14px, 3vw, 16px)",
             color: "#888",
-            marginBottom: "28px",
+            marginBottom: "24px",
             lineHeight: 1.6,
           }}
         >
           物件紹介で利益を得ないから、あなたの味方でいられます。
         </p>
+
+        {/* Illustration: consultation with client */}
+        <div
+          style={{
+            maxWidth: "560px",
+            margin: "0 auto 28px",
+            borderRadius: "14px",
+            overflow: "hidden",
+            boxShadow: "0 4px 18px rgba(60,40,20,0.08)",
+            background: "#fff",
+          }}
+        >
+          <img
+            src="/images/consultation-client-workshop-sm.webp"
+            alt="お客様と物件について相談するKAI。背景で職人が作業中。"
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+            }}
+            loading="lazy"
+          />
+        </div>
 
         {/* VS Comparison */}
         <div

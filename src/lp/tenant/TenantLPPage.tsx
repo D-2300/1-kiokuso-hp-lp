@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import TenantHero from "./TenantHero";
 import TenantYourSide from "./TenantYourSide";
+import TenantWhy from "./TenantWhy";
 // AvailableNow integrated into TenantHero
 import TenantSteps from "./TenantSteps";
 import TenantGuideSection from "./TenantGuideSection";
@@ -30,6 +31,7 @@ export default function TenantLPPage() {
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333", background: "#fff" }}>
       <TenantHero />
       <TenantYourSide />
+      <TenantWhy />
       <TenantSteps />
       <TenantMidCTA />
       <TenantGuideSection />
