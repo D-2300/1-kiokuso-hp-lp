@@ -54,6 +54,7 @@ const businesses = [
     logoEntity: "studio" as const,
     gradient: "linear-gradient(135deg, #5E7D55 0%, #7A9A72 100%)",
     logoSrc: "/assets/logos/logo-studio-gold.webp",
+    imgSrc: "/images/showcase-cafe-sm.webp",
   },
   {
     nameJa: "満室デザインLABO",
@@ -65,6 +66,7 @@ const businesses = [
     logoEntity: "invest" as const,
     gradient: "linear-gradient(135deg, #6A4F7A 0%, #8A6FA0 100%)",
     logoSrc: "/assets/logos/logo-invest-gold.webp",
+    imgSrc: "/images/reform-hero-sm.webp",
   },
   {
     nameJa: "記憶荘工務店",
@@ -76,6 +78,7 @@ const businesses = [
     logoEntity: "koumuten" as const,
     gradient: "linear-gradient(135deg, #7A5234 0%, #A67B5B 100%)",
     logoSrc: "/assets/logos/logo-koumuten-gold.webp",
+    imgSrc: "/images/about-exterior-sm.webp",
   },
   {
     nameJa: "記憶荘不動産",
@@ -87,6 +90,7 @@ const businesses = [
     logoEntity: "fudousan" as const,
     gradient: "linear-gradient(135deg, #3E4758 0%, #5A6578 100%)",
     logoSrc: "/assets/logos/logo-fudousan-gold.webp",
+    imgSrc: "/images/fudousan-keys-sm.webp",
   },
 ];
 
@@ -239,33 +243,61 @@ export default function GroupTop() {
                   style={{
                     display: "block",
                     background: b.gradient,
-                    borderRadius: "8px",
-                    padding: "28px 20px",
-                    transition: "box-shadow 0.2s",
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    transition: "box-shadow 0.2s, transform 0.2s",
                     textDecoration: "none",
                     color: "inherit",
                   }}
                 >
-                  <div style={{ marginBottom: "12px" }}>
-                    <img src={b.logoSrc} alt="" style={{ height: "32px" }} />
+                  <div style={{ position: "relative", height: "140px", overflow: "hidden" }}>
+                    <img
+                      src={b.imgSrc}
+                      alt=""
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    />
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: `linear-gradient(to bottom, rgba(0,0,0,0) 40%, ${b.color}DD 100%)`,
+                      }}
+                    />
+                    {!b.active && (
+                      <span
+                        style={{
+                          position: "absolute",
+                          top: "10px",
+                          right: "10px",
+                          fontSize: "11px",
+                          color: "#fff",
+                          backgroundColor: "rgba(0,0,0,0.45)",
+                          padding: "3px 10px",
+                          borderRadius: "10px",
+                          letterSpacing: "0.1em",
+                        }}
+                      >
+                        準備中
+                      </span>
+                    )}
                   </div>
-                  <p style={{ fontSize: "14px", fontWeight: 500, color: "#fff", marginBottom: "4px" }}>
-                    {b.nameJa}
-                  </p>
-                  <p style={{ fontSize: "13px", fontWeight: 300, letterSpacing: "0.12em", color: "rgba(255,255,255,0.7)", marginBottom: "8px" }}>
-                    {b.nameEn}
-                  </p>
-                  <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.8)", marginBottom: "16px" }}>
-                    {b.desc}
-                  </p>
-                  <p style={{ fontSize: "14px", color: "#C9A84C", fontWeight: 500 }}>
-                    詳しく見る →
-                  </p>
-                  {!b.active && (
-                    <p style={{ fontSize: "14px", color: "#BBB", fontWeight: 400, marginTop: "4px" }}>
-                      準備中
+                  <div style={{ padding: "20px 20px 22px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                      <img src={b.logoSrc} alt="" style={{ height: "24px" }} />
+                      <p style={{ fontSize: "12px", fontWeight: 300, letterSpacing: "0.14em", color: "rgba(255,255,255,0.75)", margin: 0 }}>
+                        {b.nameEn}
+                      </p>
+                    </div>
+                    <p style={{ fontSize: "15px", fontWeight: 600, color: "#fff", margin: "0 0 8px" }}>
+                      {b.nameJa}
                     </p>
-                  )}
+                    <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.85)", margin: "0 0 14px", lineHeight: 1.7 }}>
+                      {b.desc}
+                    </p>
+                    <p style={{ fontSize: "13px", color: "#F5DC8C", fontWeight: 600, margin: 0 }}>
+                      詳しく見る →
+                    </p>
+                  </div>
                 </Link>
               ))}
             </div>
