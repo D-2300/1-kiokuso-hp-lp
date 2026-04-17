@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import GroupTop from "./pages/GroupTop";
 import GroupAbout from "./pages/GroupAbout";
 import StudioTop from "./pages/StudioTop";
@@ -20,20 +20,59 @@ export default function HPApp() {
       <Route path="/studio/pricing" element={<StudioPricing />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route
+        path="/invest"
+        element={
+          <ComingSoon
+            name="KIOKUSO"
+            nameLine2="INVEST"
+            nameJa="満室デザインLABO"
+            subtitle="収益物件リノベーション"
+            tagline="眠っている物件を、収益に変える。"
+            taglineSub="築古アパート・戸建て投資・ゾンビハウス再生。準備中です。"
+            concept={`使われていない物件には、まだ可能性が眠っている。\n\n築古のアパート、空き家になった戸建て、\n長く放置された「ゾンビハウス」。\n\n内装の工夫と市場の読みで、\n収益を生む物件に仕立て直す。\nそれが満室デザインLABOの仕事です。`}
+            vision={{
+              text: `物件は、数字でもあり、器でもある。\n\n投資家の収支計算に応え、\n入居者が「ここに住みたい」と思える空間に。\n\n物件探しの段階から並走し、\nリノベーション、運用まで一気通貫で。\n\n眠っていた建物に、\n次の使い手と次の収益を、もう一度灯す。`,
+              image: "/assets/textures/reclaimed-wood-section-sm.webp",
+              caption: "眠る物件に、次の収益を。",
+            }}
+            themeColor={colors.seiji.main}
+            themeLight={colors.seiji.light}
+            themeMid={colors.seiji.mid}
+            themeBg={colors.seiji.bg}
+            themeDark={colors.seiji.dark}
+            heroBg="#A99BC4"
+            heroImg="/assets/textures/reform-hero.webp"
+            textureBand1="/assets/textures/shoji-light-shadow-sm.webp"
+            carouselImages={[
+              "/assets/textures/reclaimed-wood-section-sm.webp",
+              "/assets/textures/oak-hardwood-floor-sm.webp",
+              "/assets/textures/tile-water-droplets-golden-sm.webp",
+              "/assets/textures/brass-patina-sm.webp",
+              "/assets/textures/shikkui-plaster-wide-sm.webp",
+              "/assets/textures/ceramic-tile-pair-sm.webp",
+            ]}
+            carouselCaption="素材の選びで、収益をつくる。"
+            logoEntity="invest"
+            logoTo="/invest"
+          />
+        }
+      />
+      <Route path="/reform" element={<Navigate to="/invest" replace />} />
+      <Route
         path="/koumuten"
         element={
           <ComingSoon
             name="KIOKUSO"
             nameLine2="BUILD"
             nameJa="記憶荘工務店"
-            subtitle="大規模リノベーション・再生"
-            tagline="場所の記憶を引き継ぎ、新しい物語として再生する。"
-            taglineSub="使われなくなった建物を、もう一度人が集まる場所に。準備中です。"
-            concept={`使われなくなった建物には、誰かがそこで過ごした時間が残っています。\n壊して更地にするのではなく、その記憶ごと引き受けて、\n新しい役割を与える。それが記憶荘工務店の仕事です。\n\n廃墟や空き家の大規模リノベーション。\n構造から見直し、もう一度人が集まる場所に仕立て直す。`}
+            subtitle="施工の実行部隊"
+            tagline="古い骨組みに、次の灯りを入れる。"
+            taglineSub="STUDIO・INVESTから流れる施工を、一つずつ丁寧に。準備中です。"
+            concept={`記憶荘工務店は、施工の実行部隊です。\n\n店舗内装スタジオ、満室デザインLABOから\n流れてくる工事を、一つずつ丁寧に仕上げる。\n\n古い骨組みを活かしながら、\n次の使い手が安心して商売を始められる場所に。\nそれが工務店としての役割です。`}
             vision={{
-              text: `使われなくなった建物には、まだ物語の続きがある。\n\n廃墟や空き家をただ壊すのではなく、\n構造を活かし、記憶を残しながら、\n新しい役割を与える大規模リノベーション。\n\n前の持ち主が大切にしていた時間を引き継ぎ、\n次の使い手に届ける。\nそれが記憶荘工務店の仕事です。`,
+              text: `建物には、前の使い手が積み重ねた時間がある。\n\nその骨組みを読み解き、\n必要な部分は残し、\n要らない部分はきれいに畳む。\n\n壊して更地にするのではなく、\n次の物語が始められる形に整える。\nそれが記憶荘工務店の現場です。`,
               image: "/assets/textures/old-new-timber-junction-sm.webp",
-              caption: "古い建物の記憶を、次の物語へ。",
+              caption: "古い骨組みに、次の灯りを。",
             }}
             themeColor={colors.urushicha.main}
             themeLight={colors.urushicha.light}
@@ -42,58 +81,18 @@ export default function HPApp() {
             themeDark={colors.urushicha.dark}
             heroBg="#D5CEC6"
             heroImg="/assets/textures/koumuten-hero.webp"
-            textureBand1="/assets/textures/rusted-steel-cracked-sm.webp"
+            textureBand1="/assets/textures/reclaimed-wood-section-sm.webp"
             carouselImages={[
-              "/assets/textures/rusted-steel-cracked-sm.webp",
-              "/assets/textures/mortar-wall-cracks-sm.webp",
-              "/assets/textures/peeling-paint-layers-sm.webp",
               "/assets/textures/reclaimed-wood-section-sm.webp",
-              "/assets/textures/rusted-steel-plates-sm.webp",
+              "/assets/textures/old-new-timber-junction-sm.webp",
               "/assets/textures/yakisugi-charred-wood-sm.webp",
               "/assets/textures/earthen-wall-layers-sm.webp",
+              "/assets/textures/rusted-steel-plates-sm.webp",
+              "/assets/textures/mortar-wall-cracks-sm.webp",
             ]}
             carouselCaption="素材の記憶を、読み解く。"
             logoEntity="koumuten"
             logoTo="/koumuten"
-          />
-        }
-      />
-      <Route
-        path="/reform"
-        element={
-          <ComingSoon
-            name="KIOKUSO"
-            nameLine2="REFORM"
-            nameJa="記憶荘リフォーム"
-            subtitle="住宅リフォーム工房"
-            tagline="暮らしの中の「ここだけ変えたい」に、ちょうどいい手を入れる。"
-            taglineSub="住まいの「ここだけ変えたい」に応える、小さなリフォーム。準備中です。"
-            concept={`大規模なリフォームではなく、\nキッチン、洗面台、壁紙、床。\n暮らしの中で気になっている「ここだけ」に手を入れる。\n\n毎日使う場所だからこそ、小さな変化が大きな違いになる。\n記憶荘リフォーム工房は、住まいの部分改修を手がけます。`}
-            vision={{
-              text: `家全体を変える必要はない。\n\nキッチンだけ。洗面台だけ。壁紙だけ。\n暮らしの中の「ここだけ気になる」に、\nちょうどいい手を入れる。\n\n大きな工事ではないからこそ、\n丁寧に、オーナーの暮らしに寄り添いながら。`,
-              image: "/assets/textures/shikkui-plaster-wide-sm.webp",
-              caption: "暮らしに、ちょうどいい手を。",
-            }}
-            themeColor={colors.seiji.main}
-            themeLight={colors.seiji.light}
-            themeMid={colors.seiji.mid}
-            themeBg={colors.seiji.bg}
-            themeDark={colors.seiji.dark}
-            heroBg="#CDD6DA"
-            heroImg="/assets/textures/reform-hero.webp"
-            textureBand1="/assets/textures/shoji-light-shadow-sm.webp"
-            carouselImages={[
-              "/assets/textures/shoji-light-shadow-sm.webp",
-              "/assets/textures/tatami-weave-side-sm.webp",
-              "/assets/textures/shikkui-plaster-wide-sm.webp",
-              "/assets/textures/oak-hardwood-floor-sm.webp",
-              "/assets/textures/shikkui-plaster-closeup-sm.webp",
-              "/assets/textures/tatami-weave-front-sm.webp",
-              "/assets/textures/tile-water-droplets-warm-sm.webp",
-            ]}
-            carouselCaption="毎日触れる素材を、丁寧に選ぶ。"
-            logoEntity="reform"
-            logoTo="/reform"
           />
         }
       />
@@ -104,14 +103,14 @@ export default function HPApp() {
             name="KIOKUSO"
             nameLine2="ESTATE"
             nameJa="記憶荘不動産"
-            subtitle="不動産仲介"
-            tagline="継ぐべき場所を、見つけ出す。"
-            taglineSub="場所と人をつなぐ、不動産の仲介。準備中です。"
-            concept={`場所には、それぞれの物語があります。\nその物語を次の人につなぐのが、記憶荘不動産の役割です。\n\n物件を「スペック」ではなく「可能性」として見る。\n工務店やスタジオと連携し、\n「この場所で何ができるか」まで一緒に考える不動産仲介。`}
+            subtitle="物件探しの入口"
+            tagline="物件探しから始まる、記憶荘の入口。"
+            taglineSub="STUDIOとINVESTの上流を、物件情報網で支える。準備中です。"
+            concept={`記憶荘不動産は、店舗内装スタジオと\n満室デザインLABOの上流にある入口です。\n\n表には出ない空き物件、居抜き物件、\n使われなくなった建物。\n\nその中から、\n次に店を始める人、次に運用する投資家に\nふさわしい場所を見つけ出します。`}
             vision={{
-              text: `いい場所は、待っているだけでは見つからない。\n\n記憶荘が内装工事を通じて出会ってきた\n空き物件、居抜き物件、使われなくなった建物。\nその中から、次の使い手にふさわしい場所を見つけ出す。\n\n不動産仲介という形で、\n場所と人をつなぐ。`,
+              text: `いい物件は、ネットには載らない。\n\n記憶荘が内装工事を通じて築いてきた\n宮城の物件情報網を、次の使い手につなぐ。\n\n「この場所で何ができるか」まで、\n工務店・スタジオ・LABOと一緒に考える。\nそれが不動産としての働き方です。`,
               image: "/assets/textures/brass-patina-sm.webp",
-              caption: "場所と人を、つなぐ。",
+              caption: "物件の可能性を、見つけ出す。",
             }}
             themeColor={colors.tetsukon.main}
             themeLight={colors.tetsukon.light}
@@ -120,14 +119,14 @@ export default function HPApp() {
             themeDark={colors.tetsukon.dark}
             heroBg="#C8CAD0"
             heroImg="/assets/textures/fudousan-hero.webp"
-            textureBand1="/assets/textures/mortar-wall-cracks-sm.webp"
+            textureBand1="/assets/textures/old-new-timber-junction-sm.webp"
             carouselImages={[
               "/assets/textures/brass-patina-sm.webp",
               "/assets/textures/ceramic-tile-blue-glaze-sm.webp",
               "/assets/textures/ceramic-tile-pair-sm.webp",
               "/assets/textures/tile-water-droplets-golden-sm.webp",
               "/assets/textures/old-new-timber-junction-sm.webp",
-              "/assets/textures/mortar-wall-cracks-sm.webp",
+              "/assets/textures/reclaimed-wood-section-sm.webp",
             ]}
             carouselCaption="場所の可能性を、見つけ出す。"
             logoEntity="fudousan"

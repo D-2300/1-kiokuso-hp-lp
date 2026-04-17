@@ -23,7 +23,7 @@ export default function GroupFooter() {
           marginBottom: "32px",
         }}
       >
-        想いが残る場所を、つくる。
+        次の記憶が、ここから灯る。
       </p>
 
       <nav
@@ -62,8 +62,8 @@ export default function GroupFooter() {
         {[
           { to: "/about", label: "About", logo: null },
           { to: "/studio", label: "Studio", logo: "/assets/logos/logo-studio-gold.webp" },
+          { to: "/invest", label: "Invest", logo: "/assets/logos/logo-invest-gold.webp" },
           { to: "/koumuten", label: "Build", logo: "/assets/logos/logo-koumuten-gold.webp" },
-          { to: "/reform", label: "Reform", logo: "/assets/logos/logo-reform-gold.webp" },
           { to: "/fudousan", label: "Estate", logo: "/assets/logos/logo-fudousan-gold.webp" },
         ].map((link) => (
           <Link

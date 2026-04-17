@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-type LogoEntity = "group" | "studio" | "koumuten" | "reform" | "fudousan";
+type LogoEntity = "group" | "studio" | "koumuten" | "invest" | "fudousan";
 
 interface EntityNavProps {
   themeColor: string;

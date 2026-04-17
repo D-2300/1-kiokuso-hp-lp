@@ -1,4 +1,4 @@
-type LogoEntity = "group" | "studio" | "koumuten" | "reform" | "fudousan";
+type LogoEntity = "group" | "studio" | "koumuten" | "invest" | "fudousan";
 type LogoColor = "gold" | "dark";
 type LogoLayout = "mark" | "horizontal";
 
@@ -14,7 +14,7 @@ const altMap: Record<LogoEntity, string> = {
   group: "記憶荘",
   studio: "記憶荘 STUDIO",
   koumuten: "記憶荘 工務店",
-  reform: "記憶荘 住宅リフォーム工房",
+  invest: "満室デザインLABO",
   fudousan: "記憶荘 不動産",
 };
 

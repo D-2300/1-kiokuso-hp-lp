@@ -29,7 +29,7 @@ interface ComingSoonProps {
   textureBand1?: string;
   carouselImages: string[];
   carouselCaption: string;
-  logoEntity?: "group" | "studio" | "koumuten" | "reform" | "fudousan";
+  logoEntity?: "group" | "studio" | "koumuten" | "invest" | "fudousan";
   logoTo?: string;
 }
 
@@ -104,7 +104,6 @@ export default function ComingSoon({
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                filter: "grayscale(100%)",
               }}
             />
           ) : (
@@ -120,7 +119,7 @@ export default function ComingSoon({
             style={{
               position: "absolute",
               inset: 0,
-              background: "rgba(0,0,0,0.4)",
+              background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%)",
             }}
           />
         </div>
@@ -137,7 +136,7 @@ export default function ComingSoon({
           }}
         >
           <div style={{ marginBottom: "8px" }}>
-            <Logo entity={logoEntity} color="gold" layout="mark" height={logoEntity === "fudousan" ? 60 : logoEntity === "koumuten" || logoEntity === "reform" ? 68 : 72} />
+            <Logo entity={logoEntity} color="gold" layout="mark" height={logoEntity === "fudousan" ? 60 : logoEntity === "koumuten" || logoEntity === "invest" ? 68 : 72} />
           </div>
           {nameLine2 ? (
             <div style={{ textAlign: "center" }}>
@@ -331,7 +330,6 @@ export default function ComingSoon({
                   borderRadius: "4px",
                   flexShrink: 0,
                   scrollSnapAlign: "center",
-                  filter: "grayscale(100%)",
                 }}
               />
             ))}
@@ -371,7 +369,7 @@ export default function ComingSoon({
         themeMid={themeMid}
         themeDark={themeDark}
         name={nameJa}
-        tagline="想いが残る場所を、つくる。"
+        tagline="次の記憶が、ここから灯る。"
         logoEntity={logoEntity}
         showTopButton={true}
         links={[{ to: "/", label: "← Group Top", logo: "/assets/logos/logo-group-gold.webp" }]}

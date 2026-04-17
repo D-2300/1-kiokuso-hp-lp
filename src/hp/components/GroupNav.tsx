@@ -5,8 +5,8 @@ const navLinks = [
   { to: "/", label: "Top" },
   { to: "/about", label: "About" },
   { to: "/studio", label: "Studio" },
+  { to: "/invest", label: "Invest" },
   { to: "/koumuten", label: "Build" },
-  { to: "/reform", label: "Reform" },
   { to: "/fudousan", label: "Estate" },
 ];
 
@@ -77,13 +77,13 @@ export default function GroupNav() {
             <img src="/assets/logos/logo-studio-gold.webp" alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/studio" ? 1 : 0.7 }} />
             Studio
           </Link>
+          <Link to="/invest" style={{ ...font, color: location.pathname === "/invest" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <img src="/assets/logos/logo-invest-gold.webp" alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/invest" ? 1 : 0.7 }} />
+            Invest
+          </Link>
           <Link to="/koumuten" style={{ ...font, color: location.pathname === "/koumuten" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
             <img src="/assets/logos/logo-koumuten-gold.webp" alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/koumuten" ? 1 : 0.7 }} />
             Build
-          </Link>
-          <Link to="/reform" style={{ ...font, color: location.pathname === "/reform" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-            <img src="/assets/logos/logo-reform-gold.webp" alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/reform" ? 1 : 0.7 }} />
-            Reform
           </Link>
           <Link to="/fudousan" style={{ ...font, color: location.pathname === "/fudousan" ? "#fff" : "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
             <img src="/assets/logos/logo-fudousan-gold.webp" alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)", opacity: location.pathname === "/fudousan" ? 1 : 0.7 }} />
@@ -153,13 +153,13 @@ export default function GroupNav() {
           <img src="/assets/logos/logo-studio-gold.webp" alt="" style={{ height: "22px", width: "auto", filter: "brightness(10)" }} />
           Studio
         </Link>
+        <Link to="/invest" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
+          <img src="/assets/logos/logo-invest-gold.webp" alt="" style={{ height: "20px", width: "auto", filter: "brightness(10)" }} />
+          Invest
+        </Link>
         <Link to="/koumuten" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
           <img src="/assets/logos/logo-koumuten-gold.webp" alt="" style={{ height: "20px", width: "auto", filter: "brightness(10)" }} />
           Build
-        </Link>
-        <Link to="/reform" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
-          <img src="/assets/logos/logo-reform-gold.webp" alt="" style={{ height: "20px", width: "auto", filter: "brightness(10)" }} />
-          Reform
         </Link>
         <Link to="/fudousan" style={{ ...font, color: "#fff", fontSize: "18px", letterSpacing: "0.15em", textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
           <img src="/assets/logos/logo-fudousan-gold.webp" alt="" style={{ height: "18px", width: "auto", filter: "brightness(10)" }} />

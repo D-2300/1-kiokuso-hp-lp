@@ -13,27 +13,27 @@ const ourWork = [
     logo: "/assets/logos/logo-studio-dark.webp",
     active: true,
     to: "/studio",
-    body: "初めて店を持つ人のための内装工事。設計から施工まで、一人の担当者が一貫して対応します。居抜き活用・施主支給・DIY参加で、品質を落とさずに予算を最大化。仙台・宮城県が対象エリアです。",
+    body: "店舗オーナーのための内装工事。物件探しの段階から並走し、設計・施工まで一貫対応。居抜き活用・施主支給・DIY参加で、品質を落とさずに予算を最大化します。仙台・宮城県が対象エリア。",
     cta: "スタジオの詳細を見る",
+  },
+  {
+    nameJa: "満室デザインLABO",
+    nameEn: "KIOKUSO INVEST",
+    color: "#6A4F7A",
+    logo: "/assets/logos/logo-invest-gold.webp",
+    active: false,
+    to: null,
+    body: "築古アパート・戸建て投資・ゾンビハウス再生。眠っている収益物件に、内装の工夫と市場の読みで次の使い手を連れてくる専門事業。",
+    cta: null,
   },
   {
     nameJa: "記憶荘工務店",
     nameEn: "KIOKUSO BUILD",
-    color: "#8B4513",
+    color: "#7A5234",
     logo: "/assets/logos/logo-koumuten-dark.webp",
     active: false,
     to: null,
-    body: "古い建物に新しい役割を与える、大規模リノベーション。廃墟や空き家を再生し、次の使い手につなぎます。",
-    cta: null,
-  },
-  {
-    nameJa: "記憶荘リフォーム",
-    nameEn: "KIOKUSO REFORM",
-    color: "#7BA0A0",
-    logo: "/assets/logos/logo-reform-dark.webp",
-    active: false,
-    to: null,
-    body: "キッチン・洗面・壁紙など、住まいの「ここだけ変えたい」に手を入れる部分改修。",
+    body: "STUDIO・INVESTから流れてくる施工を担う実行部隊。古い骨組みを読み解き、次の使い手が安心して商売を始められる形に整える。",
     cta: null,
   },
   {
@@ -43,7 +43,7 @@ const ourWork = [
     logo: "/assets/logos/logo-fudousan-dark.webp",
     active: false,
     to: null,
-    body: "場所と人をつなぐ不動産仲介。継ぐべき場所を、見つけ出す。",
+    body: "STUDIO・INVESTの上流にある入口。ネットに出ない空き物件・居抜き物件の情報網で、次の使い手にふさわしい場所を見つけ出す。",
     cta: null,
   },
 ];
@@ -59,13 +59,13 @@ export default function GroupAbout() {
           <img
             src="/assets/textures/yakisugi-charred-wood-sm.webp"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
           <div
             style={{
               position: "absolute",
               inset: 0,
-              background: "rgba(0,0,0,0.45)",
+              background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 100%)",
             }}
           />
         </div>
@@ -93,7 +93,7 @@ export default function GroupAbout() {
       {/* ブロック1：記憶が宿る場所 */}
       <ScrollFadeIn>
         <section style={{ padding: "80px 0" }}>
-          <img src="/assets/textures/memory-collar-sm.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }} />
+          <img src="/assets/textures/memory-collar-sm.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "none" }} />
           <div
             style={{
               maxWidth: "560px",
@@ -104,16 +104,16 @@ export default function GroupAbout() {
             }}
           >
             <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text }}>
-              子供が作ってきた折り紙を、今でも大事に持っている。
+              これから店を始める人がいる。
               <br />
-              犬がつけていた首輪も捨てられない。
+              もう一度、物件に人を呼び戻したい人がいる。
             </p>
             <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text, marginTop: "1.6em" }}>
-              売れるものでもないし、飾るものでもない。
+              その一日目に立ち会いたくて、
               <br />
-              でも捨てられない。
+              私たちは物件探しから内装工事までを
               <br />
-              そこに「誰かを思った時間」が残っているから。
+              一つの仕事として受けています。
             </p>
           </div>
         </section>
@@ -124,25 +124,25 @@ export default function GroupAbout() {
         <section style={{ padding: "80px 32px", textAlign: "center" }}>
           <div style={{ maxWidth: "560px", margin: "0 auto" }}>
             <p style={{ fontSize: "16px", lineHeight: 2.2, color: "#333", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 400 }}>
-              だから記憶荘は、
+              いい物件は、ネットには載っていない。
               <br />
-              限られた予算の中で心を砕くことを、仕事にしている。
+              いい内装屋は、物件探しの段階から相談できる。
             </p>
             <p style={{ fontSize: "16px", lineHeight: 2.2, color: "#333", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 400, marginTop: "1.6em" }}>
-              居抜きの設備を活かすのも、
+              居抜きを活かす選択肢も、
               <br />
-              施主支給を歓迎するのも、
+              施主支給で予算を削る選択肢も、
               <br />
-              オーナーと一緒にDIYをするのも、
+              オーナーと一緒にDIYで仕上げる選択肢も、
               <br />
-              全部その延長にある。
+              早い段階で相談するから、まだ選べる。
             </p>
             <p style={{ fontSize: "16px", lineHeight: 2.2, color: "#333", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 400, marginTop: "1.6em" }}>
-              お金をかければいいものは作れる。
+              小さな会社だからこそ、
               <br />
-              でも、かけられない中で手を動かすことにこそ、
+              物件探しから内装工事まで、
               <br />
-              その場所だけの物語が生まれる。
+              一人のオーナーに一人で向き合う。
             </p>
           </div>
         </section>
@@ -158,7 +158,7 @@ export default function GroupAbout() {
           <img
             src="/images/hp-wood-dark-sm.webp"
             alt=""
-            style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }}
+            style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "none" }}
           />
           <div
             style={{
@@ -170,11 +170,11 @@ export default function GroupAbout() {
             }}
           >
             <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text }}>
-              たくさんお金をかけなくても、いい空間は作れる。
+              開業するのに、大きな予算は要らない。
               <br />
-              制約の中で、誰かのために考え抜く時間そのものに、
+              要るのは、その物件で何ができるかを
               <br />
-              大きな意味がある。
+              早い段階で一緒に考えてくれる相手です。
             </p>
           </div>
         </section>
@@ -194,12 +194,14 @@ export default function GroupAbout() {
             }}
           >
             <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text }}>
-              金継ぎが「壊れを受け入れ、美しく仕上げる」行為であるように、
+              新しい店の一日目も、
               <br />
-              記憶荘は「制約を受け入れ、美しく仕上げる」行為を伴走する。
+              眠っていた物件がもう一度動き出す日も、
+              <br />
+              同じくらい、次の記憶が灯る瞬間です。
             </p>
           </div>
-          <img src="/images/hp-kintsugi-light-sm.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "grayscale(100%)" }} />
+          <img src="/images/hp-kintsugi-light-sm.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "none" }} />
         </section>
       </ScrollFadeIn>
 
@@ -264,7 +266,7 @@ export default function GroupAbout() {
                 記憶荘 CSO（Creative Strategy Officer）
               </p>
               <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 1.8 }}>
-                仙台を拠点に、場所の記憶を引き継ぐ仕事をしています。
+                仙台を拠点に、事業用の古い空間に次の記憶を灯す仕事をしています。
               </p>
               <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 1.8, marginTop: "0.8em" }}>
                 前職では内装施工会社で年間30件以上の店舗内装を手がけ、飲食店・美容室・物販・ジムなど幅広い業態を経験しました。
@@ -273,7 +275,7 @@ export default function GroupAbout() {
                 設計から現場管理、仕上げまでを一人で完結できるのは、その現場の数だけ向き合ってきた経験があるからです。
               </p>
               <p style={{ fontSize: "14px", color: colors.sub, lineHeight: 1.8, marginTop: "0.8em" }}>
-                「誰かの想いに手を動かすこと」が自分にとって最も自然な仕事の形だと気づき、記憶荘を始めました。
+                物件探しの段階から並走するやり方が、オーナーにとって一番損の少ない形だと気づき、記憶荘を始めました。
               </p>
             </div>
           </div>

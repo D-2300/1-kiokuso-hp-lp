@@ -10,47 +10,47 @@ import { colors } from "../../shared/design-tokens";
 
 const businesses = [
   {
-    nameJa: "記憶荘工務店",
-    nameEn: "KIOKUSO BUILD",
-    desc: "古い建物に新しい役割を与える、大規模リノベーション",
-    color: colors.urushicha.main,
-    active: false,
-    to: "/koumuten",
-    logoEntity: "koumuten" as const,
-    gradient: "linear-gradient(135deg, #5C3A21 0%, #7A5234 100%)",
-    logoSrc: "/assets/logos/logo-koumuten-gold.webp",
-  },
-  {
     nameJa: "記憶荘 店舗内装スタジオ",
     nameEn: "KIOKUSO STUDIO",
-    desc: "初めての店づくりを、設計から施工まで一貫対応",
+    desc: "あなたの店が始まる場所を、一緒に見つけるところから。",
     color: colors.fukamidori.main,
     active: true,
     to: "/studio",
     logoEntity: "studio" as const,
-    gradient: "linear-gradient(135deg, #4A6741 0%, #5E7D55 100%)",
+    gradient: "linear-gradient(135deg, #5E7D55 0%, #7A9A72 100%)",
     logoSrc: "/assets/logos/logo-studio-gold.webp",
   },
   {
-    nameJa: "記憶荘リフォーム",
-    nameEn: "KIOKUSO REFORM",
-    desc: "キッチン・洗面・壁紙など、住まいの「ここだけ」を手軽に",
+    nameJa: "満室デザインLABO",
+    nameEn: "KIOKUSO INVEST",
+    desc: "眠っている物件を、収益に変える。",
     color: colors.seiji.main,
     active: false,
-    to: "/reform",
-    logoEntity: "reform" as const,
-    gradient: "linear-gradient(135deg, #4A7080 0%, #5E8A9A 100%)",
-    logoSrc: "/assets/logos/logo-reform-gold.webp",
+    to: "/invest",
+    logoEntity: "invest" as const,
+    gradient: "linear-gradient(135deg, #6A4F7A 0%, #8A6FA0 100%)",
+    logoSrc: "/assets/logos/logo-invest-gold.webp",
+  },
+  {
+    nameJa: "記憶荘工務店",
+    nameEn: "KIOKUSO BUILD",
+    desc: "古い骨組みに、次の灯りを入れる。",
+    color: colors.urushicha.main,
+    active: false,
+    to: "/koumuten",
+    logoEntity: "koumuten" as const,
+    gradient: "linear-gradient(135deg, #7A5234 0%, #A67B5B 100%)",
+    logoSrc: "/assets/logos/logo-koumuten-gold.webp",
   },
   {
     nameJa: "記憶荘不動産",
     nameEn: "KIOKUSO ESTATE",
-    desc: "場所と人をつなぐ、不動産の仲介",
+    desc: "物件探しから始まる、記憶荘の入口。",
     color: colors.tetsukon.main,
     active: false,
     to: "/fudousan",
     logoEntity: "fudousan" as const,
-    gradient: "linear-gradient(135deg, #2E3545 0%, #3E4758 100%)",
+    gradient: "linear-gradient(135deg, #3E4758 0%, #5A6578 100%)",
     logoSrc: "/assets/logos/logo-fudousan-gold.webp",
   },
 ];
@@ -98,13 +98,13 @@ export default function GroupTop() {
           <img
             src="/images/group-hero-sakura.webp"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
           <div
             style={{
               position: "absolute",
               inset: 0,
-              background: "rgba(0,0,0,0.4)",
+              background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)",
             }}
           />
         </div>
@@ -130,8 +130,8 @@ export default function GroupTop() {
           <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "22px", fontWeight: 700, letterSpacing: "0.18em" }}>
             記憶荘
           </p>
-          <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "17px", fontWeight: 500, letterSpacing: "0.14em", marginTop: "8px" }}>
-            想いが残る場所を、つくる。
+          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "17px", fontWeight: 500, letterSpacing: "0.14em", marginTop: "8px" }}>
+            次の記憶が、ここから灯る。
           </p>
         </div>
         <div
@@ -168,12 +168,12 @@ export default function GroupTop() {
             }}
           >
             <p>
-              誰かを思って手を動かした痕跡が、
+              新しい店が始まる日、
               <br />
-              その場所だけの物語になる。
+              眠っていた物件に人が戻る日。
             </p>
             <p style={{ marginTop: "1.6em" }}>
-              記憶荘は、その物語を一人にしない。
+              記憶荘は、その一日目に立ち会いたい。
             </p>
           </div>
           <GoldDivider />
@@ -216,9 +216,9 @@ export default function GroupTop() {
             </div>
 
             <p style={{ fontSize: "15px", fontWeight: 400, color: "#666", lineHeight: 1.9, textAlign: "center", marginBottom: "32px", fontFamily: "'Noto Sans JP', sans-serif" }}>
-              仙台を拠点に、場所の記憶を引き継ぐ仕事をしています。
+              仙台を拠点に、事業用の古い空間に、次の記憶を灯す。
               <br />
-              店舗内装を中心に、建物の再生、住まいの改修、不動産の仲介まで。
+              店舗内装から収益物件の再生まで、物件探しの段階から並走します。
             </p>
 
             <div

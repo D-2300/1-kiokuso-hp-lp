@@ -7,7 +7,7 @@ interface FooterLink {
   logo?: string;
 }
 
-type LogoEntity = "group" | "studio" | "koumuten" | "reform" | "fudousan";
+type LogoEntity = "group" | "studio" | "koumuten" | "invest" | "fudousan";
 
 interface EntityFooterProps {
   themeColor: string;
