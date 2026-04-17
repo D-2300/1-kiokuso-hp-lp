@@ -88,7 +88,7 @@ export default function GroupAbout() {
 
       {/* ひとこと */}
       <ScrollFadeIn>
-        <section style={{ padding: "72px 24px", textAlign: "center", maxWidth: "560px", margin: "0 auto" }}>
+        <section style={{ padding: "72px 24px 40px", textAlign: "center", maxWidth: "560px", margin: "0 auto" }}>
           <p style={{ fontSize: "16px", lineHeight: 2.0, color: colors.text, margin: 0 }}>
             仙台で店舗内装をやっている、小さな会社です。
           </p>
@@ -96,6 +96,59 @@ export default function GroupAbout() {
             物件探しの段階から相談できるのが、
             <br />
             他の内装屋さんと少し違うところだと思います。
+          </p>
+        </section>
+      </ScrollFadeIn>
+
+      {/* よく相談される質問 */}
+      <ScrollFadeIn>
+        <section style={{ padding: "0 24px 64px", maxWidth: "720px", margin: "0 auto" }}>
+          <p style={{ fontSize: "12px", letterSpacing: "3px", color: "#C9A84C", fontWeight: 500, textAlign: "center", margin: "0 0 8px", textTransform: "uppercase" }}>
+            FAQ
+          </p>
+          <h2 style={{ fontSize: "20px", fontWeight: 500, textAlign: "center", margin: "0 0 32px", color: colors.text, fontFamily: "'Noto Serif JP', serif" }}>
+            よく相談される質問
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "14px" }}>
+            {[
+              {
+                q: "物件、まだ決まってなくていい？",
+                a: "むしろ、決まる前の方がいいです。内装や設備の制約を先にわかっていれば、物件選びで失敗しません。",
+              },
+              {
+                q: "相見積もり、していい？",
+                a: "もちろん歓迎です。他社と比較して決めてもらう方が、後の信頼関係もすっきりします。",
+              },
+              {
+                q: "予算が小さくても相談できる？",
+                a: "居抜き活用・施主支給・DIY併走で圧縮できる余地があるか、一緒に見ます。無理なら無理と言います。",
+              },
+            ].map((f) => (
+              <div
+                key={f.q}
+                style={{
+                  backgroundColor: "#fff",
+                  border: "1px solid rgba(201,168,76,0.25)",
+                  borderRadius: "10px",
+                  padding: "20px 18px",
+                }}
+              >
+                <p style={{ fontSize: "14px", fontWeight: 700, color: colors.text, margin: "0 0 10px", display: "flex", alignItems: "flex-start", gap: "8px", lineHeight: 1.5 }}>
+                  <span style={{ color: "#C9A84C", flexShrink: 0 }}>Q</span>
+                  <span>{f.q}</span>
+                </p>
+                <p style={{ fontSize: "13px", color: "#555", margin: 0, lineHeight: 1.8, display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                  <span style={{ color: colors.fukamidori.main, flexShrink: 0, fontWeight: 600 }}>A</span>
+                  <span>{f.a}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: "13px", color: "#888", textAlign: "center", marginTop: "24px" }}>
+            もっと詳しく：
+            <Link to="/concept" style={{ color: colors.shuurushi.main, textDecoration: "none", marginLeft: "4px" }}>
+              記憶荘が考えていること →
+            </Link>
           </p>
         </section>
       </ScrollFadeIn>
