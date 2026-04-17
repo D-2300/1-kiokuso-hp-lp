@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import GroupTop from "./pages/GroupTop";
 import GroupAbout from "./pages/GroupAbout";
+import GroupConcept from "./pages/GroupConcept";
 import StudioTop from "./pages/StudioTop";
 import StudioAbout from "./pages/StudioAbout";
 import StudioWorks from "./pages/StudioWorks";
@@ -14,6 +15,7 @@ export default function HPApp() {
     <Routes>
       <Route path="/" element={<GroupTop />} />
       <Route path="/about" element={<GroupAbout />} />
+      <Route path="/concept" element={<GroupConcept />} />
       <Route path="/studio" element={<StudioTop />} />
       <Route path="/studio/about" element={<StudioAbout />} />
       <Route path="/studio/works" element={<StudioWorks />} />

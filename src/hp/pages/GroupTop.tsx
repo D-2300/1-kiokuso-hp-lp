@@ -277,7 +277,7 @@ export default function GroupTop() {
         <section style={{ padding: "40px 24px 64px", textAlign: "center" }}>
           <div style={{ maxWidth: "500px", margin: "0 auto" }}>
             <img src="/images/hp-door-light-sm.webp" alt="" style={{ width: "100%", aspectRatio: "3/1", objectFit: "cover", borderRadius: "4px" }} />
-            <div style={{ marginTop: "24px" }}>
+            <div style={{ marginTop: "24px", display: "flex", justifyContent: "center", gap: "40px", flexWrap: "wrap" }}>
               <Link
                 to="/about"
                 style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
@@ -287,6 +287,18 @@ export default function GroupTop() {
                 </p>
                 <p style={{ fontSize: "14px", color: colors.mute, marginTop: "4px", marginBottom: "12px" }}>
                   記憶荘について
+                </p>
+                <p style={{ fontSize: "14px", color: colors.shuurushi.main, cursor: "pointer" }}>→</p>
+              </Link>
+              <Link
+                to="/concept"
+                style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
+              >
+                <p style={{ fontSize: "14px", fontWeight: 300, letterSpacing: "0.2em", color: colors.sub }}>
+                  Concept
+                </p>
+                <p style={{ fontSize: "14px", color: colors.mute, marginTop: "4px", marginBottom: "12px" }}>
+                  考えていること
                 </p>
                 <p style={{ fontSize: "14px", color: colors.shuurushi.main, cursor: "pointer" }}>→</p>
               </Link>

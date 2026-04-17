@@ -286,6 +286,30 @@ export default function GroupAbout() {
         <img src="/assets/textures/reclaimed-wood-section-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
       </div>
 
+      <ScrollFadeIn>
+        <section style={{ padding: "16px 24px 64px", textAlign: "center" }}>
+          <Link
+            to="/concept"
+            style={{
+              display: "inline-block",
+              padding: "14px 28px",
+              border: "1px solid rgba(201,168,76,0.5)",
+              borderRadius: "6px",
+              textDecoration: "none",
+              color: colors.text,
+              fontSize: "14px",
+              letterSpacing: "0.08em",
+              backgroundColor: "rgba(201,168,76,0.06)",
+            }}
+          >
+            記憶荘が考えていること（Concept）→
+          </Link>
+          <p style={{ fontSize: "13px", color: "#999", marginTop: "12px" }}>
+            何ができて、何ができないのか。率直に書いています。
+          </p>
+        </section>
+      </ScrollFadeIn>
+
       <GroupFooter />
     </div>
   );
