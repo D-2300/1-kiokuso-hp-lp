@@ -51,9 +51,7 @@ export default function GroupConcept() {
       <ScrollFadeIn>
         <section style={{ padding: "64px 24px 32px", maxWidth: "560px", margin: "0 auto", textAlign: "center" }}>
           <p style={{ fontSize: "17px", lineHeight: 2.0, color: colors.text, fontFamily: "'Noto Sans JP', sans-serif" }}>
-            記憶荘は、仙台の小さな会社です。
-            <br />
-            二人でやっています。
+            記憶荘は、仙台で店舗内装をやっている会社です。
           </p>
           <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", marginTop: "1.6em" }}>
             カッコつけずに、何をやっているのか、
@@ -161,7 +159,7 @@ export default function GroupConcept() {
             {[
               { x: "住宅リフォーム", y: "事業用物件の内装に絞っています" },
               { x: "大量の案件を同時並行", y: "月10件前後が現実的な上限です" },
-              { x: "24時間対応・完璧なオペレーション", y: "二人でやっている会社の限界です。返信が翌日になることがあります" },
+              { x: "24時間対応・即レス", y: "少数精鋭で動いているので、返信が翌日になることがあります" },
               { x: "仙台・宮城から遠く離れた現場", y: "移動費が乗るほど割高になるので、東北圏内でお願いしています" },
               { x: "デザイン至上主義の尖った空間", y: "予算内で商売として回る空間づくりが得意分野です" },
             ].map((item, i) => (
@@ -223,11 +221,11 @@ export default function GroupConcept() {
             Closing
           </p>
           <p style={{ fontSize: "16px", lineHeight: 2.0, color: colors.text, margin: "0 0 20px" }}>
-            二人でやっている小さな会社なので、
+            大きな会社ではないので、
             <br />
-            大きな広告を打つお金も、
+            全業種を手広く対応したり、
             <br />
-            全業種に対応する体力もありません。
+            派手な広告を打ったりはできません。
           </p>
           <p style={{ fontSize: "16px", lineHeight: 2.0, color: colors.text, margin: "0 0 20px" }}>
             そのぶん、
