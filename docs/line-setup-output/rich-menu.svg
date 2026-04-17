@@ -41,8 +41,8 @@
       <line x1="30" y1="5" x2="90" y2="5" stroke="#5C3A21" stroke-width="7"/>
       <line x1="20" y1="40" x2="90" y2="40" stroke="#5C3A21" stroke-width="7"/>
     </g>
-    <text x="1250" y="580" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#3A2816" letter-spacing="2">攻略ガイド</text>
-    <text x="1250" y="670" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">FREE GUIDE</text>
+    <text x="1250" y="580" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="78" font-weight="800" fill="#3A2816" letter-spacing="2">テナント攻略ガイド</text>
+    <text x="1250" y="670" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="32" font-weight="600" fill="#C9A84C" letter-spacing="8">TENANT GUIDE</text>
   </g>
 
   <!-- === Cell 3: 右上 相談予約 === -->

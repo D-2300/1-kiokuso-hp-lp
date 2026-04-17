@@ -9,7 +9,7 @@
 | 位置 | タイル名 | アクション種別 | 値 |
 |---|---|---|---|
 | 1行目・左 | 物件リクエスト | テキスト送信 or LINEチャット入力 | `物件情報を送ります：\n・エリア：\n・坪数：\n・家賃上限：\n・業種：` |
-| 1行目・中 | 攻略ガイド | URLリンク | `https://kiokuso.jp/studio/articles/mikoukai-bukken-uragawa` |
+| 1行目・中 | テナント攻略ガイド | URLリンク | `https://kiokuso.jp/studio/articles/mikoukai-bukken-uragawa` |
 | 1行目・右 | 相談予約 | テキスト送信 | `相談したいです` |
 | 2行目・左 | 施工事例 | URLリンク | `https://kiokuso.jp/studio/works` |
 | 2行目・中 | 料金表 | URLリンク | `https://kiokuso.jp/studio/pricing` |
