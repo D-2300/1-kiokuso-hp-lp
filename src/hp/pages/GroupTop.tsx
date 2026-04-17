@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import GroupNav from "../components/GroupNav";
 import GroupFooter from "../components/GroupFooter";
-import GoldDivider from "../../shared/GoldDivider";
 import ScrollFadeIn from "../../shared/ScrollFadeIn";
 import SectionHeading from "../../shared/SectionHeading";
 import Logo from "../../shared/Logo";
-import TextureBand from "../../shared/TextureBand";
 import { colors } from "../../shared/design-tokens";
 
 const businesses = [
@@ -150,38 +148,6 @@ export default function GroupTop() {
         </div>
       </section>
 
-      {/* Philosophy */}
-      <ScrollFadeIn>
-        <section style={{ backgroundColor: colors.beige, padding: "80px 32px", textAlign: "center" }}>
-          <GoldDivider />
-          <div
-            style={{
-              maxWidth: "600px",
-              margin: "0 auto",
-              marginTop: "32px",
-              marginBottom: "32px",
-              lineHeight: 2.4,
-              fontSize: "15px",
-              fontWeight: 300,
-              letterSpacing: "0.08em",
-              color: colors.text,
-            }}
-          >
-            <p>
-              新しい店が始まる日、
-              <br />
-              眠っていた物件に人が戻る日。
-            </p>
-            <p style={{ marginTop: "1.6em" }}>
-              記憶荘は、その一日目に立ち会いたい。
-            </p>
-          </div>
-          <GoldDivider />
-        </section>
-      </ScrollFadeIn>
-
-      <TextureBand src="/assets/textures/oak-hardwood-floor-sm.webp" height={220} />
-
       {/* Group */}
       <ScrollFadeIn>
         <section style={{ backgroundColor: colors.beige, padding: "80px 32px" }}>
@@ -269,8 +235,6 @@ export default function GroupTop() {
           </div>
         </section>
       </ScrollFadeIn>
-
-      <TextureBand src="/assets/textures/tile-water-droplets-warm-sm.webp" height={180} />
 
       {/* About 導線 */}
       <ScrollFadeIn>

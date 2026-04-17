@@ -86,128 +86,19 @@ export default function GroupAbout() {
         </div>
       </section>
 
-      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/oak-hardwood-floor-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
-      </div>
-
-      {/* ブロック1：記憶が宿る場所 */}
+      {/* ひとこと */}
       <ScrollFadeIn>
-        <section style={{ padding: "80px 0" }}>
-          <img src="/assets/textures/memory-collar-sm.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "none" }} />
-          <div
-            style={{
-              maxWidth: "560px",
-              margin: "0 auto",
-              padding: "0 24px",
-              textAlign: "center",
-              marginTop: "48px",
-            }}
-          >
-            <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text }}>
-              これから店を始める人がいる。
-              <br />
-              もう一度、物件に人を呼び戻したい人がいる。
-            </p>
-            <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text, marginTop: "1.6em" }}>
-              その一日目に立ち会いたくて、
-              <br />
-              私たちは物件探しから内装工事までを
-              <br />
-              一つの仕事として受けています。
-            </p>
-          </div>
+        <section style={{ padding: "72px 24px", textAlign: "center", maxWidth: "560px", margin: "0 auto" }}>
+          <p style={{ fontSize: "16px", lineHeight: 2.0, color: colors.text, margin: 0 }}>
+            仙台で店舗内装をやっている、小さな会社です。
+          </p>
+          <p style={{ fontSize: "15px", lineHeight: 2.0, color: "#555", margin: "1.4em 0 0" }}>
+            物件探しの段階から相談できるのが、
+            <br />
+            他の内装屋さんと少し違うところだと思います。
+          </p>
         </section>
       </ScrollFadeIn>
-
-      {/* STEP H：橋テキスト */}
-      <ScrollFadeIn>
-        <section style={{ padding: "80px 32px", textAlign: "center" }}>
-          <div style={{ maxWidth: "560px", margin: "0 auto" }}>
-            <p style={{ fontSize: "16px", lineHeight: 2.2, color: "#333", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 400 }}>
-              いい物件は、ネットには載っていない。
-              <br />
-              いい内装屋は、物件探しの段階から相談できる。
-            </p>
-            <p style={{ fontSize: "16px", lineHeight: 2.2, color: "#333", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 400, marginTop: "1.6em" }}>
-              居抜きを活かす選択肢も、
-              <br />
-              施主支給で予算を削る選択肢も、
-              <br />
-              オーナーと一緒にDIYで仕上げる選択肢も、
-              <br />
-              早い段階で相談するから、まだ選べる。
-            </p>
-            <p style={{ fontSize: "16px", lineHeight: 2.2, color: "#333", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 400, marginTop: "1.6em" }}>
-              小さな会社だからこそ、
-              <br />
-              物件探しから内装工事まで、
-              <br />
-              一人のオーナーに一人で向き合う。
-            </p>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/old-new-timber-junction-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
-      </div>
-
-      {/* ブロック2：制約の中の美しさ */}
-      <ScrollFadeIn>
-        <section style={{ padding: "80px 0" }}>
-          <img
-            src="/images/hp-wood-dark-sm.webp"
-            alt=""
-            style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "none" }}
-          />
-          <div
-            style={{
-              maxWidth: "560px",
-              margin: "0 auto",
-              padding: "0 24px",
-              textAlign: "center",
-              marginTop: "48px",
-            }}
-          >
-            <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text }}>
-              開業するのに、大きな予算は要らない。
-              <br />
-              要るのは、その物件で何ができるかを
-              <br />
-              早い段階で一緒に考えてくれる相手です。
-            </p>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      {/* ブロック3：金継ぎとの接続 */}
-      <ScrollFadeIn>
-        <section style={{ padding: "80px 0" }}>
-          <div
-            style={{
-              maxWidth: "560px",
-              margin: "0 auto",
-              padding: "0 24px",
-              textAlign: "center",
-              marginTop: "48px",
-              marginBottom: "48px",
-            }}
-          >
-            <p style={{ fontSize: "15px", lineHeight: 2.2, color: colors.text }}>
-              新しい店の一日目も、
-              <br />
-              眠っていた物件がもう一度動き出す日も、
-              <br />
-              同じくらい、次の記憶が灯る瞬間です。
-            </p>
-          </div>
-          <img src="/images/hp-kintsugi-light-sm.webp" alt="" style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "none" }} />
-        </section>
-      </ScrollFadeIn>
-
-      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/kintsugi-bowl-inside-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
-      </div>
 
       <GoldDivider />
 
@@ -251,10 +142,6 @@ export default function GroupAbout() {
 
       <GoldDivider />
 
-      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/tile-water-droplets-warm-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
-      </div>
-
       {/* STEP J：DAIプロフィール（グループ視点） */}
       <ScrollFadeIn>
         <div style={{ padding: "40px 24px 64px", maxWidth: "500px", margin: "0 auto" }}>
@@ -282,12 +169,8 @@ export default function GroupAbout() {
         </div>
       </ScrollFadeIn>
 
-      <div style={{ display: "flex", justifyContent: "center", padding: "0 24px", margin: "48px 0" }}>
-        <img src="/assets/textures/reclaimed-wood-section-sm.webp" alt="" style={{ width: "100%", maxWidth: "700px", height: "200px", objectFit: "cover", display: "block" }} />
-      </div>
-
       <ScrollFadeIn>
-        <section style={{ padding: "16px 24px 64px", textAlign: "center" }}>
+        <section style={{ padding: "48px 24px 64px", textAlign: "center" }}>
           <Link
             to="/concept"
             style={{
