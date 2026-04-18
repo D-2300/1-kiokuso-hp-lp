@@ -3,21 +3,18 @@ import { Link } from "react-router-dom";
 import { LINE_URL_HP } from "../../shared/design-tokens";
 
 const guideFaqs = [
-  { q: "このガイドは本当に無料ですか？", a: "はい、完全無料です。記憶荘の本業は内装工事で、実際に工事をご依頼いただいた段階で対価をいただきます。物件選びや相談の段階で費用を請求することはありません。" },
-  { q: "宮城県外でも参考になりますか？", a: "相場の数字は仙台・宮城県のものですが、物件選びの3基準・設備チェック・費用圧縮の考え方・失敗回避の方法論は地域を問わず使えます。" },
-  { q: "初めての出店なのですが大丈夫ですか？", a: "むしろ初めての方のために書いたガイドです。業界用語は付録Bで解説しています。「まだ何も決まっていない」段階からご相談ください。" },
-  { q: "他の内装屋との違いは何ですか？", a: "一番の違いは「物件探しの段階から関わる」こと。多くの内装屋は物件決定後に見積もり依頼を受けますが、記憶荘は物件を選ぶ前から相談を受けます。選択肢の幅が全く違います。" },
-  { q: "DIYで自分でやりたい部分があるのですが？", a: "歓迎します。「全部任せてください」派ではなく、「ここだけプロに」という頼み方を推奨しています。電気・給排水・ガスなど事故リスクが高い領域だけ記憶荘で請け、塗装・装飾などDIY可能な領域はご自身で進めていただく形が、コストが下がって開業しやすいです。" },
-  { q: "相見積もりを取りたいのですが？", a: "もちろん歓迎です。他社と比較して決めてもらう方が、後の信頼関係もすっきりします。相談段階で「いまは他社も検討中です」と伝えていただいて構いません。" },
-  { q: "個別相談はできますか？", a: "LINE公式アカウントで個別相談を承っています。物件のURLや写真を送っていただければ、内装屋の視点で正直な感想を無料でお返しします。" },
+  { q: "このガイドは無料ですか？", a: "はい、完全無料です。工事をご依頼いただいた段階で対価をいただきます。相談・物件紹介の段階で費用は発生しません。" },
+  { q: "まだ何も決まっていませんが、相談できますか？", a: "むしろ、決まっていない段階から相談に来てもらった方が助かります。条件整理から一緒にやります。" },
+  { q: "他の内装屋との違いは？", a: "物件探しの段階から関わる点です。多くの内装屋は物件決定後の相談しか受けませんが、記憶荘は物件を見る前から入ります。" },
+  { q: "DIYで自分でやりたい部分があります", a: "歓迎します。電気・給排水・ガスなど事故リスクの高い工事だけ記憶荘で請け、塗装・装飾などはご自身で進める形が、コストが一番下がります。" },
+  { q: "相見積もりしていいですか？", a: "もちろんです。他社と比較して決めてもらう方が、後の信頼関係もすっきりします。" },
 ];
 
 const guideSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "仙台のテナント攻略ガイド",
-  description: "仙台・宮城県で店舗を始める方のためのテナント物件選びガイド。相場データ・物件3基準・設備チェック・居抜きvsスケルトン・費用圧縮3技・失敗事例10選まで内装屋視点で体系化。",
-  image: "https://kiokuso.jp/assets/textures/koumuten-hero.webp",
+  headline: "テナント攻略ガイド",
+  description: "仙台・宮城で店舗を始める方のためのテナント物件選びガイド。元不動産20年×大工20年の視点で、物件選びの失敗を防ぐ知識を体系化。",
   datePublished: "2026-04-18",
   dateModified: "2026-04-18",
   author: { "@type": "Organization", name: "記憶荘 店舗内装スタジオ", url: "https://kiokuso.jp/" },
@@ -29,26 +26,19 @@ const guideSchema = {
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://kiokuso.jp/studio/guide/tenant" },
 };
 
-/**
- * 仙台のテナント攻略ガイド HTML版
- *
- * 原稿: docs/guide-tenant-manuscript.md
- * 配布: /studio/guide/tenant
- * 印刷: Ctrl+P → PDFで保存 → 画面と同じデザインでダウンロード可
- */
 export default function TenantGuidePage() {
   useEffect(() => {
-    document.title = "仙台のテナント攻略ガイド｜記憶荘 店舗内装スタジオ";
-    const description = "仙台・宮城県で店舗を始める方のためのテナント物件選びガイド。内装屋視点で、物件3基準・設備チェック・居抜きvsスケルトン・費用圧縮術・失敗10選まで体系化。";
+    document.title = "テナント攻略ガイド｜記憶荘 店舗内装スタジオ";
+    const description = "仙台・宮城で店舗を始める方のためのテナント物件選びガイド。内装屋の目で、物件選びの失敗を防ぐ知識を図解で体系化。";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", description);
-    const setMeta = (selector: string, value: string) => {
-      const el = document.querySelector(selector);
-      if (el) el.setAttribute("content", value);
+    const setMeta = (s: string, v: string) => {
+      const el = document.querySelector(s);
+      if (el) el.setAttribute("content", v);
     };
-    setMeta('meta[property="og:title"]', "仙台のテナント攻略ガイド｜記憶荘");
+    setMeta('meta[property="og:title"]', "テナント攻略ガイド｜記憶荘");
     setMeta('meta[property="og:description"]', description);
-    setMeta('meta[name="twitter:title"]', "仙台のテナント攻略ガイド｜記憶荘");
+    setMeta('meta[name="twitter:title"]', "テナント攻略ガイド｜記憶荘");
     setMeta('meta[name="twitter:description"]', description);
   }, []);
 
@@ -57,20 +47,15 @@ export default function TenantGuidePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideSchema) }} />
       <style>{styles}</style>
 
-      {/* スクリーン用ヘッダー（印刷時非表示） */}
       <nav className="guide-nav screen-only">
         <Link to="/" className="guide-nav-brand">記憶荘</Link>
         <div className="guide-nav-actions">
-          <button onClick={() => window.print()} className="guide-nav-print">
-            🖨️ 印刷・PDF保存
-          </button>
-          <a href={LINE_URL_HP} target="_blank" rel="noopener noreferrer" className="guide-nav-line">
-            LINE相談
-          </a>
+          <button onClick={() => window.print()} className="guide-nav-print">🖨️ PDFで保存</button>
+          <a href={LINE_URL_HP} target="_blank" rel="noopener noreferrer" className="guide-nav-line">LINE相談</a>
         </div>
       </nav>
 
-      {/* ===== 表紙 ===== */}
+      {/* 表紙 */}
       <article className="guide-cover page">
         <div className="cover-accent-top" />
         <p className="cover-category">TENANT GUIDE</p>
@@ -81,17 +66,17 @@ export default function TenantGuidePage() {
           <span className="cover-title-l3">攻略ガイド</span>
         </h1>
         <p className="cover-subtitle">— 内装屋だから見えている、店舗物件の選び方 —</p>
-
         <ul className="cover-chapters">
-          <li>◆ 仙台の店舗物件相場</li>
-          <li>◆ 物件探しの前に決める3基準</li>
-          <li>◆ 内装屋が見る物件チェック</li>
-          <li>◆ 居抜きvsスケルトン</li>
+          <li>◆ 記憶荘の3つの強み</li>
+          <li>◆ なぜ物件探しから関わるのか</li>
+          <li>◆ 「未公開物件」の真実</li>
+          <li>◆ 物件選びの3基準</li>
+          <li>◆ 内装屋の設備チェック</li>
           <li>◆ 費用を圧縮する3つの技</li>
-          <li>◆ 「未公開物件」の真実と注意</li>
+          <li>◆ 契約条件の交渉テクニック</li>
+          <li>◆ AIパースで事前プレビュー</li>
           <li>◆ 失敗事例10選</li>
         </ul>
-
         <div className="cover-footer">
           <hr className="cover-footer-hr" />
           <p className="cover-brand">記憶荘 店舗内装スタジオ</p>
@@ -100,699 +85,803 @@ export default function TenantGuidePage() {
         <div className="cover-accent-bottom" />
       </article>
 
-      {/* ===== 目次 ===== */}
-      <article className="page guide-toc">
-        <div className="page-header"><span>CONTENTS</span></div>
-        <h2 className="chapter-heading-toc">目次</h2>
-        <ol className="toc-list">
-          <li><span className="toc-num">Ch.1</span><span>はじめに — なぜ内装屋が物件探しから関わるのか</span></li>
-          <li><span className="toc-num">Ch.2</span><span>仙台の店舗物件相場 — エリア別・業態別の実データ</span></li>
-          <li><span className="toc-num">Ch.3</span><span>物件探しの前に決める 3つの基準</span></li>
-          <li><span className="toc-num">Ch.4</span><span>内装屋が見る物件チェック — 電気・給排水・ダクト・天井高</span></li>
-          <li><span className="toc-num">Ch.5</span><span>居抜き vs スケルトン — 費用差と判断基準</span></li>
-          <li><span className="toc-num">Ch.6</span><span>費用を圧縮する 3つの技</span></li>
-          <li><span className="toc-num">Ch.7</span><span>「未公開物件」の真実と、依頼する時の注意</span></li>
-          <li><span className="toc-num">Ch.8</span><span>失敗事例10選</span></li>
-          <li><span className="toc-num">Ch.9</span><span>まとめ — 最初の1歩の踏み出し方</span></li>
-          <li><span className="toc-num">付録A</span><span>エリア別 平均家賃データ</span></li>
-          <li><span className="toc-num">付録B</span><span>用語集</span></li>
-          <li><span className="toc-num">付録C</span><span>退去時の原状回復</span></li>
-          <li><span className="toc-num">付録D</span><span>よくある質問</span></li>
-        </ol>
-      </article>
-
-      {/* ===== Ch.1 ===== */}
+      {/* ===== Ch.1 記憶荘の3つの強み ===== */}
       <article className="page">
-        <div className="page-header"><span>Ch.1 はじめに</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.1</span>はじめに — なぜ内装屋が物件探しから関わるのか</h2>
+        <div className="page-header"><span>Ch.1 WHY US</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.1</span>記憶荘の3つの強み</h2>
 
-        <h3 className="section-heading">1-1. このガイドで伝えたいこと</h3>
-        <p>記憶荘は、仙台・宮城で店舗の内装工事をしている会社です。物件を売ってお金をもらう立場にはいません。物件を見つけて、設計して、造って、その対価で生きています。</p>
-        <p>この立場から、これから店を始める方に、一つだけ先にお伝えしたいことがあります。</p>
-        <blockquote className="quote">「物件選びで失敗すれば、どんなに良い内装をしても商売は回らない」</blockquote>
-        <p>これは10年以上、現場を見てきた実感です。どんなに雰囲気の良い内装を造っても、立地が間違っていれば客は来ない。どんなに家賃が安くても、設備が商売に合っていなければ改修費が膨らむ。</p>
-        <p>このガイドでは、<strong>契約ボタンを押す前に知っておくべきこと</strong>を、内装側から見た視点で体系化しました。</p>
-
-        <h3 className="section-heading">1-2. なぜ「内装屋」が物件探しから関わるのか</h3>
-        <p>多くの方が、こういう順番で相談に来ます。</p>
-        <ol className="ordered">
-          <li>物件を決めた（or ほぼ決めた）</li>
-          <li>内装屋を探し始める</li>
-          <li>見積もりを取る</li>
-        </ol>
-        <p>この順番で来ると、内装屋にできることは<strong>限られています</strong>。設備が貧弱ならそれを補う工事を乗せる。天井が低いなら圧迫感を何とか軽減する。ダクトが通らない業態なら「別の物件の方が…」とも言いづらい。</p>
-        <p>物件が決まった後の相談は、<strong>「できることの中で最大限やる」</strong>しかできません。物件を決める前の相談なら、<strong>「そもそもこの物件でいいのか」</strong>から一緒に考えられます。</p>
-        <p>選択肢の幅が全然違います。だから記憶荘は、<strong>物件探しの段階から相談を受ける</strong>というやり方にしています。他の内装屋さんと少し違うところは、ここだけです。</p>
-
-        <h3 className="section-heading">1-3. 誰が書いているのか — 元不動産20年 × 大工20年</h3>
-        <p>このガイドを書いているのが「どんな人か」を先に伝えます。ここに納得できなければ、以降のノウハウも机上の空論に聞こえてしまうからです。</p>
-
-        <h4 className="sub-heading">KAI（元不動産業 20年）</h4>
-        <p>記憶荘のメンバーの一人、<strong>KAI</strong> は、仙台で<strong>不動産仲介業を約20年</strong>やってきました。住宅・テナント・収益物件を広く扱ってきました。</p>
-        <p>仲介業の20年で、ずっと抱えていた違和感があります。</p>
-        <blockquote className="quote">「仲介業では、本当の意味でお客様の立場に立ちきれない」</blockquote>
-
-        <h4 className="sub-heading">仲介業には構造的な矛盾がある</h4>
-        <div className="structure">
-          <div className="structure-item">
-            <p className="structure-title">① 営業ノルマの圧力</p>
-            <p className="structure-body">月ごとの成約目標があると、「本当はこの物件は勧めない方がいい」と思っても、他に候補がなければ推してしまう。</p>
+        <div className="strength-grid">
+          <div className="strength-card">
+            <div className="strength-num">01</div>
+            <p className="strength-title">物件探しから<br />関わる</p>
+            <p className="strength-desc">物件決定後ではなく、<br />見る前から相談OK。<br />選択肢の幅が段違い。</p>
           </div>
-          <div className="structure-item">
-            <p className="structure-title">② 売主の代理人になる構造</p>
-            <p className="structure-body">物件を預かって売り切るのが仕事になる。買主のために強く指値を入れるほど売主との関係が悪くなる。</p>
+          <div className="strength-card">
+            <div className="strength-num">02</div>
+            <p className="strength-title">各分野の<br />職人が集結</p>
+            <p className="strength-desc">不動産・大工・設備・<br />電工・塗装・左官。<br />各プロが各プロの仕事を。</p>
           </div>
-          <div className="structure-item">
-            <p className="structure-title">③ 仲介手数料は物件価格に比例</p>
-            <p className="structure-body">高い物件を決めた方が自分の取り分も増える。客の利益と自分の利益が一致しない。</p>
+          <div className="strength-card">
+            <div className="strength-num">03</div>
+            <p className="strength-title">物件売買では<br />儲けない中立</p>
+            <p className="strength-desc">内装工事で対価を<br />いただく立場だから、<br />「やめた方がいい」も言える。</p>
           </div>
         </div>
-        <p>これは会社の方針や担当者の人柄の問題ではなく、<strong>仲介業のビジネスモデル自体が抱える矛盾</strong>です。この構造に違和感を持ち続け、20年で仲介業を離れました。</p>
 
-        <h4 className="sub-heading">次に選んだのが「内装側から支える」ポジション</h4>
-        <div className="benefit-list">
-          <div className="benefit-item">
-            <span className="benefit-icon">◆</span>
-            <p><strong>物件売買では儲けない</strong>：どの物件を選んでもらっても構わない</p>
-          </div>
-          <div className="benefit-item">
-            <span className="benefit-icon">◆</span>
-            <p><strong>内装工事で対価をいただく</strong>：物件を「良くする」ことにインセンティブがある</p>
-          </div>
-          <div className="benefit-item">
-            <span className="benefit-icon">◆</span>
-            <p><strong>仲介手数料ゼロ</strong>：オーナーの手取りを減らさない</p>
-          </div>
-        </div>
-        <p>この立場なら、20年の仲介経験を活かして「この物件はやめた方がいい」と本音で言えます。今までできなかったことが、ようやくできるようになりました。</p>
+        <figure className="guide-figure">
+          <img src="/images/kai-ken-onsite-check-sm.webp" alt="現地で打ち合わせする職人" loading="lazy" />
+          <figcaption>物件ごとに必要な職人が集まって判断する。見る目が違えば、判断は早くなる。</figcaption>
+        </figure>
 
-        <h4 className="sub-heading">KEN（大工歴 20年超）</h4>
-        <p>そして大工歴20年超の <strong>KEN</strong>。前職では店舗内装の現場監督として、年間30件以上の飲食店・美容室・物販・ジムを手がけてきました。</p>
-        <p>独立のきっかけは、業界の不透明さへの違和感でした。見積もりの中身がわからない。追加費用が次々と発生する。オーナーが納得しないまま工事が進む。</p>
-        <p>「これを変えたい」と思って始めたのが、記憶荘です。</p>
-
+        <h3 className="section-heading">窓口となる中心メンバー</h3>
         <div className="profile-cards">
           <div className="profile-card">
+            <img src="/images/about-kai-sm.webp" alt="KAI" className="profile-photo" loading="lazy" />
             <p className="profile-name">KAI</p>
-            <p className="profile-role">元・不動産業20年</p>
-            <p className="profile-desc">物件の見極め・交渉・相談の窓口</p>
+            <p className="profile-role">不動産 20年</p>
+            <p className="profile-desc">物件の見極め・<br />交渉・相談の窓口</p>
           </div>
           <div className="profile-card">
+            <img src="/images/about-ken-sm.webp" alt="KEN" className="profile-photo" loading="lazy" />
             <p className="profile-name">KEN</p>
-            <p className="profile-role">大工歴20年超</p>
-            <p className="profile-desc">設計から施工まで現場を動かす技術</p>
+            <p className="profile-role">大工 20年超</p>
+            <p className="profile-desc">設計から施工まで<br />現場を動かす技術</p>
           </div>
         </div>
 
-        <div className="sidebar">
-          <p className="sidebar-label">このガイドで伝える視点</p>
-          <p>このガイドの内容は、<strong>仲介現場で「本当はお客様にこう伝えたかった」内容</strong>と、<strong>施工現場で「この物件では厳しい」と感じてきた経験</strong>の集大成です。物件を選ぶ立場の視点でまとめました。</p>
+        <h3 className="section-heading">集まる職人たち</h3>
+        <p className="crew-intro">現場に必要な腕を必要なだけ。長く一緒に仕事をしてきた、各分野でプライドを持つ職人が集結します。</p>
+        <div className="crew-grid">
+          <div className="crew-chip"><span className="crew-icon">🔨</span><p className="crew-role">大工</p><p className="crew-yrs">20年超</p></div>
+          <div className="crew-chip"><span className="crew-icon">⚡</span><p className="crew-role">電工</p><p className="crew-yrs">有資格</p></div>
+          <div className="crew-chip"><span className="crew-icon">🔧</span><p className="crew-role">設備</p><p className="crew-yrs">給排水・ガス</p></div>
+          <div className="crew-chip"><span className="crew-icon">🎨</span><p className="crew-role">塗装</p><p className="crew-yrs">仕上げ専門</p></div>
+          <div className="crew-chip"><span className="crew-icon">🪵</span><p className="crew-role">建具・家具</p><p className="crew-yrs">造作</p></div>
+          <div className="crew-chip"><span className="crew-icon">🏠</span><p className="crew-role">左官・タイル</p><p className="crew-yrs">手仕事</p></div>
+          <div className="crew-chip"><span className="crew-icon">📐</span><p className="crew-role">設計</p><p className="crew-yrs">店舗特化</p></div>
+          <div className="crew-chip"><span className="crew-icon">🏢</span><p className="crew-role">不動産</p><p className="crew-yrs">20年</p></div>
         </div>
 
-        <h3 className="section-heading">1-4. いま動くべきタイミングか</h3>
-        <p>2026年時点、仙台の店舗物件市場には以下の傾向があります。</p>
-        <ul>
-          <li><strong>新規開業数は横ばい〜微減</strong>：コロナ後のリバウンドが落ち着き、慎重な開業者が増えている</li>
-          <li><strong>閉店物件（居抜き）は継続発生</strong>：飲食を中心に居抜き案件が常に市場に回っている</li>
-          <li><strong>好立地の家賃は上昇傾向</strong>：国分町・仙台駅周辺は坪1万円超が増加</li>
-          <li><strong>郊外・駅近の「隠れた良物件」がまだある</strong>：泉中央・長町・名取・多賀城エリアに条件のいい中小テナントが出回る</li>
-        </ul>
-        <p><strong>参入者が慎重になっている今は、良い物件を相対的に取りやすい局面</strong>でもあります。焦らず、条件を定めてから動ける方が勝ちやすい時期です。</p>
-      </article>
-
-      {/* ===== Ch.2 ===== */}
-      <article className="page">
-        <div className="page-header"><span>Ch.2 仙台の店舗物件相場</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.2</span>仙台の店舗物件相場 — エリア別・業態別の実データ</h2>
-
-        <h3 className="section-heading">2-1. エリア別の家賃相場感（2026年4月時点）</h3>
-        <p>仙台市内の主要エリアの、1階路面店を想定した家賃相場：</p>
-        <table className="data-table">
-          <thead>
-            <tr><th>エリア</th><th>坪単価（月額）</th><th>10坪換算</th><th>特徴</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>国分町</td><td>1.2〜2.0万円</td><td>12〜20万円</td><td>飲食・夜系の聖地</td></tr>
-            <tr><td>仙台駅周辺</td><td>1.3〜2.2万円</td><td>13〜22万円</td><td>オフィス・物販向き</td></tr>
-            <tr><td>一番町・定禅寺通</td><td>1.0〜1.8万円</td><td>10〜18万円</td><td>カフェ・物販定番</td></tr>
-            <tr><td>勾当台公園周辺</td><td>0.9〜1.4万円</td><td>9〜14万円</td><td>バランス型</td></tr>
-            <tr><td>泉中央</td><td>0.7〜1.2万円</td><td>7〜12万円</td><td>ファミリー需要</td></tr>
-            <tr><td>長町・太白区</td><td>0.7〜1.1万円</td><td>7〜11万円</td><td>再開発進行中</td></tr>
-            <tr><td>若林区（中心寄り）</td><td>0.6〜1.0万円</td><td>6〜10万円</td><td>家賃を抑えられる</td></tr>
-            <tr><td>名取市・多賀城市</td><td>0.5〜0.9万円</td><td>5〜9万円</td><td>仙台通勤圏</td></tr>
-            <tr><td>宮城野区（荒井・新田）</td><td>0.6〜1.0万円</td><td>6〜10万円</td><td>東西線で伸び中</td></tr>
-          </tbody>
-        </table>
-        <p className="note">坪単価は「敷金・礼金・保証金除く、月額家賃 ÷ 坪数」で計算。ビル階数・築年・入居付きのサービスで変動します。</p>
-
-        <h3 className="section-heading">2-2. 業種別の家賃適正ライン</h3>
-        <p><strong>家賃は売上の 10% 以内が目安</strong>と言われます。これを超えると固定費で利益が削られ、少し売上が落ちただけで赤字に入ります。</p>
-        <table className="data-table">
-          <thead>
-            <tr><th>業種</th><th>月商目安</th><th>適正家賃</th><th>坪数目安</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>カフェ</td><td>200〜400万</td><td>20〜40万</td><td>10〜15坪</td></tr>
-            <tr><td>バー・居酒屋</td><td>150〜350万</td><td>15〜35万</td><td>12〜20坪</td></tr>
-            <tr><td>ラーメン店</td><td>250〜500万</td><td>25〜50万</td><td>10〜15坪</td></tr>
-            <tr><td>焼肉店</td><td>400〜800万</td><td>40〜80万</td><td>20〜30坪</td></tr>
-            <tr><td>美容室</td><td>100〜300万</td><td>10〜30万</td><td>8〜15坪</td></tr>
-            <tr><td>ネイル・エステ</td><td>50〜200万</td><td>5〜20万</td><td>6〜12坪</td></tr>
-            <tr><td>物販（アパレル）</td><td>80〜300万</td><td>8〜30万</td><td>10〜20坪</td></tr>
-            <tr><td>パーソナルジム</td><td>50〜200万</td><td>5〜20万</td><td>10〜20坪</td></tr>
-          </tbody>
-        </table>
-
-        <div className="sidebar">
-          <p className="sidebar-label">内装屋視点</p>
-          <p>「月商の目安」は希望的観測に寄りがちです。<strong>売上目標の 70% 程度で固定費が回る家賃</strong>を選ぶのが安全線。開業初年度は想定の半分、という声も少なくありません。</p>
-        </div>
-
-        <h3 className="section-heading">2-3. 記憶荘で紹介できる物件について</h3>
-        <p>記憶荘にも、継続的にテナント情報が入ってきます。その多くは、仲介会社・大家さん・閉店の決まった店舗オーナーから「<strong>人を見てから話したい</strong>」と預かる案件です。</p>
-        <p>ただし、こうした非公開案件の扱いには注意があります（詳しくは Ch.7）。</p>
-        <ul>
-          <li>非公開 = 必ずしもお得、とは限らない</li>
-          <li>売主側の事情（家族・相続・経営上の都合）で水面下で動いているケースが多い</li>
-          <li>情報収集だけを目的とされた方にはお渡しできない</li>
-        </ul>
-        <p>出店意思が固まった段階でご相談ください。フィットする物件があれば送ります。無ければ「今はありません」と正直にお伝えします。</p>
-      </article>
-
-      {/* ===== Ch.3 ===== */}
-      <article className="page">
-        <div className="page-header"><span>Ch.3 物件探しの前に決める3基準</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.3</span>物件探しの前に決める 3つの基準</h2>
-
-        <p>物件を見始める前に、これだけは自分の中で決めてください。これを決めずに内見を始めると、どの物件も「悪くない気がする」状態になって、結局決められなくなります。</p>
-
-        <h3 className="section-heading">3-1. 基準① 客層は誰か</h3>
-        <ul>
-          <li>ターゲットの年齢層</li>
-          <li>性別バランス</li>
-          <li>ライフスタイル（単身／ファミリー／学生／ビジネスマン 他）</li>
-          <li>来店動機（平日昼／夜／週末／特別な日／日常使い）</li>
-        </ul>
-        <p>これが曖昧だと、エリアも内装も定まりません。</p>
-        <div className="jirei">
-          <p className="jirei-title">例：同じカフェでも対象が違えば物件が違う</p>
-          <ul>
-            <li><strong>「20〜30代女性が仕事帰りに一人でも入れるカフェ」</strong> → オフィス街 or 駅近</li>
-            <li><strong>「ファミリーが週末にゆっくりできるカフェ」</strong> → 住宅地近く・駐車場あり・広め</li>
-          </ul>
-        </div>
-
-        <h3 className="section-heading">3-2. 基準② どんな形で迎えたいか</h3>
-        <ul>
-          <li>席数</li>
-          <li>滞在時間（15分 or 2時間）</li>
-          <li>客単価（¥800 or ¥3,500）</li>
-          <li>回転率で稼ぐのか、客単価で稼ぐのか</li>
-        </ul>
-        <p>これが物件の広さ（坪数）と家賃の上限を決める基準になります。</p>
-        <div className="jirei">
-          <p className="jirei-title">例：同じ坪数でも月商が倍違う</p>
-          <ul>
-            <li><strong>回転型ラーメン店</strong>：12坪・客単価¥1,200・5回転／日・月商 ¥400万</li>
-            <li><strong>滞在型カフェ</strong>：15坪・客単価¥1,500・1.5回転／日・月商 ¥180万</li>
-          </ul>
-        </div>
-
-        <h3 className="section-heading">3-3. 基準③ 集客方法は何か</h3>
-        <ul>
-          <li>路面の通行量で自然集客するのか</li>
-          <li>SNSや口コミで呼ぶのか</li>
-          <li>デリバリー・EC比率はどれくらいか</li>
-          <li>広告にいくらまで出すか</li>
-        </ul>
-        <p><strong>通行量に頼るなら路面店が必須</strong>ですが、SNS集客がメインなら2階・地下でも家賃を抑えられます。</p>
-        <div className="jirei">
-          <p className="jirei-title">例：集客方針で物件選びが逆転する</p>
-          <ul>
-            <li><strong>通行量依存型</strong>（ランチ系・物販）: 1階路面・家賃高でも仕方ない</li>
-            <li><strong>SNS集客型</strong>（特色ある業態）: 2階・路地裏でOK、家賃は抑えられる</li>
-          </ul>
-        </div>
-
-        <div className="sidebar">
-          <p className="sidebar-label">この3つが決まれば、物件は半分決まる</p>
-          <p>客層 × 形 × 集客。この3つが決まると、「どんな物件が必要か」が自動的に見えてきます。迷ったら、まず LINE で相談してください。この3つを書き出すところから、ご一緒できます。</p>
+        <h3 className="section-heading">逆に、記憶荘が不得意なこと</h3>
+        <p className="crew-intro">合う方／合わない方がはっきりあります。先にお伝えしておきます。</p>
+        <div className="weak-grid">
+          <div className="weak-card">
+            <p className="weak-head">大規模・多店舗同時展開</p>
+            <p className="weak-sub">月10件前後が現実的な上限。全国チェーンの同時出店には対応できません。</p>
+          </div>
+          <div className="weak-card">
+            <p className="weak-head">ラグジュアリー・高級路線</p>
+            <p className="weak-sub">得意は気取らない店・手触りのある空間。高級ホテル的な空気感は他社向き。</p>
+          </div>
+          <div className="weak-card">
+            <p className="weak-head">超短納期（1週間切り）</p>
+            <p className="weak-sub">品質を落とさないため、最低2週間以上いただくのが基本です。</p>
+          </div>
+          <div className="weak-card">
+            <p className="weak-head">提案書・3Dパース量産</p>
+            <p className="weak-sub">コンペ対応や大量のプレゼン資料制作はしません。打合せと実物で決めていきます。</p>
+          </div>
+          <div className="weak-card">
+            <p className="weak-head">仙台都市圏の外</p>
+            <p className="weak-sub">宮城県内中心。県外は内容と距離次第で応相談です。</p>
+          </div>
+          <div className="weak-card">
+            <p className="weak-head">丸投げでの進行</p>
+            <p className="weak-sub">物件判断・業態設計・費用圧縮はオーナーと一緒に決めたい。お任せ一括では力が出ません。</p>
+          </div>
         </div>
       </article>
 
-      {/* ===== Ch.4 ===== */}
+      {/* ===== Ch.2 なぜ物件探しから関わるのか ===== */}
       <article className="page">
-        <div className="page-header"><span>Ch.4 内装屋が見る物件チェック</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.4</span>内装屋が見る物件チェック — 電気・給排水・ダクト・天井高</h2>
+        <div className="page-header"><span>Ch.2 WHY EARLY</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.2</span>なぜ物件探しから関わるのか</h2>
 
-        <p>物件の「見た目」「家賃」「広さ」だけでなく、内装工事に直結する<strong>設備条件</strong>を契約前に必ず確認してください。この確認を飛ばすと、契約後に「やりたかった工事ができない」「追加工事で200万円オーバー」という事態が起きます。</p>
+        <div className="when-compare">
+          <div className="when-col bad">
+            <p className="when-label">❌ よくある順番</p>
+            <div className="when-flow">
+              <div className="when-step">物件決定</div>
+              <div className="when-arrow">→</div>
+              <div className="when-step">内装屋に<br />相談</div>
+              <div className="when-arrow">→</div>
+              <div className="when-step">見積もり</div>
+            </div>
+            <div className="when-result bad-result">
+              <p className="when-result-label">できることが限定</p>
+              <ul>
+                <li>設備が貧弱なら補う工事を乗せる</li>
+                <li>ダクトが通らない業態は諦め</li>
+                <li>家賃が重すぎても後戻り不可</li>
+              </ul>
+            </div>
+          </div>
 
-        <h3 className="section-heading">4-1. 電気容量</h3>
-        <p><strong>飲食店なら最低でも動力（三相200V）が引ける物件が必要</strong>です。</p>
-        <ul>
-          <li>エアコン、厨房機器、照明を同時に稼働させるには <strong>30A以上</strong></li>
-          <li>美容室はドライヤーの同時使用を考えると <strong>50A以上</strong></li>
-          <li>ラーメン店・焼肉店など電力使用量が大きい業態は <strong>100A以上</strong></li>
-        </ul>
-        <p><strong>確認方法</strong>：不動産屋に「電気の容量（契約アンペア）」を聞く。曖昧な答えなら管理会社に直接確認。増設には <strong>30〜100万円</strong>かかります。</p>
+          <div className="when-col good">
+            <p className="when-label">✅ 記憶荘の順番</p>
+            <div className="when-flow">
+              <div className="when-step">条件整理</div>
+              <div className="when-arrow">→</div>
+              <div className="when-step">物件を<br />一緒に見る</div>
+              <div className="when-arrow">→</div>
+              <div className="when-step">物件決定<br />＋設計</div>
+            </div>
+            <div className="when-result good-result">
+              <p className="when-result-label">選択肢が広い</p>
+              <ul>
+                <li>「そもそもこの物件でいいか」から判断</li>
+                <li>設備・家賃・立地を事業に合わせて選べる</li>
+                <li>やめる選択肢も残せる</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-        <h3 className="section-heading">4-2. 給排水</h3>
-        <p><strong>厨房・シャンプー台・トイレの位置</strong>は、既存の給排水管の位置で大きく制約されます。</p>
-        <ul>
-          <li>配管を延長すれば自由度は上がるが、費用も上がる（1m延長あたり数万円〜）</li>
-          <li>居抜き物件なら前テナントの配管がそのまま使えるかが大きなポイント</li>
-          <li>前テナントが異業種（例: 物販 → 飲食）の場合、配管を一から引く必要があり費用が膨らむ</li>
-        </ul>
-        <p><strong>確認方法</strong>：物件の平面図で排水管の位置を見る。図面にない場合は現地で床下点検口から配管を見せてもらう。</p>
+        <div className="callout">
+          <p className="callout-big">物件が決まった後の相談は<br /><strong>「できることの中で最大限やる」</strong>しかない。</p>
+          <p className="callout-big">物件を決める前の相談は<br /><strong className="gold">「そもそもこの物件でいいのか」</strong>から考えられる。</p>
+        </div>
 
-        <h3 className="section-heading">4-3. ダクト・換気</h3>
-        <p><strong>飲食店（特に焼肉・ラーメン・焼鳥など煙が出る業態）はダクト工事が必須</strong>です。</p>
-        <ul>
-          <li>ダクトを外部に通せるルートがあるかは、物件の構造で決まる</li>
-          <li>ビル内の共用ダクトに接続できるか、大家承諾を取れるか</li>
-          <li>後から「ダクトが通せません」と判明するケースは、実際かなり多い</li>
-        </ul>
-        <p><strong>確認方法</strong>：現地で天井裏・壁内のダクトルートを確認。必要なら大家・管理会社に「ダクト工事は可能か」を書面で確認。</p>
+        <figure className="guide-figure">
+          <img src="/images/consultation-salon-owner-sm.webp" alt="物件探し段階のご相談" loading="lazy" />
+          <figcaption>まだ何も決まっていない段階からが、一番話しやすいタイミング。</figcaption>
+        </figure>
+      </article>
 
-        <h3 className="section-heading">4-4. 天井高・搬入経路</h3>
-        <ul>
-          <li><strong>天井高が低いと圧迫感</strong>が出る。飲食店なら <strong>2.4m以上</strong>欲しい。カフェ・バーは2.6m以上が理想</li>
-          <li><strong>大型機器（冷蔵庫、業務用オーブン）が搬入できる経路があるか</strong>を確認</li>
-          <li>エレベーターに入らない、階段が狭い、という理由で機器が入らないケースもある</li>
-        </ul>
+      {/* ===== Ch.3 「未公開物件」の真実 ===== */}
+      <article className="page">
+        <div className="page-header"><span>Ch.3 HIDDEN PROPERTIES</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.3</span>「未公開物件」の真実と、依頼時の注意</h2>
+
+        <figure className="guide-figure">
+          <img src="/images/fudousan-keys-sm.webp" alt="物件の鍵" loading="lazy" />
+        </figure>
+
+        <div className="myth-box">
+          <p className="myth-q">「ネットに載ってない物件こそ<br />お宝」は本当？</p>
+          <p className="myth-a">→ 実はちょっと違います</p>
+        </div>
+
+        <h3 className="section-heading">非公開になる 3つの理由</h3>
+        <div className="pattern-grid">
+          <div className="pattern-card">
+            <div className="pattern-icon">🔐</div>
+            <p className="pattern-title">貸主の事情</p>
+            <p className="pattern-desc">相続・家族・経営上の都合で<br />表立って動かせない</p>
+          </div>
+          <div className="pattern-card">
+            <div className="pattern-icon">🤝</div>
+            <p className="pattern-title">仲介の囲い込み</p>
+            <p className="pattern-desc">先に高確度の買い手を当てたい／<br />両手仲介狙い</p>
+          </div>
+          <div className="pattern-card">
+            <div className="pattern-icon">💰</div>
+            <p className="pattern-title">強気の値付け</p>
+            <p className="pattern-desc">初期は高め → 数ヶ月後に<br />値下げして公開、も普通</p>
+          </div>
+        </div>
+
+        <p className="note-emphasize">つまり <strong>「非公開＝お得」とは限らない</strong>。同じ物件が数ヶ月後にネットに出ていることもあります。</p>
+
+        <h3 className="section-heading">なぜ不動産屋だけだと選びづらいのか</h3>
+        <p className="crew-intro">仲介の仕事は <strong>「決める」こと</strong>。物件が動けば報酬が出ます。だから「この物件、お店に向いてるか」の判断は主戦場ではありません。</p>
+
+        <div className="incentive-grid">
+          <div className="incentive-col bad">
+            <p className="incentive-label">❌ 不動産屋の立ち位置</p>
+            <ul className="meriha-list">
+              <li><strong>報酬源は大家さん側</strong><span>貸主から広告料（AD）が出るため、貸主寄りの動き方になりがち</span></li>
+              <li><strong>早く決まるほど得</strong><span>長く引き留めるインセンティブが弱い</span></li>
+              <li><strong>設備・工事費は専門外</strong><span>電気容量・ダクトの可否を判断できない</span></li>
+              <li><strong>業態適性は測れない</strong><span>「この業態でここは成立するか」は答えづらい</span></li>
+            </ul>
+          </div>
+          <div className="incentive-col good">
+            <p className="incentive-label">✅ 内装屋が並走する意味</p>
+            <ul className="meriha-list">
+              <li><strong>工事のしやすさで物件を見る</strong><span>設備が揃っていれば初期費用が数百万変わる</span></li>
+              <li><strong>業態との相性を即答できる</strong><span>動線・席数・客層まで考えて判断</span></li>
+              <li><strong>やめた方がいい、が言える</strong><span>物件が決まっても決まらなくてもフラット</span></li>
+              <li><strong>家賃＋工事費の合計で見る</strong><span>「家賃だけ安い物件」の罠を避けられる</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="section-heading">依頼する時の 5つの約束</h3>
+        <div className="warn-list">
+          <div className="warn-item">
+            <span className="warn-icon">⏱</span>
+            <div>
+              <p className="warn-head">返信が翌日になることあり</p>
+              <p className="warn-sub">少人数運営。急ぎの方はお電話で。</p>
+            </div>
+          </div>
+          <div className="warn-item">
+            <span className="warn-icon">🚫</span>
+            <div>
+              <p className="warn-head">合わない物件は紹介しない</p>
+              <p className="warn-sub">数合わせで物件を回すことはしません。</p>
+            </div>
+          </div>
+          <div className="warn-item">
+            <span className="warn-icon">📵</span>
+            <div>
+              <p className="warn-head">営業電話はしない</p>
+              <p className="warn-sub">LINEブロックも自由にどうぞ。</p>
+            </div>
+          </div>
+          <div className="warn-item">
+            <span className="warn-icon">⚠</span>
+            <div>
+              <p className="warn-head">「やめた方がいい」も言う</p>
+              <p className="warn-sub">お世辞より、本音の方が役に立つと考えています。</p>
+            </div>
+          </div>
+          <div className="warn-item">
+            <span className="warn-icon">🔨</span>
+            <div>
+              <p className="warn-head">月10件が上限</p>
+              <p className="warn-sub">大規模・多店舗同時展開の案件は苦手です。</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      {/* ===== Ch.4 物件選びの3基準 ===== */}
+      <article className="page">
+        <div className="page-header"><span>Ch.4 THREE CRITERIA</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.4</span>物件選びの 3つの基準</h2>
+
+        <p className="intro-lead">物件を見始める前に<strong>これだけは決めてください</strong>。決めずに内見すると、どの物件も「悪くない気がする」になります。</p>
+
+        <svg viewBox="0 0 360 280" className="triangle-svg">
+          <polygon points="180,30 50,230 310,230" fill="none" stroke="#C9A84C" strokeWidth="2" />
+          <circle cx="180" cy="30" r="50" fill="#FCF8F0" stroke="#C9A84C" strokeWidth="2" />
+          <text x="180" y="28" textAnchor="middle" fontSize="14" fontWeight="700" fill="#3A2816">①</text>
+          <text x="180" y="46" textAnchor="middle" fontSize="13" fontWeight="700" fill="#3A2816">客層</text>
+          <text x="180" y="62" textAnchor="middle" fontSize="10" fill="#5C3A21">誰に来てほしいか</text>
+
+          <circle cx="50" cy="230" r="50" fill="#FCF8F0" stroke="#C9A84C" strokeWidth="2" />
+          <text x="50" y="228" textAnchor="middle" fontSize="14" fontWeight="700" fill="#3A2816">②</text>
+          <text x="50" y="246" textAnchor="middle" fontSize="13" fontWeight="700" fill="#3A2816">形</text>
+          <text x="50" y="262" textAnchor="middle" fontSize="10" fill="#5C3A21">席数・単価</text>
+
+          <circle cx="310" cy="230" r="50" fill="#FCF8F0" stroke="#C9A84C" strokeWidth="2" />
+          <text x="310" y="228" textAnchor="middle" fontSize="14" fontWeight="700" fill="#3A2816">③</text>
+          <text x="310" y="246" textAnchor="middle" fontSize="13" fontWeight="700" fill="#3A2816">集客</text>
+          <text x="310" y="262" textAnchor="middle" fontSize="10" fill="#5C3A21">路面／SNS</text>
+        </svg>
+
+        <div className="criteria-detail">
+          <div className="criteria-item">
+            <span className="criteria-num">①</span>
+            <div>
+              <p className="criteria-name">客層は誰か</p>
+              <p className="criteria-text">年齢層・ライフスタイル・来店動機を明確に。<br /><span className="criteria-ex">例：20代女性が仕事帰りに一人で入れるカフェ → 駅近</span></p>
+            </div>
+          </div>
+          <div className="criteria-item">
+            <span className="criteria-num">②</span>
+            <div>
+              <p className="criteria-name">どんな形で迎えたいか</p>
+              <p className="criteria-text">席数・滞在時間・客単価。回転型か滞在型か。<br /><span className="criteria-ex">例：回転型ラーメン12坪と滞在型カフェ15坪は月商倍違う</span></p>
+            </div>
+          </div>
+          <div className="criteria-item">
+            <span className="criteria-num">③</span>
+            <div>
+              <p className="criteria-name">集客方法は何か</p>
+              <p className="criteria-text">路面依存か、SNS依存か、広告依存か。<br /><span className="criteria-ex">例：SNS集客型なら2階・路地裏でもOK、家賃を抑えられる</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div className="callout-small">
+          <p>この3つが決まると、必要な物件が半分見えてきます。<br />迷ったら、LINE で書き出すところからご一緒します。</p>
+        </div>
+
+        <div className="biz-row">
+          <figure className="biz-thumb"><img src="/images/diag-bar-sm.webp" alt="飲食・バー" loading="lazy" /><figcaption>飲食・バー</figcaption></figure>
+          <figure className="biz-thumb"><img src="/images/diag-beauty-sm.webp" alt="美容・サロン" loading="lazy" /><figcaption>美容・サロン</figcaption></figure>
+          <figure className="biz-thumb"><img src="/images/diag-retail-sm.webp" alt="物販・カフェ" loading="lazy" /><figcaption>物販・カフェ</figcaption></figure>
+        </div>
+      </article>
+
+      {/* ===== Ch.5 設備チェック ===== */}
+      <article className="page">
+        <div className="page-header"><span>Ch.5 SETUP CHECK</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.5</span>内装屋が見る 4つの設備</h2>
+
+        <p className="intro-lead">家賃と広さだけで判断すると<strong>契約後に「やりたい工事ができない」</strong>事態が起きます。契約前に4つだけ確認してください。</p>
+
+        <figure className="guide-figure">
+          <img src="/images/art-skeleton-kitchen-sm.webp" alt="スケルトン厨房" loading="lazy" />
+          <figcaption>電気・給排水・ダクトは、天井裏と床下に何が通っているかで決まる。</figcaption>
+        </figure>
+
+        <div className="setup-grid">
+          <div className="setup-card">
+            <div className="setup-icon">⚡</div>
+            <p className="setup-title">電気容量</p>
+            <p className="setup-big">30〜100A</p>
+            <p className="setup-sub">飲食30A / 美容50A / ラーメン100A</p>
+            <p className="setup-warn">増設 <strong>30〜100万円</strong></p>
+          </div>
+          <div className="setup-card">
+            <div className="setup-icon">💧</div>
+            <p className="setup-title">給排水</p>
+            <p className="setup-big">既存配管</p>
+            <p className="setup-sub">厨房・シャンプー台の位置はここで決まる</p>
+            <p className="setup-warn">延長 <strong>1m数万〜</strong></p>
+          </div>
+          <div className="setup-card">
+            <div className="setup-icon">🌬</div>
+            <p className="setup-title">ダクト・換気</p>
+            <p className="setup-big">通るか</p>
+            <p className="setup-sub">焼肉・ラーメン・焼鳥は必須</p>
+            <p className="setup-warn">通らないと <strong>業態変更</strong></p>
+          </div>
+          <div className="setup-card">
+            <div className="setup-icon">📏</div>
+            <p className="setup-title">天井高・搬入</p>
+            <p className="setup-big">2.4m↑</p>
+            <p className="setup-sub">飲食2.4m / カフェ2.6m推奨</p>
+            <p className="setup-warn">低いと <strong>客離れ</strong></p>
+          </div>
+        </div>
 
         <div className="checklist">
-          <p className="checklist-title">✅ 契約前チェックリスト（印刷用）</p>
+          <p className="checklist-title">✅ 契約前チェックリスト</p>
           <div className="checklist-grid">
             <div>
-              <p className="checklist-group">【電気・動力】</p>
-              <p>□ 契約アンペア数<br />□ 三相200V 引き込み可<br />□ 増設の可否と概算</p>
+              <p className="checklist-group">電気</p>
+              <p>□ 契約アンペア<br />□ 三相200V<br />□ 増設可否</p>
             </div>
             <div>
-              <p className="checklist-group">【給排水・ダクト】</p>
-              <p>□ 給水圧<br />□ 排水管位置<br />□ ダクト引回し<br />□ 大家承諾書</p>
+              <p className="checklist-group">給排水・ダクト</p>
+              <p>□ 給水圧<br />□ 排水管位置<br />□ ダクト引回し<br />□ 大家承諾</p>
             </div>
             <div>
-              <p className="checklist-group">【その他】</p>
-              <p>□ 天井高 2.4m以上<br />□ 搬入経路<br />□ 防火・避難<br />□ 看板設置可否<br />□ 原状回復範囲</p>
+              <p className="checklist-group">その他</p>
+              <p>□ 天井高<br />□ 搬入経路<br />□ 防火・避難<br />□ 看板可否<br />□ 原状回復範囲</p>
             </div>
           </div>
         </div>
-        <p>気になった物件があれば、内見時にこのリストを内装屋に持たせて同行してもらうのが一番確実です。記憶荘はLINEで物件情報を送っていただければ、チェックリストベースで正直な感想をお返しします。</p>
       </article>
 
-      {/* ===== Ch.5 ===== */}
+      {/* ===== Ch.6 居抜き vs スケルトン ===== */}
       <article className="page">
-        <div className="page-header"><span>Ch.5 居抜き vs スケルトン</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.5</span>居抜き vs スケルトン — 費用差と判断基準</h2>
+        <div className="page-header"><span>Ch.6 INUKI OR SKELETON</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.6</span>居抜き vs スケルトン</h2>
 
-        <h3 className="section-heading">5-1. 費用の違い（15坪・カフェを想定）</h3>
-        <table className="data-table">
-          <thead>
-            <tr><th>タイプ</th><th>初期費用</th><th>工期</th><th>特徴</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>居抜き（前店活用）</td><td>50〜200万</td><td>1〜2週間</td><td>早く安いが制約あり</td></tr>
-            <tr><td>居抜き（設備活用＋内装変更）</td><td>200〜500万</td><td>3〜4週間</td><td>バランス◎</td></tr>
-            <tr><td>スケルトン（ゼロから）</td><td>450〜800万</td><td>6〜10週間</td><td>自由度高、費用重い</td></tr>
-          </tbody>
-        </table>
-        <p className="note">坪単価換算: 居抜き最小 3〜13万円/坪、居抜き改装型 13〜33万円/坪、スケルトン 30〜55万円/坪</p>
+        <p className="intro-lead">15坪・カフェを想定した初期費用の目安</p>
 
-        <h3 className="section-heading">5-2. 居抜きのメリット・デメリット</h3>
-        <div className="pro-con">
-          <div className="pro-con-col pro">
-            <p className="pro-con-label">メリット</p>
-            <ul>
-              <li>初期費用を抑えられる（最小 50万円〜 実例あり）</li>
-              <li>工期が短い（1〜2週間で開業可能なケースも）</li>
-              <li>什器・厨房機器がそのまま使える</li>
-              <li>既存の給排水・電気を活用できる</li>
-            </ul>
+        <div className="biz-row">
+          <figure className="biz-thumb"><img src="/images/pricing-inuki-sm.webp" alt="居抜き" loading="lazy" /><figcaption>居抜き（前店を活用）</figcaption></figure>
+          <figure className="biz-thumb"><img src="/images/pricing-skeleton-sm.webp" alt="スケルトン" loading="lazy" /><figcaption>スケルトン（ゼロから）</figcaption></figure>
+        </div>
+
+        <div className="cost-bar">
+          <div className="cost-row">
+            <p className="cost-label">居抜き<br /><span>（前店活用）</span></p>
+            <div className="cost-bar-track">
+              <div className="cost-bar-fill inuki" style={{ width: "18%" }}>
+                <span>50〜200万円</span>
+              </div>
+            </div>
+            <p className="cost-time">1〜2週間</p>
           </div>
-          <div className="pro-con-col con">
-            <p className="pro-con-label">デメリット</p>
-            <ul>
-              <li>前店の業態・レイアウトに縛られる</li>
-              <li>設備が古ければ改修費が結果的にかさむ</li>
-              <li>内装の「独自性」を出しにくい</li>
-              <li>前店の評判を引きずる場合がある</li>
-            </ul>
+          <div className="cost-row">
+            <p className="cost-label">居抜き<br /><span>（改装型）</span></p>
+            <div className="cost-bar-track">
+              <div className="cost-bar-fill inuki-mid" style={{ width: "50%" }}>
+                <span>200〜500万円</span>
+              </div>
+            </div>
+            <p className="cost-time">3〜4週間</p>
+          </div>
+          <div className="cost-row">
+            <p className="cost-label">スケルトン<br /><span>（ゼロから）</span></p>
+            <div className="cost-bar-track">
+              <div className="cost-bar-fill sukelton" style={{ width: "85%" }}>
+                <span>450〜800万円</span>
+              </div>
+            </div>
+            <p className="cost-time">6〜10週間</p>
           </div>
         </div>
 
-        <h3 className="section-heading">5-3. スケルトンのメリット・デメリット</h3>
         <div className="pro-con">
           <div className="pro-con-col pro">
-            <p className="pro-con-label">メリット</p>
-            <ul>
-              <li>自由度が高い（間取り・動線・デザイン）</li>
-              <li>設備が新しく、長く使える</li>
-              <li>独自の世界観を作りやすい</li>
-              <li>中長期的な運営コストが読みやすい</li>
+            <p className="pro-con-label">居抜きが向いている</p>
+            <ul className="meriha-list">
+              <li><strong>初期費用を抑えたい</strong><span>500万以下で収めたい場合</span></li>
+              <li><strong>早く開業したい</strong><span>1〜4週間でオープンしたい</span></li>
+              <li><strong>前店と近い業態</strong><span>厨房・配管が流用できる</span></li>
+              <li><strong>立地に惚れた居抜き</strong><span>条件が揃った物件に出会った</span></li>
             </ul>
           </div>
-          <div className="pro-con-col con">
-            <p className="pro-con-label">デメリット</p>
-            <ul>
-              <li>初期費用が重い</li>
-              <li>工期が長い（=開業までの家賃・人件費負担）</li>
-              <li>設計・許認可の手間が大きい</li>
-              <li>スケルトン物件そのものが希少</li>
+          <div className="pro-con-col pro-alt">
+            <p className="pro-con-label">スケルトンが向いている</p>
+            <ul className="meriha-list">
+              <li><strong>独自の世界観を作りたい</strong><span>内装が集客の主力</span></li>
+              <li><strong>長期運営前提</strong><span>5〜10年で償却できる</span></li>
+              <li><strong>客単価高・回転率高</strong><span>高効率オペが必要な業態</span></li>
+              <li><strong>合う居抜きがない</strong><span>市場に物件が出てこない</span></li>
             </ul>
           </div>
         </div>
-
-        <h3 className="section-heading">5-4. 判断基準</h3>
-        <p><strong>居抜きが向いているのは</strong>：初期費用を抑えたい／早く開業したい／前店と近い業態／立地に惚れ込んだ居抜きに出会った</p>
-        <p><strong>スケルトンが向いているのは</strong>：独自の世界観を作りたい／長期（5〜10年）で運営する／初期投資を吸収できる業態（客単価高・回転率高）／居抜き市場に条件に合うものがない</p>
 
         <div className="sidebar">
-          <p className="sidebar-label">居抜きの落とし穴</p>
-          <p><strong>「居抜きだから安い」とは限りません</strong>。前テナントの設備が10年以上前、配管が詰まっている、電気容量が新業態に足りない、前店の「造作売買」に高値が付いている、など。見た目の家賃が安くても、実質コストで比較するとスケルトンより高くなるケースがあります。<strong>内装屋の視点で「この居抜きは本当にお得か」を見極める</strong>ことが重要です。</p>
+          <p className="sidebar-label">⚠ 居抜きの落とし穴</p>
+          <p><strong>「居抜き＝安い」とは限らない</strong>。前店の設備が10年以上前・配管詰まり・電気容量不足・造作売買が高値、などで実質スケルトンより高くなるケースあり。内装屋の目で「本当にお得か」を判断してください。</p>
         </div>
+
+        <figure className="guide-figure">
+          <img src="/images/art-skeleton-split-sm.webp" alt="居抜きとスケルトンの比較" loading="lazy" />
+        </figure>
       </article>
 
-      {/* ===== Ch.6 ===== */}
+      {/* ===== Ch.7 費用圧縮3技 ===== */}
       <article className="page">
-        <div className="page-header"><span>Ch.6 費用を圧縮する3つの技</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.6</span>費用を圧縮する 3つの技 — 居抜き活用・施主支給・DIY併走</h2>
+        <div className="page-header"><span>Ch.7 COST HACKS</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.7</span>費用を圧縮する 3つの技</h2>
 
-        <p>記憶荘が一番得意なのはここです。「品質を落とさずに予算を圧縮する」ための技術を開示します。</p>
+        <p className="intro-lead">記憶荘が一番得意な領域。<strong>品質を落とさず予算を圧縮</strong>する技術。</p>
 
-        <h3 className="section-heading">6-1. 技① 居抜き設備の徹底活用</h3>
-        <p>居抜きを選ぶなら、<strong>使える設備は全部使う</strong>のが基本です。</p>
-        <p className="subhead">よく活用する設備：</p>
-        <ul>
-          <li>厨房機器（冷蔵庫・コンロ・食洗機・シンク）</li>
-          <li>カウンター・テーブル・椅子（清掃・塗装で蘇る）</li>
-          <li>照明器具</li>
-          <li>レジカウンター</li>
-          <li>空調（年式確認必須）</li>
-        </ul>
+        <h3 className="section-heading">そもそも、なぜ他社は高いのか</h3>
+
+        <div className="margin-compare">
+          <div className="margin-col bad">
+            <p className="margin-label">❌ 一般的な内装会社</p>
+            <div className="margin-chain">
+              <div className="chain-item">元請け<br /><span>+15〜25%</span></div>
+              <div className="chain-arrow">→</div>
+              <div className="chain-item">下請け<br /><span>+10〜15%</span></div>
+              <div className="chain-arrow">→</div>
+              <div className="chain-item">孫請け<br /><span>（実際の工事）</span></div>
+            </div>
+            <p className="margin-note">工事が末端に届くまでに <strong>25〜40%の中間マージン</strong> が乗ります。</p>
+          </div>
+          <div className="margin-col good">
+            <p className="margin-label">✅ 記憶荘</p>
+            <div className="margin-direct">
+              <div className="chain-item-solo">オーナー</div>
+              <div className="chain-arrow">↔</div>
+              <div className="chain-item-solo">職人が直接</div>
+            </div>
+            <p className="margin-note">元請けマージンなし。<strong>職人の手間賃＋材料費</strong>がそのまま工事費です。</p>
+          </div>
+        </div>
+
+        <div className="why-cheap-grid">
+          <div className="why-cheap">
+            <p className="why-num">01</p>
+            <p className="why-head">中間マージンを抜く</p>
+            <p className="why-sub">元請け・下請け構造をなくし、職人が直接現場に入ります。</p>
+          </div>
+          <div className="why-cheap">
+            <p className="why-num">02</p>
+            <p className="why-head">物件段階から無駄を削る</p>
+            <p className="why-sub">設備の悪い物件を選ばない。それだけで数百万円の工事が消えます。</p>
+          </div>
+          <div className="why-cheap">
+            <p className="why-num">03</p>
+            <p className="why-head">オーナー併走を前提にする</p>
+            <p className="why-sub">下の3技（居抜き・施主支給・DIY併走）で、品質を落とさず圧縮します。</p>
+          </div>
+        </div>
+
+        <h3 className="section-heading">3つの圧縮技</h3>
+
+        <div className="hack-grid">
+          <div className="hack-card">
+            <img src="/images/art-skeleton-inuki-sm.webp" alt="居抜き活用" className="hack-img" loading="lazy" />
+            <div className="hack-num">01</div>
+            <p className="hack-title">居抜き設備の<br />徹底活用</p>
+            <p className="hack-desc">厨房機器・カウンター・照明・<br />空調を、清掃と塗装で蘇らせる</p>
+            <p className="hack-saving">削減例<br /><strong>50万円+</strong></p>
+          </div>
+          <div className="hack-card">
+            <img src="/images/art-cafe-kitchen-sm.webp" alt="施主支給" className="hack-img" loading="lazy" />
+            <div className="hack-num">02</div>
+            <p className="hack-title">施主支給</p>
+            <p className="hack-desc">オーナー直接購入→設置のみ<br />中古業務用機器で1/3〜1/2</p>
+            <p className="hack-saving">業者経由比<br /><strong>10〜30%減</strong></p>
+          </div>
+          <div className="hack-card">
+            <img src="/images/art-diy-painting-sm.webp" alt="DIY併走" className="hack-img" loading="lazy" />
+            <div className="hack-num">03</div>
+            <p className="hack-title">DIY併走</p>
+            <p className="hack-desc">塗装・装飾はオーナー併走<br />電気・水回りはプロ</p>
+            <p className="hack-saving">人件費<br /><strong>40万円+</strong></p>
+          </div>
+        </div>
+
+        <h3 className="section-heading">3技を組み合わせると</h3>
+
+        <svg viewBox="0 0 400 140" className="saving-svg">
+          <rect x="20" y="40" width="160" height="60" rx="6" fill="#3A2816" />
+          <text x="100" y="70" textAnchor="middle" fontSize="13" fill="#fff" fontWeight="700">通常</text>
+          <text x="100" y="92" textAnchor="middle" fontSize="20" fill="#fff" fontWeight="900">400万円</text>
+          <path d="M 180 70 L 220 70" stroke="#C9A84C" strokeWidth="3" markerEnd="url(#arr2)" />
+          <defs>
+            <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#C9A84C" />
+            </marker>
+          </defs>
+          <rect x="220" y="40" width="160" height="60" rx="6" fill="#C9A84C" />
+          <text x="300" y="70" textAnchor="middle" fontSize="13" fill="#fff" fontWeight="700">記憶荘</text>
+          <text x="300" y="92" textAnchor="middle" fontSize="20" fill="#fff" fontWeight="900">200〜250万円</text>
+        </svg>
+
         <div className="jirei">
-          <p className="jirei-title">実例：バスケットボール Cafe & Bar CROSSOVER</p>
+          <p className="jirei-title">実例：バスケットボール Cafe&Bar CROSSOVER</p>
+          <div className="ba-grid">
+            <figure className="ba-fig"><img src="/images/crossover-before-01-sm.webp" alt="Before" loading="lazy" /><figcaption>Before</figcaption></figure>
+            <figure className="ba-fig"><img src="/images/crossover-after-01-sm.webp" alt="After" loading="lazy" /><figcaption>After</figcaption></figure>
+          </div>
           <ul>
-            <li>閉店するバーからカウンター・ショーケース・冷蔵庫・テーブル・照明を引き取り</li>
-            <li>新品で揃えた場合と比較して <strong className="gold">50万円以上のコスト削減</strong></li>
-            <li>総工費 <strong className="gold">90万円・工期10日</strong>で開業</li>
+            <li>閉店するバーから什器引き取り → <strong className="gold">50万+ 削減</strong></li>
+            <li>総工費 <strong className="gold">90万円・10日</strong>でスケルトンから開業</li>
+            <li>仙台市若林区・15坪</li>
           </ul>
         </div>
 
-        <h3 className="section-heading">6-2. 技② 施主支給</h3>
-        <p><strong>施主支給</strong>とは、オーナーが直接購入した材料・什器を、内装屋が設置・施工する仕組みです。</p>
-        <p className="subhead">効果：</p>
-        <ul>
-          <li>中間マージンを削れる（業者経由なら10〜30%上乗せが一般的）</li>
-          <li>メルカリ・ヤフオク・Amazon・楽天で掘り出し物を拾える</li>
-          <li>中古の業務用機器が新品の 1/3〜1/2 で手に入る</li>
-        </ul>
-        <p className="subhead">施主支給しやすい品目：</p>
-        <ul>
-          <li>照明器具（ペンダントライト・ダクトレール）</li>
-          <li>タイル・壁紙</li>
-          <li>椅子・テーブル（特にヴィンテージ家具）</li>
-          <li>中古の業務用冷蔵庫・コンロ（動作確認必須）</li>
-          <li>装飾アイテム（什器・植栽）</li>
-        </ul>
+        <p className="note-emphasize">※ 3技は<strong>早い段階から内装屋が関わっている場合</strong>に最大効果。物件決定後では選択肢が限られます。</p>
+      </article>
+
+      {/* ===== Ch.8 契約交渉 ===== */}
+      <article className="page">
+        <div className="page-header"><span>Ch.8 NEGOTIATION</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.8</span>契約条件の交渉テクニック</h2>
+
+        <p className="intro-lead">家賃だけが交渉項目ではありません。<strong>表に出ている条件のうち、動かせる余地があるのは実は5つ</strong>あります。</p>
+
+        <div className="nego-grid">
+          <div className="nego-card">
+            <div className="nego-head"><span className="nego-num">01</span><p className="nego-name">家賃</p></div>
+            <p className="nego-text">長期空室の物件には<strong>相場差を埋める余地</strong>がある。</p>
+            <p className="nego-sub">データと根拠があれば動きます。</p>
+          </div>
+          <div className="nego-card">
+            <div className="nego-head"><span className="nego-num">02</span><p className="nego-name">フリーレント</p></div>
+            <p className="nego-text">工事期間中の<strong>家賃免除</strong>。業態と工期次第で引き出せる。</p>
+            <p className="nego-sub">開業までの資金繰りが一気に楽になる項目。</p>
+          </div>
+          <div className="nego-card">
+            <div className="nego-head"><span className="nego-num">03</span><p className="nego-name">敷金・保証金</p></div>
+            <p className="nego-text">金額・<strong>償却割合</strong>ともに厚めに設定されていることが多い。</p>
+            <p className="nego-sub">初期費用をどこに寄せるかの調整弁になる。</p>
+          </div>
+          <div className="nego-card">
+            <div className="nego-head"><span className="nego-num">04</span><p className="nego-name">原状回復範囲</p></div>
+            <p className="nego-text">一番揉める項目。<strong>契約前の特約</strong>で退去費が数百万単位で動く。</p>
+            <p className="nego-sub">入居時に握っておかないと、後から戻せない。</p>
+          </div>
+          <div className="nego-card nego-wide">
+            <div className="nego-head"><span className="nego-num">05</span><p className="nego-name">契約年数・更新料・中途解約</p></div>
+            <p className="nego-text">長く借りる意思と引き換えに、<strong>更新料・中途解約条項</strong>を動かせる。</p>
+            <p className="nego-sub">「安定して借りてくれる」は大家さんにとって大きな価値。</p>
+          </div>
+        </div>
+
+        <figure className="guide-figure">
+          <img src="/images/kai-ken-casual-talk-sm.webp" alt="交渉の打ち合わせ" loading="lazy" />
+          <figcaption>交渉の入り方・タイミング・言い回しは、物件と大家さんによって全部違います。</figcaption>
+        </figure>
+
         <div className="sidebar">
-          <p className="sidebar-label">注意点</p>
-          <p>施主支給品の不具合は施主責任になる契約が多い。業務用機器はメーカー保証の有無を確認。施工日までに現場に届けておく必要がある（工期ズレのリスク）。</p>
+          <p className="sidebar-label">⚠ 交渉の鉄則</p>
+          <p><strong>「値段を下げろ」ではなく「条件を整えたい」</strong>と伝える。無理を押すより、<strong>長く借りる・丁寧に使う</strong>という信頼を担保にする方が通ります。具体的な切り出し方・金額感は、物件を見ながら一緒に組み立てます。</p>
         </div>
-
-        <h3 className="section-heading">6-3. 技③ DIY併走</h3>
-        <p>オーナーがプロと一緒に作業する<strong>DIY併走型</strong>は、費用を削るうえに愛着も生まれます。</p>
-        <div className="pro-con">
-          <div className="pro-con-col pro">
-            <p className="pro-con-label">DIYに向いている</p>
-            <ul>
-              <li>塗装（下地処理はプロ、塗りは併走）</li>
-              <li>壁紙貼り（狭面積・アクセント壁）</li>
-              <li>簡単な棚・ディスプレイ造作</li>
-              <li>装飾・小物配置</li>
-              <li>掃除・養生剥がし</li>
-            </ul>
-          </div>
-          <div className="pro-con-col con">
-            <p className="pro-con-label">プロに任せるべき</p>
-            <ul>
-              <li>電気工事（資格必須）</li>
-              <li>給排水工事（水漏れリスク）</li>
-              <li>ガス工事（資格必須）</li>
-              <li>防水工事（浸水リスク）</li>
-              <li>耐震・構造に関わる大工仕事</li>
-            </ul>
-          </div>
-        </div>
-        <div className="jirei">
-          <p className="jirei-title">実例：15坪カフェで人件費40万円カット</p>
-          <p>塗装・壁紙貼り・棚取付をオーナー併走にした結果、<strong className="gold">人件費で約40万円カット</strong>できたケースあり。</p>
-        </div>
-
-        <h3 className="section-heading">6-4. 3つの技をセットで使う</h3>
-        <div className="calc-box">
-          <p>通常 <strong>400万円</strong>かかる15坪カフェを → <strong className="gold">200〜250万円</strong> で開業</p>
-          <p className="calc-note">業態・物件次第ですが、実例ベースの圧縮幅です</p>
-        </div>
-        <p>ただし、これは<strong>早い段階から内装屋が関わっている場合</strong>に限ります。物件決定後に「安くしたい」と言われても、できることが限られます。だから記憶荘は<strong>物件探しから関わる</strong>ことにこだわっています。</p>
       </article>
 
-      {/* ===== Ch.7 ===== */}
+      {/* ===== Ch.9 AIパース ===== */}
       <article className="page">
-        <div className="page-header"><span>Ch.7 「未公開物件」の真実</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.7</span>「未公開物件」の真実と、依頼する時の注意</h2>
+        <div className="page-header"><span>Ch.9 AI PREVIEW</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.9</span>AIパースで事前プレビュー</h2>
 
-        <p>ここは Ch.1 の次に大事な章です。物件探しで誰もが気になる「非公開物件」について、内装屋から見た実態をお伝えします。</p>
+        <p className="intro-lead">契約前に、<strong>完成形をビジュアルで確認</strong>できます。「こんなはずじゃなかった」を減らす仕組み。</p>
 
-        <h3 className="section-heading">7-1. 「未公開物件 = お宝」は本当か</h3>
-        <p>「ネットに載っていない物件こそ良い物件」と思っていませんか。</p>
-        <p>気持ちはよくわかります。「非公開」「未公開」と聞くと、選ばれた人だけが手に入れられるお宝物件のような響きがあります。</p>
-        <p>でも、内装工事を通じてたくさんの出店・閉店を見てきた立場から言うと、<strong>実態はちょっと違います</strong>。</p>
+        <figure className="guide-figure">
+          <img src="/images/ai-pers-tablet-sm.webp" alt="AIパースでのプレビュー" loading="lazy" />
+          <figcaption>物件写真とヒアリングから、数日で完成イメージ案を出します。</figcaption>
+        </figure>
 
-        <h3 className="section-heading">7-2. 未公開物件が生まれる理由</h3>
-        <div className="structure">
-          <div className="structure-item">
-            <p className="structure-title">パターン1: 売主・貸主の事情</p>
-            <p className="structure-body">家族関係・相続の整理で表立って動かしたくない／経営上の理由で目立たず打診したい／過去のトラブル履歴があり一般公開を避けている</p>
+        <div className="parse-flow">
+          <div className="parse-step">
+            <div className="parse-icon">📷</div>
+            <p className="parse-stepnum">STEP 1</p>
+            <p className="parse-stephead">物件写真</p>
+            <p className="parse-stepdesc">内見時の写真を<br />共有してください</p>
           </div>
-          <div className="structure-item">
-            <p className="structure-title">パターン2: 仲介会社の囲い込み</p>
-            <p className="structure-body">高確度の買い手（借り手）候補を先に当てたい／契約までの流れを管理したい／両手仲介（売主と買主両方から手数料）を狙いたい</p>
+          <div className="parse-arrow">→</div>
+          <div className="parse-step">
+            <div className="parse-icon">💬</div>
+            <p className="parse-stepnum">STEP 2</p>
+            <p className="parse-stephead">ヒアリング</p>
+            <p className="parse-stepdesc">業態・世界観・<br />好きな店の参考画像</p>
           </div>
-          <div className="structure-item">
-            <p className="structure-title">パターン3: 初期段階の「値付け探り」</p>
-            <p className="structure-body"><strong>初期段階はむしろ強気の値付け</strong>のことが多い。「この値段で出したらどうか」を試している。売れ残ると値下げして一般公開される。<strong>同じ物件が数ヶ月後にネットに出ていることがザラ</strong>にあります。</p>
+          <div className="parse-arrow">→</div>
+          <div className="parse-step">
+            <div className="parse-icon">🎨</div>
+            <p className="parse-stepnum">STEP 3</p>
+            <p className="parse-stephead">AIパース生成</p>
+            <p className="parse-stepdesc">数日で<br />完成イメージ案</p>
           </div>
-        </div>
-
-        <h3 className="section-heading">7-3. 「お得な未公開物件」がゼロではないが</h3>
-        <p>もちろん、本当に条件の良い未公開物件もあります。</p>
-        <ul>
-          <li>仲介会社との長年の信頼関係の中で回ってくるもの</li>
-          <li>内装屋として現場に居続けた結果、閉店情報を先に掴めるもの</li>
-          <li>大家さんが「この人に貸したい」と指名で動かすもの</li>
-        </ul>
-        <p>こういう物件は、<strong>人間関係の上に成り立っている</strong>ので、情報収集目的だけの方にはお渡しできません。売主・大家さんからの信頼を壊してしまうからです。</p>
-
-        <h3 className="section-heading">7-4. 依頼する時の注意点（NG / 推奨）</h3>
-        <div className="pro-con">
-          <div className="pro-con-col con">
-            <p className="pro-con-label">❌ NG行動</p>
-            <ul>
-              <li>「面白い物件あったら全部見せて」と情報収集のみで依頼</li>
-              <li>条件が定まらないまま、手当たり次第に内見申込</li>
-              <li>他社にも並行して同じ物件を問い合わせる</li>
-              <li>見せてもらった情報をSNS・ブログに流す</li>
-            </ul>
-          </div>
-          <div className="pro-con-col pro">
-            <p className="pro-con-label">✅ 推奨行動</p>
-            <ul>
-              <li>事業計画の骨子を先に固める（Ch.3 の3基準）</li>
-              <li>予算・エリア・坪数・業種を明確に伝える</li>
-              <li>内見は本気で検討する物件だけ</li>
-              <li>断る時は「今回は見送ります」と早めに伝える</li>
-            </ul>
+          <div className="parse-arrow">→</div>
+          <div className="parse-step">
+            <div className="parse-icon">✅</div>
+            <p className="parse-stepnum">STEP 4</p>
+            <p className="parse-stephead">判断材料に</p>
+            <p className="parse-stepdesc">契約・融資・<br />家族相談の資料</p>
           </div>
         </div>
 
-        <h3 className="section-heading">7-5. 記憶荘に依頼する時、注意してほしいこと</h3>
-        <p>率直に、記憶荘に依頼する時の「気をつけてほしい点」も書いておきます。</p>
-        <div className="benefit-list">
-          <div className="benefit-item"><span className="benefit-icon">⚠</span><p><strong>返信が翌日になることがあります</strong>：少人数で動いているので、夜間・休日の即レスはできません</p></div>
-          <div className="benefit-item"><span className="benefit-icon">⚠</span><p><strong>合わない物件は紹介できません</strong>：条件に合わない物件を数合わせで紹介することはしません。「今はありません」と正直に答えます</p></div>
-          <div className="benefit-item"><span className="benefit-icon">⚠</span><p><strong>営業はしません</strong>：こちらから追いかけて連絡することはしません。LINE ブロックも自由です</p></div>
-          <div className="benefit-item"><span className="benefit-icon">⚠</span><p><strong>「この物件はやめた方がいい」と言います</strong>：内装屋の視点で厳しい物件は、本音で伝えます</p></div>
-          <div className="benefit-item"><span className="benefit-icon">⚠</span><p><strong>大規模案件は得意ではありません</strong>：月10件程度が現実的な処理量。大型プロジェクトは別会社を紹介します</p></div>
+        <h3 className="section-heading">何に使えるか</h3>
+        <div className="parse-use-grid">
+          <div className="parse-use">
+            <p className="parse-use-title">① 物件の判断に使う</p>
+            <p className="parse-use-head">「この物件でイメージ通りになるか」を契約前に可視化</p>
+            <p className="parse-use-sub">家族・パートナーへの説明材料としても有効です。</p>
+          </div>
+          <div className="parse-use">
+            <p className="parse-use-title">② 融資・補助金の資料に使う</p>
+            <p className="parse-use-head">事業計画書に完成イメージを添付</p>
+            <p className="parse-use-sub">銀行・日本政策金融公庫・補助金申請での説得力が変わります。</p>
+          </div>
+          <div className="parse-use">
+            <p className="parse-use-title">③ 施工方向性のすり合わせに使う</p>
+            <p className="parse-use-head">言葉では伝わらない「雰囲気」を共有</p>
+            <p className="parse-use-sub">施工後の「思ってたのと違う」を減らすための事前合意。</p>
+          </div>
         </div>
-        <p>この条件で大丈夫であれば、ぜひご相談ください。</p>
+
+        <div className="callout-small">
+          <p><strong>注意：AIパースはあくまでイメージ</strong>。実際の施工は構造・予算・素材で差が出ます。最終的な設計図面・見積もりは別途作成します。<br />※ 相談の流れでお出しする簡易版は<strong className="gold">無料</strong>。複数案・高精細版は別途ご案内。</p>
+        </div>
       </article>
 
-      {/* ===== Ch.8 ===== */}
+      {/* ===== Ch.10 失敗10選 ===== */}
       <article className="page">
-        <div className="page-header"><span>Ch.8 失敗事例10選</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.8</span>失敗事例10選 — 内装屋が見てきた落とし穴</h2>
+        <div className="page-header"><span>Ch.10 MISTAKES</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.10</span>失敗事例 10選</h2>
+        <p className="intro-lead">契約後に「あっ」となる典型パターン。先に知れば避けられます。</p>
 
-        <p>契約後に「あっ」となる典型的な失敗事例を集めました。先に知っておけば避けられます。</p>
+        <figure className="guide-figure">
+          <img src="/images/art-failure-hero-sm.webp" alt="失敗事例" loading="lazy" />
+        </figure>
 
         {[
-          { n: 1, title: "電気容量が足りず、厨房フル稼働できなかった", sym: "30Aの物件でブレーカーが何度も落ちる", sol: "契約前に容量確認していれば、別物件 or 増設見積もりで判断できた" },
-          { n: 2, title: "ダクトが通らず、希望業態を諦めた", sym: "ラーメン店予定だったがダクトルートが取れない", sol: "内装屋に先に見てもらっていれば、別物件を選べた" },
-          { n: 3, title: "家賃が売上に対して重すぎた", sym: "月商見込み300万 → 実際150万、家賃35万で2年で撤退", sol: "売上目標の70%で固定費が回る家賃を選ぶ" },
-          { n: 4, title: "居抜きの造作売買が高すぎた", sym: "設備付き500万即決 → 実際は古く結局1000万オーバー", sol: "内装屋に設備状態を見てもらっていれば適正価格で交渉できた" },
-          { n: 5, title: "スケルトン見積もりが「一式」だった", sym: "「内装工事一式600万」で契約 → 追加で最終900万", sol: "項目別見積もりを出す業者を選ぶ" },
-          { n: 6, title: "保健所・消防の要件を見落とした", sym: "厨房レイアウトが許可下りずやり直し", sol: "設計段階で行政要件を織り込む" },
-          { n: 7, title: "天井高が足りず、圧迫感のある空間に", sym: "2.2mの物件で客足が伸びなかった", sol: "最低2.4m、できれば2.6m以上" },
-          { n: 8, title: "搬入経路を確認せず、冷蔵庫が入らなかった", sym: "業務用冷蔵庫が階段に入らず解体搬入", sol: "発注前に搬入経路を計測" },
-          { n: 9, title: "退去時の原状回復範囲を確認していなかった", sym: "スケルトン返却で撤退時400万円", sol: "契約時に「どこまで戻すのか」を書面で確認" },
-          { n: 10, title: "内装屋に頼むのが遅すぎた", sym: "物件契約済みで相談→ダクト制約で希望不可", sol: "物件決定前に相談していれば選択肢があった" },
+          { n: 1, t: "電気容量が足りず厨房フル稼働できず", s: "30A物件でブレーカー落ちる" },
+          { n: 2, t: "ダクトが通らず業態を諦める", s: "ラーメン店予定→カフェに変更" },
+          { n: 3, t: "家賃が重すぎて2年で撤退", s: "月商150万に対し家賃35万" },
+          { n: 4, t: "居抜き造作売買が高すぎ", s: "500万設備→実質1000万オーバー" },
+          { n: 5, t: "「一式○万」見積で追加請求続出", s: "600万契約→最終900万" },
+          { n: 6, t: "保健所の要件を見落とし", s: "厨房レイアウトやり直し" },
+          { n: 7, t: "天井高2.2mで圧迫感", s: "客足伸びずリピート少" },
+          { n: 8, t: "搬入経路未確認で冷蔵庫入らず", s: "解体搬入で追加費用" },
+          { n: 9, t: "原状回復範囲を未確認", s: "撤退時400万円の請求" },
+          { n: 10, t: "内装屋への相談が遅すぎた", s: "物件契約済みで選択肢なし" },
         ].map((f) => (
           <div key={f.n} className="fail">
-            <p className="fail-title"><span className="fail-num">{f.n}</span>{f.title}</p>
-            <p className="fail-line"><span className="fail-label">症状：</span>{f.sym}</p>
-            <p className="fail-line"><span className="fail-label">回避：</span>{f.sol}</p>
+            <p className="fail-title"><span className="fail-num">{f.n}</span>{f.t}</p>
+            <p className="fail-line">{f.s}</p>
           </div>
         ))}
       </article>
 
-      {/* ===== Ch.9 ===== */}
+      {/* ===== Ch.11 まとめ ===== */}
       <article className="page">
-        <div className="page-header"><span>Ch.9 まとめ</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.9</span>まとめ — 最初の1歩の踏み出し方</h2>
-
-        <p>ここまで読んでいただき、ありがとうございます。最後に、今日からできることを3つだけお伝えします。</p>
+        <div className="page-header"><span>Ch.11 NEXT STEPS</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.11</span>最初の 1歩</h2>
 
         <div className="step">
-          <p className="step-num">Step 1: 自分の事業の「3基準」を書き出す</p>
-          <p>客層（誰に来てほしいか）／形（席数・滞在・単価）／集客（路面・SNS・口コミ）。これが物件選びの全ての出発点。</p>
+          <p className="step-num">STEP 1</p>
+          <p className="step-head">3基準を書き出す</p>
+          <p className="step-body">客層・形・集客。これが物件選びの全ての出発点。</p>
         </div>
         <div className="step">
-          <p className="step-num">Step 2: 家賃上限を売上の 7〜10% で引く</p>
-          <p>見込み月商の70%で固定費が回る家賃を上限に決める。これを超える物件は、どれだけ立地が良くても候補から外す。感情で契約すると後で自分を苦しめる。</p>
+          <p className="step-num">STEP 2</p>
+          <p className="step-head">家賃上限を決める</p>
+          <p className="step-body">見込み月商の<strong>70%で固定費が回る</strong>家賃を上限に。これを超える物件は候補から外す。</p>
         </div>
         <div className="step">
-          <p className="step-num">Step 3: 物件を見る前に、内装屋に相談する</p>
-          <p>物件を見てから相談するのと、見る前に相談するのでは、選択肢の幅が全然違う。「まだ何も決まっていない」段階でOK。</p>
+          <p className="step-num">STEP 3</p>
+          <p className="step-head">物件を見る前に相談する</p>
+          <p className="step-body">見る前と後では選択肢が全然違います。<strong>「まだ何も決まってない」でOK</strong>。</p>
         </div>
 
-        <h3 className="section-heading">この7つをメモしてください</h3>
-        <ol className="ordered big">
-          <li>物件選びは内装とセットで考える</li>
-          <li>家賃は売上の10%以内（安全線は7%）</li>
-          <li>電気・給排水・ダクト・天井高を契約前に必ず確認</li>
-          <li>居抜きは「本当に安いか」を内装屋の目で判断</li>
-          <li>施主支給・DIY併走で費用圧縮できる</li>
-          <li>「未公開＝お得」とは限らない。条件が合えば紹介される</li>
-          <li>原状回復の範囲を契約時に書面で確認</li>
-        </ol>
+        <figure className="guide-figure">
+          <img src="/images/finalcta-step01-line-sm.webp" alt="LINEで相談" loading="lazy" />
+        </figure>
 
         <div className="final-cta">
           <p className="final-title">ご相談はLINEから</p>
-          <p>個別の相談・物件リクエスト・内見同行のお申込みは、記憶荘 LINE公式アカウントまで。</p>
-          <p>すべて<strong className="gold">無料</strong>です。営業はしません。ブロックも自由です。</p>
+          <p>個別の相談・物件リクエスト・内見同行、すべて<strong className="gold">無料</strong>。営業はしません。</p>
           <p className="final-url">{LINE_URL_HP}</p>
         </div>
       </article>
 
       {/* ===== 付録A ===== */}
       <article className="page">
-        <div className="page-header"><span>付録A エリア別 平均家賃データ</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">付録A</span>エリア別 平均家賃データ（仙台・宮城）</h2>
+        <div className="page-header"><span>付録A エリア別家賃</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">付録A</span>エリア別 平均家賃（参考）</h2>
         <p className="note">1階路面店、坪単価（月額）。2026年4月時点の目安。</p>
         <table className="data-table">
           <thead><tr><th>エリア</th><th>坪単価</th><th>備考</th></tr></thead>
           <tbody>
-            <tr><td>国分町（中心部）</td><td>1.2〜2.0万円</td><td>飲食・夜系集積</td></tr>
-            <tr><td>仙台駅西口</td><td>1.5〜2.5万円</td><td>駅近最強立地</td></tr>
-            <tr><td>仙台駅東口</td><td>1.2〜1.8万円</td><td>再開発進行</td></tr>
-            <tr><td>青葉通</td><td>1.3〜2.0万円</td><td>オフィス街</td></tr>
-            <tr><td>一番町（アーケード）</td><td>1.5〜2.8万円</td><td>物販・カフェ</td></tr>
-            <tr><td>定禅寺通</td><td>1.0〜1.6万円</td><td>カフェ・美容</td></tr>
-            <tr><td>勾当台公園周辺</td><td>0.9〜1.4万円</td><td>昼夜バランス</td></tr>
-            <tr><td>北四番丁・東照宮</td><td>0.7〜1.1万円</td><td>住宅地近接</td></tr>
-            <tr><td>泉中央</td><td>0.7〜1.2万円</td><td>ファミリー需要</td></tr>
-            <tr><td>長町（副都心）</td><td>0.7〜1.1万円</td><td>再開発・注目</td></tr>
-            <tr><td>八木山・愛子</td><td>0.5〜0.9万円</td><td>郊外住宅地</td></tr>
-            <tr><td>宮城野区（新田・荒井）</td><td>0.6〜1.0万円</td><td>東西線沿線</td></tr>
-            <tr><td>若林区（卸町・若林）</td><td>0.5〜0.9万円</td><td>中心近・コスパ良</td></tr>
-            <tr><td>名取市</td><td>0.5〜0.9万円</td><td>イオン系・ロード</td></tr>
-            <tr><td>多賀城市</td><td>0.4〜0.8万円</td><td>仙台通勤圏</td></tr>
-            <tr><td>塩釜市</td><td>0.4〜0.7万円</td><td>港町・観光系</td></tr>
-            <tr><td>石巻市</td><td>0.4〜0.8万円</td><td>復興商業地</td></tr>
+            <tr><td>国分町</td><td>1.2〜2.0万</td><td>飲食・夜系</td></tr>
+            <tr><td>仙台駅西口</td><td>1.5〜2.5万</td><td>駅近最強</td></tr>
+            <tr><td>仙台駅東口</td><td>1.2〜1.8万</td><td>再開発進行</td></tr>
+            <tr><td>一番町</td><td>1.5〜2.8万</td><td>物販・カフェ</td></tr>
+            <tr><td>定禅寺通</td><td>1.0〜1.6万</td><td>カフェ・美容</td></tr>
+            <tr><td>勾当台公園周辺</td><td>0.9〜1.4万</td><td>バランス型</td></tr>
+            <tr><td>泉中央</td><td>0.7〜1.2万</td><td>ファミリー</td></tr>
+            <tr><td>長町（副都心）</td><td>0.7〜1.1万</td><td>再開発</td></tr>
+            <tr><td>若林区</td><td>0.5〜0.9万</td><td>コスパ良</td></tr>
+            <tr><td>宮城野区（新田・荒井）</td><td>0.6〜1.0万</td><td>東西線</td></tr>
+            <tr><td>名取市・多賀城市</td><td>0.4〜0.9万</td><td>仙台圏</td></tr>
           </tbody>
         </table>
-        <p className="note">※ ビル階数・築年・入居付きサービス・共益費の有無で変動します。敷金・礼金・保証金は別途。飲食は保証金が家賃12ヶ月分以上の物件もあります。</p>
+        <p className="note">※ 敷金・礼金・保証金・共益費別途。飲食は保証金が家賃12ヶ月以上の物件も。</p>
       </article>
 
       {/* ===== 付録B ===== */}
       <article className="page">
         <div className="page-header"><span>付録B 用語集</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">付録B</span>店舗物件・内装の用語集</h2>
+        <h2 className="chapter-heading"><span className="chapter-no">付録B</span>用語集</h2>
         <dl className="yougoshu">
-          <dt>居抜き（いぬき）</dt><dd>前テナントの内装・設備を残したまま、次のテナントに引き渡す物件。造作譲渡料が発生する場合あり。</dd>
-          <dt>スケルトン</dt><dd>内装・設備が何もない、コンクリート躯体の状態。自由度が高いが工事費も高い。</dd>
-          <dt>造作（ぞうさく）</dt><dd>内装で作り付けの家具・カウンター・棚など。物件から取り外せない固定物。</dd>
-          <dt>造作譲渡（ぞうさくじょうと）</dt><dd>前テナントの造作・設備を買い取ること。50万円〜数百万円の幅あり。</dd>
-          <dt>原状回復（げんじょうかいふく）</dt><dd>退去時に物件を契約当初の状態に戻すこと。スケルトン返却・居抜きOKなどバリエーションあり。</dd>
-          <dt>坪単価（つぼたんか）</dt><dd>1坪（約3.3㎡）あたりの内装工事費。総工費 ÷ 坪数で算出。</dd>
-          <dt>動力（どうりょく）</dt><dd>三相200Vの電源。業務用エアコン・大型厨房機器に必要。</dd>
-          <dt>アンペア数（A）</dt><dd>電気容量。30A・50A・100Aなど。業態に応じて必要量が変わる。</dd>
-          <dt>防火区画（ぼうかくかく）</dt><dd>火災時の延焼を防ぐための建築上の区画。用途変更で追加工事が必要な場合あり。</dd>
-          <dt>排煙設備（はいえんせつび）</dt><dd>火災時に煙を排出する設備。店舗面積が一定規模を超えると設置義務。</dd>
-          <dt>施主支給（せしゅしきゅう）</dt><dd>オーナーが直接購入した材料・什器を、内装業者が設置すること。中間マージンをカットできる。</dd>
-          <dt>DIY併走</dt><dd>オーナーと内装業者が一緒に作業すること。人件費を削減できる。記憶荘の得意技。</dd>
-          <dt>仕上げ表（しあげひょう）</dt><dd>各部屋の床・壁・天井の素材を一覧化した設計書類。</dd>
-          <dt>平面図（へいめんず）</dt><dd>物件を上から見た図。設備・家具の配置を示す。</dd>
-          <dt>立面図（りつめんず）</dt><dd>物件の壁・窓を横から見た図。高さ方向の情報。</dd>
-          <dt>パース</dt><dd>内装の完成イメージを描いた3D的な画像。AI生成でコストが下がりつつある。</dd>
+          <dt>居抜き（いぬき）</dt><dd>前テナントの内装・設備を残したまま次に引き渡す物件。</dd>
+          <dt>スケルトン</dt><dd>内装・設備が何もない躯体状態。自由度高・工事費高。</dd>
+          <dt>造作譲渡</dt><dd>前テナントの造作・設備を買い取ること。50万〜数百万円。</dd>
+          <dt>原状回復</dt><dd>退去時に物件を契約当初の状態に戻すこと。</dd>
+          <dt>坪単価</dt><dd>1坪（約3.3㎡）あたりの内装工事費。</dd>
+          <dt>動力</dt><dd>三相200Vの電源。業務用機器に必要。</dd>
+          <dt>施主支給</dt><dd>オーナーが直接購入した材料・什器を業者が設置すること。</dd>
+          <dt>DIY併走</dt><dd>オーナーと業者が一緒に作業。人件費を削減できる。</dd>
+          <dt>排煙設備</dt><dd>火災時に煙を排出する設備。規模により設置義務。</dd>
+          <dt>防火区画</dt><dd>火災延焼を防ぐ建築上の区画。</dd>
         </dl>
       </article>
 
-      {/* ===== 付録C ===== */}
+      {/* ===== 付録C 原状回復 ===== */}
       <article className="page">
-        <div className="page-header"><span>付録C 退去時の原状回復</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">付録C</span>退去時の原状回復 — 契約前にここだけ見ておく</h2>
+        <div className="page-header"><span>付録C 原状回復</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">付録C</span>退去時の原状回復</h2>
+        <p>契約時に必ず確認する3点。</p>
 
-        <p>退去時のトラブルを避けるため、<strong>契約時に必ず確認</strong>する3点。</p>
-
-        <h3 className="section-heading">C-1. 「原状回復」の範囲</h3>
-        <p>契約書の「原状回復」の定義を確認：</p>
+        <h3 className="section-heading">1. 「原状回復」の範囲</h3>
         <ul>
-          <li><strong>スケルトン返却</strong>: 全部撤去して躯体状態に戻す（費用大）</li>
-          <li><strong>居抜きOK（造作残置可）</strong>: 次のテナントに造作を残せる（費用小）</li>
-          <li><strong>部分原状回復</strong>: 指定箇所のみ戻す</li>
+          <li><strong>スケルトン返却</strong>：全撤去（費用大）</li>
+          <li><strong>居抜きOK</strong>：造作残置可（費用小）</li>
+          <li><strong>部分原状回復</strong>：指定箇所のみ</li>
         </ul>
         <div className="sidebar">
-          <p className="sidebar-label">最悪のパターン</p>
-          <p>契約時に「原状回復」としか書かれていない → 退去時に「スケルトン返却」を要求される → <strong>数百万円の撤去費用</strong>。契約前に<strong>「退去時にどこまで戻すのか」を書面で明確化</strong>。できれば「居抜き譲渡可」の条項を入れてもらう。</p>
+          <p className="sidebar-label">⚠ 最悪パターン</p>
+          <p>契約書に「原状回復」としか書かれていない → 退去時にスケルトン要求 → <strong>数百万円</strong>の撤去費用。契約前に書面で範囲を明確化。</p>
         </div>
 
-        <h3 className="section-heading">C-2. 通常損耗・経年劣化の扱い</h3>
+        <h3 className="section-heading">2. 敷金・保証金の返還</h3>
         <ul>
-          <li>壁紙の日焼け、床の使用感 → これらは<strong>通常損耗</strong>として借主負担ではないのが原則</li>
-          <li>ただし<strong>「特約」で借主負担</strong>にしている契約も多い</li>
-          <li>特約の有無を契約書で確認</li>
+          <li>敷金：原状回復費に充当、残額返還</li>
+          <li>保証金：<strong>償却</strong>（返還されない部分）あり多数</li>
+          <li>例：保証金300万・償却150万 → 戻るのは最大150万</li>
         </ul>
 
-        <h3 className="section-heading">C-3. 敷金・保証金の返還条件</h3>
-        <ul>
-          <li>敷金は原状回復費用に充当 → 残額返還</li>
-          <li>保証金は契約上の特約で<strong>償却</strong>（返還されない部分）がある場合が多い</li>
-          <li>「保証金 300万円・償却 150万円」= 退去時に戻るのは最大 150万円</li>
-        </ul>
-
-        <h3 className="section-heading">C-4. 退去時に揉めないための予防策</h3>
+        <h3 className="section-heading">3. 予防策</h3>
         <ol className="ordered">
-          <li><strong>契約時に撮影</strong>: 入居時の状態を写真・動画で記録</li>
-          <li><strong>退去条項のコピー保管</strong>: 契約書の該当箇所を別途保存</li>
-          <li><strong>途中の工事履歴を残す</strong>: 大家承諾を取った工事は書面で残す</li>
-          <li><strong>退去 6ヶ月前から準備</strong>: 原状回復の見積もり、次のテナント候補の打診</li>
+          <li>入居時の状態を写真・動画で記録</li>
+          <li>契約書の退去条項を別途保管</li>
+          <li>工事履歴は書面で残す</li>
+          <li>退去6ヶ月前から準備開始</li>
         </ol>
       </article>
 
       {/* ===== 付録D FAQ ===== */}
       <article className="page">
-        <div className="page-header"><span>付録D よくある質問</span></div>
+        <div className="page-header"><span>付録D FAQ</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">付録D</span>よくある質問</h2>
         <dl className="yougoshu">
           {guideFaqs.map((faq, i) => (
@@ -806,7 +895,7 @@ export default function TenantGuidePage() {
         <div className="closing">
           <p>© 2026 記憶荘 店舗内装スタジオ</p>
           <p className="closing-sub">仙台の店舗内装を、物件探しから手伝う内装屋。</p>
-          <p>kiokuso.jp ／ LINE相談はこちらから</p>
+          <p>kiokuso.jp</p>
         </div>
       </article>
     </div>
@@ -816,813 +905,351 @@ export default function TenantGuidePage() {
 const styles = `
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap');
 
-.guide-root {
-  min-height: 100vh;
-  background: #F8F5F0;
-  padding: 20px 0;
-  font-family: 'Noto Sans JP', sans-serif;
-  color: #3A2816;
-}
+.guide-root { min-height: 100vh; background: #F8F5F0; padding: 20px 0; font-family: 'Noto Sans JP', sans-serif; color: #3A2816; }
+.guide-root *, .guide-root *::before, .guide-root *::after { box-sizing: border-box; }
 
-.guide-root *, .guide-root *::before, .guide-root *::after {
-  box-sizing: border-box;
-}
+/* Nav */
+.guide-nav { position: sticky; top: 0; z-index: 10; max-width: 840px; margin: 0 auto 20px; padding: 12px 24px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border: 1px solid #e8e2d4; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; }
+.guide-nav-brand { font-size: 14px; font-weight: 700; color: #3A2816; text-decoration: none; letter-spacing: 0.1em; }
+.guide-nav-actions { display: flex; gap: 10px; align-items: center; }
+.guide-nav-print { padding: 8px 14px; font-size: 12px; font-weight: 700; background: #fff; border: 1px solid #C9A84C; color: #5C3A21; border-radius: 6px; cursor: pointer; }
+.guide-nav-line { padding: 8px 16px; font-size: 12px; font-weight: 700; background: #06C755; color: #fff; border-radius: 6px; text-decoration: none; }
 
-/* Screen nav */
-.guide-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  max-width: 840px;
-  margin: 0 auto 20px;
-  padding: 12px 24px;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(8px);
-  border: 1px solid #e8e2d4;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.guide-nav-brand {
-  font-size: 14px;
-  font-weight: 700;
-  color: #3A2816;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-}
-
-.guide-nav-actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.guide-nav-print {
-  padding: 8px 14px;
-  font-size: 12px;
-  font-weight: 700;
-  background: #fff;
-  border: 1px solid #C9A84C;
-  color: #5C3A21;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.guide-nav-line {
-  padding: 8px 16px;
-  font-size: 12px;
-  font-weight: 700;
-  background: #06C755;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-/* Page (一枚のA4想定) */
-.page {
-  max-width: 840px;
-  margin: 0 auto 20px;
-  padding: 60px 56px;
-  background: #fff;
-  border: 1px solid #e8e2d4;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  position: relative;
-}
-
-.page p {
-  font-size: 14px;
-  line-height: 1.9;
-  margin-bottom: 14px;
-  color: #3a3a3a;
-}
-
-.page strong {
-  color: #3A2816;
-  font-weight: 700;
-}
-
-.page .gold {
-  color: #C9A84C;
-}
-
-.page ul, .page ol {
-  padding-left: 20px;
-  margin-bottom: 14px;
-}
-
-.page ul li, .page ol li {
-  font-size: 14px;
-  line-height: 1.9;
-  margin-bottom: 6px;
-  color: #3a3a3a;
-}
-
-.page ol.big li {
-  font-size: 15px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.page .note {
-  font-size: 13px;
-  color: #8a7a68;
-  font-style: italic;
-}
-
-.page a {
-  color: #5C3A21;
-  text-decoration: underline;
-}
+/* Page */
+.page { max-width: 840px; margin: 0 auto 20px; padding: 60px 56px; background: #fff; border: 1px solid #e8e2d4; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); position: relative; }
+.page p { font-size: 14px; line-height: 1.85; margin-bottom: 12px; color: #3a3a3a; }
+.page strong { color: #3A2816; font-weight: 700; }
+.page .gold { color: #C9A84C; }
+.page ul, .page ol { padding-left: 20px; margin-bottom: 12px; }
+.page ul li, .page ol li { font-size: 14px; line-height: 1.85; margin-bottom: 5px; color: #3a3a3a; }
+.page .note { font-size: 13px; color: #8a7a68; font-style: italic; }
+.page .intro-lead { font-size: 14px; color: #3a3a3a; margin-bottom: 24px; line-height: 1.9; }
+.note-emphasize { background: #FCF8F0; border-left: 3px solid #C9A84C; padding: 12px 16px; font-size: 14px !important; line-height: 1.85 !important; margin: 16px 0 !important; }
+.page a { color: #5C3A21; text-decoration: underline; }
 
 /* Cover */
-.guide-cover {
-  background: linear-gradient(135deg, #F8F5F0 0%, #EBE0CE 60%, #D9C9AC 100%);
-  color: #3A2816;
-  padding: 80px 56px 60px;
-  text-align: center;
-  position: relative;
-  min-height: auto;
-}
-
-.cover-accent-top, .cover-accent-bottom {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: #C9A84C;
-}
+.guide-cover { background: linear-gradient(135deg, #F8F5F0 0%, #EBE0CE 60%, #D9C9AC 100%); color: #3A2816; padding: 80px 56px 60px; text-align: center; position: relative; min-height: auto; }
+.cover-accent-top, .cover-accent-bottom { position: absolute; left: 0; right: 0; height: 6px; background: #C9A84C; }
 .cover-accent-top { top: 0; }
 .cover-accent-bottom { bottom: 0; }
-
-.cover-category {
-  font-size: 14px !important;
-  font-weight: 500;
-  color: #C9A84C !important;
-  letter-spacing: 0.4em;
-  margin-bottom: 16px !important;
-  text-transform: uppercase;
-}
-
-.cover-hr {
-  width: 60px;
-  height: 2px;
-  background: #C9A84C;
-  border: none;
-  margin: 0 auto 40px;
-}
-
-.cover-title {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin: 40px 0;
-}
-
-.cover-title-l1, .cover-title-l2, .cover-title-l3 {
-  font-family: 'Noto Serif JP', serif;
-  font-weight: 700;
-  color: #3A2816;
-  line-height: 1.1;
-  letter-spacing: 0.08em;
-}
-
+.cover-category { font-size: 14px !important; font-weight: 500; color: #C9A84C !important; letter-spacing: 0.4em; margin-bottom: 16px !important; text-transform: uppercase; }
+.cover-hr { width: 60px; height: 2px; background: #C9A84C; border: none; margin: 0 auto 40px; }
+.cover-title { display: flex; flex-direction: column; gap: 18px; margin: 40px 0; }
+.cover-title-l1, .cover-title-l2, .cover-title-l3 { font-family: 'Noto Serif JP', serif; font-weight: 700; color: #3A2816; line-height: 1.1; letter-spacing: 0.08em; }
 .cover-title-l1 { font-size: 46px; }
 .cover-title-l2 { font-size: 64px; }
 .cover-title-l3 { font-size: 64px; color: #C9A84C; }
-
-.cover-subtitle {
-  font-size: 14px !important;
-  color: rgba(58,40,22,0.7) !important;
-  letter-spacing: 0.1em;
-  margin-top: 32px !important;
-  margin-bottom: 48px !important;
-}
-
-.cover-chapters {
-  list-style: none !important;
-  padding: 0 !important;
-  text-align: left;
-  max-width: 420px;
-  margin: 0 auto 60px !important;
-}
-
-.cover-chapters li {
-  font-size: 14px !important;
-  color: rgba(58,40,22,0.8) !important;
-  padding: 6px 0;
-  letter-spacing: 0.04em;
-  font-weight: 500;
-}
-
-.cover-footer {
-  margin-top: 60px;
-}
-
-.cover-footer-hr {
-  width: 100px;
-  height: 1px;
-  background: #C9A84C;
-  border: none;
-  margin: 0 auto 20px;
-  opacity: 0.5;
-}
-
-.cover-brand {
-  font-size: 16px !important;
-  font-weight: 700;
-  color: #3A2816 !important;
-  letter-spacing: 0.15em;
-  margin-bottom: 6px !important;
-}
-
-.cover-url {
-  font-size: 12px !important;
-  color: rgba(58,40,22,0.4) !important;
-  letter-spacing: 0.1em;
-}
-
-/* Page header */
-.page-header {
-  position: absolute;
-  top: 20px;
-  right: 28px;
-  font-size: 10px;
-  color: #C9A84C;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-/* Chapter headings */
-.chapter-heading {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #3A2816;
-  margin-bottom: 28px;
-  padding-bottom: 14px;
-  border-bottom: 2px solid #C9A84C;
-  line-height: 1.4;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.chapter-heading-toc {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #3A2816;
-  text-align: center;
-  margin: 20px 0 40px;
-}
-
-.chapter-no {
-  font-size: 14px;
-  font-weight: 500;
-  color: #C9A84C;
-  background: rgba(201,168,76,0.08);
-  padding: 4px 12px;
-  border-radius: 20px;
-  letter-spacing: 0.1em;
-}
-
-.section-heading {
-  font-size: 17px;
-  font-weight: 700;
-  color: #3A2816;
-  margin: 32px 0 14px;
-  padding-left: 14px;
-  border-left: 4px solid #C9A84C;
-  line-height: 1.5;
-}
-
-.sub-heading {
-  font-size: 15px;
-  font-weight: 700;
-  color: #5C3A21;
-  margin: 22px 0 10px;
-}
-
-.subhead {
-  font-size: 13px !important;
-  font-weight: 700;
-  color: #5C3A21;
-  margin-top: 14px !important;
-  margin-bottom: 6px !important;
-}
-
-/* TOC */
-.toc-list {
-  list-style: none !important;
-  padding: 0 !important;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.toc-list li {
-  display: flex;
-  gap: 14px;
-  padding: 10px 0;
-  border-bottom: 1px dashed #e8e2d4;
-  font-size: 14px;
-}
-
-.toc-num {
-  flex-shrink: 0;
-  width: 56px;
-  font-weight: 700;
-  color: #C9A84C;
-  letter-spacing: 0.05em;
-}
-
-/* Quote / blockquote */
-.quote {
-  background: linear-gradient(135deg, #FCF8F0 0%, #F3EBDA 100%);
-  border-left: 4px solid #C9A84C;
-  padding: 16px 22px;
-  font-size: 16px !important;
-  font-weight: 500;
-  color: #3A2816 !important;
-  border-radius: 0 6px 6px 0;
-  margin: 18px 0;
-  font-family: 'Noto Serif JP', serif;
-}
-
-/* Data table */
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 16px 0;
-  font-size: 13px;
-}
-
-.data-table thead {
-  background: #3A2816;
-  color: #fff;
-}
-
-.data-table th {
-  padding: 10px 12px;
-  text-align: left;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-
-.data-table td {
-  padding: 9px 12px;
-  border-bottom: 1px solid #e8e2d4;
-  vertical-align: middle;
-  color: #3a3a3a;
-}
-
-.data-table tr:hover td {
-  background: #FCF8F0;
-}
-
-/* Sidebar (内装屋視点 box) */
-.sidebar {
-  background: linear-gradient(135deg, #F3EBDA 0%, #EADFC9 100%);
-  border: 1px solid #D9C9AC;
-  border-radius: 8px;
-  padding: 16px 22px;
-  margin: 20px 0;
-}
-
-.sidebar-label {
-  font-size: 12px !important;
-  font-weight: 700;
-  color: #C9A84C !important;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 8px !important;
-}
-
-.sidebar p:not(.sidebar-label) {
-  font-size: 13px !important;
-  color: #3a3a3a !important;
-  margin-bottom: 0 !important;
-  line-height: 1.8 !important;
-}
-
-/* Checklist */
-.checklist {
-  background: #FCF8F0;
-  border: 1px solid #e8e2d4;
-  border-radius: 8px;
-  padding: 20px 24px;
-  margin: 20px 0;
-}
-
-.checklist-title {
-  font-size: 14px !important;
-  font-weight: 700;
-  color: #3A2816 !important;
-  margin-bottom: 14px !important;
-}
-
-.checklist-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 18px;
-}
-
-.checklist-group {
-  font-size: 12px !important;
-  font-weight: 700;
-  color: #C9A84C !important;
-  margin-bottom: 6px !important;
-}
-
-.checklist p:not(.checklist-title):not(.checklist-group) {
-  font-size: 12px !important;
-  color: #3a3a3a !important;
-  line-height: 2 !important;
-  margin-bottom: 0 !important;
-}
-
-/* Jirei (事例カード) */
-.jirei {
-  background: #fff;
-  border: 1px solid #e0d8cc;
-  border-left: 4px solid #C9A84C;
-  border-radius: 0 6px 6px 0;
-  padding: 14px 18px;
-  margin: 12px 0;
-}
-
-.jirei-title {
-  font-size: 13px !important;
-  font-weight: 700;
-  color: #5C3A21 !important;
-  margin-bottom: 6px !important;
-}
-
-.jirei ul {
-  margin-bottom: 0 !important;
-  padding-left: 20px;
-}
-
-.jirei li {
-  font-size: 13px !important;
-  color: #3a3a3a !important;
-  line-height: 1.8 !important;
-  margin-bottom: 4px !important;
-}
-
-/* Calc box */
-.calc-box {
-  background: #3A2816;
-  color: #fff;
-  padding: 18px 22px;
-  border-radius: 8px;
-  margin: 16px 0;
-  text-align: center;
-}
-
-.calc-box p {
-  color: #fff !important;
-  font-size: 14px !important;
-  margin-bottom: 8px !important;
-}
-
-.calc-box p:last-child {
-  margin-bottom: 0 !important;
-}
-
-.calc-note {
-  color: rgba(255,255,255,0.6) !important;
-  font-size: 11px !important;
-  font-style: italic;
-}
-
-/* Fail case */
-.fail {
-  background: #fff;
-  border: 1px solid #e0d8cc;
-  border-left: 4px solid #C44D3F;
-  border-radius: 0 6px 6px 0;
-  padding: 12px 16px;
-  margin-bottom: 10px;
-}
-
-.fail-title {
-  font-size: 13px !important;
-  font-weight: 700;
-  color: #3A2816 !important;
-  margin-bottom: 6px !important;
-}
-
-.fail-num {
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  background: #C44D3F;
-  color: #fff;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 22px;
-  margin-right: 8px;
-}
-
-.fail-line {
-  font-size: 12px !important;
-  color: #666 !important;
-  margin-bottom: 2px !important;
-  line-height: 1.6 !important;
-}
-
-.fail-label {
-  font-weight: 700;
-  color: #C44D3F;
-  margin-right: 4px;
-}
-
-/* Step */
-.step {
-  background: linear-gradient(135deg, #FCF8F0 0%, #F3EBDA 100%);
-  border: 1px solid #D9C9AC;
-  border-radius: 8px;
-  padding: 14px 18px;
-  margin-bottom: 10px;
-}
-
-.step-num {
-  font-size: 14px !important;
-  font-weight: 700;
-  color: #5C3A21 !important;
-  margin-bottom: 4px !important;
-}
-
-.step p:last-child {
-  font-size: 13px !important;
-  color: #3a3a3a !important;
-  margin-bottom: 0 !important;
-}
-
-/* Final CTA */
-.final-cta {
-  background: linear-gradient(135deg, #3A2816 0%, #5C3A21 100%);
-  color: #fff;
-  padding: 32px 28px;
-  border-radius: 12px;
-  text-align: center;
-  margin-top: 40px;
-}
-
-.final-cta p {
-  color: rgba(255,255,255,0.8) !important;
-  margin-bottom: 10px !important;
-}
-
-.final-title {
-  font-size: 20px !important;
-  font-weight: 700;
-  color: #fff !important;
-  letter-spacing: 0.05em;
-}
-
-.final-url {
-  font-size: 13px !important;
-  color: #C9A84C !important;
-  margin-top: 16px !important;
-  word-break: break-all;
-}
-
-/* 用語集 */
-.yougoshu { margin-top: 20px; }
-
-.yougoshu dt {
-  font-size: 14px;
-  font-weight: 700;
-  color: #3A2816;
-  margin-top: 14px;
-  padding-bottom: 4px;
-  border-bottom: 1px dashed #D9C9AC;
-}
-
-.yougoshu dd {
-  font-size: 13px;
-  line-height: 1.8;
-  color: #3a3a3a;
-  margin: 6px 0 0;
-  padding-left: 16px;
-}
-
-.closing {
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 2px solid #C9A84C;
-  text-align: center;
-}
-
-.closing p {
-  font-size: 12px !important;
-  color: #8a7a68 !important;
-  margin-bottom: 4px !important;
-}
-
-.closing-sub {
-  font-size: 13px !important;
-  color: #5C3A21 !important;
-  font-weight: 500;
-}
-
-/* Structure list */
-.structure { margin: 18px 0; }
-
-.structure-item {
-  background: #fff;
-  border-left: 4px solid #5C3A21;
-  border-top: 1px solid #e0d8cc;
-  border-right: 1px solid #e0d8cc;
-  border-bottom: 1px solid #e0d8cc;
-  border-radius: 0 8px 8px 0;
-  padding: 14px 18px;
-  margin-bottom: 10px;
-}
-
-.structure-title {
-  font-size: 14px !important;
-  font-weight: 700;
-  color: #3A2816 !important;
-  margin-bottom: 6px !important;
-}
-
-.structure-body {
-  font-size: 13px !important;
-  color: #555 !important;
-  line-height: 1.8 !important;
-  margin-bottom: 0 !important;
-}
-
-/* Benefit list */
-.benefit-list {
-  background: linear-gradient(135deg, #FCF8F0 0%, #F3EBDA 100%);
-  border: 1px solid #D9C9AC;
-  border-radius: 10px;
-  padding: 20px 24px;
-  margin: 20px 0;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.benefit-item:last-child { margin-bottom: 0; }
-
-.benefit-icon {
-  color: #C9A84C;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.4;
-  flex-shrink: 0;
-}
-
-.benefit-item p {
-  margin-bottom: 0 !important;
-  font-size: 14px !important;
-  color: #3A2816 !important;
-  line-height: 1.7 !important;
-}
+.cover-subtitle { font-size: 14px !important; color: rgba(58,40,22,0.7) !important; letter-spacing: 0.1em; margin-top: 32px !important; margin-bottom: 48px !important; }
+.cover-chapters { list-style: none !important; padding: 0 !important; text-align: left; max-width: 420px; margin: 0 auto 60px !important; }
+.cover-chapters li { font-size: 14px !important; color: rgba(58,40,22,0.8) !important; padding: 6px 0; letter-spacing: 0.04em; font-weight: 500; }
+.cover-footer { margin-top: 60px; }
+.cover-footer-hr { width: 100px; height: 1px; background: #C9A84C; border: none; margin: 0 auto 20px; opacity: 0.5; }
+.cover-brand { font-size: 16px !important; font-weight: 700; color: #3A2816 !important; letter-spacing: 0.15em; margin-bottom: 6px !important; }
+.cover-url { font-size: 12px !important; color: rgba(58,40,22,0.4) !important; letter-spacing: 0.1em; }
+
+/* Page header badge */
+.page-header { position: absolute; top: 20px; right: 28px; font-size: 10px; color: #C9A84C; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+
+/* Headings */
+.chapter-heading { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 700; color: #3A2816; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 2px solid #C9A84C; line-height: 1.4; display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
+.chapter-no { font-size: 13px; font-weight: 500; color: #C9A84C; background: rgba(201,168,76,0.08); padding: 4px 12px; border-radius: 20px; letter-spacing: 0.1em; }
+.section-heading { font-size: 17px; font-weight: 700; color: #3A2816; margin: 32px 0 14px; padding-left: 14px; border-left: 4px solid #C9A84C; line-height: 1.5; }
+
+/* Ch.1 Strength grid */
+.strength-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0 32px; }
+.strength-card { background: linear-gradient(180deg, #FCF8F0 0%, #F3EBDA 100%); border: 1px solid #D9C9AC; border-radius: 10px; padding: 20px 16px; text-align: center; position: relative; }
+.strength-num { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 30px; height: 30px; background: #C9A84C; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+.strength-title { font-size: 15px !important; font-weight: 700; color: #3A2816 !important; margin: 10px 0 10px !important; line-height: 1.5 !important; }
+.strength-desc { font-size: 12px !important; color: #5C3A21 !important; line-height: 1.8 !important; margin-bottom: 0 !important; }
+
+/* Figures (guide-wide) */
+.guide-figure { margin: 20px 0; text-align: center; }
+.guide-figure img { width: 100%; max-width: 420px; height: auto; border-radius: 10px; border: 1px solid #e8e2d4; display: block; margin: 0 auto; }
+.guide-figure figcaption { font-size: 12px; color: #8a7a68; margin-top: 8px; line-height: 1.6; font-style: italic; }
+
+/* Business thumb row (3 col / 2 col) */
+.biz-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 16px 0 20px; }
+.biz-thumb { margin: 0; }
+.biz-thumb img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; border: 1px solid #e8e2d4; display: block; }
+.biz-thumb figcaption { font-size: 12px; color: #5C3A21; margin-top: 6px; text-align: center; font-weight: 500; }
+
+/* Before/After grid */
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.ba-fig { margin: 0; }
+.ba-fig img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; display: block; }
+.ba-fig figcaption { font-size: 11px; color: #C9A84C; font-weight: 700; letter-spacing: 0.1em; margin-top: 4px; text-align: center; }
 
 /* Profile cards */
-.profile-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 20px 0;
-}
+.profile-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.profile-card { background: #3A2816; color: #fff; border-radius: 10px; padding: 20px 16px; text-align: center; border: 1px solid #5C3A21; }
+.profile-photo { width: 96px; height: 96px; object-fit: cover; border-radius: 50%; border: 2px solid #C9A84C; margin: 0 auto 12px; display: block; }
 
-.profile-card {
-  background: #3A2816;
-  color: #fff;
-  border-radius: 10px;
-  padding: 20px 16px;
-  text-align: center;
-  border: 1px solid #5C3A21;
-}
+/* Incentive compare (Ch.3) */
+.incentive-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0 20px; }
+.incentive-col { padding: 16px 18px; border-radius: 10px; border: 1px solid #e8e2d4; }
+.incentive-col.bad { background: #FCF2EE; border-color: #e8ccc0; }
+.incentive-col.good { background: #F0F7F0; border-color: #c8dac0; }
+.incentive-label { font-size: 13px !important; font-weight: 700; margin-bottom: 10px !important; letter-spacing: 0.04em; }
+.incentive-col.bad .incentive-label { color: #C44D3F !important; }
+.incentive-col.good .incentive-label { color: #4A6741 !important; }
 
-.profile-name {
-  font-size: 22px !important;
-  font-weight: 900;
-  color: #fff !important;
-  margin-bottom: 4px !important;
-  letter-spacing: 0.1em;
-}
+/* Margin compare (Ch.7) */
+.margin-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 20px; }
+.margin-col { padding: 16px 16px 14px; border-radius: 10px; border: 1px solid #e8e2d4; }
+.margin-col.bad { background: #FCF2EE; border-color: #e8ccc0; }
+.margin-col.good { background: #F0F7F0; border-color: #c8dac0; }
+.margin-label { font-size: 13px !important; font-weight: 700; margin-bottom: 12px !important; }
+.margin-col.bad .margin-label { color: #C44D3F !important; }
+.margin-col.good .margin-label { color: #4A6741 !important; }
+.margin-chain, .margin-direct { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 10px; }
+.chain-item { flex: 1; background: #fff; border: 1px solid #D9C9AC; border-radius: 6px; padding: 8px 4px; text-align: center; font-size: 11px; font-weight: 700; color: #3A2816; line-height: 1.3; }
+.chain-item span { display: block; font-size: 10px; font-weight: 400; color: #8a7a68; margin-top: 2px; }
+.chain-item-solo { flex: 1; background: #fff; border: 1.5px solid #C9A84C; border-radius: 6px; padding: 10px 4px; text-align: center; font-size: 12px; font-weight: 700; color: #3A2816; }
+.chain-arrow { color: #C9A84C; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+.margin-note { font-size: 11px !important; color: #5C3A21 !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
 
-.profile-role {
-  font-size: 11px !important;
-  color: #C9A84C !important;
-  margin-bottom: 10px !important;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
+/* Why cheap grid (Ch.7) */
+.why-cheap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 8px 0 24px; }
+.why-cheap { background: #FCF8F0; border: 1px solid #D9C9AC; border-radius: 8px; padding: 14px 12px; }
+.why-num { font-size: 11px !important; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.15em; margin-bottom: 4px !important; }
+.why-head { font-size: 13px !important; font-weight: 700; color: #3A2816 !important; line-height: 1.5 !important; margin-bottom: 4px !important; }
+.why-sub { font-size: 11px !important; color: #8a7a68 !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
 
-.profile-desc {
-  font-size: 12px !important;
-  color: rgba(255,255,255,0.7) !important;
-  line-height: 1.7 !important;
-  margin-bottom: 0 !important;
-}
+/* Crew (職人集団) */
+.crew-intro { font-size: 13px !important; color: #5C3A21 !important; line-height: 1.8 !important; margin-bottom: 14px !important; }
+.crew-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0 0 4px; }
+.crew-chip { background: #FCF8F0; border: 1px solid #D9C9AC; border-radius: 8px; padding: 12px 6px; text-align: center; }
+.crew-icon { font-size: 22px; display: block; margin-bottom: 4px; }
+.crew-role { font-size: 12px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 2px !important; line-height: 1.3 !important; }
+.crew-yrs { font-size: 10px !important; color: #8a7a68 !important; margin-bottom: 0 !important; line-height: 1.4 !important; }
 
-/* Pro-Con (two columns) */
-.pro-con {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 18px 0;
-}
+/* Weak (不得意) grid */
+.weak-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0 4px; }
+.weak-card { background: #fff; border: 1px solid #e0d8cc; border-left: 3px solid #8a7a68; border-radius: 0 8px 8px 0; padding: 12px 14px; }
+.weak-head { font-size: 13px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 4px !important; line-height: 1.5 !important; }
+.weak-head::before { content: '✕  '; color: #8a7a68; font-weight: 400; }
+.weak-sub { font-size: 11px !important; color: #8a7a68 !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
+.profile-name { font-size: 24px !important; font-weight: 900; color: #fff !important; margin-bottom: 4px !important; letter-spacing: 0.1em; }
+.profile-role { font-size: 11px !important; color: #C9A84C !important; margin-bottom: 10px !important; letter-spacing: 0.15em; text-transform: uppercase; }
+.profile-desc { font-size: 12px !important; color: rgba(255,255,255,0.7) !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
 
-.pro-con-col {
-  padding: 14px 18px;
-  border-radius: 8px;
-  border: 1px solid #e0d8cc;
-}
+/* Ch.2 When compare */
+.when-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0 24px; }
+.when-col { padding: 18px 16px; border-radius: 10px; border: 1px solid #e8e2d4; }
+.when-col.bad { background: #FCF2EE; border-color: #e8ccc0; }
+.when-col.good { background: #F0F7F0; border-color: #c8dac0; }
+.when-label { font-size: 13px !important; font-weight: 700; margin-bottom: 14px !important; }
+.when-col.bad .when-label { color: #C44D3F !important; }
+.when-col.good .when-label { color: #4A6741 !important; }
+.when-flow { display: flex; align-items: center; gap: 4px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
+.when-step { background: #fff; border: 1px solid #D9C9AC; border-radius: 6px; padding: 8px 10px; font-size: 11px; font-weight: 700; color: #3A2816; text-align: center; min-width: 60px; line-height: 1.3; }
+.when-arrow { color: #C9A84C; font-weight: 700; font-size: 14px; }
+.when-result { margin-top: 8px; }
+.when-result-label { font-size: 12px !important; font-weight: 700; margin-bottom: 6px !important; }
+.when-col.bad .when-result-label { color: #C44D3F !important; }
+.when-col.good .when-result-label { color: #4A6741 !important; }
+.when-result ul { padding-left: 18px !important; margin-bottom: 0 !important; }
+.when-result li { font-size: 11px !important; line-height: 1.7 !important; margin-bottom: 3px !important; }
 
-.pro-con-col.pro {
-  background: #F0F7F0;
-  border-color: #c8dac0;
-}
+/* Callout */
+.callout { background: linear-gradient(135deg, #FCF8F0 0%, #F3EBDA 100%); border: 1px solid #D9C9AC; border-radius: 10px; padding: 20px 24px; margin: 20px 0; text-align: center; }
+.callout-big { font-size: 14px !important; color: #3A2816 !important; line-height: 1.9 !important; margin-bottom: 12px !important; }
+.callout-big:last-child { margin-bottom: 0 !important; }
+.callout-small { background: #FCF8F0; border: 1px solid #D9C9AC; border-radius: 8px; padding: 14px 18px; margin-top: 20px; }
+.callout-small p { font-size: 13px !important; color: #5C3A21 !important; line-height: 1.8 !important; margin-bottom: 0 !important; }
 
-.pro-con-col.con {
-  background: #FCF2EE;
-  border-color: #e8ccc0;
-}
+/* Ch.3 Myth box */
+.myth-box { background: #3A2816; color: #fff; padding: 24px 28px; border-radius: 10px; margin: 20px 0 24px; text-align: center; }
+.myth-q { font-size: 18px !important; color: #fff !important; font-family: 'Noto Serif JP', serif; line-height: 1.6 !important; margin-bottom: 8px !important; }
+.myth-a { font-size: 14px !important; color: #C9A84C !important; margin-bottom: 0 !important; }
 
-.pro-con-label {
-  font-size: 12px !important;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px !important;
-}
+/* Ch.3 Pattern grid */
+.pattern-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 20px; }
+.pattern-card { background: #fff; border: 1px solid #e8e2d4; border-top: 3px solid #C9A84C; border-radius: 0 0 8px 8px; padding: 18px 14px; text-align: center; }
+.pattern-icon { font-size: 28px; margin-bottom: 8px; }
+.pattern-title { font-size: 13px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 8px !important; }
+.pattern-desc { font-size: 11px !important; color: #5C3A21 !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
 
+/* Ch.3 Warn list */
+.warn-list { background: #FCF8F0; border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+.warn-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+.warn-item:last-child { margin-bottom: 0; }
+.warn-icon { font-size: 18px; line-height: 1.4; flex-shrink: 0; }
+.warn-item p { font-size: 13px !important; color: #3A2816 !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
+.warn-head { font-size: 14px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 2px !important; line-height: 1.5 !important; }
+.warn-sub { font-size: 12px !important; color: #8a7a68 !important; margin-bottom: 0 !important; line-height: 1.6 !important; }
+
+/* Pro-Con */
+.pro-con { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.pro-con-col { padding: 14px 18px; border-radius: 8px; border: 1px solid #e0d8cc; }
+.pro-con-col.pro { background: #F0F7F0; border-color: #c8dac0; }
+.pro-con-col.pro-alt { background: #FCF8F0; border-color: #D9C9AC; }
+.pro-con-col.con { background: #FCF2EE; border-color: #e8ccc0; }
+.pro-con-label { font-size: 12px !important; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 8px !important; }
 .pro-con-col.pro .pro-con-label { color: #4A6741 !important; }
+.pro-con-col.pro-alt .pro-con-label { color: #5C3A21 !important; }
 .pro-con-col.con .pro-con-label { color: #C44D3F !important; }
+.pro-con-col ul { padding-left: 18px; margin-bottom: 0 !important; }
+.pro-con-col li { font-size: 12px !important; line-height: 1.7 !important; margin-bottom: 4px !important; color: #3a3a3a !important; }
 
-.pro-con-col ul {
-  padding-left: 18px;
-  margin-bottom: 0 !important;
-}
+/* Ch.4 Triangle SVG */
+.triangle-svg { width: 100%; max-width: 360px; display: block; margin: 20px auto 24px; height: auto; }
 
-.pro-con-col li {
-  font-size: 12px !important;
-  line-height: 1.7 !important;
-  margin-bottom: 4px !important;
-  color: #3a3a3a !important;
-}
+/* Ch.4 Criteria detail */
+.criteria-detail { margin: 16px 0 20px; }
+.criteria-item { display: flex; gap: 14px; padding: 12px 16px; border-bottom: 1px dashed #e8e2d4; }
+.criteria-item:last-child { border-bottom: none; }
+.criteria-num { font-size: 24px; font-weight: 900; color: #C9A84C; flex-shrink: 0; line-height: 1; font-family: 'Noto Serif JP', serif; }
+.criteria-name { font-size: 15px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 4px !important; }
+.criteria-text { font-size: 13px !important; color: #3a3a3a !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
+.criteria-ex { font-size: 12px; color: #8a7a68; font-style: italic; }
+
+/* Meriha list: bold head + muted sub */
+.meriha-list { list-style: none !important; padding-left: 0 !important; margin-bottom: 0 !important; }
+.meriha-list li { display: block !important; font-size: 12px !important; line-height: 1.7 !important; margin-bottom: 8px !important; padding-left: 14px; position: relative; }
+.meriha-list li::before { content: '◆'; position: absolute; left: 0; color: #C9A84C; font-size: 9px; top: 3px; }
+.meriha-list li strong { display: block; font-size: 13px; color: #3A2816; font-weight: 700; margin-bottom: 1px; }
+.meriha-list li span { display: block; font-size: 11px; color: #8a7a68; line-height: 1.6; }
+
+/* Nego sub */
+.nego-sub { font-size: 11px !important; color: #8a7a68 !important; line-height: 1.6 !important; margin-top: 4px !important; margin-bottom: 0 !important; }
+
+/* Ch.5 Setup grid */
+.setup-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0 24px; }
+.setup-card { background: #FCF8F0; border: 1px solid #D9C9AC; border-radius: 10px; padding: 16px 10px; text-align: center; }
+.setup-icon { font-size: 28px; margin-bottom: 8px; }
+.setup-title { font-size: 13px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 8px !important; }
+.setup-big { font-family: 'Noto Serif JP', serif; font-size: 22px !important; font-weight: 700; color: #C9A84C !important; line-height: 1.2 !important; margin: 4px 0 6px !important; letter-spacing: 0.02em; }
+.setup-sub { font-size: 10px !important; color: #8a7a68 !important; line-height: 1.5 !important; margin-bottom: 8px !important; }
+.setup-warn { font-size: 10px !important; color: #C44D3F !important; background: #fff; padding: 6px 4px; border-radius: 4px; margin-bottom: 0 !important; line-height: 1.4 !important; }
+
+/* Checklist */
+.checklist { background: #FCF8F0; border: 1px solid #e8e2d4; border-radius: 8px; padding: 18px 22px; margin: 20px 0; }
+.checklist-title { font-size: 14px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 12px !important; }
+.checklist-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+.checklist-group { font-size: 12px !important; font-weight: 700; color: #C9A84C !important; margin-bottom: 6px !important; }
+.checklist p:not(.checklist-title):not(.checklist-group) { font-size: 12px !important; color: #3a3a3a !important; line-height: 2 !important; margin-bottom: 0 !important; }
+
+/* Ch.6 Cost bar */
+.cost-bar { margin: 16px 0 20px; background: #FCF8F0; border: 1px solid #e8e2d4; border-radius: 10px; padding: 18px 20px; }
+.cost-row { display: grid; grid-template-columns: 110px 1fr 90px; align-items: center; gap: 14px; padding: 10px 0; border-bottom: 1px dashed #e8e2d4; }
+.cost-row:last-child { border-bottom: none; }
+.cost-label { font-size: 12px !important; color: #3A2816 !important; font-weight: 700; line-height: 1.4 !important; margin-bottom: 0 !important; }
+.cost-label span { font-size: 11px; font-weight: 400; color: #5C3A21; }
+.cost-bar-track { background: #fff; border: 1px solid #e8e2d4; border-radius: 4px; height: 22px; position: relative; }
+.cost-bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding: 0 10px; color: #fff; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: visible; position: relative; z-index: 1; }
+.cost-bar-fill.inuki { background: #4A6741; }
+.cost-bar-fill.inuki-mid { background: #5C3A21; }
+.cost-bar-fill.sukelton { background: #8B3A3A; }
+.cost-time { font-size: 11px !important; color: #5C3A21 !important; font-weight: 500; text-align: right; margin-bottom: 0 !important; }
+
+/* Sidebar */
+.sidebar { background: linear-gradient(135deg, #F3EBDA 0%, #EADFC9 100%); border: 1px solid #D9C9AC; border-radius: 8px; padding: 16px 22px; margin: 18px 0; }
+.sidebar-label { font-size: 12px !important; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px !important; }
+.sidebar p:not(.sidebar-label) { font-size: 13px !important; color: #3a3a3a !important; margin-bottom: 0 !important; line-height: 1.8 !important; }
+
+/* Ch.7 Hack grid */
+.hack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0 24px; }
+.hack-card { background: #fff; border: 1px solid #D9C9AC; border-top: 3px solid #C9A84C; border-radius: 0 0 10px 10px; padding: 0 0 18px; text-align: center; overflow: hidden; }
+.hack-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; margin-bottom: 10px; }
+.hack-num { font-size: 14px; font-weight: 700; color: #C9A84C; letter-spacing: 0.15em; margin-bottom: 8px; }
+.hack-title { font-size: 14px !important; font-weight: 700; color: #3A2816 !important; margin: 0 14px 10px !important; line-height: 1.5 !important; }
+.hack-desc { font-size: 12px !important; color: #5C3A21 !important; line-height: 1.7 !important; margin: 0 14px 10px !important; }
+.hack-saving { font-size: 11px !important; color: #3A2816 !important; background: #FCF8F0; padding: 6px 8px; border-radius: 4px; margin: 0 14px !important; line-height: 1.5 !important; }
+.hack-saving strong { color: #C9A84C !important; font-size: 14px; }
+
+/* Saving SVG */
+.saving-svg { width: 100%; max-width: 400px; display: block; margin: 16px auto 20px; height: auto; }
+
+/* Jirei */
+.jirei { background: #fff; border: 1px solid #e0d8cc; border-left: 4px solid #C9A84C; border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 14px 0; }
+.jirei-title { font-size: 13px !important; font-weight: 700; color: #5C3A21 !important; margin-bottom: 6px !important; }
+.jirei ul { margin-bottom: 0 !important; padding-left: 20px; }
+.jirei li { font-size: 13px !important; color: #3a3a3a !important; line-height: 1.8 !important; margin-bottom: 4px !important; }
+
+/* Ch.8 Fail */
+.fail { background: #fff; border: 1px solid #e0d8cc; border-left: 4px solid #C44D3F; border-radius: 0 6px 6px 0; padding: 10px 16px; margin-bottom: 8px; }
+.fail-title { font-size: 13px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 4px !important; line-height: 1.5 !important; }
+.fail-num { display: inline-block; width: 22px; height: 22px; background: #C44D3F; color: #fff; border-radius: 50%; text-align: center; font-size: 11px; font-weight: 700; line-height: 22px; margin-right: 8px; }
+.fail-line { font-size: 12px !important; color: #666 !important; margin-bottom: 0 !important; line-height: 1.6 !important; }
+
+/* Ch.8 Negotiation */
+.nego-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 20px; }
+.nego-wide { grid-column: 1 / -1; }
+.nego-card { background: #fff; border: 1px solid #e0d8cc; border-left: 4px solid #C9A84C; border-radius: 0 8px 8px 0; padding: 14px 18px; }
+.nego-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.nego-num { display: inline-block; width: 28px; height: 28px; background: #C9A84C; color: #fff; border-radius: 50%; text-align: center; font-size: 12px; font-weight: 700; line-height: 28px; flex-shrink: 0; }
+.nego-name { font-size: 14px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 0 !important; }
+.nego-text { font-size: 13px !important; color: #3a3a3a !important; line-height: 1.75 !important; margin-bottom: 8px !important; }
+.nego-line { font-size: 12px !important; color: #5C3A21 !important; background: #FCF8F0; padding: 8px 12px; border-radius: 4px; line-height: 1.7 !important; margin-bottom: 0 !important; font-style: italic; }
+.nego-line::before { content: '💬 '; }
+
+/* Ch.9 Parse flow */
+.parse-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 6px; align-items: center; margin: 20px 0 24px; }
+.parse-step { background: #FCF8F0; border: 1px solid #D9C9AC; border-radius: 10px; padding: 14px 8px; text-align: center; }
+.parse-icon { font-size: 28px; margin-bottom: 6px; }
+.parse-stepnum { font-size: 10px !important; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.15em; margin-bottom: 4px !important; }
+.parse-stephead { font-size: 13px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 6px !important; line-height: 1.4 !important; }
+.parse-stepdesc { font-size: 11px !important; color: #5C3A21 !important; line-height: 1.6 !important; margin-bottom: 0 !important; }
+.parse-arrow { color: #C9A84C; font-weight: 700; font-size: 18px; text-align: center; }
+.parse-use-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 14px 0 16px; }
+.parse-use { background: #fff; border: 1px solid #e0d8cc; border-radius: 8px; padding: 12px 16px; }
+.parse-use-title { font-size: 12px !important; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.08em; margin-bottom: 4px !important; }
+.parse-use-head { font-size: 14px !important; font-weight: 700; color: #3A2816 !important; line-height: 1.6 !important; margin-bottom: 4px !important; }
+.parse-use-sub { font-size: 12px !important; color: #8a7a68 !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
+
+/* Step */
+.step { background: linear-gradient(135deg, #FCF8F0 0%, #F3EBDA 100%); border: 1px solid #D9C9AC; border-radius: 8px; padding: 18px 22px; margin-bottom: 12px; }
+.step-num { font-size: 11px !important; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.15em; margin-bottom: 6px !important; }
+.step-head { font-size: 16px !important; font-weight: 700; color: #3A2816 !important; margin-bottom: 6px !important; line-height: 1.4 !important; }
+.step-body { font-size: 13px !important; color: #3a3a3a !important; line-height: 1.8 !important; margin-bottom: 0 !important; }
+
+/* Final CTA */
+.final-cta { background: linear-gradient(135deg, #3A2816 0%, #5C3A21 100%); color: #fff; padding: 32px 28px; border-radius: 12px; text-align: center; margin-top: 32px; }
+.final-cta p { color: rgba(255,255,255,0.8) !important; margin-bottom: 10px !important; }
+.final-title { font-size: 20px !important; font-weight: 700; color: #fff !important; letter-spacing: 0.05em; }
+.final-url { font-size: 13px !important; color: #C9A84C !important; margin-top: 16px !important; word-break: break-all; }
+
+/* Data table */
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+.data-table thead { background: #3A2816; color: #fff; }
+.data-table th { padding: 10px 12px; text-align: left; font-weight: 500; letter-spacing: 0.04em; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid #e8e2d4; vertical-align: middle; color: #3a3a3a; }
+.data-table tr:hover td { background: #FCF8F0; }
+
+/* 用語集 */
+.yougoshu { margin-top: 16px; }
+.yougoshu dt { font-size: 14px; font-weight: 700; color: #3A2816; margin-top: 12px; padding-bottom: 3px; border-bottom: 1px dashed #D9C9AC; }
+.yougoshu dd { font-size: 13px; line-height: 1.8; color: #3a3a3a; margin: 5px 0 0; padding-left: 16px; }
+
+.closing { margin-top: 44px; padding-top: 18px; border-top: 2px solid #C9A84C; text-align: center; }
+.closing p { font-size: 12px !important; color: #8a7a68 !important; margin-bottom: 4px !important; }
+.closing-sub { font-size: 13px !important; color: #5C3A21 !important; font-weight: 500; }
 
 @media (max-width: 640px) {
-  .page {
-    padding: 40px 24px;
-  }
-  .checklist-grid {
-    grid-template-columns: 1fr;
-  }
-  .cover-title-l2, .cover-title-l3 {
-    font-size: 40px;
-  }
-  .profile-cards, .pro-con {
-    grid-template-columns: 1fr;
-  }
-  .chapter-heading { font-size: 20px; }
+  .page { padding: 40px 20px; }
+  .strength-grid, .pattern-grid, .setup-grid, .hack-grid { grid-template-columns: 1fr 1fr; }
+  .setup-grid { grid-template-columns: 1fr 1fr; }
+  .when-compare, .profile-cards, .pro-con, .nego-grid, .ba-grid { grid-template-columns: 1fr; }
+  .crew-grid { grid-template-columns: repeat(2, 1fr); }
+  .incentive-grid, .margin-compare, .weak-grid { grid-template-columns: 1fr; }
+  .why-cheap-grid { grid-template-columns: 1fr; }
+  .nego-wide { grid-column: 1; }
+  .parse-flow { grid-template-columns: 1fr; }
+  .parse-arrow { transform: rotate(90deg); padding: 4px 0; }
+  .checklist-grid { grid-template-columns: 1fr; }
+  .cover-title-l2, .cover-title-l3 { font-size: 40px; }
   .cover-title-l1 { font-size: 34px; }
+  .cost-row { grid-template-columns: 90px 1fr; }
+  .cost-time { grid-column: 1 / -1; text-align: right; font-size: 10px !important; }
 }
 
-/* 印刷用 */
 @media print {
   @page { size: A4; margin: 15mm 12mm; }
-
-  .guide-root {
-    background: #fff !important;
-    padding: 0 !important;
-  }
-
+  .guide-root { background: #fff !important; padding: 0 !important; }
   .screen-only { display: none !important; }
-
-  .page {
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    margin: 0 !important;
-    padding: 20mm 15mm !important;
-    min-height: auto !important;
-    page-break-after: always;
-    max-width: none !important;
-  }
-
+  .page { box-shadow: none !important; border-radius: 0 !important; margin: 0 !important; padding: 18mm 14mm !important; min-height: auto !important; page-break-after: always; max-width: none !important; }
   .guide-cover { min-height: 260mm !important; }
-
-  .data-table, .jirei, .fail, .step, .sidebar, .checklist, .pro-con, .structure {
-    page-break-inside: avoid;
-  }
+  .data-table, .jirei, .fail, .step, .sidebar, .checklist, .pro-con, .stance-compare, .when-compare, .strength-grid, .pattern-grid, .setup-grid, .hack-grid { page-break-inside: avoid; }
 }
 `;
