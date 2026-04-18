@@ -5,6 +5,7 @@ import TenantLPPage from "./lp/tenant/TenantLPPage";
 import WorksCrossover from "./hp/WorksCrossover";
 import ArticleList from "./hp/pages/ArticleList";
 import ArticleDetail from "./hp/pages/ArticleDetail";
+import TenantGuidePage from "./hp/pages/TenantGuidePage";
 import ScrollToTop from "./shared/ScrollToTop";
 
 function BodyBackground() {
@@ -33,6 +34,7 @@ export default function AppRoutes() {
         <Route path="/studio/works/crossover" element={<WorksCrossover />} />
         <Route path="/studio/articles" element={<ArticleList />} />
         <Route path="/studio/articles/:slug" element={<ArticleDetail />} />
+        <Route path="/studio/guide/tenant" element={<TenantGuidePage />} />
         <Route path="/*" element={<HPApp />} />
       </Routes>
     </>
