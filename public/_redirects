@@ -1,15 +1,2 @@
-# 2026-04-16: F2F3停止に伴い /lp/koji → /lp/tenant に変更
-# ! (force) 付きでSPAフォールバックより優先して確実に301を返す
-/lp              /lp/tenant/       301!
-/lp/             /lp/tenant/       301!
-/lp/koji         /lp/tenant/       301!
-/lp/koji/        /lp/tenant/       301!
-/lp/koji/*       /lp/tenant/       301!
-
-# 2026-04-16: 旧 /manshitsu を新ドメイン manshitsu.homes に 301 恒久転送
-/manshitsu       https://manshitsu.homes/       301!
-/manshitsu/      https://manshitsu.homes/       301!
-/manshitsu/*     https://manshitsu.homes/:splat 301!
-
 # SPA fallback
 /*  /index.html  200
