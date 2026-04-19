@@ -11,8 +11,5 @@
 /manshitsu/      https://manshitsu.homes/       301!
 /manshitsu/*     https://manshitsu.homes/:splat 301!
 
-# Trailing slash redirects (canonical URL normalization)
-/lp/tenant       /lp/tenant/       301
-
 # SPA fallback
 /*  /index.html  200
