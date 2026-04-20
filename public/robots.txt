@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /c/
+
+Sitemap: https://kiokuso.jp/sitemap.xml
