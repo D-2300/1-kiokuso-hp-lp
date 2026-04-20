@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LINE_URL_HP } from "../../shared/design-tokens";
 
@@ -27,21 +26,6 @@ const guideSchema = {
 };
 
 export default function TenantGuidePage() {
-  useEffect(() => {
-    document.title = "テナント攻略ガイド｜記憶荘 店舗内装スタジオ";
-    const description = "仙台・宮城で店舗を始める方のためのテナント物件選びガイド。内装屋の目で、物件選びの失敗を防ぐ知識を図解で体系化。";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", description);
-    const setMeta = (s: string, v: string) => {
-      const el = document.querySelector(s);
-      if (el) el.setAttribute("content", v);
-    };
-    setMeta('meta[property="og:title"]', "テナント攻略ガイド｜記憶荘");
-    setMeta('meta[property="og:description"]', description);
-    setMeta('meta[name="twitter:title"]', "テナント攻略ガイド｜記憶荘");
-    setMeta('meta[name="twitter:description"]', description);
-  }, []);
-
   return (
     <div className="guide-root">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideSchema) }} />
