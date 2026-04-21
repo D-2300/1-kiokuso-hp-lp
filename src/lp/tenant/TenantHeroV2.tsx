@@ -206,24 +206,26 @@ export default function TenantHeroV2() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              gap: "20px",
-              marginBottom: "18px",
+              gap: "24px",
+              marginBottom: "22px",
+              flexWrap: "wrap",
             }}
           >
             {[
               { img: "/images/about-kai-sm.webp", name: "KAI", role: "元不動産" },
               { img: "/images/about-ken-sm.webp", name: "KEN", role: "職人" },
             ].map((p) => (
-              <div key={p.name} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <div key={p.name} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <div
                   style={{
-                    width: "48px",
-                    height: "48px",
+                    width: "96px",
+                    height: "96px",
                     borderRadius: "50%",
-                    border: "2px solid #C9A84C",
-                    padding: "1px",
+                    border: "2.5px solid #C9A84C",
+                    padding: "2px",
                     background: "rgba(201,168,76,.08)",
                     flexShrink: 0,
+                    boxShadow: "0 3px 16px rgba(201,168,76,.22)",
                   }}
                 >
                   <img
@@ -238,11 +240,11 @@ export default function TenantHeroV2() {
                     }}
                   />
                 </div>
-                <div style={{ textAlign: "left", lineHeight: 1.2 }}>
-                  <div style={{ fontSize: "11px", color: "#C9A84C", fontWeight: 700, letterSpacing: ".08em" }}>
+                <div style={{ textAlign: "left", lineHeight: 1.3 }}>
+                  <div style={{ fontSize: "16px", color: "#C9A84C", fontWeight: 700, letterSpacing: ".08em" }}>
                     {p.name}
                   </div>
-                  <div style={{ fontSize: "9px", color: "rgba(220,220,210,.6)", letterSpacing: ".05em" }}>
+                  <div style={{ fontSize: "12px", color: "rgba(220,220,210,.75)", letterSpacing: ".05em", marginTop: "3px" }}>
                     {p.role}
                   </div>
                 </div>
@@ -438,7 +440,7 @@ export default function TenantHeroV2() {
               margin: "0 auto 20px",
             }}
           >
-            {["月5組限定", "下請けに出さず", "断ってOK", "営業電話なし", "相見積OK"].map((t) => (
+            {["月5組限定", "下請けに出さず", "断ってOK", "営業電話なし", "相見積OK", "見積無料", "契約交渉OK"].map((t) => (
               <span
                 key={t}
                 style={{
