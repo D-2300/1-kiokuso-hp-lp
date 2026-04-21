@@ -31,8 +31,9 @@ export default function AppRoutes() {
         <Route path="/lp" element={<Navigate to="/lp/tenant" replace />} />
         <Route path="/lp/koji" element={<Navigate to="/lp/tenant" replace />} />
         <Route path="/lp/koji/" element={<Navigate to="/lp/tenant" replace />} />
-        <Route path="/lp/tenant" element={<TenantLPPage />} />
+        <Route path="/lp/tenant" element={<TenantLPPageV2Mock />} />
         <Route path="/mock/tenant-v2" element={<TenantLPPageV2Mock />} />
+        <Route path="/mock/tenant-legacy" element={<TenantLPPage />} />
         <Route path="/studio/works/crossover" element={<WorksCrossover />} />
         <Route path="/studio/articles" element={<ArticleList />} />
         <Route path="/studio/articles/:slug" element={<ArticleDetail />} />
