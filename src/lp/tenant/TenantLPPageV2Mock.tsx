@@ -1,4 +1,5 @@
 import TenantHeroV2 from "./TenantHeroV2";
+import TenantComparison from "./TenantComparison";
 import TenantSteps from "./TenantSteps";
 import TenantGuideSection from "./TenantGuideSection";
 import TenantBeforeAfterCTA from "./TenantBeforeAfterCTA";
@@ -24,6 +25,7 @@ export default function TenantLPPageV2Mock() {
   return (
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333", background: "#fff" }}>
       <TenantHeroV2 />
+      <TenantComparison />
       <TenantSteps />
       <TenantGuideSection />
       <TenantBeforeAfterCTA />
