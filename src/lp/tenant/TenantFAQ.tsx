@@ -39,24 +39,78 @@ const faqs = [
 
 export default function TenantFAQ() {
   return (
-    <section style={{ padding: "64px 24px", background: "#f9f8f6" }}>
+    <section style={{ padding: "64px 20px", background: "#f9f8f6" }}>
+      <style>{`
+        .tenant-faq-item { border-bottom: 1px solid #e8e3dc; }
+        .tenant-faq-item:first-of-type { border-top: 1px solid #e8e3dc; }
+        .tenant-faq-item > summary {
+          list-style: none;
+          cursor: pointer;
+          padding: 18px 4px 18px 0;
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          color: #2a2a2a;
+          font-weight: 700;
+          font-size: clamp(14px, 3.3vw, 16px);
+          line-height: 1.6;
+          transition: color 0.15s ease;
+          position: relative;
+        }
+        .tenant-faq-item > summary::-webkit-details-marker { display: none; }
+        .tenant-faq-item > summary:hover { color: #4A6741; }
+        .tenant-faq-item .tenant-faq-qmark {
+          flex-shrink: 0;
+          width: 22px; height: 22px;
+          border-radius: 50%;
+          background: linear-gradient(180deg, #C9A84C 0%, #8a6a2a 100%);
+          color: #fff;
+          font-size: 11px;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 1px;
+          box-shadow: 0 1px 4px rgba(201,168,76,0.25);
+        }
+        .tenant-faq-item .tenant-faq-toggle {
+          margin-left: auto;
+          color: #C9A84C;
+          font-size: 18px;
+          font-weight: 400;
+          transition: transform 0.2s ease;
+          flex-shrink: 0;
+          line-height: 1;
+        }
+        .tenant-faq-item[open] .tenant-faq-toggle { transform: rotate(45deg); }
+        .tenant-faq-item .tenant-faq-body {
+          padding: 2px 4px 20px 34px;
+          font-size: clamp(13px, 3vw, 15px);
+          color: #555;
+          line-height: 1.9;
+          animation: tenantFaqReveal 0.25s ease-out;
+        }
+        @keyframes tenantFaqReveal {
+          from { opacity: 0; transform: translateY(-4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+
       <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
+        <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "32px", lineHeight: 1.7 }}>
           よくある質問
         </h2>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
-          {faqs.map((faq, i) => (
-            <div key={i}>
-              <p style={{ fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 700, color: "#4A6741", marginBottom: "6px" }}>
-                {faq.q}
-              </p>
-              <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "#666", lineHeight: 1.85 }}>
-                {faq.a}
-              </p>
-            </div>
-          ))}
-        </div>
+        {faqs.map((faq, i) => (
+          <details key={i} className="tenant-faq-item">
+            <summary>
+              <span className="tenant-faq-qmark">Q</span>
+              <span style={{ flex: 1 }}>{faq.q}</span>
+              <span className="tenant-faq-toggle" aria-hidden="true">＋</span>
+            </summary>
+            <div className="tenant-faq-body">{faq.a}</div>
+          </details>
+        ))}
       </div>
     </section>
   );
