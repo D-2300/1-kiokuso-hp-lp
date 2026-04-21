@@ -95,6 +95,115 @@ export default function StudioTop() {
           </div>
         </section>
 
+        {/* V2 Trust Strip — LP トーン接続バンド */}
+        <section
+          style={{
+            background: "linear-gradient(180deg, #232820 0%, #1e2318 60%, #1a1e16 100%)",
+            padding: "34px 16px 30px",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "radial-gradient(ellipse at 50% 15%, rgba(74,103,65,.28) 0%, rgba(138,171,128,.10) 35%, transparent 65%)",
+              pointerEvents: "none",
+            }}
+          />
+          <div style={{ position: "relative", zIndex: 1, maxWidth: "680px", margin: "0 auto", textAlign: "center" }}>
+            <div
+              style={{
+                display: "inline-block",
+                whiteSpace: "nowrap",
+                fontSize: "clamp(11px, 2.3vw, 12.5px)",
+                fontWeight: 700,
+                letterSpacing: ".08em",
+                color: "#F5D68A",
+                border: "1px solid rgba(201,168,76,.55)",
+                background: "linear-gradient(180deg, rgba(201,168,76,.2) 0%, rgba(74,103,65,.25) 100%)",
+                borderRadius: "100px",
+                padding: "6px 16px",
+                marginBottom: "14px",
+                boxShadow: "0 2px 12px rgba(201,168,76,.18), inset 0 1px 0 rgba(255,240,200,.15)",
+              }}
+            >
+              <span style={{ fontSize: "8px", color: "#C9A84C", marginRight: "6px" }}>◆</span>
+              宮城で店舗を出す方向け
+            </div>
+
+            <p style={{ fontSize: "clamp(11px, 2.1vw, 13px)", fontWeight: 400, letterSpacing: ".15em", color: "#C9A84C", marginBottom: "14px" }}>
+              元不動産仲介20年 × 大工20年
+            </p>
+
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "22px", marginBottom: "22px", flexWrap: "wrap" }}>
+              {[
+                { img: "/images/about-kai-sm.webp", name: "KAI", role: "元不動産" },
+                { img: "/images/about-ken-sm.webp", name: "KEN", role: "職人" },
+              ].map((p) => (
+                <div key={p.name} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <div
+                    style={{
+                      width: "72px",
+                      height: "72px",
+                      borderRadius: "50%",
+                      border: "2px solid #C9A84C",
+                      padding: "2px",
+                      background: "rgba(201,168,76,.08)",
+                      flexShrink: 0,
+                      boxShadow: "0 2px 12px rgba(201,168,76,.18)",
+                    }}
+                  >
+                    <img src={p.img} alt={p.name}
+                      style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", display: "block" }} />
+                  </div>
+                  <div style={{ textAlign: "left", lineHeight: 1.3 }}>
+                    <div style={{ fontSize: "14px", color: "#C9A84C", fontWeight: 700, letterSpacing: ".08em" }}>{p.name}</div>
+                    <div style={{ fontSize: "11px", color: "rgba(220,220,210,.75)", letterSpacing: ".05em", marginTop: "2px" }}>{p.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px", maxWidth: "380px", margin: "0 auto 8px" }}>
+              {[
+                { num: "20", unit: "年", label: "元不動産キャリア" },
+                { num: "20", unit: "年+", label: "大工歴" },
+                { num: "30", unit: "件+/年", label: "施工実績" },
+              ].map((b) => (
+                <div key={b.label} style={{
+                  padding: "11px 4px 9px",
+                  border: "1px solid rgba(201,168,76,.65)",
+                  background: "linear-gradient(180deg, rgba(201,168,76,.22) 0%, rgba(74,103,65,.22) 100%)",
+                  borderRadius: "8px",
+                  position: "relative",
+                  boxShadow: "0 3px 14px rgba(201,168,76,.15), inset 0 0 0 1px rgba(255,230,170,.12), inset 0 1px 0 rgba(255,240,200,.2)",
+                }}>
+                  <span style={{ position: "absolute", top: "-5px", left: "50%", transform: "translateX(-50%)", fontSize: "7px", color: "#C9A84C", background: "#1e2318", padding: "0 4px", letterSpacing: ".1em" }}>◆</span>
+                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(22px, 6.5vw, 28px)", fontWeight: 700, color: "#F5D68A", lineHeight: 1, textShadow: "0 2px 8px rgba(201,168,76,.35)" }}>
+                    {b.num}
+                    <span style={{ fontFamily: "'Noto Sans JP', sans-serif", fontSize: "clamp(9px, 2.3vw, 11px)", fontWeight: 700, marginLeft: "2px", color: "#E6C56A" }}>{b.unit}</span>
+                  </div>
+                  <div style={{ width: "20px", height: "1px", background: "linear-gradient(90deg, transparent, rgba(201,168,76,.7), transparent)", margin: "5px auto 4px" }} />
+                  <div style={{ fontSize: "9px", color: "rgba(230,235,225,.9)", letterSpacing: ".03em", lineHeight: 1.3, fontWeight: 500 }}>{b.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", maxWidth: "380px", margin: "8px auto 0" }}>
+              <span style={{ flex: 1, height: "1px", background: "linear-gradient(90deg, transparent, rgba(201,168,76,.5), transparent)" }} />
+              <span style={{ color: "rgba(201,168,76,.85)", fontSize: "6px" }}>◆</span>
+              <span style={{ fontSize: "10px", color: "#C9A84C", letterSpacing: ".12em", fontWeight: 600, whiteSpace: "nowrap" }}>
+                2人で{" "}
+                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "16px", fontWeight: 700, color: "#F5D68A", margin: "0 2px", textShadow: "0 1px 6px rgba(201,168,76,.5)" }}>40</span>{" "}年の現場
+              </span>
+              <span style={{ color: "rgba(201,168,76,.85)", fontSize: "6px" }}>◆</span>
+              <span style={{ flex: 1, height: "1px", background: "linear-gradient(90deg, transparent, rgba(201,168,76,.5), transparent)" }} />
+            </div>
+          </div>
+        </section>
+
         {/* What We Do */}
         <ScrollFadeIn>
           <section style={{ padding: "80px 20px", textAlign: "center", backgroundColor: colors.beige }}>
@@ -110,14 +219,31 @@ export default function StudioTop() {
                 テナント探し・内装工事・届出まで、一社で完結。<br />
                 非公開テナント情報・居抜き・スケルトン対応。
               </p>
-              <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}>
-                {[{ label: "居抜き", value: "50万円〜" }, { label: "スケルトン", value: "150万円〜" }].map((badge) => (
+              <div style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap" }}>
+                {[{ label: "居抜き", num: "50", unit: "万円〜" }, { label: "スケルトン", num: "150", unit: "万円〜" }].map((badge) => (
                   <div key={badge.label} style={{
-                    border: "1px solid rgba(201,168,76,0.3)", borderRadius: "6px",
-                    padding: "8px 20px", fontSize: "14px", color: colors.text,
+                    position: "relative",
+                    padding: "14px 24px 10px",
+                    border: "1px solid rgba(201,168,76,0.55)",
+                    background: "linear-gradient(180deg, rgba(201,168,76,0.14) 0%, rgba(245,236,215,0.5) 100%)",
+                    borderRadius: "8px",
+                    boxShadow: "0 3px 14px rgba(201,168,76,0.12), inset 0 1px 0 rgba(255,240,200,0.5)",
+                    minWidth: "130px",
                   }}>
-                    <span style={{ color: colors.mute, fontSize: "14px", marginRight: "6px" }}>{badge.label}</span>
-                    {badge.value}
+                    <span style={{
+                      position: "absolute", top: "-5px", left: "50%", transform: "translateX(-50%)",
+                      fontSize: "8px", color: "#C9A84C", background: colors.beige, padding: "0 5px", letterSpacing: ".1em",
+                    }}>◆</span>
+                    <div style={{ fontSize: "11px", color: colors.mute, letterSpacing: ".05em", marginBottom: "4px" }}>{badge.label}</div>
+                    <div style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "26px", fontWeight: 700, color: "#8a6a2a", lineHeight: 1, letterSpacing: ".01em",
+                    }}>
+                      {badge.num}
+                      <span style={{ fontFamily: "'Noto Sans JP', sans-serif", fontSize: "12px", fontWeight: 700, marginLeft: "3px", color: "#a88a4e" }}>
+                        {badge.unit}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
