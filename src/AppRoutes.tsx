@@ -2,6 +2,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import HPApp from "./hp/HPApp";
 import TenantLPPage from "./lp/tenant/TenantLPPage";
+import TenantLPPageV2Mock from "./lp/tenant/TenantLPPageV2Mock";
 import WorksCrossover from "./hp/WorksCrossover";
 import ArticleList from "./hp/pages/ArticleList";
 import ArticleDetail from "./hp/pages/ArticleDetail";
@@ -31,6 +32,7 @@ export default function AppRoutes() {
         <Route path="/lp/koji" element={<Navigate to="/lp/tenant" replace />} />
         <Route path="/lp/koji/" element={<Navigate to="/lp/tenant" replace />} />
         <Route path="/lp/tenant" element={<TenantLPPage />} />
+        <Route path="/mock/tenant-v2" element={<TenantLPPageV2Mock />} />
         <Route path="/studio/works/crossover" element={<WorksCrossover />} />
         <Route path="/studio/articles" element={<ArticleList />} />
         <Route path="/studio/articles/:slug" element={<ArticleDetail />} />
