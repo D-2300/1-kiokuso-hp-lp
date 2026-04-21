@@ -191,7 +191,7 @@ export default function StudioTop() {
               ))}
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", maxWidth: "380px", margin: "8px auto 0" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", maxWidth: "380px", margin: "8px auto 18px" }}>
               <span style={{ flex: 1, height: "1px", background: "linear-gradient(90deg, transparent, rgba(201,168,76,.5), transparent)" }} />
               <span style={{ color: "rgba(201,168,76,.85)", fontSize: "6px" }}>◆</span>
               <span style={{ fontSize: "10px", color: "#C9A84C", letterSpacing: ".12em", fontWeight: 600, whiteSpace: "nowrap" }}>
@@ -201,6 +201,27 @@ export default function StudioTop() {
               <span style={{ color: "rgba(201,168,76,.85)", fontSize: "6px" }}>◆</span>
               <span style={{ flex: 1, height: "1px", background: "linear-gradient(90deg, transparent, rgba(201,168,76,.5), transparent)" }} />
             </div>
+
+            <Link
+              to="/lp/tenant"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                fontSize: "12px",
+                color: "#F5D68A",
+                textDecoration: "none",
+                padding: "8px 20px",
+                border: "1px solid rgba(201,168,76,.5)",
+                borderRadius: "100px",
+                background: "rgba(201,168,76,.1)",
+                letterSpacing: ".03em",
+                fontWeight: 500,
+              }}
+            >
+              テナント探しから手伝う
+              <span style={{ color: "#C9A84C" }}>→</span>
+            </Link>
           </div>
         </section>
 
@@ -253,17 +274,30 @@ export default function StudioTop() {
 
         {/* KEN Voice */}
         <ScrollFadeIn>
-          <section style={{ padding: "64px 24px", textAlign: "center", backgroundColor: colors.beige }}>
+          <section style={{ padding: "72px 24px", textAlign: "center", backgroundColor: colors.beige }}>
             <div style={{ maxWidth: "480px", margin: "0 auto" }}>
-              <div style={{
-                display: "flex", alignItems: "center", justifyContent: "center",
-                gap: "12px", marginBottom: "32px",
-              }}>
-                <img src="/images/about-ken-sm.webp" alt="KEN"
-                  style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "28px" }}>
+                <span style={{ flex: 1, height: "1px", maxWidth: "80px", background: "linear-gradient(90deg, transparent, rgba(201,168,76,.5))" }} />
+                <span style={{ color: "#C9A84C", fontSize: "9px" }}>◆</span>
+                <span style={{ fontSize: "11px", letterSpacing: ".3em", color: "#C9A84C", fontWeight: 500, textTransform: "uppercase" as const }}>
+                  Our Voice
+                </span>
+                <span style={{ color: "#C9A84C", fontSize: "9px" }}>◆</span>
+                <span style={{ flex: 1, height: "1px", maxWidth: "80px", background: "linear-gradient(90deg, rgba(201,168,76,.5), transparent)" }} />
+              </div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "14px", marginBottom: "32px" }}>
+                <div style={{
+                  width: "84px", height: "84px", borderRadius: "50%",
+                  border: "2.5px solid #C9A84C", padding: "2px",
+                  background: "rgba(201,168,76,.08)", flexShrink: 0,
+                  boxShadow: "0 3px 16px rgba(201,168,76,.22)",
+                }}>
+                  <img src="/images/about-ken-sm.webp" alt="KEN"
+                    style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", display: "block" }} />
+                </div>
                 <div style={{ textAlign: "left" }}>
-                  <p style={{ fontSize: "14px", fontWeight: 500, color: colors.text }}>KEN</p>
-                  <p style={{ fontSize: "14px", color: colors.mute, marginTop: "2px" }}>記憶荘 店舗内装スタジオ</p>
+                  <p style={{ fontSize: "16px", fontWeight: 700, color: "#8a6a2a", letterSpacing: ".08em" }}>KEN</p>
+                  <p style={{ fontSize: "13px", color: colors.mute, marginTop: "3px" }}>記憶荘 店舗内装スタジオ</p>
                 </div>
               </div>
               <div style={{ fontSize: "15px", lineHeight: 2.4, color: colors.text, textAlign: "center" }}>
