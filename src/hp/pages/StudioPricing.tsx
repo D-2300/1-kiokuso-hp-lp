@@ -131,6 +131,30 @@ const costExamples = [
   },
 ];
 
+/**
+ * 他社見積もりとの比較（飲食店15坪スケルトン・同仕様前提）
+ * 数字は記憶荘がこれまで実際に出会った見積もりの代表値。
+ */
+const competitorRows = [
+  { label: "工事一式", amount: "280万円" },
+  { label: "設備工事", amount: "80万円" },
+  { label: "デザイン料", amount: "30万円" },
+  { label: "諸経費", amount: "12万円" },
+];
+
+const kiokusoSampleRows = [
+  { label: "大工日当（12日×1.8万円）", amount: "21.6万円" },
+  { label: "床材CFシート（15坪）", amount: "4.5万円" },
+  { label: "壁紙クロス（60m²）", amount: "7.2万円" },
+  { label: "給排水工事", amount: "18.0万円" },
+  { label: "電気工事", amount: "12.0万円" },
+  { label: "塗装（火回り防水含む）", amount: "5.4万円" },
+  { label: "設備機器（厨房・トイレ等）", amount: "50.0万円" },
+  { label: "ボード・造作・建具", amount: "12.6万円" },
+  { label: "…ほか39項目（搬入・養生・廃材処分など）", amount: "—" },
+  { label: "利益（15%）", amount: "20.6万円" },
+];
+
 export default function StudioPricing() {
   return (
     <div style={{ backgroundColor: '#2E4229' }}>
@@ -199,6 +223,129 @@ export default function StudioPricing() {
           </p>
         </section>
       </ScrollFadeIn>
+
+      {/* 他社見積もりとの比較 */}
+      <ScrollFadeIn>
+        <section style={{ padding: "48px 24px", maxWidth: "720px", margin: "0 auto" }}>
+          <SectionHeading en="Comparison" ja="他社見積もりと並べてみる" />
+          <p style={{ fontSize: "14px", lineHeight: 2.0, color: colors.text, textAlign: "center", maxWidth: "520px", margin: "0 auto 32px" }}>
+            「内装、150万円台でできます」とお伝えすると、
+            <br />
+            最初は『安すぎて怪しい』と言われることが多いです。
+            <br />
+            <br />
+            なぜそう感じるのか。それは、<strong>見積書の出し方が違うからです。</strong>
+          </p>
+
+          <p style={{ fontSize: "13px", color: colors.mute, textAlign: "center", marginBottom: "20px" }}>
+            ＜飲食店15坪・スケルトン・同仕様で他社と並べた場合＞
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "20px" }}>
+            {/* 他社カード */}
+            <div style={{ border: "1px solid #E5E0D8", borderRadius: "4px", padding: "24px 20px", backgroundColor: "#FAF8F4" }}>
+              <p style={{ fontSize: "13px", color: "#999", letterSpacing: "1px", marginBottom: "4px" }}>A — 他社の見積書にありがちな形</p>
+              <p style={{ fontSize: "20px", fontWeight: 600, color: "#666", margin: "0 0 16px" }}>合計：約 402万円</p>
+              <div>
+                {competitorRows.map((row, i) => (
+                  <div key={row.label} style={{
+                    display: "flex", justifyContent: "space-between", alignItems: "baseline",
+                    padding: "10px 0",
+                    borderBottom: i < competitorRows.length - 1 ? "1px dashed #DDD" : "none",
+                  }}>
+                    <span style={{ fontSize: "14px", color: colors.text }}>{row.label}</span>
+                    <span style={{ fontSize: "14px", color: "#888", fontWeight: 500 }}>{row.amount}</span>
+                  </div>
+                ))}
+              </div>
+              <p style={{ fontSize: "13px", color: "#888", lineHeight: 1.9, marginTop: "16px", marginBottom: 0 }}>
+                →「一式」「諸経費」の中身が見えない
+                <br />
+                → 着工後に「追加で50万」「100万」と請求されることも
+              </p>
+            </div>
+
+            {/* 記憶荘カード */}
+            <div style={{
+              border: `1px solid ${colors.fukamidori.light}`,
+              borderRadius: "4px",
+              padding: "24px 20px",
+              backgroundColor: "#FFFFFF",
+              boxShadow: "0 2px 12px rgba(46,66,41,0.06)",
+            }}>
+              <p style={{ fontSize: "13px", color: colors.fukamidori.main, letterSpacing: "1px", marginBottom: "4px" }}>B — 記憶荘の見積書（同条件）</p>
+              <p style={{ fontSize: "20px", fontWeight: 600, color: colors.fukamidori.main, margin: "0 0 16px" }}>合計：約 158万円</p>
+              <div>
+                {kiokusoSampleRows.map((row, i) => (
+                  <div key={row.label} style={{
+                    display: "flex", justifyContent: "space-between", alignItems: "baseline",
+                    padding: "10px 0",
+                    borderBottom: i < kiokusoSampleRows.length - 1 ? "1px dashed #E5E0D8" : "none",
+                    gap: "12px",
+                  }}>
+                    <span style={{ fontSize: "13px", color: colors.text, lineHeight: 1.5 }}>{row.label}</span>
+                    <span style={{ fontSize: "14px", color: colors.fukamidori.main, fontWeight: 500, whiteSpace: "nowrap" }}>{row.amount}</span>
+                  </div>
+                ))}
+              </div>
+              <p style={{ fontSize: "13px", color: colors.text, lineHeight: 1.9, marginTop: "16px", marginBottom: 0 }}>
+                → 全項目に <strong>単価 × 数量</strong>。ホームセンターで確認できる金額
+                <br />
+                → 着工後の追加なし。融資申請の書類にもそのまま使えます
+              </p>
+            </div>
+          </div>
+
+          <p style={{ fontSize: "12px", color: colors.mute, lineHeight: 1.9, marginTop: "20px", textAlign: "center" }}>
+            ※ 価格差は「中抜き」「間接経費」「あいまい表記の余白」が積み重なった結果です。
+            <br />
+            ※ 実際にお客様が他社から受け取った見積もりをベースにした代表値です。
+          </p>
+        </section>
+      </ScrollFadeIn>
+
+      <GoldDivider />
+
+      {/* 一式表記の罠 */}
+      <ScrollFadeIn>
+        <section style={{ padding: "56px 24px", maxWidth: "560px", margin: "0 auto" }}>
+          <SectionHeading en="Trap" ja="「一式」表記の罠" />
+          <p style={{ fontSize: "14px", lineHeight: 2.1, color: colors.text }}>
+            業界の見積書には、<strong>「工事一式 ○○万円」</strong>という書き方がよく出てきます。
+            これが、お客様にとって一番不利な表記です。
+          </p>
+          <ul style={{
+            listStyle: "none",
+            padding: 0,
+            margin: "20px 0",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}>
+            {[
+              "中身が分からないので、他社と比べられない",
+              "工程ごとに何にいくら使ったかが追えない",
+              "着工後に「想定外でした」と追加請求されやすい",
+              "融資の審査でも、内訳の説明を求められる",
+            ].map((item) => (
+              <li key={item} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                <span style={{ color: colors.fukamidori.main, flexShrink: 0, fontSize: "14px", lineHeight: 1.9 }}>—</span>
+                <span style={{ fontSize: "14px", color: colors.text, lineHeight: 1.9 }}>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p style={{ fontSize: "14px", lineHeight: 2.1, color: colors.text }}>
+            記憶荘では、<strong>すべての項目を一行ずつ書きます。</strong>
+            原価（材料）＋ 日当（職人の手間）＋ 利益。
+            これだけです。利益は工事金額の <strong>15% 前後</strong>に収めています。
+          </p>
+          <p style={{ fontSize: "14px", lineHeight: 2.1, color: colors.fukamidori.main, fontWeight: 500, marginTop: "16px" }}>
+            だから、納得して工事を始められます。
+          </p>
+        </section>
+      </ScrollFadeIn>
+
+      <GoldDivider />
 
       {/* コスト削減の具体例 */}
       <ScrollFadeIn>
