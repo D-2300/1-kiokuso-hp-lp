@@ -16,6 +16,7 @@ import WorksCrossover from "./hp/WorksCrossover";
 import ArticleList from "./hp/pages/ArticleList";
 import ArticleDetail from "./hp/pages/ArticleDetail";
 import TenantGuidePage from "./hp/pages/TenantGuidePage";
+import StudioWelcome from "./hp/pages/StudioWelcome";
 import ArticleIdealMock from "./hp/pages/ArticleIdealMock";
 import ScrollToTop from "./shared/ScrollToTop";
 
@@ -58,6 +59,7 @@ export default function AppRoutes() {
         <Route path="/studio/articles" element={<ArticleList />} />
         <Route path="/studio/articles/:slug" element={<ArticleDetail />} />
         <Route path="/studio/guide/tenant" element={<TenantGuidePage />} />
+        <Route path="/studio/welcome" element={<StudioWelcome />} />
         <Route path="/*" element={<HPApp />} />
       </Routes>
     </>
