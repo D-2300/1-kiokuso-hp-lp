@@ -155,6 +155,33 @@ const kiokusoSampleRows = [
   { label: "利益（15%）", amount: "20.6万円" },
 ];
 
+/**
+ * 多重請け構造の解説（業界の中抜きが起きる仕組み）
+ */
+const subcontractTiers = [
+  {
+    tier: "1次請け",
+    role: "元請け会社",
+    desc: "営業・受注・お客様窓口。実際の施工はしない。",
+    margin: "20〜30%",
+    color: "#A89B7A",
+  },
+  {
+    tier: "2次請け",
+    role: "下請け会社",
+    desc: "工事を分配。職人を抱えるが、自社が動かない部分も多い。",
+    margin: "15〜25%",
+    color: "#9B9580",
+  },
+  {
+    tier: "3次請け（孫請け）",
+    role: "実働の職人",
+    desc: "やっと現場で手を動かす人たち。賃金は最も低い。",
+    margin: "10〜20%",
+    color: "#8E8E86",
+  },
+];
+
 export default function StudioPricing() {
   return (
     <div style={{ backgroundColor: '#2E4229' }}>
@@ -342,6 +369,81 @@ export default function StudioPricing() {
           <p style={{ fontSize: "14px", lineHeight: 2.1, color: colors.fukamidori.main, fontWeight: 500, marginTop: "16px" }}>
             だから、納得して工事を始められます。
           </p>
+        </section>
+      </ScrollFadeIn>
+
+      <GoldDivider />
+
+      {/* 多重請け構造の解説 */}
+      <ScrollFadeIn>
+        <section style={{ padding: "56px 24px", maxWidth: "640px", margin: "0 auto" }}>
+          <SectionHeading en="Structure" ja="なぜ他社は高くなるのか" />
+          <p style={{ fontSize: "14px", lineHeight: 2.1, color: colors.text, marginBottom: "24px" }}>
+            業界には <strong>1次請け → 2次請け → 3次請け（孫請け）</strong> という構造があります。
+            お客様から契約を取った会社が、実際には施工をせず、別の会社に流す。
+            その会社がさらに別の職人に流す。<strong>各層で利益が積み重なって、最終価格が膨らみます。</strong>
+          </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "20px" }}>
+            {subcontractTiers.map((t, i) => (
+              <div
+                key={t.tier}
+                style={{
+                  display: "flex",
+                  alignItems: "stretch",
+                  gap: "12px",
+                  paddingLeft: `${i * 16}px`,
+                }}
+              >
+                <div
+                  style={{
+                    width: "8px",
+                    backgroundColor: t.color,
+                    flexShrink: 0,
+                    borderRadius: "2px",
+                  }}
+                />
+                <div style={{ flex: 1, padding: "14px 16px", backgroundColor: "#FAF8F4", borderRadius: "4px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px", marginBottom: "4px" }}>
+                    <p style={{ fontSize: "14px", fontWeight: 600, color: colors.text, margin: 0 }}>
+                      {t.tier}　<span style={{ color: "#888", fontWeight: 400 }}>— {t.role}</span>
+                    </p>
+                    <span style={{ fontSize: "12px", color: "#A88842", whiteSpace: "nowrap", flexShrink: 0 }}>
+                      +{t.margin} 上乗せ
+                    </span>
+                  </div>
+                  <p style={{ fontSize: "13px", color: colors.sub, lineHeight: 1.7, margin: 0 }}>{t.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ fontSize: "13px", color: colors.mute, lineHeight: 1.9, marginBottom: "32px", textAlign: "center" }}>
+            ↓ 結果として、坪単価が <strong>30〜35万円</strong> に膨らむことも珍しくありません
+          </p>
+
+          <div
+            style={{
+              border: `1px solid ${colors.fukamidori.light}`,
+              backgroundColor: "#FFFFFF",
+              borderRadius: "4px",
+              padding: "20px 20px 18px",
+              boxShadow: "0 2px 12px rgba(46,66,41,0.06)",
+            }}
+          >
+            <p style={{ fontSize: "13px", color: colors.fukamidori.main, letterSpacing: "1px", marginBottom: "6px", fontWeight: 600 }}>
+              記憶荘の場合
+            </p>
+            <p style={{ fontSize: "14px", lineHeight: 2.0, color: colors.text, margin: 0 }}>
+              うちは大きい会社ではありません。<strong>プロとして実働できるメンバーだけで動いています。</strong>
+              <br />
+              元請けも下請けも孫請けもいません。お客様 → 私たち → 現場、それだけです。
+              <br />
+              <br />
+              小規模なので、お受けできる件数には限りがあります。
+              ただ、<strong>1件ごとに余計な層を挟まないので、その分が価格に直接返せます。</strong>
+            </p>
+          </div>
         </section>
       </ScrollFadeIn>
 
