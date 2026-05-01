@@ -143,7 +143,7 @@ const competitorRows = [
 ];
 
 const kiokusoSampleRows = [
-  { label: "大工日当（12日×1.8万円）", amount: "21.6万円" },
+  { label: "大工工事（材料・手間込み）", amount: "21.6万円" },
   { label: "床材CFシート（15坪）", amount: "4.5万円" },
   { label: "壁紙クロス（60m²）", amount: "7.2万円" },
   { label: "給排水工事", amount: "18.0万円" },
@@ -152,7 +152,7 @@ const kiokusoSampleRows = [
   { label: "設備機器（厨房・トイレ等）", amount: "50.0万円" },
   { label: "ボード・造作・建具", amount: "12.6万円" },
   { label: "…ほか39項目（搬入・養生・廃材処分など）", amount: "—" },
-  { label: "利益（15%）", amount: "20.6万円" },
+  { label: "現場管理・利益", amount: "20.6万円" },
 ];
 
 /**
@@ -363,8 +363,8 @@ export default function StudioPricing() {
           </ul>
           <p style={{ fontSize: "14px", lineHeight: 2.1, color: colors.text }}>
             記憶荘では、<strong>すべての項目を一行ずつ書きます。</strong>
-            原価（材料）＋ 日当（職人の手間）＋ 利益。
-            これだけです。利益は工事金額の <strong>15% 前後</strong>に収めています。
+            材料の原価から積み上げ、職人の手間と現場で必要な経費を一つずつ重ねていく。
+            <strong>下から積み上げて作っている</strong>ので、金額の根拠が一つひとつ追えるかたちです。
           </p>
           <p style={{ fontSize: "14px", lineHeight: 2.1, color: colors.fukamidori.main, fontWeight: 500, marginTop: "16px" }}>
             だから、納得して工事を始められます。
